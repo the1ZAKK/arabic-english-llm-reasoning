@@ -1,0 +1,2 @@
+﻿model,arabic_correct,arabic_total,arabic_accuracy,english_correct,english_total,english_accuracy,english_minus_arabic,both_correct,both_wrong,english_only_correct,arabic_only_correct,mcnemar_exact_p,bootstrap_ci_low,bootstrap_ci_high
+Gemma-3-1B-IT,15,20,0.75,20,20,1.0,0.25,15,0,5,0,0.0625,0.1,0.45

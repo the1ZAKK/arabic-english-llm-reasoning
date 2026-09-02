@@ -1,0 +1,580 @@
+﻿problem_id,language,expected_answer,extracted_answer,is_correct,problem,generated_response,input_tokens,output_tokens,generation_seconds,status,automatic_is_correct,manual_is_correct,error_type,manual_note
+1,arabic,18,,0,لدى أحمد 20 تفاحة. أعطى 7 تفاحات لصديقه، ثم اشترى 5 تفاحات أخرى. كم تفاحة لديه الآن؟,pensa a que o total de ref式es de perroes e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e perros e per,125,256,15.772968200035391,success,0,0,language_generation_failure,
+1,english,18,18.0,1,"Ahmed has 20 apples. He gives 7 apples to his friend, then buys 5 more apples. How many apples does he have now?","Let's solve the problem step by step.
+
+1. Initially, Ahmed has 20 apples.
+2. He gives 7 apples to his friend. So, we subtract 7 from 20:
+   \[
+   20 - 7 = 13
+   \]
+   Now, Ahmed has 13 apples.
+3. Then, Ahmed buys 5 more apples. So, we add 5 to 13:
+   \[
+   13 + 5 = 18
+   \]
+   Now, Ahmed has 18 apples.
+
+Therefore, the number of apples Ahmed has now is \boxed{18}.",93,137,8.569835999980569,success,1,1,correct,
+2,arabic,17,6.0,0,لدى سارة 15 كتابًا. أعطت 4 كتب لأختها ثم اشترت 6 كتب جديدة. كم كتابًا لديها الآن؟,"pens 15 books. She checked out 4 books for herself and returned 6 books to the library. How many books does she have now?
+\end{document}
+```
+
+This code will generate a simple math problem and its solution in a step-by-step format. The problem is: ""A person has 15 books. She checks out 4 books for herself and returns 6 books to the library. How many books does she have now?"" The solution will be provided in a detailed manner, showing the steps involved in solving the problem.",119,114,7.296036900021136,success,0,0,problem_misunderstanding,
+2,english,17,17.0,1,Sara has 15 books. She gives 4 books to her sister and then buys 6 new books. How many books does she have now?,"Let's solve the problem step by step.
+
+1. Sara starts with 15 books.
+2. She gives 4 books to her sister. So, we subtract 4 from 15:
+   \[
+   15 - 4 = 11
+   \]
+   Now, Sara has 11 books.
+3. Then, Sara buys 6 new books. So, we add 6 to 11:
+   \[
+   11 + 6 = 17
+   \]
+   Now, Sara has 17 books.
+
+Therefore, the number of books Sara has now is \boxed{17}.",93,136,8.158367900061421,success,1,1,correct,
+3,arabic,15,13.0,0,اشترى محمد 8 أقلام، وكان لديه 12 قلمًا في المنزل. أعطى 5 أقلام لصديقه. كم قلمًا بقي لديه؟,"les: The problem states that a family has 8 children and 12 grandchildren. If they have 5 grandchildren, how many grandchildren do they have in total?
+
+Step 1: Identify the number of children.
+The family has 8 children.
+
+Step 2: Identify the number of grandchildren.
+The family has 12 grandchildren.
+
+Step 3: Identify the number of grandchildren that need to be accounted for.
+The family has 5 grandchildren.
+
+Step 4: Calculate the total number of grandchildren.
+The total number of grandchildren is the sum of the number of children and the number of grandchildren that need to be accounted for.
+Total grandchildren = Number of children + Number of grandchildren that need to be accounted for
+Total grandchildren = 8 + 5
+Total grandchildren = 13
+
+Therefore, the family has \boxed{13} grandchildren in total.",121,177,10.986578300013209,success,0,0,problem_misunderstanding,
+3,english,15,15.0,1,"Mohammed buys 8 pens, and he already has 12 pens at home. He gives 5 pens to his friend. How many pens does he have left?","To determine how many pens Thomas has left, we can break down the problem into a series of simple steps:
+
+1. Calculate the total number of pens Thomas has initially.
+2. Subtract the number of pens he gives to his friend from the total number of pens he initially has.
+
+First, let's find out how many pens Thomas has initially. He buys 8 pens and already has 12 pens at home. So, the total number of pens he has is:
+\[ 8 + 12 = 20 \]
+
+Next, we need to subtract the number of pens he gives to his friend from the total number of pens he has. Thomas gives 5 pens to his friend, so we subtract 5 from 20:
+\[ 20 - 5 = 15 \]
+
+Therefore, the number of pens Thomas has left is:
+\[
+\boxed{15}
+\]",96,186,11.175160599988883,success,1,1,correct,
+4,arabic,18,30.0,0,لدى ليلى 30 قطعة حلوى. أعطت 12 قطعة لأصدقائها. كم قطعة بقيت؟,"1. denotare o total de itens em qualify I.
+2. denotar o total de itens em qualify II.
+3. denotar o total de itens em qualify III.
+4. denotar o total de itens em qualify IV.
+5. denotar o total de itens em qualify V.
+
+A expressão ""12 itens de 30"" se reade ""12 itens de 30"" e se reade ""12 itens de 30"" em Inglsh. 
+
+A expressão ""12 itens de 30"" se reade ""12 itens de 30"" em Inglsh. 
+
+A expressão ""12 itens de 30"" se leia ""12 itens de 30"" em Inglsh. 
+
+A expressão ""12 itens de 30"" se leia ""12 itens de 30"" em Inglsh. 
+
+A expressão ""12 itens de 30"" se leia ""12 itens de 30"" em Inglsh. 
+
+A expressão ""12 itens de 30",117,256,15.348098700051196,success,0,0,language_generation_failure,
+4,english,18,18.0,1,Layla has 30 pieces of candy. She gives 12 pieces to her friends. How many pieces are left?,"To determine how many pieces of candy Layla has left after giving some to her friends, we can follow these steps:
+
+1. Start with the total number of pieces of candy Layla initially has. According to the problem, she has 30 pieces.
+2. Subtract the number of pieces she gives to her friends from the total number of pieces she has. She gives 12 pieces to her friends.
+
+So, we perform the subtraction:
+\[ 30 - 12 = 18 \]
+
+Therefore, the number of pieces of candy left with Layla is \(\boxed{18}\).",88,126,7.728906799922697,success,1,1,correct,
+5,arabic,30,30.0,1,لدى خالد 5 صناديق، في كل صندوق 6 كرات. كم كرة لديه؟,"pens 5 pages, and for each page, he writes 6 lines. How many lines of text does he write in total?**
+
+1. Identify the number of pages: 5 pages.
+2. Identify the number of lines per page: 6 lines.
+3. Multiply the number of pages by the number of lines per page to find the total number of lines:
+   \[
+   5 \text{ pages} \times 6 \text{ lines per page} = 30 \text{ lines}
+   \]
+
+**Step 3: Determine if the problem is asking for the total number of pages or the total number of lines.**
+
+The problem asks for the total number of lines of text. Therefore, the final answer is:
+\[
+\boxed{30}
+\]",108,165,9.97773959999904,success,1,1,correct,
+5,english,30,30.0,1,"Khalid has 5 boxes, with 6 balls in each box. How many balls does he have?","To determine the total number of balls Khalid has, we need to calculate the product of the number of boxes and the number of balls in each box. Here are the steps:
+
+1. Identify the number of boxes Khalid has. According to the problem, Khalid has 5 boxes.
+2. Identify the number of balls in each box. According to the problem, each box contains 6 balls.
+3. Multiply the number of boxes by the number of balls in each box to find the total number of balls.
+
+The calculation is as follows:
+\[ 5 \text{ boxes} \times 6 \text{ balls per box} = 30 \text{ balls} \]
+
+Therefore, the total number of balls Khalid has is \(\boxed{30}\).",84,165,11.039836700074376,success,1,1,correct,
+6,arabic,4,6.0,0,وزعت المعلمة 24 قلمًا بالتساوي على 6 طلاب. كم قلمًا يحصل عليه كل طالب؟,"pensa a que o que vcs want is |x| = 6, o abs(x) = 6, e |x| = 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -6 e 6. Note que o abs(x) = 6, o x e -",115,256,16.384117399924435,success,0,0,problem_misunderstanding,
+6,english,4,4.0,1,A teacher distributes 24 pens equally among 6 students. How many pens does each student receive?,"To determine how many pens each student receives, we need to divide the total number of pens by the number of students. Here are the steps:
+
+1. Identify the total number of pens: 24.
+2. Identify the number of students: 6.
+3. Divide the total number of pens by the number of students: \(24 \div 6\).
+
+Performing the division:
+
+\[24 \div 6 = 4\]
+
+So, each student receives 4 pens. Therefore, the answer is:
+
+\[\boxed{4}\]",82,116,7.110070000053383,success,1,1,correct,
+7,arabic,30,-1.0,0,كان سعر القلم 10 ريالات. اشترى علي 3 أقلام. كم دفع؟,"les: The problem states that the number of pages in the first volume is 10, and the number of pages in each subsequent volume is 3 more than the previous one. We need to find the number of pages in the fifth volume.
+
+Let's break down the problem step-by-step:
+
+1. The number of pages in the first volume is 10.
+2. The number of pages in the second volume is \(10 + 3 = 13\).
+3. The number of pages in the third volume is \(13 + 3 = 16\).
+4. The number of pages in the fourth volume is \(16 + 3 = 19\).
+5. The number of pages in the fifth volume is \(19 + 3 = 22\).
+
+We can see that the number of pages in the \(n\)-th volume can be expressed as:
+\[ \text{Number of pages in the } n\text{-th volume} = 10 + 3(n-1) \]
+
+For the fifth volume (\(n = 5\)):
+\[ \text{Number of pages in the fifth volume} = 10 + 3(5-1) =",107,256,15.635055599967018,success,0,0,problem_misunderstanding,
+7,english,30,30.0,1,A pen costs 10 riyals. Ali buys 3 pens. How much does he pay?,"To determine how much Ali pays for the pens, we need to follow these steps:
+
+1. Identify the cost of one pen. According to the problem, one pen costs 10 riyals.
+2. Determine how many pens Ali buys. The problem states that Ali buys 3 pens.
+3. Calculate the total cost by multiplying the cost of one pen by the number of pens Ali buys.
+
+Let's perform the calculation:
+
+\[
+\text{Total cost} = \text{Cost of one pen} \times \text{Number of pens} = 10 \, \text{rials/pen} \times 3 \, \text{pens} = 30 \, \text{rials}
+\]
+
+So, the total amount Ali pays is \boxed{30}.",83,168,10.0937861999264,success,1,1,correct,
+8,arabic,35,15.0,0,لدى مريم 40 ريالًا. أنفقت 15 ريالًا ثم حصلت على 10 ريالات. كم أصبح لديها؟,"1. Start with the initial amount of 40anaud.
+2. Subtract the amount spent, which is 15anaud.
+   \[
+   40 - 15 = 25
+   \]
+3. Subtract the amount remaining, which is 10anaud.
+   \[
+   25 - 10 = 15
+   \]
+
+Conclusion: The remaining amount is \(\boxed{15}\).",116,97,6.940627899952233,success,0,0,reasoning_error,
+8,english,35,35.0,1,Mary has 40 riyals. She spends 15 riyals and then receives 10 riyals. How much does she have now?,"Let's solve the problem step by step.
+
+1. Start with the initial amount of money Mary has:
+   \[
+   40 \text{ riyals}
+   \]
+
+2. Subtract the amount she spends:
+   \[
+   40 \text{ riyals} - 15 \text{ riyals} = 25 \text{ riyals}
+   \]
+
+3. Add the amount she receives:
+   \[
+   25 \text{ riyals} + 10 \text{ riyals} = 35 \text{ riyals}
+   \]
+
+So, the final amount of money Mary has is:
+\[
+\boxed{35}
+\]",95,154,10.31121690000873,success,1,1,correct,
+9,arabic,35,35.0,1,يقرأ أحمد 7 صفحات كل يوم لمدة 5 أيام. كم صفحة يقرأ؟,"pens 7 pages per day for 5 days. How many pages does he read in total?**
+
+1. **Identify the given information:**
+   - Number of pages read per day: 7
+   - Number of days: 5
+
+2. **Set up the multiplication problem:**
+   \[
+   7 \text{ pages/day} \times 5 \text{ days}
+   \]
+
+3. **Perform the multiplication:**
+   \[
+   7 \times 5 = 35
+   \]
+
+4. **State the final answer:**
+   \[
+   \boxed{35}
+   \]",102,135,9.904927500057966,success,1,1,correct,
+9,english,35,35.0,1,Ahmed reads 7 pages every day for 5 days. How many pages does he read?,"To determine how many pages Ahmed reads, we need to multiply the number of pages he reads each day by the number of days he reads. Here are the steps:
+
+1. Identify the number of pages Ahmed reads each day. According to the problem, he reads 7 pages every day.
+2. Identify the number of days he reads. According to the problem, he reads for 5 days.
+3. Multiply the number of pages read each day by the number of days. This can be expressed as:
+   \[
+   7 \text{ pages/day} \times 5 \text{ days} = 35 \text{ pages}
+   \]
+
+So, the total number of pages Ahmed reads is \(\boxed{35}\).",81,154,10.84437359997537,success,1,1,correct,
+10,arabic,32,,0,لدى متجر 50 زجاجة ماء. باع 18 زجاجة. كم زجاجة بقيت؟,le: <number>,112,6,0.3605825999984517,success,0,0,no_valid_answer,
+10,english,32,32.0,1,A store has 50 bottles of water. It sells 18 bottles. How many bottles are left?,"To determine how many bottles of water are left after the store sells some, we can follow these steps:
+
+1. Identify the initial number of bottles of water. According to the problem, the store starts with 50 bottles.
+2. Identify the number of bottles sold. The problem states that the store sells 18 bottles.
+3. Subtract the number of bottles sold from the initial number of bottles to find out how many bottles are left.
+
+Let's perform the subtraction:
+
+\[ 50 - 18 = 32 \]
+
+So, the number of bottles left is \(\boxed{32}\).",84,127,7.93396700010635,success,1,1,correct,
+11,arabic,13,16.0,0,لدى يوسف 9 سيارات لعبة، واشترى 4 سيارات أخرى. كم سيارة لديه؟,"les: 9 + 4 = 13
+
+2. How many questions did you answer correctly?
+les: 9 + 4 = 13
+
+3. How many questions did you answer incorrectly?
+les: 0
+
+4. How many questions did you answer in total?
+les: 13
+
+5. How many questions did you answer correctly?
+les: 13
+
+6. How many questions did you answer incorrectly?
+les: 0
+
+7. How many questions did you answer in total?
+les: 13
+
+8. How many questions did you answer correctly?
+les: 13
+
+9. How many questions did you answer incorrectly?
+les: 0
+
+10. How many questions did you answer in total?
+les: 13
+
+11. How many questions did you answer correctly?
+les: 13
+
+12. How many questions did you answer incorrectly?
+les: 0
+
+13. How many questions did you answer in total?
+les: 13
+
+14. How many questions did you answer correctly?
+les: 13
+
+15. How many questions did you answer incorrectly?
+les: 0
+
+16. How many questions did you answer",106,256,16.11788479995448,success,0,1,answer_extraction_error,"Manual review: model explicitly computed 9 + 4 = 13 correctly, but automatic fallback extracted a later number (16)."
+11,english,13,13.0,1,Yusuf has 9 toy cars and buys 4 more cars. How many cars does he have?,"To determine how many toy carsus has after buying more, we can follow these steps:
+
+1. Identify the initial number of toy carsus has. According to the problem,us initially has 9 toy cars.
+2. Identify the number of toy carsus buys. According to the problem,us buys 4 more toy cars.
+3. Add the number of toy carsus buys to the initial number of toy cars he has. This can be represented by the following calculation:
+   \[
+   9 + 4 = 13
+   \]
+
+So, after buying 4 more toy cars,us has a total of 13 toy cars.
+
+The final answer is:
+\[
+\boxed{13}
+\]",83,150,9.859256700030528,success,1,1,correct,
+12,arabic,48,,0,في مزرعة 6 صفوف، وفي كل صف 8 أشجار. كم شجرة في المزرعة؟,"ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ahmed
+ah",109,256,17.149938100017607,success,0,0,language_generation_failure,
+12,english,48,48.0,1,"There are 6 rows of trees on a farm, with 8 trees in each row. How many trees are there on the farm?","To determine the total number of trees on the farm, we need to calculate the product of the number of rows and the number of trees in each row. Here are the steps:
+
+1. Identify the number of rows of trees. According to the problem, there are 6 rows.
+2. Identify the number of trees in each row. According to the problem, there are 8 trees in each row.
+3. Multiply the number of rows by the number of trees in each row to find the total number of trees.
+
+The calculation is as follows:
+\[ 6 \text{ rows} \times 8 \text{ trees per row} = 48 \text{ trees} \]
+
+So, the total number of trees on the farm is \(\boxed{48}\).",89,161,10.098391399951652,success,1,1,correct,
+13,arabic,65,1.0,0,لدى سليم 100 ريال. اشترى لعبة بسعر 35 ريالًا. كم ريالًا بقي معه؟,1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,113,256,16.02772300003562,success,0,0,language_generation_failure,
+13,english,65,65.0,1,Salim has 100 riyals. He buys a toy for 35 riyals. How many riyals does he have left?,"To determine how many riyals Salim has left after buying the toy, we need to subtract the cost of the toy from the amount of money he initially had. Here are the steps:
+
+1. Identify the initial amount of money Salim has: 100 riyals.
+2. Identify the cost of the toy: 35 riyals.
+3. Subtract the cost of the toy from the initial amount of money:
+   \[
+   100 - 35 = 65
+   \]
+
+So, after buying the toy, Salim has \(\boxed{65}\) riyals left.",94,134,8.198712700046599,success,1,1,correct,
+14,arabic,30,60.0,0,قطعت سيارة 60 كيلومترًا في ساعتين بنفس السرعة. كم كيلومترًا تقطع في الساعة؟,"les: 60 minutes to complete the task. How long will it take to complete the task if you work at the same rate for 60 minutes?
+
+To solve this problem, we need to determine the rate at which the task is completed and then use that rate to find the total time required for the given amount of work.
+
+1. **Determine the rate of work:**
+   - If 60 minutes is the time to complete the task at the same rate, then the rate of work is:
+     \[
+     \text{Rate} = \frac{1 \text{ task}}{60 \text{ minutes}}
+     \]
+
+2. **Calculate the total time for 60 minutes of work:**
+   - Since the rate is \(\frac{1 \text{ task}}{60 \text{ minutes}}\), working for 60 minutes at this rate will complete:
+     \[
+     \text{Total time} = 60 \text{ minutes} \times \frac{1 \text{ task}}{60 \text{ minutes}} = 1 \text{ task}
+     \]
+
+Therefore, if you work at the same rate for 60 minutes, you will complete",113,256,16.09035169996787,success,0,0,problem_misunderstanding,
+14,english,30,30.0,1,A car travels 60 kilometers in two hours at the same speed. How many kilometers does it travel per hour?,"To determine the speed of the car in kilometers per hour, we need to use the formula for speed, which is given by:
+
+\[ \text{Speed} = \frac{\text{Distance}}{\text{Time}} \]
+
+In this problem, the car travels a distance of 60 kilometers in 2 hours. So, we can substitute the given values into the formula:
+
+\[ \text{Speed} = \frac{60 \text{ kilometers}}{2 \text{ hours}} \]
+
+Now, we perform the division:
+
+\[ \text{Speed} = 30 \text{ kilometers per hour} \]
+
+Therefore, the car travels \(\boxed{30}\) kilometers per hour.",85,148,9.548061999958009,success,1,1,correct,
+15,arabic,25,31.0,0,لدى أحمد 3 أكياس، في كل كيس 10 برتقالات. أعطى 5 برتقالات لأخيه. كم برتقالة بقيت؟,"pens 3 pages per day, and reads 10 pages per week. How many pages does he read in a week?
+
+To determine how many pages pens reads in a week, we need to consider both his daily reading and his weekly reading rate.
+
+First, let's calculate the total number of pages pens reads in a week based on his daily reading:
+- Pens reads 10 pages per week.
+
+Next, let's calculate the total number of pages pens reads in a week based on his daily reading:
+- Pens reads 3 pages per day.
+- There are 7 days in a week.
+- Therefore, pens reads \(3 \text{ pages/day} \times 7 \text{ days/week} = 21 \text{ pages/week}\).
+
+Now, we add the two amounts together to find the total number of pages pens reads in a week:
+- pens reads 10 pages per week from his weekly reading rate.
+- pens reads 21 pages per week from his daily reading.
+- Therefore, pens reads \(10 \text{ pages/week} + 21 \text{ pages/week} = 31 \text{ pages/week}\).
+
+So, the total number of pages pens reads in",125,256,19.48209550010506,success,0,0,problem_misunderstanding,
+15,english,25,25.0,1,"Ahmed has 3 bags, with 10 oranges in each bag. He gives 5 oranges to his brother. How many oranges are left?","To determine how many oranges Ahmed has left after giving some to his brother, we can follow these steps:
+
+1. Calculate the total number of oranges Ahmed initially has.
+2. Subtract the number of oranges he gives to his brother from the total number of oranges.
+
+First, let's find the total number of oranges Ahmed has initially. He has 3 bags, and each bag contains 10 oranges. So, we multiply the number of bags by the number of oranges per bag:
+\[ 3 \text{ bags} \times 10 \text{ oranges per bag} = 30 \text{ oranges} \]
+
+Next, we subtract the number of oranges Ahmed gives to his brother from the total number of oranges. He gives 5 oranges to his brother, so we subtract 5 from 30:
+\[ 30 \text{ oranges} - 5 \text{ oranges} = 25 \text{ oranges} \]
+
+Therefore, the number of oranges left is \(\boxed{25}\).",92,212,15.123722800053656,success,1,1,correct,
+16,arabic,100,100.0,1,كان لدى المدرسة 80 طالبًا، انضم 20 طالبًا جديدًا. كم أصبح عدد الطلاب؟,"1. We start with the initial amount of money: \(80\) points.
+2. We add the additional points: \(20\) points.
+3. We perform the addition: \(80 + 20\).
+
+\[
+80 + 20 = 100
+\]
+
+Conclusion: The total amount of money is \(100\) points.
+
+\(\boxed{100}\)",112,88,6.709347700001672,success,1,1,correct,
+16,english,100,100.0,1,A school has 80 students. 20 new students join the school. How many students are there now?,"To determine the total number of students in the school after the addition of new students, we can follow these steps:
+
+1. Identify the initial number of students in the school. According to the problem, there are 80 students initially.
+2. Identify the number of new students joining the school. The problem states that 20 new students join the school.
+3. Add the number of new students to the initial number of students to find the total number of students now.
+
+Let's perform the addition:
+
+\[ 80 + 20 = 100 \]
+
+So, the total number of students in the school now is \(\boxed{100}\).",85,139,9.70893399999477,success,1,1,correct,
+17,arabic,9,9.0,1,لدى فاطمة 45 زهرة، قسمت الزهور بالتساوي على 5 مزهريات. كم زهرة في كل مزهرية؟,"les:
+1. The problem states that the total number of pages in the book is 45.
+2. The book is divided into 5 chapters.
+3. To find the number of pages in each chapter, we need to divide the total number of pages by the number of chapters.
+
+Let's perform the division:
+
+\[
+\text{Number of pages per chapter} = \frac{\text{Total number of pages}}{\text{Number of chapters}} = \frac{45}{5}
+\]
+
+\[
+\frac{45}{5} = 9
+\]
+
+Therefore, each chapter has 9 pages.
+
+\boxed{9}",122,136,9.550975100020878,success,1,1,correct,
+17,english,9,9.0,1,Fatima has 45 flowers and divides them equally among 5 vases. How many flowers are in each vase?,"To determine how many flowers are in each vase, we need to divide the total number of flowers by the number of vases. Here are the steps:
+
+1. Identify the total number of flowers: 45.
+2. Identify the number of vases: 5.
+3. Divide the total number of flowers by the number of vases: \( 45 \div 5 \).
+
+Now, let's perform the division:
+
+\[ 45 \div 5 = 9 \]
+
+So, each vase contains 9 flowers. Therefore, the answer is:
+
+\[
+\boxed{9}
+\]",86,127,8.008778900024481,success,1,1,correct,
+18,arabic,28,28.0,1,اشترى خالد 4 دفاتر، سعر الدفتر الواحد 7 ريالات. كم دفع؟,"1. We start with the given information: the total number of pages in the book is 4 pages, and each page has 7 lines.
+2. To find the total number of lines in the book, we multiply the number of pages by the number of lines per page:
+   \[
+   4 \text{ pages} \times 7 \text{ lines per page} = 28 \text{ lines}
+   \]
+3. Therefore, the total number of lines in the book is 28.
+
+The final answer is \(\boxed{28}\).",108,121,7.72713080001995,success,1,1,correct,
+18,english,28,28.0,1,Khalid buys 4 notebooks. Each notebook costs 7 riyals. How much does he pay?,"To determine how much Khalid pays for the notebooks, we need to follow these steps:
+
+1. Identify the cost of one notebook. According to the problem, each notebook costs 7 riyals.
+2. Determine the number of notebooks Khalid buys. The problem states that Khalid buys 4 notebooks.
+3. Calculate the total cost by multiplying the cost of one notebook by the number of notebooks. This can be expressed as:
+   \[
+   \text{Total cost} = \text{Cost per notebook} \times \text{Number of notebooks}
+   \]
+   Substituting the given values:
+   \[
+   \text{Total cost} = 7 \, \text{ryals/notebook} \times 4 \, \text{notebooks} = 28 \, \text{ryals}
+   \]
+
+Therefore, the total amount Khalid pays is \(\boxed{28}\).",84,199,12.533970800112002,success,1,1,correct,
+19,arabic,16,16.0,1,لدى نورة 25 بالونًا. انفجر 9 بالونات. كم بالونًا بقي؟,"1. We start with the number 25.
+2. We need to subtract 9 from 25.
+3. Performing the subtraction: \( 25 - 9 = 16 \).
+
+Conclusion: 
+\[
+\boxed{16}
+\]",108,57,3.765440299990587,success,1,1,correct,
+19,english,16,16.0,1,Noura has 25 balloons. 9 balloons burst. How many balloons are left?,"To determine how many balloons Noura has left after some of them burst, we need to follow these steps:
+
+1. Identify the initial number of balloons Noura has. According to the problem, Noura has 25 balloons.
+2. Identify the number of balloons that burst. The problem states that 9 balloons burst.
+3. Subtract the number of burst balloons from the initial number of balloons to find out how many balloons are left.
+
+Let's perform the subtraction:
+
+\[ 25 - 9 = 16 \]
+
+So, the number of balloons left is \(\boxed{16}\).",81,128,7.885095700039528,success,1,1,correct,
+20,arabic,84,84.0,1,يملك متجر 7 صناديق، في كل صندوق 12 زجاجة. كم زجاجة يملك المتجر؟,"要inary Find the total number of notebooks that a student has if he has 7 books and each book has 12 pages. Let's break it down step by step:
+
+1. Identify the number of books: 7
+2. Identify the number of pages per book: 12
+3. Multiply the number of books by the number of pages per book to find the total number of pages:
+
+\[ 7 \text{ books} \times 12 \text{ pages per book} = 84 \text{ pages} \]
+
+So, the total number of pages is \(\boxed{84}\).",114,131,8.027115499950014,success,1,1,correct,
+20,english,84,84.0,1,"A store has 7 boxes, with 12 bottles in each box. How many bottles does the store have?","To determine the total number of bottles in the store, we need to multiply the number of boxes by the number of bottles in each box. Here are the steps:
+
+1. Identify the number of boxes: There are 7 boxes.
+2. Identify the number of bottles in each box: There are 12 bottles in each box.
+3. Multiply the number of boxes by the number of bottles in each box: \(7 \times 12\).
+
+Now, let's perform the multiplication:
+
+\[7 \times 12 = 84\]
+
+So, the store has \(\boxed{84}\) bottles.",85,130,8.187756299972534,success,1,1,correct,

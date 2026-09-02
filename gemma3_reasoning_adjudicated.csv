@@ -1,0 +1,430 @@
+﻿problem_id,language,expected_answer,extracted_answer,is_correct,extraction_method,needs_manual_review,problem,generated_response,input_tokens,output_tokens,generation_seconds,status,automatic_is_correct,manual_is_correct,manual_note
+1,english,18,18,1,english_final_marker,0,"Ahmed has 20 apples. He gives 7 apples to his friend, then buys 5 more apples. How many apples does he have now?","Let's analyze the problem step by step:
+
+1. **Start:** Ahmed begins with 20 apples.
+2. **Gives to friend:** He gives 7 apples to his friend, so the number of apples he has decreases by 7.  This means he has 20 - 7 = 13 apples.
+3. **Buys more:** He buys 5 more apples, so the number of apples increases by 5. This means he now has 13 + 5 = 18 apples.
+
+FINAL ANSWER: 18 কর্তৃত্বrint Sinoultimofulfilled",91,256,26.557819599984214,success,1,1,
+1,arabic,18,18,1,arabic_final_marker,0,لدى أحمد 20 تفاحة. أعطى 7 تفاحات لصديقه، ثم اشترى 5 تفاحات أخرى. كم تفاحة لديه الآن؟,"أحمد بدأ بـ 20 تفاحة.
+أعطى 7 تفاحات لصديقه، لذا أصبح لديه 20 - 7 = 13 تفاحة.
+ثم اشترى 5 تفاحات أخرى، لذا أصبح لديه 13 + 5 = 18 تفاحة.
+
+الإجابة النهائية: 18ανοchinoلا يمكنني إكمال هذا الطلب. سلمت. બો ن.יו.
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18
+الإجابة النهائية: 18",114,256,22.76613330002874,success,1,1,
+2,arabic,17,17,1,arabic_final_marker,0,لدى سارة 15 كتابًا. أعطت 4 كتب لأختها ثم اشترت 6 كتب جديدة. كم كتابًا لديها الآن؟,"1.  **ابدأ بمتغيرات:**
+    *   عدد الكتب التي لدى سارة = 15
+    *   عدد الكتب التي أعطتها لأختها = 4
+    *   عدد الكتب التي اشتريتها = 6
+
+2.  **احسب عدد الكتب بعد إعطاء الكتب لأختها:**
+    *   عدد الكتب بعد إعطاء الكتب = 15 - 4 + 6 = 11 + 6 = 17
+
+3.  **احسب عدد الكتب التي لدى سارة الآن:**
+    *   عدد الكتب التي لدى سارة الآن = 17
+
+الإجابة النهائية: 17ανο) učtچ) učt učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt) učt)",110,256,24.00685040000826,success,1,1,
+2,english,17,17,1,english_final_marker,0,Sara has 15 books. She gives 4 books to her sister and then buys 6 new books. How many books does she have now?,"Let $B$ be the number of books Sara has initially.
+We are given that Sara has 15 books, so $B = 15$.
+She gives 4 books to her sister. So the number of books she has left is $15 - 4 = 11$.
+Then she buys 6 new books. So the total number of books she has now is $11 + 6 = 17$.
+
+FINAL ANSWER: 17 কর্তৃত্বسلم تکمیل
+FINAL ANSWER: 17エンスর
+FINAL ANSWER: 17
+
+
+
+
+FINAL ANSWER: 17
+
+FINAL ANSWER: 17
+
+FINAL ANSWER: 17
+
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER: 17
+FINAL ANSWER:",91,256,22.65683839994017,success,1,1,
+3,english,15,15,1,english_final_marker,0,"Mohammed buys 8 pens, and he already has 12 pens at home. He gives 5 pens to his friend. How many pens does he have left?","Let $P$ be the number of pens Mohammed buys.
+Let $H$ be the number of pens Mohammed already has at home.
+We are given that Mohammed buys 8 pens, so $P = 8$.
+We are given that he already has 12 pens at home, so $H = 12$.
+The total number of pens Mohammed has is $P + H = 8 + 12 = 20$.
+He gives 5 pens to his friend.
+The number of pens he has left is the total number of pens minus the number of pens he gives away.
+So, the number of pens left is $20 - 5 = 15$.
+
+Final ANSWER: 15 downloaded क्रमांका
+FINAL ANSWER: 15چुकली
+ sounded like a typo.
+Let's re-read the problem carefully.
+Mohammed buys 8 pens. He already has 12 pens at home.
+He gives 5 pens to his friend.
+The number of pens he has left is $12 - 5 = 7$.
+However, the problem states that he gives 5 pens to his friend.
+So, the number of pens",94,256,23.02093919995241,success,1,1,
+3,arabic,15,-1,0,arabic_final_marker,0,اشترى محمد 8 أقلام، وكان لديه 12 قلمًا في المنزل. أعطى 5 أقلام لصديقه. كم قلمًا بقي لديه؟,"1.  **ابدأ بالعدد الأصلي:** كان لدى محمد 12 قلمًا.
+2.  **أضف الأقلام التي أعطاها لصديقه:** أضاف محمد 5 أقلام لصديقه، لذا أصبح لديه 12 - 5 = 7 أقلام.
+3.  **أزل الأقلام التي فقدها:** فقد محمد 8 أقلام، لذا بقي لديه 7 - 8 = -1 قلم.
+4.  **الخطأ في التفكير:**  الخطأ في التفكير هو أن محمد فقد 1 قلم، ولكن السؤال يطلب كم قلمًا بقي لديه.  لذلك، يجب أن نأخذ في الاعتبار أن محمد أعطى الأقلام، وليس فقدها.
+5.  **النتيجة النهائية:**  بقي لدى محمد -1 قلم.
+
+الإجابة النهائية: -1裔.انو.5Apexuppy.",113,256,22.910451999981888,success,0,0,
+4,arabic,18,18,1,arabic_final_marker,0,لدى ليلى 30 قطعة حلوى. أعطت 12 قطعة لأصدقائها. كم قطعة بقيت؟,"لدي ليلى 30 قطعة حلوى. أعطت 12 قطعة لأصدقائها.
+لإيجاد عدد القطع المتبقية، نطرح عدد القطع التي أعطتها من عدد القطع التي كانت لدى ليلى الأصلية.
+30 - 12 = 18
+إذن، بقيت 18 قطعة.
+
+الإجابة النهائية: 18ανο
+الإجابة النهائية: 18ی
+الإجابة النهائية: 18",105,256,22.70331680006348,success,1,1,
+4,english,18,18,1,english_final_marker,0,Layla has 30 pieces of candy. She gives 12 pieces to her friends. How many pieces are left?,"Let the total number of pieces of candy Layla has be $C = 30$.
+Layla gives 12 pieces of candy to her friends.
+The number of pieces left is the initial number of pieces minus the number of pieces given away.
+So, the number of pieces left is $30 - 12 = 18$.
+
+FINAL ANSWER: 18ultimo昨晚的遊戲是關於你。
+Yoru nà de yóuxī shì guānyú nǐ.fulfilled
+FINAL ANSWER: 18",86,256,25.575373700005,success,1,1,
+5,english,30,3,0,english_final_marker,0,"Khalid has 5 boxes, with 6 balls in each box. How many balls does he have?","Let $n$ be the number of boxes Khalid has.
+Let $b$ be the number of balls in each box.
+We are given that $n = 5$ and $b = 6$.
+The total number of balls Khalid has is the product of the number of boxes and the number of balls in each box.
+Total number of balls = $n \times b = 5 \times 6 = 30$.
+
+Final ANSWER: 30ultimoultimo সম্পন্ন
+FINAL ANSWER: 30স্বাক্ষর
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 30
+FINAL ANSWER: 3",82,256,25.046415699995123,success,0,1,Correct solution: model computed 5*6=30 and repeatedly gave FINAL ANSWER: 30. Extractor captured a later truncated 3.
+5,arabic,30,30,1,arabic_final_marker,0,لدى خالد 5 صناديق، في كل صندوق 6 كرات. كم كرة لديه؟,"خالد لديه 30 كرة.
+
+الإجابة النهائية: 30ówno سلمணர்வு المركزணர்வு سمت المركز المركز المركز
+الإجابة النهائية: 30",98,256,24.672511099954136,success,1,1,
+6,arabic,4,2435,0,arabic_final_marker,0,وزعت المعلمة 24 قلمًا بالتساوي على 6 طلاب. كم قلمًا يحصل عليه كل طالب؟,"لنفترض أن كل طالب يحصل على عدد من الأقلام هو x.
+إذن، إجمالي عدد الأقلام هو 24.
+إذا تم توزيع 24 قلمًا على 6 طلاب، فإن كل طالب يحصل على x/6 قلمًا.
+إذن، يمكننا كتابة المعادلة التالية:
+6 * (x/6) = 24
+x = 24
+
+الإجابة النهائية: 2435böböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböböbö",102,256,26.384925200021826,success,0,0,
+6,english,4,4,1,english_final_marker,0,A teacher distributes 24 pens equally among 6 students. How many pens does each student receive?,"Let $n$ be the number of pens distributed, and let $s$ be the number of students.
+We are given that the teacher distributes 24 pens among 6 students.
+This means that $n = 24$ and $s = 6$.
+We want to find the number of pens each student receives.
+The pens are distributed equally among the students, so we divide the total number of pens by the number of students.
+Pens per student = $\frac{n}{s} = \frac{24}{6}$
+$\frac{24}{6} = 4$
+Each student receives 4 pens.
+
+FINAL ANSWER: 4然一步一步 स्पष्टीकरण:
+
+1.  **Understand the problem:** The problem states that the teacher distributes 24 pens to 6 students. We need to find out how many pens each student receives.
+2.  **Divide the total number of pens by the number of students:**  The total number of pens is 24, and the number of students is 6.  So, we divide 24 by 6 to find the number of pens each student receives.
+3.  **Calculate the division:** 2",81,256,25.38664340006653,success,1,1,
+7,english,30,30,1,english_final_marker,0,A pen costs 10 riyals. Ali buys 3 pens. How much does he pay?,"Here's how to solve the problem step-by-step:
+
+1. **Calculate the total cost of the pens:**
+   * Each pen costs 10 riyals.
+   * Ali buys 3 pens, so the total cost is 3 * 10 riyals = 30 riyals.
+
+2. **Answer:**
+   The pen costs 30 riyals.
+
+FINAL ANSWER: 30ero
+最后一个步骤是正确的。出口
+യюз
+FINAL ANSWER: 30",82,256,25.99618110002484,success,1,1,
+7,arabic,30,403,0,arabic_final_marker,0,كان سعر القلم 10 ريالات. اشترى علي 3 أقلام. كم دفع؟,"سعر القلم الواحد هو 10 ريالات.
+علي اشترى 3 أقلام، إذن إجمالي سعر الأقلام هو 3 * 10 = 30 ريالات.
+السعر الإجمالي هو 10 + 30 = 40 ريالات.
+الإجابة النهائية: 403 کودک کودکاوكي.anskje.ஆחרת.",98,256,26.198718800093047,success,0,0,
+8,arabic,35,35,1,arabic_final_marker,0,لدى مريم 40 ريالًا. أنفقت 15 ريالًا ثم حصلت على 10 ريالات. كم أصبح لديها؟,"1. ابدأ بمبلغ مريم: 40 ريالًا.
+2. انفقت: 40 - 15 = 25 ريالًا.
+3. حصلت على: 25 + 10 = 35 ريالًا.
+الإجابة النهائية: 35ανοchinochinochinochinochinochinochinochinochinochinochino",109,256,25.969804299995303,success,1,1,
+8,english,35,35,1,english_final_marker,0,Mary has 40 riyals. She spends 15 riyals and then receives 10 riyals. How much does she have now?,"Let Mary's initial amount of money be $M_0$.
+We are given that Mary has 40 riyals, so $M_0 = 40$.
+She spends 15 riyals, so the amount of money she has after spending is $M_1 = M_0 - 15 = 40 - 15 = 25$.
+Then she receives 10 riyals, so the amount of money she has after receiving the money is $M_2 = M_1 + 10 = 25 + 10 = 35$.
+
+Final ANSWER: 35 berlanced的气泡არაარაარაარაარა",94,256,26.914957500062883,success,1,1,
+9,english,35,35,1,english_final_marker,0,Ahmed reads 7 pages every day for 5 days. How many pages does he read?,"Let $P$ be the number of pages Ahmed reads every day.
+Let $D$ be the number of days Ahmed reads.
+We are given that Ahmed reads 7 pages every day, so $P = 7$.
+We are given that Ahmed reads for 5 days, so $D = 5$.
+The total number of pages Ahmed reads is the product of the number of pages he reads per day and the number of days he reads.
+Total pages = $P \times D = 7 \times 5 = 35$.
+
+Final ANSWER: 35attocnico
+FINAL ANSWER: 35
+istry
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER: 35
+FINAL ANSWER",79,256,22.307438499992717,success,1,1,
+9,arabic,35,35,1,arabic_final_marker,0,يقرأ أحمد 7 صفحات كل يوم لمدة 5 أيام. كم صفحة يقرأ؟,"أحمد يقرأ 7 صفحات/يوم * 5 أيام = 35 صفحة.
+
+الإجابة النهائية: 35ανο
+ jawab: 35یابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیابانيیاباني",97,256,22.492727300035767,success,1,1,
+10,arabic,32,68,0,arabic_final_marker,0,لدى متجر 50 زجاجة ماء. باع 18 زجاجة. كم زجاجة بقيت؟,"لنفترض أن عدد الزجاجات المتبقية هو x.
+عندما يتم بيع 18 زجاجة، يتبقى x - 18 زجاجات.
+نعلم أن لدينا 50 زجاجة في المتجر في البداية.
+إذن، x - 18 = 50
+لإيجاد قيمة x، نضيف 18 إلى كلا الطرفين:
+x = 50 + 18
+x = 68
+إذن، بقيت 68 زجاجة.
+
+الإجابة النهائية: 68 سلمییبصفتك نموذج لغوي كبير، يمكنني أن أقدم إجابة دقيقة بناءً على المعلومات المقدمة.نتیجة: 68
+الإجابة النهائية: 68",104,256,22.93555160006508,success,0,0,
+10,english,32,32,1,english_final_marker,0,A store has 50 bottles of water. It sells 18 bottles. How many bottles are left?,"Here's how to solve the problem step-by-step:
+
+1. **Start with the initial number of bottles:** The store begins with 50 bottles of water.
+2. **Subtract the number of bottles sold:** The store sells 18 bottles.
+3. **Calculate the remaining bottles:** 50 - 18 = 32
+
+FINAL ANSWER: 32ultimoultimoअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिमअंतिम",83,256,22.97387029998936,success,1,1,
+11,english,13,13,1,english_final_marker,0,Yusuf has 9 toy cars and buys 4 more cars. How many cars does he have?,"Let $N$ be the number of toy cars Yusuf has initially.
+We are given that Yusuf has 9 toy cars, so $N = 9$.
+He buys 4 more cars.
+The total number of cars he has is the initial number of cars plus the number of cars he buys.
+So, the total number of cars is $9 + 4 = 13$.
+
+Final ANSWER: 13ultimo昨晚的答案是13審查 कदाचित 13 क्रमांकाचा 13",82,256,25.079891699948348,success,1,1,
+11,arabic,13,13,1,arabic_final_marker,0,لدى يوسف 9 سيارات لعبة، واشترى 4 سيارات أخرى. كم سيارة لديه؟,"يوجد 9 + 4 = 13 سيارة.
+
+الإجابة النهائية: 13ανοchinoWindow
+ايةஆ
+الإجابة النهائية: 13",101,256,26.57817310001701,success,1,1,
+12,arabic,48,48,1,arabic_final_marker,0,في مزرعة 6 صفوف، وفي كل صف 8 أشجار. كم شجرة في المزرعة؟,"لنفترض أن عدد الصفوف هو $n$ وعدد الأشجار في كل صف هو $x$.
+إذن، عدد الصفوف هو $6 \times n$ وعدد الأشجار في كل صف هو $n$.
+إجمالي عدد الأشجار في المزرعة هو $n \times (n+1)$.
+في المزرعة 6 صفوف، كل صف يحتوي على 8 أشجار.
+إذن، إجمالي عدد الأشجار في المزرعة هو $6 \times 8 = 48$.
+إجمالي عدد الأشجار في المزرعة هو $n \times (n+1)$.
+لدينا 6 صفوف، وكل صف يحتوي على 8 أشجار.
+إجمالي عدد الأشجار = 6 * 8 = 48.
+إجمالي عدد الأشجار في المزرعة هو 48.
+
+الإجابة النهائية: 48ανο
+الإجابة النهائية: 48ی
+الإجابة النهائية: 48",101,256,24.211764900013804,success,1,1,
+12,english,48,48,1,english_final_marker,0,"There are 6 rows of trees on a farm, with 8 trees in each row. How many trees are there on the farm?","Let $R$ be the number of rows of trees on the farm.
+Let $T$ be the number of trees in each row.
+We are given that there are 6 rows of trees, so $R = 6$.
+We are given that there are 8 trees in each row, so $T = 8$.
+The total number of trees on the farm is the product of the number of rows and the number of trees in each row.
+Total number of trees = $R \times T = 6 \times 8 = 48$.
+
+Final ANSWER: 48ultimoultimo učinno
+FINAL ANSWER: 48
+
+
+ையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையையைய",88,256,24.003095499938357,success,1,1,
+13,english,65,65,1,english_final_marker,0,Salim has 100 riyals. He buys a toy for 35 riyals. How many riyals does he have left?,"Let the initial amount of money Salim has be $A = 100$ riyals.
+Let the cost of the toy be $C = 35$ riyals.
+Salim buys the toy, so he spends 35 riyals.
+The amount of money Salim has left is the initial amount minus the cost of the toy.
+Money left = $A - C = 100 - 35 = 65$ riyals.
+
+Final ANSWER: 65respondedhttp://www.example.com/solve
+FINAL ANSWER: 65",93,256,25.8238545000786,success,1,1,
+13,arabic,65,100,0,arabic_final_marker,0,لدى سليم 100 ريال. اشترى لعبة بسعر 35 ريالًا. كم ريالًا بقي معه؟,"سليم بدأ بـ 100 ريال.
+اشترى لعبة بسعر 35 ريالًا.
+إجمالي المبلغ الذي اشترى هو 100 + 35 = 135 ريالًا.
+سليم حصل على 135 - 35 = 100 ريالًا.
+الإجابة النهائية: 1003قدمت الإجابة النهائية: 100چد.5வன.",103,256,26.34094120003283,success,0,0,
+14,arabic,30,30303030,0,arabic_final_marker,0,قطعت سيارة 60 كيلومترًا في ساعتين بنفس السرعة. كم كيلومترًا تقطع في الساعة؟,"لنفترض أن السرعة هي 'س' كيلومترًا في الساعة.
+إذا قطعت السيارة مسافة 60 كيلومترًا في 2 ساعات، فإن المسافة = السرعة × الزمن.
+إذن، 60 = س × 2
+لحل المعادلة، نقسم الطرفين على 2:
+60 / 2 = س × 2 / 2
+30 = س
+إذن، السرعة هي 30 كيلومترًا في الساعة.
+
+الإجابة النهائية: 3030557 कदा ولا يصحح.
+الإجابة النهائية: 30303030",104,256,23.77922700007912,success,0,1,Correct solution: model explicitly derived 60/2=30 and stated speed = 30 km/h. Later token degeneration caused the extractor to capture repeated digits.
+14,english,30,30,1,english_final_marker,0,A car travels 60 kilometers in two hours at the same speed. How many kilometers does it travel per hour?,"Let $d$ be the distance traveled by the car, and let $t$ be the time taken.
+We are given that the car travels 60 kilometers in 2 hours.
+We can use the formula: distance = speed × time.
+The speed of the car is given by $\frac{60 \text{ km}}{2 \text{ hours}} = 30 \text{ km/hour}$.
+The problem asks for the number of kilometers the car travels per hour.
+We are given that the car travels 60 kilometers in 2 hours.
+We can calculate the speed of the car by dividing the distance by the time:
+Speed = $\frac{60 \text{ km}}{2 \text{ hours}} = 30 \text{ km/hour}$.
+Therefore, the car travels 30 kilometers per hour.
+
+FINAL ANSWER: 30 solved. trờinergicallyernednergicallynergicallynergicallynergicallynergicallynergicallynergicallynergicallynergicallynergicallynergicallynergicallynergicallynergically",84,256,25.254114700015634,success,1,1,
+15,english,25,25,1,english_final_marker,0,"Ahmed has 3 bags, with 10 oranges in each bag. He gives 5 oranges to his brother. How many oranges are left?","Let $N$ be the number of oranges Ahmed has initially.
+Ahmed has 3 bags, with 10 oranges in each bag.
+So, the total number of oranges he has is $3 \times 10 = 30$ oranges.
+Ahmed gives 5 oranges to his brother.
+The number of oranges left is the initial number of oranges minus the number of oranges given to his brother.
+Number of oranges left = $30 - 5 = 25$ oranges.
+
+FINAL ANSWER: 25ultimoultimoエンスরరు",90,256,22.71284399996512,success,1,1,
+15,arabic,25,25,1,arabic_final_marker,0,لدى أحمد 3 أكياس، في كل كيس 10 برتقالات. أعطى 5 برتقالات لأخيه. كم برتقالة بقيت؟,"1.  عدد البرتقالات في الكيس الواحد: 10 برتقالات
+2.  عدد الكيسات: 3
+3.  إجمالي عدد البرتقالات في جميع الكيسات: 10 برتقالات/كيس * 3 كيس = 30 برتقالة
+4.  عدد البرتقالات التي أعطاها أحمد لأخيه: 5 برتقالات
+5.  عدد البرتقالات المتبقية: 30 - 5 = 25 برتقالة
+
+الإجابة النهائية: 2595 বেলু   المركز5 المركز
+الإجابة النهائية: 25",115,256,25.415027800016105,success,1,1,
+16,arabic,100,100,1,arabic_final_marker,0,كان لدى المدرسة 80 طالبًا، انضم 20 طالبًا جديدًا. كم أصبح عدد الطلاب؟,"الخطوة 1: أضف عدد الطلاب الجدد إلى عدد الطلاب الحاليين.
+80 + 20 = 100
+
+الخطوة 2: قم بإخراج الناتج.
+عدد الطلاب هو 100.
+
+الإجابة النهائية: 100ανο)5چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)چ)",100,256,24.46588689996861,success,1,1,
+16,english,100,100,1,english_final_marker,0,A school has 80 students. 20 new students join the school. How many students are there now?,"Let the initial number of students in the school be $N_0$.
+We are given that $N_0 = 80$.
+Let the number of new students who join the school be $n$.
+We are given that $n = 20$.
+The total number of students in the school after the new students join is the sum of the initial number of students and the number of new students.
+So, the total number of students is $N = N_0 + n = 80 + 20 = 100$.
+
+Final ANSWER: 100டோ
+FINAL ANSWER: 100 அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை அறிவுரை",84,256,24.68435470003169,success,1,1,
+17,english,9,9,1,english_final_marker,0,Fatima has 45 flowers and divides them equally among 5 vases. How many flowers are in each vase?,"Let $F$ be the number of flowers Fatima has.
+Let $V$ be the number of vases.
+We are given that Fatima has $F = 45$ flowers.
+We are given that Fatima divides the flowers equally among $V = 5$ vases.
+We want to find the number of flowers in each vase.
+The number of flowers in each vase is the total number of flowers divided by the number of vases.
+So, the number of flowers in each vase is $\frac{45}{5}$.
+We can calculate $\frac{45}{5}$ as follows:
+$\frac{45}{5} = 9$
+Therefore, there are 9 flowers in each vase.
+
+FINAL ANSWER: 9然bertorspyce क्रमांका
+FINAL ANSWER: 9
+گر
+FINAL ANSWER: 9
+FINAL ANSWER: 9
+FINAL ANSWER: 9
+FINAL ANSWER: 9
+FINAL ANSWER: 9
+FINAL ANSWER: 9
+FINAL ANSWER: 9
+FINAL ANSWER: 9",84,256,25.21216840005945,success,1,1,
+17,arabic,9,9,1,arabic_final_marker,0,لدى فاطمة 45 زهرة، قسمت الزهور بالتساوي على 5 مزهريات. كم زهرة في كل مزهرية؟,"لنفكر في الأمر خطوة بخطوة:
+* فاطمة لديها 45 زهرة.
+* تقسم الزهور على 5 مزهريات.
+* عدد الزهور في كل مزهرية = إجمالي عدد الزهور / عدد المزهريات
+* عدد الزهور في كل مزهرية = 45 / 5 = 9
+
+الإجابة النهائية: 9ανο
+الإجابة النهائية: 97ی
+الإجابة النهائية: 9
+الإجابة النهائية: 9",108,256,26.11158810008783,success,1,1,
+18,arabic,28,28,1,arabic_final_marker,0,اشترى خالد 4 دفاتر، سعر الدفتر الواحد 7 ريالات. كم دفع؟,"خالد اشترى 4 دفاتر بسعر 7 ريالات لكل دفتر.
+إجمالي المبلغ الذي دفعته هو 4 دفاتر * 7 ريالات/دفتر = 28 ريالات.
+
+الإجابة النهائية: 28ανο
+52atto učin't do this.
+
+Here's the step-by-step solution:
+
+The problem states that the student bought 4 notebooks at a price of 7 dollars per notebook.
+
+To find the total cost, we multiply the number of notebooks by the price per notebook:
+
+Total cost = 4 notebooks * 7 dollars/notebook = 28 dollars
+
+The student paid 28 dollars.
+
+الإجابة النهائية: 28",97,256,25.178391200024635,success,1,1,
+18,english,28,28,1,english_final_marker,0,Khalid buys 4 notebooks. Each notebook costs 7 riyals. How much does he pay?,"Here's how to solve the problem step-by-step:
+
+1. **Calculate the total cost of the notebooks:**
+   Khalid buys 4 notebooks, and each notebook costs 7 riyals.
+   Total cost = 4 notebooks * 7 riyals/notebook = 28 riyals
+
+**Final ANSWER: 28**rolloverتریylanقدمtained",82,256,24.81886540004052,success,1,1,
+19,english,16,16,1,english_final_marker,0,Noura has 25 balloons. 9 balloons burst. How many balloons are left?,"Here's how to solve the problem step-by-step:
+
+1. **Start with the initial number of balloons:** Nuroura begins with 25 balloons.
+2. **Subtract the balloons that burst:** 9 balloons burst, so we subtract 9 from the initial number.
+3. **Calculate the remaining balloons:** 25 - 9 = 16
+
+FINAL ANSWER: 16ero
+3fulfilled
+FINAL ANSWER: 16",79,256,24.530611100024544,success,1,1,
+19,arabic,16,16,1,arabic_final_marker,0,لدى نورة 25 بالونًا. انفجر 9 بالونات. كم بالونًا بقي؟,"لنحل المسألة خطوة بخطوة:
+*   تبدأ نورة بـ 25 بالونة.
+*   انفجرت 9 بالونات، لذا تبقى 25 - 9 = 16 بالونة.
+*   إذن، بقي 16 بالونة.
+
+الإجابة النهائية: 16ανο سلم.5چ‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌",100,256,24.492345899925567,success,1,1,
+20,arabic,84,84,1,arabic_final_marker,0,يملك متجر 7 صناديق، في كل صندوق 12 زجاجة. كم زجاجة يملك المتجر؟,"لنفترض أن إجمالي عدد الزجاجات في المتجر هو N.
+المسألة تذكر أن المتجر يملك 7 صناديق، وكل صندوق يحتوي على 12 زجاجة.
+إذن، إجمالي عدد الزجاجات في المتجر هو: 7 * 12 = 84.
+
+الإجابة النهائية: 84ανο
+الإجابة النهائية: 84یحسنت!  أنت على الطريق الصحيح.  الآن، دعنا نتحقق من الحل.
+
+المسألة:
+يملك متجر 7 صناديق، في كل صندوق 12 زجاجة. كم زجاجة يملك المتجر؟
+
+*   عدد الصناديق: 7
+*   عدد الزجاجات في كل صندوق: 12
+*   إجمالي عدد الزجاجات = عدد الصناديق * عدد الزجاجات في كل صندوق
+*   إجمالي عدد الزجاجات = 7 * 12 = 84
+
+الإجابة النهائية: 84",105,256,23.07943869999144,success,1,1,
+20,english,84,84,1,english_final_marker,0,"A store has 7 boxes, with 12 bottles in each box. How many bottles does the store have?","Let the number of boxes be $B = 7$.
+Let the number of bottles in each box be $N = 12$.
+The total number of bottles in the store is the product of the number of boxes and the number of bottles in each box.
+Total number of bottles = $B \times N = 7 \times 12$
+$7 \times 12 = 7 \times (10 + 2) = 7 \times 10 + 7 \times 2 = 70 + 14 = 84$
+The store has 84 bottles.
+
+FINAL ANSWER: 84ultimoultimoडॉक्टरअंतिमઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંતિમઅંત",84,256,22.8411321999738,success,1,1,

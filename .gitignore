@@ -1,42 +1,44 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Distribution / packaging
-dist/
-build/
-*.egg-info/
+*.pyc
+*.pyo
+*.pyd
 
 # Virtual environments
 venv/
-env/
-.env/
 .venv/
+env/
 
-# IDE specific files
-.idea/
-.vscode/
-*.swp
-*.swo
+# Hugging Face / model caches
+huggingface_cache/
+.cache/
+models--*/
 
-# Local development settings
-.env
-.env.local
+# Large model files
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.ckpt
 
-# Logs
+# Model offloading
+qwen_offload/
+offload/
+offload_folder/
+
+# Temporary files
+*.tmp
 *.log
 
-# Unit test / coverage reports
-htmlcov/
-.coverage
-.pytest_cache/
+# Jupyter
+.ipynb_checkpoints/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# macOS specific
-.DS_Store
-
-# Windows specific
+# Windows
 Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.egg-info/
