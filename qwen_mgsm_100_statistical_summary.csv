@@ -1,0 +1,2 @@
+﻿model,n_pairs,arabic_correct,arabic_accuracy,english_correct,english_accuracy,english_minus_arabic,both_correct,both_wrong,english_only_correct,arabic_only_correct,discordant_pairs,mcnemar_exact_p,bootstrap_ci_low,bootstrap_ci_high,manual_review_cases,changed_by_adjudication
+Qwen2.5-Math-1.5B-Instruct,100,2,0.02,92,0.92,0.9,2,8,90,0,90,1.6155871338926322e-27,0.84,0.95,47,1

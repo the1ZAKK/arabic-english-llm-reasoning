@@ -1,0 +1,665 @@
+
+====================================================================================================
+PROBLEM 3
+====================================================================================================
+
+GOLD ANSWER:
+160
+
+ORIGINAL ARABIC QUESTION:
+تقوم كارلا بتنزيل ملف بحجم 200 جيجابايت. عادةً ما يمكنها تنزيل 2 جيجابايت/الدقيقة، ولكن بعد 40% من عملية التنزيل، يفرض Windows إعادة التشغيل لتثبيت التحديثات، الأمر الذي يستغرق 20 دقيقة. ثم يتعين على كارلا إعادة تشغيل عملية التنزيل من البداية. ما مقدار الوقت الذي يستغرقه تنزيل الملف؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nتقوم كارلا بتنزيل ملف بحجم 200 جيجابايت. عادةً ما يمكنها تنزيل 2 جيجابايت/الدقيقة، ولكن بعد 40% من عملية التنزيل، يفرض Windows إعادة التشغيل لتثبيت التحديثات، الأمر الذي يستغرق 20 دقيقة. ثم يتعين على كارلا إعادة تشغيل عملية التنزيل من البداية. ما مقدار الوقت الذي يستغرقه تنزيل الملف؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+تقوم كارلا بتنزيل ملف بحجم 200 جيجابايت. عادةً ما يمكنها تنزيل 2 جيجابايت/الدقيقة، ولكن بعد 40% من عملية التنزيل، يفرض Windows إعادة التشغيل لتثبيت التحديثات، الأمر الذي يستغرق 20 دقيقة. ثم يتعين على كارلا إعادة تشغيل عملية التنزيل من البداية. ما مقدار الوقت الذي يستغرقه تنزيل الملف؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+تقوم كارلا بتنزيل ملف بحجم 200 جيجابايت. عادةً ما يمكنها تنزيل 2 جيجابايت/الدقيقة، ولكن بعد 40% من عملية التنزيل، يفرض Windows إعادة التشغيل لتثبيت التحديثات، الأمر الذي يستغرق 20 دقيقة. ثم يتعين على كارلا إعادة تشغيل عملية التنزيل من البداية. ما مقدار الوقت الذي يستغرقه تنزيل الملف؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+1. **Define the variables:**
+   - Let \( x \) be the number of games that must be played to meet the requirement of 200 points.
+
+2. **Set up the equation:**
+   - Each game is worth 20 points.
+   - Therefore, the total points after \( x \) games is \( 20x \).
+
+3. **Determine the requirement:**
+   - The requirement is to have at least 200 points.
+   - This gives us the inequality:
+     \[
+     20x \geq 200
+     \]
+
+4. **Solve the inequality:**
+   - Divide both sides by 20:
+     \[
+     x \geq \frac{200}{20}
+     \]
+   - Simplify the right-hand side:
+     \[
+     x \geq 10
+     \]
+
+5. **Conclusion:**
+   - To meet the requirement of 200 points, at least 10 games must be played.
+
+The final answer is \( \boxed{10} \).
+
+
+====================================================================================================
+PROBLEM 7
+====================================================================================================
+
+GOLD ANSWER:
+7
+
+ORIGINAL ARABIC QUESTION:
+تقوم كلير بتحضير عجة من 3 بيضات كل صباح لتناول الإفطار. كم عدد الدزينات من البيض التي ستأكلها في4 أسابيع؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nتقوم كلير بتحضير عجة من 3 بيضات كل صباح لتناول الإفطار. كم عدد الدزينات من البيض التي ستأكلها في4 أسابيع؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+تقوم كلير بتحضير عجة من 3 بيضات كل صباح لتناول الإفطار. كم عدد الدزينات من البيض التي ستأكلها في4 أسابيع؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+تقوم كلير بتحضير عجة من 3 بيضات كل صباح لتناول الإفطار. كم عدد الدزينات من البيض التي ستأكلها في4 أسابيع؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+les:
+1. The problem states that each page in the book has 40 lines.
+2. Each line has 65 characters.
+3. Each page has 50 words.
+4. Each word has 4 letters.
+5. We need to find the total number of words in the book.
+
+First, let's calculate the total number of characters on one page:
+\[
+40 \text{ lines/page} \times 65 \text{ characters/line} = 2600 \text{ characters/page}
+\]
+
+Next, we need to determine the number of characters per word. Since each word has 4 letters and each character is a letter, each word has 4 characters. Therefore, the number of words on one page is:
+\[
+2600 \text{ characters/page} \div 4 \text{ characters/word} = 650 \text{ words/page}
+\]
+
+The problem states that each page has 50 words. This seems to be a contradiction with our previous calculation. Let's assume the problem meant that each page has 50 words, and we need to find the total number of pages in the book.
+
+If each page has 50 words, and we need to find the total number of pages, we need to know the total number of words in the book. However, the problem does not provide the total number of words in the book. Instead, it asks for the number of pages in the book, assuming each page has 50 words.
+
+Since the problem does not provide the total number of words in the book, we can only determine the number of pages if we know the total number of words. But based on the information given, we can only say that each page has 50 words.
+
+Therefore, the number of pages in the book is:
+\boxed{50}
+
+
+====================================================================================================
+PROBLEM 8
+====================================================================================================
+
+GOLD ANSWER:
+15
+
+ORIGINAL ARABIC QUESTION:
+عندي 10 لترات من مشروب البرتقال ثلثيها ماء وأريد أن أضيفها إلى 15 لترًا من مشروب الأناناس الذي يحتوي على ثلاثة أخماس الماء. ولكن عندما أسكبه، أسكب لترًا واحدًا من مشروب البرتقال. فما كمية الماء في الـ 24 لترًا المتبقية؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nعندي 10 لترات من مشروب البرتقال ثلثيها ماء وأريد أن أضيفها إلى 15 لترًا من مشروب الأناناس الذي يحتوي على ثلاثة أخماس الماء. ولكن عندما أسكبه، أسكب لترًا واحدًا من مشروب البرتقال. فما كمية الماء في الـ 24 لترًا المتبقية؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+عندي 10 لترات من مشروب البرتقال ثلثيها ماء وأريد أن أضيفها إلى 15 لترًا من مشروب الأناناس الذي يحتوي على ثلاثة أخماس الماء. ولكن عندما أسكبه، أسكب لترًا واحدًا من مشروب البرتقال. فما كمية الماء في الـ 24 لترًا المتبقية؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+عندي 10 لترات من مشروب البرتقال ثلثيها ماء وأريد أن أضيفها إلى 15 لترًا من مشروب الأناناس الذي يحتوي على ثلاثة أخماس الماء. ولكن عندما أسكبه، أسكب لترًا واحدًا من مشروب البرتقال. فما كمية الماء في الـ 24 لترًا المتبقية؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+les 10 for the total number of words in the test. The test consists of 10 questions, each worth 1 point, so the total number of words in the test is 10.
+
+Next, we need to determine how many words are in the test that was answered correctly. The problem states that the test was answered correctly by 24 words. However, this seems to be a misunderstanding because the test only has 10 questions, each worth 1 point, so the maximum number of words that can be answered correctly is 10.
+
+Given this, let's assume the problem is asking how many words were answered correctly out of the 10 questions. Since the test was answered correctly by 24 words, it seems there might be a misunderstanding in the problem statement. However, if we interpret it as the test was answered correctly by 24 words in some other context (like a different test or a different interpretation), we can proceed with the given information.
+
+To find out how many words were added to the test, we need to determine the difference between the number of words answered correctly and the number of words in the test. Since the test only has 10 questions, the maximum number of words that can be answered correctly is 10. Therefore, the number of words added to the test is:
+
+\[ 24 - 10 = 14 \]
+
+So, the number of words added to the test is \(\boxed{14}\).
+
+
+====================================================================================================
+PROBLEM 10
+====================================================================================================
+
+GOLD ANSWER:
+8
+
+ORIGINAL ARABIC QUESTION:
+تذوب شمعة بمقدار 2 سم كل ساعة تحترق فيها. فكم سنتيمترًا تنقص الشمعة بعد احتراقها من الساعة 1:00 ظهرًا إلى الساعة 5:00 مساءً؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nتذوب شمعة بمقدار 2 سم كل ساعة تحترق فيها. فكم سنتيمترًا تنقص الشمعة بعد احتراقها من الساعة 1:00 ظهرًا إلى الساعة 5:00 مساءً؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+تذوب شمعة بمقدار 2 سم كل ساعة تحترق فيها. فكم سنتيمترًا تنقص الشمعة بعد احتراقها من الساعة 1:00 ظهرًا إلى الساعة 5:00 مساءً؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+تذوب شمعة بمقدار 2 سم كل ساعة تحترق فيها. فكم سنتيمترًا تنقص الشمعة بعد احتراقها من الساعة 1:00 ظهرًا إلى الساعة 5:00 مساءً؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+1. **Understanding the Problem:**
+   - The problem states that the sum of the digits of a number is always 2.
+   - We need to determine if the sum of the digits of the number at 5:00 PM is 5, given that the sum of the digits of the number at 1:00 PM is 1.
+
+2. **Analyzing the Sum of Digits:**
+   - Let's denote the number at 1:00 PM as \( N_1 \).
+   - According to the problem, the sum of the digits of \( N_1 \) is 1.
+   - Let's denote the number at 5:00 PM as \( N_5 \).
+   - We need to determine if the sum of the digits of \( N_5 \) is 5.
+
+3. **Considering the Time Interval:**
+   - The time interval between 1:00 PM and 5:00 PM is 4 hours.
+   - Each hour, the number changes, but the sum of the digits remains constant.
+
+4. **Sum of Digits and Time Interval:**
+   - Since the sum of the digits of \( N_1 \) is 1, and the sum of the digits of \( N_5 \) is 5, we need to understand if there is a pattern or rule that allows the sum of the digits to increase by 4 units over 4 hours.
+
+5. **Possible Pattern:**
+   - One possible pattern is that the sum of the digits increases by 1 each hour.
+   - If this pattern holds, then after 4 hours, the sum of the digits should increase by 4 units.
+
+6. **Verification:**
+   - At 1:00 PM, the sum of the digits is 1.
+   - At 2:00 PM, the sum of the digits is 2.
+   - At 3:00 PM, the sum of the digits is 3.
+   - At 4:00 PM, the sum of the digits is 4.
+   - At 5:00 PM, the sum of the digits is 5.
+
+7. **Conclusion:**
+   - Given the pattern, the sum of the digits of the number at 5:00 PM is indeed 5.
+
+The final answer is \(\boxed{Yes}\).
+
+
+====================================================================================================
+PROBLEM 18
+====================================================================================================
+
+GOLD ANSWER:
+8
+
+ORIGINAL ARABIC QUESTION:
+عمر هاتف براندون هو أربعة أضعاف عمر هاتف بن. عمر هاتف بن هو ضعف عمر هاتف سوزي. إذا كان عمر هاتف سوزي هو عام واحد، فكم عمر هاتف براندون؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nعمر هاتف براندون هو أربعة أضعاف عمر هاتف بن. عمر هاتف بن هو ضعف عمر هاتف سوزي. إذا كان عمر هاتف سوزي هو عام واحد، فكم عمر هاتف براندون؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+عمر هاتف براندون هو أربعة أضعاف عمر هاتف بن. عمر هاتف بن هو ضعف عمر هاتف سوزي. إذا كان عمر هاتف سوزي هو عام واحد، فكم عمر هاتف براندون؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+عمر هاتف براندون هو أربعة أضعاف عمر هاتف بن. عمر هاتف بن هو ضعف عمر هاتف سوزي. إذا كان عمر هاتف سوزي هو عام واحد، فكم عمر هاتف براندون؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+To solve the problem, we need to understand the relationships between the ages of the individuals mentioned. Let's break it down step by step.
+
+1. **Identify the relationships:**
+   - The age of the man is equal to the sum of the ages of his children.
+   - The man's age is also equal to the product of the ages of his children.
+   - If the man's age were to be the sum of the ages of his children, it would be equal to the age of his children's sum.
+   - If the man's age were to be the product of the ages of his children, it would be equal to the age of his children's product.
+
+2. **Define the variables:**
+   - Let the ages of the man's children be \(a\), \(b\), and \(c\).
+   - The man's age is \(a + b + c\).
+   - The man's age is also \(a \times b \times c\).
+   - If the man's age were the sum of the ages of his children, it would be \(a + b + c\).
+   - If the man's age were the product of the ages of his children, it would be \(a \times b \times c\).
+
+3. **Set up the equations:**
+   - From the problem, we know that the man's age is equal to the sum of his children's ages and also equal to the product of his children's ages. Therefore, we have:
+     \[
+     a + b + c = a \times b \times c
+     \]
+
+4. **Find the ages of the children:**
+   - We need to find three positive integers \(a\), \(b\), and \(c\) that satisfy the equation \(a + b + c = a \times b \times c\).
+   - Let's try some small values for \(a\), \(b\), and \(c\):
+     - If \(a = 1\), \(b = 2\), and \(c = 3\):
+       \[
+       1 + 2 + 3 = 1 \times 2 \times 3 = 6
+       \]
+       This works, so the ages of the children are 1, 2, and 3.
+
+5. **Calculate the man's age:**
+   - The man's age is the sum of the ages of his children:
+     \[
+    
+
+
+====================================================================================================
+PROBLEM 24
+====================================================================================================
+
+GOLD ANSWER:
+14
+
+ORIGINAL ARABIC QUESTION:
+لدى جان 30 مصاصة. يأكل جان اثنتين منها. باستخدام المصاصات المتبقية، يريد جان تعبئة اثنتين من المصاصات في كيس واحد. كم عدد الأكياس التي يمكن لجان أن تملأها؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nلدى جان 30 مصاصة. يأكل جان اثنتين منها. باستخدام المصاصات المتبقية، يريد جان تعبئة اثنتين من المصاصات في كيس واحد. كم عدد الأكياس التي يمكن لجان أن تملأها؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+لدى جان 30 مصاصة. يأكل جان اثنتين منها. باستخدام المصاصات المتبقية، يريد جان تعبئة اثنتين من المصاصات في كيس واحد. كم عدد الأكياس التي يمكن لجان أن تملأها؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+لدى جان 30 مصاصة. يأكل جان اثنتين منها. باستخدام المصاصات المتبقية، يريد جان تعبئة اثنتين من المصاصات في كيس واحد. كم عدد الأكياس التي يمكن لجان أن تملأها؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+1. **Identify the total number of students and the number of students in each group:**
+   - Total students: 30
+   - Students in the first group: 10
+   - Students in the second group: 15
+   - Students in the third group: 5
+
+2. **Determine the number of students who did not complete their homework:**
+   - Total students: 30
+   - Students in the first group: 10
+   - Students in the second group: 15
+   - Students in the third group: 5
+   - Students who did not complete their homework: \(30 - (10 + 15 + 5) = 0\)
+
+3. **Calculate the percentage of students who did not complete their homework:**
+   - Since all 30 students completed their homework, the percentage is:
+   \[
+   \left(\frac{0}{30}\right) \times 100\% = 0\%
+   \]
+
+4. **Determine the percentage of students who completed their homework:**
+   - Since no students did not complete their homework, the percentage is:
+   \[
+   \left(\frac{30}{30}\right) \times 100\% = 100\%
+   \]
+
+The final answer is \(\boxed{100\%}\).
+
+
+====================================================================================================
+PROBLEM 42
+====================================================================================================
+
+GOLD ANSWER:
+4
+
+ORIGINAL ARABIC QUESTION:
+لدى إميلي أربعة أطفال هم إيمي، وجاكسون، وكوري، وجيمس. إيمي أكبر من جاكسون بخمس سنوات وأصغر من كوري بسنتين. إذا كان جيمس يبلغ من العمر 10 سنوات وأصغر من كوري بسنة واحدة، فكم يبلغ عمر جاكسون؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nلدى إميلي أربعة أطفال هم إيمي، وجاكسون، وكوري، وجيمس. إيمي أكبر من جاكسون بخمس سنوات وأصغر من كوري بسنتين. إذا كان جيمس يبلغ من العمر 10 سنوات وأصغر من كوري بسنة واحدة، فكم يبلغ عمر جاكسون؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+لدى إميلي أربعة أطفال هم إيمي، وجاكسون، وكوري، وجيمس. إيمي أكبر من جاكسون بخمس سنوات وأصغر من كوري بسنتين. إذا كان جيمس يبلغ من العمر 10 سنوات وأصغر من كوري بسنة واحدة، فكم يبلغ عمر جاكسون؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+لدى إميلي أربعة أطفال هم إيمي، وجاكسون، وكوري، وجيمس. إيمي أكبر من جاكسون بخمس سنوات وأصغر من كوري بسنتين. إذا كان جيمس يبلغ من العمر 10 سنوات وأصغر من كوري بسنة واحدة، فكم يبلغ عمر جاكسون؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+1. Let's denote the number of years old for each person as follows:
+   - Jafar: \( J \)
+   - Ali: \( A \)
+   - Aliyah: \( L \)
+   - Laila: \( L \)
+   - Jia: \( J \)
+
+2. According to the problem, we have the following relationships:
+   - Jia is the oldest at 10 years old: \( J = 10 \)
+   - Jia is 5 years older than Laila: \( J = L + 5 \)
+   - Ali is 3 years older than Jia: \( A = J + 3 \)
+   - Aliyah is 2 years older than Ali: \( L = A + 2 \)
+   - Ali is 1 year older than Laila: \( A = L + 1 \)
+
+3. We can start by solving for \( L \) using the equation \( J = L + 5 \):
+   \[
+   J = 10 \implies 10 = L + 5 \implies L = 5
+   \]
+
+4. Next, we use the equation \( A = J + 3 \) to find \( A \):
+   \[
+   A = 10 + 3 \implies A = 13
+   \]
+
+5. Now, we use the equation \( A = L + 1 \) to verify \( L \):
+   \[
+   A = 13 \implies 13 = 5 + 1 \implies 13 = 6 \quad \text{(This is incorrect, so let's recheck the relationships)}
+   \]
+
+6. Let's recheck the relationships:
+   - \( J = 10 \)
+   - \( J = L + 5 \implies L = 5 \)
+   - \( A = J + 3 \implies A = 13 \)
+   - \( A = L + 1 \implies 13 = 5 + 1 \implies 13 = 6 \quad \text{(This is incorrect, so let's recheck the relationships)}
+   \]
+
+7. Let's use the correct relationships:
+   - \( J = 10 \)
+   - \( J = L + 5 \implies L = 5 \)
+   - \( A = J + 
+
+
+====================================================================================================
+PROBLEM 72
+====================================================================================================
+
+GOLD ANSWER:
+150
+
+ORIGINAL ARABIC QUESTION:
+تطلب فرقة الموسيقى العسكرية زيًا جديدًا. يأتي كل زي مع قبعة تكلف 25 دولارًا، وسترة تكلف ثلاثة أضعاف سعر القبعة، وبنطلون يكلف متوسط ​​تكلفة القبعة والسترة. ما هو إجمالي تكلفة كل زي؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nتطلب فرقة الموسيقى العسكرية زيًا جديدًا. يأتي كل زي مع قبعة تكلف 25 دولارًا، وسترة تكلف ثلاثة أضعاف سعر القبعة، وبنطلون يكلف متوسط \u200b\u200bتكلفة القبعة والسترة. ما هو إجمالي تكلفة كل زي؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+تطلب فرقة الموسيقى العسكرية زيًا جديدًا. يأتي كل زي مع قبعة تكلف 25 دولارًا، وسترة تكلف ثلاثة أضعاف سعر القبعة، وبنطلون يكلف متوسط ​​تكلفة القبعة والسترة. ما هو إجمالي تكلفة كل زي؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+تطلب فرقة الموسيقى العسكرية زيًا جديدًا. يأتي كل زي مع قبعة تكلف 25 دولارًا، وسترة تكلف ثلاثة أضعاف سعر القبعة، وبنطلون يكلف متوسط ​​تكلفة القبعة والسترة. ما هو إجمالي تكلفة كل زي؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+les:
+1. The cost of each pen is $25.
+2. The cost of each eraser is $3.
+3. The cost of each pencil is $1.
+4. The total cost of the pens is $25 * 2 = $50.
+5. The total cost of the erasers is $3 * 3 = $9.
+6. The total cost of the pencils is $1 * 4 = $4.
+7. The total cost of all the items is $50 + $9 + $4 = $63.
+
+Therefore, the total cost of all the items is \boxed{63}.
+
+
+====================================================================================================
+PROBLEM 89
+====================================================================================================
+
+GOLD ANSWER:
+15
+
+ORIGINAL ARABIC QUESTION:
+يوجد 4 ورود في المزهرية. يوجد 7 زهور داليا أكثر من الورود في المزهرية. كم عدد الزهور في المزهرية إجمالاً؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nيوجد 4 ورود في المزهرية. يوجد 7 زهور داليا أكثر من الورود في المزهرية. كم عدد الزهور في المزهرية إجمالاً؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+يوجد 4 ورود في المزهرية. يوجد 7 زهور داليا أكثر من الورود في المزهرية. كم عدد الزهور في المزهرية إجمالاً؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+يوجد 4 ورود في المزهرية. يوجد 7 زهور داليا أكثر من الورود في المزهرية. كم عدد الزهور في المزهرية إجمالاً؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+les:
+1. There are 4 weeks in a month.
+2. There are 7 volumes of books in each issue of the magazine.
+3. There are 12 issues of the magazine in a year.
+4. There are 12 months in a year.
+
+First, we calculate the total number of volumes of books in one issue of the magazine:
+\[ 4 \text{ weeks/month} \times 7 \text{ volumes/week} = 28 \text{ volumes/month} \]
+
+Next, we calculate the total number of volumes of books in one year of the magazine:
+\[ 28 \text{ volumes/month} \times 12 \text{ months/year} = 336 \text{ volumes/year} \]
+
+Finally, we calculate the total number of volumes of books in one year of the magazine:
+\[ 336 \text{ volumes/year} \times 12 \text{ years} = 4032 \text{ volumes} \]
+
+Therefore, the total number of volumes of books in one year of the magazine is \boxed{4032}.
+
+
+====================================================================================================
+PROBLEM 100
+====================================================================================================
+
+GOLD ANSWER:
+32
+
+ORIGINAL ARABIC QUESTION:
+اشترت إيزابيل لوازم الحفلة لعيد ميلاد أختها الصغيرة. أنفقت 12 دولارًا على مكونات الكعكة، و43 دولارًا على هدايا عيد الميلاد، و15 دولارًا على الزينة، و4 دولارات على الدعوات، و22 دولارًا على أكياس الهدايا لضيوف الحفلة. وقسمت التكلفة بالتساوي بين والديها. كم دولارًا دفع كل شخص؟
+
+MESSAGES SENT TO CHAT TEMPLATE:
+[{'role': 'user', 'content': 'حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:\nالإجابة النهائية: <رقم>\n\nالمسألة:\nاشترت إيزابيل لوازم الحفلة لعيد ميلاد أختها الصغيرة. أنفقت 12 دولارًا على مكونات الكعكة، و43 دولارًا على هدايا عيد الميلاد، و15 دولارًا على الزينة، و4 دولارات على الدعوات، و22 دولارًا على أكياس الهدايا لضيوف الحفلة. وقسمت التكلفة بالتساوي بين والديها. كم دولارًا دفع كل شخص؟'}]
+
+RENDERED CHAT PROMPT:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+اشترت إيزابيل لوازم الحفلة لعيد ميلاد أختها الصغيرة. أنفقت 12 دولارًا على مكونات الكعكة، و43 دولارًا على هدايا عيد الميلاد، و15 دولارًا على الزينة، و4 دولارات على الدعوات، و22 دولارًا على أكياس الهدايا لضيوف الحفلة. وقسمت التكلفة بالتساوي بين والديها. كم دولارًا دفع كل شخص؟<|im_end|>
+<|im_start|>assistant
+
+
+DECODED INPUT TOKENS:
+<|im_start|>system
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>user
+حل المسألة التالية بعناية. فكر خطوة بخطوة، ثم اكتب الإجابة النهائية فقط بالشكل التالي:
+الإجابة النهائية: <رقم>
+
+المسألة:
+اشترت إيزابيل لوازم الحفلة لعيد ميلاد أختها الصغيرة. أنفقت 12 دولارًا على مكونات الكعكة، و43 دولارًا على هدايا عيد الميلاد، و15 دولارًا على الزينة، و4 دولارات على الدعوات، و22 دولارًا على أكياس الهدايا لضيوف الحفلة. وقسمت التكلفة بالتساوي بين والديها. كم دولارًا دفع كل شخص؟<|im_end|>
+<|im_start|>assistant
+
+
+MODEL COMPLETION:
+1. **Determine the total cost of each type of cost:**
+   - The cost of the 12 pages of type A is:
+     \[
+     12 \times 12 = 144 \text{ dollars}
+     \]
+   - The cost of the 43 pages of type B is:
+     \[
+     43 \times 43 = 1849 \text{ dollars}
+     \]
+   - The cost of the 15 pages of type C is:
+     \[
+     15 \times 15 = 225 \text{ dollars}
+     \]
+   - The cost of the 4 pages of type D is:
+     \[
+     4 \times 4 = 16 \text{ dollars}
+     \]
+   - The cost of the 22 pages of type E is:
+     \[
+     22 \times 22 = 484 \text{ dollars}
+     \]
+
+2. **Sum the total costs of all types of pages:**
+   \[
+   144 + 1849 + 225 + 16 + 484 = 2718 \text{ dollars}
+   \]
+
+3. **Determine the total number of pages:**
+   \[
+   12 + 43 + 15 + 4 + 22 = 96 \text{ pages}
+   \]
+
+4. **Calculate the average cost per page:**
+   \[
+   \frac{2718}{96} = 28.21875 \text{ dollars per page}
+   \]
+
+5. **Round the average cost to the nearest cent:**
+   \[
+   28.22 \text{ dollars per page}
+   \]
+
+The final answer is \(\boxed{28.22}\)
+
