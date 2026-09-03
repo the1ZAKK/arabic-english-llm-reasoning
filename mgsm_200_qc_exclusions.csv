@@ -1,0 +1,15 @@
+﻿problem_id,category,note
+43,AMBIGUOUS_SOURCE,Speed improved by 10% is ambiguous; gold assumes travel time is reduced by 10%.
+51,SEMANTIC_MISMATCH,English states each pair of shoes costs $60; Arabic states each shoe costs $60.
+55,AMBIGUOUS_TRANSLATION,English explicitly specifies two sandwiches/subs; Arabic wording omits the numeral while retaining a dual-language cue.
+86,AMBIGUOUS_SOURCE,"Problem states at least five rides per week, while the gold answer assumes exactly five."
+100,SEMANTIC_MISMATCH,English divides the amount three ways including Isabel and two parents; Arabic wording indicates division between the parents.
+122,AMBIGUOUS_SOURCE,The expression '2/5 times more' is mathematically ambiguous; the benchmark gold interprets it as 40 percent more.
+150,AMBIGUOUS_SOURCE,Gold answer assumes one month equals exactly four weeks.
+163,AMBIGUOUS_SOURCE,The reference set for 'one quarter the number of pieces' is not fully explicit.
+166,AMBIGUOUS_TRANSLATION,English specifically asks how much farther the winner ran; Arabic uses a less explicit comparison.
+171,AMBIGUOUS_TRANSLATION,Arabic multiplicative-age wording is less precise than the English 'two times as old' formulation.
+175,AMBIGUOUS_TRANSLATION,Arabic multiplicative wording may be interpreted ambiguously relative to English 'four times as many'.
+189,SEMANTIC_MISMATCH,English states cumulative customers by the third day totaled 500; Arabic can state that the third day itself had 500 customers.
+192,AMBIGUOUS_TRANSLATION,"Arabic uses wording equivalent to 'two times more', which is less precise than English 'twice as many'."
+197,SEMANTIC_MISMATCH,"English asks for individual reading instances by two people, whereas Arabic can naturally be read as the number of distinct books read together."

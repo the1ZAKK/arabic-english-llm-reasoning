@@ -1,0 +1,3 @@
+﻿model,n_pairs,arabic_correct,arabic_accuracy,english_correct,english_accuracy,english_minus_arabic,both_correct,both_wrong,english_only_correct,arabic_only_correct,discordant_pairs,mcnemar_exact_p,bootstrap_ci_low,bootstrap_ci_high
+Gemma-3-1B-IT,200,44,0.22,121,0.605,0.385,36,71,85,8,93,2.2644944585064495e-17,0.305,0.46
+Qwen2.5-Math-1.5B-Instruct,200,3,0.015,179,0.895,0.88,3,21,176,0,176,2.088097429759528e-53,0.835,0.925

@@ -1,0 +1,2 @@
+﻿model,problem_range,n_pairs,arabic_correct,arabic_accuracy,english_correct,english_accuracy,english_minus_arabic,both_correct,both_wrong,english_only_correct,arabic_only_correct,discordant_pairs,mcnemar_exact_p,bootstrap_ci_low,bootstrap_ci_high,manual_review_cases,manual_correct_cases,changed_by_adjudication
+Gemma-3-1B-IT,101-200,100,21,0.21,60,0.6,0.39,18,37,42,3,45,8.654978955746628e-10,0.28,0.5,55,14,7

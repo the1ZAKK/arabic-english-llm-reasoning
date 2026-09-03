@@ -1,0 +1,2 @@
+﻿n_pairs,gemma_language_gap,qwen_language_gap,qwen_minus_gemma_gap,bootstrap_ci_low,bootstrap_ci_high,randomization_samples,randomization_p,arabic_both_correct,arabic_gemma_only,arabic_qwen_only,arabic_neither,english_both_correct,english_gemma_only,english_qwen_only,english_neither
+200,0.385,0.88,0.495,0.415,0.575,100000,9.99990000099999e-06,2,42,1,155,117,4,62,17
