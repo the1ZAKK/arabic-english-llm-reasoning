@@ -1,0 +1,18 @@
+problem_id,language,automatic_correct,manual_correct,score_changed,note
+4,arabic,0,1,1,Reasoning clearly derives the gold answer 45 before truncation.
+4,english,0,1,1,Reasoning clearly derives 180 - 135 = 45 before truncation.
+29,english,1,1,0,Reasoning clearly reaches the gold answer 25000.
+43,english,0,0,0,Model interprets a 10% speed increase literally and obtains about 36.36 seconds rather than benchmark gold 36; retain as incorrect for primary benchmark scoring. This item is excluded in strict QC.
+56,english,0,1,1,Reasoning clearly reaches the gold answer 70.
+57,english,0,1,1,Reasoning clearly reaches the gold answer 400.
+61,english,0,1,1,"Reasoning derives Steve=36, Tim=40, hence waiting time 4."
+77,arabic,0,1,1,Reasoning clearly reaches the gold answer 5.
+85,arabic,0,1,1,Reasoning clearly derives required sixth score 98.
+85,english,1,1,0,Reasoning clearly derives required sixth score 98.
+88,arabic,1,1,0,Reasoning clearly reaches the gold answer 8.
+88,english,0,1,1,Reasoning derives and verifies the gold answer 8 gallons.
+107,english,1,1,0,Reasoning clearly reaches the gold answer 18.
+108,english,0,1,1,Reasoning clearly reaches the gold answer 60.
+165,english,0,1,1,"Visible answer field is empty, but API reasoning_content computes 60 cookies, $6 cost, and $4 change."
+176,arabic,0,1,1,Reasoning works through the ages and reaches 23.
+177,english,1,1,0,Reasoning clearly reaches the gold answer 25.

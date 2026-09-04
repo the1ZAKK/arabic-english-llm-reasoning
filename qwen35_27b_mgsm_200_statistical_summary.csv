@@ -1,0 +1,2 @@
+subset,n_problems,arabic_correct,arabic_accuracy,english_correct,english_accuracy,english_minus_arabic_gap,gap_percentage_points,both_correct,both_wrong,english_only,arabic_only,discordant_pairs,mcnemar_exact_two_sided_p,bootstrap_95_ci_low,bootstrap_95_ci_high
+ALL_200,200,190,0.95,199,0.995,0.04500000000000004,4.5000000000000036,190,1,9,0,9,0.00390625,0.02,0.075
