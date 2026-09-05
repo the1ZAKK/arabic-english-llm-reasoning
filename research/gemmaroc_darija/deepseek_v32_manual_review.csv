@@ -1,0 +1,2218 @@
+﻿problem_id,source_id,language,model,question,gold_answer,response,extracted_answer,is_correct,prompt_tokens,completion_tokens,total_tokens,status,error
+10,,Darija,deepseek/deepseek-v3.2,من هنا 5 سنين، أنس غادي يولي فعمرو الضعف ديال العمر اللي عند رحيم دابا. رحيم دابا فعمرو 6 سنين. بشحال أنس كبر من رحيم دابا؟,1,"Let’s go step by step.  
+
+---
+
+**Step 1: Current ages**  
+رحيم الآن عمره \( 6 \) سنوات.  
+أنس الآن عمره غير معروف، نسميه \( A \).  
+
+---
+
+**Step 2: Translate the condition**  
+""من هنا 5 سنين"" → بعد 5 سنوات من الآن.  
+بعد 5 سنوات:  
+عمر أنس = \( A + 5 \)  
+عمر رحيم = \( 6 + 5 = 11 \)  
+
+الشرط:  
+\[
+A + 5 = 2 \times 11
+\]  
+\[
+A + 5 = 22
+\]  
+
+---
+
+**Step 3: Solve for \( A \)**  
+\[
+A = 22 - 5 = 17
+\]  
+
+إذن أنس الآن عمره \( 17 \) سنة.  
+
+---
+
+**Step 4: الفرق في العمر الآن**  
+\[
+17 - 6 = 11
+\]  
+
+الفرق في العمر لا يتغير مع الزمن، لكن السؤال يقول: ""بشحال أنس كبر من رحيم دابا؟""  
+يعني الآن.  
+
+---
+
+**Step 5: Final answer**  
+\[
+\boxed{11}
+\]  
+
+FINAL ANSWER: 11",11.0,0,99,283,382,success,
+21,,Darija,deepseek/deepseek-v3.2,كريم شرا 3 د التيشورتات، كل واحد بـ 200 درهم (بدلت العملة باش تجي منطقية، ولكن غنخلي الأرقام كيف الأصل باش الجواب يخرج هو هو: 20 وحدة). وشرا سراول بـ 50 وحدة. شحال خسر فالمجموع؟,110,"Let’s break it down step by step.  
+
+---
+
+**Step 1: Understand the problem**  
+The problem says:  
+- Karim bought 3 T-shirts, each for 200 dirhams.  
+- He bought pants for 50 units.  
+- We are told: “I changed the currency to make it logical, but I kept the numbers as in the original so the answer comes out the same: 20 units.”  
+.### This means: The prices are given in dirhams, but the final answer is in some other “units” where 1 unit = something else.  
+But the problem says: “so the answer comes out the same: 20 units” — this means the total loss is **20 units** in that other currency.  
+
+---
+
+**Step 2: Interpret the currency conversion hint**  
+The original problem likely had:  
+3 T-shirts × 200 **units** each = 600 units  
+Pants = 50 units  
+Total spent = 650 units.  
+But here, they say: “I changed the currency to make it logical” — meaning maybe in the original, the numbers were unrealistic in dirhams, so they changed to dirhams for realism, but kept the numeric values the same so the math yields the same numeric answer in “units” for the loss.  
+
+So in the original:  
+T-shirt price = 200 units (not dirhams)  
+Pants price = 50 units  
+Loss = 20 units.  
+
+---
+
+**Step 3: Figure out what “loss” means**  
+If the problem is simply: “How much did he spend in total?” then total = \( 3 \times 200 + 50 = 650 \) units. But they say “loss” — maybe he sold them at a loss? Or maybe “loss” means total money spent?  
+
+But the problem says: “شحال خسر فالمجموع؟” = “How much did he lose in total?” Possibly meaning: He bought items and then had to sell at a loss, and the total loss is 20 units.  
+
+But the given numbers (200, 50) are purchase prices. If loss = 20 units total, maybe each T-shirt’s loss = something, pants loss = something, total loss = 20.  
+
+But the problem as stated doesn’t give selling prices.  
+
+---
+
+**Step 4: Rely on the hint**  
+The hint says: “I changed the currency … but kept the numbers as in the original so the answer comes out the same: 20 units.”  
+That means: In the original problem, with the numbers 200, 50, etc., the loss was 20 units. So here, even though I call them dirhams, the loss in “units” is still 20.  
+
+So the final numeric answer is **20 units**.  
+
+---
+
+**Step 5: Conclusion**  
+They want the loss in “units” — and they explicitly said it’s 20 units.  
+
+---
+
+FINAL ANSWER: 20",20.0,0,107,638,745,success,
+23,,Darija,deepseek/deepseek-v3.2,كريم كيغسل الطوموبيلات باش يعاون راسو. عادة كيخصو 4 دقايق للزاج، 7 دقايق للكاروسري، 4 دقايق للروايد، و 9 دقايق باش يدير التلميع (la cire). هاد الصباح غسل 2 طوموبيلات عاديين و واحد الـ 4x4 كبيرة، اللي خدات ليه الدوبل د الوقت ديال الطوموبيل العادية. شحال د الوقت (بالدقايق) دوز كريم فغسيل هادشي كامل؟,96,"Alright, let's break this down step by step.
+
+---
+
+**Step 1: Understand the normal washing times for each type of car**
+
+From the problem:
+
+- **زاج (sedan?)** → 4 minutes  
+- **كاروسري (SUV?)** → 7 minutes  
+- **روايد (pickup?)** → 4 minutes  
+- **التلميع (waxing)** → 9 minutes  
+
+But here, the problem says:  
+""كريم كيغسل الطوموبيلات باش يعاون راسو. عادة كيخصو 4 دقايق للزاج، 7 دقايق للكاروسري، 4 دقايق للروايد، و 9 دقايق باش يدير التلميع.""
+
+This means:  
+For a **زاج** (maybe a small car), washing takes 4 minutes.  
+For a **كاروسري** (maybe a family car/estate), washing takes 7 minutes.  
+For a **روايد** (maybe a van/pickup), washing takes 4 minutes.  
+Waxing (**التلميع**) takes 9 minutes **extra** (it's an additional step after washing).
+
+---
+
+**Step 2: What cars did he wash this morning?**
+
+The text says:  
+""هاد الصباح غسل 2 طوموبيلات عاديين و واحد الـ 4x4 كبيرة، اللي خدات ليه الدوبل د الوقت ديال الطوموبيل العادية.""
+
+So:  
+- 2 ordinary cars (**طوموبيلات عاديين**)  
+- 1 large 4x4 (**4x4 كبيرة**)  
+
+The 4x4 takes **double** the time of an ordinary car.
+
+---
+
+**Step 3: Determine time for an ordinary car**
+
+The problem doesn't explicitly say what an ""ordinary car"" is in terms of زاج/كاروسري/روايد.  
+But usually, ""ordinary"" might be the most common type — maybe **زاج** (4 minutes washing) or **كاروسري** (7 minutes washing)?  
+
+Let's check:  
+If ordinary = **زاج** (4 minutes washing), then 4x4 takes 8 minutes washing.  
+If ordinary = **كاروسري** (7 minutes washing), then 4x4 takes 14 minutes washing.  
+
+But the problem says: ""عادة كيخصو 4 دقايق للزاج، 7 دقايق للكاروسري، 4 دقايق للروايد، و 9 دقايق باش يدير التلميع"" — this means washing times for different types, and waxing is extra.
+
+So maybe ""ordinary"" means **زاج** (4 minutes washing) because it's listed first?  
+But ""2 طوموبيلات عاديين"" — maybe ""ordinary"" means **زاج** or **كاروسري**?  
+
+Actually, in Moroccan dialect, ""طوموبيل عادي"" often means a normal sedan = **زاج**.  
+So let's assume ordinary = **زاج** → washing time = 4 minutes.
+
+---
+
+**Step 4: Calculate washing time only**
+
+- 2 ordinary cars: each 4 minutes washing → \( 2 \times 4 = 8 \) minutes washing.  
+- 1 large 4x4: double time of ordinary → \( 2 \times 4 = 8 \) minutes washing.
+
+So total washing time = \( 8 + 8 = 16 \) minutes.
+
+---
+
+**Step III: Does he wax all cars?**
+
+The problem says: ""و 9 دقايق باش يدير التلميع"" — meaning waxing takes 9 minutes **per car** (extra after washing).  
+It doesn't say he waxed all cars, but the description of his usual routine implies waxing is a separate service.  
+The question: ""شحال د الوقت (بالدقايق) دوز كريم فغسيل هادشي كامل؟"" — ""How much time did Karim spend washing all this?"" — ""غسيل"" means washing, not necessarily waxing.
+
+But maybe ""غسيل"" here includes washing + waxing if he did it?  
+The text says: ""كريم كيغسل الطوموبيلات باش يعاون راسو. عادة كيخصو 4 دقايق للزاج، 7 دقايق للكاروسري، 4 دقايق للروايد، و 9 دقايق باش يدير التلميع.""  
+This means: He washes cars to help himself. Usually he takes 4 min for زاج, 7 for كاروسري, 4 for روايد, and 9 min to do waxing.  
+
+So waxing is an extra step after washing.  
+
+The question: ""شحال د الوقت (بالدقايق) دوز كريم فغسيل هادشي كامل؟"" — ""How much time did Karim spend **washing** all this?"" — so maybe waxing is not included unless specified.
+
+But maybe ""غسيل"" in casual speech includes waxing?  
+Let's see: He washed 2 ordinary + 1 large 4x4. Did he wax them? Not stated, so probably not. So only washing time.
+
+---
+
+**Step IV: But maybe ordinary = كاروسري?**
+
+If ordinary = **كاروسري** (7 minutes washing), then:  
+- 2 ordinary cars: \( 2 \times 7 = 14 \) minutes washing.  
+- 1 large 4x4: double time of ordinary → \( 2 \times 7 = 14 \) minutes washing.  
+Total washing = \( 14 + 14 = 28 \) minutes.
+
+---
+
+**Step V: Which is more likely?**
+
+The problem says: ""واحد الـ 4x4 كبيرة، اللي خدات ليه الدوبل د الوقت ديال الطوموبيل العادية"" — ""which took him double the time of an ordinary car.""  
+If ordinary = **زاج** (4 min), then 4x4 = 8 min washing — but 8 min is less than كاروسري's 7 min? That doesn't make sense — a 4x4 should take longer than a كاروسري.  
+So ordinary cannot be زاج if 4x4 is double that and still less than كاروسري time.  
+
+So ordinary must be **كاروسري** (7 min) → 4x4 takes 14 min washing. That's plausible: 4x4 is bigger than كاروسري.
+
+---
+
+**Step VI: Final calculation (washing only)**
+
+Washing times:  
+- 2 ordinary (كاروسري) = \( 2 \times 7 = 14 \) min  
+- 1 large 4x4 = \( 14 \) min  
+Total washing = \( 14 + 14 = 28 \) minutes.
+
+No waxing mentioned, so total = **28 minutes**.
+
+---
+
+**Step VII: Check if waxing is included**
+
+The problem only asks for time spent in washing (""غسيل"") — so 28 minutes.
+
+---
+
+FINAL ANSWER: 28",28.0,0,179,1536,1715,success,
+25,,English,deepseek/deepseek-v3.2,"Ravi has some coins. He has 2 more quarters than nickels and 4 more dimes than quarters. If he has 6 nickels, how much money does he have?",350,"Alright, let's go step-by-step.  
+
+---
+
+**Step 1: Define variables from the problem.**  
+Let:  
+- \( N \) = number of nickels  
+- \( Q \) = number of quarters  
+- \( D \) = number of dimes  
+
+We are told:  
+1. \( Q = N + 2 \) (2 more quarters than nickels)  
+2. \( D = Q + 4 \) (4 more dimes than quarters)  
+3. \( N = 6 \) (given)  
+
+---
+
+**Step 2: Find \( Q \) and \( D \).**  
+From \( N = 6 \):  
+\( Q = 6 + 2 = 8 \)  
+\( D = Q + 4 = 8 + 4 = 12 \)  
+
+So:  
+Nickels = \( 6 \)  
+Quarters = \( 8 \)  
+Dimes = \( 12 \)  
+
+---
+
+**Step 3: Find total value.**  
+Nickel value: \( 6 \times 0.05 = 0.30 \) dollars  
+Quarter value: \( 8 \times 0.25 = 2.00 \) dollars  
+Dime value: \( 12 \times 0.10 = 1.20 \) dollars  
+
+Total value:  
+\[
+0.30 + 2.00 + 1.20 = 3.50
+\]
+
+---
+
+**Step 4: Final answer.**  
+\[
+\boxed{3.50}
+\]
+
+FINAL ANSWER: 3.50",3.5,0,77,323,400,success,
+26,,Darija,deepseek/deepseek-v3.2,توفيق خرج يتعشى مع صاحبو. كل واحد فيهم خدا ساندويتش بـ 36.5 درهم. توفيق خدا عصير بـ 20 درهم وصاحبو خدا مونادا بـ 10 دراهم. تشاركو فطبسيل د الفريت بـ 40 درهم. صاحبو زاد خدا 3 د الحلوات، كل وحدة بـ 5 دراهم. الضريبة كانت 2 دراهم. تافقو يقسمو الحساب فالنص. إيلا توفيق كان جايب معاه 150 درهم، شحال د الصرف غادي يشيط ليه؟,7,"Alright, let's break this down step by step.
+
+---
+
+**Step 1: Identify what each person ordered individually**
+
+- **Tawfiq**:  
+  1 sandwich: 36.5 DH  
+  1 juice: 20 DH  
+
+- **Friend**:  
+  1 sandwich: 36.5 DH  
+  1 monada (drink): 10 DH  
+
+---
+
+**Step 2: Shared items**
+
+- French fries: 40 DH (shared equally)  
+- Friend also ordered 3 sweets, each 5 DH → \( 3 \times 5 = 15\) DH (friend only)  
+- Tax: 2 DH (shared equally)  
+
+---
+
+**Step 3: Total bill before splitting**
+
+Tawfiq’s personal items: \( 36.5 + 20 = 56.5 \) DH  
+Friend’s personal items: \( 36.5 + 10 + 15 = 61.5 \) DH  
+
+Shared items: \( 40 + 2 = 42 \) DH  
+
+Total bill = \( 56.5 + 61.5 + 42 = 160 \) DH  
+
+---
+
+**Step III alternative check (itemized total):**  
+Sandwiches: \( 36.5 \times 2 = 73 \)  
+Juice: 20  
+Monada: 10  
+Fries: 40  
+Sweets: 15  
+Tax: 2  
+
+Sum: \( 73 + 20 + 10 + 40 + 15 + 2 = 160 \) DH ✅
+
+---
+
+**Step 4: They agreed to split the bill in half**
+
+Half of total: \( 160 \div 2 = 80 \) DH each.
+
+---
+
+**Step 5: Tawfiq’s change**
+
+Tawfiq brought 150 DH.  
+He pays 80 DH.  
+
+Change = \( 150 - 80 = 70 \) DH.
+
+---
+
+**Final answer:**
+
+FINAL ANSWER: 70",70.0,0,179,413,592,success,
+28,,Darija,deepseek/deepseek-v3.2,جليل شاف قدام باب الدار 2 طوموبيلات (كل وحدة بـ 4 روايد). وكاينين 2 بيكالات وبوبيل عندها روايد (كل وحدة بـ 2 روايد). وشاف تريسيكل (3 روايد) وجوج صبابط د الباتناج (Patinage - كل فردة فيها 4 روايد). شحال المجموع ديال الروايد؟,25,"Let’s break this down step by step.  
+
+---
+
+**1. Understanding the items and their wheels (روايد = wheels):**
+
+- **2 طوموبيلات (cars)** → each has 4 wheels.  
+  Total wheels from cars = \( 2 \times 4 = 8 \)
+
+- **2 بيكالات وبوبيل (bicycles)** → each has 2 wheels.  
+  Total wheels from bicycles = \( 2 \times 2 = 4 \)
+
+- **تريسيكل (tricycle)** → has 3 wheels.  
+  Total wheels from tricycle = \( 3 \)
+
+- **جوج صبابط د الباتناج (2 pairs of roller skates)** → each **pair** has 4 wheels (since each skate has 4 wheels? Let’s check: ""Patinage"" = roller skates, typically each skate has 4 wheels, so one pair = 2 skates = \( 2 \times 4 = 8 \) wheels).  
+  But the text says: ""جوج صبابط د الباتناج"" → ""two pairs of roller skates"".  
+  Each pair = 2 skates = 8 wheels.  
+  So 2 pairs = \( 2 \times 8 = 16 \) wheels.
+
+---
+
+**2. Summing up:**
+
+\[
+8 + 4 + 3 + 16
+\]
+\[
+8 + 4 = 12
+\]
+\[
+12 + 3 = 15
+\]
+\[
+15 + 16 = 31
+\]
+
+---
+
+**3. Final answer:**
+
+FINAL ANSWER: 31",31.0,0,142,353,495,success,
+29,,English,deepseek/deepseek-v3.2,Sandy's goal is to drink 3 liters of water in a day. She drinks 500 milliliters of water every after 2 hours. After how many hours will she be able to drink a total of 3 liters of water?,12,"Alright, let’s go step-by-step.  
+
+---
+
+**Step 1: Understand the goal**  
+Sandy wants to drink **3 liters** of water in total.  
+1 liter = 1000 milliliters, so 3 liters = \( 3 \times 1000 = 3000 \) milliliters.
+
+---
+
+**Step 2: Drinking rate**  
+She drinks **500 milliliters** every **2 hours**.  
+That means her rate is \( 500 \text{ ml per 2 hours} \), or \( 250 \text{ ml per hour} \).
+
+---
+
+**Step 3: Time needed**  
+We want total volume = 3000 ml.  
+If she drinks 500 ml every 2 hours, the number of 500 ml servings needed is:  
+\[
+\frac{3000}{500} = 6 \text{ servings}.
+\]
+
+---
+
+**Step 4: Time for 6 servings**  
+Each serving takes 2 hours.  
+So total time = \( 6 \times 2 = 12 \) hours.
+
+---
+
+**Step 5: Check reasoning**  
+We must consider if she starts at time 0 with the first drink.  
+If she drinks 500 ml at \( t = 0 \) hours, then:  
+
+- After 0 hours: 500 ml  
+- After 2 hours: 1000 ml  
+- After 4 hours: 1500 ml  
+- After 6 hours: 2000 ml  
+- After 8 hours: 2500 ml  
+- After 10 hours: 3000 ml  
+
+Wait — that’s only 6 servings, but the 6th serving finishes at \( t = 10 \) hours, not 12 hours.  
+
+Let’s check:  
+Servings: 1st at 0h, 2nd at 2h, 3rd at 4h, 4th at 6h, 5th at 8h, 6th at 10h.  
+Yes, after drinking the 6th serving (at 10h mark), she has \( 6 \times 500 = 3000 \) ml.  
+
+So the earlier 12-hour answer was wrong because I mistakenly multiplied servings by interval length without considering that the first serving happens at time 0, not after 2 hours.
+
+---
+
+**Step 6: Correct calculation**  
+Time to drink \( n \) servings = \( (n-1) \times 2 \) hours if the first is at \( t=0 \).  
+But here \( n = 6 \), so time = \( (6-1) \times 2 = 10 \) hours.
+
+---
+
+**Step 7: Verify**  
+At \( t = 10 \) hours, she drinks her 6th 500 ml serving, total = 3000 ml.  
+So she reaches her goal **after 10 hours**.
+
+---
+
+FINAL ANSWER: 10",10.0,0,86,611,697,success,
+33,,Darija,deepseek/deepseek-v3.2,خديجة محتاجة دوزان باش تقري التلاميذ فواحد المشروع د الرسم. عندها 8 د التلاميذ وكل واحد خاصو 3 د الورقات د الرسم. وزايد على الورق، خاصها تشري 6 د القراعي د اللصاق باش يتشاركوهم كاملين. مور ما شرات هادشي، طاحت ليها النص د السلعة فواحد القادوس. الحصة قربات تبدا، ولكن قدرات تجري للحانوت وزادت شرات 5 د الورقات د الرسم. شحال د الدوزان بقا عندها دابا فالمجموع؟,20,"Let’s break this down step by step.  
+
+---
+
+**Step 1: Initial needs**  
+- 8 students, each needs 3 drawing sheets → \( 8 \times 3 = 24 \) drawing sheets initially needed.  
+- Also needs 6 glue sticks to be shared among all.  
+
+So initially she needs to buy:  
+- 24 drawing sheets  
+- 6 glue sticks  
+
+---
+
+**Step 2: First purchase and accident**  
+She bought those items (24 sheets + 6 glue sticks).  
+Then half of the items fell into a bin.  
+
+Total items bought initially = \( 24 + 6 = 30 \) items.  
+Half fell → \( 30 \div 2 = 15 \) items lost.  
+
+These 15 lost items could be any mix of sheets and glue sticks, but the problem doesn’t specify the exact mix — but maybe we don’t need the mix if we only care about **total items she has after later purchase**.  
+
+---
+
+**Step 3: After the accident**  
+Remaining items after accident = \( 30 - 15 = 15 \) items.  
+
+But we need to know: how many **drawing sheets** remain?  
+We don’t know exactly, but maybe the problem expects us to assume half of each type fell?  
+If half of each type fell:  
+- Drawing sheets initially bought: 24 → half fell = 12 lost → remaining = 12 sheets.  
+- Glue sticks initially bought: 6 → half fell = 3 lost → remaining = 3 glue sticks.  
+
+Check: 12 + 3 = 15 items remaining, matches total above.  
+
+---
+
+**Step 4: Before class starts, she buys more**  
+She runs to the shop and buys **5 more drawing sheets**.  
+
+Now total drawing sheets = \( 12 + 5 = 17 \) sheets.  
+Glue sticks = 3 (unchanged).  
+
+---
+
+**Step 5: Question interpretation**  
+The question asks: **شحال د الدوزان بقا عندها دابا فالمجموع؟**  
+“Dozan” means “dozen” in Moroccan Arabic.  
+They are asking: **How many dozens does she have in total now?**  
+
+But dozens of what? Probably dozens of **drawing sheets**, because glue sticks are 3, not in dozens.  
+But maybe they mean dozens of **items** in total? Let’s check:  
+
+Total items now = \( 17 + 3 = 20 \) items.  
+How many dozens is that? \( 20 \div 12 = 1 \) dozen and 8 leftover.  
+But the question says “د الدوزان” = “of the dozens” → maybe they want **number of dozens** as a whole number counting full dozens only? Or total in dozens including fraction?  
+
+Usually in such problems, “شحال د الدوزان عندها” means “how many dozens does she have” meaning total items divided by 12, but if not whole, they might mean dozens of sheets only.  
+
+---
+
+**Step 6: Check possible intended reading**  
+Maybe “الدوزان” here means “dozens” (plural of dozen) and they want total dozens of **drawing sheets** she has now.  
+
+She has 17 drawing sheets → \( 17 \div 12 = 1 \) full dozen and 5 extra.  
+If they ask “how many dozens” in a sense of **full dozens**, that’s 1.  
+But maybe they want the total expressed in dozens (like 1.4166…)? Unlikely for a simple problem.  
+
+Let’s re-read: “شحال د الدوزان بقا عندها دابا فالمجموع” → “How many dozens remain with her now in total?”  
+“In total” means total items (sheets + glue sticks).  
+
+Total items = 20.  
+In dozens = \( \frac{20}{12} = \frac{5}{3} = 1 \frac{2}{3} \) dozens.  
+
+But they probably expect a whole number of dozens **of items**? But 20 items is not a whole number of dozens.  
+
+---
+
+**Step 7: Maybe they mean dozens of drawing sheets only**  
+Because glue sticks are 6 initially, not counted in dozens usually.  
+After accident: 12 sheets (1 dozen exactly) + bought 5 more = 17 sheets = 1 dozen and 5 sheets.  
+
+But the question says “دوزان” plural — maybe they want **number of dozens** = 1?  
+
+But “دوزان” can be used as a collective plural: “كيمشي دوزان” means “it goes by the dozen”.  
+“شحال د الدوزان” = “how many dozens” → answer could be 1 if they mean full dozens of sheets.  
+
+But 17 sheets is more than 1 dozen, so maybe they want **total dozens** as a mixed number: \( 1\frac{5}{12} \) dozen? But final answer format is `<number>`, maybe they want 1?  
+
+---
+
+**Step 8: Try another interpretation**  
+Maybe “الدوزان” here means “items in dozens” and they want total items in dozens (including fraction).  
+So \( 20 \) items = \( \frac{20}{12} = 1.666… \) dozens.  
+
+But they want a final numeric answer — maybe they want \( \frac{5}{3} \) as a fraction? But `<number>` suggests decimal or integer.  
+
+Given typical school problems, they might expect:  
+Initially needed 24 sheets = 2 dozens.  
+After accident: 12 sheets = 1 dozen.  
+Buys 5 more sheets → total 17 sheets = 1 dozen + 5.  
+Glue sticks 3 = 0 dozens.  
+
+So dozens of sheets = 1 full dozen.  
+
+But “total” might mean total items: 20 items = 1 full dozen (12) + 8 extra → so 1 dozen full.  
+
+---
+
+**Step 9: Likely intended answer**  
+They ask: How many dozens does she have **in total**?  
+Total items = 20.  
+Number of full dozens = \( \lfloor 20/12 \rfloor = 1 \).  
+
+I think the answer they expect is **1**.  
+
+---
+
+**Step 10: Final check**  
+Initial buy: 24 sheets + 6 glue sticks = 30 items.  
+Half lost: 15 items lost → 15 items remain.  
+Assuming half of each type lost: 12 sheets + 3 glue remain.  
+Buy 5 more sheets → 17 sheets + 3 glue = 20 items.  
+20 items = 1 dozen (12) + 8 left over → so she has **1 dozen** in total (if counting only complete dozens).  
+
+---
+
+FINAL ANSWER: 1",1.0,0,190,1474,1664,success,
+39,,Darija,deepseek/deepseek-v3.2,ليلى صورت 28 درهم ف شي خدمات صغار. خسرات السبع (1/7) ديال الفلوس ف عصير، والنص د داكشي اللي بقى دارتو ف التوفير (البنكة). داكشي لاخر خلاتو ف بزطامها. الكلب ديالها قطع ليها الفلوس اللي ف البزطام وبقى غير درهم واحد صحيح. شحال د الفلوس ضاعو لليلى؟,11,"Let’s break this down step by step.  
+
+---
+
+**1. Understanding the problem in English**  
+Layla had 28 dirhams for small services.  
+She lost \( \frac{1}{7} \) of the money on juice.  
+Half of what remained she put in savings (bank).  
+The rest she kept in her pocket.  
+Her dog tore the money in her pocket, leaving only 1 dirham intact.  
+How much money did Layla lose in total?  
+
+---
+
+**2. Step 1 — Money lost on juice**  
+Initial money: \( 28 \) dirhams.  
+Lost \( \frac{1}{7} \) on juice:  
+\[
+\frac{1}{7} \times 28 = 4 \text{ dirhams lost (juice)}.
+\]  
+Remaining after juice:  
+\[
+28 - 4 = 24 \text{ dirhams}.
+\]
+
+---
+
+**3. Step 2 — Half of remainder to savings**  
+Half of \( 24 \) to savings:  
+\[
+\frac{1}{2} \times 24 = 12 \text{ dirhams to savings}.
+\]  
+Remaining after savings (kept in pocket):  
+\[
+24 - 12 = 12 \text{ dirhams in pocket}.
+\]
+
+---
+
+**4. Step 3 — Dog tore pocket money**  
+Dog tore the 12 dirhams in pocket, leaving only 1 dirham intact.  
+So money lost from pocket:  
+\[
+12 - 1 = 11 \text{ dirhams lost (dog)}.
+\]
+
+---
+
+**5. Step 4 — Total money lost**  
+Lost on juice: \( 4 \) dirhams.  
+Lost from pocket (dog): \( 11 \) dirhams.  
+Money in savings is not lost — she still has it.  
+So total lost = juice loss + dog loss:  
+\[
+4 + 11 = 15 \text{ dirhams}.
+\]
+
+---
+
+**6. Check**  
+Initial: \( 28 \) dirhams.  
+After losses: savings \( 12 \) dirhams + pocket intact \( 1 \) dirham = \( 13 \) dirhams remaining.  
+Lost = \( 28 - 13 = 15 \) dirhams. ✓
+
+---
+
+FINAL ANSWER: 15",15.0,0,150,496,646,success,
+49,,Darija,deepseek/deepseek-v3.2,آية بدات كتريني 'ليسكريم' (المسايفة) ف 2006. يلا كانت خلاقت ف 1992 وهادي 16 العام وهي كتريني، شحال ف عمرها دابا؟,30,"Let’s break this down step by step.  
+
+---
+
+**Step 1: Understand the timeline**  
+- آية started selling ice cream in **2006**.  
+- At that time, she had been creating (or working) since **1992**.  
+- The time from 1992 to 2006 is \( 2006 - 1992 = 14 \) years.  
+
+---
+
+**Step 2: Interpret the given phrase**  
+The text says:  
+> يلا كانت خلاقت ف 1992 وهادي 16 العام وهي كتريني  
+
+This means:  
+When she started selling ice cream in 2006, she had been creating for 16 years (since 1992).  
+But 2006 − 1992 = 14 years, not 16.  
+So maybe the 16 years refers to her age when she started selling ice cream? Let’s check:  
+
+If she started creating in 1992 at age \( x \), then in 2006 she is \( x + 14 \) years old.  
+But the sentence says: “and this is the 16th year she is selling” — no, it says “هادي 16 العام وهي كتريني” — possibly meaning “this is the 16th year she is selling ice cream.”  
+
+But that would mean she started selling in \( 2006 - 16 + 1 = 1991 \) — contradicts given 2006.  
+
+So maybe “هادي 16 العام وهي كتريني” means: in 2006, she had been creating for 16 years (since 1990, not 1992). But text says “خلاقت ف 1992” — so there’s inconsistency.  
+
+---
+
+**Step 3: Try another reading**  
+Maybe the intended meaning:  
+She started creating in 1992.  
+In 2006, she says: “This is the 16th year I am selling ice cream.”  
+That means she started selling ice cream in \( 2006 - 16 + 1 = 1991 \) — but that’s before 1992, so that doesn’t fit.  
+
+So maybe “هادي 16 العام وهي كتريني” means “this year (2006) she is 16 years old and selling ice cream.”  
+
+That would mean:  
+Born in \( 2006 - 16 = 1990 \).  
+But she started creating in 1992 — so she was 2 years old then? Unlikely.  
+
+---
+
+**Step 4: Most logical consistent interpretation**  
+Let’s assume:  
+She started creating in 1992 at age \( A \).  
+In 2006, she started selling ice cream, and at that time she had been creating for 16 years.  
+That means:  
+1992 + 16 = 2008 — but that’s after 2006, so impossible.  
+
+So maybe the 16 years refers to her age when she started selling ice cream.  
+If she started selling in 2006 at age 16, then she was born in 1990.  
+Then “خلاقت ف 1992” means she started creating at age \( 1992 - 1990 = 2 \) years old — unrealistic.  
+
+---
+
+**Step 5: Maybe numbers are meant to be consistent like this:**  
+She started creating in 1992 at age \( C \).  
+In 2006, she is \( C + 14 \) years old.  
+The sentence “هادي 16 العام وهي كتريني” means “this is the 16th year she is selling ice cream” — but that would mean she started selling in 1991, before she started creating (1992) — so maybe “creating” means something else, not selling ice cream.  
+
+But the question asks: “شحال ف عمرها دابا?” — how old is she now?  
+“Now” means present time relative to the text. But the text gives past dates (2006, 1992).  
+
+If “now” is 2006:  
+From “خلاقت ف 1992” and “هادي 16 العام وهي كتريني” — if “16 العام” means age 16, then in 2006 she is 16 years old.  
+Then born in 1990, started creating in 1992 at age 2 — odd but maybe possible for a child artist?  
+
+---
+
+**Step 6: Assume simplest**  
+They want current age in 2006:  
+If she started selling ice cream in 2006 and she is 16 years old then, born in 1990.  
+Then “خلاقت ف 1992” is just extra info (started creating at age 2).  
+
+So in 2006, she is \( 2006 - 1990 = 16 \).  
+
+---
+
+**Step 7: But “دابا” means now (present year)**  
+If the problem is from an old book, “now” might be 2006. But if it’s recent, “now” is 2023 or later.  
+The problem doesn’t specify present year, so likely “now” = 2006.  
+
+Thus:  
+Born in 1990 (because in 2006 she is 16).  
+Age now (2006) = 16.  
+
+---
+
+**Step 8: Final answer**  
+
+FINAL ANSWER: 16",16.0,0,92,1151,1243,success,
+54,,English,deepseek/deepseek-v3.2,Carla can cook a batch of waffles in 10 minutes and chicken-fried steak in 6 minutes. How long will it take her to cook 3 steaks and a batch of waffles?,28,"Let’s break this down step by step.  
+
+---
+
+**Step 1: Identify cooking times**  
+- Batch of waffles: \( 10 \) minutes  
+- One chicken-fried steak: \( 6 \) minutes  
+
+---
+
+**Step 2: Determine if tasks can be done simultaneously**  
+The problem doesn’t explicitly say she can only cook one thing at a time, but typically in such problems, unless stated otherwise, we assume she can cook multiple items at once if they don’t require the same equipment/space.  
+However, waffles and steak might require different pans/appliances, so she could cook them at the same time if she has enough equipment.  
+
+But the wording “How long will it take her to cook 3 steaks and a batch of waffles?” usually implies sequential cooking unless multitasking is possible.  
+If she can only use one pan, she must cook sequentially: waffles first, then steaks one by one, or steaks first, then waffles, or interleave them.  
+
+---
+
+**Step 3: Check for multitasking possibility**  
+If she has two burners/pans:  
+- Waffles: 10 minutes in waffle iron  
+- Steaks: each steak 6 minutes in a skillet, possibly cooking multiple steaks at once if skillet fits them.  
+If skillet fits all 3 steaks at once, then steaks take 6 minutes total.  
+
+But if she has only one skillet, she must cook steaks one after another: \( 3 \times 6 = 18 \) minutes for steaks alone.  
+
+---
+
+**Step 4: Most reasonable assumption**  
+Typical middle-school math problems like this assume:  
+- She can cook waffles and steaks simultaneously if they use different appliances.  
+- She can cook multiple steaks simultaneously if possible.  
+But since it says “3 steaks” and “a batch of waffles,” often the intended reading is:  
+She can cook waffles (10 min) and steaks (6 min each) in parallel, but only one steak at a time in the skillet.  
+
+That means:  
+Start waffles (10 min) and at the same time start cooking steaks one by one.  
+
+---
+
+**Step 5: Timeline with parallel cooking**  
+Let’s assume she has a waffle iron and one skillet.  
+At \( t = 0 \): start waffles in waffle iron (10 min), start steak 1 in skillet (6 min).  
+
+Steak 1 done at \( t = 6 \) → start steak 2 (6 min, finishes at \( t = 12 \)).  
+But waffles finish at \( t = 10 \), so between \( t = 10 \) and \( t = 12 \), waffles are done, steak 2 still cooking.  
+
+Steak 2 done at \( t = 12 \) → start steak 3 (6 min, finishes at \( t = 18 \)).  
+
+So total time = \( 18 \) minutes (because steak 3 finishes last).  
+
+---
+
+**Step 6: Could she shorten time by starting steaks first?**  
+If she starts steaks first:  
+At \( t = 0 \): steak 1 (6 min)  
+At \( t = 6 \): steak 2 (6 min, done at \( t = 12 \))  
+At \( t = 12 \): steak 3 (6 min, done at \( t = 18 \))  
+Waffles: if she starts waffles at \( t = 0 \) with steak 1, they finish at \( t = 10 \), still before steak 3.  
+If she starts waffles later, say at \( t = 12 \), they finish at \( t = 22 \) → longer total.  
+
+Best is to start waffles as early as possible while cooking steaks continuously.  
+So start waffles at \( t = 0 \) with steak 1 → total time = max(10, 18) = 18 minutes.  
+
+---
+
+**Step 7: Conclusion**  
+Minimum time = \( 18 \) minutes.  
+
+---
+
+FINAL ANSWER: 18",18.0,0,80,877,957,success,
+55,,English,deepseek/deepseek-v3.2,Mark has a really bad headache.  He takes 2 Tylenol tablets of 500 mg each and he does every 4 hours for 12 hours.  How many grams of Tylenol does he end up taking?,3,"Alright, let’s break this down step by step.  
+
+---
+
+**Step 1: Understand the dosage schedule**  
+Mark takes **2 tablets** of **500 mg each** every 4 hours for 12 hours.  
+
+That means:  
+- Each dose = \( 2 \times 500 \text{ mg} = 1000 \text{ mg} \)  
+- Time span = 12 hours  
+- Doses every 4 hours ⇒ number of doses = \( \frac{12}{4} + 1 \) if starting at hour 0.  
+
+Let’s check:  
+If he takes first dose at time 0, then at 4 hours, then at 8 hours, then at 12 hours — that’s **4 doses** total.  
+
+---
+
+**Step 2: Calculate total mg**  
+Each dose = \( 1000 \text{ mg} \)  
+4 doses = \( 4 \times 1000 \text{ mg} = 4000 \text{ mg} \)  
+
+---
+
+**Step 3: Convert mg to grams**  
+\( 1 \text{ gram} = 1000 \text{ mg} \)  
+\( 4000 \text{ mg} = \frac{4000}{1000} \text{ grams} = 4 \text{ grams} \)  
+
+---
+
+**Step 4: Final answer**  
+
+FINAL ANSWER: 4",4.0,0,87,296,383,success,
+62,,Darija,deepseek/deepseek-v3.2,بوشرى و إبراهيم عندهم 144 ليمونة باغين يحولوها من جهة لجهة أخرى ف الجردة. بوشرى قادرة تهز 4 ليمونات ف دقة وحدة، وإبراهيم قادر يهز 8 ليمونات. إيلا كانو كيهزو الجهد ديالهم كامل بجوج ف كل مرة، شحال من مرة (aller-retour) خاصهم يديرو باش يحولو الليمون كامل؟,12,"Alright, let's break this down step by step.  
+
+---
+
+**Step 1: Understanding the problem**  
+Bouchra and Ibrahim together have 144 lemons to transport from one side to the other in a garden.  
+- Bouchra can carry **4 lemons per trip**  
+- Ibrahim can carry **8 lemons per trip**  
+- They always go together (both carry their maximum each trip)  
+- They need to do **aller-retour** (round trips) until all lemons are moved.  
+
+---
+
+**Step 2: How many lemons per round trip?**  
+Each one-way crossing:  
+Bouchra carries 4, Ibrahim carries 8 → total = \( 4 + 8 = 12 \) lemons moved across in one direction.  
+
+But a **round trip** means:  
+1. They start on side A with all lemons.  
+2. They cross to side B, carrying 12 lemons → those 12 are now on side B.  
+3. They must return to side A (empty-handed or not? Usually in such problems, they need to return to get more lemons, so they carry nothing on the return trip).  
+
+So each **full round trip** moves **12 lemons** from side A to side B.  
+
+---
+
+**Step 3: Number of round trips needed**  
+Total lemons = 144.  
+Lemons per round trip = 12.  
+
+Number of round trips = \( \frac{144}{12} = 12 \) round trips.  
+
+---
+
+**Step 4: Check if last trip is one-way**  
+After 11 round trips, lemons moved = \( 11 \times 12 = 132 \) lemons.  
+Remaining on side A = \( 144 - 132 = 12 \) lemons.  
+
+On the 12th round trip:  
+They carry these last 12 lemons to side B. Now all lemons are on side B.  
+Do they need to return? No, because the job is done.  
+
+So the **last trip is only one-way**, not a full round trip.  
+
+---
+
+**Step 5: Clarify the question’s wording**  
+The problem asks: *""شحال من مرة (aller-retour) خاصهم يديرو""*  
+""aller-retour"" means round trip.  
+They will do **11 full round trips** plus **1 final one-way trip**.  
+
+But the question might be counting **trips** in terms of **crossings** or in terms of **full round trips until all moved**.  
+If they ask: how many **aller-retour** are needed to move all lemons?  
+
+On the last crossing, they don’t return, so the last one is not an aller-retour.  
+
+Thus:  
+Number of **full round trips** needed = \( \lceil \frac{144}{12} \rceil \) but careful:  
+
+Actually:  
+Let \( n \) = number of full round trips.  
+After \( n \) full round trips, lemons moved = \( 12n \).  
+We need \( 12n \ge 144 \) → \( n \ge 12 \).  
+But if \( n = 12 \), that means 12 round trips = 24 one-way crossings, but in reality after the 12th trip’s first half, they are done, so they don’t do the return.  
+
+So the correct way:  
+Each full round trip moves 12 lemons.  
+After 11 round trips: 132 lemons moved, 12 left.  
+The 12 left are moved in the next crossing (one-way).  
+
+So **full round trips** = 11.  
+But the question might mean: how many **times** do they need to travel from A to B and back? That’s exactly 11 times.  
+
+---
+
+**Step 6: Check if they carry together both ways**  
+They always go together, so each crossing is both of them.  
+Sequence:  
+1. A→B (12 lemons)  
+2. B→A (0 lemons)  
+Repeat 11 times.  
+Then A→B last time (12 lemons), done.  
+
+So total one-way crossings = \( 11 \times 2 + 1 = 23 \) one-way trips.  
+But the question asks for **aller-retour** count = 11.  
+
+---
+
+**Step 7: Conclusion**  
+The answer is **11** full round trips (aller-retour) before the final one-way trip.  
+
+---
+
+FINAL ANSWER: 11",11.0,0,151,967,1118,success,
+64,,Darija,deepseek/deepseek-v3.2,رشيد سافر فالصيف فطوموبيلتو. مشا للمدينة اللولة، ومن تما مشا للمدينة التانية وضرب دوبل المسافة اللي ضرب فالأول. المدينة التالتة كانت بعيدة بـ 40 كلم، وهاد المسافة هي النص ديال الطريق من البدية للمدينة اللولة. الوجهة اللخرة ضرب فيها دوبل الطريق اللي ضرب فالمراحل كاملين اللي قبل. شحال من كلم ضرب رشيد فالسفر ديالو كامل؟,560,"Alright, let's break this down step by step.
+
+---
+
+**Step 1: Understanding the problem in English**  
+Rashid traveled in his car in the summer.  
+1. He went to the first city.  
+2. From there, he went to the second city, traveling **double** the distance he traveled to the first city.  
+3. The third city was **40 km** away from the second city, and this 40 km is **half** the distance from the start to the first city.  
+4. The final destination: he traveled **double** the total distance of all previous stages combined.
+
+We need the total distance traveled.
+
+---
+
+**Step 2: Define variables**  
+Let \( x \) = distance from start to first city.
+
+From first city to second city = \( 2x \) (double the first distance).
+
+From second city to third city = \( 40 \) km.
+
+We are told:  
+\( 40 = \frac{1}{2} \times x \)  
+So \( x = 80 \) km.
+
+---
+
+**Step 3: Distances so far**  
+Stage 1: \( x = 80 \) km  
+Stage 2: \( 2x = 160 \) km  
+Stage 3: \( 40 \) km  
+
+Total before final stage = \( 80 + 160 + 40 = 280 \) km.
+
+---
+
+**Step 4: Final stage**  
+Final stage = double the total of all previous stages = \( 2 \times 280 = 560 \) km.
+
+---
+
+**Step 5: Total distance traveled**  
+Total = \( 280 + 560 = 840 \) km.
+
+---
+
+**Step 6: Check**  
+Start → City 1: 80 km  
+City 1 → City 2: 160 km  
+City 2 → City 3: 40 km (given as half of 80, correct)  
+Sum before final = 280 km  
+Final stage = 560 km (double 280)  
+Total = 840 km.
+
+---
+
+FINAL ANSWER: 840",840.0,0,167,432,599,success,
+64,,English,deepseek/deepseek-v3.2,"Rick took off on a road trip for the summer.  He traveled to the first destination on his trip, and then from there, he traveled twice the distance to this second destination.  The third point on his trip was 40 miles away, which was half the distance he traveled from the beginning to his first destination.  The final destination took twice the amount of driving of all the other legs put together.  How many miles in total did he travel across all the legs of the trip?",560,"Alright, let’s break this down step-by-step.
+
+---
+
+**Step 1: Define variables**
+
+Let:  
+- \( x \) = distance from start to first destination (miles)  
+- \( y \) = distance from first destination to second destination (miles)  
+- \( z \) = distance from second destination to third destination (miles)  
+- \( w \) = distance from third destination to final destination (miles)
+
+---
+
+**Step 2: Translate the problem into equations**
+
+1. “He traveled to the first destination on his trip, and then from there, he traveled twice the distance to this second destination.”  
+   This means: \( y = 2x \).
+
+2. “The third point on his trip was 40 miles away, which was half the distance he traveled from the beginning to his first destination.”  
+   “The third point on his trip was 40 miles away” → \( z = 40 \).  
+   “which was half the distance he traveled from the beginning to his first destination” → \( z = \frac{x}{2} \).  
+
+   So: \( 40 = \frac{x}{2} \) → \( x = 80 \).
+
+3. From \( y = 2x \) and \( x = 80 \), we get \( y = 160 \).
+
+---
+
+**Step 3: Interpret “The final destination took twice the amount of driving of all the other legs put together.”**
+
+“All the other legs” means legs 1, 2, and 3 combined: \( x + y + z \).  
+So: \( w = 2 \times (x + y + z) \).
+
+---
+
+**Step 4: Compute**
+
+\( x = 80 \)  
+\( y = 160 \)  
+\( z = 40 \)  
+
+\( x + y + z = 80 + 160 + 40 = 280 \).  
+
+\( w = 2 \times 280 = 560 \).
+
+---
+
+**Step 5: Total distance**
+
+Total = \( x + y + z + w \)  
+= \( 80 + 160 + 40 + 560 \)  
+= \( 840 \) miles.
+
+---
+
+**Step 6: Final answer**
+
+FINAL ANSWER: 840",840.0,0,132,470,602,success,
+68,,Darija,deepseek/deepseek-v3.2,يوسف وخوتو كومونداو بيتزا وطلبوا تقطع على 16 طريف. فالعشا كلاو غير الربع ديالها. الغد ليه، يوسف كلا الربع ديال داكشي لي بقا. ومن بعد خوتو بجوج كلاو 2 طراف للواحد. شحال من طرف بقا د البيتزا؟,5,"Alright, let’s break this down step by step.  
+
+---
+
+**Step 1: Understand the problem in English**  
+Youssef and his two brothers ordered a pizza cut into 16 slices.  
+At dinner, they ate **half** of it.  
+The next day, Youssef ate **a quarter** of what remained.  
+Then the two brothers each ate **2 slices**.  
+How many slices are left?
+
+---
+
+**Step 2: Initial pizza slices**  
+Total slices = 16.
+
+---
+
+**Step 3: Dinner**  
+They ate **half** of the pizza at dinner.  
+Half of 16 = \( 16 \times \frac{1}{2} = 8 \) slices eaten.  
+Remaining after dinner = \( 16 - 8 = 8 \) slices.
+
+---
+
+**Step 4: Next day — Youssef**  
+Youssef ate **a quarter** of what remained (the 8 slices).  
+\( 8 \times \frac{1}{4} = 2 \) slices eaten by Youssef.  
+Remaining after Youssef = \( 8 - 2 = 6 \) slices.
+
+---
+
+**Step 5: Next day — the two brothers**  
+Each of the two brothers ate 2 slices.  
+Total eaten by them = \( 2 \times 2 = 4 \) slices.  
+Remaining after brothers = \( 6 - 4 = 2 \) slices.
+
+---
+
+**Step 6: Final answer**  
+\[
+\boxed{2}
+\]
+
+---
+
+FINAL ANSWER: 2",2.0,0,126,332,458,success,
+80,,Darija,deepseek/deepseek-v3.2,جمال شرا 3 د السهديات (CDs). جوج منهم فيهم ساعة ونص للواحد. والسيدي التالت فيه الضعف ديال الوقت د دوك اللولين. شحال هي المدة المجموعة ديال هاد السهديات كاملين؟,6,"Let’s break this down step by step.  
+
+---
+
+**Step 1: Understand the problem**  
+Jamal bought 3 CDs.  
+- Two of them each have 1.5 hours of content.  
+- The third CD has double the time of the first two **combined**.  
+
+We need the total duration of all CDs together.
+
+---
+
+**Step 2: Time on the first two CDs**  
+Each of the first two CDs: \( 1.5 \) hours.  
+So together:  
+\[
+1.5 + 1.5 = 3 \text{ hours}
+\]
+
+---
+
+**Step 3: Time on the third CD**  
+The third CD has double the time of the first two combined.  
+First two combined = \( 3 \) hours.  
+Double that:  
+\[
+3 \times 2 = 6 \text{ hours}
+\]
+
+---
+
+**Step 4: Total time**  
+\[
+3 \text{ (first two)} + 6 \text{ (third)} = 9 \text{ hours}
+\]
+
+---
+
+**Step 5: Final answer**  
+\[
+\boxed{9}
+\]
+
+FINAL ANSWER: 9",9.0,0,102,246,348,success,
+94,,Darija,deepseek/deepseek-v3.2,لبنى كاينة فمحل د اللعب. ديجا عندها فالشاريو 28 لعبة، كل وحدة كاتدير 10 دراهم. زادت عليهم 20 'نونوكس' (دبدوب). يلا كان عندها فبزطامها 580 درهم وهي بالضبط اللي قداتها باش تخلص كلشي، شحال داير النونوكس الواحد؟,15,"Let’s go step by step.
+
+---
+
+**Step 1: Understand the problem**
+
+Lubna has a toy store.  
+She already has **28 toys** in the shop, each sold for **10 dirhams**.  
+She adds **20 “nounouks”** (teddy bears).  
+She had **580 dirhams** in her wallet, and she spent exactly that amount to buy everything.  
+We need the **price of one nounouk**.
+
+---
+
+**Step 2: Interpret the situation**
+
+She already has 28 toys in the shop — these are not bought now, they are already there.  
+She **adds** 20 nounouks — these are what she buys now.  
+She spends **580 dirhams** to buy these 20 nounouks (and nothing else, since the 28 toys are already in the shop).
+
+So the 580 dirhams is the total cost for 20 nounouks.
+
+---
+
+**Step 3: Set up the equation**
+
+Let \( x \) = price of one nounouk in dirhams.
+
+She buys 20 nounouks, so total cost = \( 20x \).
+
+She spent exactly 580 dirhams:
+
+\[
+20x = 580
+\]
+
+---
+
+**Step 4: Solve for \( x \)**
+
+\[
+x = \frac{580}{20} = 29
+\]
+
+---
+
+**Step 5: Conclusion**
+
+Each nounouk costs **29 dirhams**.
+
+---
+
+FINAL ANSWER: 29",29.0,0,136,314,450,success,
+97,,English,deepseek/deepseek-v3.2,"Barkley gets 10 new dog bones at the beginning of the month.  After 5 months, he has 8 bones available and has buried the rest.  How many bones has he buried?",42,"Let’s go step by step.  
+
+---
+
+**Step 1: Understand the problem**  
+Barkley starts with 10 new dog bones at the beginning of the month.  
+After 5 months, he has 8 bones *available* (meaning not buried, still accessible).  
+The rest are buried.  
+We need to find how many bones he has buried.
+
+---
+
+**Step 2: Determine total bones available now**  
+After 5 months, he has 8 bones available.  
+That means 8 bones are still above ground (not buried).
+
+---
+
+**Step 3: Find buried bones**  
+He started with 10 bones total.  
+If 8 are still available, then buried bones = total bones − available bones.  
+
+\[
+\text{Buried} = 10 - 8 = 2
+\]
+
+---
+
+**Step 4: Check for possible trick**  
+The “5 months” might be extra information to distract.  
+It says: after 5 months, he has 8 bones available and has buried the rest.  
+That means buried bones are not available, so indeed:  
+\[
+10 - 8 = 2
+\]
+No other bones are mentioned, so 2 buried.
+
+---
+
+**Step 5: Final answer**  
+\[
+\boxed{2}
+\]
+
+---
+
+FINAL ANSWER: 2",2.0,0,74,279,353,success,
+102,,Darija,deepseek/deepseek-v3.2,سميرة بغات تشري لعب لكلبها. اللعب دايرين ليهم عرض 'شري وحدة والتانية بنص التمن'، والوحدة كادير أصلا 12 درهم. هي شرات 4 د اللعبات. شحال خسرات فلوس؟,36,"Alright, let's break this down step by step.
+
+---
+
+**Step 1: Understanding the problem**
+
+The problem says (in Moroccan Arabic/Darija):
+
+> ""Samira wants to buy toys for her dog. The toys are on sale: 'one toy at full price and the second at half price', and one toy originally costs 12 dirhams. She bought 4 toys. How much money did she lose?""
+
+Wait — ""How much money did she lose?"" doesn't make sense unless they mean ""How much money did she save?"" compared to buying all at full price.
+
+---
+
+**Step 2: Original price per toy**
+
+One toy originally costs 12 dirhams.
+
+---
+
+**Step 3: Deal details**
+
+The deal is: **Buy one at full price, get the second at half price.**
+
+That means for every **pair** of toys:
+
+- First toy: 12 dirhams  
+- Second toy: \( \frac{12}{2} = 6 \) dirhams  
+- Total for 2 toys = \( 12 + 6 = 18 \) dirhams.
+
+---
+
+**Step 4: Buying 4 toys**
+
+4 toys = 2 pairs.
+
+Each pair costs 18 dirhams.
+
+Total paid = \( 18 \times 2 = 36 \) dirhams.
+
+---
+
+**Step 5: Without the deal**
+
+Without the deal, 4 toys at 12 dirhams each = \( 4 \times 12 = 48 \) dirhams.
+
+---
+
+**Step 6: Savings (what they call ""lost money"" in the problem)**
+
+Savings = Price without deal − Price with deal  
+Savings = \( 48 - 36 = 12 \) dirhams.
+
+---
+
+**Step 7: Conclusion**
+
+She saved 12 dirhams compared to buying all at full price.  
+The problem asks ""شحال خسرات فلوس؟"" which literally means ""How much money did she lose?"" — but in context, it must mean ""How much less did she pay?"" i.e., savings.
+
+---
+
+**FINAL ANSWER: 12**",12.0,0,104,441,545,success,
+123,,English,deepseek/deepseek-v3.2,"Sofia and her mother go to the grocery store and buys 10kgs of oranges to be used in their home for the week. While at the store, Sofia's father calls and says they're to add 5 more kgs since their neighbor also wanted some supplies. When they reach home, they estimated that for the next coming two weeks they'll have to buy twice as many oranges each week for the supplies to be enough. What the total quantity of oranges they would have bought after the three weeks.",75,"Alright, let’s break this down step-by-step.  
+
+---
+
+**Step 1: Initial purchase at the store**  
+They buy 10 kg of oranges.  
+
+**Step 2: Addition during the call**  
+Father says to add 5 kg more for the neighbor.  
+So at the store, total bought = \( 10 + 5 = 15 \) kg.  
+
+---
+
+**Step 3: Understanding the timeline**  
+The 15 kg is for **this week** (Week 1).  
+They estimate that for the **next two weeks** (Week 2 and Week 3), they’ll need **twice as many oranges each week** compared to what they originally bought for themselves this week.  
+
+---
+
+**Step 4: Determine “twice as many oranges each week”**  
+Original amount for themselves this week = 10 kg (the 5 kg extra was for the neighbor, not for their own household).  
+So for Week 2, they need \( 2 \times 10 = 20 \) kg.  
+For Week 3, they also need \( 2 \times 10 = 20 \) kg.  
+
+---
+
+**Step 5: Total over three weeks**  
+Week 1: 15 kg (10 for themselves + 5 for neighbor)  
+Week 2: 20 kg  
+Week 3: 20 kg  
+
+Total = \( 15 + 20 + 20 = 55 \) kg.  
+
+---
+
+**Step 6: Check interpretation**  
+The problem says: “for the next coming two weeks they’ll have to buy twice as many oranges each week for the supplies to be enough.”  
+“Twice as many” compared to their own household’s need for Week 1 (10 kg), not compared to the 15 kg total.  
+So 20 kg per week for Weeks 2 and 3.  
+
+---
+
+**Final Answer:**  
+\[
+\boxed{55}
+\]  
+
+FINAL ANSWER: 55",55.0,0,135,456,591,success,
+136,,Darija,deepseek/deepseek-v3.2,كريمة بغات تشري بزطام بـ 22 درهم وصاك الثمن ديالو قل بـ 3 دراهم من 4 المرات الثمن د البزطام. شحال غاتقام عليها هاد الشروة كاملة؟,107,"Alright, let's break this down step by step.
+
+---
+
+**Step 1: Understanding the problem**
+
+We have:
+
+- Karima wants to buy a **bztam** (some item) for **22 dirhams**.
+- The price of the **bztam** is **3 dirhams less than 4 times the price of the item she wants to buy**.
+- Wait — careful: The text says:
+
+> ""كريمة بغات تشري بزطام بـ 22 درهم وصاك الثمن ديالو قل بـ 3 دراهم من 4 المرات الثمن د البزطام.""
+
+Let’s parse it:
+
+""Karima wants to buy a **bztam** for 22 dirhams"" — no, that’s not quite right.  
+Actually: ""Karima wants to buy a **bztam** for 22 dirhams"" — but then ""وصاك الثمن ديالو قل بـ 3 دراهم من 4 المرات الثمن د البزطام.""
+
+""وصاك"" means ""and it turns out"" or ""and she found that"".  
+""الثمن ديالو"" means ""its price"".  
+""قل بـ 3 دراهم من 4 المرات الثمن د البزطام"" means ""is less by 3 dirhams than 4 times the price of the **bztam**"".
+
+Hmm — that seems contradictory: ""bztam"" is mentioned twice? Let’s check the Arabic again:
+
+""بزطام بـ 22 درهم"" — maybe ""bztam"" is the item she wants to buy, and its price is 22 dirhams? But then the second part says: ""its price is less by 3 dirhams than 4 times the price of the bztam"" — that would be circular.
+
+Maybe ""bztam"" is a different item? Possibly the sentence means:
+
+Karima wants to buy **something** for 22 dirhams, and it turns out that **its price** (the price of that something) is **3 dirhams less than 4 times the price of the bztam**.
+
+So: Let’s define:
+
+Let \( x \) = price of the **bztam** (in dirhams).  
+Let \( y \) = price of the **item she wants to buy**.
+
+We know:  
+1. \( y = 22 \) (she wants to buy it for 22 dirhams — maybe that’s the price she expects, but actually it’s different? No, the problem says ""بغات تشري بزطام بـ 22 درهم"" — maybe she wants to buy a bztam for 22 dirhams, but then the second part says ""its price"" refers to the bztam’s price? That’s confusing.)
+
+Better reading:  
+""كريمة بغات تشري بزطام بـ 22 درهم"" — maybe ""بزطام"" is the item, and ""بـ 22 درهم"" means ""costing 22 dirhams""? But then ""وصاك الثمن ديالو قل بـ 3 دراهم من 4 المرات الثمن د البزطام"" — ""its price is less by 3 dirhams than 4 times the price of the bztam"" — so ""bztam"" is mentioned twice, so ""its price"" refers to the bztam’s price? That would mean:
+
+Price of bztam = \( p \).  
+We have \( p = 4p - 3 \) — impossible unless \( p=1 \), but then first part says she wants to buy it for 22 dirhams? Contradiction.
+
+---
+
+**Step 2: Try another interpretation**
+
+Maybe ""بزطام"" in the first part is a typo or misprint? Could it be ""كريمة بغات تشري حاجة بـ 22 درهم"" (she wants to buy something for 22 dirhams) but text says ""بزطام"" which might be a specific item name. But then second part: ""its price is less by 3 dirhams than 4 times the price of the bztam"".
+
+So: Let \( b \) = price of bztam.  
+Let \( s \) = price of the thing she wants to buy.
+
+Given: \( s = 22 \).  
+Also: \( s = 4b - 3 \).
+
+So \( 22 = 4b - 3 \) → \( 4b = 25 \) → \( b = 6.25 \).
+
+Then the question: ""شحال غاتقام عليها هاد الشروة كاملة؟"" means ""How much will this purchase cost in total?"" — purchase of what? Possibly she is buying **both** the bztam and the other item? Or maybe ""bztam"" is the item she wants, and the 22 dirhams is not the price but the money she has? No, that doesn’t fit.
+
+---
+
+**Step 3: Maybe ""بزطام"" is the item she wants, and the sentence says:**
+
+""Karima wants to buy a bztam for 22 dirhams, and it turns out its price is less by 3 dirhams than 4 times the price of the bztam.""
+
+That’s nonsense algebraically unless ""its price"" refers to something else. Possibly ""its price"" refers to the **price of something else** related? Or maybe the problem means:
+
+She wants to buy a bztam **and** something else? But text doesn’t mention two items.
+
+Wait — maybe the 22 dirhams is **not** the price of bztam, but the price of **something else** she wants to buy? But the sentence says ""تشري بزطام بـ 22 درهم"" — ""buy a bztam for 22 dirhams"" — so price of bztam = 22.
+
+Then: price of bztam = 22.  
+Also: price of bztam = \( 4 \times \text{(price of bztam)} - 3 \) → \( 22 = 4 \times 22 - 3 \) → \( 22 = 88 - 3 = 85 \) — false.
+
+So clearly 22 is **not** the price of bztam. So ""بـ 22 درهم"" must refer to something else.
+
+---
+
+**Step 4: Rethink the Arabic**
+
+""كريمة بغات تشري بزطام بـ 22 درهم"" — could mean ""Karima wants to buy a bztam **with** 22 dirhams"" (i.e., she has 22 dirhams). But then ""وصاك الثمن ديالو قل بـ 3 دراهم من 4 المرات الثمن د البزطام"" — ""its price is less by 3 dirhams than 4 times the price of the bztam"".
+
+If ""its price"" refers to the bztam’s price, then:  
+Let \( p \) = price of bztam.  
+We have \( p = 4p - 3 \) → \( 3p = 3 \) → \( p = 1 \).  
+Then bztam costs 1 dirham, but she has 22 dirhams — so she can buy 22 of them? Then total cost = \( 22 \times 1 = 22 \) dirhams.
+
+But question: ""شحال غاتقام عليها هاد الشروة كاملة؟"" — ""How much will this purchase cost in total?"" If she buys with her 22 dirhams, total cost = 22 dirhams. That seems too trivial.
+
+---
+
+**Step 5: Maybe ""بزطام"" is not the item she’s buying but the item’s name is something else?**
+
+Let me assume:  
+She wants to buy **an item** (call it item A) for 22 dirhams.  
+The price of item A is 3 dirhams less than 4 times the price of **bztam** (item B).
+
+So:  
+Price of A = 22.  
+Price of A = \( 4 \times \text{(price of B)} - 3 \).  
+So \( 22 = 4B - 3 \) → \( 4B = 25 \) → \( B = 6.25 \).
+
+If she buys **both** A and B, total cost = \( 22 + 6.25 = 28.25 \) dirhams.
+
+That makes sense: ""هاد الشروة كاملة"" means ""this whole purchase"" — purchase of what? Possibly both items? But the problem only mentions she wants to buy ""bztam"" at first, but maybe she ends up buying both? Not clear.
+
+---
+
+**Step 6: Check if ""بزطام"" is the item she wants, and 22 dirhams is her money**
+
+Let \( p \) = price of bztam.  
+Given: \( p = 4p - 3 \) → \( p = 1 \).  
+She has 22 dirhams, so she can buy \( 22 / 1 = 22 \) bztams.  
+Total cost = \( 22 \times 1 = 22 \) dirhams.
+
+That’s too trivial for a math problem.
+
+---
+
+**Step 7: Maybe the problem is:**
+""Karima wants to buy a bztam for 22 dirhams (that’s what she thinks), but actually its price is 3 dirhams less than 4 times the price of the bztam"" — that’s still \( p = 4p - 3 \) → \( p=1 \), so actual price is 1 dirham, so she pays 1 dirham, not 22. Then total cost = 1 dirham.
+
+But then why mention 22? Maybe 22 is the price of something else? Or maybe 22 is 4 times something?
+
+---
+
+**Step 8: Try this interpretation (most logical):**
+
+Let \( x \) = price of bztam.  
+The price of **the item she wants to buy** is 22 dirhams.  
+That price (22) is equal to \( 4x - 3 \).
+
+So \( 22 = 4x - 3 \) → \( 4x = 25 \) → \( x = 6.25 \).
+
+If she buys **the bztam** (price 6.25) and **the other item** (price 22), total = \( 6.25 + 22 = 28.25 \).
+
+That’s a neat answer.
+
+---
+
+**Step 9: Conclusion**
+
+The total cost for the whole purchase = \( 28.25 \) dirhams.
+
+---
+
+FINAL ANSWER: 28.25",28.25,0,95,2327,2422,success,
+141,,English,deepseek/deepseek-v3.2,"Jackson is making pancakes with three ingredients: flour, milk and eggs. 20% of the bottles of milk are spoiled and the rest are fresh. 60% of the eggs are rotten. 1/4 of the cannisters of flour have weevils in them. If Jackson picks a bottle of milk, an egg and a canister of flour at random, what are the odds all three ingredients will be good?",24,"Alright, let's go step-by-step.
+
+---
+
+**Step 1: Identify the probability that each ingredient is good.**
+
+1. **Milk:**  
+   - 20% spoiled → 80% fresh.  
+   \[
+   P(\text{good milk}) = 0.8
+   \]
+
+2. **Eggs:**  
+   - 60% rotten → 40% good.  
+   \[
+   P(\text{good egg}) = 0.4
+   \]
+
+3. **Flour:**  
+   - \( \frac{1}{4} \) have weevils → \( \frac{3}{4} \) good.  
+   \[
+   P(\text{good flour}) = \frac{3}{4} = 0.75
+   \]
+
+---
+
+**Step 2: Probability all three are good.**
+
+Since the selections are independent:
+
+\[
+P(\text{all good}) = 0.8 \times 0.4 \times 0.75
+\]
+
+---
+
+**Step 3: Compute.**
+
+\[
+0.8 \times 0.4 = 0.32
+\]
+\[
+0.32 \times 0.75 = 0.24
+\]
+
+So:
+\[
+P(\text{all good}) = 0.24
+\]
+
+---
+
+**Step 4: Interpret “odds” in the problem.**
+
+The problem says: “what are the odds all three ingredients will be good?”  
+In casual math problems, this often means probability, but sometimes “odds” means ratio of success to failure.  
+Let’s check:
+
+Probability all good = \( 0.24 \)  
+Probability not all good = \( 1 - 0.24 = 0.76 \)
+
+Odds in favor = \( \frac{0.24}{0.76} = \frac{24}{76} = \frac{6}{19} \).
+
+---
+
+**Step 5: Decide which one they want.**
+
+The phrasing “what are the odds” in many multiple-choice math problems means probability (a decimal or fraction).  
+But if they explicitly want “odds” as a ratio, it’s \( 6 : 19 \).  
+Since the problem says “give the final numeric answer” and the probability is a number, I’ll give probability unless specified otherwise.  
+But let’s see: they said “FINAL ANSWER: <number>” — if they want odds as a ratio, they’d expect “6:19” or “6/19”, but that’s not a single number.  
+They might expect the probability \( 0.24 \) or fraction \( \frac{6}{25} \).
+
+Wait — \( 0.24 = \frac{24}{100} = \frac{6}{25} \).  
+So probability = \( \frac{6}{25} \).
+
+---
+
+**Step 6: Check if they want odds or probability.**
+
+Given the instruction “FINAL ANSWER: <number>”, they likely want the probability as a decimal or fraction.  
+But “odds” sometimes means probability in everyday English.  
+Given the numbers, \( \frac{6}{25} \) is exact.
+
+---
+
+**Step 7: Final numeric answer.**
+
+\[
+P = \frac{6}{25}
+\]
+
+---
+
+**FINAL ANSWER: \(\frac{6}{25}\)**  
+If they want decimal: \(0.24\), but fraction is exact.
+
+Since the problem says “<number>”, I’ll give the fraction.
+
+---
+
+**FINAL ANSWER: \(\frac{6}{25}\)**",25.0,0,118,749,867,success,
+141,,Darija,deepseek/deepseek-v3.2,جمال كايصاوب البغرير بـ 3 د المكونات: الطحين، الحليب، والبيض. 20% من قراعي الحليب خاسرين، والباقي مزيانين. 60% د البيض خانز. و 1/4 د باكيات الطحين مدودين. إيلا جمال هز قرعة حليب، بيضة، وباكية طحين عشوائيا، شحال الاحتمال باش يكونو المكونات بثلاثة مزيانين؟,24,"Alright, let’s break this down step by step.
+
+---
+
+**Step 1: Understanding the problem**
+
+We have 3 ingredients:  
+1. **الحليب** (Milk) — comes in “قرعة” (bottle/container)  
+2. **البيض** (Egg) — comes as “بيضة” (egg)  
+3. **الطحين** (Flour) — comes in “باكية” (packet)
+
+Probabilities that each is **مزيان** (good):
+
+- **Milk**: 20% of milk containers are bad → 80% good.  
+  \( P(\text{حليب مزيان}) = 0.8 \)
+
+- **Egg**: 60% of eggs are bad → 40% good.  
+  \( P(\text{بيضة مزيانة}) = 0.4 \)
+
+- **Flour**: \( \frac14 \) of flour packets are bad → \( 1 - \frac14 = \frac34 \) good.  
+  \( P(\text{طحين مزيان}) = 0.75 \)
+
+---
+
+**Step 2: Independence assumption**
+
+Jamal picks **one milk container, one egg, one flour packet** at random.  
+We assume the quality of each is independent of the others (reasonable for random selection from large stocks).
+
+---
+
+**Step 3: Probability all three are good**
+
+\[
+P(\text{all good}) = P(\text{حليب مزيان}) \times P(\text{بيضة مزيانة}) \times P(\text{طحين مزيان})
+\]
+\[
+= 0.8 \times 0.4 \times 0.75
+\]
+
+---
+
+**Step 4: Calculation**
+
+First: \( 0.8 \times 0.4 = 0.32 \)  
+Then: \( 0.32 \times 0.75 = 0.24 \)
+
+---
+
+**Step 5: Final answer**
+
+\[
+0.24 = \frac{24}{100} = \frac{6}{25}
+\]
+
+The problem asks for probability in numeric form (decimal or fraction).  
+We can give as decimal \( 0.24 \) or fraction \( \frac{6}{25} \).  
+Since no specific format is demanded except “<number>”, I’ll give as decimal.
+
+---
+
+FINAL ANSWER: 0.24",0.24,0,161,511,672,success,
+161,,English,deepseek/deepseek-v3.2,"Jay has decided to save money from his paycheck every week. He has decided that he will increase the amount he saves each week by 10 dollars. If he started by saving 20 dollars this week, how much will he have saved in a month from now?",60,"Alright, let’s go step-by-step.  
+
+---
+
+**Step 1: Understand the problem**  
+Jay saves money weekly.  
+- First week: \( 20 \) dollars  
+- Each week he increases the amount saved by \( 10 \) dollars.  
+- “In a month from now” means 4 weeks from this week (since months aren’t specified, we assume 4 weeks in a month for a weekly saving plan).  
+
+So:  
+Week 1: \( 20 \)  
+Week 2: \( 20 + 10 = 30 \)  
+Week 3: \( 30 + 10 = 40 \)  
+Week 4: \( 40 + 10 = 50 \)  
+
+---
+
+**Step 2: Calculate total saved after 4 weeks**  
+We want the **total** saved in these 4 weeks, not just the amount saved in week 4.  
+
+Total saved = \( 20 + 30 + 40 + 50 \)  
+
+---
+
+**Step 3: Sum the series**  
+This is an arithmetic sequence:  
+First term \( a = 20 \)  
+Common difference \( d = 10 \)  
+Number of terms \( n = 4 \)  
+
+Sum formula:  
+\[
+S_n = \frac{n}{2} \times [2a + (n-1)d]
+\]  
+\[
+S_4 = \frac{4}{2} \times [2 \times 20 + (4-1) \times 10]
+\]  
+\[
+S_4 = 2 \times [40 + 30]
+\]  
+\[
+S_4 = 2 \times 70 = 140
+\]  
+
+---
+
+**Step 4: Interpret the result**  
+In 4 weeks, Jay will have saved a total of \( 140 \) dollars.  
+
+---
+
+FINAL ANSWER: 140",140.0,0,85,387,472,success,
+161,,Darija,deepseek/deepseek-v3.2,جواد قرر يوفر الفلوس من الخلصة ديالو كل سيمانة. وقرر أنه غادي يزيد المبلغ اللي كيوفر بـ 10 دراهم كل سيمانة. إلا بدا بـ 20 درهم هاد السيمانة، شحال غادي يكون جمع من هنا لشهر؟,60,"Alright, let’s break this down step by step.  
+
+---
+
+**Step 1: Understanding the problem**  
+Jawad decides to save money every week.  
+- He starts with **20 dirhams** this week.  
+- Each week he **increases** the amount saved by **10 dirhams**.  
+- We need to find the **total saved in 1 month**.  
+
+We must clarify: “month” here likely means **4 weeks** (since it’s based on weekly savings).  
+
+---
+
+**Step 2: Weekly amounts**  
+Week 1: \( 20 \)  
+Week 2: \( 20 + 10 = 30 \)  
+Week 3: \( 30 + 10 = 40 \)  
+Week 4: \( 40 + 10 = 50 \)  
+
+---
+
+**Step 3: Total saved in 4 weeks**  
+\[
+20 + 30 + 40 + 50
+\]  
+\[
+= (20 + 50) + (30 + 40)
+\]  
+\[
+= 70 + 70 = 140
+\]  
+
+---
+
+**Step 4: Conclusion**  
+Total saved in one month (4 weeks) = **140 dirhams**.
+
+---
+
+FINAL ANSWER: 140",140.0,0,111,266,377,success,
+169,,Darija,deepseek/deepseek-v3.2,خرجو 15 كتاب ديال 'أين والي' (Where's Waldo). كل كتاب فيه 30 لغز باش تقلب على والي. الشخص العادي كايخصو 3 دقايق باش يلقى والي فكل لغز. شحال د الوقت غادي يخص باش تلقى 'والي' فكاع الألغاز؟,1350,"Alright, let’s break this down step by step.  
+
+---
+
+**Step 1: Understand the problem**  
+We have:  
+- 15 books of “Where’s Waldo” (أين والي).  
+- Each book has 30 puzzles (لغز).  
+- Average time per puzzle = 3 minutes.  
+- We want the total time to find Waldo in **all puzzles**.
+
+---
+
+**Step 2: Find total number of puzzles**  
+\[
+15 \text{ books} \times 30 \text{ puzzles/book} = 450 \text{ puzzles}
+\]
+
+---
+
+**Step 3: Find total time in minutes**  
+\[
+450 \times 3 \text{ minutes} = 1350 \text{ minutes}
+\]
+
+---
+
+**Step 4: Convert to hours**  
+\[
+1350 \div 60 = 22.5 \text{ hours}
+\]
+
+---
+
+**Step 5: Final answer**  
+The problem asks for the time needed in **hours** (since minutes would be a large number, but the natural unit here is hours).  
+
+\[
+22.5 \text{ hours}
+\]
+
+---
+
+FINAL ANSWER: 22.5",22.5,0,113,249,362,success,
+173,,Darija,deepseek/deepseek-v3.2,كمال المعلم كيصوب التيليفونات. فالصباح كانو عندو 15 تيليفون خاصهم يتصوبو. فالعشية، كان ديجا صوب 3، ولكن جا واحد الكليان حط ليه 6 د التيليفونات خرين خاسرين. جا صاحبو فالخدمة بغا يعاونو وقاليه أنا غانصوب ليك النص د داكشي اللي بقى. شحال من تيليفون غادي يصوب كل واحد فيهم؟,9,"Let’s break this down step by step.  
+
+---
+
+**1. Initial situation in the morning:**  
+Kamel had **15 phones** to repair.  
+
+---
+
+**2. In the afternoon:**  
+He already repaired **3** phones.  
+So remaining phones before new ones arrive:  
+\[
+15 - 3 = 12 \text{ phones left to repair}
+\]
+
+---
+
+**3. New phones brought:**  
+A client brought **6 more phones** to repair.  
+Now total phones left to repair:  
+\[
+12 + 6 = 18 \text{ phones left}
+\]
+
+---
+
+**4. Friend’s help:**  
+Friend says: “I will repair **half** of what remains.”  
+Half of 18:  
+\[
+\frac{18}{2} = 9 \text{ phones repaired by friend}
+\]
+
+---
+
+**5. Remaining for Kamel:**  
+After friend takes 9, Kamel repairs the rest:  
+\[
+18 - 9 = 9 \text{ phones repaired by Kamel}
+\]
+
+---
+
+**6. Total repairs by each:**  
+Kamel already repaired **3** in the morning, plus **9** in the afternoon after friend’s help:  
+\[
+3 + 9 = 12 \text{ phones repaired by Kamel in total}
+\]  
+Friend repairs: **9 phones**.
+
+---
+
+**Final check:**  
+Morning: Kamel 3, left 12.  
+New phones: 12 + 6 = 18 left.  
+Friend takes half (9), Kamel takes 9.  
+Kamel total = 3 + 9 = 12.  
+Friend total = 9.  
+
+---
+
+FINAL ANSWER: 12",12.0,0,164,355,519,success,
+176,,Darija,deepseek/deepseek-v3.2,واحد الموكة فالكوري كاتغوت 5 د المرات فالدقيقة. إيلا سمعنا الصداع ديال الغوات ناقص بـ 5 على 20 غوتة فالدقيقة خارج من الكوري، شحال من موكة كاتغوت؟,3,"Alright, let’s break this down step by step.  
+
+---
+
+**Step 1: Understanding the problem in English**  
+The text says:  
+> ""One frog in the well croaks 5 times per minute. If we hear the sound of the frogs decreasing by 5 for every 20 frogs per minute outside the well, how many frogs are croaking?""  
+
+This is a bit unclear, but I think it means:  
+- 1 frog → 5 croaks/minute.  
+- There is some effect: when frogs are outside the well, their croaking rate decreases by 5 croaks/minute for every 20 frogs outside.  
+- We need to find how many frogs are croaking given what we hear?  
+
+But the problem as stated in Darija seems incomplete — maybe it’s asking:  
+If we hear a total of 0 croaks/minute (or some specific total), how many frogs are there?  
+
+But since no total croaks are given, maybe it’s a trick:  
+""سمعنا الصداع ديال الغوات ناقص بـ 5 على 20 غوتة فالدقيقة خارج من الكوري""  
+→ ""We hear the sound of the frogs decreasing by 5 for every 20 frogs per minute outside the well.""  
+
+That could mean:  
+For every 20 frogs outside, the croaking rate per frog decreases by 5 croaks/minute from the original 5.  
+
+But if it decreases by 5 from 5, that means 0 croaks/minute for those frogs.  
+
+So maybe:  
+If all frogs are outside, each frog’s croak rate = 5 − 5 × (number_of_frogs / 20)? That doesn’t make sense because 5 × (n/20) could be >5.  
+
+Wait: ""ناقص بـ 5 على 20 غوتة فالدقيقة"" → ""decreasing by 5 per 20 frogs per minute"" might mean:  
+For every 20 frogs outside, the **total** croaking rate decreases by 5 croaks/minute from what it would be if they were inside.  
+
+---
+
+**Step 2: Let’s try to model**  
+Let \( n \) = number of frogs outside.  
+If all frogs were inside, total croaks/minute = \( 5n \).  
+
+But they are outside, so total croaks/minute = \( 5n - 5 \times \frac{n}{20} \times \text{(something)} \) — hmm, that’s messy.  
+
+Maybe simpler:  
+Decrease in total croaks = \( 5 \times \frac{n}{20} \) ??? No, that’s too small.  
+
+Actually: ""ناقص بـ 5 على 20 غوتة فالدقيقة"" → ""decreasing by 5 on 20 frogs per minute"" could mean:  
+For every group of 20 frogs outside, their croaking rate is reduced by 5 croaks/minute **per frog**? That would mean:  
+If \( n \) frogs outside, each frog’s rate = \( 5 - 5 \times \frac{n}{20} \) if linear? But that’s per frog decrease proportional to n/20?  
+
+But if \( n = 20 \), each frog’s rate = \( 5 - 5 = 0 \) → no croaks.  
+
+---
+
+**Step 3: Maybe it’s a trick question**  
+If they are outside, and for every 20 frogs, the croaking decreases by 5 croaks/minute in total, then:  
+Let \( n \) = total frogs.  
+Total croaks = \( 5n - 5 \times \frac{n}{20} \times \text{(what?)} \) — still unclear.  
+
+But maybe the problem is simpler:  
+We hear the sound decreasing by 5 croaks/minute for every 20 frogs outside.  
+If we hear **no sound**, then decrease = original total.  
+Original total = \( 5n \).  
+Decrease = \( 5 \times \frac{n}{20} \times k \) — not fitting.  
+
+---
+
+**Step 4: Try assuming they mean:**
+For every 20 frogs outside, the **per-frog croak rate** is reduced by 5 from the original 5.  
+So if there are 20 outside, each croaks 0 times.  
+So if all frogs are outside, and there are 20 frogs, total croaks = 0.  
+
+But the question: ""شحال من موكة كاتغوت؟"" = ""How many frogs are croaking?""  
+If all are outside and n=20, none are croaking → answer 0.  
+
+But maybe n is not given, so perhaps the only consistent reading:  
+The decrease is such that when n=20, rate=0, so number croaking = 0.  
+
+But if n < 20, each frog croaks at rate \( 5 - \frac{5n}{20} = 5 - 0.25n \) croaks/min.  
+Still croaking unless n=20.  
+
+---
+
+**Step 5: Maybe the intended answer**  
+Often these riddles give:  
+1 frog → 5 croaks/min.  
+If 20 frogs outside → total croaks reduce by 5 per minute from the original (5×20=100) to 95? That’s tiny decrease.  
+
+But maybe they mean: We hear total croaks = 0.  
+So: \( 5n - 5\times\frac{n}{20}\times 20? \) Wait, ""5 على 20 غوتة"" → ""5 over 20 frogs"" → decrease by 5 croaks/min per 20 frogs.  
+So decrease = \( \frac{n}{20} \times 5 \) croaks/min total? That’s too small: for n=20, decrease=5, so total=100-5=95, not zero.  
+
+So not zero unless n huge.  
+
+---
+
+**Step 6: Possibly misreading**  
+Maybe ""ناقص بـ 5 على 20 غوتة فالدقيقة"" means:  
+The sound decreases by 5 decibels for every 20 frogs outside? Not math problem.  
+
+Given the ambiguity, the simplest classic answer to ""how many frogs are croaking?"" in such a poorly defined setup is: **0** (because if all are outside and n=20, rate 0).  
+
+But since n not given, maybe they mean: We hear decrease of 5 croaks/min total → so \( \frac{n}{20} \times 5 = 5 \) → n=20 frogs outside → each frog’s rate = 5 − 5×(20/20) = 0 → none croaking.  
+
+So final: **0 frogs croaking**.
+
+---
+
+FINAL ANSWER: 0",0.0,0,103,1452,1555,success,
+182,,English,deepseek/deepseek-v3.2,"Page collects fancy shoes and has 80 pairs in her closet.  She decides to donate 30% of her collection that she no longer wears.  After dropping off her donation, she treats herself and buys 6 more pairs to add to her collection.  How many shoes does she have now?",62,"Alright, let’s go step-by-step.  
+
+---
+
+**Step 1: Understand the problem**  
+Page starts with **80 pairs** of shoes.  
+Each pair = 2 shoes, but the problem asks for **how many shoes** at the end, not pairs.  
+We’ll track pairs first, then convert to shoes at the end.
+
+---
+
+**Step 2: Donation**  
+She donates \( 30\% \) of her collection:  
+\[
+30\% \text{ of } 80 = 0.30 \times 80 = 24 \text{ pairs}
+\]  
+So after donation:  
+\[
+80 - 24 = 56 \text{ pairs}
+\]
+
+---
+
+**Step 3: Buying new pairs**  
+She buys 6 more pairs:  
+\[
+56 + 6 = 62 \text{ pairs}
+\]
+
+---
+
+**Step 4: Convert pairs to shoes**  
+\[
+62 \text{ pairs} \times 2 \text{ shoes/pair} = 124 \text{ shoes}
+\]
+
+---
+
+**Step 5: Final answer**  
+\[
+\boxed{124}
+\]
+
+FINAL ANSWER: 124",124.0,0,99,246,345,success,
+183,,English,deepseek/deepseek-v3.2,"A casino table pays 3:2 if you get a blackjack with your first 2 cards. If you scored a blackjack and were paid $60, what was your original bet?",40,"Alright, let's break this down step by step.  
+
+---
+
+**Step 1: Understand the payout ratio**  
+The casino pays **3:2** for a blackjack.  
+That means for every **$2** you bet, you win **$3** in profit (plus you keep your original bet).  
+
+---
+
+**Step 2: Interpret the given information**  
+You got a blackjack and were paid **$60**.  
+The word ""paid"" here means the total money you receive after winning, which includes your original bet plus the winnings.  
+
+Let \( x \) = original bet.  
+
+The **profit** from the blackjack is \( \frac{3}{2} \times x \).  
+
+Total payout = original bet + profit = \( x + \frac{3}{2}x \).  
+
+---
+
+**Step 3: Set up the equation**  
+\[
+x + \frac{3}{2}x = 60
+\]  
+\[
+\frac{5}{2}x = 60
+\]  
+
+---
+
+**Step 4: Solve for \( x \)**  
+\[
+x = 60 \times \frac{2}{5}
+\]  
+\[
+x = 24
+\]  
+
+---
+
+**Step 5: Verify**  
+Bet = $24.  
+Profit at 3:2 = \( \frac{3}{2} \times 24 = 36 \).  
+Total payout = \( 24 + 36 = 60 \). ✅  
+
+---
+
+FINAL ANSWER: 24",24.0,0,77,316,393,success,
+185,,Darija,deepseek/deepseek-v3.2,عائشة عندها 20 قطعة ديال 5 دراهم. بغات تصرفهم ريالات (قطع د 1 درهم)، ومشات للبنكة. ملي رجعات، لقات بلي 20% من دوك الدراهم اللي عطاوها صدقو قطع نادرة كيسواو 3 دراهم للوحدة. شحال ولات القيمة د الفلوس اللي عندها دابا؟,64,"Alright, let’s go step by step.
+
+---
+
+**Step 1: Initial money**
+
+عائشة عندها 20 قطعة ديال 5 دراهم.  
+So initial total money = \( 20 \times 5 = 100 \) درهم.
+
+---
+
+**Step 2: She exchanges for 1-dirham coins**
+
+She goes to the bank to exchange them for ريالات (1-dirham coins).  
+Since 100 درهم total, she gets **100 coins of 1 dirham**.
+
+---
+
+**Step 3: Bank tells her 20% are rare coins worth 3 dirhams each**
+
+They say: 20% of those 100 coins are rare and worth 3 dirhams each.  
+Number of rare coins = \( 20\% \times 100 = 20 \) coins.
+
+The rest \( 80 \) coins are normal 1-dirham coins.
+
+---
+
+**Step 4: Value after discovery**
+
+Value from rare coins: \( 20 \times 3 = 60 \) درهم.  
+Value from normal coins: \( 80 \times 1 = 80 \) درهم.  
+Total value now = \( 60 + 80 = 140 \) درهم.
+
+---
+
+**Step 5: Final answer**
+
+She now has 140 dirhams in total value.
+
+---
+
+FINAL ANSWER: 140",140.0,0,132,284,416,success,
+190,,English,deepseek/deepseek-v3.2,"The region east of plain A is 50 square miles less than the region east of plain B. If plain B has 200 square miles, how many square miles do the plains have in total?",350,"Alright, let's go step-by-step.
+
+---
+
+**Step 1: Define variables**
+
+Let:  
+- \( A \) = area of plain A (in square miles)  
+- \( B \) = area of plain B (in square miles)  
+
+We are told:  
+\( B = 200 \) (given).
+
+---
+
+**Step 2: Interpret ""The region east of plain A is 50 square miles less than the region east of plain B""**
+
+This is a bit ambiguous, but the most natural reading in these kinds of problems is that ""the region east of plain A"" means the area of land that lies to the east of plain A, not including plain A itself.  
+Similarly, ""the region east of plain B"" means the area of land east of plain B.
+
+But if we don't have a map, maybe they mean:  
+Let \( E_A \) = area east of plain A, \( E_B \) = area east of plain B.  
+Given: \( E_A = E_B - 50 \).
+
+But we don't know \( E_A \) or \( E_B \) directly.  
+However, if we assume plains A and B are adjacent east–west, then ""east of plain A"" might include plain B and possibly more, but that seems odd.
+
+---
+
+**Step 3: Try a different interpretation**
+
+Sometimes these problems mean:  
+Let \( R_A \) = total area of the region that includes plain A and everything east of it.  
+Let \( R_B \) = total area of the region that includes plain B and everything east of it.  
+But that’s also not clearly given.
+
+Given the numbers, maybe they mean:  
+""Region east of plain A"" = \( X_A \)  
+""Region east of plain B"" = \( X_B \)  
+Given: \( X_A = X_B - 50 \).
+
+But without more, we can't find \( A \) from that.
+
+---
+
+**Step 4: Another possibility**
+
+Maybe they mean:  
+Plain A’s area is 50 less than plain B’s area?  
+But that’s not what it says — it says ""region east of plain A"" vs ""region east of plain B"".
+
+But if we assume plains A and B are adjacent east–west, and ""region east of plain A"" means the area of plain B (if B is directly east of A), then:  
+Region east of A = \( B \)  
+Region east of B = \( 0 \) (nothing east of B)  
+Then \( B = 0 - 50 \) → negative, impossible.
+
+So that’s wrong.
+
+---
+
+**Step 5: Try assuming ""region east of plain A"" means the area of plain A plus everything east of it**  
+But then ""region east of plain B"" would be smaller (since B is east of A maybe), so that doesn’t match ""50 less"".
+
+---
+
+**Step 6: Maybe they mean:**
+Let \( T_A \) = total area east of plain A (including B if B is east of A)  
+Let \( T_B \) = total area east of plain B  
+Given: \( T_A = T_B - 50 \).
+
+If B is east of A, then \( T_A \) includes B and maybe more, \( T_B \) includes only what’s east of B.  
+But then \( T_A > T_B \), not less. So that’s inconsistent unless B is west of A.
+
+---
+
+**Step 7: Suppose B is west of A**  
+Then:  
+Region east of A = some area \( Y \)  
+Region east of B = includes A and Y  
+So \( T_B = A + Y \)  
+\( T_A = Y \)  
+Given \( T_A = T_B - 50 \) → \( Y = (A + Y) - 50 \) → \( 0 = A - 50 \) → \( A = 50 \).
+
+Then \( B = 200 \) (given).  
+Total area of plains = \( A + B = 50 + 200 = 250 \).
+
+---
+
+**Step 8: Check plausibility**
+
+This fits:  
+Region east of A = \( Y \)  
+Region east of B = \( A + Y \)  
+Given: \( Y = (A + Y) - 50 \) → \( A = 50 \).  
+Yes, consistent.
+
+---
+
+**Step 9: Conclusion**
+
+Plains total area = \( 50 + 200 = 250 \) square miles.
+
+---
+
+**Final Answer:**
+
+\[
+\boxed{250}
+\]
+
+FINAL ANSWER: 250",250.0,0,72,951,1023,success,

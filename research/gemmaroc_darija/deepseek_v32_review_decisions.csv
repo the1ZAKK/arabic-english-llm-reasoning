@@ -1,0 +1,5 @@
+﻿problem_id,language,gold_answer,extracted_answer,auto_is_correct,adjudicated_is_correct,reason
+25,English,350,3.50,0,1,$3.50 is equivalent to 350 cents.
+141,English,24,25,0,1,Response correctly derives 0.24 = 24%; automatic extractor captured denominator 25 from 6/25.
+141,Darija,24,0.24,0,1,0.24 is equivalent to 24%.
+169,Darija,1350,22.5,0,1,22.5 hours is equivalent to 1350 minutes.
