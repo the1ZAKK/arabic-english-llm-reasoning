@@ -1,104 +1,143 @@
-# PRM inference
+# Arabic-English and Moroccan Darija Mathematical Reasoning in LLMs
 
-## huggingface inference
+This repository contains experiments investigating language-associated differences in mathematical reasoning and process-reward evaluation across English, Modern Standard Arabic (MSA), and Moroccan Darija.
 
-1. clone skywork prm inference repo
-```shell
-git clone https://github.com/SkyworkAI/skywork-o1-prm-inference.git
-cd skywork-o1-prm-inference
-```
-2. run_prm_inference
+The project studies whether mathematically equivalent problems receive comparable reasoning performance across languages, how these differences vary across model families and model capabilities, and whether process reward models (PRMs) evaluate Arabic reasoning as reliably as English reasoning.
 
-```python
-from transformers import AutoTokenizer
-from model_utils.prm_model import PRM_MODEL
-from model_utils.io_utils import prepare_input, prepare_batch_input_for_model, derive_step_rewards
+## Research Questions
 
-prm_model_path = "/path/to/prm_model"
-tokenizer = AutoTokenizer.from_pretrained(prm_model_path, trust_remote_code=True)
-datas = [
-    {
-        "problem"  : "Janet\u2019s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
-        "response" : "To determine how much money Janet makes every day at the farmers' market, we need to follow these steps:\n1. **Calculate the total number of eggs laid by the ducks per day.**\n   Janet's ducks lay 16 eggs per day.\n2. **Determine the number of eggs Janet uses each day.**\n   - She eats 3 eggs for breakfast every morning.\n   - She bakes muffins for her friends every day with 4 eggs.\n   So, the total number of eggs used per day is:\n   \\[\n   3 + 4 = 7 \\text{ eggs}\n   \\]\n3. **Calculate the number of eggs Janet sells at the farmers' market each day.**\n   Subtract the number of eggs used from the total number of eggs laid:\n   \\[\n   16 - 7 = 9 \\text{ eggs}\n   \\]\n4. **Determine how much money Janet makes from selling the eggs.**\n   She sells each egg for $2, so the total amount of money she makes is:\n   \\[\n   9 \\times 2 = 18 \\text{ dollars}\n   \\]\nTherefore, the amount of money Janet makes every day at the farmers' market is \\(\\boxed{18}\\)."
-    },
-    {
-        "problem"  : "Janet\u2019s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
-        "response" : "To find out how much Janet makes every day at the farmers' market, we need to follow these steps:\n1. Calculate the total number of eggs laid by the ducks: \n   - Janet's ducks lay 16 eggs per day.\n2. Calculate the total number of eggs consumed by Janet and used for baking:\n   - Janet eats 3 eggs for breakfast.\n   - She bakes 4 eggs for muffins.\n   - Total eggs used: 3 (breakfast) + 4 (baking) = 7 eggs.\n3. Calculate the remaining number of eggs for sale:\n   - Total eggs laid: 16\n   - Eggs used: 7\n   - Remaining eggs: 16 - 7 = 9 eggs\n4. Calculate the total amount of money made at the farmers' market:\n   - Price per egg: $2\n   - Number of eggs sold: 9\n   - Total money made: 9 * $2 = $18\nTherefore, Janet makes $\\boxed{18}$ dollars every day at the farmers' market."
-    }
-]
+The project investigates four main questions:
 
+1. Do process reward models distinguish correct and incorrect mathematical reasoning equally well in Arabic and English?
+2. Do generative language models achieve comparable mathematical reasoning accuracy on matched Arabic-English problems?
+3. Does the size of the language-associated performance gap change across model families and stronger models?
+4. How robust is mathematical reasoning in Moroccan Darija, a lower-resource and non-standardized Arabic variety?
 
-processed_data = [prepare_input(d["problem"], d["response"], tokenizer=tokenizer, step_token="\n") for d in datas]
-input_ids, steps, reward_flags = zip(*processed_data)
+## Experiments
 
-model = PRM_MODEL.from_pretrained(prm_model_path, device_map="auto").eval()
-input_ids, attention_mask, reward_flags = prepare_batch_input_for_model(input_ids, reward_flags, tokenizer.pad_token_id)
-_, _, rewards = model(input_ids=input_ids, attention_mask=attention_mask, return_probs=True)
-step_rewards = derive_step_rewards(rewards, reward_flags)
-print("step_rewards:",step_rewards[0])
-print("step_rewards:",step_rewards[1])
-```
+### 1. Arabic-English Process Reward Evaluation
 
-## vllm server for inference
+Model:
 
-1. install vllm and install vllm prm plugin
-```shell
-pip install vllm==v0.6.4.post1
-git clone https://github.com/SkyworkAI/skywork-o1-prm-inference.git
-cd skywork-o1-prm-inference
-pip install -e .
-```
+`Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B`
 
-2. start vllm server
-```shell
-CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve /path/to/prm_model \
-    --host 0.0.0.0 \
-    --port 8081 \
-    --tensor-parallel-size 4 \
-    --gpu-memory-utilization 0.9 \
-    --enable-prefix-caching \
-    --dtype auto
-```
+A controlled 20-problem experiment compared PRM scores for correct and deliberately incorrect reasoning responses in Arabic and English.
 
-3. request server for inference
+The tested PRM showed substantially stronger discrimination between correct and incorrect reasoning in English than in Arabic.
 
-```python
-from openai import OpenAI
-from transformers import AutoTokenizer
-from model_utils.io_utils import prepare_input, derive_step_rewards_vllm
+Files:
 
-prm_model_path = "/path/to/prm_model"
-tokenizer = AutoTokenizer.from_pretrained(prm_model_path, trust_remote_code=True)
-datas = [
-    {
-        "problem"  : "Janet\u2019s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
-        "response" : "To determine how much money Janet makes every day at the farmers' market, we need to follow these steps:\n1. **Calculate the total number of eggs laid by the ducks per day.**\n   Janet's ducks lay 16 eggs per day.\n2. **Determine the number of eggs Janet uses each day.**\n   - She eats 3 eggs for breakfast every morning.\n   - She bakes muffins for her friends every day with 4 eggs.\n   So, the total number of eggs used per day is:\n   \\[\n   3 + 4 = 7 \\text{ eggs}\n   \\]\n3. **Calculate the number of eggs Janet sells at the farmers' market each day.**\n   Subtract the number of eggs used from the total number of eggs laid:\n   \\[\n   16 - 7 = 9 \\text{ eggs}\n   \\]\n4. **Determine how much money Janet makes from selling the eggs.**\n   She sells each egg for $2, so the total amount of money she makes is:\n   \\[\n   9 \\times 2 = 18 \\text{ dollars}\n   \\]\nTherefore, the amount of money Janet makes every day at the farmers' market is \\(\\boxed{18}\\)."
-    },
-    {
-        "problem"  : "Janet\u2019s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
-        "response" : "To find out how much Janet makes every day at the farmers' market, we need to follow these steps:\n1. Calculate the total number of eggs laid by the ducks: \n   - Janet's ducks lay 16 eggs per day.\n2. Calculate the total number of eggs consumed by Janet and used for baking:\n   - Janet eats 3 eggs for breakfast.\n   - She bakes 4 eggs for muffins.\n   - Total eggs used: 3 (breakfast) + 4 (baking) = 7 eggs.\n3. Calculate the remaining number of eggs for sale:\n   - Total eggs laid: 16\n   - Eggs used: 7\n   - Remaining eggs: 16 - 7 = 9 eggs\n4. Calculate the total amount of money made at the farmers' market:\n   - Price per egg: $2\n   - Number of eggs sold: 9\n   - Total money made: 9 * $2 = $18\nTherefore, Janet makes $\\boxed{18}$ dollars every day at the farmers' market."
-    }
-]
+`research/prm_arabic_english/`
 
-# data preprocessing
-processed_data = [prepare_input(d["problem"], d["response"], tokenizer=tokenizer, step_token="\n") for d in datas]
-input_ids, steps, reward_flags = zip(*processed_data)
+### 2. Generative Reasoning Pilots
 
-openai_api_key = "EMPTY"
-openai_api_base = "http://localhost:8081/v1"
-client = OpenAI(
-    # defaults to os.environ.get("OPENAI_API_KEY")
-    api_key=openai_api_key,
-    base_url=openai_api_base,
-)
-models = client.models.list()
-model = models.data[0].id
-rewards = client.embeddings.create(
-    input=input_ids,
-    model=model,
-)
+Two smaller generative models were evaluated on matched Arabic-English arithmetic problems:
 
-step_rewards = derive_step_rewards_vllm(rewards, reward_flags)
-print("step_rewards:",step_rewards[0])
-print("step_rewards:",step_rewards[1])  
-```
+- Qwen2.5-Math-1.5B-Instruct
+- Gemma-3-1B-it
+
+Both models achieved higher English accuracy in the tested setup, although the magnitude of the difference varied considerably by model.
+
+Files:
+
+`research/reasoning_pilots/`
+
+### 3. Global-MGSM 200-Pair Study
+
+A larger paired experiment used 200 matched English-Arabic mathematical problems from Global-MGSM.
+
+Results:
+
+| Model | Arabic | English | EN-AR Gap |
+|---|---:|---:|---:|
+| Gemma-3-1B-it | 22.0% | 60.5% | 38.5 pp |
+| Qwen2.5-Math-1.5B-Instruct | 1.5% | 89.5% | 88.0 pp |
+
+Strict quality-control sensitivity analyses produced similar conclusions.
+
+Files:
+
+`research/global_mgsm_200/`
+
+### 4. Qwen3.5-27B Global-MGSM Experiment
+
+A stronger Qwen3.5-27B model was evaluated on the same 200-pair English-Arabic benchmark.
+
+Final adjudicated results:
+
+| Language | Accuracy |
+|---|---:|
+| Arabic | 95.0% |
+| English | 99.5% |
+
+English-Arabic gap: **4.5 percentage points**
+
+Under the strict-QC subset, the gap decreased to approximately **2.15 percentage points**.
+
+This experiment demonstrates that the very large language gaps observed in smaller models are not stable across model families and capability levels.
+
+Files:
+
+`research/qwen35_27b/`
+
+### 5. GemMaroc English-Darija Experiment
+
+Model:
+
+`GemMaroc/Qwen2.5-32B-Instruct-darija`
+
+A deterministic sample of 200 matched English and Moroccan Darija GSM8K-derived mathematical problems was evaluated.
+
+Final conservative adjudication:
+
+| Analysis | English | Darija | Gap |
+|---|---:|---:|---:|
+| ALL_200 | 95.5% | 88.5% | 7.0 pp |
+| STRICT_QC_196 | 95.4% | 89.8% | 5.6 pp |
+
+For ALL_200:
+
+- Exact McNemar p = 0.0025768
+- Paired bootstrap 95% CI for the gap = [3.0, 11.5] percentage points
+
+For STRICT_QC_196:
+
+- Exact McNemar p = 0.0127258
+- Paired bootstrap 95% CI = [1.53, 9.69] percentage points
+
+The results show strong mathematical reasoning performance in Moroccan Darija while retaining a modest English advantage in this model and benchmark.
+
+Files:
+
+`research/gemmaroc_darija/`
+
+## Main Findings
+
+Across the tested systems, English performance was consistently at least as high as Arabic or Darija performance on matched mathematical reasoning tasks.
+
+However, the **magnitude of the disparity is strongly model-dependent**.
+
+Smaller models showed large English-Arabic differences, while Qwen3.5-27B achieved near-ceiling performance in both English and MSA. GemMaroc also achieved strong performance in Moroccan Darija, with a substantially smaller residual gap than the smaller-model Arabic experiments.
+
+The results therefore do **not** support a universal claim that language models cannot reason mathematically in Arabic.
+
+Instead, they suggest that multilingual mathematical reasoning robustness depends strongly on the model, training, language variety, evaluation setting, and benchmark.
+
+The PRM experiment additionally indicates that strong Arabic generation does not automatically imply language-robust reasoning evaluation: process reward models themselves may exhibit language-dependent discrimination.
+
+## Repository Structure
+
+```text
+research/
+├── prm_arabic_english/
+├── reasoning_pilots/
+├── global_mgsm_200/
+├── qwen35_27b/
+└── gemmaroc_darija/
+
+docs/
+└── Arabic_English_LLM_Reasoning_Final_Report.pdf
+
+data/
+model_utils/
+vllm_add_dummy_model/
