@@ -1,0 +1,768 @@
+﻿problem_id,source_id,language,gold_answer,extracted_answer,is_correct,extraction_method,question,generated_response,finish_reason,prompt_tokens,completion_tokens,total_tokens,status,error
+25,218,english,350,3.5,0,explicit_final,"Ravi has some coins. He has 2 more quarters than nickels and 4 more dimes than quarters. If he has 6 nickels, how much money does he have?","Ravi’s coins:
+
+- Nickels: \(6\)  
+- Quarters: \(6 + 2 = 8\)  
+- Dimes: \(8 + 4 = 12\)
+
+Value:
+\[
+\begin{aligned}
+6 \text{ nickels} &= 6 \times \$0.05 = \$0.30,\\
+8 \text{ quarters} &= 8 \times \$0.25 = \$2.00,\\
+12 \text{ dimes} &= 12 \times \$0.10 = \$1.20.
+\end{aligned}
+\]
+
+Total money:
+\[
+\$0.30 + \$2.00 + \$1.20 = \$3.50.
+\]
+
+**FINAL ANSWER: 3.5**",stop,138,341,479,success,
+26,4633,darija,7,70,0,explicit_final,توفيق خرج يتعشى مع صاحبو. كل واحد فيهم خدا ساندويتش بـ 36.5 درهم. توفيق خدا عصير بـ 20 درهم وصاحبو خدا مونادا بـ 10 دراهم. تشاركو فطبسيل د الفريت بـ 40 درهم. صاحبو زاد خدا 3 د الحلوات، كل وحدة بـ 5 دراهم. الضريبة كانت 2 دراهم. تافقو يقسمو الحساب فالنص. إيلا توفيق كان جايب معاه 150 درهم، شحال د الصرف غادي يشيط ليه؟,"**Reasoning**
+
+1. **Sandwiches**: each sandwich costs 36.5 د.م.  
+   Two sandwiches → \(2 \times 36.5 = 73\) د.م.
+
+2. **Drinks**:  
+   - Tawfiq’s juice = 20 د.م.  
+   - Friend’s soda = 10 د.م.  
+
+3. **Fries** (shared) = 40 د.م.
+
+4. **Desserts**: friend ordered 3 desserts at 5 د.م. each → \(3 \times 5 = 15\) د.م.
+
+5. **Tax** = 2 د.م.
+
+6. **Total bill**:  
+   \[
+   73 + 20 + 10 + 40 + 15 + 2 = 160\ \text{د.م}
+   \]
+
+7. They agreed to split the bill equally, so each pays:  
+   \[
+   \frac{160}{2} = 80\ \text{د.م}
+   \]
+
+8. Tawfiq has 150 د.م. After paying his share:  
+   \[
+   150 - 80 = 70\ \text{د.م}
+   \]
+
+**Final numeric answer**
+
+FINAL ANSWER: 70",stop,237,683,920,success,
+28,5909,english,25,21,0,explicit_final,Jordan noticed that there are 2 cars in his driveway that each have 4 wheels.  There are 2 bikes and a trash can that each have 2 wheels.  There is also a tricycle and a pair of old roller skates.  How many wheels are there?,"**Reasoning**
+
+- Cars: 2 × 4 = 8 wheels  
+- Bikes and trash can: (2 bikes + 1 trash can) × 2 = 3 × 2 = 6 wheels  
+- Tricycle: 1 × 3 = 3 wheels  
+- Pair of old roller skates: 4 wheels (2 wheels per skate)
+
+Add them all together:
+
+\(8 + 6 + 3 + 4 = 21\)
+
+**FINAL ANSWER: 21**",stop,157,620,777,success,
+33,1811,darija,20,5,0,explicit_final,خديجة محتاجة دوزان باش تقري التلاميذ فواحد المشروع د الرسم. عندها 8 د التلاميذ وكل واحد خاصو 3 د الورقات د الرسم. وزايد على الورق، خاصها تشري 6 د القراعي د اللصاق باش يتشاركوهم كاملين. مور ما شرات هادشي، طاحت ليها النص د السلعة فواحد القادوس. الحصة قربات تبدا، ولكن قدرات تجري للحانوت وزادت شرات 5 د الورقات د الرسم. شحال د الدوزان بقا عندها دابا فالمجموع؟,"The total number of items she finally has is  
+
+- Initial need: \(8 \times 3 = 24\) sheets of paper  
+- Plus glue: \(6\) units  
+
+Total initially bought = \(24 + 6 = 30\) items.
+
+Half of these are lost, so she keeps  
+
+\[
+30 \times \frac{1}{2}=15\text{ items}.
+\]
+
+She then buys 5 more sheets of paper:
+
+\[
+15 + 5 = 20\text{ items}.
+\]
+
+One dozen equals 12 items, therefore the amount she now has in dozens is  
+
+\[
+\frac{20}{12}= \frac{5}{3}=1.\overline{6}\text{ dozens}.
+\]
+
+**FINAL ANSWER: 5/3**",stop,238,937,1175,success,
+39,54,darija,11,15,0,explicit_final,ليلى صورت 28 درهم ف شي خدمات صغار. خسرات السبع (1/7) ديال الفلوس ف عصير، والنص د داكشي اللي بقى دارتو ف التوفير (البنكة). داكشي لاخر خلاتو ف بزطامها. الكلب ديالها قطع ليها الفلوس اللي ف البزطام وبقى غير درهم واحد صحيح. شحال د الفلوس ضاعو لليلى؟,"Laila started with 28 dh.
+
+1. She spent \(\frac{1}{7}\) of it on juice:  
+\[
+\frac{1}{7}\times 28 = 4\text{ dh}
+\]
+
+2. Money left after juice: \(28-4 = 24\) dh.
+
+3. She saved half of the remaining amount:  
+\[
+\frac{1}{2}\times 24 = 12\text{ dh}
+\]
+
+4. Money put in her pocket: \(24-12 = 12\) dh.
+
+5. The dog ate all the pocket money except 1 dh, so the dog ate:  
+\[
+12-1 = 11\text{ dh}
+\]
+
+Total money lost = juice spent + money eaten by the dog  
+\[
+4 + 11 = 15\text{ dh}
+\]
+
+**FINAL ANSWER: 15**",stop,204,682,886,success,
+49,6299,darija,30,29,0,explicit_final,آية بدات كتريني 'ليسكريم' (المسايفة) ف 2006. يلا كانت خلاقت ف 1992 وهادي 16 العام وهي كتريني، شحال ف عمرها دابا؟,"**Reasoning**
+
+1. Aya was born in 1992.  
+2. She began training in 2006.  
+3. The statement “هادي 16 العام وهي كتريني” means “this is the 16th year she has been training.”  
+   - The first year of training is 2006.  
+   - Therefore the 16th year corresponds to:  
+     \[
+     2006 + (16-1) = 2006 + 15 = 2021.
+     \]
+4. To find her age in 2021, subtract her birth year from the current year:  
+   \[
+   2021 - 1992 = 29.
+   \]
+
+**Final numeric answer**
+
+FINAL ANSWER: 29",stop,150,530,680,success,
+55,2966,darija,3,4,0,explicit_final,مهدي راسو كيضرو بزاف. كياخد 2 حبات دوليبران ديال 500 ملغ كل 4 سوايع لمدة 12 ساعة. شحال خدا ديال الدوا بالغرام فالمجموع؟,"Mahdi takes:
+
+- **Each tablet:** 500 mg  
+- **Two tablets per dose:** 2 × 500 mg = 1000 mg = 1 g per dose  
+
+He takes a dose **every 4 hours** for a total period of **12 hours**.
+
+Number of doses in 12 hours:
+\[
+\frac{12\ \text{hours}}{4\ \text{hours per dose}} + 1 = 3 + 1 = 4 \text{ doses}
+\]
+
+Total amount of drug:
+\[
+4 \text{ doses} \times 1 \text{ g per dose} = 4 \text{ g}
+\]
+
+**FINAL ANSWER: 4**",stop,150,568,718,success,
+64,4428,darija,560,840,0,explicit_final,رشيد سافر فالصيف فطوموبيلتو. مشا للمدينة اللولة، ومن تما مشا للمدينة التانية وضرب دوبل المسافة اللي ضرب فالأول. المدينة التالتة كانت بعيدة بـ 40 كلم، وهاد المسافة هي النص ديال الطريق من البدية للمدينة اللولة. الوجهة اللخرة ضرب فيها دوبل الطريق اللي ضرب فالمراحل كاملين اللي قبل. شحال من كلم ضرب رشيد فالسفر ديالو كامل؟,"**Reasoning**
+
+1. Let the distance from the start to the first city be \(d_1\).
+
+2. The third city is said to be **40 km away**, and this distance equals **half of the road from the start to the first city**:  
+
+   \[
+   40 = \frac{d_1}{2}\;\Longrightarrow\; d_1 = 80\text{ km}
+   \]
+
+3. **First leg** (start → first city):  
+   \[
+   d_1 = 80\text{ km}
+   \]
+
+4. **Second leg** (first city → second city) is **double** the first leg:  
+   \[
+   d_2 = 2d_1 = 2 \times 80 = 160\text{ km}
+   \]
+
+5. **Third leg** (second city → third city) is the given 40 km:  
+   \[
+   d_3 = 40\text{ km}
+   \]
+
+6. The **last leg** (third city → final destination) is **double the total distance covered in all previous stages**:  
+
+   \[
+   \text{previous total}= d_1+d_2+d_3 = 80+160+40 = 280\text{ km}
+   \]
+   \[
+   d_4 = 2 \times 280 = 560\text{ km}
+   \]
+
+7. **Total distance traveled**  
+
+   \[
+   D = d_1+d_2+d_3+d_4 = 80 + 160 + 40 + 560 = 840\text{ km}
+   \]
+
+**Final numeric answer**
+
+FINAL ANSWER: 840",stop,205,1155,1360,success,
+64,4428,english,560,840,0,explicit_final,"Rick took off on a road trip for the summer.  He traveled to the first destination on his trip, and then from there, he traveled twice the distance to this second destination.  The third point on his trip was 40 miles away, which was half the distance he traveled from the beginning to his first destination.  The final destination took twice the amount of driving of all the other legs put together.  How many miles in total did he travel across all the legs of the trip?","Let  
+
+* \(d_1\) = distance from the start to the first destination  
+* \(d_2\) = distance from the first to the second destination  
+* \(d_3\) = distance from the second to the third point  
+* \(d_4\) = distance from the third point to the final destination  
+
+---
+
+**Third point condition**
+
+“The third point on his trip was 40 miles away, which was half the distance he traveled from the beginning to his first destination.”
+
+\[
+d_3 = 40 \quad\text{and}\quad 40 = \tfrac12 d_1 \Longrightarrow d_1 = 80\text{ miles}
+\]
+
+---
+
+**Second leg condition**
+
+“He traveled … from there, he traveled twice the distance to this second destination.”
+
+The natural reading is that the distance of the second leg is twice the distance of the first leg:
+
+\[
+d_2 = 2d_1 = 2(80)=160\text{ miles}
+\]
+
+---
+
+**Final leg condition**
+
+“The final destination took twice the amount of driving of all the other legs put together.”
+
+\[
+d_4 = 2(d_1+d_2+d_3)=2(80+160+40)=2(280)=560\text{ miles}
+\]
+
+---
+
+**Total distance**
+
+\[
+\text{Total}=d_1+d_2+d_3+d_4 = 80+160+40+560 = 840\text{ miles}
+\]
+
+\[
+\boxed{840}
+\]
+
+**Answer**
+
+FINAL ANSWER: 840",stop,199,1467,1666,success,
+66,3126,darija,140,3,0,explicit_final,واحد الفلاح خلص 4 د الدراري باش يزرعو صفوفا د الكبال. كل صف د الكبال فيه 70 كبالة. الباكية د الزريعة فيها 48 حبة، وخاص 2 حبات لكل كبالة. الفلاح كيخلص الدراري 1.5 درهم للصف. من بعد، الدراري فيهم الجوع وخسرو نص فلوسهم فالعشا. العشا تقام بـ 36 درهم للواحد. شحال من باكية د الزريعة استعمل كل دري؟,"**Reasoning**
+
+1. **Rows planted**  
+   The farmer hired 4 boys, each to plant one row.  
+   Each row contains **70 bags** of cabbages.
+
+2. **Seeds needed per bag**  
+   Each bag needs **2 seeds**.  
+   So for one row the number of seeds required is  
+   \[
+   70\ \text{bags} \times 2\ \text{seeds/bag}=140\ \text{seeds}.
+   \]
+
+3. **Seeds supplied per seed‑bag**  
+   One seed‑bag contains **48 seeds**.
+
+4. **Seed‑bags required for one row**  
+   \[
+   \frac{140\ \text{seeds}}{48\ \text{seeds/bag}} = 2.916\ldots
+   \]
+   Since a seed‑bag cannot be split, each boy must use **3 whole seed‑bags** (the third bag provides the remaining 4 seeds needed).
+
+5. **Check total**  
+   - Total seed‑bags for all 4 boys: \(4 \times 3 = 12\).  
+   - Total seeds supplied: \(12 \times 48 = 576\) seeds.  
+   - Seeds required for all rows: \(4 \times 140 = 560\) seeds.  
+   The 12 bags give 16 extra seeds, which is acceptable.
+
+The monetary details (payment and dinner cost) do not affect the number of seed‑bags needed for planting.
+
+**Final Answer**
+
+FINAL ANSWER: 3",stop,216,1792,2008,success,
+72,5106,english,35,280,0,explicit_final,Clyde and Grace are building block towers. Grace’s tower is 8 times the size of Clyde’s at 40 inches tall. How many inches taller is Grace’s tower than Clyde’s?,"Grace’s tower is 8 times as tall as Clyde’s tower.  
+Clyde’s tower height = 40 inches.  
+
+Grace’s tower height = \(8 \times 40 = 320\) inches.  
+
+Difference in height = \(320 - 40 = 280\) inches.
+
+**FINAL ANSWER: 280**",stop,138,434,572,success,
+76,4765,darija,117,72,0,explicit_final,جواد دوز 30 دقيقة كايوجد الأفكار (التخطيط) للخطبة ديالو، ودوز 28 دقيقة فالكتابة كتر من الوقت اللي دوز فالتخطيط، والوقت اللي دوز كايتدرب هو النص د الوقت اللي دوز فالكتابة. شحال د الوقت دوز جواد على الخطبة ديالو فالمجموع؟,"Jouad’s work on the speech is divided into three parts:
+
+1. **Planning** – 30 minutes.  
+2. **Writing** – 28 minutes.  
+3. **Training** – “the half of the time spent writing”, i.e. \(\frac{28}{2}=14\) minutes.
+
+The total time spent is the sum of the three parts:
+
+\[
+30\text{ min} + 28\text{ min} + 14\text{ min}=72\text{ minutes}.
+\]
+
+**FINAL ANSWER: 72**",stop,180,589,769,success,
+95,3014,darija,1825,108,0,explicit_final,طارق تفاهم يوصل 638 زلافة من المعمل للمحل. المحل غايخلص الشركة 100 درهم فيكس، و غايزيدو 3 دراهم على كل زلافة وصلات صاينة. ولكن طارق خاصو يخلص للمحل 4 دراهم خطية على أي زلافة تهرسات ولا تلفات. يلا تلفو 12 زلافة و تهرسو 15، والباقي وصل مزيان، شحال غايتخلص طارق فاللخر؟,"Tariq delivered a total of  
+
+\[
+638 \text{ jars}
+\]
+
+Out of these:
+
+* Lost jars = 12  
+* Broken jars = 15  
+
+The rest arrived intact:
+
+\[
+\text{Intact jars}=638-12-15=611
+\]
+
+The shop’s payment to the company is not relevant for what Tariq must pay.  
+Tariq must pay a penalty of **4 dirhams** for **each** jar that is either lost or broken.
+
+\[
+\text{Total penalty}=4 \times (\text{lost}+\text{broken})
+=4 \times (12+15)
+=4 \times 27
+=108 \text{ dirhams}
+\]
+
+\[
+\boxed{108}
+\]
+
+**FINAL ANSWER: 108**",stop,214,771,985,success,
+105,587,darija,62,50,0,explicit_final,جلال كيدوز فالويكاند وقت فالفايسبوك 3 المرات كتر من الوقت لي كيدوزو فالخدمة. ولكن من التنين للجمعة، كيخدم 4 المرات كتر ما كيبقى فالفايسبوك. إلا كان كيشد الفايسبوك 3 د السوايع كل نهار (سيمانة كاملة)، شحال د السوايع كيخدم فالسيمانة كاملة؟,"Let  
+
+* \(F\) = total hours spent on Facebook in the whole week.  
+* \(W\) = total hours worked in the whole week.
+
+Jalal spends **3 hours on Facebook each day**, so  
+
+\[
+F = 7 \times 3 = 21\text{ h}.
+\]
+
+---
+
+### 1.  Weekend (Saturday & Sunday)
+
+On the weekend the Facebook time is **3 times** the work time:
+
+\[
+F_{\text{weekend}} = 3 \, W_{\text{weekend}} \;\Longrightarrow\; 
+W_{\text{weekend}} = \frac{F_{\text{weekend}}}{3}.
+\]
+
+Weekend Facebook time  
+
+\[
+F_{\text{weekend}} = 2 \times 3 = 6\text{ h}.
+\]
+
+Hence  
+
+\[
+W_{\text{weekend}} = \frac{6}{3}=2\text{ h}.
+\]
+
+---
+
+### 2.  Tuesday to Friday
+
+From Tuesday to Friday the work time is **4 times** the Facebook time:
+
+\[
+W_{\text{Tue–Fri}} = 4 \, F_{\text{Tue–Fri}}.
+\]
+
+Facebook time for those four days  
+
+\[
+F_{\text{Tue–Fri}} = 4 \times 3 = 12\text{ h}.
+\]
+
+Thus  
+
+\[
+W_{\text{Tue–Fri}} = 4 \times 12 = 48\text{ h}.
+\]
+
+---
+
+### 3.  Monday
+
+Monday is not mentioned in any ratio, so we take the natural interpretation that Jalal does **not work** on Monday (only the given Facebook time). Therefore  
+
+\[
+W_{\text{Monday}} = 0\text{ h}.
+\]
+
+---
+
+### 4.  Total work time in the week
+
+\[
+W = W_{\text{weekend}} + W_{\text{Tue–Fri}} + W_{\text{Monday}}
+   = 2 + 48 + 0 = 50\text{ h}.
+\]
+
+\[
+\boxed{50}
+\]
+
+**FINAL ANSWER: 50**",stop,197,1419,1616,success,
+119,1805,darija,65,560,0,explicit_final,غيثة كانت عندها 20 حمامة نتوا فبرج. من بعد شهر، كل حمامة حطات 3 د البيضات. إيلا تلاتة على ربعة (3/4) د داك البيض فقس، حسب شحال ولا عند غيثة د الحمام دابا.,"Each pigeon laid  
+
+\[
+3\text{ dozen}=3\times 12=36\text{ eggs}
+\]
+
+With 20 pigeons the total number of eggs is  
+
+\[
+20 \times 36 = 720\text{ eggs}
+\]
+
+Three‑quarters of these eggs hatched:
+
+\[
+\frac34 \times 720 = 540\text{ hatchlings}
+\]
+
+The original 20 pigeons are still present, so the total number of pigeons now is  
+
+\[
+20 + 540 = 560
+\]
+
+**FINAL ANSWER: 560**",stop,167,389,556,success,
+120,5649,english,136,108,0,explicit_final,"Albert has three times as many marbles as Angela. Angela has 8 more than Allison, who has 28 marbles. How many marbles do Albert and Allison have?","**Reasoning**
+
+1. Allison has \(28\) marbles.  
+2. Angela has 8 more than Allison:  
+   \[
+   \text{Angela} = 28 + 8 = 36
+   \]
+3. Albert has three times as many marbles as Angela:  
+   \[
+   \text{Albert} = 3 \times 36 = 108
+   \]
+
+**Answer**
+
+Albert has \(108\) marbles and Allison has \(28\) marbles.
+
+FINAL ANSWER: 108, 28",stop,135,328,463,success,
+123,6339,english,75,105,0,explicit_final,"Sofia and her mother go to the grocery store and buys 10kgs of oranges to be used in their home for the week. While at the store, Sofia's father calls and says they're to add 5 more kgs since their neighbor also wanted some supplies. When they reach home, they estimated that for the next coming two weeks they'll have to buy twice as many oranges each week for the supplies to be enough. What the total quantity of oranges they would have bought after the three weeks.","First purchase  
+- Sofia and her mother bought \(10\text{ kg}\).  
+- Her father added \(5\text{ kg}\).  
+
+Total after the first purchase:  
+\[
+10 + 5 = 15\text{ kg}
+\]
+
+Future purchases  
+- For the next two weeks they need to buy **twice as many oranges each week**.  
+- That means each week they purchase double the amount bought the week before.
+
+Week 2 purchase:  
+\[
+2 \times 15 = 30\text{ kg}
+\]
+
+Week 3 purchase:  
+\[
+2 \times 30 = 60\text{ kg}
+\]
+
+Total quantity bought over the three weeks:  
+\[
+15 + 30 + 60 = 105\text{ kg}
+\]
+
+**FINAL ANSWER: 105**",stop,199,490,689,success,
+123,6339,darija,75,45,0,explicit_final,صفاء وماماها مشاو للسويقة وشراو 10 كيلو د الليمون باش يستعملوه فالدار فالسيمانة. وهما فالسويقة، عيط باباها وقال ليهم زيدو 5 كيلو خرين حيت حتى جارهم بغا شوية د التقضية. ملي وصلو للدار، قدرو بلي فالجوج سيمانات الجايين خاصهم يشريو الدوبل ديال داكشي اللي شراو فهاد السيمانة باش تقد التقضية. شحال هو المجموع د الليمون اللي غادي يكونو شراو من هنا لـ 3 د السيمانات؟,"Safaa and her mother first bought  
+
+- 10 kg + 5 kg = **15 kg** of lemons for the current week.
+
+They then realized that for the **next two weeks** they will need **double** the amount they bought this week.  
+Double of 15 kg = **30 kg**.
+
+So, over the two coming weeks they will purchase 30 kg of lemons.
+
+Total lemons bought from now through the next three weeks:
+
+\[
+15\text{ kg (this week)} + 30\text{ kg (next two weeks)} = 45\text{ kg}
+\]
+
+**FINAL ANSWER: 45**",stop,240,1085,1325,success,
+130,2607,darija,1500,300,0,explicit_final,الكلبة ديال جواد ولدات 8 ديال الجراو. عطى النص فسبيل الله، وخبا واحد ربا هو. ومن بعد باع الجراو اللي بقاو بـ 600 درهم للواحد. وكان خاصو يعطي لمول الكلب الدكر 300 درهم. شحال د الفلوس ربح جواد؟,"The dog gave birth to 8 puppies.  
+- Joud gave away half → \(8 ÷ 2 = 4\) puppies.  
+- He kept one for himself → 1 puppy.  
+
+Puppies left to sell: \(8 - 4 - 1 = 3\) puppies.  
+
+He sold those 3 puppies for **600 dirhams**.  
+He also had to pay **300 dirhams** to the male‑dog’s owner.
+
+Profit = revenue – payment = \(600 - 300 = 300\) dirhams.
+
+**FINAL ANSWER: 300**",stop,177,641,818,success,
+136,7226,darija,107,22,0,explicit_final,كريمة بغات تشري بزطام بـ 22 درهم وصاك الثمن ديالو قل بـ 3 دراهم من 4 المرات الثمن د البزطام. شحال غاتقام عليها هاد الشروة كاملة؟,"The price of one biscuit is \(x\) dirhams.  
+The bag of biscuits costs 22 dirhams and its price is 3 dirhams less than four times the price of a single biscuit:
+
+\[
+22 = 4x - 3
+\]
+
+Solve for \(x\):
+
+\[
+4x = 22 + 3 = 25 \qquad\Longrightarrow\qquad x = \frac{25}{4}=6.25\text{ dirhams}
+\]
+
+The total amount Kareema has to pay for the purchase is the price of the bag, which is 22 dirhams.
+
+**FINAL ANSWER: 22**",stop,151,1891,2042,success,
+141,4121,english,24,0.24,0,explicit_final,"Jackson is making pancakes with three ingredients: flour, milk and eggs. 20% of the bottles of milk are spoiled and the rest are fresh. 60% of the eggs are rotten. 1/4 of the cannisters of flour have weevils in them. If Jackson picks a bottle of milk, an egg and a canister of flour at random, what are the odds all three ingredients will be good?","The probability that each randomly chosen ingredient is good is  
+
+\[
+0.80 \times 0.40 \times 0.75 = 0.24.
+\]
+
+Thus the odds in favor of all three being good are  
+
+\[
+\frac{0.24}{1-0.24}= \frac{0.24}{0.76}= \frac{6}{19}\;(\text{or }6\text{ to }19).
+\]
+
+**FINAL ANSWER: 0.24**",stop,185,358,543,success,
+141,4121,darija,24,0.24,0,explicit_final,جمال كايصاوب البغرير بـ 3 د المكونات: الطحين، الحليب، والبيض. 20% من قراعي الحليب خاسرين، والباقي مزيانين. 60% د البيض خانز. و 1/4 د باكيات الطحين مدودين. إيلا جمال هز قرعة حليب، بيضة، وباكية طحين عشوائيا، شحال الاحتمال باش يكونو المكونات بثلاثة مزيانين؟,"The probability that the selected milk carton, egg, and flour bag are all good is  
+
+\[
+P = (1-0.20)\times(1-0.60)\times\left(1-\frac14\right)=0.80 \times 0.40 \times 0.75 = 0.24.
+\]
+
+**FINAL ANSWER: 0.24**",stop,211,424,635,success,
+160,1802,darija,207,399,0,explicit_final,جمال عندو 6 د الحوتات فـ لاكواريوم. لاحظ بلي كل نهار العدد د الحوت كيضوبل. فاليوم التالت حيد التولت (1/3) د الحوت. فاليوم الخامس حيد الربع (1/4). وفاليوم السابع زاد 15 حوتة خرى. شحال د الحوت ولا عندو فالمجموع؟,"The aquarium starts with  
+
+\[
+N_0 = 6 \text{ fish}
+\]
+
+Each day the amount doubles, and on the specified days a fraction is removed or fish are added.
+
+---
+
+### Day 1  
+\(N_1 = 2N_0 = 2 \times 6 = 12\)
+
+### Day 2  
+\(N_2 = 2N_1 = 2 \times 12 = 24\)
+
+### Day 3 – double then remove \( \frac13 \)  
+\(N_3^{\text{before}} = 2N_2 = 48\)  
+Remove \( \frac13 \times 48 = 16\) fish  
+
+\[
+N_3 = 48 - 16 = 32
+\]
+
+### Day 4  
+\(N_4 = 2N_3 = 2 \times 32 = 64\)
+
+### Day 5 – double then remove \( \frac14 \)  
+\(N_5^{\text{before}} = 2N_4 = 128\)  
+Remove \( \frac14 \times 128 = 32\) fish  
+
+\[
+N_5 = 128 - 32 = 96
+\]
+
+### Day 6  
+\(N_6 = 2N_5 = 2 \times 96 = 192\)
+
+### Day 7 – double then add 15 fish  
+\(N_7^{\text{before}} = 2N_6 = 384\)  
+Add 15 fish  
+
+\[
+N_7 = 384 + 15 = 399
+\]
+
+---
+
+\[
+\boxed{399}
+\]
+
+**FINAL ANSWER: 399**",stop,190,1910,2100,success,
+160,1802,english,207,399,0,explicit_final,Jason has six fish in his aquarium. He realizes that every day the number of fish doubles. On the third day he takes out one-third of the fish. On the fifth day he takes out one-fourth of the fish. On the seventh day he adds 15 more fish. How many fish in total does he have?,"**Step‑by‑step reasoning**
+
+1. **Start:** Jason has \(6\) fish.
+
+2. **Daily doubling** – each day the current number of fish doubles before any other action that day.
+
+3. **Day 1:**  
+   \(6 \times 2 = 12\)
+
+4. **Day 2:**  
+   \(12 \times 2 = 24\)
+
+5. **Day 3:**  
+   Double first: \(24 \times 2 = 48\)  
+   Then he removes one‑third: \(\frac{1}{3}\times48 = 16\) fish removed.  
+   Remaining: \(48-16 = 32\)
+
+6. **Day 4:**  
+   \(32 \times 2 = 64\)
+
+7. **Day 5:**  
+   Double first: \(64 \times 2 = 128\)  
+   Then he removes one‑fourth: \(\frac{1}{4}\times128 = 32\) fish removed.  
+   Remaining: \(128-32 = 96\)
+
+8. **Day 6:**  
+   \(96 \times 2 = 192\)
+
+9. **Day 7:**  
+   Double first: \(192 \times 2 = 384\)  
+   Then he adds 15 fish: \(384 + 15 = 399\)
+
+**Final count**
+
+After all the described events, Jason has **399 fish**.
+
+**Answer**
+
+FINAL ANSWER: 399",stop,165,1273,1438,success,
+161,1138,english,60,140,0,explicit_final,"Jay has decided to save money from his paycheck every week. He has decided that he will increase the amount he saves each week by 10 dollars. If he started by saving 20 dollars this week, how much will he have saved in a month from now?","Jay’s weekly savings form an arithmetic sequence:
+
+- Week 1: \$20  
+- Week 2: \$20 + \$10 = \$30  
+- Week 3: \$30 + \$10 = \$40  
+- Week 4: \$40 + \$10 = \$50  
+
+The total saved over the four weeks of a month is  
+
+\[
+20 + 30 + 40 + 50 = 140.
+\]
+
+**FINAL ANSWER: 140**",stop,152,236,388,success,
+161,1138,darija,60,140,0,explicit_final,جواد قرر يوفر الفلوس من الخلصة ديالو كل سيمانة. وقرر أنه غادي يزيد المبلغ اللي كيوفر بـ 10 دراهم كل سيمانة. إلا بدا بـ 20 درهم هاد السيمانة، شحال غادي يكون جمع من هنا لشهر؟,"Jawad saves an amount that grows by 10 dirhams each week.
+
+- Week 1: 20 dirhams  
+- Week 2: 20 + 10 = 30 dirhams  
+- Week 3: 30 + 10 = 40 dirhams  
+- Week 4: 40 + 10 = 50 dirhams  
+
+The total saved over the four weeks of a month is  
+
+\(20 + 30 + 40 + 50 = 140\) dirhams.
+
+**FINAL ANSWER: 140**",stop,163,381,544,success,
+178,3152,darija,26,40,0,explicit_final,خديجة صاوبات 10 د السندويشات د الكاشير و 8 د السندويشات د البيض للكوتي. كل سندويش د الكاشير قطعاتو لـ 4 د المثلثات، وكل سندويش د البيض قطعاتو لـ 2 مستطيلات. إيلا الضياف كلاو 28 مثلث و 12 مستطيل، شحال من طريف د الخبز (شريحة) كلاو فالمجموع؟,"Each cash‑register sandwich is cut into **4 triangles**.  
+Each egg sandwich is cut into **2 rectangles**.
+
+The guests ate  
+
+* 28 triangles → \( \frac{28}{4}=7 \) cash‑register sandwiches.  
+* 12 rectangles → \( \frac{12}{2}=6 \) egg sandwiches.
+
+Every triangle or rectangle is one slice (شريحة) of bread, so the total number of slices eaten is  
+
+\[
+28\;(\text{triangles}) + 12\;(\text{rectangles}) = 40.
+\]
+
+**FINAL ANSWER: 40**",stop,207,463,670,success,
+178,3152,english,26,40,0,explicit_final,"Kiki made 10 cucumber sandwiches and 8 egg sandwiches for the tea party.  Each cucumber sandwich was cut into 4 triangles.  Each egg sandwich was cut into 2 rectangles.  If her guests ate 28 triangles and 12 rectangles, how many slices of bread did they eat?","Each cucumber sandwich is cut into 4 triangular pieces, and each egg sandwich is cut into 2 rectangular pieces.  
+The guests ate  
+
+- 28 triangular pieces  
+- 12 rectangular pieces  
+
+Since each piece corresponds to one “slice” of the sandwich, the total number of slices eaten is  
+
+\[
+28 \text{ (triangles)} + 12 \text{ (rectangles)} = 40.
+\]
+
+**FINAL ANSWER: 40**",stop,160,428,588,success,
+181,4368,darija,90,160,0,explicit_final,جودية عندها 250 متر ديال السكوتش. بغات تدورو على واحد التيران العرض ديالو 20 متر والطول ديالو 60 متر. شحال د السكوتش غادي يشيط ليها ملي تدور دورة وحدة على التيران؟,"The field is a rectangle with width \(20\text{ m}\) and length \(60\text{ m}\).
+
+The distance needed to go once around the field is its perimeter:
+\[
+P = 2(\text{length} + \text{width}) = 2(60\text{ m} + 20\text{ m}) = 2 \times 80\text{ m} = 160\text{ m}.
+\]
+
+So Joudia will use **160 meters** of her 250‑meter roll.
+
+**FINAL ANSWER: 160**",stop,156,349,505,success,
+182,2069,english,62,124,0,explicit_final,"Page collects fancy shoes and has 80 pairs in her closet.  She decides to donate 30% of her collection that she no longer wears.  After dropping off her donation, she treats herself and buys 6 more pairs to add to her collection.  How many shoes does she have now?","**Reasoning**
+
+1. **Initial collection:**  
+   - 80 pairs → \(80 \times 2 = 160\) individual shoes.
+
+2. **Donation:**  
+   - She donates 30 % of her pairs.  
+   - \(30\% \times 80 = 0.30 \times 80 = 24\) pairs.  
+   - Shoes donated: \(24 \times 2 = 48\) shoes.  
+   - Shoes left after donation: \(160 - 48 = 112\) shoes (which is 56 pairs).
+
+3. **Purchase:**  
+   - She buys 6 more pairs → \(6 \times 2 = 12\) shoes.
+
+4. **Final total:**  
+   - \(112 + 12 = 124\) shoes.
+
+**Answer**
+
+FINAL ANSWER: 124",stop,160,460,620,success,
+183,4568,english,40,24,0,explicit_final,"A casino table pays 3:2 if you get a blackjack with your first 2 cards. If you scored a blackjack and were paid $60, what was your original bet?","The casino’s blackjack payout is **3 : 2**.  
+That means for every \$2 wagered you receive \$3 in profit, and you also get back your original stake.  
+
+So the total amount you receive (payout) is:
+
+\[
+\text{payout} = \text{original bet} + \text{profit}
+               = B + \frac{3}{2}B
+               = \frac{5}{2}B = 2.5B
+\]
+
+We are told the payout was \$60:
+
+\[
+2.5B = 60 \quad\Longrightarrow\quad B = \frac{60}{2.5}=24.
+\]
+
+\[
+\boxed{\$24}
+\]
+
+**FINAL ANSWER: 24**",stop,136,558,694,success,
+185,95,darija,64,140,0,explicit_final,عائشة عندها 20 قطعة ديال 5 دراهم. بغات تصرفهم ريالات (قطع د 1 درهم)، ومشات للبنكة. ملي رجعات، لقات بلي 20% من دوك الدراهم اللي عطاوها صدقو قطع نادرة كيسواو 3 دراهم للوحدة. شحال ولات القيمة د الفلوس اللي عندها دابا؟,"Aisha originally had  
+
+\(20\) pieces × \(5\) dirhams = \(100\) dirhams.
+
+She exchanged them for 1‑dirham pieces, so she received \(100\) one‑dirham coins.
+
+\(20\%\) of these coins are rare and each is actually worth \(3\) dirhams.
+
+Number of rare coins: \(20\% \times 100 = 20\).
+
+Value of rare coins: \(20 \times 3 = 60\) dirhams.  
+Value of the remaining normal coins: \(80 \times 1 = 80\) dirhams.
+
+Total value now: \(60 + 80 = 140\) dirhams.
+
+**FINAL ANSWER: 140**",stop,191,538,729,success,

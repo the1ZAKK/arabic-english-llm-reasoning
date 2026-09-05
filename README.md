@@ -111,6 +111,34 @@ Files:
 
 `research/gemmaroc_darija/`
 
+### 6. GPT-OSS-120B English-Darija Experiment
+
+We evaluated `openai/gpt-oss-120b` via the Novita AI OpenAI-compatible API on the same 200 matched English-Darija problems used in the GemMaroc experiment.
+
+Experimental setup:
+
+- 200 matched problems
+- 200 English generations
+- 200 Moroccan Darija generations
+- 400 total generations
+- temperature = 0
+- one generation per language per problem
+- alternating English/Darija generation order
+- identical prompt structure across languages
+- conservative manual adjudication of automatic-scoring false negatives
+- strict QC subset excluding problems 21, 26, 128, and 185
+
+Final adjudicated results:
+
+| Subset | English | Darija | Gap | Exact McNemar p | Paired Bootstrap 95% CI |
+|---|---:|---:|---:|---:|---:|
+| ALL_200 | 190/200 (95.0%) | 181/200 (90.5%) | 4.50 pp | 0.0636 | [0.50, 9.00] pp |
+| STRICT_QC_196 | 186/196 (94.9%) | 179/196 (91.3%) | 3.57 pp | 0.1435 | [-0.51, 7.65] pp |
+
+The observed English-Darija gap was smaller than in the GemMaroc experiment. However, the exact paired McNemar test did not reach the conventional 0.05 significance threshold in either the full or strict-QC subset. The strict-QC bootstrap interval also included zero.
+
+These results indicate strong Moroccan Darija mathematical reasoning performance for GPT-OSS-120B on this benchmark, with no clear statistically significant English advantage under the exact paired McNemar test.
+
 ## Main Findings
 
 Across the tested systems, English performance was consistently at least as high as Arabic or Darija performance on matched mathematical reasoning tasks.
@@ -125,6 +153,8 @@ Instead, they suggest that multilingual mathematical reasoning robustness depend
 
 The PRM experiment additionally indicates that strong Arabic generation does not automatically imply language-robust reasoning evaluation: process reward models themselves may exhibit language-dependent discrimination.
 
+GPT-OSS-120B achieved 95.0% accuracy in English and 90.5% in Darija on the 200-pair benchmark, a 4.5 percentage-point gap. Under strict QC, the gap decreased to 3.57 points. Unlike GemMaroc, the paired English-Darija difference was not statistically significant by exact McNemar testing.
+
 ## Repository Structure
 
 ```text
@@ -133,7 +163,7 @@ research/
 ├── reasoning_pilots/
 ├── global_mgsm_200/
 ├── qwen35_27b/
-└── gemmaroc_darija/
+└── gemmaroc_darija/         # GemMaroc and GPT-OSS-120B English-Darija experiments
 
 docs/
 └── Arabic_English_LLM_Reasoning_Final_Report.pdf
@@ -141,3 +171,5 @@ docs/
 data/
 model_utils/
 vllm_add_dummy_model/
+
+

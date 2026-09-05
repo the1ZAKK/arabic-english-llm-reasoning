@@ -1,0 +1,4 @@
+﻿problem_id,language,gold_answer,extracted_answer,auto_is_correct,adjudicated_is_correct,reason
+25,english,350,3.5,0,1,Equivalent representation: $3.50 equals 350 cents.
+141,english,24,0.24,0,1,Equivalent representation: 0.24 equals 24 percent.
+141,darija,24,0.24,0,1,Equivalent representation: 0.24 equals 24 percent.
