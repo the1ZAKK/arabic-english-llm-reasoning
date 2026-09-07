@@ -111,7 +111,7 @@ The results show strong mathematical reasoning performance in Moroccan Darija wh
 
 Files:
 
-`research/gemmaroc_darija/gemmaroc-darija/`
+`research/english-darija-experiments/gemmaroc-darija/`
 
 ### 6. GPT-OSS-120B English-Darija Experiment
 
@@ -147,7 +147,7 @@ These results indicate strong Moroccan Darija mathematical reasoning performance
 
 Files:
 
-`research/gemmaroc_darija/gpt_oss_120b-darija/`
+`research/english-darija-experiments/gpt_oss_120b-darija/`
 
 ### 7. DeepSeek V3.2 English-Darija Experiment
 
@@ -213,7 +213,7 @@ DeepSeek V3.2 and GPT-OSS-120B obtained identical marginal ALL_200 accuracies (9
 
 Files:
 
-`research/gemmaroc_darija/deepseek_v32-darija/`
+`research/english-darija-experiments/deepseek_v32-darija/`
 
 ## English-Darija Cross-Model Comparison
 
@@ -286,7 +286,7 @@ research/
 ├── reasoning_pilots/
 ├── global_mgsm_200/
 ├── qwen35_27b/
-└── gemmaroc_darija/         # English-Darija experiments
+└── english-darija-experiments/         # English-Darija experiments
     ├── gemmaroc-darija/      # GemMaroc English-Darija
     ├── gpt_oss_120b-darija/  # GPT-OSS-120B English-Darija
     ├── deepseek_v32-darija/  # DeepSeek V3.2 English-Darija

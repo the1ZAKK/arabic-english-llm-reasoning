@@ -42,4 +42,4 @@ desktop.ini
 .vscode/
 .idea/
 *.egg-info/
-research/gemmaroc_darija/dqadqa_gsm8k_clean_pairs.jsonl
+research/english-darija-experiments/dqadqa_gsm8k_clean_pairs.jsonl

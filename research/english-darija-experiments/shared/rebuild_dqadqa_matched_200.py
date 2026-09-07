@@ -9,8 +9,8 @@ from datasets import load_dataset
 SEED = 42
 SAMPLE_SIZE = 200
 
-OUTPUT_CLEAN = "research/gemmaroc_darija/shared/dqadqa_gsm8k_clean_pairs.jsonl"
-OUTPUT_SAMPLE = "research/gemmaroc_darija/shared/dqadqa_gsm8k_matched_200.jsonl"
+OUTPUT_CLEAN = "research/english-darija-experiments/shared/dqadqa_gsm8k_clean_pairs.jsonl"
+OUTPUT_SAMPLE = "research/english-darija-experiments/shared/dqadqa_gsm8k_matched_200.jsonl"
 
 
 def normalize_number(value):
