@@ -1,8 +1,8 @@
 import csv
 
-INPUT = r"research\gemmaroc_darija\deepseek_v32_en_darija_200_results.csv"
-OUTPUT = r"research\gemmaroc_darija\deepseek_v32_en_darija_200_adjudicated.csv"
-DECISIONS = r"research\gemmaroc_darija\deepseek_v32_review_decisions.csv"
+INPUT = r"research\gemmaroc_darija\deepseek_v32-darija\deepseek_v32_en_darija_200_results.csv"
+OUTPUT = r"research\gemmaroc_darija\deepseek_v32-darija\deepseek_v32_en_darija_200_adjudicated.csv"
+DECISIONS = r"research\gemmaroc_darija\deepseek_v32-darija\deepseek_v32_review_decisions.csv"
 
 # Conservative adjudication corrections only.
 CORRECTIONS = {

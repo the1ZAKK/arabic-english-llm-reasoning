@@ -3,8 +3,8 @@ import math
 import random
 from collections import defaultdict
 
-INPUT = r"research\gemmaroc_darija\deepseek_v32_en_darija_200_adjudicated.csv"
-SUMMARY = r"research\gemmaroc_darija\deepseek_v32_statistical_summary.csv"
+INPUT = r"research\gemmaroc_darija\deepseek_v32-darija\deepseek_v32_en_darija_200_adjudicated.csv"
+SUMMARY = r"research\gemmaroc_darija\deepseek_v32-darija\deepseek_v32_statistical_summary.csv"
 
 STRICT_EXCLUSIONS = {21, 26, 128, 185}
 BOOTSTRAP_SAMPLES = 100_000

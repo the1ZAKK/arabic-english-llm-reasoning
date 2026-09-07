@@ -12,11 +12,11 @@ MODEL = "openai/gpt-oss-120b"
 BASE_URL = "https://api.novita.ai/openai"
 
 DATASET_PATH = Path(
-    r"research\gemmaroc_darija\dqadqa_gsm8k_matched_200.jsonl"
+    r"research\gemmaroc_darija\shared\dqadqa_gsm8k_matched_200.jsonl"
 )
 
 OUTPUT_PATH = Path(
-    r"research\gemmaroc_darija\gpt_oss_120b_en_darija_200_results.csv"
+    r"research\gemmaroc_darija\gpt_oss_120b-darija\gpt_oss_120b_en_darija_200_results.csv"
 )
 
 TEMPERATURE = 0

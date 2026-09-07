@@ -7,7 +7,7 @@ from openai import OpenAI
 MODEL = "openai/gpt-oss-120b"
 BASE_URL = "https://api.novita.ai/openai"
 
-DATASET_PATH = r"research\gemmaroc_darija\dqadqa_gsm8k_matched_200.jsonl"
+DATASET_PATH = r"research\gemmaroc_darija\shared\dqadqa_gsm8k_matched_200.jsonl"
 
 
 def load_problem_1():

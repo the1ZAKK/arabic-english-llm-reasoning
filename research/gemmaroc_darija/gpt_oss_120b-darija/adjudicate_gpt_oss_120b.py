@@ -3,15 +3,15 @@ from pathlib import Path
 
 
 INPUT_PATH = Path(
-    r"research\gemmaroc_darija\gpt_oss_120b_en_darija_200_results.csv"
+    r"research\gemmaroc_darija\gpt_oss_120b-darija\gpt_oss_120b_en_darija_200_results.csv"
 )
 
 OUTPUT_PATH = Path(
-    r"research\gemmaroc_darija\gpt_oss_120b_en_darija_200_adjudicated.csv"
+    r"research\gemmaroc_darija\gpt_oss_120b-darija\gpt_oss_120b_en_darija_200_adjudicated.csv"
 )
 
 DECISIONS_PATH = Path(
-    r"research\gemmaroc_darija\gpt_oss_120b_review_decisions.csv"
+    r"research\gemmaroc_darija\gpt_oss_120b-darija\gpt_oss_120b_review_decisions.csv"
 )
 
 

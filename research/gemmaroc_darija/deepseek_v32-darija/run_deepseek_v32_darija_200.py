@@ -10,8 +10,8 @@ from openai import OpenAI
 MODEL = "deepseek/deepseek-v3.2"
 BASE_URL = "https://api.novita.ai/openai"
 
-DATASET = r"research\gemmaroc_darija\dqadqa_gsm8k_matched_200.jsonl"
-OUTPUT = r"research\gemmaroc_darija\deepseek_v32_en_darija_200_results.csv"
+DATASET = r"research\gemmaroc_darija\shared\dqadqa_gsm8k_matched_200.jsonl"
+OUTPUT = r"research\gemmaroc_darija\deepseek_v32-darija\deepseek_v32_en_darija_200_results.csv"
 
 client = OpenAI(
     api_key=os.environ["NOVITA_API_KEY"],

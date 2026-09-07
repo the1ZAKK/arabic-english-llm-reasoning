@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 INPUT_PATH = Path(
-    r"research\gemmaroc_darija\gpt_oss_120b_en_darija_200_adjudicated.csv"
+    r"research\gemmaroc_darija\gpt_oss_120b-darija\gpt_oss_120b_en_darija_200_adjudicated.csv"
 )
 
 STRICT_EXCLUSIONS = {21, 26, 128, 185}
