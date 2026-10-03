@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 OUTPUT = Path(
-    "research/prm_arabic_english/data/pilot_train.jsonl"
+    "research/prm_arabic_english/data/pilot_all.jsonl"
 )
 
 random.seed(42)

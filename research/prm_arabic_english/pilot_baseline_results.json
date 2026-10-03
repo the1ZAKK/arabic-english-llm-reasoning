@@ -1,0 +1,398 @@
+{
+  "model": "Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B",
+  "dev_records": 20,
+  "step_metrics": {
+    "num_steps": 79,
+    "valid_steps": 59,
+    "invalid_steps": 20,
+    "accuracy_0_5": 0.7341772151898734,
+    "mean_valid_score": 0.6069125884165198,
+    "mean_invalid_score": 0.36615484654903413,
+    "discrimination": 0.24075774186748572
+  },
+  "trajectory_metrics": {
+    "mean_correct_score": 0.5859818022698164,
+    "mean_incorrect_score": 0.5037111524492502,
+    "discrimination_gap": 0.0822706498205662
+  },
+  "records": [
+    {
+      "id": "ar_pilot_0017_correct",
+      "pair_id": "ar_pilot_0017",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.5500228852033615,
+      "step_probs": [
+        0.6729553937911987,
+        0.6434231400489807,
+        0.512561023235321,
+        0.37115198373794556
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0017_wrong",
+      "pair_id": "ar_pilot_0017",
+      "variant": "incorrect",
+      "error_type": "operand_substitution",
+      "trajectory_score": 0.6042027249932289,
+      "step_probs": [
+        0.6729553937911987,
+        0.6434231400489807,
+        0.6856988668441772,
+        0.41473349928855896
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0018_correct",
+      "pair_id": "ar_pilot_0018",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.6098811477422714,
+      "step_probs": [
+        0.6881691813468933,
+        0.6986523270606995,
+        0.6033527255058289,
+        0.44935035705566406
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0018_wrong",
+      "pair_id": "ar_pilot_0018",
+      "variant": "incorrect",
+      "error_type": "intermediate_corruption",
+      "trajectory_score": 0.45170682296156883,
+      "step_probs": [
+        0.6881691813468933,
+        0.6986523270606995,
+        0.232613667845726,
+        0.18739211559295654
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0022_correct",
+      "pair_id": "ar_pilot_0022",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.5925592556595802,
+      "step_probs": [
+        0.7472304701805115,
+        0.6767857074737549,
+        0.526045024394989,
+        0.42017582058906555
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0022_wrong",
+      "pair_id": "ar_pilot_0022",
+      "variant": "incorrect",
+      "error_type": "arithmetic",
+      "trajectory_score": 0.5770645216107368,
+      "step_probs": [
+        0.7472304701805115,
+        0.6767857074737549,
+        0.44652965664863586,
+        0.43771225214004517
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0023_correct",
+      "pair_id": "ar_pilot_0023",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.8758454918861389,
+      "step_probs": [
+        0.9292537569999695,
+        0.8555241227149963,
+        0.9250268936157227,
+        0.7935771942138672
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0023_wrong",
+      "pair_id": "ar_pilot_0023",
+      "variant": "incorrect",
+      "error_type": "operation_substitution",
+      "trajectory_score": 0.7092828527092934,
+      "step_probs": [
+        0.9292537569999695,
+        0.8555241227149963,
+        0.6135978698730469,
+        0.43875566124916077
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0024_correct",
+      "pair_id": "ar_pilot_0024",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.5632430613040924,
+      "step_probs": [
+        0.7051801085472107,
+        0.604907751083374,
+        0.6235535740852356,
+        0.3193308115005493
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0024_wrong",
+      "pair_id": "ar_pilot_0024",
+      "variant": "incorrect",
+      "error_type": "operand_substitution",
+      "trajectory_score": 0.5659605860710144,
+      "step_probs": [
+        0.7051801085472107,
+        0.604907751083374,
+        0.5269930958747864,
+        0.4267613887786865
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0029_correct",
+      "pair_id": "ar_pilot_0029",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.7212501913309097,
+      "step_probs": [
+        0.7618377208709717,
+        0.7003968954086304,
+        0.7876862287521362,
+        0.6350799202919006
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0029_wrong",
+      "pair_id": "ar_pilot_0029",
+      "variant": "incorrect",
+      "error_type": "arithmetic",
+      "trajectory_score": 0.5613966807723045,
+      "step_probs": [
+        0.7618377208709717,
+        0.7003968954086304,
+        0.3758217990398407,
+        0.4075303077697754
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0035_correct",
+      "pair_id": "ar_pilot_0035",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.49024271219968796,
+      "step_probs": [
+        0.4612257480621338,
+        0.4345656633377075,
+        0.5750977993011475,
+        0.49008163809776306
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0035_wrong",
+      "pair_id": "ar_pilot_0035",
+      "variant": "incorrect",
+      "error_type": "semantic_logical",
+      "trajectory_score": 0.3497210331261158,
+      "step_probs": [
+        0.4612257480621338,
+        0.4345656633377075,
+        0.2747906744480133,
+        0.22830204665660858
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0039_correct",
+      "pair_id": "ar_pilot_0039",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.45829035714268684,
+      "step_probs": [
+        0.44307219982147217,
+        0.7247325778007507,
+        0.446320116519928,
+        0.2190365344285965
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0039_wrong",
+      "pair_id": "ar_pilot_0039",
+      "variant": "incorrect",
+      "error_type": "intermediate_corruption",
+      "trajectory_score": 0.39710916951298714,
+      "step_probs": [
+        0.44307219982147217,
+        0.7247325778007507,
+        0.26939383149147034,
+        0.1512380689382553
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0041_correct",
+      "pair_id": "ar_pilot_0041",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.4467945322394371,
+      "step_probs": [
+        0.5643144845962524,
+        0.6055572032928467,
+        0.3554156422615051,
+        0.26189079880714417
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0041_wrong",
+      "pair_id": "ar_pilot_0041",
+      "variant": "incorrect",
+      "error_type": "premature_conclusion",
+      "trajectory_score": 0.45677854120731354,
+      "step_probs": [
+        0.5643144845962524,
+        0.6055572032928467,
+        0.2004639357328415
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0047_correct",
+      "pair_id": "ar_pilot_0047",
+      "variant": "correct",
+      "error_type": null,
+      "trajectory_score": 0.5516883879899979,
+      "step_probs": [
+        0.45078617334365845,
+        0.5463021993637085,
+        0.6347101330757141,
+        0.5749550461769104
+      ],
+      "step_labels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "ar_pilot_0047_wrong",
+      "pair_id": "ar_pilot_0047",
+      "variant": "incorrect",
+      "error_type": "unit_conversion",
+      "trajectory_score": 0.36388859152793884,
+      "step_probs": [
+        0.45078617334365845,
+        0.5212700366973877,
+        0.3271096646785736,
+        0.15638849139213562
+      ],
+      "step_labels": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}
