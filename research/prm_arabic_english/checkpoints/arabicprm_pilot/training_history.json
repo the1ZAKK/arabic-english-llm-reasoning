@@ -1,0 +1,35 @@
+[
+  {
+    "epoch": 1,
+    "mean_train_loss": 0.4728787546977401,
+    "step_accuracy": 0.8227848101265823,
+    "mean_valid_step_score": 0.8734160793029656,
+    "mean_invalid_step_score": 0.583823673427105,
+    "step_discrimination": 0.28959240587586066,
+    "mean_correct_trajectory_score": 0.8542834624648095,
+    "mean_incorrect_trajectory_score": 0.7458819903433322,
+    "trajectory_gap": 0.10840147212147722
+  },
+  {
+    "epoch": 2,
+    "mean_train_loss": 0.3487664664629847,
+    "step_accuracy": 0.8987341772151899,
+    "mean_valid_step_score": 0.9223857188628892,
+    "mean_invalid_step_score": 0.4767987921833992,
+    "step_discrimination": 0.44558692667949,
+    "mean_correct_trajectory_score": 0.9033802792429924,
+    "mean_incorrect_trajectory_score": 0.7163064556817214,
+    "trajectory_gap": 0.187073823561271
+  },
+  {
+    "epoch": 3,
+    "mean_train_loss": 0.22929674498736857,
+    "step_accuracy": 0.9620253164556962,
+    "mean_valid_step_score": 0.9056689602843786,
+    "mean_invalid_step_score": 0.2351986788213253,
+    "step_discrimination": 0.6704702814630533,
+    "mean_correct_trajectory_score": 0.8763037107884883,
+    "mean_incorrect_trajectory_score": 0.5959884468466043,
+    "trajectory_gap": 0.280315263941884
+  }
+]

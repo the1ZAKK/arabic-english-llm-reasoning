@@ -1,0 +1,387 @@
+﻿problem_id,category,problem,response,num_steps,average_score,minimum_score,maximum_score,step_scores
+1,correct,"Ahmed has 20 apples. He gives 7 apples to his friend, then buys 5 more apples. How many apples does he have now?","Ahmed starts with 20 apples.
+He gives 7 apples to his friend, so:
+20 - 7 = 13 apples.
+Then he buys 5 more apples:
+13 + 5 = 18 apples.
+Therefore, Ahmed has 18 apples.",8,0.9911932945251465,0.9756982922554016,0.998833954334259,0.9757 0.9954 0.9969 0.9988 0.9983 0.9931 0.9767 0.9946
+1,arithmetic_error,"Ahmed has 20 apples. He gives 7 apples to his friend, then buys 5 more apples. How many apples does he have now?","Ahmed starts with 20 apples.
+He gives 7 apples to his friend:
+20 - 7 = 13 apples.
+Then he buys 5 more apples:
+13 + 5 = 19 apples.
+Therefore, Ahmed has 19 apples.",8,0.6605782271362841,0.0273900143802166,0.9982609152793884,0.9757 0.9954 0.9957 0.9983 0.9977 0.2042 0.0274 0.0902
+1,logic_error,"Ahmed has 20 apples. He gives 7 apples to his friend, then buys 5 more apples. How many apples does he have now?","Ahmed starts with 20 apples.
+He gives 7 apples to his friend, so:
+20 + 7 = 27 apples.
+Then he buys 5 more apples:
+27 + 5 = 32 apples.
+Therefore, Ahmed has 32 apples.",8,0.4487773407017812,0.012024241499602795,0.9968774318695068,0.9757 0.9954 0.9969 0.2617 0.2006 0.1226 0.0120 0.0253
+1,completely_wrong,"Ahmed has 20 apples. He gives 7 apples to his friend, then buys 5 more apples. How many apples does he have now?","Ahmed has 20 apples.
+He gives 7 apples and then buys 5 apples.
+We calculate:
+20 - 7 - 5 = 8.
+Therefore, he has 8 apples.",7,0.573124058943774,0.01188595499843359,0.9794665575027466,0.9757 0.9795 0.9324 0.9375 0.1373 0.0119 0.0376
+2,correct,Sara has 15 books. She gives 4 books to her sister and then buys 6 new books. How many books does she have now?,"Sara has 15 books.
+She gives 4 books to her sister:
+15 - 4 = 11 books.
+Then she buys 6 books:
+11 + 6 = 17 books.
+Therefore, she has 17 books.",8,0.9850673004984856,0.9436785578727722,0.9992467164993286,0.9667 0.9945 0.9981 0.9990 0.9992 0.9872 0.9437 0.9922
+2,arithmetic_error,Sara has 15 books. She gives 4 books to her sister and then buys 6 new books. How many books does she have now?,"Sara has 15 books.
+She gives 4 books:
+15 - 4 = 11 books.
+Then she buys 6 books:
+11 + 6 = 16 books.
+Therefore, she has 16 books.",8,0.6641595615074039,0.027725495398044586,0.9992603659629822,0.9667 0.9945 0.9981 0.9991 0.9993 0.2027 0.0277 0.1253
+2,logic_error,Sara has 15 books. She gives 4 books to her sister and then buys 6 new books. How many books does she have now?,"Sara has 15 books.
+She gives 4 books to her sister, so:
+15 + 4 = 19 books.
+Then she buys 6 books:
+19 + 6 = 25 books.
+Therefore, she has 25 books.",8,0.4225055950228125,0.007146215066313744,0.9978845715522766,0.9667 0.9945 0.9979 0.1941 0.1284 0.0715 0.0071 0.0199
+2,completely_wrong,Sara has 15 books. She gives 4 books to her sister and then buys 6 new books. How many books does she have now?,"Sara has 15 books.
+She gives 4 books and then buys 6 books.
+We calculate:
+15 - 4 - 6 = 5.
+Therefore, she has 5 books.",7,0.6110443041792938,0.04335258528590202,0.9944735169410706,0.9667 0.9945 0.9718 0.9798 0.2189 0.0434 0.1023
+3,correct,"Mohammed buys 8 pens, and he already has 12 pens at home. He gives 5 pens to his friend. How many pens does he have left?","Mohammed has 12 pens.
+He buys 8 more pens:
+12 + 8 = 20 pens.
+Then he gives 5 pens to his friend:
+20 - 5 = 15 pens.
+Therefore, he has 15 pens left.",8,0.6806499548256397,0.44254693388938904,0.9181076288223267,0.8251 0.4425 0.5423 0.7044 0.6706 0.6609 0.6812 0.9181
+3,arithmetic_error,"Mohammed buys 8 pens, and he already has 12 pens at home. He gives 5 pens to his friend. How many pens does he have left?","Mohammed has 12 pens.
+He buys 8 pens:
+12 + 8 = 20 pens.
+Then he gives 5 pens:
+20 - 5 = 16 pens.
+Therefore, he has 16 pens left.",8,0.4882457321509719,0.08568917959928513,0.8251054883003235,0.8251 0.4425 0.5720 0.7288 0.6757 0.2812 0.0857 0.2950
+3,logic_error,"Mohammed buys 8 pens, and he already has 12 pens at home. He gives 5 pens to his friend. How many pens does he have left?","Mohammed has 12 pens.
+He buys 8 pens.
+Instead of adding the pens, we calculate:
+12 - 8 = 4 pens.
+Then he gives 5 pens:
+4 - 5 = -1 pen.
+Therefore, he has one pen left.",9,0.3261885717511177,0.04490112513303757,0.8251054883003235,0.8251 0.4425 0.6159 0.4375 0.2155 0.1337 0.1378 0.0449 0.0827
+3,completely_wrong,"Mohammed buys 8 pens, and he already has 12 pens at home. He gives 5 pens to his friend. How many pens does he have left?","Mohammed has 12 pens and buys 8 pens.
+Then he gives 5 pens.
+We calculate:
+12 + 8 + 5 = 25.
+Therefore, he has 25 pens.",7,0.3800168785133532,0.023221146315336227,0.8251054883003235,0.8251 0.6190 0.5267 0.5751 0.0653 0.0257 0.0232
+4,correct,Layla has 30 pieces of candy. She gives 12 pieces to her friends. How many pieces are left?,"Layla has 30 pieces of candy.
+She gives 12 pieces to her friends:
+30 - 12 = 18.
+Therefore, she has 18 pieces left.",6,0.9721620778242747,0.9208982586860657,0.9904623627662659,0.9209 0.9782 0.9754 0.9895 0.9785 0.9905
+4,arithmetic_error,Layla has 30 pieces of candy. She gives 12 pieces to her friends. How many pieces are left?,"Layla has 30 pieces of candy.
+She gives 12 pieces:
+30 - 12 = 20.
+Therefore, she has 20 pieces left.",6,0.49008995418747264,0.01820969022810459,0.9782348275184631,0.9209 0.9782 0.9448 0.0569 0.0182 0.0215
+4,logic_error,Layla has 30 pieces of candy. She gives 12 pieces to her friends. How many pieces are left?,"Layla has 30 pieces of candy.
+She gives 12 pieces to her friends, so:
+30 + 12 = 42.
+Therefore, she has 42 pieces left.",6,0.5815584982434908,0.09987758100032806,0.9782348275184631,0.9209 0.9782 0.9675 0.4171 0.1057 0.0999
+4,completely_wrong,Layla has 30 pieces of candy. She gives 12 pieces to her friends. How many pieces are left?,"Layla has 30 pieces of candy.
+She gives 12 pieces.
+We calculate:
+30 - 12 - 12 = 6.
+Therefore, she has 6 pieces left.",7,0.604406156710216,0.052307724952697754,0.9782348275184631,0.9209 0.9782 0.9482 0.9614 0.3079 0.0523 0.0619
+5,correct,"Khalid has 5 boxes, with 6 balls in each box. How many balls does he have?","Khalid has 5 boxes.
+There are 6 balls in each box.
+We calculate:
+5 × 6 = 30.
+Therefore, he has 30 balls.",7,0.9776378188814435,0.9578335881233215,0.9907410144805908,0.9746 0.9895 0.9847 0.9749 0.9907 0.9578 0.9712
+5,arithmetic_error,"Khalid has 5 boxes, with 6 balls in each box. How many balls does he have?","Khalid has 5 boxes.
+There are 6 balls in each box.
+We calculate:
+5 × 6 = 35.
+Therefore, he has 35 balls.",7,0.6237379429595811,0.07521339505910873,0.989496648311615,0.9746 0.9895 0.9847 0.9749 0.2543 0.0752 0.1130
+5,logic_error,"Khalid has 5 boxes, with 6 balls in each box. How many balls does he have?","Khalid has 5 boxes.
+There are 6 balls in each box.
+We calculate:
+5 + 6 = 11.
+Therefore, he has 11 balls.",7,0.6609664719019618,0.06911007314920425,0.989496648311615,0.9746 0.9895 0.9847 0.9749 0.5253 0.0691 0.1087
+5,completely_wrong,"Khalid has 5 boxes, with 6 balls in each box. How many balls does he have?","Khalid has 5 boxes, and each box contains 6 balls.
+We calculate:
+5 × 6 = 25.
+Therefore, he has 25 balls.",6,0.5090475097919503,0.008089015260338783,0.9927043914794922,0.9746 0.9927 0.9729 0.0961 0.0081 0.0099
+6,correct,A teacher distributes 24 pens equally among 6 students. How many pens does each student receive?,"The teacher has 24 pens.
+The pens are distributed equally among 6 students:
+24 ÷ 6 = 4.
+Therefore, each student receives 4 pens.",6,0.95762832959493,0.8949735164642334,0.9795833230018616,0.8950 0.9796 0.9673 0.9778 0.9583 0.9678
+6,arithmetic_error,A teacher distributes 24 pens equally among 6 students. How many pens does each student receive?,"The teacher has 24 pens.
+The pens are distributed among 6 students:
+24 ÷ 6 = 5.
+Therefore, each student receives 5 pens.",6,0.5256379721686244,0.02047705464065075,0.9794783592224121,0.8953 0.9795 0.9601 0.2599 0.0205 0.0385
+6,logic_error,A teacher distributes 24 pens equally among 6 students. How many pens does each student receive?,"The teacher has 24 pens and 6 students.
+We calculate:
+24 - 6 = 18.
+Therefore, each student receives 18 pens.",6,0.6787897398074468,0.16675883531570435,0.966655433177948,0.8953 0.9667 0.8874 0.8693 0.1668 0.2872
+6,completely_wrong,A teacher distributes 24 pens equally among 6 students. How many pens does each student receive?,"The teacher has 24 pens and 6 students.
+We calculate:
+24 + 6 = 30.
+Therefore, each student receives 30 pens.",6,0.6701280400156975,0.18812502920627594,0.966655433177948,0.8953 0.9667 0.8874 0.7704 0.1881 0.3128
+7,correct,A pen costs 10 riyals. Ali buys 3 pens. How much does he pay?,"The price of one pen is 10 riyals.
+Ali buys 3 pens.
+We calculate:
+10 × 3 = 30.
+Therefore, he pays 30 riyals.",7,0.9488539184842791,0.8704950213432312,0.9753191471099854,0.8705 0.9748 0.9744 0.9681 0.9753 0.9463 0.9326
+7,arithmetic_error,A pen costs 10 riyals. Ali buys 3 pens. How much does he pay?,"The price of one pen is 10 riyals.
+Ali buys 3 pens.
+We calculate:
+10 × 3 = 25.
+Therefore, he pays 25 riyals.",7,0.5442281918201063,0.0022520325146615505,0.9748460650444031,0.8705 0.9748 0.9744 0.9681 0.0135 0.0023 0.0060
+7,logic_error,A pen costs 10 riyals. Ali buys 3 pens. How much does he pay?,"The price of one pen is 10 riyals.
+Ali buys 3 pens.
+We calculate:
+10 + 3 = 13.
+Therefore, he pays 13 riyals.",7,0.5627171942698104,0.014114396646618843,0.9748460650444031,0.8705 0.9748 0.9744 0.9681 0.1228 0.0141 0.0143
+7,completely_wrong,A pen costs 10 riyals. Ali buys 3 pens. How much does he pay?,"The price of one pen is 10 riyals.
+Ali buys 3 pens.
+We calculate:
+10 - 3 = 7.
+Therefore, he pays 7 riyals.",7,0.606044126940625,0.04565204679965973,0.9748460650444031,0.8705 0.9748 0.9744 0.9681 0.3522 0.0566 0.0457
+8,correct,Mary has 40 riyals. She spends 15 riyals and then receives 10 riyals. How much does she have now?,"Mary has 40 riyals.
+She spends 15 riyals:
+40 - 15 = 25.
+Then she receives 10 riyals:
+25 + 10 = 35.
+Therefore, she has 35 riyals.",8,0.9870400130748749,0.9636145830154419,0.9953104853630066,0.9636 0.9822 0.9893 0.9953 0.9919 0.9876 0.9921 0.9942
+8,arithmetic_error,Mary has 40 riyals. She spends 15 riyals and then receives 10 riyals. How much does she have now?,"Mary has 40 riyals.
+She spends 15 riyals:
+40 - 15 = 25.
+Then she receives 10 riyals:
+25 + 10 = 30.
+Therefore, she has 30 riyals.",8,0.7440119627863169,0.2328590601682663,0.9953104853630066,0.9636 0.9822 0.9893 0.9953 0.9919 0.4650 0.2329 0.3319
+8,logic_error,Mary has 40 riyals. She spends 15 riyals and then receives 10 riyals. How much does she have now?,"Mary has 40 riyals.
+She spends 15 riyals:
+40 + 15 = 55.
+Then she receives 10 riyals:
+55 + 10 = 65.
+Therefore, she has 65 riyals.",8,0.4324187017045915,0.0362059660255909,0.9893032312393188,0.9636 0.9822 0.9893 0.2089 0.1313 0.1006 0.0362 0.0472
+8,completely_wrong,Mary has 40 riyals. She spends 15 riyals and then receives 10 riyals. How much does she have now?,"Mary has 40 riyals.
+She spends 15 riyals and receives 10 riyals.
+We calculate:
+40 - 15 - 10 = 15.
+Therefore, she has 15 riyals.",7,0.5961073264479637,0.06408344209194183,0.9822067022323608,0.9636 0.9822 0.9550 0.9513 0.1906 0.0660 0.0641
+9,correct,Ahmed reads 7 pages every day for 5 days. How many pages does he read?,"Ahmed reads 7 pages every day.
+The number of days is 5.
+We calculate:
+7 × 5 = 35.
+Therefore, he reads 35 pages.",7,0.9697022693497794,0.9189645648002625,0.9867156147956848,0.9190 0.9787 0.9864 0.9778 0.9867 0.9707 0.9687
+9,arithmetic_error,Ahmed reads 7 pages every day for 5 days. How many pages does he read?,"Ahmed reads 7 pages every day for 5 days.
+We calculate:
+7 × 5 = 30.
+Therefore, he reads 30 pages.",6,0.5246304534375668,0.047442372888326645,0.9802945852279663,0.9197 0.9803 0.9714 0.1746 0.0544 0.0474
+9,logic_error,Ahmed reads 7 pages every day for 5 days. How many pages does he read?,"Ahmed reads 7 pages every day for 5 days.
+We calculate:
+7 + 5 = 12.
+Therefore, he reads 12 pages.",6,0.5835210171838602,0.08705725520849228,0.9802945852279663,0.9197 0.9803 0.9714 0.4472 0.0871 0.0955
+9,completely_wrong,Ahmed reads 7 pages every day for 5 days. How many pages does he read?,"Ahmed reads 7 pages every day for 5 days.
+We calculate:
+7 × 5 = 25.
+Therefore, he reads 25 pages.",6,0.4907839133714636,0.010698031634092331,0.9802945852279663,0.9197 0.9803 0.9714 0.0444 0.0183 0.0107
+10,correct,A store has 50 bottles of water. It sells 18 bottles. How many bottles are left?,"The store has 50 bottles.
+It sells 18 bottles:
+50 - 18 = 32.
+Therefore, 32 bottles are left.",6,0.9488728245099386,0.8954955339431763,0.9734153151512146,0.9376 0.9597 0.9583 0.9734 0.8955 0.9687
+10,arithmetic_error,A store has 50 bottles of water. It sells 18 bottles. How many bottles are left?,"The store has 50 bottles.
+It sells 18 bottles:
+50 - 18 = 35.
+Therefore, 35 bottles are left.",6,0.5414896557728449,0.06120525300502777,0.9597074389457703,0.9376 0.9597 0.9583 0.1970 0.0612 0.1351
+10,logic_error,A store has 50 bottles of water. It sells 18 bottles. How many bottles are left?,"The store has 50 bottles.
+It sells 18 bottles, so:
+50 + 18 = 68.
+Therefore, 68 bottles are left.",6,0.577810904632012,0.09379445761442184,0.9597074389457703,0.9376 0.9597 0.9513 0.3964 0.1281 0.0938
+10,completely_wrong,A store has 50 bottles of water. It sells 18 bottles. How many bottles are left?,"The store has 50 bottles.
+It sells 18 bottles.
+We calculate:
+50 - 18 - 18 = 14.
+Therefore, 14 bottles are left.",7,0.6063824125698635,0.06166325509548187,0.9775181412696838,0.9376 0.9597 0.9775 0.9660 0.2770 0.0617 0.0652
+11,correct,Yusuf has 9 toy cars and buys 4 more cars. How many cars does he have?,"Yusuf has 9 toy cars.
+He buys 4 more cars:
+9 + 4 = 13.
+Therefore, he has 13 cars.",6,0.9564288457234701,0.8779800534248352,0.9858642816543579,0.8780 0.9834 0.9809 0.9859 0.9368 0.9736
+11,arithmetic_error,Yusuf has 9 toy cars and buys 4 more cars. How many cars does he have?,"Yusuf has 9 toy cars.
+He buys 4 cars:
+9 + 4 = 14.
+Therefore, he has 14 cars.",6,0.5071119628846645,0.017867280170321465,0.9833812713623047,0.8780 0.9834 0.9720 0.1609 0.0179 0.0306
+11,logic_error,Yusuf has 9 toy cars and buys 4 more cars. How many cars does he have?,"Yusuf has 9 toy cars.
+He buys 4 more cars.
+We calculate:
+9 - 4 = 5.
+Therefore, he has 5 cars.",7,0.6576748681919915,0.1359386444091797,0.9874985814094543,0.8786 0.9835 0.9875 0.9807 0.4834 0.1542 0.1359
+11,completely_wrong,Yusuf has 9 toy cars and buys 4 more cars. How many cars does he have?,"Yusuf has 9 toy cars.
+He buys 4 cars.
+We calculate:
+9 × 4 = 36.
+Therefore, he has 36 cars.",7,0.6209259256720543,0.04104774445295334,0.983491837978363,0.8786 0.9835 0.9831 0.9779 0.4002 0.0410 0.0822
+12,correct,"There are 6 rows of trees on a farm, with 8 trees in each row. How many trees are there on the farm?","There are 6 rows of trees.
+There are 8 trees in each row.
+We calculate:
+6 × 8 = 48.
+Therefore, there are 48 trees.",7,0.9118649022919791,0.7966601252555847,0.9505413174629211,0.9369 0.9505 0.9488 0.9115 0.9489 0.7967 0.8897
+12,arithmetic_error,"There are 6 rows of trees on a farm, with 8 trees in each row. How many trees are there on the farm?","There are 6 rows.
+There are 8 trees in each row.
+We calculate:
+6 × 8 = 42.
+Therefore, there are 42 trees.",7,0.5838590109986919,0.05198616907000542,0.9594054818153381,0.9369 0.9563 0.9594 0.9009 0.1578 0.0520 0.1237
+12,logic_error,"There are 6 rows of trees on a farm, with 8 trees in each row. How many trees are there on the farm?","There are 6 rows.
+There are 8 trees in each row.
+We calculate:
+6 + 8 = 14.
+Therefore, there are 14 trees.",7,0.7242715912205833,0.26068300008773804,0.9594054818153381,0.9369 0.9563 0.9594 0.9009 0.6845 0.2607 0.3712
+12,completely_wrong,"There are 6 rows of trees on a farm, with 8 trees in each row. How many trees are there on the farm?","There are 6 rows with 8 trees in each row.
+We calculate:
+8 - 6 = 2.
+Therefore, there are only 2 trees.",6,0.6928395678599676,0.30784615874290466,0.9527819752693176,0.9369 0.9528 0.9298 0.6840 0.3078 0.3457
+13,correct,Salim has 100 riyals. He buys a toy for 35 riyals. How many riyals does he have left?,"Salim has 100 riyals.
+He buys a toy for 35 riyals.
+We calculate:
+100 - 35 = 65.
+Therefore, he has 65 riyals left.",7,0.9684520193508693,0.9453032612800598,0.9807620644569397,0.9453 0.9808 0.9696 0.9586 0.9794 0.9729 0.9726
+13,arithmetic_error,Salim has 100 riyals. He buys a toy for 35 riyals. How many riyals does he have left?,"Salim has 100 riyals.
+He buys a toy for 35 riyals.
+We calculate:
+100 - 35 = 75.
+Therefore, he has 75 riyals left.",7,0.5842419782919543,0.04643784090876579,0.9807620644569397,0.9453 0.9808 0.9696 0.9586 0.1250 0.0464 0.0640
+13,logic_error,Salim has 100 riyals. He buys a toy for 35 riyals. How many riyals does he have left?,"Salim has 100 riyals.
+He buys a toy for 35 riyals.
+We calculate:
+100 + 35 = 135.
+Therefore, he has 135 riyals left.",7,0.6604703505124364,0.11939539760351181,0.9807620644569397,0.9453 0.9808 0.9696 0.9586 0.5269 0.1194 0.1227
+13,completely_wrong,Salim has 100 riyals. He buys a toy for 35 riyals. How many riyals does he have left?,"Salim has 100 riyals.
+He buys a toy for 35 riyals.
+We calculate:
+100 - 35 - 35 = 30.
+Therefore, he has 30 riyals left.",7,0.5907202405588967,0.021245308220386505,0.9807620644569397,0.9453 0.9808 0.9696 0.9586 0.2296 0.0212 0.0300
+14,correct,A car travels 60 kilometers in two hours at the same speed. How many kilometers does it travel per hour?,"The car travels 60 kilometers in two hours.
+We divide the distance by the time:
+60 ÷ 2 = 30.
+Therefore, its speed is 30 kilometers per hour.",6,0.9463893075784048,0.8890722990036011,0.9893875122070312,0.9442 0.9894 0.9569 0.9623 0.8891 0.9365
+14,arithmetic_error,A car travels 60 kilometers in two hours at the same speed. How many kilometers does it travel per hour?,"The car travels 60 kilometers in two hours.
+We calculate:
+60 ÷ 2 = 40.
+Therefore, its speed is 40 kilometers per hour.",6,0.4893524192739278,0.00633191829547286,0.9893875122070312,0.9442 0.9894 0.9470 0.0387 0.0105 0.0063
+14,logic_error,A car travels 60 kilometers in two hours at the same speed. How many kilometers does it travel per hour?,"The car travels 60 kilometers in two hours.
+We calculate:
+60 × 2 = 120.
+Therefore, its speed is 120 kilometers per hour.",6,0.7018699298302332,0.2818271517753601,0.9893875122070312,0.9442 0.9894 0.9470 0.6778 0.3710 0.2818
+14,completely_wrong,A car travels 60 kilometers in two hours at the same speed. How many kilometers does it travel per hour?,"The car travels 60 kilometers in two hours.
+We calculate:
+60 - 2 = 58.
+Therefore, its speed is 58 kilometers per hour.",6,0.587890071173509,0.08915625512599945,0.9893875122070312,0.9442 0.9894 0.9470 0.3970 0.0892 0.1607
+15,correct,"Ahmed has 3 bags, with 10 oranges in each bag. He gives 5 oranges to his brother. How many oranges are left?","Ahmed has 3 bags.
+There are 10 oranges in each bag:
+3 × 10 = 30 oranges.
+He gives 5 oranges to his brother:
+30 - 5 = 25.
+Therefore, 25 oranges are left.",8,0.9778919965028763,0.949248194694519,0.9963951706886292,0.9762 0.9765 0.9670 0.9842 0.9964 0.9803 0.9492 0.9933
+15,arithmetic_error,"Ahmed has 3 bags, with 10 oranges in each bag. He gives 5 oranges to his brother. How many oranges are left?","Ahmed has 3 bags.
+There are 10 oranges in each bag:
+3 × 10 = 30.
+He gives 5 oranges:
+30 - 5 = 20.
+Therefore, 20 oranges are left.",8,0.6457787102553993,0.02688579447567463,0.9921546578407288,0.9762 0.9765 0.9670 0.9850 0.9922 0.1140 0.0269 0.1285
+15,logic_error,"Ahmed has 3 bags, with 10 oranges in each bag. He gives 5 oranges to his brother. How many oranges are left?","Ahmed has 3 bags.
+There are 10 oranges in each bag:
+3 + 10 = 13.
+Then he gives 5 oranges:
+13 - 5 = 8.
+Therefore, 8 oranges are left.",8,0.49764209263958037,0.02803163416683674,0.9764766097068787,0.9762 0.9765 0.9670 0.3769 0.4202 0.1663 0.0280 0.0701
+15,completely_wrong,"Ahmed has 3 bags, with 10 oranges in each bag. He gives 5 oranges to his brother. How many oranges are left?","Ahmed has 3 bags with 10 oranges in each bag.
+Then he gives 5 oranges.
+We calculate:
+3 × 10 + 5 = 35.
+Therefore, 35 oranges are left.",7,0.6370884371655328,0.11032433807849884,0.9818450212478638,0.9762 0.9818 0.9465 0.9530 0.3259 0.1103 0.1659
+16,correct,A school has 80 students. 20 new students join the school. How many students are there now?,"The school has 80 students.
+20 new students join:
+80 + 20 = 100.
+Therefore, there are 100 students.",6,0.938707172870636,0.7807901501655579,0.9844569563865662,0.9681 0.9845 0.9711 0.9460 0.7808 0.9818
+16,arithmetic_error,A school has 80 students. 20 new students join the school. How many students are there now?,"The school has 80 students.
+20 students join:
+80 + 20 = 90.
+Therefore, there are 90 students.",6,0.5878090734283129,0.10622762888669968,0.9844979643821716,0.9675 0.9845 0.9681 0.1117 0.1062 0.3889
+16,logic_error,A school has 80 students. 20 new students join the school. How many students are there now?,"The school has 80 students.
+20 new students join the school.
+We calculate:
+80 - 20 = 60.
+Therefore, there are 60 students.",7,0.6562069920556886,0.10410604625940323,0.9844569563865662,0.9681 0.9845 0.9743 0.9763 0.4397 0.1041 0.1465
+16,completely_wrong,A school has 80 students. 20 new students join the school. How many students are there now?,"The school has 80 students.
+20 students join.
+We calculate:
+80 × 20 = 1600.
+Therefore, there are 1600 students.",7,0.6402226431029183,0.06781622767448425,0.9844569563865662,0.9681 0.9845 0.9714 0.9752 0.3385 0.0678 0.1761
+17,correct,Fatima has 45 flowers and divides them equally among 5 vases. How many flowers are in each vase?,"Fatima has 45 flowers.
+She divides them equally among 5 vases:
+45 ÷ 5 = 9.
+Therefore, there are 9 flowers in each vase.",6,0.9840072492758433,0.9678962826728821,0.9951751232147217,0.9747 0.9862 0.9922 0.9952 0.9679 0.9879
+17,arithmetic_error,Fatima has 45 flowers and divides them equally among 5 vases. How many flowers are in each vase?,"Fatima has 45 flowers.
+She divides them among 5 vases:
+45 ÷ 5 = 8.
+Therefore, there are 8 flowers in each vase.",6,0.5261186895271143,0.01836908422410488,0.991778552532196,0.9747 0.9862 0.9918 0.1613 0.0184 0.0244
+17,logic_error,Fatima has 45 flowers and divides them equally among 5 vases. How many flowers are in each vase?,"Fatima has 45 flowers and 5 vases.
+We calculate:
+45 - 5 = 40.
+Therefore, there are 40 flowers in each vase.",6,0.553825439264377,0.06508076190948486,0.9747084379196167,0.9747 0.8777 0.7230 0.5825 0.0651 0.1000
+17,completely_wrong,Fatima has 45 flowers and divides them equally among 5 vases. How many flowers are in each vase?,"Fatima has 45 flowers and 5 vases.
+We calculate:
+45 + 5 = 50.
+Therefore, there are 50 flowers in each vase.",6,0.5495900747676691,0.07523733377456665,0.9747084379196167,0.9747 0.8777 0.7230 0.5450 0.0752 0.1019
+18,correct,Khalid buys 4 notebooks. Each notebook costs 7 riyals. How much does he pay?,"Khalid buys 4 notebooks.
+Each notebook costs 7 riyals.
+We calculate:
+4 × 7 = 28.
+Therefore, he pays 28 riyals.",7,0.939299191747393,0.834387481212616,0.9744919538497925,0.8344 0.9628 0.9745 0.9535 0.9561 0.9448 0.9489
+18,arithmetic_error,Khalid buys 4 notebooks. Each notebook costs 7 riyals. How much does he pay?,"Khalid buys 4 notebooks.
+Each notebook costs 7 riyals.
+We calculate:
+4 × 7 = 24.
+Therefore, he pays 24 riyals.",7,0.5618678656007562,0.02625451236963272,0.9744919538497925,0.8344 0.9628 0.9745 0.9535 0.1277 0.0539 0.0263
+18,logic_error,Khalid buys 4 notebooks. Each notebook costs 7 riyals. How much does he pay?,"Khalid buys 4 notebooks.
+Each notebook costs 7 riyals.
+We calculate:
+4 + 7 = 11.
+Therefore, he pays 11 riyals.",7,0.6078836774187428,0.036581818014383316,0.9744919538497925,0.8344 0.9628 0.9745 0.9535 0.4514 0.0421 0.0366
+18,completely_wrong,Khalid buys 4 notebooks. Each notebook costs 7 riyals. How much does he pay?,"Khalid buys 4 notebooks.
+Each notebook costs 7 riyals.
+We calculate:
+7 - 4 = 3.
+Therefore, he pays 3 riyals.",7,0.6489643316183772,0.09975243359804153,0.9744919538497925,0.8344 0.9628 0.9745 0.9535 0.6022 0.1156 0.0998
+19,correct,Noura has 25 balloons. 9 balloons burst. How many balloons are left?,"Noura has 25 balloons.
+9 balloons burst:
+25 - 9 = 16.
+Therefore, 16 balloons are left.",6,0.9631652335325877,0.9207924604415894,0.9925669431686401,0.9489 0.9859 0.9542 0.9766 0.9208 0.9926
+19,arithmetic_error,Noura has 25 balloons. 9 balloons burst. How many balloons are left?,"Noura has 25 balloons.
+9 balloons burst:
+25 - 9 = 15.
+Therefore, 15 balloons are left.",6,0.5909145250916481,0.103237584233284,0.9859192371368408,0.9489 0.9859 0.9542 0.2445 0.1032 0.3087
+19,logic_error,Noura has 25 balloons. 9 balloons burst. How many balloons are left?,"Noura has 25 balloons.
+9 balloons burst:
+25 + 9 = 34.
+Therefore, 34 balloons are left.",6,0.6074316998322805,0.1451728343963623,0.9859192371368408,0.9489 0.9859 0.9542 0.4411 0.1452 0.1693
+19,completely_wrong,Noura has 25 balloons. 9 balloons burst. How many balloons are left?,"Noura has 25 balloons.
+9 balloons burst.
+We calculate:
+25 - 9 - 9 = 7.
+Therefore, 7 balloons are left.",7,0.6555563743625369,0.13100549578666687,0.9859192371368408,0.9489 0.9859 0.9707 0.9617 0.4239 0.1310 0.1668
+20,correct,"A store has 7 boxes, with 12 bottles in each box. How many bottles does the store have?","The store has 7 boxes.
+There are 12 bottles in each box.
+We calculate:
+7 × 12 = 84.
+Therefore, the store has 84 bottles.",7,0.7601549582821983,0.3825368583202362,0.9467418193817139,0.9467 0.9149 0.8882 0.7849 0.8117 0.3825 0.5921
+20,arithmetic_error,"A store has 7 boxes, with 12 bottles in each box. How many bottles does the store have?","The store has 7 boxes.
+There are 12 bottles in each box.
+We calculate:
+7 × 12 = 80.
+Therefore, the store has 80 bottles.",7,0.5716309824160167,0.08371812105178833,0.9467418193817139,0.9467 0.9149 0.8882 0.7849 0.2152 0.0837 0.1678
+20,logic_error,"A store has 7 boxes, with 12 bottles in each box. How many bottles does the store have?","The store has 7 boxes.
+There are 12 bottles in each box.
+We calculate:
+7 + 12 = 19.
+Therefore, the store has 19 bottles.",7,0.6443575727088111,0.13574053347110748,0.9467418193817139,0.9467 0.9149 0.8882 0.7849 0.6365 0.1357 0.2036
+20,completely_wrong,"A store has 7 boxes, with 12 bottles in each box. How many bottles does the store have?","The store has 7 boxes.
+There are 12 bottles in each box.
+We calculate:
+12 - 7 = 5.
+Therefore, the store has 5 bottles.",7,0.6054524545158658,0.08644691109657288,0.9467418193817139,0.9467 0.9149 0.8882 0.7849 0.4396 0.0864 0.1774
