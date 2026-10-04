@@ -1,0 +1,70 @@
+{
+  "scope": "real reviewed-data QLoRA infrastructure smoke; no performance claim",
+  "seed": 42,
+  "model": "Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B",
+  "source_snapshot": "98d69606595eedbdbbbf0a7d28efdcd462ba6a67",
+  "gpu": "NVIDIA GeForce RTX 2060 with Max-Q Design",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.18.0",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.2"
+  },
+  "export_manifest_sha256": "c6b08007d33052801c8cb263c2fc0bd077261b36c0cfe8ea876438f214a97725",
+  "optimizer_updates": 1,
+  "gradient_norms": {
+    "lora": 3.903249661701201,
+    "reward_head": 27.582566496373794
+  },
+  "preclip_total_gradient_norm": 27.85737419128418,
+  "parameter_changes": {
+    "lora_max_abs_change": 9.999992471421137e-05,
+    "reward_head_max_abs_change": 5.0012022256851196e-05
+  },
+  "records": [
+    {
+      "id": "prm800k_64a816200e347ab11af10667a1c3f3651a0ccdc78606cf21b249bca218856167",
+      "tokens": 245,
+      "supervised_steps": 8,
+      "neutral_steps": 2,
+      "loss": 1.128401279449463,
+      "unsupervised_logit_gradients_zero": true
+    },
+    {
+      "id": "prm800k_bdb8ca9fc54d941e1b3a316826d2bdd077b91150533a5df748fdcd39b3da2645",
+      "tokens": 457,
+      "supervised_steps": 4,
+      "neutral_steps": 2,
+      "loss": 2.459953546524048,
+      "unsupervised_logit_gradients_zero": true
+    },
+    {
+      "id": "prm800k_ef6749e651aa2866ef5f49ed681af70701beb1e92581b341fcca052e480a550c",
+      "tokens": 673,
+      "supervised_steps": 11,
+      "neutral_steps": 3,
+      "loss": 1.321264624595642,
+      "unsupervised_logit_gradients_zero": true
+    }
+  ],
+  "training_peak_allocated_gib": 2.03663969039917,
+  "training_peak_reserved_gib": 2.630859375,
+  "overall_peak_allocated_gib": 2.03663969039917,
+  "reload_max_abs_logit_differences": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "reload_rtol": 1e-05,
+  "reload_atol": 1e-05,
+  "reload_passed": true,
+  "checkpoint_sha256": {
+    "adapter\\adapter_config.json": "093e5562684b21c743e64f45d443c82a99a6ac624a8ccf0ec58c4994f1ea60ec",
+    "adapter\\adapter_model.safetensors": "d5cbecf91dc81aa63b0b0e48682d28b149eb1b11f6d00f085e05fefe8d07cd43",
+    "adapter\\README.md": "f4b2d8b1dbae48c7b15351c9a9ba1db54c16f537bdeb9041ad259418d371de91",
+    "tokenizer\\chat_template.jinja": "7935aff82beeafc8bbc090e8d5a970b3a234838500cb7bd5f8c1ba98f6ee4e0a",
+    "tokenizer\\tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+    "tokenizer\\tokenizer_config.json": "fcb73157f031cff4e03f5b6b5cbb0d48d9e85bc7d982a48b5b5490d19ecd4e8f",
+    "v_head.pt": "74b5299eaeb64f42d293214254ff899c58929076aca37ed7b4fedea5bddea355"
+  }
+}

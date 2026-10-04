@@ -73,6 +73,41 @@ Before a larger training run, integrate this adapter into a separate PRM/QLoRA
 runner and verify real model backward/optimizer behavior in a fresh smoke output
 directory. Never reuse pilot checkpoints or treat QC12 as a final training corpus.
 
+## Real QLoRA smoke runner
+
+`smoke_reviewed_qlora.py` loads the locally cached Skywork snapshot in NF4 4-bit,
+adds rank-8 QLoRA to q_proj/v_proj, and trains the reward head in FP32. Three
+train trajectories are selected deterministically, preferring neutral-containing
+and shorter inputs. Dev records are validated but never used for optimization.
+The mean of three trajectory losses is accumulated for exactly one AdamW update
+(LoRA LR 1e-4, head LR 5e-5, clip norm 1, seed 42).
+
+The runner checks finite logits/loss/gradients, nonzero gradients and weight
+changes in both parameter groups, and zero direct logit gradients outside
+supervised positions. Neutral steps remain part of the causal context. It saves
+the adapter, reward head and tokenizer into a fresh output directory, frees the
+first model, reloads a fresh quantized base plus saved weights, and compares all
+annotated-step logits in eval mode with rtol=atol=1e-5. A success report includes
+dependency versions, source snapshot, input manifest hash, GPU memory peaks and
+checkpoint file hashes. This is an infrastructure test, not a performance result
+or proof of optimizer-resume reproducibility; optimizer state is not saved.
+
+```bat
+.venv\Scripts\python.exe -u research\prm_arabic_english\smoke_reviewed_qlora.py --data-dir research/prm_arabic_english/data/prm800k_staging_1000/reviewed_arabic_r1 --output-dir research/prm_arabic_english/checkpoints/reviewed_qlora_smoke_replay
+```
+
+Existing output directories are refused. Model and tokenizer downloads are not
+needed; use a fresh output directory for each run. Original pilot code and saved
+pilot results are untouched.
+
+QC12 r1 real smoke result: three train records, 23 supervised and seven neutral
+steps, one optimizer update. All losses and gradients were finite; both LoRA and
+reward-head weights changed. Peak allocated VRAM was 2.036640 GiB (reserved
+2.630859 GiB) on an RTX 2060 Max-Q. All three fresh-reload comparisons had zero
+maximum absolute step-logit difference. The versioned evidence is
+`translation_batches/prm800k_qc12/qlora_smoke_r1.json`; checkpoint files stay local
+under `checkpoints/reviewed_qlora_smoke_r1/` and are ignored by Git.
+
 Example template command (no training export occurs):
 
 ```bat

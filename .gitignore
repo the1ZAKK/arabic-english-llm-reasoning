@@ -46,3 +46,6 @@ research/english-darija-experiments/dqadqa_gsm8k_clean_pairs.jsonl
 
 # ArabicPRM-T raw source prefixes and generated staging corpora
 research/prm_arabic_english/data/prm800k_staging*/
+
+# Temporary reviewed-data QLoRA smoke checkpoints (reports are versioned separately)
+research/prm_arabic_english/checkpoints/reviewed_qlora_smoke*/
