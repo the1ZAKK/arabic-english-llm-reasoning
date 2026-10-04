@@ -1,13 +1,26 @@
 import copy
 import unittest
 
-from materialize_translation_batch import materialize, restore
+from materialize_translation_batch import materialize, restore, approved_translation_source
 from prepare_translation_batch import canonical_hash
 from prm800k_ingest import convert
 from test_prm800k_ingest import example
 
 
 class TranslationChecks(unittest.TestCase):
+    def test_authorized_latex_change_is_record_and_step_scoped(self):
+        original = r'$9x\equiv 8\pod{20}$'
+        record_id = 'prm800k_293983bdd9d7b466e13be6108bb778ad44e8718843414a8de9854b7142da34e8'
+        self.assertEqual(approved_translation_source(original, record_id, 3), r'$9x\equiv 8\pmod{20}$')
+        self.assertEqual(approved_translation_source(original, record_id, 4), original)
+        self.assertEqual(approved_translation_source(original, 'another-id', 3), original)
+
+    def test_authorized_marker_removal_does_not_change_math(self):
+        original = '$x=5$ [* { id: "5" }]'
+        record_id = 'prm800k_0ba4fe8ff0234a6eea005975c1558c554fffee175d975988f13d1c4b4681319f'
+        self.assertEqual(approved_translation_source(original, record_id, 7), '$x=5$ ')
+        self.assertEqual(approved_translation_source(original, record_id, 6), original)
+
     def test_math_and_marker_restored_exactly(self):
         source = 'Compute $x^2$ and \\[y=3\\]. [* { id: "5" }]'
         self.assertEqual(restore(source, 'احسب <M0> و<M1>. <M2>'),

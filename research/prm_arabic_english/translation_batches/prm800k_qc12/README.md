@@ -16,8 +16,10 @@ Neutral labels stay masked, source supervision stays unchanged and translations
 remain ineligible for training until researcher QC and later export validation.
 
 The source has artifacts: train/0 contains an annotation marker and train/1 has
-the malformed LaTeX command `\pod`. Both are deliberately preserved with review
-notes. Other source errors are translated, not repaired. Automated checks do not
+the malformed LaTeX command `\pod`. Human QC revision r1 removes the marker and
+normalizes the command to `\pmod` only in the specified Arabic steps. The two
+exceptions are restricted to their exact source IDs and step numbers. Original
+source records and source hashes remain untouched. Other source errors are translated, not repaired. Automated checks do not
 prove linguistic fidelity or mathematical annotation correctness. In particular,
 human QC should review protected natural-language text inside LaTeX (the word
 palindrome), meaning of repeated/increasing digits, units, and deliberate errors.
@@ -37,6 +39,26 @@ source-lock and review-queue hashes. Human reviewers should record identity, dat
 accept/revise/reject decision and reasons per record; leave source annotations
 untouched. Global-MGSM was not used. Translation/QC draft only; no training or
 final Arabic evaluation was performed.
+
+## Human QC revision r1
+
+Zakaria Brim (human approval; AI-assisted bilingual QC) accepted records
+3, 4, 6, 7, 8, 10 and 11, and conditionally approved records 1, 2, 5, 9 and 12
+after the listed revisions pass automated checks. Exactly six Arabic text fields
+were changed across those five records. Source provenance, pair IDs, split
+assignments, supervision masks and labels are unchanged. Intentional mathematical
+errors remain intact. `human_qc_r1.json` records the original decisions, requested
+revisions, successful checks and approval basis against the revised queue hash.
+
+The revised queue passed preservation and export validation: 12 accepted records,
+8 train and 4 dev; no rejects. The exported batch is small and is not compatible
+with the existing pilot trainer. No training was run. Pending or failed revisions
+continue to block export.
+
+Replay into a fresh directory using `materialize_translation_batch.py --output-dir`
+and pass that directory's `review_queue.jsonl`, the checked-in `human_qc_r1.json`,
+and a new output directory to `export_reviewed_arabic.py`. The approval manifest
+requires an exact revised-queue SHA256 match.
 
 Upstream source: OpenAI PRM800K, revision
 `7ecc794703b2877f63226f2477a49b34f9b25163`; source-problem content originates in

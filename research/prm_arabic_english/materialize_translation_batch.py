@@ -14,6 +14,15 @@ TOKEN = re.compile(r"<M(\d+)>")
 NUMBER = re.compile(r"(?<!\d)\d+(?:\.\d+)?")
 
 
+def approved_translation_source(source, record_id, step_number):
+    """Comparison copy only: two precise normalizations authorized by Zakaria Brim."""
+    if (record_id, step_number) == ('prm800k_0ba4fe8ff0234a6eea005975c1558c554fffee175d975988f13d1c4b4681319f', 7):
+        return source.replace('[* { id: "5" }]', '')
+    if (record_id, step_number) == ('prm800k_293983bdd9d7b466e13be6108bb778ad44e8718843414a8de9854b7142da34e8', 3):
+        return source.replace(r'$9x\equiv 8\pod{20}$', r'$9x\equiv 8\pmod{20}$')
+    return source
+
+
 def restore(source, draft):
     if not isinstance(draft, str) or not draft.strip():
         raise ValueError("Empty translation")
@@ -67,7 +76,8 @@ def materialize(queues, lock, payload):
             raise ValueError("Step count changed")
         try:
             problem = restore(source["problem"], draft["problem"])
-            steps = [restore(a, b) for a, b in zip(source["steps"], draft["steps"])]
+            steps = [restore(approved_translation_source(a, source['id'], n), b)
+                     for n, (a, b) in enumerate(zip(source["steps"], draft["steps"]), 1)]
         except ValueError as error:
             raise ValueError(f"{split}/{index}: {error}") from error
         results.append({**row, "translation": {"target_language": "ar",
@@ -111,7 +121,7 @@ def main():
         for record in records:
             f.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
     report = {"records": len(records), "translated_steps": sum(len(r["translation"]["steps"]) for r in records),
-              "protected_spans_and_numbers": "exact_match", "source_labels_and_masks": "unchanged",
+              "protected_spans_and_numbers": "exact_match_except_two_human_authorized_normalizations", "source_labels_and_masks": "unchanged",
               "source_split_assignments": "unchanged", "human_qc": "pending", "training_eligible": False,
               "provenance": {k: v for k, v in payload.items() if k != "records"},
               "source_lock_sha256": hashlib.sha256(lock_file.read_bytes()).hexdigest(),

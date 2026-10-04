@@ -63,9 +63,10 @@ def export_records(rows, decisions, queue_hash):
         steps = translated['steps']
         if len(steps) != len(source['steps']) or not all(isinstance(s, str) and s.strip() for s in steps):
             raise ValueError('Translated steps are incomplete')
-        from materialize_translation_batch import restore, PROTECTED
+        from materialize_translation_batch import restore, PROTECTED, approved_translation_source
         # Recheck the materialized text even if a queue was edited after rendering.
-        for original, arabic in [(source['problem'], translated['problem'])] + list(zip(source['steps'], steps)):
+        for n, (original, arabic) in enumerate([(source['problem'], translated['problem'])] + list(zip(source['steps'], steps))):
+            original = approved_translation_source(original, source['id'], n)
             if PROTECTED.findall(original) != PROTECTED.findall(arabic):
                 raise ValueError('Protected spans changed after materialization')
             # Replace existing protected spans with tokens and reuse numeric/Arabic checks.

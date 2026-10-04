@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "review_queue_sha256": "85b2b44288e2bf7007ad80fb1f0fecbd531126a98951edfb63f8ffb6dd5db628",
+  "human_review": true,
+  "reviewer": "Zakaria Brim",
+  "review_type": "human approval; AI-assisted bilingual QC",
+  "approval_basis": "User-provided ACCEPT decisions and conditional approval of precisely specified REVISE corrections; all preservation checks passed.",
+  "revision_audit": {
+    "exact_changed_fields": [
+      [
+        1,
+        "step7"
+      ],
+      [
+        2,
+        "step3"
+      ],
+      [
+        5,
+        "problem"
+      ],
+      [
+        5,
+        "step1"
+      ],
+      [
+        9,
+        "problem"
+      ],
+      [
+        12,
+        "step6"
+      ]
+    ],
+    "source_records_unchanged": true,
+    "supervision_unchanged": true
+  },
+  "reviews": [
+    {
+      "record_number": 1,
+      "id": "prm800k_0ba4fe8ff0234a6eea005975c1558c554fffee175d975988f13d1c4b4681319f",
+      "split": "train",
+      "decision": "accept",
+      "original_decision": "revise",
+      "reviewed_on": "2026-10-05",
+      "notes": "Removed only the embedded annotation marker from Arabic step 7; source and supervision unchanged."
+    },
+    {
+      "record_number": 2,
+      "id": "prm800k_293983bdd9d7b466e13be6108bb778ad44e8718843414a8de9854b7142da34e8",
+      "split": "train",
+      "decision": "accept",
+      "original_decision": "revise",
+      "reviewed_on": "2026-10-05",
+      "notes": "Normalized only Arabic step 3 LaTeX from \\pod{20} to \\pmod{20}; source provenance unchanged."
+    },
+    {
+      "record_number": 3,
+      "id": "prm800k_366c8bc8ee93e14ca65ca1a0eecca056d9e2b16af150bc66238be8c36015bc86",
+      "split": "train",
+      "decision": "accept",
+      "original_decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation; erroneous square-root step intentionally preserved with its original label."
+    },
+    {
+      "record_number": 4,
+      "id": "prm800k_64a816200e347ab11af10667a1c3f3651a0ccdc78606cf21b249bca218856167",
+      "split": "train",
+      "decision": "accept",
+      "original_decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation; decimal notation, arithmetic, step boundaries and labels preserved."
+    },
+    {
+      "record_number": 5,
+      "id": "prm800k_6a6be713622955a57a4b2aa598d078314e13e13e13016b63cdbd43c3e7933b19",
+      "split": "train",
+      "decision": "accept",
+      "original_decision": "revise",
+      "reviewed_on": "2026-10-05",
+      "notes": "Problem and step 1 now specify non-decreasing digits; intentional error in step 3 preserved."
+    },
+    {
+      "record_number": 6,
+      "id": "prm800k_805670334262287592a71848dfca8740715d90a1840f0b6e1c399b3183e09295",
+      "split": "train",
+      "decision": "accept",
+      "original_decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation; incorrect final factor-pair claim intentionally preserved."
+    },
+    {
+      "record_number": 7,
+      "id": "prm800k_bdb8ca9fc54d941e1b3a316826d2bdd077b91150533a5df748fdcd39b3da2645",
+      "split": "train",
+      "decision": "accept",
+      "original_decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful geometry translation; final erroneous statement and its label preserved."
+    },
+    {
+      "record_number": 8,
+      "id": "prm800k_ef6749e651aa2866ef5f49ed681af70701beb1e92581b341fcca052e480a550c",
+      "split": "train",
+      "decision": "accept",
+      "original_decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation; congruences, Euclidean steps and final answer preserved."
+    },
+    {
+      "record_number": 9,
+      "id": "prm800k_1f77c84ce889f6395c14499554b9e8f061e986c72710b2545eae38ed517fedda",
+      "split": "dev",
+      "decision": "accept",
+      "original_decision": "revise",
+      "reviewed_on": "2026-10-05",
+      "notes": "Natural Arabic glossary wording added around the preserved English palindrome term; source errors preserved."
+    },
+    {
+      "record_number": 10,
+      "id": "prm800k_528a98632416e53d974dba0c072cabfd93f00479bf318e400832341c7fe38bf9",
+      "split": "dev",
+      "decision": "accept",
+      "original_decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation; binary/octal grouping, equations and final answer preserved."
+    },
+    {
+      "record_number": 11,
+      "id": "prm800k_8703e05bf1e95fc99c3fef2ed5f438aea98f39126e157f8c7c535a128925bd07",
+      "split": "dev",
+      "decision": "accept",
+      "original_decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful geometric meaning; incomplete/incorrect source reasoning and labels preserved."
+    },
+    {
+      "record_number": 12,
+      "id": "prm800k_92f11eb5c306ac29f938d87b6c9fc0ac2d23d9a7149e5574854cf358074ee1d6",
+      "split": "dev",
+      "decision": "accept",
+      "original_decision": "revise",
+      "reviewed_on": "2026-10-05",
+      "notes": "Arabic step 6 grammar revised as instructed; equations and labels preserved."
+    }
+  ]
+}
