@@ -156,3 +156,38 @@ source IDs and one translated step per source step. Check numeric/formula
 preservation, label/mask alignment and Arabic fluency before scaling. Translation
 models/settings, prompts, revisions, outputs and adjudication must be recorded.
 No translation, new model training or completed-pilot reruns are part of this audit.
+
+## Expanded bounded inspection and translation queue (2026-10-05)
+
+The 1,000-row acquisition read 5,210,142 bytes (below the 8 MiB budget).
+944 records were eligible; 29 QC/screening records and 27 unfinished records
+were excluded. Among eligible records, 70 duplicate-match steps were accepted
+under policy v2. The seeded selection retained 100 source problem groups:
+
+| Split | Problems | Trajectories | Solutions | Error trajectories |
+|---|---:|---:|---:|---:|
+| Train | 80 | 90 | 46 | 44 |
+| Dev | 20 | 21 | 14 | 7 |
+
+There is zero normalized problem overlap. Selected annotations include 1,042
+positive, 51 negative and 64 masked neutral steps. Generation coverage is still
+skewed: 102 trajectories from generation 9 and 9 from generation 8. This is not
+a representative full-corpus sample. The train/dev outputs were replayed from
+the saved source prefix and compared byte-for-byte with Windows `fc /b`; both
+comparisons returned `FC: no differences encountered`.
+
+Source prefix SHA256:
+`30c3a8a1b7d0b765152eee8685d28ed0ca7ddabfb00ff3cc823124c3eabdb17a`.
+Train JSONL SHA256:
+`19d50e62aacb6e796fbea9df3e9ec7ac76c31a78a45bdd7e3e4c5c9cde32f5b8`.
+Dev JSONL SHA256:
+`476a929c5a897b2fa532f88cca377540a3682f98229da42f342785ba32d853ff`.
+
+`prepare_translation_batch.py` created a pending 12-trajectory queue: 8 train
+(4 solutions / 4 errors, 92 steps) and 4 dev (2 solutions / 2 errors, 44 steps).
+Both splits cover short/medium/long annotated lengths and neutral/non-neutral
+cases. Train covers early/middle/late first errors; dev covers early/late errors.
+Original IDs, labels and source split assignments are inherited unchanged.
+The three batch-selection tests passed. See [TRANSLATION_QC.md](TRANSLATION_QC.md)
+for the translation contract and acceptance checklist. The work queues remain
+English with null Arabic fields; translation and training have not started.
