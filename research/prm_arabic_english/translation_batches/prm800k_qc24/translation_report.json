@@ -1,0 +1,23 @@
+{
+  "records": 24,
+  "translated_steps": 201,
+  "protected_spans_and_numbers": "exact_match",
+  "authorized_normalization_count": 0,
+  "source_labels_and_masks": "unchanged",
+  "source_split_assignments": "unchanged",
+  "human_qc": "pending",
+  "training_eligible": false,
+  "provenance": {
+    "translator": "Codex assistant in this conversation",
+    "model_family": "GPT-6 (session system identity); exact deployment/version not independently recorded",
+    "date": "2026-10-05",
+    "method": "Direct MSA draft from frozen English source; protected spans restored verbatim by code",
+    "generation_settings": "Not recorded; no external translation API called",
+    "instruction": "Translate problems and all annotated steps faithfully into Modern Standard Arabic. Preserve numbers, formulas, units, source artifacts, step boundaries and intentional mathematical errors. Never repair source labels. Each <M0>, <M1>, ... identifies its protected span in that individual string. Use nondecreasing digit-order wording when repeated digits are allowed. Human acceptance is required before export.",
+    "batch": "prm800k_qc24",
+    "human_qc_status": "pending"
+  },
+  "source_lock_sha256": "708b17b850194dda04be305044352e89cb7a536832ff53165fe9e45739ed3e39",
+  "translation_payload_sha256": "d986f771a7539ac22e436f1b885de81e871866b7b03f5c0a942bd5709ad51788",
+  "review_queue_sha256": "e83d7db715d5542eb5f313c33142dfda0495fbc2b89570cd0f045275d3377be6"
+}

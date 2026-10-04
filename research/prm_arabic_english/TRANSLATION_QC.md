@@ -6,6 +6,13 @@ inspection. Default output is the ignored source staging directory's
 `translation_batch/`, with train/dev queues and a checksum/provenance manifest.
 Existing output directories are refused. No model or API is called.
 
+Current status: QC12 r1 has completed human review and export. The next QC24 batch
+has 24 Arabic drafts / 201 steps from the expanded 5,000-row prefix and remains
+pending human review. See `translation_batches/prm800k_qc24/README.md` for exact
+hashes, limits and replay commands. New batch approvals are never inferred from
+prior batches. Export and mask-aware adapter/real QLoRA smoke validation now exist;
+the original pilot trainer remains incompatible with reviewed-data queues.
+
 The default batch has 8 train and 4 dev trajectories, half annotated solutions
 and half annotated errors in each split. A deterministic greedy selector seeks
 coverage of length bins (1-4, 5-12, 13+ steps), first-error positions (1-4, 5-12,
@@ -20,6 +27,14 @@ checked before selection. The 200-row and 1,000-row inspection runs are separate
 exploratory subsets: group assignment can change when their source pool changes.
 Neither split has been frozen for training. Freeze a versioned source-problem
 split before production translation; never mix exploratory assignments.
+
+For the QC24 expansion, the 1,000-row/100-problem assignments are now anchors:
+`prm800k_ingest.py --split-anchor-dir` verifies the old record hashes and retains
+their problem splits. New problem groups use seeded independent SHA256-threshold
+assignments. Carry forward the complete latest staging set as the next anchor;
+do not rerun a growing corpus with an unanchored exploratory split. A versioned
+500-problem split lock accompanies QC24. `--exclude-source-lock` prevents selecting
+previous batch IDs, and `--max-steps` records an explicit review-length budget.
 
 ## Translation contract
 

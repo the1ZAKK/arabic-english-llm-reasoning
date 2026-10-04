@@ -133,13 +133,26 @@ def validate(record):
         raise ValueError("Problem grouping failure")
 
 
-def split_records(records, max_problems=30, seed=42, dev_fraction=0.2):
+def split_records(records, max_problems=30, seed=42, dev_fraction=0.2, anchor=None):
     keys = sorted({r["problem_id"] for r in records}, key=lambda k: digest(f"{seed}:{k}"))
-    keys = keys[:max_problems]
+    anchor = anchor or {}
+    if any(split not in ('train', 'dev') for split in anchor.values()):
+        raise ValueError('Invalid anchored split')
+    if not set(anchor).issubset(keys) or len(anchor) > max_problems:
+        raise ValueError('Expansion must retain every anchored problem within budget')
+    if anchor:
+        keys = list(anchor) + [k for k in keys if k not in anchor][:max_problems - len(anchor)]
+    else:
+        keys = keys[:max_problems]
     if len(keys) < 2:
         raise ValueError("Need at least two eligible problem groups")
     n_dev = max(1, min(len(keys) - 1, round(len(keys) * dev_fraction)))
-    dev_keys, selected = set(keys[:n_dev]), set(keys)
+    if anchor:
+        dev_keys = {k for k in keys if anchor.get(k) == 'dev' or
+                    (k not in anchor and int(digest(f"{seed}:split:{k}"), 16) < dev_fraction * 2**256)}
+    else:
+        dev_keys = set(keys[:n_dev])
+    selected = set(keys)
     train, dev, seen = [], [], set()
     for r in records:
         if r["problem_id"] not in selected or r["id"] in seen:
@@ -153,6 +166,33 @@ def split_records(records, max_problems=30, seed=42, dev_fraction=0.2):
     if {r["problem_id"] for r in train} & {r["problem_id"] for r in dev}:
         raise ValueError("Problem leakage")
     return train, dev
+
+
+def load_split_anchor(directory, records):
+    """Bind expansion to checked prior source records and problem assignments."""
+    directory = Path(directory)
+    manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
+    if manifest['revision'] != REVISION or manifest['source_file'] != SOURCE_FILE:
+        raise ValueError('Anchor source revision/file mismatch')
+    current = {r['id']: r for r in records}
+    anchor = {}
+    for split in ('train', 'dev'):
+        name = split + '_en.jsonl'
+        raw = (directory / name).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != manifest['output_sha256'][name]:
+            raise ValueError('Anchor file checksum mismatch')
+        for line in raw.decode('utf-8').splitlines():
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            validate(row)
+            if current.get(row['id']) != row:
+                raise ValueError('Anchored record missing or changed in expansion')
+            key = row['problem_id']
+            if key in anchor and anchor[key] != split:
+                raise ValueError('Anchor problem leakage')
+            anchor[key] = split
+    return anchor
 
 
 def fetch_prefix(path, max_rows, max_bytes):
@@ -193,6 +233,7 @@ def main():
     parser.add_argument("--max-problems", type=int, default=30)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--dev-fraction", type=float, default=0.2)
+    parser.add_argument('--split-anchor-dir', type=Path, help='Preserve all prior staged problem assignments')
     args = parser.parse_args()
     if args.max_rows < 1 or args.max_bytes < 1 or args.max_problems < 2 or not 0 < args.dev_fraction < 1:
         parser.error("Invalid budgets or split parameters")
@@ -224,7 +265,8 @@ def main():
                 exclusions[str(error)] += 1
             except (KeyError, TypeError, IndexError) as error:
                 raise ValueError(f"Unexpected schema at source line {number}") from error
-    train, dev = split_records(records, args.max_problems, args.seed, args.dev_fraction)
+    anchor = load_split_anchor(args.split_anchor_dir, records) if args.split_anchor_dir else {}
+    train, dev = split_records(records, args.max_problems, args.seed, args.dev_fraction, anchor)
     hashes = {}
     for name, rows in (("train_en.jsonl", train), ("dev_en.jsonl", dev)):
         content = "".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in rows)
@@ -245,6 +287,9 @@ def main():
         "train_problems": len({r["problem_id"] for r in train}),
         "dev_problems": len({r["problem_id"] for r in dev}),
         "problem_overlap": 0, "output_sha256": hashes,
+        "split_policy": "prior assignments anchored; new groups independently SHA256-threshold assigned" if anchor else "exploratory ranked group split",
+        "anchored_problems": len(anchor),
+        "split_anchor_manifest_sha256": hashlib.sha256((args.split_anchor_dir / 'manifest.json').read_bytes()).hexdigest() if anchor else None,
         "selected_source_ratings": dict(Counter(str(x) for r in train + dev for x in r["source_step_ratings"])),
         "selected_variants": {name: dict(Counter(r["variant"] for r in rows))
                               for name, rows in (("train", train), ("dev", dev))},

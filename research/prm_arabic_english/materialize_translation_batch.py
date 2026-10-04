@@ -93,9 +93,11 @@ def main():
     parser.add_argument("--queue-dir", type=Path, default=ROOT / "research/prm_arabic_english/data/prm800k_staging_1000/translation_batch")
     parser.add_argument("--freeze", action="store_true", help="Create source lock once; refuses overwrite")
     parser.add_argument("--output-dir", type=Path)
+    parser.add_argument('--assets-dir', type=Path, default=ASSETS, help='Versioned source lock and translation payload directory')
     args = parser.parse_args()
     queues, hashes = read_queue(args.queue_dir)
-    lock_file = ASSETS / "source_lock.json"
+    args.assets_dir.mkdir(parents=True, exist_ok=True)
+    lock_file = args.assets_dir / "source_lock.json"
     if args.freeze:
         lock = {"schema_version": 1, "queue_sha256": hashes,
             "records": [{"split": split, "index": i, "id": row["source_record"]["id"],
@@ -110,7 +112,7 @@ def main():
     lock = json.loads(lock_file.read_text(encoding="utf-8"))
     if lock["queue_sha256"] != hashes:
         raise ValueError("Frozen queue checksum changed")
-    payload_file = ASSETS / "translations.json"
+    payload_file = args.assets_dir / "translations.json"
     payload = json.loads(payload_file.read_text(encoding="utf-8"))
     records = materialize(queues, lock, payload)
     out = args.output_dir or args.queue_dir / "arabic_draft"
@@ -120,8 +122,11 @@ def main():
     with (out / "review_queue.jsonl").open("x", encoding="utf-8", newline="\n") as f:
         for record in records:
             f.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+    normalization_count = sum(approved_translation_source(step, row['source_record']['id'], n) != step
+                              for row in records for n, step in enumerate(row['source_record']['steps'], 1))
     report = {"records": len(records), "translated_steps": sum(len(r["translation"]["steps"]) for r in records),
-              "protected_spans_and_numbers": "exact_match_except_two_human_authorized_normalizations", "source_labels_and_masks": "unchanged",
+              "protected_spans_and_numbers": "exact_match" if not normalization_count else "exact_match_except_two_human_authorized_normalizations",
+              "authorized_normalization_count": normalization_count, "source_labels_and_masks": "unchanged",
               "source_split_assignments": "unchanged", "human_qc": "pending", "training_eligible": False,
               "provenance": {k: v for k, v in payload.items() if k != "records"},
               "source_lock_sha256": hashlib.sha256(lock_file.read_bytes()).hexdigest(),

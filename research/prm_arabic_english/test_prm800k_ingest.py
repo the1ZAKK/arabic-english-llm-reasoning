@@ -91,6 +91,26 @@ class IngestionTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 validate(record)
 
+    def test_expansion_preserves_old_splits_and_is_order_independent(self):
+        old = [convert(example(f'Anchor {i}'), i) for i in range(10)]
+        train, dev = split_records(old, 10)
+        anchor = {r['problem_id']: split for split, rows in [('train', train), ('dev', dev)] for r in rows}
+        expanded = old + [convert(example(f'New {i}'), i + 10) for i in range(50)]
+        a, b = split_records(expanded, 40, anchor=anchor)
+        assignment = {r['problem_id']: split for split, rows in [('train', a), ('dev', b)] for r in rows}
+        self.assertTrue(all(assignment[k] == v for k, v in anchor.items()))
+        self.assertEqual((a, b), split_records(list(reversed(expanded)), 40, anchor=anchor))
+        larger_a, larger_b = split_records(expanded, 60, anchor=anchor)
+        larger = {r['problem_id']: split for split, rows in [('train', larger_a), ('dev', larger_b)] for r in rows}
+        self.assertTrue(all(larger[k] == v for k, v in assignment.items()))
+
+    def test_anchor_cannot_be_dropped_or_reassigned(self):
+        row = convert(example('Anchor'), 1)
+        with self.assertRaisesRegex(ValueError, 'retain every anchored'):
+            split_records([row], anchor={'absent': 'train'})
+        with self.assertRaisesRegex(ValueError, 'Invalid anchored'):
+            split_records([row], anchor={row['problem_id']: 'test'})
+
     def test_invalid_source_rating_is_not_coerced(self):
         for rating in (True, None, 2, "1"):
             row = example()

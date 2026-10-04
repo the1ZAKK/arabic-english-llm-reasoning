@@ -1,0 +1,13 @@
+{
+  "offline_replay_byte_identical": true,
+  "files_sha256": {
+    "source_prefix.jsonl": "a8fa70f001573a0448c1357fc319d510a7c3523b795b5ff84385b46d9a6328f4",
+    "train_en.jsonl": "f47a8b97ec134ca6de1af30a175cd6a48a846d627b9534e20acf432761e7e3b1",
+    "dev_en.jsonl": "8111097267f502337408b28dbeb816d7aa954683083503938fb49aa96838dbe5",
+    "translation_batch_qc24/train_translation_queue.jsonl": "634e7d02ed00977660a55e66f5699f005497d06416601ec6e87e62caa60ea229",
+    "translation_batch_qc24/dev_translation_queue.jsonl": "0ef59715ee26df1e800b91e475131edfe73af444172fccf9c7815b308e94caba",
+    "translation_batch_qc24/arabic_draft/review_queue.jsonl": "e83d7db715d5542eb5f313c33142dfda0495fbc2b89570cd0f045275d3377be6"
+  },
+  "human_qc": "pending",
+  "training_export_performed": false
+}

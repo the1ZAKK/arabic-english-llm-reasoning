@@ -21,7 +21,9 @@ def coverage(record):
             "neutral:" + str(any(r == 0 for r in record["source_step_ratings"]))}
 
 
-def choose(records, count, seed):
+def choose(records, count, seed, excluded_ids=None, max_steps=None):
+    records = [r for r in records if r['id'] not in (excluded_ids or set()) and
+               (max_steps is None or len(r['steps']) <= max_steps)]
     if count < 2 or count % 2:
         raise ValueError("Batch counts must be positive even numbers, at least two")
     chosen, seen = [], set()
@@ -69,13 +71,20 @@ def main():
     parser.add_argument("--train-count", type=int, default=8)
     parser.add_argument("--dev-count", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument('--exclude-source-lock', type=Path, action='append', default=[], help='Prior batches whose IDs must not be selected again')
+    parser.add_argument('--max-steps', type=int, help='Explicit curated-batch step budget; not an ingestion filter')
     args = parser.parse_args()
     source = args.source_dir.resolve()
     out = args.output_dir.resolve() if args.output_dir else source / "translation_batch"
     if out.exists():
         parser.error("Output directory already exists; choose a new path")
     manifest, splits = load_source(source)
-    selected = {split: choose(splits[split], count, args.seed)
+    if args.max_steps is not None and args.max_steps < 1:
+        parser.error('max-steps must be positive')
+    excluded = set()
+    for path in args.exclude_source_lock:
+        excluded.update(r['id'] for r in json.loads(path.read_text(encoding='utf-8'))['records'])
+    selected = {split: choose(splits[split], count, args.seed, excluded, args.max_steps)
                 for split, count in (("train", args.train_count), ("dev", args.dev_count))}
     out.mkdir(parents=True)
     hashes, summary = {}, {}
@@ -98,6 +107,8 @@ def main():
               "source_prefix_sha256": manifest["source_prefix_sha256"],
               "selection": "equal variant quotas; greedy categorical coverage; SHA256-seeded ties",
               "split_policy": "inherited from source; never reassigned", "translation_performed": False,
+              "excluded_record_ids": sorted(excluded), "max_steps": args.max_steps,
+              "excluded_source_locks_sha256": {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in args.exclude_source_lock},
               "global_mgsm_used": False, "summary": summary, "output_sha256": hashes}
     (out / "manifest.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"output_dir": str(out), "summary": {

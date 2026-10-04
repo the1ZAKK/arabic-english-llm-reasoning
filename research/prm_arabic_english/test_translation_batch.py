@@ -31,6 +31,14 @@ class BatchTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 choose(rows, count, 42)
 
+    def test_expansion_excludes_previous_records_and_honors_step_budget(self):
+        rows = self.records()
+        excluded = {rows[0]['id'], rows[4]['id']}
+        chosen = choose(rows, 4, 42, excluded_ids=excluded, max_steps=16)
+        self.assertFalse(excluded & {r['id'] for r in chosen})
+        self.assertTrue(all(len(r['steps']) <= 16 for r in chosen))
+        self.assertEqual(sum(r['variant'] == 'correct' for r in chosen), 2)
+
     def test_changed_source_checksum_fails(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory)

@@ -1,0 +1,10 @@
+{
+  "records": 24,
+  "steps": 201,
+  "neutral_steps": 9,
+  "qc12_record_overlap": 0,
+  "source_records_hashes_labels_masks_splits_unchanged": true,
+  "html_records_and_steps_complete": true,
+  "new_export_created": false,
+  "problem_assignments_locked": 500
+}

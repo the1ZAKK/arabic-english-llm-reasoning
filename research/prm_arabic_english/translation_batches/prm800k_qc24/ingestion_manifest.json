@@ -1,0 +1,120 @@
+{
+  "schema_version": 2,
+  "source": "openai/prm800k",
+  "revision": "7ecc794703b2877f63226f2477a49b34f9b25163",
+  "conversion_policy": "exact-original-path; agreeing-unflagged-duplicates; neutral-masked",
+  "source_file": "prm800k/data/phase2_train.jsonl",
+  "source_license": "MIT (upstream); underlying MATH attribution also required",
+  "acquisition": {
+    "url": "https://media.githubusercontent.com/media/openai/prm800k/7ecc794703b2877f63226f2477a49b34f9b25163/prm800k/data/phase2_train.jsonl",
+    "full_source_bytes": 456135365,
+    "full_source_lfs_sha256": "1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089",
+    "fetched_rows": 5000,
+    "fetched_bytes": 21531669,
+    "full_source_checksum_verified": false
+  },
+  "python": "3.11.9",
+  "source_prefix_sha256": "a8fa70f001573a0448c1357fc319d510a7c3523b795b5ff84385b46d9a6328f4",
+  "ingestion_script_sha256": "b6502bd329e6c98605095f0ad7d5832db4ea8691306e928702a99c751886c83c",
+  "config": {
+    "max_rows": 5000,
+    "max_bytes": 67108864,
+    "max_problems": 500,
+    "seed": 42,
+    "dev_fraction": 0.2
+  },
+  "selection": "SHA256-seeded ordering of problem groups in a bounded source prefix; not a representative corpus sample",
+  "scanned_records": 5000,
+  "eligible_records": 4890,
+  "exclusions": {
+    "conflicting_duplicate_ratings": 1,
+    "quality_control_or_screening": 30,
+    "unfinished_or_bad_problem": 79
+  },
+  "train_records": 454,
+  "dev_records": 122,
+  "train_problems": 391,
+  "dev_problems": 109,
+  "problem_overlap": 0,
+  "output_sha256": {
+    "train_en.jsonl": "f47a8b97ec134ca6de1af30a175cd6a48a846d627b9534e20acf432761e7e3b1",
+    "dev_en.jsonl": "8111097267f502337408b28dbeb816d7aa954683083503938fb49aa96838dbe5"
+  },
+  "split_policy": "prior assignments anchored; new groups independently SHA256-threshold assigned",
+  "anchored_problems": 100,
+  "split_anchor_manifest_sha256": "6c88e3b34696cc9292b1efa08a0400f9155bbbb0a1c30fc401c59988f5598139",
+  "selected_source_ratings": {
+    "1": 5317,
+    "-1": 86,
+    "0": 269
+  },
+  "selected_variants": {
+    "train": {
+      "correct": 381,
+      "incorrect": 73
+    },
+    "dev": {
+      "correct": 109,
+      "incorrect": 13
+    }
+  },
+  "selected_generations": {
+    "8": 473,
+    "9": 103
+  },
+  "selected_step_lengths": {
+    "1": 4,
+    "10": 43,
+    "11": 26,
+    "12": 36,
+    "13": 32,
+    "14": 16,
+    "15": 19,
+    "16": 8,
+    "17": 15,
+    "18": 10,
+    "19": 7,
+    "2": 15,
+    "20": 10,
+    "21": 4,
+    "22": 3,
+    "23": 4,
+    "24": 6,
+    "26": 3,
+    "27": 1,
+    "29": 1,
+    "3": 12,
+    "38": 1,
+    "4": 23,
+    "42": 1,
+    "5": 36,
+    "6": 70,
+    "7": 66,
+    "8": 57,
+    "9": 47
+  },
+  "selected_first_error_positions": {
+    "None": 490,
+    "2": 14,
+    "7": 9,
+    "4": 11,
+    "13": 2,
+    "6": 13,
+    "1": 4,
+    "9": 3,
+    "3": 7,
+    "5": 10,
+    "8": 3,
+    "12": 2,
+    "27": 1,
+    "10": 3,
+    "11": 1,
+    "18": 1,
+    "15": 1,
+    "14": 1
+  },
+  "eligible_duplicate_match_steps": 113,
+  "global_mgsm_used": false,
+  "translation_performed": false,
+  "training_compatible": false
+}
