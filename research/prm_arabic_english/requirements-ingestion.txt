@@ -1,0 +1,3 @@
+# Optional Hugging Face inspection tools; prm800k_ingest.py itself uses stdlib only.
+# Verified in the existing Python 3.11.9 Windows venv. Not a GPU training lockfile.
+datasets==5.0.1
