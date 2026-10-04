@@ -1,0 +1,89 @@
+I reviewed all 24 bilingual records as a training-data QC gate, not just Arabic proofreading. I preserved intentional errors in negative trajectories, but where a step labeled +1 is clearly mathematically false, I mark the record REJECT/quarantine rather than changing the original PRM800K supervision. ArabicPRM-T-QC24-review
+1. REJECT — Record 1
+   Translation itself is good, but the source supervision is suspicious: step 4 is labeled -1, yet
+   A = P(1 + r/n)^{nt}
+   is the standard compound-interest formula and is appropriate here. The preceding steps are also valid. Do not relabel it silently; quarantine this trajectory as a source-annotation conflict.
+2. ACCEPT — Record 2
+   Faithful translation. The awkward phrase about “the angle opposite to A” comes from the source and is correctly preserved. The -1 supervision should remain unchanged.
+3. ACCEPT — Record 3
+   Problem, geometric-series reasoning, equations, numbers, and final answer are faithfully preserved.
+4. ACCEPT — Record 4
+   Translation is faithful. Neutral steps remain neutral, formulas and the unwrapped final answer are preserved.
+5. ACCEPT — Record 5
+   Clear Arabic, correct preservation of the timing problem, endpoints, numbers, and reasoning.
+6. ACCEPT — Record 6
+   Translation is faithful. The incorrect final symmetric-expression identity is intentionally preserved with label -1.
+7. ACCEPT — Record 7
+   Faithful. The incorrect square-root simplification in the final step is correctly preserved rather than repaired.
+8. ACCEPT — Record 8
+   Faithful translation. The erroneous counting formula is intentionally preserved with its negative label.
+9. REJECT — Record 9
+   Source-supervision problem. Step 3 is labeled +1 but states
+   a^2 + b^2 > 2ab
+   as a consequence of AM-GM. In general the valid statement is a^2 + b^2 >= 2ab, with equality when a=b. Because this mathematically false strict inequality is positively supervised, quarantine/reject this record rather than altering the source label.
+10. ACCEPT — Record 10
+    Faithful Arabic. Signed numbers, equations, both solution branches, product, and answer are preserved.
+11. ACCEPT — Record 11
+    Faithful. Monthly compounding, strict inequality, neutral step, logarithms, and final month count are preserved.
+12. REJECT — Record 12
+    There is a source-supervision issue. Step 9, labeled +1, says:
+    “the smallest k in S is 231.”
+    But S is defined over all integers; if it consists of multiples of 231, it has negative elements and therefore no smallest element. The later question about the smallest member greater than 2010 can still yield 2079, but the positively supervised intermediate claim is false. Quarantine rather than silently adding a positivity assumption.
+13. ACCEPT — Record 13
+    Translation is faithful and mathematically consistent. Neutral and positive labels, reciprocal relations, and final result are preserved.
+14. ACCEPT — Record 14
+    Faithful. The incorrect polynomial expansion at the final step is correctly preserved with label -1.
+15. ACCEPT — Record 15
+    Good revision. “ترتيبًا غير تناقصي” correctly reflects the repeated-digit allowance. The erroneous digit-range reasoning remains preserved with label -1.
+16. REVISE — Record 16
+    Step 2 contains unnatural Arabic:
+    ثم باستخدام قاعدة أس قوة...
+    Replace it with:
+    ثم باستخدام قاعدة رفع قوة إلى قوة، يمكنني ضرب الأسين للحصول على $3^{4 \cdot 3/4} = 3^3$.
+    Keep all formulas and labels unchanged.
+17. REVISE — Record 17
+    The translation is faithful, but two phrases should be made more natural.
+    Step 3, replace:
+    فيجب أن يكون رقمه الأول إما 2 أو 3 أو 4 أو 5 أو 6 أو 7.
+    with:
+    فيجب أن يكون الرقم الأول فيه إما 2 أو 3 أو 4 أو 5 أو 6 أو 7.
+    Step 4, replace:
+    هذه ستة اختيارات ممكنة للرقم الأول.
+    with:
+    هناك ستة خيارات ممكنة للرقم الأول.
+    Do not repair the incorrect final count 6000; that is the supervised error.
+18. REJECT — Record 18
+    Translation is faithful, but the source trajectory has substantial supervision/math inconsistencies among positively labeled steps. The foci are vertically aligned, yet the trajectory defines a as the semimajor axis while placing a^2 under the horizontal term; later it uses tangency to the x-axis to derive b^2=9, and even states b = ±3 for a semiaxis. Several of these steps are labeled +1. This should be quarantined for source-annotation adjudication, not repaired during Arabic translation.
+19. REVISE — Record 19
+    There is an Arabic adjective/terminology issue.
+    In the problem, replace:
+    ومعامل رئيس يساوي واحدًا
+    with:
+    ومعامل رئيسي يساوي واحدًا
+    In step 1, replace:
+    التي معامل حدها الرئيس يساوي واحدًا
+    with:
+    التي معامل حدها الرئيسي يساوي واحدًا
+    In step 7, make the same change:
+    معامل حدها الرئيسي يساوي واحدًا
+    Everything else is good.
+20. REVISE — Record 20
+    Mainly a fluency/grammar correction.
+    Step 2 can be improved from:
+    ميلا مستقيمين متعامدين هما مقلوبان متعاكسان في الإشارة
+    to:
+    ميلا مستقيمين متعامدين يكون أحدهما السالب المقلوب للآخر
+    Step 7, replace:
+    أحتاج إلى إيجاد $x$ و$y$ اللتين تحققان المعادلتين.
+    with:
+    أحتاج إلى إيجاد قيمتي $x$ و$y$ اللتين تحققان المعادلتين.
+    Equations and supervision remain unchanged.
+21. ACCEPT — Record 21
+    Faithful. Neutral steps stay masked and the incorrect parity conclusion is correctly preserved with label -1.
+22. ACCEPT — Record 22
+    Clear, faithful translation. Bounds, square roots, final answer, and single annotated final step are preserved.
+23. ACCEPT — Record 23
+    Faithful translation. The terminology مقياس / عمدة is understandable mathematical Arabic, and the incorrect sixth-root-of-unity claim is correctly preserved with -1.
+24. ACCEPT — Record 24
+    Faithful and clear. Rendering “whole number” as عددًا صحيحًا غير سالب is appropriate in this counting context. Equations, neutral step 8, combinations, and final answer are preserved.
+Summary: ACCEPT: 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 15, 21, 22, 23, 24 (16 records). REVISE: 16, 17, 19, 20 (4 records). REJECT/quarantine: 1, 9, 12, 18 (4 records, due to source-supervision problems rather than Arabic translation failures).

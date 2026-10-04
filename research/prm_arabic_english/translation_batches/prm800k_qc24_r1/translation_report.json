@@ -1,0 +1,36 @@
+{
+  "records": 24,
+  "translated_steps": 201,
+  "protected_spans_and_numbers": "exact_match",
+  "authorized_normalization_count": 0,
+  "source_labels_and_masks": "unchanged",
+  "source_split_assignments": "unchanged",
+  "human_qc": "pending",
+  "training_eligible": false,
+  "provenance": {
+    "translator": "Codex assistant in this conversation",
+    "model_family": "GPT-6 (session system identity); exact deployment/version not independently recorded",
+    "date": "2026-10-05",
+    "method": "Direct MSA draft from frozen English source; protected spans restored verbatim by code",
+    "generation_settings": "Not recorded; no external translation API called",
+    "instruction": "Translate problems and all annotated steps faithfully into Modern Standard Arabic. Preserve numbers, formulas, units, source artifacts, step boundaries and intentional mathematical errors. Never repair source labels. Each <M0>, <M1>, ... identifies its protected span in that individual string. Use nondecreasing digit-order wording when repeated digits are allowed. Human acceptance is required before export.",
+    "batch": "prm800k_qc24",
+    "human_qc_status": "four_revisions_pending_final_human_acceptance",
+    "revision": "qc24-r1",
+    "revision_authorization": {
+      "reviewer": "Zakaria Brim",
+      "date": "2026-10-05",
+      "original_queue_sha256": "e83d7db715d5542eb5f313c33142dfda0495fbc2b89570cd0f045275d3377be6",
+      "revised_records": [
+        16,
+        17,
+        19,
+        20
+      ],
+      "automatic_acceptance_authorized": false
+    }
+  },
+  "source_lock_sha256": "708b17b850194dda04be305044352e89cb7a536832ff53165fe9e45739ed3e39",
+  "translation_payload_sha256": "908f5dd1d559cf17a952616a4461b75830c6ad94baf36d4f57898f6b69b7bc7e",
+  "review_queue_sha256": "81f6552e58304f0b4485d5ea60c95c1315c06a44159d938b9c75494fbda59d4a"
+}

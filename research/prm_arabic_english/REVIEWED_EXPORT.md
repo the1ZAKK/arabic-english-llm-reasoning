@@ -1,5 +1,13 @@
 # Human QC gate and Arabic export
 
+QC24 now has 16 original ACCEPT decisions, four source-annotation quarantines,
+and four requested revisions awaiting final human acceptance. See
+`translation_batches/prm800k_qc24_r1/README.md` for the exact revised queue and
+decision history. The exporter automatically blocks accepting any active ID in
+`source_quarantine.json`; legal REJECT decisions still exclude those records.
+New batch selection also excludes active quarantine IDs. Keep original source
+annotations unchanged and require separate human adjudication to resolve them.
+
 QC12 revision r1 has completed human review; see the versioned batch README and
 `human_qc_r1.json` for the exact approval and queue hash. New drafts remain pending.
 `export_reviewed_arabic.py` creates

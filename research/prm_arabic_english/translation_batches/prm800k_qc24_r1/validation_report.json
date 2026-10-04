@@ -1,0 +1,25 @@
+{
+  "checks_passed": {
+    "quarantine_tests": 8,
+    "batch_selection_tests": 4,
+    "materialization_tests": 7,
+    "export_test_suite_including_materialization": 12
+  },
+  "decision_counts": {
+    "accept": 16,
+    "revise": 4,
+    "reject": 4
+  },
+  "actual_export_blocked": true,
+  "block_reason": "Pending/revise records block export; final human acceptance required",
+  "export_directory_created": false,
+  "focused_review_records": [
+    16,
+    17,
+    19,
+    20
+  ],
+  "focused_review_changed_rows": 8,
+  "source_lock_byte_identical": true,
+  "decisions_sha256": "afa822ffdad2de5822609974423b320f518acdfb09c0646bedff6c886c6dc1f8"
+}

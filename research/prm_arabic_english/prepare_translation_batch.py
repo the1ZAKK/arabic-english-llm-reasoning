@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from prm800k_ingest import ROOT, digest, validate
+from source_quarantine import load_quarantined_ids
 
 
 def canonical_hash(record):
@@ -22,7 +23,8 @@ def coverage(record):
 
 
 def choose(records, count, seed, excluded_ids=None, max_steps=None):
-    records = [r for r in records if r['id'] not in (excluded_ids or set()) and
+    excluded_ids = set(excluded_ids or ()) | load_quarantined_ids()
+    records = [r for r in records if r['id'] not in excluded_ids and
                (max_steps is None or len(r['steps']) <= max_steps)]
     if count < 2 or count % 2:
         raise ValueError("Batch counts must be positive even numbers, at least two")
@@ -81,7 +83,7 @@ def main():
     manifest, splits = load_source(source)
     if args.max_steps is not None and args.max_steps < 1:
         parser.error('max-steps must be positive')
-    excluded = set()
+    excluded = load_quarantined_ids()
     for path in args.exclude_source_lock:
         excluded.update(r['id'] for r in json.loads(path.read_text(encoding='utf-8'))['records'])
     selected = {split: choose(splits[split], count, args.seed, excluded, args.max_steps)

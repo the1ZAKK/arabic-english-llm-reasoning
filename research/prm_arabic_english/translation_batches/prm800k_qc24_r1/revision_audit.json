@@ -1,0 +1,24 @@
+{
+  "records_checked": 24,
+  "authorized_text_field_changes": 8,
+  "revised_records": [
+    16,
+    17,
+    19,
+    20
+  ],
+  "source_records_hashes_labels_masks_pair_ids_splits_unchanged": true,
+  "formulas_and_numbers_unchanged": true,
+  "unchanged_records_byte_equivalent": 20,
+  "original_human_accepts_retained": 16,
+  "source_annotation_quarantines": [
+    1,
+    9,
+    12,
+    18
+  ],
+  "revised_records_awaiting_final_human_acceptance": 4,
+  "original_review_queue_sha256": "e83d7db715d5542eb5f313c33142dfda0495fbc2b89570cd0f045275d3377be6",
+  "revised_review_queue_sha256": "81f6552e58304f0b4485d5ea60c95c1315c06a44159d938b9c75494fbda59d4a",
+  "training_export_performed": false
+}

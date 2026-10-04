@@ -1,7 +1,10 @@
 # QC24: expanded-source Arabic translation review
 
-Status: **pending human QC; no Arabic training export**. QC12 r1 remains the only
-accepted Arabic batch. This batch adds 24 nonoverlapping trajectories (16 train,
+Current status: **16 ACCEPT, four REVISE, four REJECT/quarantine; no Arabic
+training export**. Zakaria Brim reviewed this exact original queue. The requested
+eight wording edits are in `../prm800k_qc24_r1/`; those four revised records await
+final human acceptance. Original prose and source locks remain unchanged.
+QC12 r1 remains the only exported Arabic batch. This batch adds 24 nonoverlapping trajectories (16 train,
 8 dev), 201 annotated steps, and nine neutral/masked positions. Each split has
 equal correct/incorrect trajectory quotas. Source errors and labels are preserved.
 
@@ -36,6 +39,8 @@ are recorded. Global-MGSM was not accessed.
 - `replay_verification.json`: offline replay matched raw prefix, both staging
   files, both source queues and the materialized review queue byte for byte.
 - `human_qc_pending.json`: exact-queue-bound decisions, all pending, human_review=false.
+- `human_qc_original.json` and `human_review_2026-10-05.txt`: supplied human review
+  of the original queue, with 16 accepts, four revision requests and four rejects.
 
 ## Human review
 
@@ -52,12 +57,25 @@ pending decision file and correctly refused it. Only human-reviewed decisions
 bound to the final queue hash may permit export. Revisions require a new queue
 version and updated review history. Never transfer QC12 approval to this batch.
 
+Active source-annotation quarantines are now stored in the central
+`../../source_quarantine.json`. New batch selection automatically excludes their
+exact trajectory IDs; export refuses accepting those IDs. Source records and
+supervision are never relabeled. Quarantine resolution requires separate human
+source-annotation adjudication.
+
 ## Replay from repository root
 
 Use fresh output directories for every generated artifact. Regenerate the original
 1,000-row/100-problem source staging set unchanged before using it as the anchor.
 Its manifest SHA256 must match `ingestion_manifest.json`'s anchor hash. Native
 source queue records and the source lock are authoritative; never refreeze them.
+
+The selection commands below describe the original pre-QC batch at commit
+`d829cd4`. Current selection excludes active quarantines, so it will select a
+different new batch. Historical source-queue reproduction must use that original
+selection version in an isolated checkout, or the preserved frozen queues. Use
+current guarded export code for any training export. The r1 materialization uses
+the same preserved source queues and source lock, never a fresh selection.
 
 ```bat
 .venv\Scripts\python.exe research\prm_arabic_english\prm800k_ingest.py --max-rows 5000 --max-bytes 67108864 --max-problems 500 --split-anchor-dir research/prm_arabic_english/data/prm800k_staging_1000 --output-dir research/prm_arabic_english/data/prm800k_staging_5000_replay

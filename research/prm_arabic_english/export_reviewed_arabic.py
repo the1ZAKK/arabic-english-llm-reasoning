@@ -8,6 +8,7 @@ from pathlib import Path
 
 from prepare_translation_batch import canonical_hash
 from prm800k_ingest import ROOT, validate
+from source_quarantine import load_quarantined_ids
 
 
 def training_supervision(record):
@@ -21,6 +22,7 @@ def training_supervision(record):
 
 
 def export_records(rows, decisions, queue_hash):
+    quarantined_ids = load_quarantined_ids()
     if decisions.get('review_queue_sha256') != queue_hash:
         raise ValueError('QC decisions belong to a different review queue')
     if decisions.get('human_review') is not True:
@@ -57,6 +59,8 @@ def export_records(rows, decisions, queue_hash):
                 raise ValueError('Rejected records require a reason')
             rejected.append({'id': source['id'], 'split': split, 'reason': review['notes']})
             continue
+        if source['id'] in quarantined_ids:
+            raise ValueError(f"Accepted source is quarantined: {source['id']}")
         translated = row['translation']
         if translated['status'] != 'draft_automated_checks_passed':
             raise ValueError('Translation must pass automated preservation checks')
