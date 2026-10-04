@@ -1,0 +1,48 @@
+{
+  "reviewed_on": "2026-10-05",
+  "reviewer": "Zakaria Brim",
+  "final_decision_counts": {
+    "accept": 20,
+    "reject": 4
+  },
+  "accepted_records": 20,
+  "split_counts": {
+    "train": 13,
+    "dev": 7
+  },
+  "steps": 162,
+  "supervised_steps": 153,
+  "neutral_steps": 9,
+  "token_range": [
+    115,
+    704
+  ],
+  "quarantined_record_numbers": [
+    1,
+    9,
+    12,
+    18
+  ],
+  "review_queue_sha256": "81f6552e58304f0b4485d5ea60c95c1315c06a44159d938b9c75494fbda59d4a",
+  "decisions_sha256": "25b6896a54e3a9ba1fa614fa9c5518a11fe0bb58c3d59f52761fa94e099cbb38",
+  "export_manifest_sha256": "dbd2c5ec6aa4884ecb3ed40e83ff169879f001b3b9a3307b5d275ad278af3692",
+  "export_output_sha256": {
+    "train_ar.jsonl": "f8a3c6fbf68936ca842a8f92dc1d5eaa4dd706bb29c4e922da09c0bc5bc47e2b",
+    "dev_ar.jsonl": "d8ad46f06428125ed06319f738f48f255b80ffc78c932f0375a643a2c050f0ec"
+  },
+  "smoke_report_sha256": "e3f13782b9879423b72b4ed4bbf4059bae520fcac811cd21232115af64ef50ba",
+  "checks_passed": [
+    "Exact revised queue and final decision hashes",
+    "Only four revise decisions replaced with explicit human accepts",
+    "All accepted exports preserve source IDs, hashes, labels, masks and splits",
+    "Exported Arabic text equals human-reviewed queue",
+    "Four quarantines unchanged and absent from export",
+    "Manifest-checked reviewed loader",
+    "Disjoint train/dev source problem groups",
+    "Cached-tokenizer alignment for all 20 records",
+    "Synthetic backward reaches only supervised positions",
+    "Historical pending decisions, source lock and translation payload hashes unchanged"
+  ],
+  "model_training_performed": false,
+  "scope": "Small curated reviewed batch; token/mask validation uses synthetic logits, not PRM training or performance evaluation"
+}

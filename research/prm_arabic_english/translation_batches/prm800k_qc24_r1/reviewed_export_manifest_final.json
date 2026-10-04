@@ -1,0 +1,38 @@
+{
+  "accepted_records": 20,
+  "rejected": [
+    {
+      "id": "prm800k_1808023da7e3fea74d9967b1931567798c393913d7fdceeeebfe6783fddeeb2a",
+      "split": "train",
+      "reason": "Translation itself is good, but the source supervision is suspicious: step 4 is labeled -1, yet\n   A = P(1 + r/n)^{nt}\n   is the standard compound-interest formula and is appropriate here. The preceding steps are also valid. Do not relabel it silently; quarantine this trajectory as a source-annotation conflict."
+    },
+    {
+      "id": "prm800k_89ff9b977e2979fe9b13177b249b637514fcb637f99a3241e65375377b4bc17e",
+      "split": "train",
+      "reason": "Source-supervision problem. Step 3 is labeled +1 but states\n   a^2 + b^2 > 2ab\n   as a consequence of AM-GM. In general the valid statement is a^2 + b^2 >= 2ab, with equality when a=b. Because this mathematically false strict inequality is positively supervised, quarantine/reject this record rather than altering the source label."
+    },
+    {
+      "id": "prm800k_9689e9b5dfceed14323f844301b5309bcfa3bface11397e2cc4389c1b9ce66fa",
+      "split": "train",
+      "reason": "There is a source-supervision issue. Step 9, labeled +1, says:\n    \u201cthe smallest k in S is 231.\u201d\n    But S is defined over all integers; if it consists of multiples of 231, it has negative elements and therefore no smallest element. The later question about the smallest member greater than 2010 can still yield 2079, but the positively supervised intermediate claim is false. Quarantine rather than silently adding a positivity assumption."
+    },
+    {
+      "id": "prm800k_452b729bf5886e136f62d4c7c9881ef5501600a232bbd147b7523041405a9a48",
+      "split": "dev",
+      "reason": "Translation is faithful, but the source trajectory has substantial supervision/math inconsistencies among positively labeled steps. The foci are vertically aligned, yet the trajectory defines a as the semimajor axis while placing a^2 under the horizontal term; later it uses tangency to the x-axis to derive b^2=9, and even states b = \u00b13 for a semiaxis. Several of these steps are labeled +1. This should be quarantined for source-annotation adjudication, not repaired during Arabic translation."
+    }
+  ],
+  "split_counts": {
+    "train": 13,
+    "dev": 7
+  },
+  "reviewer": "Zakaria Brim",
+  "review_queue_sha256": "81f6552e58304f0b4485d5ea60c95c1315c06a44159d938b9c75494fbda59d4a",
+  "decisions_sha256": "25b6896a54e3a9ba1fa614fa9c5518a11fe0bb58c3d59f52761fa94e099cbb38",
+  "output_sha256": {
+    "train_ar.jsonl": "f8a3c6fbf68936ca842a8f92dc1d5eaa4dd706bb29c4e922da09c0bc5bc47e2b",
+    "dev_ar.jsonl": "d8ad46f06428125ed06319f738f48f255b80ffc78c932f0375a643a2c050f0ec"
+  },
+  "pilot_trainer_compatible": false,
+  "scope": "small curated QC batch; not a final training corpus"
+}

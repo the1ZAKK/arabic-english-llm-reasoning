@@ -1,12 +1,20 @@
 # Human QC gate and Arabic export
 
-QC24 now has 16 original ACCEPT decisions, four source-annotation quarantines,
-and four requested revisions awaiting final human acceptance. See
+QC24 r1 has completed final human review: 20 ACCEPT decisions and four
+source-annotation quarantines. Its reviewed export contains 13 train and seven
+dev records (162 steps: 153 supervised and nine neutral). Exact queue hashes and
+preservation checks passed before the four revised decisions were accepted. See
 `translation_batches/prm800k_qc24_r1/README.md` for the exact revised queue and
 decision history. The exporter automatically blocks accepting any active ID in
 `source_quarantine.json`; legal REJECT decisions still exclude those records.
 New batch selection also excludes active quarantine IDs. Keep original source
 annotations unchanged and require separate human adjudication to resolve them.
+
+All 20 QC24 r1 exports passed the manifest-checked loader, cached-tokenizer step
+alignment and synthetic-logit gradient-mask check; 115–704 tokens per record.
+Final decisions, export hashes and smoke evidence are versioned in the r1 assets.
+Original pending/revision-stage evidence remains unchanged. QC24 r1 is a small
+curated batch, and this data check performs no PRM training or optimizer update.
 
 QC12 revision r1 has completed human review; see the versioned batch README and
 `human_qc_r1.json` for the exact approval and queue hash. New drafts remain pending.

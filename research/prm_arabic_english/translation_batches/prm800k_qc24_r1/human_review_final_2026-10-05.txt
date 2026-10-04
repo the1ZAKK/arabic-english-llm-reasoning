@@ -1,0 +1,31 @@
+Final human QC for QC24 r1:
+
+Record 16: ACCEPT
+Notes: The revised wording "قاعدة رفع قوة إلى قوة" is clear and faithful to the English source. Formula, reasoning, and supervision remain unchanged.
+
+Record 17: ACCEPT
+Notes: Both revised phrases are now natural and clear:
+- "الرقم الأول فيه..."
+- "هناك ستة خيارات ممكنة للرقم الأول."
+The intentional incorrect final count remains correctly preserved with label -1.
+
+Record 19: ACCEPT
+Notes: The correction to "رئيسي" is grammatically correct and the meaning of "monic" is preserved accurately. No further changes needed.
+
+Record 20: ACCEPT
+Notes: Both revisions are acceptable:
+- the negative-reciprocal slope relationship is conveyed correctly;
+- "قيمتي x و y اللتين تحققان المعادلتين" is grammatically and semantically appropriate.
+All equations and reasoning remain faithful to the source.
+
+Final decisions:
+16 — ACCEPT
+17 — ACCEPT
+19 — ACCEPT
+20 — ACCEPT
+
+No further revisions requested.
+
+The four revised records may now be marked accepted, provided the review-queue hash and existing automated preservation checks still match the revised queue.
+
+Keep records 1, 9, 12, and 18 quarantined/rejected for the previously identified source-annotation conflicts. Do not alter their source labels.

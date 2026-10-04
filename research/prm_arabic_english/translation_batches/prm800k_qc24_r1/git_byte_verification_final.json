@@ -1,0 +1,64 @@
+{
+  "scope": "Exact-byte Git index and checkout verification for SHA256-bound QC24 artifacts",
+  "core_autocrlf": "true",
+  "files_checked": 14,
+  "all_index_and_checkout_bytes_match": true,
+  "files": [
+    {
+      "path": "research/prm_arabic_english/source_quarantine.json",
+      "sha256": "3efce6b68ddbfe69b577c955de9aadedeaf8c683057c327bf8e4a21d448c5903"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24/source_lock.json",
+      "sha256": "708b17b850194dda04be305044352e89cb7a536832ff53165fe9e45739ed3e39"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24/translations.json",
+      "sha256": "d986f771a7539ac22e436f1b885de81e871866b7b03f5c0a942bd5709ad51788"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24/human_qc_original.json",
+      "sha256": "596fb5cbe1f5910251af8a89c01bf34c29e2fa9db9df6ab473c24c1d0cdef9ce"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24/human_review_2026-10-05.txt",
+      "sha256": "c1437533b4ce7f67a407d3e76b2aefa462e829134cd478d69912cb313f4f99fb"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/source_lock.json",
+      "sha256": "708b17b850194dda04be305044352e89cb7a536832ff53165fe9e45739ed3e39"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/translations.json",
+      "sha256": "908f5dd1d559cf17a952616a4461b75830c6ad94baf36d4f57898f6b69b7bc7e"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/human_qc_r1_pending.json",
+      "sha256": "afa822ffdad2de5822609974423b320f518acdfb09c0646bedff6c886c6dc1f8"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/human_qc_r1_final.json",
+      "sha256": "25b6896a54e3a9ba1fa614fa9c5518a11fe0bb58c3d59f52761fa94e099cbb38"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/human_review_final_2026-10-05.txt",
+      "sha256": "64842b07440f7efcc3f6fdaac7f52291c00d5d8db7b5089f3c3a43ba9aa6e9c4"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/final_acceptance_precheck.json",
+      "sha256": "b5ccfb6fa38645d479ceb6eba4d241d0d45c77844d33a663c07022df803c0924"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/final_export_validation.json",
+      "sha256": "60f05394a822ce76d6244cc21068b330ead60f4d7276c134414aaeceb6734bdf"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/reviewed_export_manifest_final.json",
+      "sha256": "dbd2c5ec6aa4884ecb3ed40e83ff169879f001b3b9a3307b5d275ad278af3692"
+    },
+    {
+      "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/reviewed_training_smoke_final.json",
+      "sha256": "e3f13782b9879423b72b4ed4bbf4059bae520fcac811cd21232115af64ef50ba"
+    }
+  ]
+}

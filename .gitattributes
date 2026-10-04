@@ -1,0 +1,16 @@
+# These QC artifacts are bound by SHA256 of their exact bytes. Preserve them
+# across Windows checkouts even when core.autocrlf is enabled.
+research/prm_arabic_english/source_quarantine.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24/source_lock.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24/translations.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24/human_qc_original.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24/human_review_2026-10-05.txt -text
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/source_lock.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/translations.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/human_qc_r1_pending.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/human_qc_r1_final.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/human_review_final_2026-10-05.txt -text
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/final_acceptance_precheck.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/final_export_validation.json -text
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/reviewed_export_manifest_final.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/prm_arabic_english/translation_batches/prm800k_qc24_r1/reviewed_training_smoke_final.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -1,10 +1,11 @@
 # QC24: expanded-source Arabic translation review
 
-Current status: **16 ACCEPT, four REVISE, four REJECT/quarantine; no Arabic
-training export**. Zakaria Brim reviewed this exact original queue. The requested
-eight wording edits are in `../prm800k_qc24_r1/`; those four revised records await
-final human acceptance. Original prose and source locks remain unchanged.
-QC12 r1 remains the only exported Arabic batch. This batch adds 24 nonoverlapping trajectories (16 train,
+Current status: **QC24 r1 has 20 ACCEPT and four REJECT/quarantine; reviewed
+export completed**. Zakaria Brim accepted revised records 16, 17, 19 and 20 on
+2026-10-05. Final decisions, preservation evidence and the 13-train/seven-dev
+export manifest are in `../prm800k_qc24_r1/`. The original review had 16 ACCEPT,
+four REVISE and four REJECT. Original prose, decisions and source locks remain
+unchanged. The original batch adds 24 nonoverlapping trajectories (16 train,
 8 dev), 201 annotated steps, and nine neutral/masked positions. Each split has
 equal correct/incorrect trajectory quotas. Source errors and labels are preserved.
 
@@ -52,8 +53,9 @@ repair those. Suspected source-label issues need separate adjudication before us
 Incorrect mathematical reasoning must remain as supplied. Preserve source records,
 IDs, hashes, masks, labels and step boundaries. Nine neutral steps stay masked.
 
-All records remain blocked from training. The export gate was exercised with the
-pending decision file and correctly refused it. Only human-reviewed decisions
+The original pending decision file still blocks export, as verified at that stage.
+The final human-approved r1 decision file permits only its 20 accepted records;
+the four active quarantines remain excluded. Only human-reviewed decisions
 bound to the final queue hash may permit export. Revisions require a new queue
 version and updated review history. Never transfer QC12 approval to this batch.
 
