@@ -1,6 +1,8 @@
 # Human QC gate and Arabic export
 
-The QC12 draft is still pending human review. `export_reviewed_arabic.py` creates
+QC12 revision r1 has completed human review; see the versioned batch README and
+`human_qc_r1.json` for the exact approval and queue hash. New drafts remain pending.
+`export_reviewed_arabic.py` creates
 a decision template and exports only accepted records once all decisions have
 been completed. No code or synthetic test fixture approves the actual batch.
 
@@ -18,6 +20,10 @@ The exporter rechecks numeric sequences and protected spans, writes separate
 train_ar/dev_ar JSONL files, and records source-queue/decision/output hashes.
 Rejected records are excluded with reasons; no accepted records means no export.
 
+QC12 r1 has two human-authorized, source-ID/step-specific Arabic normalizations:
+removal of an embedded annotation marker and correction of `\pod` to `\pmod`.
+The original source records remain unchanged; other protected spans must match.
+
 `training_supervision(record)` returns zero-based annotated-step positions and
 binary targets only for mask=1. Neutral positions never enter those target lists.
 For model training, align all translated steps with tokenizer reward positions,
@@ -26,6 +32,46 @@ BCE. This helper is CPU/data validation only: it is not a new training run or a
 tested replacement for the pilot trainer. Export manifests explicitly state that
 the current pilot trainer is incompatible. This tiny curated batch remains QC
 material, not a production training corpus or final held-out evaluation.
+
+## Reviewed-data training adapter
+
+`reviewed_training_data.py` provides a separate path without changing the completed
+pilot trainer. `load_reviewed_splits(directory)` checks exported file hashes,
+accepted QC metadata, labels/masks, unique IDs and problem-level split separation.
+`prepare_reviewed_record(record, tokenizer, max_length)` uses explicit step lists
+and the repository's BOS/problem/newline convention. Internal step newlines do
+not create extra annotations. Overlength trajectories are rejected, never silently
+truncated. Neutral steps stay in the model context but have no direct loss target.
+
+Integration with a PRM returning raw logits:
+
+```python
+prepared = prepare_reviewed_record(record, tokenizer, max_length=32768)
+_, _, logits = model(
+    input_ids=prepared['input_ids'].to('cuda:0'),
+    attention_mask=prepared['attention_mask'].to('cuda:0'),
+    return_probs=False,
+)
+loss = masked_step_loss(logits, prepared)
+loss.backward()
+```
+
+`smoke_reviewed_training_data.py` uses only a locally cached tokenizer and synthetic
+raw logits. It verifies exactly which token positions receive gradients. It does
+not load PRM weights, update an optimizer, test QLoRA, or estimate performance.
+QC12 r1 passed on all 12 records: 136 steps, 123 supervised and 13 neutral;
+174–1109 tokens per record. Five regression tests additionally cover internal
+newlines, positive/negative gradients, neutral masking, overlength rejection,
+pending-record rejection and invalid logit shape.
+
+```bat
+.venv\Scripts\python.exe research\prm_arabic_english\test_reviewed_training_data.py
+.venv\Scripts\python.exe research\prm_arabic_english\smoke_reviewed_training_data.py --data-dir research/prm_arabic_english/data/prm800k_staging_1000/reviewed_arabic_r1 --report research/prm_arabic_english/data/prm800k_staging_1000/reviewed_training_smoke_replay.json
+```
+
+Before a larger training run, integrate this adapter into a separate PRM/QLoRA
+runner and verify real model backward/optimizer behavior in a fresh smoke output
+directory. Never reuse pilot checkpoints or treat QC12 as a final training corpus.
 
 Example template command (no training export occurs):
 

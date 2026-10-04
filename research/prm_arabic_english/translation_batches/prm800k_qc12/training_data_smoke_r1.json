@@ -1,0 +1,105 @@
+{
+  "scope": "cached-tokenizer alignment and synthetic-logit backward only; no model training",
+  "tokenizer": "Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B",
+  "export_manifest_sha256": "c6b08007d33052801c8cb263c2fc0bd077261b36c0cfe8ea876438f214a97725",
+  "records_checked": 12,
+  "all_gradient_masks_passed": true,
+  "records": [
+    {
+      "id": "prm800k_0ba4fe8ff0234a6eea005975c1558c554fffee175d975988f13d1c4b4681319f",
+      "split": "train",
+      "tokens": 929,
+      "steps": 11,
+      "supervised_steps": 11,
+      "neutral_steps": 0
+    },
+    {
+      "id": "prm800k_293983bdd9d7b466e13be6108bb778ad44e8718843414a8de9854b7142da34e8",
+      "split": "train",
+      "tokens": 505,
+      "steps": 14,
+      "supervised_steps": 14,
+      "neutral_steps": 0
+    },
+    {
+      "id": "prm800k_366c8bc8ee93e14ca65ca1a0eecca056d9e2b16af150bc66238be8c36015bc86",
+      "split": "train",
+      "tokens": 507,
+      "steps": 7,
+      "supervised_steps": 7,
+      "neutral_steps": 0
+    },
+    {
+      "id": "prm800k_64a816200e347ab11af10667a1c3f3651a0ccdc78606cf21b249bca218856167",
+      "split": "train",
+      "tokens": 245,
+      "steps": 10,
+      "supervised_steps": 8,
+      "neutral_steps": 2
+    },
+    {
+      "id": "prm800k_6a6be713622955a57a4b2aa598d078314e13e13e13016b63cdbd43c3e7933b19",
+      "split": "train",
+      "tokens": 174,
+      "steps": 3,
+      "supervised_steps": 3,
+      "neutral_steps": 0
+    },
+    {
+      "id": "prm800k_805670334262287592a71848dfca8740715d90a1840f0b6e1c399b3183e09295",
+      "split": "train",
+      "tokens": 1109,
+      "steps": 27,
+      "supervised_steps": 27,
+      "neutral_steps": 0
+    },
+    {
+      "id": "prm800k_bdb8ca9fc54d941e1b3a316826d2bdd077b91150533a5df748fdcd39b3da2645",
+      "split": "train",
+      "tokens": 457,
+      "steps": 6,
+      "supervised_steps": 4,
+      "neutral_steps": 2
+    },
+    {
+      "id": "prm800k_ef6749e651aa2866ef5f49ed681af70701beb1e92581b341fcca052e480a550c",
+      "split": "train",
+      "tokens": 673,
+      "steps": 14,
+      "supervised_steps": 11,
+      "neutral_steps": 3
+    },
+    {
+      "id": "prm800k_1f77c84ce889f6395c14499554b9e8f061e986c72710b2545eae38ed517fedda",
+      "split": "dev",
+      "tokens": 665,
+      "steps": 15,
+      "supervised_steps": 14,
+      "neutral_steps": 1
+    },
+    {
+      "id": "prm800k_528a98632416e53d974dba0c072cabfd93f00479bf318e400832341c7fe38bf9",
+      "split": "dev",
+      "tokens": 449,
+      "steps": 13,
+      "supervised_steps": 10,
+      "neutral_steps": 3
+    },
+    {
+      "id": "prm800k_8703e05bf1e95fc99c3fef2ed5f438aea98f39126e157f8c7c535a128925bd07",
+      "split": "dev",
+      "tokens": 202,
+      "steps": 4,
+      "supervised_steps": 2,
+      "neutral_steps": 2
+    },
+    {
+      "id": "prm800k_92f11eb5c306ac29f938d87b6c9fc0ac2d23d9a7149e5574854cf358074ee1d6",
+      "split": "dev",
+      "tokens": 482,
+      "steps": 12,
+      "supervised_steps": 12,
+      "neutral_steps": 0
+    }
+  ]
+}
