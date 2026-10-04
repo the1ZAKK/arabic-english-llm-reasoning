@@ -36,8 +36,20 @@ class IngestionTests(unittest.TestCase):
         self.assertEqual(result["source_step_ratings"][-1], -1)
         self.assertEqual(result["source_metadata"]["chosen_completion_indices"][-1], 1)
         step["completions"].append(copy.deepcopy(step["completions"][1]))
-        with self.assertRaises(Excluded):
-            convert(row, 1)
+        result = convert(row, 1)
+        self.assertEqual(result["source_metadata"]["matching_completion_indices"][-1], [1, 2])
+        self.assertEqual(result["step_labels"][-1], 0)
+
+    def test_conflicting_or_flagged_duplicate_is_excluded(self):
+        for mutation in ("rating", "flagged"):
+            row = example()
+            step = row["label"]["steps"][-1]
+            step["chosen_completion"] = None
+            duplicate = copy.deepcopy(step["completions"][0])
+            duplicate[mutation] = 1 if mutation == "rating" else True
+            step["completions"].append(duplicate)
+            with self.assertRaisesRegex(Excluded, "conflicting_duplicate_ratings|flagged_duplicate_step"):
+                convert(row, 1)
 
     def test_unfinished_flagged_and_divergent_paths_are_excluded(self):
         for mutation in ("unfinished", "flagged", "divergent"):

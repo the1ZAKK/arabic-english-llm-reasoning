@@ -39,20 +39,31 @@ def convert(row, line_number):
     generated = question.get("pre_generated_steps")
     if not isinstance(generated, list):
         raise Excluded("not_phase2")
-    texts, ratings, selections = [], [], []
+    texts, ratings, selections, matching_indices = [], [], [], []
     for i, step in enumerate(label["steps"]):
         index = step.get("chosen_completion")
         completions = step["completions"]
         if index is None:
             # At the first error phase 2 may have no chosen completion. Select
-            # ONLY the uniquely matching original generated step, not a repair.
+            # ONLY the original generated text, not a repaired alternative.
             if step.get("human_completion") is not None:
                 raise Excluded("human_completion_requires_separate_policy")
             matches = [j for j, c in enumerate(completions)
                        if i < len(generated) and c["text"] == generated[i]]
-            if len(matches) != 1:
+            if not matches:
                 raise Excluded("ambiguous_original_completion")
+            if len(matches) > 1:
+                matched = [completions[j] for j in matches]
+                matched_ratings = [c.get("rating") for c in matched]
+                if any(type(r) is not int or r not in {-1, 0, 1} for r in matched_ratings):
+                    raise Excluded("missing_or_invalid_rating")
+                if len(set(matched_ratings)) != 1:
+                    raise Excluded("conflicting_duplicate_ratings")
+                if any(c.get("flagged") for c in matched):
+                    raise Excluded("flagged_duplicate_step")
             index = matches[0]
+        else:
+            matches = [index]
         if type(index) is not int or not 0 <= index < len(completions):
             raise Excluded("invalid_completion_index")
         completion = completions[index]
@@ -69,6 +80,7 @@ def convert(row, line_number):
         texts.append(text)
         ratings.append(rating)
         selections.append(index)
+        matching_indices.append(matches)
     if not texts:
         raise Excluded("empty_trajectory")
     first_error = ratings.index(-1) + 1 if -1 in ratings else None
@@ -95,6 +107,7 @@ def convert(row, line_number):
             "revision": REVISION, "file": SOURCE_FILE, "line": line_number,
             "generation": row.get("generation"), "finish_reason": finish,
             "chosen_completion_indices": selections,
+            "matching_completion_indices": matching_indices,
             "unlabeled_tail_steps": len(generated) - len(texts),
         },
     }
@@ -218,7 +231,8 @@ def main():
         (out / name).write_text(content, encoding="utf-8", newline="\n")
         hashes[name] = hashlib.sha256((out / name).read_bytes()).hexdigest()
     report = {
-        "schema_version": 1, "source": "openai/prm800k", "revision": REVISION,
+        "schema_version": 2, "source": "openai/prm800k", "revision": REVISION,
+        "conversion_policy": "exact-original-path; agreeing-unflagged-duplicates; neutral-masked",
         "source_file": SOURCE_FILE, "source_license": "MIT (upstream); underlying MATH attribution also required",
         "acquisition": acquisition, "python": platform.python_version(),
         "source_prefix_sha256": hashlib.sha256(raw.read_bytes()).hexdigest(),
@@ -232,6 +246,13 @@ def main():
         "dev_problems": len({r["problem_id"] for r in dev}),
         "problem_overlap": 0, "output_sha256": hashes,
         "selected_source_ratings": dict(Counter(str(x) for r in train + dev for x in r["source_step_ratings"])),
+        "selected_variants": {name: dict(Counter(r["variant"] for r in rows))
+                              for name, rows in (("train", train), ("dev", dev))},
+        "selected_generations": dict(Counter(str(r["source_metadata"]["generation"]) for r in train + dev)),
+        "selected_step_lengths": dict(sorted(Counter(str(len(r["steps"])) for r in train + dev).items())),
+        "selected_first_error_positions": dict(Counter(str(r["first_error_step"]) for r in train + dev)),
+        "eligible_duplicate_match_steps": sum(len(indices) > 1 for r in records
+                                              for indices in r["source_metadata"]["matching_completion_indices"]),
         "global_mgsm_used": False, "translation_performed": False,
         "training_compatible": False,
     }
