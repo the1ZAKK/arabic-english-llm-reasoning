@@ -1,0 +1,236 @@
+{
+  "accepted_records": 32,
+  "accepted_registry_sha256": "a8fc2ec67e956f8b212f8adfc120e807ca49d4da874389071e66995701b16aa5",
+  "active_quarantined_ids": [
+    "prm800k_1808023da7e3fea74d9967b1931567798c393913d7fdceeeebfe6783fddeeb2a",
+    "prm800k_452b729bf5886e136f62d4c7c9881ef5501600a232bbd147b7523041405a9a48",
+    "prm800k_89ff9b977e2979fe9b13177b249b637514fcb637f99a3241e65375377b4bc17e",
+    "prm800k_9689e9b5dfceed14323f844301b5309bcfa3bface11397e2cc4389c1b9ce66fa"
+  ],
+  "batch_config_sha256": "1b2df68f09611173518e4ac717e108f85238c1ebf3ecede89da1fbe7384bd86c",
+  "human_qc_performed_by_merge": false,
+  "normalized_source_problem_groups": 31,
+  "output_sha256": {
+    "dev_ar.jsonl": "a9d966328e327cbaeb65714fc2be9c785c1c2811df33754e379eef60ddb78ec4",
+    "train_ar.jsonl": "3287347500c8cb75857bde49784c22f0679418c373078d9019a1fed535c42472"
+  },
+  "pilot_trainer_compatible": false,
+  "rejected": [
+    {
+      "batch_id": "qc24_r1",
+      "id": "prm800k_1808023da7e3fea74d9967b1931567798c393913d7fdceeeebfe6783fddeeb2a",
+      "reason": "Translation itself is good, but the source supervision is suspicious: step 4 is labeled -1, yet\n   A = P(1 + r/n)^{nt}\n   is the standard compound-interest formula and is appropriate here. The preceding steps are also valid. Do not relabel it silently; quarantine this trajectory as a source-annotation conflict.",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "id": "prm800k_89ff9b977e2979fe9b13177b249b637514fcb637f99a3241e65375377b4bc17e",
+      "reason": "Source-supervision problem. Step 3 is labeled +1 but states\n   a^2 + b^2 > 2ab\n   as a consequence of AM-GM. In general the valid statement is a^2 + b^2 >= 2ab, with equality when a=b. Because this mathematically false strict inequality is positively supervised, quarantine/reject this record rather than altering the source label.",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "id": "prm800k_9689e9b5dfceed14323f844301b5309bcfa3bface11397e2cc4389c1b9ce66fa",
+      "reason": "There is a source-supervision issue. Step 9, labeled +1, says:\n    “the smallest k in S is 231.”\n    But S is defined over all integers; if it consists of multiples of 231, it has negative elements and therefore no smallest element. The later question about the smallest member greater than 2010 can still yield 2079, but the positively supervised intermediate claim is false. Quarantine rather than silently adding a positivity assumption.",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "id": "prm800k_452b729bf5886e136f62d4c7c9881ef5501600a232bbd147b7523041405a9a48",
+      "reason": "Translation is faithful, but the source trajectory has substantial supervision/math inconsistencies among positively labeled steps. The foci are vertically aligned, yet the trajectory defines a as the semimajor axis while placing a^2 under the horizontal term; later it uses tangency to the x-axis to derive b^2=9, and even states b = ±3 for a semiaxis. Several of these steps are labeled +1. This should be quarantined for source-annotation adjudication, not repaired during Arabic translation.",
+      "split": "dev"
+    }
+  ],
+  "reviewer": "Zakaria Brim",
+  "schema_version": 1,
+  "scope": "Aggregation of immutable human-accepted Arabic training/development exports",
+  "source_batches": [
+    {
+      "accepted_records": 12,
+      "batch_id": "qc12_r1",
+      "decisions_sha256": "51df42283446d3ba23a8538853f758c06feab5e6a03d4fe69d88ac121371f6b0",
+      "export_manifest_sha256": "c6b08007d33052801c8cb263c2fc0bd077261b36c0cfe8ea876438f214a97725",
+      "export_output_sha256": {
+        "dev_ar.jsonl": "4a03d088d5ca3db9d123cedcef4c29cd3373e03569bf6a630bcd6d010b08c9a7",
+        "train_ar.jsonl": "07fc446b53d6021bd1a4e6e7dde4afe440b82b13087319e2c66f46856112bafa"
+      },
+      "input_config": {
+        "batch_id": "qc12_r1",
+        "decisions": "research/prm_arabic_english/translation_batches/prm800k_qc12/human_qc_r1.json",
+        "expected_decisions_sha256": "51df42283446d3ba23a8538853f758c06feab5e6a03d4fe69d88ac121371f6b0",
+        "expected_export_manifest_sha256": "c6b08007d33052801c8cb263c2fc0bd077261b36c0cfe8ea876438f214a97725",
+        "expected_review_queue_sha256": "85b2b44288e2bf7007ad80fb1f0fecbd531126a98951edfb63f8ffb6dd5db628",
+        "export_dir": "research/prm_arabic_english/data/prm800k_staging_1000/reviewed_arabic_r1",
+        "review_queue": "research/prm_arabic_english/data/prm800k_staging_1000/translation_batch/arabic_draft_r1/review_queue.jsonl"
+      },
+      "rejected": [],
+      "review_queue_sha256": "85b2b44288e2bf7007ad80fb1f0fecbd531126a98951edfb63f8ffb6dd5db628",
+      "reviewer": "Zakaria Brim"
+    },
+    {
+      "accepted_records": 20,
+      "batch_id": "qc24_r1",
+      "decisions_sha256": "25b6896a54e3a9ba1fa614fa9c5518a11fe0bb58c3d59f52761fa94e099cbb38",
+      "export_manifest_sha256": "dbd2c5ec6aa4884ecb3ed40e83ff169879f001b3b9a3307b5d275ad278af3692",
+      "export_output_sha256": {
+        "dev_ar.jsonl": "d8ad46f06428125ed06319f738f48f255b80ffc78c932f0375a643a2c050f0ec",
+        "train_ar.jsonl": "f8a3c6fbf68936ca842a8f92dc1d5eaa4dd706bb29c4e922da09c0bc5bc47e2b"
+      },
+      "input_config": {
+        "batch_id": "qc24_r1",
+        "decisions": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/human_qc_r1_final.json",
+        "expected_decisions_sha256": "25b6896a54e3a9ba1fa614fa9c5518a11fe0bb58c3d59f52761fa94e099cbb38",
+        "expected_export_manifest_sha256": "dbd2c5ec6aa4884ecb3ed40e83ff169879f001b3b9a3307b5d275ad278af3692",
+        "expected_review_queue_sha256": "81f6552e58304f0b4485d5ea60c95c1315c06a44159d938b9c75494fbda59d4a",
+        "export_dir": "research/prm_arabic_english/data/prm800k_staging_5000/reviewed_arabic_qc24_r1",
+        "review_queue": "research/prm_arabic_english/data/prm800k_staging_5000/translation_batch_qc24/arabic_draft_r1/review_queue.jsonl"
+      },
+      "rejected": [
+        {
+          "id": "prm800k_1808023da7e3fea74d9967b1931567798c393913d7fdceeeebfe6783fddeeb2a",
+          "reason": "Translation itself is good, but the source supervision is suspicious: step 4 is labeled -1, yet\n   A = P(1 + r/n)^{nt}\n   is the standard compound-interest formula and is appropriate here. The preceding steps are also valid. Do not relabel it silently; quarantine this trajectory as a source-annotation conflict.",
+          "split": "train"
+        },
+        {
+          "id": "prm800k_89ff9b977e2979fe9b13177b249b637514fcb637f99a3241e65375377b4bc17e",
+          "reason": "Source-supervision problem. Step 3 is labeled +1 but states\n   a^2 + b^2 > 2ab\n   as a consequence of AM-GM. In general the valid statement is a^2 + b^2 >= 2ab, with equality when a=b. Because this mathematically false strict inequality is positively supervised, quarantine/reject this record rather than altering the source label.",
+          "split": "train"
+        },
+        {
+          "id": "prm800k_9689e9b5dfceed14323f844301b5309bcfa3bface11397e2cc4389c1b9ce66fa",
+          "reason": "There is a source-supervision issue. Step 9, labeled +1, says:\n    “the smallest k in S is 231.”\n    But S is defined over all integers; if it consists of multiples of 231, it has negative elements and therefore no smallest element. The later question about the smallest member greater than 2010 can still yield 2079, but the positively supervised intermediate claim is false. Quarantine rather than silently adding a positivity assumption.",
+          "split": "train"
+        },
+        {
+          "id": "prm800k_452b729bf5886e136f62d4c7c9881ef5501600a232bbd147b7523041405a9a48",
+          "reason": "Translation is faithful, but the source trajectory has substantial supervision/math inconsistencies among positively labeled steps. The foci are vertically aligned, yet the trajectory defines a as the semimajor axis while placing a^2 under the horizontal term; later it uses tangency to the x-axis to derive b^2=9, and even states b = ±3 for a semiaxis. Several of these steps are labeled +1. This should be quarantined for source-annotation adjudication, not repaired during Arabic translation.",
+          "split": "dev"
+        }
+      ],
+      "review_queue_sha256": "81f6552e58304f0b4485d5ea60c95c1315c06a44159d938b9c75494fbda59d4a",
+      "reviewer": "Zakaria Brim"
+    }
+  ],
+  "source_problem_groups": 31,
+  "source_quarantine_catalog": {
+    "path": "research/prm_arabic_english/source_quarantine.json",
+    "sha256": "3efce6b68ddbfe69b577c955de9aadedeaf8c683057c327bf8e4a21d448c5903"
+  },
+  "split_counts": {
+    "dev": 11,
+    "train": 21
+  },
+  "supervision": {
+    "first_negative_supervised_step_position_distribution": {
+      "1": 1,
+      "12": 1,
+      "13": 1,
+      "15": 1,
+      "2": 1,
+      "27": 1,
+      "3": 1,
+      "4": 2,
+      "6": 4,
+      "7": 2
+    },
+    "neutral_masked_steps": 22,
+    "step_count_distribution": {
+      "1": 1,
+      "10": 2,
+      "11": 3,
+      "12": 3,
+      "13": 2,
+      "14": 3,
+      "15": 2,
+      "2": 1,
+      "27": 1,
+      "3": 2,
+      "4": 3,
+      "6": 4,
+      "7": 2,
+      "8": 2,
+      "9": 1
+    },
+    "steps": 298,
+    "supervised_binary_target_counts": {
+      "0": 15,
+      "1": 261
+    },
+    "supervised_steps": 276,
+    "trajectory_supervision": {
+      "has_negative_supervised_step": 15,
+      "no_negative_supervised_step": 17
+    }
+  },
+  "supervision_by_split": {
+    "dev": {
+      "first_negative_supervised_step_position_distribution": {
+        "15": 1,
+        "4": 2,
+        "6": 1,
+        "7": 1
+      },
+      "neutral_masked_steps": 11,
+      "step_count_distribution": {
+        "11": 1,
+        "12": 1,
+        "13": 1,
+        "15": 2,
+        "3": 1,
+        "4": 2,
+        "6": 1,
+        "7": 1,
+        "8": 1
+      },
+      "steps": 98,
+      "supervised_binary_target_counts": {
+        "0": 5,
+        "1": 82
+      },
+      "supervised_steps": 87,
+      "trajectory_supervision": {
+        "has_negative_supervised_step": 5,
+        "no_negative_supervised_step": 6
+      }
+    },
+    "train": {
+      "first_negative_supervised_step_position_distribution": {
+        "1": 1,
+        "12": 1,
+        "13": 1,
+        "2": 1,
+        "27": 1,
+        "3": 1,
+        "6": 3,
+        "7": 1
+      },
+      "neutral_masked_steps": 11,
+      "step_count_distribution": {
+        "1": 1,
+        "10": 2,
+        "11": 2,
+        "12": 2,
+        "13": 1,
+        "14": 3,
+        "2": 1,
+        "27": 1,
+        "3": 1,
+        "4": 1,
+        "6": 3,
+        "7": 1,
+        "8": 1,
+        "9": 1
+      },
+      "steps": 200,
+      "supervised_binary_target_counts": {
+        "0": 10,
+        "1": 179
+      },
+      "supervised_steps": 189,
+      "trajectory_supervision": {
+        "has_negative_supervised_step": 10,
+        "no_negative_supervised_step": 11
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "corpus_id": "arabicprm_t_reviewed_v1",
+  "created_on": "2026-10-05",
+  "batches": [
+    {
+      "batch_id": "qc12_r1",
+      "export_dir": "research/prm_arabic_english/data/prm800k_staging_1000/reviewed_arabic_r1",
+      "review_queue": "research/prm_arabic_english/data/prm800k_staging_1000/translation_batch/arabic_draft_r1/review_queue.jsonl",
+      "decisions": "research/prm_arabic_english/translation_batches/prm800k_qc12/human_qc_r1.json",
+      "expected_export_manifest_sha256": "c6b08007d33052801c8cb263c2fc0bd077261b36c0cfe8ea876438f214a97725",
+      "expected_review_queue_sha256": "85b2b44288e2bf7007ad80fb1f0fecbd531126a98951edfb63f8ffb6dd5db628",
+      "expected_decisions_sha256": "51df42283446d3ba23a8538853f758c06feab5e6a03d4fe69d88ac121371f6b0"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "export_dir": "research/prm_arabic_english/data/prm800k_staging_5000/reviewed_arabic_qc24_r1",
+      "review_queue": "research/prm_arabic_english/data/prm800k_staging_5000/translation_batch_qc24/arabic_draft_r1/review_queue.jsonl",
+      "decisions": "research/prm_arabic_english/translation_batches/prm800k_qc24_r1/human_qc_r1_final.json",
+      "expected_export_manifest_sha256": "dbd2c5ec6aa4884ecb3ed40e83ff169879f001b3b9a3307b5d275ad278af3692",
+      "expected_review_queue_sha256": "81f6552e58304f0b4485d5ea60c95c1315c06a44159d938b9c75494fbda59d4a",
+      "expected_decisions_sha256": "25b6896a54e3a9ba1fa614fa9c5518a11fe0bb58c3d59f52761fa94e099cbb38"
+    }
+  ]
+}

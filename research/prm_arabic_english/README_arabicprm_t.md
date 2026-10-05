@@ -1,5 +1,33 @@
 # ArabicPRM-T: reproducible source ingestion milestone
 
+## Current workflow status (2026-10-05)
+
+QC12 r1 and QC24 r1 now form the versioned approved corpus v1: **32 Arabic
+trajectories, 21 train and 11 dev, 298 steps, 276 supervised and 22 neutral/masked**.
+The 31 source problem groups retain their existing splits. The merger regenerates
+each batch from its original queue and human decisions, verifies exact hashes,
+preserves full records and QC metadata, and excludes the four active source
+quarantines. See [corpus registry v1](corpus_registry/arabicprm_t_v1/README.md).
+
+The next **QC24 Batch03** has 24 previously unreviewed drafts: 16 train and eight
+dev, 179 steps, 171 supervised and eight neutral. Automated preservation and
+deterministic selection replay passed. All 24 human decisions remain pending,
+and a deliberate export attempt was blocked. Review the complete bilingual
+batch, including source concerns flagged for records 5, 7, 10, 13, 16 and 18.
+See [Batch03 review assets](translation_batches/prm800k_qc24_batch03/README.md).
+
+The 5,000-row source prefix provides 4,890 eligible records and a 500-problem
+staging selection, retaining previously fixed groups. It still covers only
+generations 8 and 9. These curated review batches do not establish representative
+corpus coverage. After human QC, freeze a new corpus version containing only
+accepted records; expand generation/domain coverage under the documented source
+sampling policy before a larger training run. Completed pilot experiments and
+the successful QC12 QLoRA infrastructure smoke remain recorded separately.
+
+The sections below retain the observations from earlier ingestion milestones.
+
+## Initial ingestion scope
+
 This stage inspects and converts a bounded English source subset. It does not
 translate, train, or evaluate ArabicPRM. Existing pilot data and checkpoints are
 unchanged. Global-MGSM is reserved for final evaluation and is never opened by

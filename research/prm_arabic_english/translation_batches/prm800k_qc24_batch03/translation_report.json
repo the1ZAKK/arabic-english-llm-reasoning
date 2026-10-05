@@ -1,0 +1,23 @@
+{
+  "records": 24,
+  "translated_steps": 179,
+  "protected_spans_and_numbers": "exact_match",
+  "authorized_normalization_count": 0,
+  "source_labels_and_masks": "unchanged",
+  "source_split_assignments": "unchanged",
+  "human_qc": "pending",
+  "training_eligible": false,
+  "provenance": {
+    "translator": "Codex assistant with two parallel translation subtasks in this conversation",
+    "model_family": "Codex session; exact deployment version not independently recorded",
+    "date": "2026-10-05",
+    "method": "Direct Modern Standard Arabic draft from frozen original English context; protected spans restored verbatim by code",
+    "generation_settings": "Exact decoding settings not recorded; no external translation API called",
+    "instruction": "Translate each problem and annotated step faithfully. Preserve protected spans, all numeric sequences, source reasoning including intentional errors, step boundaries, labels, masks, IDs, provenance and fixed problem splits. Flag source concerns for human QC; do not adjudicate source labels. Fluent Arabic may interpret an unambiguous English prose typo, with the original source retained and the interpretation noted for review.",
+    "batch": "prm800k_qc24_batch03",
+    "human_qc_status": "pending"
+  },
+  "source_lock_sha256": "330ce7f491b0ae162ea5b4a635abf8a14a0bf9cbe7ebd98a5eeda3e32e57f2b3",
+  "translation_payload_sha256": "31c7b549dc213f5eb1e4f1cdcea8aa4128fbc665e16d7a7e24fbb7091caff721",
+  "review_queue_sha256": "d79089e604cf842fe5e2306af31ae7370f01c040d09e4d05c0f5c6f436282413"
+}

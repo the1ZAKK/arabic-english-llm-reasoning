@@ -1,5 +1,23 @@
 # Human QC gate and Arabic export
 
+The approved corpus v1 aggregates QC12 r1 and QC24 r1: 32 trajectories, 21 train
+and 11 dev, 298 steps with 22 neutral/masked. Its immutable input pins, accepted
+record registry and export manifest are versioned under
+`corpus_registry/arabicprm_t_v1/`. `merge_reviewed_corpus.py` regenerates each
+accepted export from its original queue and human decisions, verifies complete
+row equality and output hashes, and blocks duplicate IDs, cross-split source
+problem overlap, active quarantines and input edits during validation. It retains
+original human approval metadata and creates no new approvals. Its output loads
+through `load_reviewed_splits`; generated data stays local in the ignored
+`data/reviewed_corpora/` directory. See the registry README for replay commands.
+
+QC24 Batch03 is the next pending human review: 24 drafts, 179 steps, eight neutral.
+Its exact queue hash, translations, pending decisions and automated evidence are
+under `translation_batches/prm800k_qc24_batch03/`. All records remain ineligible
+for training. The exporter refused the actual pending template, and no Batch03
+training export directory was created. Source observations are review notes;
+human adjudication remains required for acceptance or quarantine.
+
 QC24 r1 has completed final human review: 20 ACCEPT decisions and four
 source-annotation quarantines. Its reviewed export contains 13 train and seven
 dev records (162 steps: 153 supervised and nine neutral). Exact queue hashes and

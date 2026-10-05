@@ -1,0 +1,41 @@
+{
+  "scope": "Nonbinding AI observations for human QC; no automatic rejection, relabeling or quarantine",
+  "records": [
+    {
+      "record_number": 5,
+      "id": "prm800k_27b273724551df6976d03ef31b23aabd10e4535f9174eb5a832c950c1a16e23d",
+      "notes": "The positively rated third source step contains a false noncongruence assertion; it is preserved faithfully for human review."
+    },
+    {
+      "record_number": 7,
+      "id": "prm800k_4e989b97a66e731c4b285e8002b2bf513f227130b8a2def401e00cb7c7476f66",
+      "notes": "The source treats PR as the hypotenuse even though the equal angles imply that PR is a leg; the assumption is preserved faithfully for human review."
+    },
+    {
+      "record_number": 10,
+      "id": "prm800k_8cb2c0c49a01d0a6463b4e81ee75ad4b7b3df329b7986a3f834792fc7fcebdce",
+      "notes": "The positively rated first source step claims that the cube sum itself can be written as a product involving the linear sum, although the displayed identity has a separate triple-product term; the wording is preserved faithfully for human review."
+    },
+    {
+      "record_number": 13,
+      "id": "prm800k_c2a81b58e37677c3e545b2e1711bb9ffe27e32f0d6830b60ad84a1f11000f917",
+      "notes": [
+        "The source's third step contains the typo ‘divisible so 3’. The preposition is interpreted as ‘by’ to produce fluent Arabic («القسمة على 3»); the exact English typo remains in source provenance for human review."
+      ]
+    },
+    {
+      "record_number": 16,
+      "id": "prm800k_fa2bfe1ceb653884948a660a3afb5989143816acc2610e7f3473a00dd00c12b6",
+      "notes": [
+        "The positively rated first source step says ‘odd digits’ and ‘even digits’, although the divisibility rule concerns digit positions. The translation preserves the literal digit wording without adding positions. The negatively rated second step's contradictory claim is also preserved."
+      ]
+    },
+    {
+      "record_number": 18,
+      "id": "prm800k_230246f131d25278dc57e7e728e2906f56ee4864adcbd5da0362116576059596",
+      "notes": [
+        "The neutral third source step infers that the triangle is right from the angle at the circle's center; that reasoning is preserved. The positively rated fifth step says the base and height themselves are maximized for the isosceles case, rather than their product; the original claim is preserved for human review."
+      ]
+    }
+  ]
+}

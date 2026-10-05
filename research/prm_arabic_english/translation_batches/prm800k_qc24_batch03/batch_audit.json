@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-05",
+  "batch_id": "prm800k_qc24_batch03",
+  "records": 24,
+  "split_counts": {
+    "train": 16,
+    "dev": 8
+  },
+  "steps": 179,
+  "supervised_steps": 171,
+  "neutral_masked_steps": 8,
+  "review_queue_sha256": "d79089e604cf842fe5e2306af31ae7370f01c040d09e4d05c0f5c6f436282413",
+  "source_lock_sha256": "330ce7f491b0ae162ea5b4a635abf8a14a0bf9cbe7ebd98a5eeda3e32e57f2b3",
+  "translation_payload_sha256": "31c7b549dc213f5eb1e4f1cdcea8aa4128fbc665e16d7a7e24fbb7091caff721",
+  "pending_decisions_sha256": "e95850c24817501de1baea849cea51e52efef513e0cf034f05a8111572b4653d",
+  "selection_manifest_sha256": "e86c3ba31312d0b275fef6ee3922abc459d3b9b6f4b539d202a507784280ccb5",
+  "automated_review_flags_sha256": "56dcc6b6d91e9d5522a35daacbb120139e107acdaed19cf2ec93e5e52b3379ff",
+  "source_quarantine_sha256": "3efce6b68ddbfe69b577c955de9aadedeaf8c683057c327bf8e4a21d448c5903",
+  "review_html_sha256": "d64bd6cac3cad72df235dd365c93e6386dd88e7da0a21b69317cf301cde6bbf1",
+  "source_records_and_hashes": "exact staging match",
+  "source_labels_masks_ids_and_splits": "unchanged",
+  "protected_spans_and_numbers": "exact match",
+  "selection_replay": "exact match with seed 42, max_steps 16 and both previous source locks",
+  "prior_batch_ids_reused": 0,
+  "active_quarantined_ids_selected": 0,
+  "review_html": "all 24 record anchors, 179 bilingual steps and review notes present",
+  "human_qc": "all 24 pending; no approval performed",
+  "training_export_gate": "blocked: Explicit human-review attestation is required",
+  "training_export_directory_created": false,
+  "automated_observation_records": [
+    5,
+    7,
+    10,
+    13,
+    16,
+    18
+  ],
+  "automatic_source_adjudication": false,
+  "documented_offline_replay": {
+    "review_queue_sha256": "d79089e604cf842fe5e2306af31ae7370f01c040d09e4d05c0f5c6f436282413",
+    "byte_comparison": "FC: no differences encountered"
+  },
+  "scope": "curated review batch from a bounded prefix; not a representative production sample"
+}

@@ -1,0 +1,454 @@
+{
+  "records": [
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Removed only the embedded annotation marker from Arabic step 7; source and supervision unchanged.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_0ba4fe8ff0234a6eea005975c1558c554fffee175d975988f13d1c4b4681319f",
+      "problem_id": "76162f270ef3d2d71fa531daf45abc740057591a0e05e7e8bc7b070414b5a5cc",
+      "source_record_id": "prm800k_0ba4fe8ff0234a6eea005975c1558c554fffee175d975988f13d1c4b4681319f",
+      "source_record_sha256": "97a135a87c6235cc30021cef6c0d0d2589c149ea8b8fc09f187586649af35a0e",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Normalized only Arabic step 3 LaTeX from \\pod{20} to \\pmod{20}; source provenance unchanged.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_293983bdd9d7b466e13be6108bb778ad44e8718843414a8de9854b7142da34e8",
+      "problem_id": "bd30c32028bdf00ce6cf5bc139a1f79e1136be78c6a96de2cbd1c053a06a68f6",
+      "source_record_id": "prm800k_293983bdd9d7b466e13be6108bb778ad44e8718843414a8de9854b7142da34e8",
+      "source_record_sha256": "418208730db101a1d9bf3debc50ea77fd41e7db26ef0b31dc26bfc4c540cab43",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful translation; erroneous square-root step intentionally preserved with its original label.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_366c8bc8ee93e14ca65ca1a0eecca056d9e2b16af150bc66238be8c36015bc86",
+      "problem_id": "f770a93b766fb0785adeb2d7308aab96ea70d65c121c873136eb40c962ba8530",
+      "source_record_id": "prm800k_366c8bc8ee93e14ca65ca1a0eecca056d9e2b16af150bc66238be8c36015bc86",
+      "source_record_sha256": "901e5714a8d26894ca8fc41ec6a894c3babbe74fbc07087e2e2c5c1cec8b1458",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful translation; decimal notation, arithmetic, step boundaries and labels preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_64a816200e347ab11af10667a1c3f3651a0ccdc78606cf21b249bca218856167",
+      "problem_id": "f3f702d795c4a7c5a650a2bd852f41962080252f768f2c2990f18bc35ee1aba6",
+      "source_record_id": "prm800k_64a816200e347ab11af10667a1c3f3651a0ccdc78606cf21b249bca218856167",
+      "source_record_sha256": "1dfecdab7fa5d0ea76463420ab705a5aa7fbdaee7963ee94818457783bb61505",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Problem and step 1 now specify non-decreasing digits; intentional error in step 3 preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_6a6be713622955a57a4b2aa598d078314e13e13e13016b63cdbd43c3e7933b19",
+      "problem_id": "4e7562460884535d4b9255a07c1925f0c531190507451f6be1fab3af50dc0930",
+      "source_record_id": "prm800k_6a6be713622955a57a4b2aa598d078314e13e13e13016b63cdbd43c3e7933b19",
+      "source_record_sha256": "41df25ac54d1f783b20f60b725e4341eef1be17a71ad6daae118d36a679d8eb7",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful translation; incorrect final factor-pair claim intentionally preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_805670334262287592a71848dfca8740715d90a1840f0b6e1c399b3183e09295",
+      "problem_id": "90e0a32d404700ecd8d4bd77c2fe36ffeb1fc3683d344410b91e814dcf61a8ba",
+      "source_record_id": "prm800k_805670334262287592a71848dfca8740715d90a1840f0b6e1c399b3183e09295",
+      "source_record_sha256": "39ad28c48b75d20097e30b8a1cd3087144cff91103b288f60dea5db9b363de77",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful geometry translation; final erroneous statement and its label preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_bdb8ca9fc54d941e1b3a316826d2bdd077b91150533a5df748fdcd39b3da2645",
+      "problem_id": "70bb3d5f64428adb1c3638c6ecd9a236e22d1a1a0c505c987b54059d15b3be7b",
+      "source_record_id": "prm800k_bdb8ca9fc54d941e1b3a316826d2bdd077b91150533a5df748fdcd39b3da2645",
+      "source_record_sha256": "14136f5d991d073449ec549f0c5ac30e4cf4e955af53c21ae644bdf2b1b843e0",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful translation; congruences, Euclidean steps and final answer preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_ef6749e651aa2866ef5f49ed681af70701beb1e92581b341fcca052e480a550c",
+      "problem_id": "678e82cd161457d1297890ec352481fa567be26ed98587ada1e39bf66f532880",
+      "source_record_id": "prm800k_ef6749e651aa2866ef5f49ed681af70701beb1e92581b341fcca052e480a550c",
+      "source_record_sha256": "5c1c089e14f112fbd4b98576f4bb29a449e40106189135ece5b52bf1c486cc5e",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Natural Arabic glossary wording added around the preserved English palindrome term; source errors preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_1f77c84ce889f6395c14499554b9e8f061e986c72710b2545eae38ed517fedda",
+      "problem_id": "fe131f0224060439ec5c88f2f76baeaaa52f19394507cdc518e6aac39977a477",
+      "source_record_id": "prm800k_1f77c84ce889f6395c14499554b9e8f061e986c72710b2545eae38ed517fedda",
+      "source_record_sha256": "2b9cadfb0ee90232e5320319b2c1bdde6e246f849295d07cb3e0ed9db004524c",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful translation; binary/octal grouping, equations and final answer preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_528a98632416e53d974dba0c072cabfd93f00479bf318e400832341c7fe38bf9",
+      "problem_id": "8ef278fc21be3f1ba8fd5a2450ecc69845c014b1f00a4d40c1bccdb95b976570",
+      "source_record_id": "prm800k_528a98632416e53d974dba0c072cabfd93f00479bf318e400832341c7fe38bf9",
+      "source_record_sha256": "c740b7b29fc38b910e126b3a415e285df367ccbc2139f52ef01a61282c086c38",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful geometric meaning; incomplete/incorrect source reasoning and labels preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_8703e05bf1e95fc99c3fef2ed5f438aea98f39126e157f8c7c535a128925bd07",
+      "problem_id": "873f8e47d026dac032384f092f5cacf9ebf54fbaf2c0ddd634f9585fde6b6aeb",
+      "source_record_id": "prm800k_8703e05bf1e95fc99c3fef2ed5f438aea98f39126e157f8c7c535a128925bd07",
+      "source_record_sha256": "806ed32998742694e682e99315382abef19c8a375d18d63b9aacfa422d14c080",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc12_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Arabic step 6 grammar revised as instructed; equations and labels preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_92f11eb5c306ac29f938d87b6c9fc0ac2d23d9a7149e5574854cf358074ee1d6",
+      "problem_id": "4199124a95a15847f8a251e7dce120502fdff6d6c1cfc964f261eda8472ecb78",
+      "source_record_id": "prm800k_92f11eb5c306ac29f938d87b6c9fc0ac2d23d9a7149e5574854cf358074ee1d6",
+      "source_record_sha256": "f855ffbb957cc005a692673b238b1a19c8b0a3ab572febfc92254a6daf23a418",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful translation. The awkward phrase about “the angle opposite to A” comes from the source and is correctly preserved. The -1 supervision should remain unchanged.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_2af154b54eed6cb4b371988fefad44cfbdf5f57f54d8c82fa7094574d7574bd7",
+      "problem_id": "c343519f096c7fb4580d8cf9de426b8f8c3e2ba83ae0cc6d0ef5a11afc090c1b",
+      "source_record_id": "prm800k_2af154b54eed6cb4b371988fefad44cfbdf5f57f54d8c82fa7094574d7574bd7",
+      "source_record_sha256": "41c147ffda61103188628fc08ac95eef94ad4988a0c814e6d4a344d799244260",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Problem, geometric-series reasoning, equations, numbers, and final answer are faithfully preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_2f0d802f3ae4f610b18d32cc6feb1ed5681d1e122f24c9a81ca57f75986418ac",
+      "problem_id": "4ef6f9d91f0a1420380ab8cdaa9d25c8881f259d3f217d712f3e915bc5be8469",
+      "source_record_id": "prm800k_2f0d802f3ae4f610b18d32cc6feb1ed5681d1e122f24c9a81ca57f75986418ac",
+      "source_record_sha256": "55e07704c6ff1ff1fe0d0bf1258ee1abe157f7ad8c4ee6a725fbf75a7b10eb1c",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Translation is faithful. Neutral steps remain neutral, formulas and the unwrapped final answer are preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_43727b759c51af8ee18793a54fb8aadf358490e76ac1fac204f350ae79e45a04",
+      "problem_id": "bc3a6c69092a0aab469aab3d3cb5e464daa68bbc32ef54ed582da4e7d946202e",
+      "source_record_id": "prm800k_43727b759c51af8ee18793a54fb8aadf358490e76ac1fac204f350ae79e45a04",
+      "source_record_sha256": "179213115bb0681ab1d8f62af0ad650dd312091934acc1b41b58ae6f8404b9bb",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Clear Arabic, correct preservation of the timing problem, endpoints, numbers, and reasoning.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_5a3a11688237ed28371ffee95f7653f1bb7117a4e0ce1a658ae172b409e00ed7",
+      "problem_id": "c5a7ec7b430795c3670442168a63275165959c850fe30f347172be798d29fb36",
+      "source_record_id": "prm800k_5a3a11688237ed28371ffee95f7653f1bb7117a4e0ce1a658ae172b409e00ed7",
+      "source_record_sha256": "48164ef0071a6166fe3fb1eb8d93b580c964d0d3f6ca18f8906f2870c2af1ffe",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Translation is faithful. The incorrect final symmetric-expression identity is intentionally preserved with label -1.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_5ec1ca2ea27c0de37a4b62c17e18b8d9a801bc9919723a268f970fd549383918",
+      "problem_id": "7d64f56ef90c4ce48364fda9eb6955202e2314978084e9380b3bde72893cb83c",
+      "source_record_id": "prm800k_5ec1ca2ea27c0de37a4b62c17e18b8d9a801bc9919723a268f970fd549383918",
+      "source_record_sha256": "fe69a5fe10cc53f0a7fe063618957658966050ee711f848f82d05bef0be69a1b",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful. The incorrect square-root simplification in the final step is correctly preserved rather than repaired.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_6a5a257404c8f62c05e462f37385bde5743c41e4dad2ed1b3158a781c85533cf",
+      "problem_id": "0e5ca234b7f037b58e36d8271f7cc5cee3665aec64711b8a9d9e1d67fbf4ee02",
+      "source_record_id": "prm800k_6a5a257404c8f62c05e462f37385bde5743c41e4dad2ed1b3158a781c85533cf",
+      "source_record_sha256": "c4e7d19293f51c5ec0af0867b2b606631a92d58f0386b76cedb51d5dfc34cef9",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful translation. The erroneous counting formula is intentionally preserved with its negative label.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_84098a4e8f6984574f14d4f9a2f22c3b307b7a95b713e68cf31d0609e4d7ba3c",
+      "problem_id": "43b6eff223d438b8b69fa0430b62f58775a86923d3307bf876df63456ba34b58",
+      "source_record_id": "prm800k_84098a4e8f6984574f14d4f9a2f22c3b307b7a95b713e68cf31d0609e4d7ba3c",
+      "source_record_sha256": "991a6ed138fbc2d43508fd2723711e93074ca149fe51f27575aa85d0e63fb61f",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful Arabic. Signed numbers, equations, both solution branches, product, and answer are preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_8dba786e42575412f0c967c12049cf961fdc45ee7c8488f25d4bd50f915de522",
+      "problem_id": "a0ff4e0c995f1f084742539789e16f329a0d695749f0dce1c76f2665e69774f3",
+      "source_record_id": "prm800k_8dba786e42575412f0c967c12049cf961fdc45ee7c8488f25d4bd50f915de522",
+      "source_record_sha256": "9b86c55611f8f940a766363b111e65e3ba7ad73cd2c87d9413aa327d2dc37e6a",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful. Monthly compounding, strict inequality, neutral step, logarithms, and final month count are preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_8ff9ab56197b4d9f6f7aef8f3c77be543416b0905b662c165d9431094df83fe1",
+      "problem_id": "07f6f8f88992a6d8e123813f6ddddccf52812ec0b6c800a8191d7320644ddd51",
+      "source_record_id": "prm800k_8ff9ab56197b4d9f6f7aef8f3c77be543416b0905b662c165d9431094df83fe1",
+      "source_record_sha256": "c77af760941d39c9e39805b4e16417f2bb29557f5a5e78e37aa1137cf2ad17e1",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Translation is faithful and mathematically consistent. Neutral and positive labels, reciprocal relations, and final result are preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_c9280c859249e7faa3746b21688c404706a0077302ac19390bbac5d77ecbe7cc",
+      "problem_id": "16f1bf76c3d46bd83bc1217f7199bee0b37c2b19e6c3b4a4d283cf26585b581d",
+      "source_record_id": "prm800k_c9280c859249e7faa3746b21688c404706a0077302ac19390bbac5d77ecbe7cc",
+      "source_record_sha256": "6eeb5e7a814e7eac088ddfbb611a5d7f0390ff8efdf742fb79620be5c0112a95",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful. The incorrect polynomial expansion at the final step is correctly preserved with label -1.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_e105c284c0ef14e37eeda6ce8ed957762a5df3b71931393c21fa7e0f89c62e19",
+      "problem_id": "29da8489b72f462ceb0b64ddee0e13d4d22626f0b80debca37302d17b173ee8a",
+      "source_record_id": "prm800k_e105c284c0ef14e37eeda6ce8ed957762a5df3b71931393c21fa7e0f89c62e19",
+      "source_record_sha256": "6f95fdf0486a34b02221019fb6300275419730736e608a7c9f0b9e05a3dc0b7e",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Good revision. “ترتيبًا غير تناقصي” correctly reflects the repeated-digit allowance. The erroneous digit-range reasoning remains preserved with label -1.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_f546589474ae1fcb1de0489322ac5783167badaeef3a311dc0b0aff3c4e59514",
+      "problem_id": "4e7562460884535d4b9255a07c1925f0c531190507451f6be1fab3af50dc0930",
+      "source_record_id": "prm800k_f546589474ae1fcb1de0489322ac5783167badaeef3a311dc0b0aff3c4e59514",
+      "source_record_sha256": "920fe04c49b90c35cdbc7c2c7d6adc60fa9736fa769bde8cd5777af01e6672fd",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "The revised wording \"قاعدة رفع قوة إلى قوة\" is clear and faithful to the English source. Formula, reasoning, and supervision remain unchanged.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_fcab1683ebab20261123c6bbb87d25aba07cb2ff26f8fab449900daad85f59dc",
+      "problem_id": "79d09562becafe30e743604b73aae3125b623196d0adaddc8dea077a2a4c49d2",
+      "source_record_id": "prm800k_fcab1683ebab20261123c6bbb87d25aba07cb2ff26f8fab449900daad85f59dc",
+      "source_record_sha256": "71322e994e71ee26c43d2a851e77c0cff3f5225151b11c77a231310b232eb0f9",
+      "split": "train"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Both revised phrases are now natural and clear:\n- \"الرقم الأول فيه...\"\n- \"هناك ستة خيارات ممكنة للرقم الأول.\"\nThe intentional incorrect final count remains correctly preserved with label -1.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_18fc86d431b240b39b0cc357f6ff9baf4684517d7b208a0a4b9e3027ade61254",
+      "problem_id": "39f3eda07badddb0b9f0e94ca2bfc31329c66c3ab75925d4b4fa97548e798267",
+      "source_record_id": "prm800k_18fc86d431b240b39b0cc357f6ff9baf4684517d7b208a0a4b9e3027ade61254",
+      "source_record_sha256": "813b911028ec41db17096a0d8a9fafc105deef5b730741e1558899a28f4ae1a0",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "The correction to \"رئيسي\" is grammatically correct and the meaning of \"monic\" is preserved accurately. No further changes needed.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_47dcb627f549309005d2f6f88791c2d0c188a6388c51c66aa918c8ff9df5c459",
+      "problem_id": "08187761266362812d264cd54dc45367d953229563bffc7259b1646c33e12efe",
+      "source_record_id": "prm800k_47dcb627f549309005d2f6f88791c2d0c188a6388c51c66aa918c8ff9df5c459",
+      "source_record_sha256": "e70dd6a8ad780d5d74ef726bcfc7c058ae76b143721aeb74b2ab0d216a6bbf57",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Both revisions are acceptable:\n- the negative-reciprocal slope relationship is conveyed correctly;\n- \"قيمتي x و y اللتين تحققان المعادلتين\" is grammatically and semantically appropriate.\nAll equations and reasoning remain faithful to the source.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_752ea0bca39eb35fa17e2721cd45bf6e7d58346d595c330adba2fd1e8f1a83e1",
+      "problem_id": "e5eb24acdd0d4dd4c912725d2cefb0dcacc1e7bc5d9e1eb04c1b742fb9e63411",
+      "source_record_id": "prm800k_752ea0bca39eb35fa17e2721cd45bf6e7d58346d595c330adba2fd1e8f1a83e1",
+      "source_record_sha256": "d43290dda44ad3b8609c1c1819912e412029ba0abe6f01a023f882bf6ac2744e",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful. Neutral steps stay masked and the incorrect parity conclusion is correctly preserved with label -1.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_8a1f5b1a5a537d3d2eba65e12c80449bf47e4fb5a2f7e82915f70b6ad9520193",
+      "problem_id": "6f77806ebd07b333fb91c93768d3ee7e03f352eae002fe83fbc9375ed8686408",
+      "source_record_id": "prm800k_8a1f5b1a5a537d3d2eba65e12c80449bf47e4fb5a2f7e82915f70b6ad9520193",
+      "source_record_sha256": "5a9bd23b5dcbc8a6d108beec6709689e61d6e1f0b72fd2b65016b769c8110e3d",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Clear, faithful translation. Bounds, square roots, final answer, and single annotated final step are preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_9622916c186120970e0fcb763f74f09c9f6ead265db5f9cc91cee464394e15fd",
+      "problem_id": "758561a9a41cd60c5d7627ed0b7b504f6cefab5d4f0d70bd8292c2397803a59c",
+      "source_record_id": "prm800k_9622916c186120970e0fcb763f74f09c9f6ead265db5f9cc91cee464394e15fd",
+      "source_record_sha256": "b9cfff7da61507920ff3161541824753810401cd4afbb6031cccdb073331d7f7",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful translation. The terminology مقياس / عمدة is understandable mathematical Arabic, and the incorrect sixth-root-of-unity claim is correctly preserved with -1.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_bd4d93141a473eb29d8dc1e43bc0588bf14930acefc93097de296c91f155c595",
+      "problem_id": "d1b1f49f332e5e30020a7a1cc2ff3ddeaa498f1243d6b79ce3475462a63f25d3",
+      "source_record_id": "prm800k_bd4d93141a473eb29d8dc1e43bc0588bf14930acefc93097de296c91f155c595",
+      "source_record_sha256": "1dcf3624718c79f1e5ee561f718b8af0fa88132c56a27081834a0dba2102dc62",
+      "split": "dev"
+    },
+    {
+      "batch_id": "qc24_r1",
+      "existing_human_qc": {
+        "decision": "accept",
+        "notes": "Faithful and clear. Rendering “whole number” as عددًا صحيحًا غير سالب is appropriate in this counting context. Equations, neutral step 8, combinations, and final answer are preserved.",
+        "reviewed_on": "2026-10-05",
+        "reviewer": "Zakaria Brim"
+      },
+      "id": "prm800k_ca8e0a968201264faab8d309c38040a757e1e2170a23eb3a0b7c6a1688f759ad",
+      "problem_id": "1758aaa71f4d35939f0ce9d20bcb8437cafa04003e05841e9ec80888a56a1d8f",
+      "source_record_id": "prm800k_ca8e0a968201264faab8d309c38040a757e1e2170a23eb3a0b7c6a1688f759ad",
+      "source_record_sha256": "8928c597ed736288660d85e970b94963d2cf71a21d5182e46a93a02191041457",
+      "split": "dev"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Registry of existing accepted records; no new human review"
+}

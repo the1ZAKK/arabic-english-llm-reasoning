@@ -1,5 +1,6 @@
 """Render a plain bilingual inspection artifact; rendering does not approve QC."""
 import argparse
+import hashlib
 from html import escape
 import json
 from pathlib import Path
@@ -21,22 +22,32 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input', type=Path, default=ROOT / 'research/prm_arabic_english/data/prm800k_staging_1000/translation_batch/arabic_draft/review_queue.jsonl')
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--batch-id', help='Visible identifier for this immutable review batch')
     args = parser.parse_args()
-    rows = [json.loads(x) for x in args.input.read_text(encoding='utf-8').splitlines() if x.strip()]
+    raw = args.input.read_bytes()
+    queue_hash = hashlib.sha256(raw).hexdigest()
+    rows = [json.loads(x) for x in raw.decode('utf-8').splitlines() if x.strip()]
     count = sum(len(r['translation']['steps']) for r in rows)
     if not rows or any(len(r['source_record']['steps']) != len(r['translation']['steps']) or
                        len(r['source_record']['source_step_ratings']) != len(r['translation']['steps']) for r in rows):
         parser.error('Empty or misaligned review input')
-    parts = ['<!doctype html><html lang="en"><meta charset="utf-8"><title>ArabicPRM-T bilingual QC draft</title>',
+    title = 'ArabicPRM-T' + (' — ' + args.batch_id if args.batch_id else '') + ' — bilingual translation draft'
+    parts = ['<!doctype html><html lang="en"><meta charset="utf-8"><title>' + escape(title) + '</title>',
              '<style>body{font:17px system-ui;max-width:1400px;margin:30px auto;padding:20px;color:#172332}table{border-collapse:collapse;width:100%;table-layout:fixed;margin:20px 0 50px}td,th{border:1px solid #ccd3dd;padding:12px;vertical-align:top;white-space:pre-wrap;overflow-wrap:anywhere}th{background:#edf2f7}.ar{direction:rtl;text-align:right}.note{background:#fff2cb;padding:14px}small{overflow-wrap:anywhere}td:first-child{width:7%}</style>',
-             f'<h1>ArabicPRM-T — bilingual translation draft</h1><p class="note">{len(rows)} records / {count} steps. Human QC is pending. Not eligible for training. Source ratings are preserved: +1 valid, -1 invalid, 0 neutral/masked. Raw LaTeX is shown verbatim for comparison.</p>',
+             f'<h1>{escape(title)}</h1><p class="note">{len(rows)} records / {count} steps. Human QC is pending. Not eligible for training. Source ratings are preserved: +1 positive annotation, -1 negative annotation, 0 neutral/masked. These are source annotations, not new mathematical verification. Raw LaTeX is shown verbatim for comparison.</p>',
+             f'<p><small>Review queue SHA256: {queue_hash}</small></p>',
              '<p>Review every problem and step. Report ACCEPT, REVISE with exact corrections, or REJECT with a reason for each record. Preserve incorrect source reasoning and supervision.</p>',
              '<nav>Records: ' + ' · '.join(f'<a href="#record-{i}">{i}</a>' for i in range(1, len(rows) + 1)) + '</nav>']
     for i, row in enumerate(rows, 1):
         source, ar = row['source_record'], row['translation']
         parts.append(f'<h2 id="record-{i}">{i}. {escape(row["split"])} — {escape(source["variant"])}</h2><small>{escape(source["id"])}</small>')
         if ar.get('review_notes'):
-            parts.append('<p class="note">Review note: ' + escape(ar['review_notes']) + '</p>')
+            notes = ar['review_notes']
+            if isinstance(notes, list) and all(isinstance(note, str) for note in notes):
+                notes = ' '.join(notes)
+            if not isinstance(notes, str):
+                raise ValueError('Review notes must be a string or a list of strings')
+            parts.append('<p class="note">Review note: ' + escape(notes) + '</p>')
         parts.append('<table><tr><th>Step / rating</th><th>English source</th><th>Arabic draft</th></tr>')
         parts.append('<tr><td>Problem</td><td>' + escape(source['problem']) + '</td><td class="ar" lang="ar">' + arabic_html(ar['problem']) + '</td></tr>')
         for n, (en, translated, rating) in enumerate(zip(source['steps'], ar['steps'], source['source_step_ratings']), 1):
