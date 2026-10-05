@@ -15,11 +15,15 @@ NUMBER = re.compile(r"(?<!\d)\d+(?:\.\d+)?")
 
 
 def approved_translation_source(source, record_id, step_number):
-    """Comparison copy only: two precise normalizations authorized by Zakaria Brim."""
+    """Comparison copy only: precise normalizations authorized by Zakaria Brim."""
     if (record_id, step_number) == ('prm800k_0ba4fe8ff0234a6eea005975c1558c554fffee175d975988f13d1c4b4681319f', 7):
         return source.replace('[* { id: "5" }]', '')
     if (record_id, step_number) == ('prm800k_293983bdd9d7b466e13be6108bb778ad44e8718843414a8de9854b7142da34e8', 3):
         return source.replace(r'$9x\equiv 8\pod{20}$', r'$9x\equiv 8\pmod{20}$')
+    if (record_id, step_number) == ('prm800k_b1fe0ed874975c53b348eda00f810cd5ee7ba015b660a3442f84308cb271a400', 2):
+        for marker_number in range(1, 10):
+            source = source.replace(f'[* {marker_number}]', '')
+        return source
     return source
 
 
@@ -125,7 +129,7 @@ def main():
     normalization_count = sum(approved_translation_source(step, row['source_record']['id'], n) != step
                               for row in records for n, step in enumerate(row['source_record']['steps'], 1))
     report = {"records": len(records), "translated_steps": sum(len(r["translation"]["steps"]) for r in records),
-              "protected_spans_and_numbers": "exact_match" if not normalization_count else "exact_match_except_two_human_authorized_normalizations",
+              "protected_spans_and_numbers": "exact_match" if not normalization_count else "exact_match_except_human_authorized_normalizations",
               "authorized_normalization_count": normalization_count, "source_labels_and_masks": "unchanged",
               "source_split_assignments": "unchanged", "human_qc": "pending", "training_eligible": False,
               "provenance": {k: v for k, v in payload.items() if k != "records"},

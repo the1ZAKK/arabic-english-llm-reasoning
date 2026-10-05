@@ -23,22 +23,27 @@ def main():
     parser.add_argument('--input', type=Path, default=ROOT / 'research/prm_arabic_english/data/prm800k_staging_1000/translation_batch/arabic_draft/review_queue.jsonl')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--batch-id', help='Visible identifier for this immutable review batch')
+    parser.add_argument('--record-number', type=int, action='append', help='Show only these original 1-based record numbers; hash still binds the complete queue')
     args = parser.parse_args()
     raw = args.input.read_bytes()
     queue_hash = hashlib.sha256(raw).hexdigest()
     rows = [json.loads(x) for x in raw.decode('utf-8').splitlines() if x.strip()]
-    count = sum(len(r['translation']['steps']) for r in rows)
     if not rows or any(len(r['source_record']['steps']) != len(r['translation']['steps']) or
                        len(r['source_record']['source_step_ratings']) != len(r['translation']['steps']) for r in rows):
         parser.error('Empty or misaligned review input')
+    if args.record_number and any(n < 1 or n > len(rows) for n in args.record_number):
+        parser.error('Requested record number is outside the review queue')
+    selected = [(i, row) for i, row in enumerate(rows, 1)
+                if args.record_number is None or i in args.record_number]
+    count = sum(len(row['translation']['steps']) for _, row in selected)
     title = 'ArabicPRM-T' + (' — ' + args.batch_id if args.batch_id else '') + ' — bilingual translation draft'
     parts = ['<!doctype html><html lang="en"><meta charset="utf-8"><title>' + escape(title) + '</title>',
              '<style>body{font:17px system-ui;max-width:1400px;margin:30px auto;padding:20px;color:#172332}table{border-collapse:collapse;width:100%;table-layout:fixed;margin:20px 0 50px}td,th{border:1px solid #ccd3dd;padding:12px;vertical-align:top;white-space:pre-wrap;overflow-wrap:anywhere}th{background:#edf2f7}.ar{direction:rtl;text-align:right}.note{background:#fff2cb;padding:14px}small{overflow-wrap:anywhere}td:first-child{width:7%}</style>',
-             f'<h1>{escape(title)}</h1><p class="note">{len(rows)} records / {count} steps. Human QC is pending. Not eligible for training. Source ratings are preserved: +1 positive annotation, -1 negative annotation, 0 neutral/masked. These are source annotations, not new mathematical verification. Raw LaTeX is shown verbatim for comparison.</p>',
-             f'<p><small>Review queue SHA256: {queue_hash}</small></p>',
+             f'<h1>{escape(title)}</h1><p class="note">{len(selected)} records shown / {count} steps. Human QC is pending. Not eligible for training. Source ratings are preserved: +1 positive annotation, -1 negative annotation, 0 neutral/masked. These are source annotations, not new mathematical verification. Raw LaTeX is shown verbatim for comparison.</p>',
+             f'<p><small>Showing original record numbers: {", ".join(str(i) for i, _ in selected)}. Review queue SHA256 (complete {len(rows)}-record queue): {queue_hash}</small></p>',
              '<p>Review every problem and step. Report ACCEPT, REVISE with exact corrections, or REJECT with a reason for each record. Preserve incorrect source reasoning and supervision.</p>',
-             '<nav>Records: ' + ' · '.join(f'<a href="#record-{i}">{i}</a>' for i in range(1, len(rows) + 1)) + '</nav>']
-    for i, row in enumerate(rows, 1):
+             '<nav>Records: ' + ' · '.join(f'<a href="#record-{i}">{i}</a>' for i, _ in selected) + '</nav>']
+    for i, row in selected:
         source, ar = row['source_record'], row['translation']
         parts.append(f'<h2 id="record-{i}">{i}. {escape(row["split"])} — {escape(source["variant"])}</h2><small>{escape(source["id"])}</small>')
         if ar.get('review_notes'):
@@ -57,7 +62,7 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open('x', encoding='utf-8', newline='\n') as f:
         f.write('\n'.join(parts))
-    print(f'Rendered {len(rows)} records and {sum(len(r["translation"]["steps"]) for r in rows)} steps. Human QC remains pending.')
+    print(f'Rendered {len(selected)} records and {count} steps. Original record numbers: {[i for i, _ in selected]}. Human QC remains pending.')
 
 
 if __name__ == '__main__':

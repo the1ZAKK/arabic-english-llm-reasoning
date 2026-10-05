@@ -9,12 +9,16 @@ each batch from its original queue and human decisions, verifies exact hashes,
 preserves full records and QC metadata, and excludes the four active source
 quarantines. See [corpus registry v1](corpus_registry/arabicprm_t_v1/README.md).
 
-The next **QC24 Batch03** has 24 previously unreviewed drafts: 16 train and eight
-dev, 179 steps, 171 supervised and eight neutral. Automated preservation and
-deterministic selection replay passed. All 24 human decisions remain pending,
-and a deliberate export attempt was blocked. Review the complete bilingual
-batch, including source concerns flagged for records 5, 7, 10, 13, 16 and 18.
-See [Batch03 review assets](translation_batches/prm800k_qc24_batch03/README.md).
+**QC24 Batch03 human review** returned 17 ACCEPT, six source-annotation REJECT
+decisions and one REVISE. Records 5, 7, 10, 11, 16 and 18 are now quarantined,
+bringing the active catalog to ten. Their source labels are unchanged. Revision
+r1 removes only the nine literal annotation markers from record 21's negatively
+rated step 2, preserving its neutral introductory step and every step boundary.
+All 23 other translated records are unchanged. Only record 21 awaits final human
+acceptance. Both original and revised export attempts were blocked; no Batch03
+training export exists. The approved corpus v1 retains its original 32 records,
+output hashes and historical quarantine snapshot. See
+[Batch03 r1 review assets](translation_batches/prm800k_qc24_batch03_r1/README.md).
 
 The 5,000-row source prefix provides 4,890 eligible records and a 500-problem
 staging selection, retaining previously fixed groups. It still covers only

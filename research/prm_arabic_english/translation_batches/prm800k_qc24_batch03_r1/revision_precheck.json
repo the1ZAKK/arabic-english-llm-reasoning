@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "original_decisions": {
+    "accept": 17,
+    "reject": 6,
+    "revise": 1
+  },
+  "revised_decisions": {
+    "accept": 17,
+    "reject": 6,
+    "pending": 1
+  },
+  "revised_record": 21,
+  "revised_step": 2,
+  "literal_markers_removed": 9,
+  "unchanged_other_records": 23,
+  "source_records_hashes_ids_labels_masks_and_splits": "unchanged",
+  "protected_math_spans": "unchanged",
+  "reasoning_step_boundaries": "unchanged",
+  "old_review_queue_sha256": "d79089e604cf842fe5e2306af31ae7370f01c040d09e4d05c0f5c6f436282413",
+  "revised_review_queue_sha256": "a58576d8eae1ec57843c4a9febb0c676684bd7020004a6616facd748cf54ea1a",
+  "source_quarantine_before_sha256": "3efce6b68ddbfe69b577c955de9aadedeaf8c683057c327bf8e4a21d448c5903",
+  "source_quarantine_after_sha256": "49f58bc38c715a0e07be568e483f4ea676c42b8f7b54d9d12055836a345e66e4",
+  "active_quarantines": 10,
+  "new_quarantine_record_numbers": [
+    5,
+    7,
+    10,
+    11,
+    16,
+    18
+  ],
+  "approved_corpus_v1_records": 32,
+  "approved_corpus_v1_quarantine_overlap": 0,
+  "immutable_previous_artifacts_sha256": {
+    "research\\prm_arabic_english\\translation_batches\\prm800k_qc24_batch03\\source_lock.json": "330ce7f491b0ae162ea5b4a635abf8a14a0bf9cbe7ebd98a5eeda3e32e57f2b3",
+    "research\\prm_arabic_english\\translation_batches\\prm800k_qc24_batch03\\translations.json": "31c7b549dc213f5eb1e4f1cdcea8aa4128fbc665e16d7a7e24fbb7091caff721",
+    "research\\prm_arabic_english\\translation_batches\\prm800k_qc24_batch03\\human_qc_pending.json": "e95850c24817501de1baea849cea51e52efef513e0cf034f05a8111572b4653d",
+    "research\\prm_arabic_english\\translation_batches\\prm800k_qc24_batch03\\batch_audit.json": "ab300656a82c120ef6991997d1b91b7687c866724119bc3cb0a9aadb9e6c7d65",
+    "research\\prm_arabic_english\\translation_batches\\prm800k_qc24_batch03\\translation_report.json": "c23760d63938bb2c26384abb96c1a2e5e5b82ceca076b990e39b8e3342c23436",
+    "research\\prm_arabic_english\\data\\prm800k_staging_5000\\translation_batch_qc24_batch03\\arabic_draft\\review_queue.jsonl": "d79089e604cf842fe5e2306af31ae7370f01c040d09e4d05c0f5c6f436282413",
+    "C:\\Users\\brimz\\Documents\\Codex\\2026-10-04\\fir\\outputs\\ArabicPRM-T-QC24-batch03-review.html": "d64bd6cac3cad72df235dd365c93e6386dd88e7da0a21b69317cf301cde6bbf1",
+    "research\\prm_arabic_english\\corpus_registry\\arabicprm_t_v1\\accepted_registry.json": "a8fc2ec67e956f8b212f8adfc120e807ca49d4da874389071e66995701b16aa5",
+    "research\\prm_arabic_english\\corpus_registry\\arabicprm_t_v1\\input_batches.json": "1b2df68f09611173518e4ac717e108f85238c1ebf3ecede89da1fbe7384bd86c",
+    "research\\prm_arabic_english\\corpus_registry\\arabicprm_t_v1\\manifest.json": "d996560cdfc8ba256aa93feb9e31aeca6c2043f0ea090d092f2b513ebdbc95c7",
+    "research\\prm_arabic_english\\corpus_registry\\arabicprm_t_v1\\README.md": "6fc4ac78db334a08e8372d3ce453b1e8efed15b0e7630a25bf7182d992198aed"
+  },
+  "training_eligible": false,
+  "human_review_final_attestation": false,
+  "human_review_evidence_sha256": "37226446cf51d84dc33798a77a8a730e80671b63a2ab99053e84dda461ce873c"
+}

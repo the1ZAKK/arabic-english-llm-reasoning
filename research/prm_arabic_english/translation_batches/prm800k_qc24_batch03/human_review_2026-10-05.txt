@@ -1,0 +1,143 @@
+QC24-Batch03 human review
+
+Record 1: ACCEPT
+Notes: Faithful translation. Polynomial, remainder theorem, numeric evaluation, neutral step, and final answer are preserved correctly.
+
+Record 2: ACCEPT
+Notes: Faithful translation. Logarithm identities, bases, fractions, and final answer are preserved.
+
+Record 3: ACCEPT
+Notes: Faithful translation. Vieta/polynomial reasoning, factorization, roots, and final answer are preserved.
+
+Record 4: ACCEPT
+Notes: Faithful translation. The intentionally incorrect final gate count remains preserved with source label -1.
+
+Record 5: REJECT
+Reason: Source-annotation conflict, not an Arabic translation failure.
+The positively rated step 3 states:
+2·4 ≡ 2·11 (mod 7), but 4 ≠ 11 (mod 7).
+This is false because 4 ≡ 11 (mod 7).
+Also, step 6 is labeled -1 even though replacing a congruent invertible residue by 5 before taking its inverse modulo 7 is valid here.
+Quarantine this source trajectory. Do not modify source labels.
+
+Record 6: ACCEPT
+Notes: Translation faithfully preserves the source expression and the negatively rated parenthesization error. Do not repair the source reasoning.
+
+Record 7: REJECT
+Reason: Source-annotation conflict.
+Step 1 is labeled +1 but says PR is the hypotenuse. Since angle Q = angle R in a right triangle, P is the right angle and QR is the hypotenuse; PR is a leg.
+Several subsequent positively rated steps depend on this incorrect assumption.
+Quarantine rather than relabeling or repairing the reasoning.
+
+Record 8: ACCEPT
+Notes: Faithful translation. Neutral and positive annotations are preserved, as are all factorial expressions and the final probability.
+
+Record 9: ACCEPT
+Notes: Faithful translation. The incorrect probability calculation is confined to the negatively rated step and should remain unchanged.
+
+Record 10: REJECT
+Reason: Source-annotation conflict.
+Step 1 is labeled +1 but literally claims that a^3+b^3+c^3 itself can be written as a product involving a+b+c, while the displayed identity is for:
+a^3+b^3+c^3-3abc.
+The following step uses the identity correctly, but the positively supervised wording in step 1 is mathematically false as written.
+Quarantine this record rather than silently rewriting the source supervision.
+
+Record 11: REJECT
+Reason: Source-annotation conflict.
+Step 6 is labeled -1, but its enumeration is correct: the six positive triples summing to five are
+(1,1,3), (1,2,2), (1,3,1), (2,1,2), (2,2,1), and (3,1,1).
+The category-size limits do not invalidate any of these cases.
+Therefore the source negative annotation conflicts with the mathematical content.
+Quarantine without changing the label.
+
+Record 12: ACCEPT
+Notes: Faithful and clear translation. Factor list, sum, and answer are preserved.
+
+Record 13: ACCEPT
+Notes: The Arabic correctly interprets the obvious English typo "divisible so 3" as "divisible by 3". This is a harmless grammatical/source-typo normalization, not a change to the mathematical reasoning. Everything else is preserved.
+
+Record 14: ACCEPT
+Notes: Faithful translation. Equations, quadratic formula, rounding context, and final answer are preserved.
+
+Record 15: ACCEPT
+Notes: Faithful translation. Substitution, exponent evaluation, arithmetic, and final answer are preserved.
+
+Record 16: REJECT
+Reason: Source-annotation conflict.
+Step 1 is labeled +1 but describes the divisibility-by-11 rule using "odd digits" and "even digits" rather than digits in odd/even positions. Literally, that rule is false.
+The Arabic translation faithfully preserves the source wording, so this is not a translation problem.
+Quarantine rather than silently correcting the source statement.
+
+Record 17: ACCEPT
+Notes: Faithful translation. Prime factors and final count are preserved.
+
+Record 18: REJECT
+Reason: Source-annotation conflict.
+Step 5 is labeled +1 and states that, for a fixed hypotenuse, the base and height themselves are maximized when the right triangle is isosceles.
+What is maximized there is their product (and hence the area), not each leg individually.
+Because the false wording is positively supervised, quarantine the trajectory rather than repairing it.
+The neutral step 3 remains masked and does not by itself require rejection.
+
+Record 19: ACCEPT
+Notes: Faithful translation. The erroneous y = 25 conclusion occurs in the negatively rated step and is correctly preserved.
+
+Record 20: ACCEPT
+Notes: Faithful translation. The incorrect binary expansion/arithmetic is contained in the negatively rated step and remains unchanged.
+
+Record 21: REVISE
+Reason: The Arabic translation still contains source annotation artifacts:
+[* 1]
+[* 2]
+...
+[* 9]
+
+Correction:
+Remove only the literal markers [* 1] through [* 9] from the Arabic translated text.
+
+Do not:
+- change any mathematical text,
+- fix the incorrect reasoning,
+- merge or split the annotated step,
+- change formulas,
+- change the -1 label,
+- change source provenance.
+
+The entire reasoning should remain one negatively rated annotated step, just without the annotation-marker artifacts.
+
+Record 22: ACCEPT
+Notes: Faithful translation. Algebra, factorization, roots, and final answer are preserved.
+
+Record 23: ACCEPT
+Notes: Faithful translation. Base conversions, equations, neutral step, and intentionally incorrect final constraint reasoning are preserved.
+
+Record 24: ACCEPT
+Notes: Faithful translation. Completing-the-square derivation, ellipse condition, and final answer are preserved.
+
+
+FINAL SUMMARY
+
+ACCEPT:
+1, 2, 3, 4, 6, 8, 9, 12, 13, 14, 15, 17, 19, 20, 22, 23, 24
+
+REVISE:
+21
+
+REJECT / QUARANTINE FOR SOURCE-ANNOTATION CONFLICT:
+5, 7, 10, 11, 16, 18
+
+Counts:
+17 ACCEPT
+1 REVISE
+6 REJECT
+24 total
+
+
+Implementation instruction:
+
+For record 21, apply only the marker removal described above and generate a new review-queue version/hash before final acceptance.
+
+Do not alter source labels for rejected records 5, 7, 10, 11, 16, or 18.
+Keep them quarantined with the stated reasons.
+
+After record 21 is revised, show me only the revised record 21 for final acceptance.
+Do not export Batch03 until that final review is complete.

@@ -11,12 +11,15 @@ original human approval metadata and creates no new approvals. Its output loads
 through `load_reviewed_splits`; generated data stays local in the ignored
 `data/reviewed_corpora/` directory. See the registry README for replay commands.
 
-QC24 Batch03 is the next pending human review: 24 drafts, 179 steps, eight neutral.
-Its exact queue hash, translations, pending decisions and automated evidence are
-under `translation_batches/prm800k_qc24_batch03/`. All records remain ineligible
-for training. The exporter refused the actual pending template, and no Batch03
-training export directory was created. Source observations are review notes;
-human adjudication remains required for acceptance or quarantine.
+QC24 Batch03 human review returned 17 ACCEPT, six source-conflict REJECT decisions
+and one REVISE. The six rejected IDs are active quarantines, alongside the earlier
+four. Original human notes and decisions are preserved in the Batch03 directory.
+Revision r1 removes only the nine literal markers from record 21 step 2 and binds
+a new complete-queue hash. The 23 unchanged human decisions are retained with
+original decision evidence; the changed record is pending and the revised global
+human attestation is false. Only record 21 needs final review. Original and revised
+export attempts both refused, and no Batch03 training export was created. See
+`translation_batches/prm800k_qc24_batch03_r1/README.md` for revision evidence.
 
 QC24 r1 has completed final human review: 20 ACCEPT decisions and four
 source-annotation quarantines. Its reviewed export contains 13 train and seven
@@ -57,6 +60,14 @@ Rejected records are excluded with reasons; no accepted records means no export.
 QC12 r1 has two human-authorized, source-ID/step-specific Arabic normalizations:
 removal of an embedded annotation marker and correction of `\pod` to `\pmod`.
 The original source records remain unchanged; other protected spans must match.
+
+Batch03 r1 adds one precise authorized comparison-source exception: deletion of
+the literal `[* 1]` through `[* 9]` markers only for its record 21, step 2. The
+original English step and source hash retain all nine markers. Arabic mathematics,
+all other numeric content, the two step boundaries, ratings `[0, -1]`, binary/neutral
+labels `[null, 0]` and masks `[0, 1]` remain unchanged. This exception changes no
+source labels and grants no final acceptance. Eight normalization regression tests
+and real-artifact preservation checks passed.
 
 `training_supervision(record)` returns zero-based annotated-step positions and
 binary targets only for mask=1. Neutral positions never enter those target lists.

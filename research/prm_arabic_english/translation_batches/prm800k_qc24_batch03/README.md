@@ -1,8 +1,13 @@
 # QC24 Batch03: pending bilingual human QC
 
-This is the third review batch, following QC12 and QC24 r1. **All 24 records
-remain pending and ineligible for training.** Automated checks do not approve
-translations or adjudicate source supervision.
+This directory retains the original third review batch, following QC12 and QC24
+r1. Human review has returned **17 ACCEPT, six REJECT/source quarantines and one
+REVISE**. The supplied review is preserved as `human_review_2026-10-05.txt` and
+`human_qc_original.json`; the initial pending file and original payload remain
+unchanged. The original four-entry quarantine snapshot is retained in
+`source_quarantine_before_review.json`. See [revision r1](../prm800k_qc24_batch03_r1/README.md)
+for the marker-only correction and record 21's pending final acceptance.
+**Batch03 export remains blocked.** Automated checks grant no human approval.
 
 | Split | Records | Correct / incorrect trajectories | Steps |
 |---|---:|---:|---:|
@@ -61,6 +66,12 @@ all automated preservation checks pass. Accepted additions belong to a future
 corpus version, not an edit of approved corpus v1.
 
 ## Offline reconstruction commands
+
+These commands describe the original unreviewed snapshot at commit `6127da9`.
+Use that code and its quarantine catalog in an isolated historical checkout when
+reconstructing the original selection. The current catalog excludes the six
+newly rejected IDs and the current materializer supports the r1 marker removal.
+Reconstruct r1 from the existing frozen source queues using its README commands.
 
 Run from the repository root with the pinned staging source available. Use a new
 directory for each replay. Selection inherits existing splits without resampling.

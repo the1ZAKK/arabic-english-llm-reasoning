@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "record_number": 21,
+  "id": "prm800k_b1fe0ed874975c53b348eda00f810cd5ee7ba015b660a3442f84308cb271a400",
+  "source_record_sha256": "dc05c19873824349a58c078be2acb090bc77c39cb289e84c5bdef98e34c1af7f",
+  "step_number": 2,
+  "operation": "delete exact literal markers only",
+  "literal_markers": [
+    "[* 1]",
+    "[* 2]",
+    "[* 3]",
+    "[* 4]",
+    "[* 5]",
+    "[* 6]",
+    "[* 7]",
+    "[* 8]",
+    "[* 9]"
+  ],
+  "source_ratings": [
+    0,
+    -1
+  ],
+  "step_labels": [
+    null,
+    0
+  ],
+  "supervision_mask": [
+    0,
+    1
+  ],
+  "old_review_queue_sha256": "d79089e604cf842fe5e2306af31ae7370f01c040d09e4d05c0f5c6f436282413",
+  "revised_review_queue_sha256": "a58576d8eae1ec57843c4a9febb0c676684bd7020004a6616facd748cf54ea1a",
+  "original_arabic_step_sha256": "9d5e06b00690908b8520b92b5ed3e514f14a02acf6a181f321a71d714cf91952",
+  "revised_arabic_step_sha256": "868ee7356197df37308d0fa159fdbfbf58b907971529a33f87dbe789c2a013d3",
+  "source_english_step_sha256": "446864d9cae27544a7aa73b21857780a778304f517ed25b94f2c2fc03866fd3e",
+  "authorization_evidence": {
+    "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_batch03/human_review_2026-10-05.txt",
+    "sha256": "37226446cf51d84dc33798a77a8a730e80671b63a2ab99053e84dda461ce873c"
+  },
+  "final_acceptance": "pending"
+}

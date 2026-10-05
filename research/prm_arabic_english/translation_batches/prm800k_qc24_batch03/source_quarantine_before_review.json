@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "record_number": 1,
+      "batch": "prm800k_qc24",
+      "id": "prm800k_1808023da7e3fea74d9967b1931567798c393913d7fdceeeebfe6783fddeeb2a",
+      "problem_id": "2b58a57eb1d225fa3a3c938816e8e3e13d32b5c11bebc8ab627e56e11cc60921",
+      "source_record_sha256": "fa90db0df6d2c349b1bab2ac243b263c13b98a440da5019427aab0333dbfe296",
+      "active": true,
+      "quarantine_type": "source_annotation_conflict",
+      "reviewer": "Zakaria Brim",
+      "reviewed_on": "2026-10-05",
+      "reason": "Translation itself is good, but the source supervision is suspicious: step 4 is labeled -1, yet\n   A = P(1 + r/n)^{nt}\n   is the standard compound-interest formula and is appropriate here. The preceding steps are also valid. Do not relabel it silently; quarantine this trajectory as a source-annotation conflict.",
+      "original_review_queue_sha256": "e83d7db715d5542eb5f313c33142dfda0495fbc2b89570cd0f045275d3377be6"
+    },
+    {
+      "record_number": 9,
+      "batch": "prm800k_qc24",
+      "id": "prm800k_89ff9b977e2979fe9b13177b249b637514fcb637f99a3241e65375377b4bc17e",
+      "problem_id": "aa52529c4be0570d3ad9f4ea33c4b3e02cb7935180cf948915052174824f752d",
+      "source_record_sha256": "0952fd185b2b19ba29d9b6893947edae9bc349679e47c8dcd482aac59df4fa0d",
+      "active": true,
+      "quarantine_type": "source_annotation_conflict",
+      "reviewer": "Zakaria Brim",
+      "reviewed_on": "2026-10-05",
+      "reason": "Source-supervision problem. Step 3 is labeled +1 but states\n   a^2 + b^2 > 2ab\n   as a consequence of AM-GM. In general the valid statement is a^2 + b^2 >= 2ab, with equality when a=b. Because this mathematically false strict inequality is positively supervised, quarantine/reject this record rather than altering the source label.",
+      "original_review_queue_sha256": "e83d7db715d5542eb5f313c33142dfda0495fbc2b89570cd0f045275d3377be6"
+    },
+    {
+      "record_number": 12,
+      "batch": "prm800k_qc24",
+      "id": "prm800k_9689e9b5dfceed14323f844301b5309bcfa3bface11397e2cc4389c1b9ce66fa",
+      "problem_id": "1cb96452af30bba6b62097c330605c96eb9269241db89f116189ed5e42399513",
+      "source_record_sha256": "07d61d00b3c01d004c9cbae698c22dc313a76b8130e7efaadf6e68680e64d4e5",
+      "active": true,
+      "quarantine_type": "source_annotation_conflict",
+      "reviewer": "Zakaria Brim",
+      "reviewed_on": "2026-10-05",
+      "reason": "There is a source-supervision issue. Step 9, labeled +1, says:\n    “the smallest k in S is 231.”\n    But S is defined over all integers; if it consists of multiples of 231, it has negative elements and therefore no smallest element. The later question about the smallest member greater than 2010 can still yield 2079, but the positively supervised intermediate claim is false. Quarantine rather than silently adding a positivity assumption.",
+      "original_review_queue_sha256": "e83d7db715d5542eb5f313c33142dfda0495fbc2b89570cd0f045275d3377be6"
+    },
+    {
+      "record_number": 18,
+      "batch": "prm800k_qc24",
+      "id": "prm800k_452b729bf5886e136f62d4c7c9881ef5501600a232bbd147b7523041405a9a48",
+      "problem_id": "3e14e694b3f9ff1cb866e82ac041238c88b44121c7d790202a19d2b7b8058af7",
+      "source_record_sha256": "5d9aa5cd69b98787432e68b174f435632f1815da09d6656b44d2a9c4804ecd15",
+      "active": true,
+      "quarantine_type": "source_annotation_conflict",
+      "reviewer": "Zakaria Brim",
+      "reviewed_on": "2026-10-05",
+      "reason": "Translation is faithful, but the source trajectory has substantial supervision/math inconsistencies among positively labeled steps. The foci are vertically aligned, yet the trajectory defines a as the semimajor axis while placing a^2 under the horizontal term; later it uses tangency to the x-axis to derive b^2=9, and even states b = ±3 for a semiaxis. Several of these steps are labeled +1. This should be quarantined for source-annotation adjudication, not repaired during Arabic translation.",
+      "original_review_queue_sha256": "e83d7db715d5542eb5f313c33142dfda0495fbc2b89570cd0f045275d3377be6"
+    }
+  ]
+}

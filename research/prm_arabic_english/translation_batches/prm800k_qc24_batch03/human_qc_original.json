@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "review_queue_sha256": "d79089e604cf842fe5e2306af31ae7370f01c040d09e4d05c0f5c6f436282413",
+  "human_review": true,
+  "reviewer": "Zakaria Brim",
+  "human_review_evidence": {
+    "path": "research/prm_arabic_english/translation_batches/prm800k_qc24_batch03/human_review_2026-10-05.txt",
+    "sha256": "37226446cf51d84dc33798a77a8a730e80671b63a2ab99053e84dda461ce873c"
+  },
+  "reviews": [
+    {
+      "record_number": 1,
+      "id": "prm800k_092253ff5401f6ba1fcbefdc4aa54fd0b64b4b9c417cfcc3e494c3518a4a620c",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Polynomial, remainder theorem, numeric evaluation, neutral step, and final answer are preserved correctly."
+    },
+    {
+      "record_number": 2,
+      "id": "prm800k_09ee47e165b750dbaf37ba2710cdd17970779d9fada06d73da64768b916ce1d8",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Logarithm identities, bases, fractions, and final answer are preserved."
+    },
+    {
+      "record_number": 3,
+      "id": "prm800k_11657de2a2ce17930debf7a02fb3f4b6337f5ad91f029ef4156fc6c8418ee855",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Vieta/polynomial reasoning, factorization, roots, and final answer are preserved."
+    },
+    {
+      "record_number": 4,
+      "id": "prm800k_136c092a95e6077f0b4ef461a1a10f59d65ef66a2a83b916a4515b5bc14f13b6",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. The intentionally incorrect final gate count remains preserved with source label -1."
+    },
+    {
+      "record_number": 5,
+      "id": "prm800k_27b273724551df6976d03ef31b23aabd10e4535f9174eb5a832c950c1a16e23d",
+      "split": "train",
+      "decision": "reject",
+      "reviewed_on": "2026-10-05",
+      "notes": "Source-annotation conflict, not an Arabic translation failure.\nThe positively rated step 3 states:\n2·4 ≡ 2·11 (mod 7), but 4 ≠ 11 (mod 7).\nThis is false because 4 ≡ 11 (mod 7).\nAlso, step 6 is labeled -1 even though replacing a congruent invertible residue by 5 before taking its inverse modulo 7 is valid here.\nQuarantine this source trajectory. Do not modify source labels."
+    },
+    {
+      "record_number": 6,
+      "id": "prm800k_49c01b85ec0a73b931e03e98389422a769731b35e38bfd43475931d019c96abf",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Translation faithfully preserves the source expression and the negatively rated parenthesization error. Do not repair the source reasoning."
+    },
+    {
+      "record_number": 7,
+      "id": "prm800k_4e989b97a66e731c4b285e8002b2bf513f227130b8a2def401e00cb7c7476f66",
+      "split": "train",
+      "decision": "reject",
+      "reviewed_on": "2026-10-05",
+      "notes": "Source-annotation conflict.\nStep 1 is labeled +1 but says PR is the hypotenuse. Since angle Q = angle R in a right triangle, P is the right angle and QR is the hypotenuse; PR is a leg.\nSeveral subsequent positively rated steps depend on this incorrect assumption.\nQuarantine rather than relabeling or repairing the reasoning."
+    },
+    {
+      "record_number": 8,
+      "id": "prm800k_82eb362fa28c484bfa5c1f85310cfdf4ac423509a064af7f5344563b642b198a",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Neutral and positive annotations are preserved, as are all factorial expressions and the final probability."
+    },
+    {
+      "record_number": 9,
+      "id": "prm800k_8b97716c7c0cb78c23b85ccedfb80f788a5e24dd0740b9fcd2e1c132ffba3c50",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. The incorrect probability calculation is confined to the negatively rated step and should remain unchanged."
+    },
+    {
+      "record_number": 10,
+      "id": "prm800k_8cb2c0c49a01d0a6463b4e81ee75ad4b7b3df329b7986a3f834792fc7fcebdce",
+      "split": "train",
+      "decision": "reject",
+      "reviewed_on": "2026-10-05",
+      "notes": "Source-annotation conflict.\nStep 1 is labeled +1 but literally claims that a^3+b^3+c^3 itself can be written as a product involving a+b+c, while the displayed identity is for:\na^3+b^3+c^3-3abc.\nThe following step uses the identity correctly, but the positively supervised wording in step 1 is mathematically false as written.\nQuarantine this record rather than silently rewriting the source supervision."
+    },
+    {
+      "record_number": 11,
+      "id": "prm800k_9685439a263aeedd0f0b663e5d18afa1918f01b7525f701a8a427ca2b6adaa5c",
+      "split": "train",
+      "decision": "reject",
+      "reviewed_on": "2026-10-05",
+      "notes": "Source-annotation conflict.\nStep 6 is labeled -1, but its enumeration is correct: the six positive triples summing to five are\n(1,1,3), (1,2,2), (1,3,1), (2,1,2), (2,2,1), and (3,1,1).\nThe category-size limits do not invalidate any of these cases.\nTherefore the source negative annotation conflicts with the mathematical content.\nQuarantine without changing the label."
+    },
+    {
+      "record_number": 12,
+      "id": "prm800k_c0aade5df58b4fed766b724ce486622e2c053bd9f9b884b009824e4d58c06164",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful and clear translation. Factor list, sum, and answer are preserved."
+    },
+    {
+      "record_number": 13,
+      "id": "prm800k_c2a81b58e37677c3e545b2e1711bb9ffe27e32f0d6830b60ad84a1f11000f917",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "The Arabic correctly interprets the obvious English typo \"divisible so 3\" as \"divisible by 3\". This is a harmless grammatical/source-typo normalization, not a change to the mathematical reasoning. Everything else is preserved."
+    },
+    {
+      "record_number": 14,
+      "id": "prm800k_e933d97810b93a1d340f6a23563c175b0f28f35aea376a357757f7e3bfd29551",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Equations, quadratic formula, rounding context, and final answer are preserved."
+    },
+    {
+      "record_number": 15,
+      "id": "prm800k_f2fd20c7dcbfb3b83f0fae8486673711e625d98c325914bf708150c84dba1c4d",
+      "split": "train",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Substitution, exponent evaluation, arithmetic, and final answer are preserved."
+    },
+    {
+      "record_number": 16,
+      "id": "prm800k_fa2bfe1ceb653884948a660a3afb5989143816acc2610e7f3473a00dd00c12b6",
+      "split": "train",
+      "decision": "reject",
+      "reviewed_on": "2026-10-05",
+      "notes": "Source-annotation conflict.\nStep 1 is labeled +1 but describes the divisibility-by-11 rule using \"odd digits\" and \"even digits\" rather than digits in odd/even positions. Literally, that rule is false.\nThe Arabic translation faithfully preserves the source wording, so this is not a translation problem.\nQuarantine rather than silently correcting the source statement."
+    },
+    {
+      "record_number": 17,
+      "id": "prm800k_0acf6f8ebcd9e44c5af49e7b6c1e4984c43013f05cb570ae8c2ea6b54f4689ae",
+      "split": "dev",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Prime factors and final count are preserved."
+    },
+    {
+      "record_number": 18,
+      "id": "prm800k_230246f131d25278dc57e7e728e2906f56ee4864adcbd5da0362116576059596",
+      "split": "dev",
+      "decision": "reject",
+      "reviewed_on": "2026-10-05",
+      "notes": "Source-annotation conflict.\nStep 5 is labeled +1 and states that, for a fixed hypotenuse, the base and height themselves are maximized when the right triangle is isosceles.\nWhat is maximized there is their product (and hence the area), not each leg individually.\nBecause the false wording is positively supervised, quarantine the trajectory rather than repairing it.\nThe neutral step 3 remains masked and does not by itself require rejection."
+    },
+    {
+      "record_number": 19,
+      "id": "prm800k_3b750299fb29e1501c130ca6f49f979fc45e8393180943c7d23f66acb6aef562",
+      "split": "dev",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. The erroneous y = 25 conclusion occurs in the negatively rated step and is correctly preserved."
+    },
+    {
+      "record_number": 20,
+      "id": "prm800k_a9ed975561984dff3bd9451fef8bbaff3a36cb30144bb47512d32e7216caa489",
+      "split": "dev",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. The incorrect binary expansion/arithmetic is contained in the negatively rated step and remains unchanged."
+    },
+    {
+      "record_number": 21,
+      "id": "prm800k_b1fe0ed874975c53b348eda00f810cd5ee7ba015b660a3442f84308cb271a400",
+      "split": "dev",
+      "decision": "revise",
+      "reviewed_on": "2026-10-05",
+      "notes": "The Arabic translation still contains source annotation artifacts:\n[* 1]\n[* 2]\n...\n[* 9]\n\nCorrection:\nRemove only the literal markers [* 1] through [* 9] from the Arabic translated text.\n\nDo not:\n- change any mathematical text,\n- fix the incorrect reasoning,\n- merge or split the annotated step,\n- change formulas,\n- change the -1 label,\n- change source provenance.\n\nThe entire reasoning should remain one negatively rated annotated step, just without the annotation-marker artifacts."
+    },
+    {
+      "record_number": 22,
+      "id": "prm800k_b52835eeb0e3595db733fb6ec6e9f669bbb120eeade7cb47da213b0e092afa32",
+      "split": "dev",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Algebra, factorization, roots, and final answer are preserved."
+    },
+    {
+      "record_number": 23,
+      "id": "prm800k_c4299d8dcdc69ce7a6f1100fe13ed987108188d0e805c6dea4d8f71466bbf592",
+      "split": "dev",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Base conversions, equations, neutral step, and intentionally incorrect final constraint reasoning are preserved."
+    },
+    {
+      "record_number": 24,
+      "id": "prm800k_d8a8db0dbbe65ab87e50352577d2ee089a29296d267ebdb9ff0cdcfa7dfdd513",
+      "split": "dev",
+      "decision": "accept",
+      "reviewed_on": "2026-10-05",
+      "notes": "Faithful translation. Completing-the-square derivation, ellipse condition, and final answer are preserved."
+    }
+  ]
+}
