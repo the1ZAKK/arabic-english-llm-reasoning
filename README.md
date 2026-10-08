@@ -1,5 +1,11 @@
 # Arabic-English and Moroccan Darija Mathematical Reasoning in LLMs
 
+## Reproduce the offline checks
+
+Start with [the reproducibility guide](docs/REPRODUCIBILITY.md). With Python 3.11, run `python scripts/check_reproducibility.py` to check ingestion, translation review, exports and quarantine using temporary fixtures without API keys or a GPU. Benchmark and training reproduction require their documented environments and inputs.
+
+
+
 This repository contains experiments investigating language-associated differences in mathematical reasoning and process-reward evaluation across English, Modern Standard Arabic (MSA), and Moroccan Darija.
 
 The project studies whether mathematically equivalent problems receive comparable reasoning performance across languages, how these differences vary across model families and model capabilities, and whether process reward models (PRMs) evaluate Arabic reasoning as reliably as English reasoning.
@@ -299,3 +305,4 @@ data/
 model_utils/
 vllm_add_dummy_model/
 ```
+

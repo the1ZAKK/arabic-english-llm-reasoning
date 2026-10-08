@@ -50,3 +50,11 @@ research/prm_arabic_english/data/reviewed_corpora/
 
 # Temporary reviewed-data QLoRA smoke checkpoints (reports are versioned separately)
 research/prm_arabic_english/checkpoints/reviewed_qlora_smoke*/
+
+
+# Local credentials and workstation files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
