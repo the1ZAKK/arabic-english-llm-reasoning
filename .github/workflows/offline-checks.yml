@@ -1,0 +1,28 @@
+name: Offline research checks
+
+on:
+  push:
+    paths:
+      - "research/prm_arabic_english/**"
+      - "scripts/check_reproducibility.py"
+      - ".github/workflows/offline-checks.yml"
+  pull_request:
+    paths:
+      - "research/prm_arabic_english/**"
+      - "scripts/check_reproducibility.py"
+      - ".github/workflows/offline-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+      - run: python scripts/check_reproducibility.py
+
