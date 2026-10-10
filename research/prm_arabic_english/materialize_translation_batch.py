@@ -12,6 +12,8 @@ ASSETS = Path(__file__).resolve().parent / "translation_batches/prm800k_qc12"
 PROTECTED = re.compile(r"\$\$.*?\$\$|\$(?:\\.|[^$])*\$|\\\[.*?\\\]|\[\*\s*\{.*?\}\s*\]", re.S)
 TOKEN = re.compile(r"<M(\d+)>")
 NUMBER = re.compile(r"(?<!\d)\d+(?:\.\d+)?")
+NONLING_LITERAL = re.compile(r"\\[A-Za-z]+(?:\{[^{}]*\}){1,4}|\[\*\s*\d+\s*\]")
+NATURAL_LATIN = re.compile(r"\b[A-Za-z]{2,}\b")
 
 
 def approved_translation_source(source, record_id, step_number):
