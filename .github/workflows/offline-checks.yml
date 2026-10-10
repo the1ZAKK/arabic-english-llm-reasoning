@@ -84,6 +84,8 @@ jobs:
           } finally {
             Remove-Item -LiteralPath $badHashLauncher -Force -ErrorAction SilentlyContinue
           }
+          # The deliberate negative test returned 1; all assertions above passed.
+          exit 0
       - name: Install and execute a native Windows scheduled task in offline mode
         if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
         shell: pwsh
