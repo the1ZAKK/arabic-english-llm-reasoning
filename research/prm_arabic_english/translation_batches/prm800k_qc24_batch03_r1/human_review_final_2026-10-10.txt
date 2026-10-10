@@ -1,0 +1,14 @@
+Batch03 r1 final human-QC authorization
+Date: 2026-10-10
+Reviewer: Zakaria Brim
+
+Reviewer instruction in the project chat:
+"Finish Batch03 human QC and Run the new full-shard PRM800K sampling audit"
+
+Scope of finalization:
+- Revised record 21 only; all other 23 decisions remain unchanged from the 2026-10-05 review.
+- The r1 revision removes only the literal [* 1] through [* 9] annotation markers from Arabic step 2.
+- Mathematical content, protected spans, source ratings, labels, masks, source ID, problem split and step boundaries remain unchanged.
+- AI assistance checked the bilingual revision and preservation evidence; this file records the human reviewer's explicit authorization to finalize the pending revised record.
+
+Final decision for record 21: ACCEPT.
