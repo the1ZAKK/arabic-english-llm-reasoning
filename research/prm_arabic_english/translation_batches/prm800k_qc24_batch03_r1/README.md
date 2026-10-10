@@ -1,4 +1,4 @@
-# QC24 Batch03 r1: only record 21 awaits final acceptance
+# QC24 Batch03 r1: final human QC complete
 
 Zakaria Brim reviewed the original 24-record queue on 2026-10-05: **17 ACCEPT,
 six REJECT/source-annotation conflicts and one REVISE**. Original supplied text
@@ -36,24 +36,28 @@ Revised complete 24-record queue:
 Payload:
 `d3c3ea2a3c3cf5366bb7eae798ecb3faebd33e70e31167fbd7897eb9f4ed18b5`.
 
-`human_qc_r1_pending.json` binds the revised queue. It retains the original 17
-acceptances and six rejections for unchanged records, with the original decision
-hash and a verified unchanged-row list. Record 21 is pending with no final review
-date, and `human_review=false` until its final human decision. Only record 21 is
-shown on the new review page. No acceptance was carried onto the edited text.
+`human_qc_r1_final.json` now binds the revised queue and records final human
+attestation by Zakaria Brim on 2026-10-10. It retains the original 17 acceptances
+and six rejections for unchanged records and changes only revised record 21 from
+pending to ACCEPT. The final Batch03 result is therefore **18 ACCEPT and six
+REJECT/source quarantines**, with no pending or revise decisions. The human
+authorization is preserved in `human_review_final_2026-10-10.txt`; AI assistance
+is explicitly documented rather than presented as independent human review.
 
-Both actual export gate checks refused: the original decisions contain REVISE;
-the revised decisions lack final human attestation. No Batch03 training export
-directory was created. The reviewed corpus v1 remains unchanged at 32 records;
-regeneration under the expanded quarantine catalog matched its original records,
-registry and Arabic output hashes. Its four-quarantine snapshot remains historical.
+The earlier blocked export attempts remain useful negative gate tests. No Batch03
+training export is committed in this folder; export should be regenerated from
+the exact revised queue and `human_qc_r1_final.json` before a future corpus merge.
+The reviewed corpus v1 remains historically unchanged at 32 records until those
+accepted Batch03 records are exported and frozen into a new corpus version.
 
 ## Versioned evidence
 
 - `source_lock.json`, `LICENSE.prm800k`: exact copies from the original batch.
 - `translations.json`: versioned payload, changed only at record 21 step 2 plus revision metadata.
 - `requested_changes.json`: nine literal removals, source/step hashes and human instruction evidence.
-- `human_qc_r1_pending.json`: 17 accept, six reject, record 21 pending; export blocked.
+- `human_qc_r1_pending.json`: preserved pre-final state.
+- `human_review_final_2026-10-10.txt`: explicit final reviewer authorization.
+- `human_qc_r1_final.json`: 18 accept, six reject, full final human attestation.
 - `revision_precheck.json`: marker-only comparison, preserved historical hashes and quarantine amendment.
 - `translation_report.json`: materialized queue checks, one authorized comparison-step normalization.
 - `revision_validation.json`: actual queue/HTML checks, export refusal and approved-corpus regeneration.
@@ -71,8 +75,10 @@ Run from the repository root and use a fresh output path:
 .venv\Scripts\python.exe research\prm_arabic_english\render_translation_review.py --input research/prm_arabic_english/data/prm800k_staging_5000/translation_batch_qc24_batch03/arabic_draft_r1_replay/review_queue.jsonl --output research/prm_arabic_english/data/prm800k_staging_5000/translation_batch_qc24_batch03/record21_r1_replay.html --batch-id QC24-Batch03-r1 --record-number 21
 ```
 
-After the human's final decision on revised record 21, preserve that evidence and
-create a separately versioned final decision file bound to the same queue hash.
-Rerun the full preservation checks before export. If further Arabic changes are
-requested, create another payload/queue revision and review its new hash.
-All generated data stays local and ignored; no training or pilot rerun occurred.
+The final decision on revised record 21 is now preserved in the separately
+versioned final decision file bound to the same queue hash. Before adding Batch03
+to an approved corpus version, reconstruct the exact reviewed queue, rerun the
+full preservation/export checks, and freeze only the 18 accepted records. If any
+future Arabic text changes are requested, create another payload/queue revision
+and review its new hash. No model training or pilot rerun occurred in this QC
+finalization.
