@@ -23,6 +23,80 @@ EXTRA_LITERAL = re.compile(
     r"|\[\*\s*\d+\s*\]"             # literal source annotation markers
 )
 ARABIC = re.compile(r"[\u0600-\u06ff]")
+GENERATED_NUMBER = re.compile(r"(?<![\\w])[-+]?[0-9٠-٩]+(?:[.,][0-9٠-٩]+)?")
+
+
+_ONES = {
+    0: "صفر", 1: "واحد", 2: "اثنان", 3: "ثلاثة", 4: "أربعة",
+    5: "خمسة", 6: "ستة", 7: "سبعة", 8: "ثمانية", 9: "تسعة",
+    10: "عشرة", 11: "أحد عشر", 12: "اثنا عشر", 13: "ثلاثة عشر",
+    14: "أربعة عشر", 15: "خمسة عشر", 16: "ستة عشر",
+    17: "سبعة عشر", 18: "ثمانية عشر", 19: "تسعة عشر",
+}
+_TENS = {
+    20: "عشرون", 30: "ثلاثون", 40: "أربعون", 50: "خمسون",
+    60: "ستون", 70: "سبعون", 80: "ثمانون", 90: "تسعون",
+}
+_HUNDREDS = {
+    100: "مئة", 200: "مئتان", 300: "ثلاثمئة", 400: "أربعمئة",
+    500: "خمسمئة", 600: "ستمئة", 700: "سبعمئة", 800: "ثمانمئة",
+    900: "تسعمئة",
+}
+_ARABIC_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩", "0123456789")
+
+
+def _spell_integer_ar(value):
+    """Stable MSA cardinal wording for MT-generated digits; QC may improve inflection."""
+    if value < 0:
+        return "سالب " + _spell_integer_ar(-value)
+    if value < 20:
+        return _ONES[value]
+    if value < 100:
+        tens, ones = divmod(value, 10)
+        return _TENS[tens * 10] if not ones else _ONES[ones] + " و" + _TENS[tens * 10]
+    if value < 1000:
+        hundreds, rest = divmod(value, 100)
+        head = _HUNDREDS[hundreds * 100]
+        return head if not rest else head + " و" + _spell_integer_ar(rest)
+    for scale, singular, dual, plural in (
+        (1_000_000_000, "مليار", "ملياران", "مليارات"),
+        (1_000_000, "مليون", "مليونان", "ملايين"),
+        (1_000, "ألف", "ألفان", "آلاف"),
+    ):
+        if value >= scale:
+            quotient, rest = divmod(value, scale)
+            if quotient == 1:
+                head = singular
+            elif quotient == 2:
+                head = dual
+            elif 3 <= quotient <= 10:
+                head = _spell_integer_ar(quotient) + " " + plural
+            else:
+                head = _spell_integer_ar(quotient) + " " + singular
+            return head if not rest else head + " و" + _spell_integer_ar(rest)
+    raise ValueError("Generated number is too large to spell")
+
+
+def _spell_generated_number(match):
+    raw = match.group(0).translate(_ARABIC_DIGITS)
+    sign = ""
+    if raw.startswith("+"):
+        raw = raw[1:]
+    elif raw.startswith("-"):
+        sign = "سالب "
+        raw = raw[1:]
+    separator = "." if "." in raw else "," if "," in raw else None
+    if separator:
+        whole, fractional = raw.split(separator, 1)
+        left = _spell_integer_ar(int(whole or "0"))
+        right = " ".join(_ONES[int(d)] for d in fractional)
+        return sign + left + " فاصلة " + right
+    return sign + _spell_integer_ar(int(raw))
+
+
+def spell_mt_generated_digits(text):
+    """Do not let MT change word-form source numbers into digit-form output."""
+    return GENERATED_NUMBER.sub(_spell_generated_number, text)
 
 
 def _next_span(text, start):
@@ -123,9 +197,10 @@ class MarianTranslator:
                     max_new_tokens=512,
                     early_stopping=True,
                 )
-            translated.append(
-                self.tokenizer.batch_decode(generated, skip_special_tokens=True)[0]
-            )
+            decoded = self.tokenizer.batch_decode(
+                generated, skip_special_tokens=True
+            )[0]
+            translated.append(spell_mt_generated_digits(decoded))
         return leading + " ".join(translated) + trailing
 
 
@@ -153,8 +228,13 @@ def run(args):
     records = []
     for split, index, row in read_queues(queue_dir):
         source = row["source_record"]
-        problem = translate_preserving(source["problem"], translator)
-        steps = [translate_preserving(step, translator) for step in source["steps"]]
+        try:
+            problem = translate_preserving(source["problem"], translator)
+            steps = [translate_preserving(step, translator) for step in source["steps"]]
+        except ValueError as exc:
+            raise ValueError(
+                f"{split}/{index} {source['id']}: draft preservation failed: {exc}"
+            ) from exc
         records.append({
             "split": split,
             "index": index,
