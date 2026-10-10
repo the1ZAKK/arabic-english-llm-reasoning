@@ -2,8 +2,9 @@
 
 The output is a translations.json payload for materialize_translation_batch.py.
 Mathematical spans and bare numeric sequences are preserved exactly. Full-string
-translation with opaque sentinels is attempted first; any sentinel failure falls
-back to translating only natural-language chunks between protected spans.
+translation with opaque sentinels is attempted first in batches; sentinel failures
+fall back to batched translation of only natural-language chunks between protected
+spans.
 
 Automated translation never implies human QC or training eligibility.
 """
@@ -132,9 +133,6 @@ class MarianTranslator:
             results.extend(self.tokenizer.batch_decode(generated, skip_special_tokens=True))
         return results
 
-    def translate_one(self, text):
-        return self.translate_many([text])[0]
-
 
 def preserve_space(original, translated):
     if not original:
@@ -144,31 +142,75 @@ def preserve_space(original, translated):
     return lead + translated.strip() + trail
 
 
-def fallback_translate(source, translator):
-    pieces = []
-    for kind, value, index in split_protected(source):
-        if kind == "math":
-            pieces.append(f"<M{index}>")
-        elif kind == "number":
-            pieces.append(value)
-        else:
-            core = value.strip()
-            pieces.append(value if not core else preserve_space(value, translator.translate_one(core)))
-    return "".join(pieces)
-
-
-def translate_source(source, translator):
-    protected, math, numbers = protect_text(source)
-    candidate = translator.translate_one(protected)
+def validate_full_restore(source, candidate, math, numbers):
     restored = restore_sentinels(candidate, math, numbers)
-    if restored is not None:
-        expected_math = [f"<M{i}>" for i in range(len(math))]
-        if re.findall(r"<M\d+>", restored) == expected_math:
-            expected_numbers = NUMBER.findall(PROTECTED.sub("", source))
-            actual_numbers = NUMBER.findall(re.sub(r"<M\d+>", "", restored))
-            if expected_numbers == actual_numbers:
-                return restored, "full"
-    return fallback_translate(source, translator), "fallback"
+    if restored is None:
+        return None
+    expected_math = [f"<M{i}>" for i in range(len(math))]
+    if re.findall(r"<M\d+>", restored) != expected_math:
+        return None
+    expected_numbers = NUMBER.findall(PROTECTED.sub("", source))
+    actual_numbers = NUMBER.findall(re.sub(r"<M\d+>", "", restored))
+    return restored if expected_numbers == actual_numbers else None
+
+
+def fallback_translate_many(sources, translator):
+    templates = []
+    text_jobs = []
+    for source in sources:
+        template = []
+        for kind, value, index in split_protected(source):
+            if kind == "math":
+                template.append(("literal", f"<M{index}>"))
+            elif kind == "number":
+                template.append(("literal", value))
+            else:
+                core = value.strip()
+                if not core:
+                    template.append(("literal", value))
+                else:
+                    job_index = len(text_jobs)
+                    text_jobs.append((value, core))
+                    template.append(("job", job_index))
+        templates.append(template)
+
+    translated_cores = translator.translate_many([core for _, core in text_jobs]) if text_jobs else []
+    results = []
+    for template in templates:
+        parts = []
+        for kind, value in template:
+            if kind == "literal":
+                parts.append(value)
+            else:
+                original, _ = text_jobs[value]
+                parts.append(preserve_space(original, translated_cores[value]))
+        results.append("".join(parts))
+    return results
+
+
+def translate_many_sources(sources, translator):
+    protected = [protect_text(source) for source in sources]
+    candidates = translator.translate_many([item[0] for item in protected])
+    results = [None] * len(sources)
+    modes = [None] * len(sources)
+    fallback_indices = []
+
+    for i, (source, candidate, item) in enumerate(zip(sources, candidates, protected)):
+        _, math, numbers = item
+        restored = validate_full_restore(source, candidate, math, numbers)
+        if restored is None:
+            fallback_indices.append(i)
+        else:
+            results[i] = restored
+            modes[i] = "full"
+
+    if fallback_indices:
+        fallback = fallback_translate_many([sources[i] for i in fallback_indices], translator)
+        for i, translated in zip(fallback_indices, fallback):
+            results[i] = translated
+            modes[i] = "fallback"
+
+    return results, modes
 
 
 def load_queue(queue_dir):
@@ -200,7 +242,8 @@ def main():
         "method": (
             "Direct English-to-Arabic MarianMT draft. Mathematical spans are represented "
             "as <M#> placeholders for exact restoration; bare numeric sequences are "
-            "preserved exactly. Sentinel failures use protected-chunk fallback translation."
+            "preserved exactly. Translation is batched; sentinel failures use a batched "
+            "protected-chunk fallback."
         ),
         "generation_settings": {
             "do_sample": False,
@@ -217,24 +260,22 @@ def main():
         "records": [],
     }
 
-    full_count = 0
-    fallback_count = 0
+    sources = []
+    slices = []
     for split, index, row in rows:
         source = row["source_record"]
-        problem, mode = translate_source(source["problem"], translator)
-        full_count += mode == "full"
-        fallback_count += mode == "fallback"
-        steps = []
-        for step in source["steps"]:
-            translated, mode = translate_source(step, translator)
-            full_count += mode == "full"
-            fallback_count += mode == "fallback"
-            steps.append(translated)
+        start = len(sources)
+        sources.append(source["problem"])
+        sources.extend(source["steps"])
+        slices.append((split, index, start, len(source["steps"])))
+
+    translated, modes = translate_many_sources(sources, translator)
+    for split, index, start, step_count in slices:
         payload["records"].append({
             "split": split,
             "index": index,
-            "problem": problem,
-            "steps": steps,
+            "problem": translated[start],
+            "steps": translated[start + 1:start + 1 + step_count],
             "review_notes": (
                 "Automated MarianMT draft. Check mathematical terminology, Arabic fluency, "
                 "and faithful preservation of intentionally incorrect reasoning."
@@ -242,8 +283,9 @@ def main():
         })
 
     payload["translation_diagnostics"] = {
-        "strings_full_sentinel_path": full_count,
-        "strings_fallback_chunk_path": fallback_count,
+        "strings_total": len(sources),
+        "strings_full_sentinel_path": sum(mode == "full" for mode in modes),
+        "strings_fallback_chunk_path": sum(mode == "fallback" for mode in modes),
         "records": len(payload["records"]),
         "human_qc_required": True,
     }
