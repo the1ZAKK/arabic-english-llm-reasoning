@@ -104,9 +104,9 @@ def translate_string(source, model, base_url, key, retries):
     if (
         len(lines) >= 3
         and all(line.strip().startswith("|") and line.strip().endswith("|") for line in lines)
-        and not re.search(r"[A-Za-z\\u0600-\\u06ff]", source)
+        and not re.search(r"[A-Za-z\u0600-\u06ff]", source)
     ):
-        draft = "الجدول التالي:\\n" + source
+        draft = "الجدول التالي:\n" + source
         masked_table, table_numbers = mask(source)
         # The raw table has no masking tokens; the final materializer checks
         # the original numeric order and protected expressions directly.
