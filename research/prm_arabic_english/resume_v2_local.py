@@ -461,7 +461,7 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries):
                                     prose = client.translate(body).strip()
                                     if (body.rstrip().endswith(":") and
                                             ":" in prose and
-                                            not re.search(r"<[MPN]\\d+>", body)):
+                                            not re.search(r"<[MPN]\d+>", body)):
                                         prose = prose.split(":", 1)[0].rstrip() + ":"
                                     candidate = prose
                                     candidate += "\n\n" + equation_answer.group(1)
