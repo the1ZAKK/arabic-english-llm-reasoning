@@ -83,7 +83,14 @@ def main():
     args = p.parse_args()
     if not (6 <= args.start <= args.end <= 32):
         p.error("Batch number must be in 06–32")
-    key = os.environ.get("TRANSLATION_API_KEY", os.environ.get("OPENAI_API_KEY", ""))\n    from urllib.parse import urlsplit\n    endpoint = urlsplit(args.base_url)\n    local = endpoint.scheme == "http" and endpoint.hostname in ("localhost", "127.0.0.1", "::1")\n    if not key and not local:\n        p.error("Unauthenticated inference is allowed only for localhost Ollama; remote endpoints require a secret")\n    if not local and endpoint.scheme != "https":\n        p.error("Remote inference endpoints must use HTTPS")
+    key = os.environ.get("TRANSLATION_API_KEY", os.environ.get("OPENAI_API_KEY", ""))
+    from urllib.parse import urlsplit
+    endpoint = urlsplit(args.base_url)
+    local = endpoint.scheme == "http" and endpoint.hostname in ("localhost", "127.0.0.1", "::1")
+    if not key and not local:
+        p.error("Unauthenticated inference is allowed only for localhost Ollama; remote endpoints require a secret")
+    if not local and endpoint.scheme != "https":
+        p.error("Remote inference endpoints must use HTTPS")
     args.output_root.mkdir(parents=True, exist_ok=True)
     for number in range(args.start, args.end + 1):
         src = args.staging_root / f"prm800k_v2_batch{number:02d}"
