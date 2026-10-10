@@ -85,6 +85,7 @@ def _load_source(source_dir):
 
 def _load_excluded(source_locks):
     excluded = set(load_quarantined_ids())
+    excluded_problems = set()
     lock_hashes = {}
     for path in source_locks:
         path = Path(path)
@@ -98,14 +99,19 @@ def _load_excluded(source_locks):
             if not isinstance(record_id, str) or not record_id:
                 raise ValueError(f"Invalid source lock record ID: {path}")
             excluded.add(record_id)
+            problem_id = row.get("problem_id")
+            if not isinstance(problem_id, str) or len(problem_id) != 64:
+                raise ValueError(f"Invalid source lock problem ID: {path}")
+            excluded_problems.add(problem_id)
         lock_hashes[str(path)] = hashlib.sha256(raw).hexdigest()
-    return excluded, lock_hashes
+    return excluded, excluded_problems, lock_hashes
 
 
-def _pair_candidates(records, excluded):
+def _pair_candidates(records, excluded, excluded_problems=None):
     groups = defaultdict(lambda: {"correct": [], "incorrect": []})
+    excluded_problems = set(excluded_problems or ())
     for record in records:
-        if record["id"] in excluded:
+        if record["id"] in excluded or record["problem_id"] in excluded_problems:
             continue
         groups[record["problem_id"]][record["variant"]].append(record)
 
@@ -184,11 +190,11 @@ def _update_counts(counts, pair):
             counts["error"][eb] += 1
 
 
-def choose_pairs(records, problem_pairs, seed, split, excluded=None):
+def choose_pairs(records, problem_pairs, seed, split, excluded=None, excluded_problems=None):
     if problem_pairs < 1:
         raise ValueError("problem_pairs must be positive")
     excluded = set(excluded or ())
-    candidates = _pair_candidates(records, excluded)
+    candidates = _pair_candidates(records, excluded, excluded_problems)
     if len(candidates) < problem_pairs:
         raise ValueError(
             f"{split}: need {problem_pairs} paired problems but only "
@@ -270,14 +276,14 @@ def _summary(rows):
 
 def run(args):
     source_manifest, source_manifest_path, splits = _load_source(args.source_dir)
-    excluded, lock_hashes = _load_excluded(args.exclude_source_lock)
+    excluded, excluded_problems, lock_hashes = _load_excluded(args.exclude_source_lock)
 
     selections = {}
     targets = {}
     achieved = {}
     for split, pair_count in (("train", args.train_problem_pairs), ("dev", args.dev_problem_pairs)):
         rows, target, counts = choose_pairs(
-            splits[split], pair_count, args.seed, split, excluded
+            splits[split], pair_count, args.seed, split, excluded, excluded_problems
         )
         selections[split] = rows
         targets[split] = target
@@ -325,7 +331,8 @@ def run(args):
             "SHA256 deterministic ties"
         ),
         "selection_claim": (
-            "balanced/diverse training-source design; not a representative sample of PRM800K"
+            "balanced/diverse training-source design; prior reviewed problem groups excluded; "
+            "not a representative sample of PRM800K"
         ),
         "config": {
             "seed": args.seed,
@@ -335,6 +342,7 @@ def run(args):
             "dev_records": 2 * args.dev_problem_pairs,
         },
         "excluded_record_ids": sorted(excluded),
+        "excluded_problem_ids": sorted(excluded_problems),
         "excluded_source_locks_sha256": lock_hashes,
         "targets": targets,
         "achieved": achieved,
