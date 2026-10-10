@@ -1,0 +1,30 @@
+name: ArabicPRM-T training readiness
+
+on:
+  push:
+    branches:
+      - research/production-subset-v2
+    paths:
+      - ".github/workflows/arabicprm-t-training-readiness.yml"
+      - "research/prm_arabic_english/arabicprm_t_training_data.py"
+      - "research/prm_arabic_english/test_arabicprm_t_training_data.py"
+      - "research/prm_arabic_english/train_arabicprm_t_v2.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: research/prm_arabic_english
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+      - name: Test human-QC and neutral-mask data gate
+        run: python -m unittest research.prm_arabic_english.test_arabicprm_t_training_data -v
+      - name: Compile production trainer
+        run: python -m py_compile research/prm_arabic_english/train_arabicprm_t_v2.py
