@@ -70,8 +70,10 @@ def translate_preserving(text, translate_plain):
     actual_tokens = [int(x) for x in re.findall(r"<M(\d+)>", result)]
     if actual_tokens != list(range(expected_math)):
         raise ValueError("Protected math token sequence changed")
-    if NUMBER.findall(text) != NUMBER.findall(result):
-        raise ValueError("Digit-form numeric sequence changed in draft")
+    source_without_math = PROTECTED.sub("", text)
+    result_without_math_tokens = re.sub(r"<M\\d+>", "", result)
+    if NUMBER.findall(source_without_math) != NUMBER.findall(result_without_math_tokens):
+        raise ValueError("Digit-form numeric sequence changed outside protected math")
     return result
 
 
