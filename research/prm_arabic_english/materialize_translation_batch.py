@@ -30,38 +30,9 @@ def approved_translation_source(source, record_id, step_number):
 def source_requires_arabic(source):
     """Return True only when source contains natural-language Latin text.
 
-    Purely symbolic/math rows (for example ``$x=3"""Freeze source identity and materialize an Arabic draft for human QC only."""
-import argparse
-import hashlib
-import json
-from pathlib import Path
-import re
-
-from prepare_translation_batch import canonical_hash
-from prm800k_ingest import ROOT, validate
-
-ASSETS = Path(__file__).resolve().parent / "translation_batches/prm800k_qc12"
-PROTECTED = re.compile(r"\$\$.*?\$\$|\$(?:\\.|[^$])*\$|\\\[.*?\\\]|\[\*\s*\{.*?\}\s*\]", re.S)
-TOKEN = re.compile(r"<M(\d+)>")
-NUMBER = re.compile(r"(?<!\d)\d+(?:\.\d+)?")
-
-
-def approved_translation_source(source, record_id, step_number):
-    """Comparison copy only: precise normalizations authorized by Zakaria Brim."""
-    if (record_id, step_number) == ('prm800k_0ba4fe8ff0234a6eea005975c1558c554fffee175d975988f13d1c4b4681319f', 7):
-        return source.replace('[* { id: "5" }]', '')
-    if (record_id, step_number) == ('prm800k_293983bdd9d7b466e13be6108bb778ad44e8718843414a8de9854b7142da34e8', 3):
-        return source.replace(r'$9x\equiv 8\pod{20}$', r'$9x\equiv 8\pmod{20}$')
-    if (record_id, step_number) == ('prm800k_b1fe0ed874975c53b348eda00f810cd5ee7ba015b660a3442f84308cb271a400', 2):
-        for marker_number in range(1, 10):
-            source = source.replace(f'[* {marker_number}]', '')
-        return source
-    return source
-
-
-` or ``x = y``) do not need
-    invented Arabic filler merely to satisfy an Arabic-character presence check.
-    The preservation gates still require exact math and numeric content.
+    Purely symbolic/math rows (for example a protected equation or x = y)
+    do not need invented Arabic filler merely to satisfy an Arabic-character
+    presence check. Preservation checks still enforce exact math and numbers.
     """
     stripped = PROTECTED.sub(" ", source)
     stripped = NONLING_LITERAL.sub(" ", stripped)
