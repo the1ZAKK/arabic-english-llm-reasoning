@@ -103,7 +103,7 @@ def translate_string(source, model, base_url, key, retries):
         try:
             draft = completion(masked, model, base_url, key)
             unmask_and_validate(source, draft, numbers)
-            return NUM_TOKEN.sub(lambda m: numbers[int(m.group(1))], draft)
+            return draft
         except Exception as error:
             last_error = error
             print(f"  failed validation attempt {attempt}/{retries}: {error}", flush=True)
@@ -168,7 +168,7 @@ def run_batch(number, staging, output, model, base_url, key, retries):
                     draft = translate_string(original, model, base_url, key, retries)
                     completed[key_id] = draft
                     atomic_json(checkpoint, {"provenance": provenance, "completed": completed})
-                translated.append(draft)
+                translated.append(NUM_TOKEN.sub(lambda m: numbers[int(m.group(1))], draft))
             drafts.append({"split": split, "index": index, "problem": translated[0],
                            "steps": translated[1:],
                            "review_notes": "AI draft; genuine human QC pending"})
