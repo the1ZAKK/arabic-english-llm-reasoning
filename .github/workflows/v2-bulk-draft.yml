@@ -1,0 +1,82 @@
+name: ArabicPRM-T v2 bulk draft generation (human QC required)
+on:
+  push:
+    branches:
+      - research/arabicprm-v2-production
+    paths:
+      - ".github/workflows/v2-bulk-draft.yml"
+      - "research/prm_arabic_english/bulk_draft_v2_translations.py"
+  workflow_dispatch:
+    inputs:
+      start_batch:
+        description: "First batch, 06 through 32"
+        required: true
+        default: "6"
+      end_batch:
+        description: "Last batch, 06 through 32 (run small ranges for reliability)"
+        required: true
+        default: "6"
+permissions:
+  contents: read
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+      - run: |
+          python -m py_compile research/prm_arabic_english/bulk_draft_v2_translations.py
+          python research/prm_arabic_english/bulk_draft_v2_translations.py --help
+  draft-and-validate:
+    if: github.event_name == 'workflow_dispatch'
+    needs: syntax-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      PYTHONPATH: research/prm_arabic_english
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ vars.ARABICPRM_TRANSLATION_MODEL || 'gpt-4.1' }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+      - name: Require configured translation credentials
+        run: |
+          test -n "$OPENAI_API_KEY" || { echo "OPENAI_API_KEY repository secret missing; nothing generated"; exit 1; }
+      - name: Deterministically stage Batch04–32
+        run: |
+          python research/prm_arabic_english/stage_v2_remaining_batches.py --output-dir frozen_staging
+      - name: Generate draft translations only
+        run: |
+          python research/prm_arabic_english/bulk_draft_v2_translations.py \
+            --staging-root frozen_staging --output-root translated_drafts \
+            --start "${{ inputs.start_batch }}" --end "${{ inputs.end_batch }}"
+      - name: Materialize and render review artifacts
+        run: |
+          for batch in translated_drafts/prm800k_v2_batch*; do
+            name="$(basename "$batch")"
+            mkdir -p "review_artifacts/$name"
+            python research/prm_arabic_english/materialize_translation_batch.py \
+              --queue-dir "$batch" --assets-dir "$batch" \
+              --output-dir "review_artifacts/$name/materialized"
+            python research/prm_arabic_english/render_translation_review.py \
+              --input "review_artifacts/$name/materialized/review_queue.jsonl" \
+              --output "review_artifacts/$name/review.html" \
+              --batch-id "$name"
+            python research/prm_arabic_english/export_reviewed_arabic.py \
+              --queue "review_artifacts/$name/materialized/review_queue.jsonl" \
+              --decisions "review_artifacts/$name/human_qc_pending.json" \
+              --output-dir "review_artifacts/$name/not_for_training" --make-template
+            test ! -e "review_artifacts/$name/not_for_training"
+          done
+      - name: Upload AI drafts and pending human review evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabicprm-v2-ai-drafts-pending-human-qc
+          path: |
+            translated_drafts/
+            review_artifacts/
+          if-no-files-found: error
