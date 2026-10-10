@@ -58,8 +58,32 @@ jobs:
         env:
           ARABICPRM_BOOTSTRAP_VERIFY_ONLY: "1"
         run: |
-          & cmd.exe /d /c research\prm_arabic_english\activate_v2_unattended_windows.cmd
-          if ($LASTEXITCODE -ne 0) { throw "Pinned bootstrap verification failed: $LASTEXITCODE" }
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = "$pwd/research/prm_arabic_english/activate_v2_unattended_windows.cmd"
+          $verified = @(& cmd.exe /d /c $launcher 2>&1)
+          $verifiedExit = $LASTEXITCODE
+          $verified | ForEach-Object { Write-Host $_ }
+          if ($verifiedExit -ne 0 -or -not ($verified -match 'BOOTSTRAP VERIFIED:')) {
+            throw "Pinned bootstrap verification did not succeed: $verifiedExit"
+          }
+          $badHashLauncher = Join-Path $env:TEMP ("ArabicPRM-bad-hash-" + [guid]::NewGuid().ToString('N') + '.cmd')
+          try {
+            $original = [IO.File]::ReadAllText($launcher)
+            $digest = [regex]::Match($original, '[0-9a-f]{64}').Value
+            if (-not $digest) { throw 'Missing pinned installer hash' }
+            $bad = $original.Replace($digest, ('0' * 64))
+            [IO.File]::WriteAllText($badHashLauncher, $bad, [Text.Encoding]::ASCII)
+            $rejected = @(& cmd.exe /d /c $badHashLauncher 2>&1)
+            $rejectedExit = $LASTEXITCODE
+            $rejected | ForEach-Object { Write-Host $_ }
+            if ($rejectedExit -eq 0 -or ($rejected -match 'BOOTSTRAP VERIFIED:') -or
+                -not ($rejected -match 'Installer hash verification failed')) {
+              throw "Bootstrap did not reject the incorrect hash with a failing exit"
+            }
+            Write-Host 'BOOTSTRAP NEGATIVE CHECK PASSED: incorrect hash rejected; nothing executed.'
+          } finally {
+            Remove-Item -LiteralPath $badHashLauncher -Force -ErrorAction SilentlyContinue
+          }
       - name: Install and execute a native Windows scheduled task in offline mode
         if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
         shell: pwsh
