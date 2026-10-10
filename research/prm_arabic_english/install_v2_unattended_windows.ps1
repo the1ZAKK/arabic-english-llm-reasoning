@@ -105,9 +105,8 @@ try {
     $checkScript = Join-Path $extracted "research\prm_arabic_english\unattended_v2.py"
     $manifestCopy = Join-Path $tempRoot "manifest.json"
     [IO.File]::WriteAllText($manifestCopy, ($manifest | ConvertTo-Json -Depth 5), [Text.UTF8Encoding]::new($false))
-    & $python -c "import importlib.util,sys,json; p=sys.argv[1]; s=importlib.util.spec_from_file_location('agent',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); files=json.load(open(sys.argv[2],encoding='utf-8'))['files']; assert len(files)==len(set(files)) and set(m.runtime_paths())==set(files)" $checkScript $manifestCopy
+    & $python -c "import importlib.util,sys,json; from pathlib import Path; p=sys.argv[1]; s=importlib.util.spec_from_file_location('agent',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); files=json.load(open(sys.argv[2],encoding='utf-8'))['files']; assert len(files)==len(set(files)) and set(m.runtime_paths())==set(files); m.install_runtime(m.GitRepository(sys.argv[3]),sys.argv[4],Path(sys.argv[5]))" $checkScript $manifestCopy $RepoRoot $PinnedCommit $runtimeRoot
     if ($LASTEXITCODE -ne 0) { throw "Runtime allowlist verification failed." }
-    if (-not (Test-Path -LiteralPath $runtimeDestination)) { Move-Item -LiteralPath $extracted -Destination $runtimeDestination }
 } finally {
     # Only our unique newly-created installer temporary directory is removed.
     Remove-Item -LiteralPath $tempRoot -Recurse -Force
@@ -129,8 +128,28 @@ if (Test-Path -LiteralPath $configPath) {
 }
 [IO.File]::WriteAllText($configPath, (($config | ConvertTo-Json -Depth 5) + "`n"), [Text.UTF8Encoding]::new($false))
 Assert-ResearchRepository
-& $python $worker --config $configPath --offline-check
-if ($LASTEXITCODE -ne 0) { throw "Immutable-runtime/frozen-source preflight failed. Existing checkpoints and sources were preserved." }
+$running = @(Get-CimInstance Win32_Process | Where-Object {
+    $_.Name -match '^python' -and $_.CommandLine -match '(bulk_draft_v2_translations|resume_v2_local)\.py'
+})
+if ($running.Count -gt 0 -and -not $TestOnly) {
+    Write-Host "An earlier translator is active. The supervisor will wait and run preflight after it finishes."
+} else {
+    $preflightStarted = (Get-Date).ToUniversalTime()
+    & $python $worker --config $configPath --offline-check
+    if ($LASTEXITCODE -ne 0) {
+        $preflightPath = Join-Path $RepoRoot "translated_drafts\preflight_latest.json"
+        if (-not (Test-Path -LiteralPath $preflightPath)) { throw "Offline verification failed; no inference started." }
+        if ((Get-Item -LiteralPath $preflightPath).LastWriteTimeUtc -lt $preflightStarted) {
+            throw "Offline verification failed before writing a fresh preflight report; no inference started."
+        }
+        $preflight = Get-Content -LiteralPath $preflightPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        $safeBatches = @($preflight.batches | Where-Object { $_.status -eq 'source_audited_only' })
+        if ($TestOnly -or $preflight.run_error -or $preflight.batches.Count -ne 24 -or $safeBatches.Count -eq 0) {
+            throw "Global immutable-runtime/frozen-source preflight failed. Existing files were preserved."
+        }
+        Write-Host "Batch-specific preflight failures were recorded; independent verified batches will continue."
+    }
+}
 
 $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
 $principal = New-ScheduledTaskPrincipal -UserId $identity.User.Value -LogonType Interactive -RunLevel Limited
