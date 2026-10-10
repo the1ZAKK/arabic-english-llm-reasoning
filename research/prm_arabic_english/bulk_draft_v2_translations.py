@@ -168,6 +168,8 @@ def run_batch(number, staging, output, model, base_url, key, retries):
                     draft = translate_string(original, model, base_url, key, retries)
                     completed[key_id] = draft
                     atomic_json(checkpoint, {"provenance": provenance, "completed": completed})
+                _, numbers = mask(original)
+                unmask_and_validate(original, draft, numbers)
                 translated.append(NUM_TOKEN.sub(lambda m: numbers[int(m.group(1))], draft))
             drafts.append({"split": split, "index": index, "problem": translated[0],
                            "steps": translated[1:],
