@@ -1,0 +1,68 @@
+name: ArabicPRM-T v2 Batch02 translation checks
+
+on:
+  push:
+    branches:
+      - research/arabicprm-v2-production
+    paths:
+      - ".github/workflows/v2-batch02-translation-qc.yml"
+      - "research/prm_arabic_english/materialize_translation_batch.py"
+      - "research/prm_arabic_english/render_translation_review.py"
+      - "research/prm_arabic_english/export_reviewed_arabic.py"
+      - "research/prm_arabic_english/translation_batches/prm800k_v2_batch02/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  review-artifact:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: research/prm_arabic_english
+      BATCH: research/prm_arabic_english/translation_batches/prm800k_v2_batch02
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+      - name: Materialize protected Arabic draft
+        run: |
+          python research/prm_arabic_english/materialize_translation_batch.py \
+            --queue-dir "$BATCH" \
+            --assets-dir "$BATCH" \
+            --output-dir batch02_review
+      - name: Render bilingual human review page
+        run: |
+          python research/prm_arabic_english/render_translation_review.py \
+            --input batch02_review/review_queue.jsonl \
+            --output batch02_review.html \
+            --batch-id ArabicPRM-T-v2-Batch02
+      - name: Create pending human-QC template
+        run: |
+          python research/prm_arabic_english/export_reviewed_arabic.py \
+            --queue batch02_review/review_queue.jsonl \
+            --decisions human_qc_pending.json \
+            --output-dir unused_export_path \
+            --make-template
+      - name: Verify the QC gate still blocks export
+        run: |
+          set +e
+          python research/prm_arabic_english/export_reviewed_arabic.py \
+            --queue batch02_review/review_queue.jsonl \
+            --decisions human_qc_pending.json \
+            --output-dir must_not_exist
+          status=$?
+          set -e
+          test "$status" -ne 0
+          test ! -e must_not_exist
+      - name: Upload exact review evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabicprm-v2-batch02-human-review
+          path: |
+            batch02_review/review_queue.jsonl
+            batch02_review/report.json
+            batch02_review.html
+            human_qc_pending.json
+          if-no-files-found: error
