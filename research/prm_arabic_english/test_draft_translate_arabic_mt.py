@@ -45,6 +45,10 @@ class DraftTranslationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "no Arabic"):
             translate_preserving("Plain English 12", lambda text: " English ")
 
+    def test_symbolic_only_source_does_not_require_arabic_filler(self):
+        self.assertEqual(translate_preserving("$x=3$", lambda text: text), "<M0>")
+        self.assertEqual(translate_preserving("x = y", lambda text: text), "x = y")
+
 
 if __name__ == "__main__":
     unittest.main()
