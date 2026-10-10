@@ -63,7 +63,7 @@ def generate(destination, existing=ROOT):
             start = cursors[key]
             subset = pools[key][start:start + count]
             assert len(subset) == count, f"Insufficient frozen selection for {key}, batch {batch}"
-            picked[key].extend(subset)
+            picked[key[0]].extend(subset)
             cursors[key] += count
 
         batch_dir = destination / f"prm800k_v2_batch{batch:02d}"
