@@ -24,7 +24,7 @@ EXTRA_LITERAL = re.compile(
 )
 ARABIC = re.compile(r"[\u0600-\u06ff]")
 GENERATED_NUMBER = re.compile(r"(?<![0-9٠-٩])[-+]?[0-9٠-٩]+(?:[.,][0-9٠-٩]+)?")
-LATIN_WORD = re.compile(r"\\b[A-Za-z]+\\b")
+LATIN_WORD = re.compile(r"\b[A-Za-z]+\b")
 SHORT_FALLBACK_TERMS = {
     "answer": "الإجابة",
     "infinity": "اللانهاية",
