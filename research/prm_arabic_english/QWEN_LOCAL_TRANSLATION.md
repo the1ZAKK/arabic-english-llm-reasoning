@@ -4,6 +4,11 @@ This creates **AI Arabic drafts** only. Genuine bilingual human QC remains requi
 Source IDs, train/dev splits, labels, masks, and steps are frozen. Never export
 unreviewed records or run QLoRA using this output.
 
+For **Windows 11 with the installed `qwen3:4b` and an existing Batch09
+checkpoint**, use the [Windows Batch09-32 resume guide](WINDOWS_BATCH09_32.md).
+Its launcher safely reuses completed batches and automatically creates pending
+bilingual review artifacts. The older instructions below describe the Linux workflow.
+
 ## Hardware and cost
 
 Ollama runs an open-weight Qwen2.5 7B Instruct model locally. You need an
