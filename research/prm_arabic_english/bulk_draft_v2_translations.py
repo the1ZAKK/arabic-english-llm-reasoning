@@ -1,7 +1,6 @@
 """Generate AI Arabic *drafts* for frozen v2 batches; NEVER grant human QC.
 
-Uses the OpenAI Chat Completions API only when OPENAI_API_KEY is explicitly
-configured. Resume one output batch at a time. No training/export actions.
+Uses an OpenAI-compatible inference endpoint (OpenAI or local Ollama).\nLocal Ollama needs no OpenAI API credits. Never performs human QC/export/training.
 """
 import argparse
 import json
@@ -55,8 +54,7 @@ def translate(row, model, base_url, key, retries):
     for attempt in range(retries):
         try:
             r = Request(uri, data=json.dumps(request).encode("utf-8"),
-                        headers={"Authorization": "Bearer " + key,
-                                 "Content-Type": "application/json"},
+                        headers=({"Content-Type": "application/json"} |\n                                 ({"Authorization": "Bearer " + key} if key else {})),
                         method="POST")
             with urlopen(r, timeout=180) as response:
                 content = json.load(response)["choices"][0]["message"]["content"]
@@ -78,15 +76,13 @@ def main():
     p.add_argument("--output-root", type=Path, required=True)
     p.add_argument("--start", type=int, default=6)
     p.add_argument("--end", type=int, default=32)
-    p.add_argument("--model", default=os.environ.get("OPENAI_MODEL", "gpt-4.1"))
-    p.add_argument("--base-url", default=os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1"))
+    p.add_argument("--model", default=os.environ.get("TRANSLATION_MODEL", os.environ.get("OPENAI_MODEL", "gpt-4.1")) )
+    p.add_argument("--base-url", default=os.environ.get("TRANSLATION_BASE_URL", os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")) )
     p.add_argument("--retries", type=int, default=3)
     args = p.parse_args()
     if not (6 <= args.start <= args.end <= 32):
         p.error("Batch number must be in 06–32")
-    key = os.environ.get("OPENAI_API_KEY")
-    if not key:
-        p.error("OPENAI_API_KEY is required; refusing to claim translations were produced")
+    key = os.environ.get("TRANSLATION_API_KEY", os.environ.get("OPENAI_API_KEY", ""))\n    from urllib.parse import urlsplit\n    endpoint = urlsplit(args.base_url)\n    local = endpoint.scheme == "http" and endpoint.hostname in ("localhost", "127.0.0.1", "::1")\n    if not key and not local:\n        p.error("Unauthenticated inference is allowed only for localhost Ollama; remote endpoints require a secret")\n    if not local and endpoint.scheme != "https":\n        p.error("Remote inference endpoints must use HTTPS")
     args.output_root.mkdir(parents=True, exist_ok=True)
     for number in range(args.start, args.end + 1):
         src = args.staging_root / f"prm800k_v2_batch{number:02d}"
@@ -107,7 +103,7 @@ def main():
         for name in ("train_translation_queue.jsonl", "dev_translation_queue.jsonl", "source_lock.json"):
             (dest / name).write_bytes((src / name).read_bytes())
         write_new(dest / "translations.json",
-                  {"translator": "API-assisted AI translation",
+                  {"translator": "AI translation draft (endpoint-configured)",
                    "model": args.model, "method": "masked source with strict restoration checks",
                    "batch": f"prm800k_v2_batch{number:02d}",
                    "human_qc_status": "pending", "records": drafts})
