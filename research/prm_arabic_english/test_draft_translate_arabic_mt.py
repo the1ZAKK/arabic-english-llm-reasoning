@@ -27,9 +27,9 @@ class DraftTranslationTests(unittest.TestCase):
         self.assertIn("<M0>", result)
 
     def test_unwrapped_latex_is_literal(self):
-        source = r"The answer is \\frac{1}{3}."
+        source = "The answer is \\frac{1}{3}."
         result = translate_preserving(source, fake_translate)
-        self.assertIn(r"\\frac{1}{3}", result)
+        self.assertIn("\\frac{1}{3}", result)
 
     def test_annotation_marker_is_literal(self):
         source = "Reasoning [* 7] continues."
