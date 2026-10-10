@@ -310,15 +310,22 @@ class Ollama:
             "messages": [{"role": "user", "content": "Reply with exactly OK."}],
             "think": False, "stream": False,
             "options": {"temperature": 0, "num_ctx": self.options["num_ctx"],
-                        "num_predict": 32},
+                        "num_predict": 256},
             "keep_alive": "10m",
         })
         message = probe.get("message") or {}
         if (probe.get("done") is not True or
-                probe.get("done_reason") != "stop" or
-                message.get("thinking") or
+                probe.get("done_reason") not in ("stop", None) or
+                (message.get("thinking") or "").strip() or
                 not (message.get("content") or "").strip()):
-            raise ValueError("Ollama thinking-off probe failed; refusing unverified model behavior")
+            raise ValueError(
+                "Ollama thinking-off probe failed: "
+                f"done={probe.get('done')!r}, "
+                f"done_reason={probe.get('done_reason')!r}, "
+                f"thinking_present={bool((message.get('thinking') or '').strip())}, "
+                f"content_present={bool((message.get('content') or '').strip())}. "
+                "No translation was started."
+            )
         version = self.request("/api/version")
         gpu = "nvidia-smi unavailable"
         try:
