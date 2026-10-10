@@ -1,0 +1,67 @@
+name: ArabicPRM-T v2 Qwen local translations (human QC required)
+on:
+  workflow_dispatch:
+    inputs:
+      start_batch:
+        description: "First batch (09 through 32)"
+        required: true
+        default: "9"
+      end_batch:
+        description: "Last batch (09 through 32)"
+        required: true
+        default: "9"
+permissions:
+  contents: read
+jobs:
+  translate-local:
+    # A self-hosted GPU/CPU machine with Ollama installed. No GitHub-hosted
+    # GPU is implicitly provided. Never expose this runner to untrusted PRs.
+    runs-on: [self-hosted, linux, arabicprm-translation]
+    timeout-minutes: 350
+    env:
+      PYTHONPATH: research/prm_arabic_english
+      TRANSLATION_BASE_URL: http://127.0.0.1:11434/v1
+      TRANSLATION_MODEL: qwen2.5:7b-instruct
+      OPENAI_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check local Ollama runtime
+        run: |
+          command -v ollama
+          curl --fail --silent http://127.0.0.1:11434/api/tags >/dev/null
+          ollama list
+      - name: Stage original source and audit locks
+        run: |
+          python3 research/prm_arabic_english/stage_v2_remaining_batches.py --output-dir frozen_staging
+      - name: Translate frozen batches without OpenAI API
+        run: |
+          python3 research/prm_arabic_english/bulk_draft_v2_translations.py \
+            --staging-root frozen_staging --output-root translated_drafts \
+            --start "${{ inputs.start_batch }}" --end "${{ inputs.end_batch }}" \
+            --model "$TRANSLATION_MODEL" --base-url "$TRANSLATION_BASE_URL"
+      - name: Preserve mathematical expressions and create human-review queues
+        run: |
+          for batch in translated_drafts/prm800k_v2_batch*; do
+            name="$(basename "$batch")"
+            mkdir -p "review_artifacts/$name"
+            python3 research/prm_arabic_english/materialize_translation_batch.py \
+              --queue-dir "$batch" --assets-dir "$batch" \
+              --output-dir "review_artifacts/$name/materialized"
+            python3 research/prm_arabic_english/render_translation_review.py \
+              --input "review_artifacts/$name/materialized/review_queue.jsonl" \
+              --output "review_artifacts/$name/review.html" --batch-id "$name"
+            python3 research/prm_arabic_english/export_reviewed_arabic.py \
+              --queue "review_artifacts/$name/materialized/review_queue.jsonl" \
+              --decisions "review_artifacts/$name/human_qc_pending.json" \
+              --output-dir "review_artifacts/$name/never_export" --make-template
+            test ! -e "review_artifacts/$name/never_export"
+          done
+      - name: Archive draft translations and human-review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabicprm-v2-ollama-drafts-pending-review
+          path: |
+            translated_drafts/
+            review_artifacts/
+          if-no-files-found: warn
