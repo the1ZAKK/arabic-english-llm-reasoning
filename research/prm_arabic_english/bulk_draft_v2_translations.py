@@ -174,9 +174,14 @@ def run_batch(number, staging, output, model, base_url, key, retries):
                 key_id = f"{split}:{index}:{step_index}"
                 if key_id in completed:
                     draft = completed[key_id]
-                    masked, numbers = mask(original)
-                    unmask_and_validate(original, draft, numbers)
-                else:
+                    _, numbers = mask(original)
+                    try:
+                        unmask_and_validate(original, draft, numbers)
+                    except ValueError as error:
+                        print(f"  Invalid old checkpoint entry {key_id}: {error}; regenerating only this step", flush=True)
+                        del completed[key_id]
+                        atomic_json(checkpoint, {"provenance": provenance, "completed": completed})
+                if key_id not in completed:
                     print(f"  {'problem' if step_index == 0 else 'step ' + str(step_index)}/{len(fields) - 1}", flush=True)
                     draft = translate_string(original, model, base_url, key, retries)
                     completed[key_id] = draft
