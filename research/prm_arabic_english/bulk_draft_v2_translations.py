@@ -97,6 +97,21 @@ def completion(text, model, base_url, key):
 
 
 def translate_string(source, model, base_url, key, retries):
+    # Numeric-only Markdown tables have no prose to translate. Preserve every
+    # cell and separator verbatim; the Arabic introduction satisfies the
+    # materializer's per-step Arabic requirement without altering the table.
+    lines = source.strip().splitlines()
+    if (
+        len(lines) >= 3
+        and all(line.strip().startswith("|") and line.strip().endswith("|") for line in lines)
+        and not re.search(r"[A-Za-z\\u0600-\\u06ff]", source)
+    ):
+        draft = "الجدول التالي:\\n" + source
+        masked_table, table_numbers = mask(source)
+        # The raw table has no masking tokens; the final materializer checks
+        # the original numeric order and protected expressions directly.
+        restore(source, draft)
+        return draft
     masked, numbers = mask(source)
     last_error = None
     for attempt in range(1, retries + 1):
