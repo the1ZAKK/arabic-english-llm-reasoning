@@ -4,10 +4,16 @@ on:
   push:
     branches:
       - research/batch03-final-and-full-audit
+      - research/arabicprm-v2-production
     paths:
       - ".github/workflows/full-shard-prm800k-audit.yml"
       - "research/prm_arabic_english/prm800k_production_sample.py"
       - "research/prm_arabic_english/test_prm800k_production_sample.py"
+      - "research/prm_arabic_english/select_production_translation_set.py"
+      - "research/prm_arabic_english/test_select_production_translation_set.py"
+      - "research/prm_arabic_english/source_quarantine.json"
+      - "research/prm_arabic_english/corpus_registry/arabicprm_t_v1/accepted_registry.json"
+      - "research/prm_arabic_english/translation_batches/prm800k_qc24_batch03_r1/source_lock.json"
       - "research/prm_arabic_english/translation_batches/prm800k_qc24/problem_split_lock.json"
   workflow_dispatch:
 
@@ -32,9 +38,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Verify sampler tests
+      - name: Verify sampling and selection tests
         run: |
           python -m unittest research.prm_arabic_english.test_prm800k_production_sample -v
+          python -m unittest research.prm_arabic_english.test_select_production_translation_set -v
 
       - name: Fetch pinned PRM800K training shard
         env:
@@ -57,6 +64,18 @@ jobs:
             --seed 42 \
             --dev-fraction 0.2 \
             --split-lock research/prm_arabic_english/translation_batches/prm800k_qc24/problem_split_lock.json
+
+      - name: Freeze ArabicPRM-T v2 translation selection
+        run: |
+          python research/prm_arabic_english/select_production_translation_set.py \
+            --source-dir audit_output \
+            --output-dir v2_translation_selection \
+            --train-count 204 \
+            --dev-count 52 \
+            --seed 42 \
+            --max-steps 24 \
+            --exclude-registry research/prm_arabic_english/corpus_registry/arabicprm_t_v1/accepted_registry.json \
+            --exclude-source-lock research/prm_arabic_english/translation_batches/prm800k_qc24_batch03_r1/source_lock.json
 
       - name: Emit compact audit summary
         run: |
@@ -101,4 +120,8 @@ jobs:
           path: |
             audit_output/manifest.json
             audit_summary.json
+            v2_translation_selection/manifest.json
+            v2_translation_selection/source_lock.json
+            v2_translation_selection/train_translation_queue.jsonl
+            v2_translation_selection/dev_translation_queue.jsonl
           if-no-files-found: error
