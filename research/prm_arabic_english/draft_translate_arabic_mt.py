@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 import re
 
-from materialize_translation_batch import PROTECTED
+from materialize_translation_batch import PROTECTED, source_requires_arabic
 from prm800k_ingest import ROOT
 
 
@@ -138,8 +138,8 @@ def translate_preserving(text, translate_plain):
         cursor = match.end()
 
     result = "".join(pieces)
-    if not ARABIC.search(result):
-        raise ValueError("Translated string contains no Arabic text")
+    if source_requires_arabic(text) and not ARABIC.search(result):
+        raise ValueError("Translated natural-language string contains no Arabic text")
     expected_math = len(PROTECTED.findall(text))
     actual_tokens = [int(x) for x in re.findall(r"<M(\d+)>", result)]
     if actual_tokens != list(range(expected_math)):
