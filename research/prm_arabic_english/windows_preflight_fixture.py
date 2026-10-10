@@ -101,6 +101,7 @@ def prepare(repository, destination, overlay=False):
                                           "runtime_failures": 2, "status": "retrying_unresolved_fields"})
     expected = {"fixture_only": True, "commit": commit, "preserved_files": preserved,
                 "expected_fields": 2252, "checkpoint_field": "train:1:5",
+                "max_runtime_path_chars": max(len(str(state_root / "runtimes" / commit / p)) for p in agent.runtime_paths()),
                 "failure_field_source_sha256": runner.sha(failure_source.encode("utf-8"))}
     agent.save(destination / "fixture_expected.json", expected)
     return config
@@ -143,8 +144,9 @@ def main():
         config = prepare(args.repository_root, args.prepare)
         print("OFFLINE WINDOWS FIXTURE PREPARED: " + config["runtime_commit"])
     else:
-        verify(args.verify)
+        expected = verify(args.verify)
         print("WINDOWS LEGACY FIXTURE PASSED: CRLF files, original Batch09 checkpoint, nine-attempt ledger and QC sentinel preserved; 24 batches / 2252 fields; no inference.")
+        print("WINDOWS PATH COVERAGE: " + str(expected["max_runtime_path_chars"]) + " characters in the immutable runtime.")
 
 
 if __name__ == "__main__":

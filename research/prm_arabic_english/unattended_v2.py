@@ -63,7 +63,7 @@ class GitRepository:
         settings = {**os.environ, "GIT_TERMINAL_PROMPT": "0", "GCM_INTERACTIVE": "never"}
         settings.update(env or {})
         options = ["-c", "credential.interactive=never", "-c", "core.sshCommand=ssh -o BatchMode=yes",
-                   "-c", "core.autocrlf=false", "-c", "core.eol=lf"]
+                   "-c", "core.autocrlf=false", "-c", "core.eol=lf", "-c", "core.longpaths=true"]
         if self.helper:
             if self.helper != "manager":
                 raise ValueError("Only the supported Git Credential Manager override is allowed")
@@ -152,7 +152,10 @@ def install_runtime(git, commit, destination):
     blobs = {p: git.command(["rev-parse", f"{commit}:{p}"]).decode().strip() for p in paths}
     if destination.exists():
         for path, expected in blobs.items():
-            actual = git.command(["hash-object", "--no-filters", str(destination / path)]).decode().strip()
+            # Python's Windows file APIs can read paths beyond MAX_PATH. Send
+            # the exact bytes to Git so it need not open the long filename.
+            actual = git.command(["hash-object", "--no-filters", "--stdin"],
+                                 data=(destination / path).read_bytes()).decode().strip()
             if actual != expected:
                 raise ValueError("Installed immutable runtime changed: " + path)
         return destination / HERE
@@ -176,7 +179,9 @@ def install_runtime(git, commit, destination):
             if found != set(paths):
                 raise ValueError("Incomplete immutable runtime archive")
         for path, expected in blobs.items():
-            if git.command(["hash-object", "--no-filters", str(build / path)]).decode().strip() != expected:
+            actual = git.command(["hash-object", "--no-filters", "--stdin"],
+                                 data=(build / path).read_bytes()).decode().strip()
+            if actual != expected:
                 raise ValueError("Runtime blob mismatch")
         build.rename(destination)
     return destination / HERE
