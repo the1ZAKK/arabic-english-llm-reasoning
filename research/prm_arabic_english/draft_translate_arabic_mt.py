@@ -71,7 +71,7 @@ def translate_preserving(text, translate_plain):
     if actual_tokens != list(range(expected_math)):
         raise ValueError("Protected math token sequence changed")
     source_without_math = PROTECTED.sub("", text)
-    result_without_math_tokens = re.sub(r"<M\\d+>", "", result)
+    result_without_math_tokens = re.sub(r"<M\d+>", "", result)
     if NUMBER.findall(source_without_math) != NUMBER.findall(result_without_math_tokens):
         raise ValueError("Digit-form numeric sequence changed outside protected math")
     return result
