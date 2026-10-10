@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "purpose": "ArabicPRM-T v2 production translation selection",
+  "seed": 42,
+  "source_revision": "7ecc794703b2877f63226f2477a49b34f9b25163",
+  "source_full_sha256": "1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089",
+  "source_manifest_sha256": "856ab9ca7555faa8ef69b90006d875c7ac8f7d9f1c2eca2bfcc1eccef3b9afff",
+  "selection_policy": "exact 50/50 correct/incorrect per split; at most one trajectory per problem group; deterministic greedy diversity over generation, length, first-error position, neutral presence, generation\u00d7length and generation\u00d7error; SHA256-seeded ties",
+  "split_policy": "inherited from full-shard source sample; never reassigned",
+  "config": {
+    "train_count": 204,
+    "dev_count": 52,
+    "max_steps": 24
+  },
+  "excluded_record_ids": 60,
+  "excluded_problem_ids": 53,
+  "exclusion_evidence_sha256": {
+    "research/prm_arabic_english/translation_batches/prm800k_qc24_batch03_r1/source_lock.json": "330ce7f491b0ae162ea5b4a635abf8a14a0bf9cbe7ebd98a5eeda3e32e57f2b3",
+    "research/prm_arabic_english/corpus_registry/arabicprm_t_v1/accepted_registry.json": "a8fc2ec67e956f8b212f8adfc120e807ca49d4da874389071e66995701b16aa5"
+  },
+  "summary": {
+    "train": {
+      "records": 204,
+      "problem_groups": 204,
+      "steps": 2190,
+      "variants": {
+        "correct": 102,
+        "incorrect": 102
+      },
+      "generations": {
+        "0": 18,
+        "1": 14,
+        "2": 15,
+        "3": 16,
+        "4": 18,
+        "5": 20,
+        "6": 20,
+        "7": 28,
+        "8": 28,
+        "9": 27
+      },
+      "length_bins": {
+        "1-4": 34,
+        "13-20": 50,
+        "21+": 23,
+        "5-8": 49,
+        "9-12": 48
+      },
+      "first_error_bins": {
+        "1-4": 24,
+        "13+": 30,
+        "5-8": 24,
+        "9-12": 24,
+        "none": 102
+      },
+      "neutral_presence": {
+        "False": 104,
+        "True": 100
+      },
+      "source_rating_totals": {
+        "-1": 102,
+        "0": 225,
+        "1": 1863
+      }
+    },
+    "dev": {
+      "records": 52,
+      "problem_groups": 52,
+      "steps": 563,
+      "variants": {
+        "correct": 26,
+        "incorrect": 26
+      },
+      "generations": {
+        "0": 2,
+        "1": 4,
+        "2": 6,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5,
+        "7": 9,
+        "8": 7,
+        "9": 8
+      },
+      "length_bins": {
+        "1-4": 9,
+        "13-20": 12,
+        "21+": 6,
+        "5-8": 11,
+        "9-12": 14
+      },
+      "first_error_bins": {
+        "1-4": 6,
+        "13+": 7,
+        "5-8": 6,
+        "9-12": 7,
+        "none": 26
+      },
+      "neutral_presence": {
+        "False": 31,
+        "True": 21
+      },
+      "source_rating_totals": {
+        "-1": 26,
+        "0": 53,
+        "1": 484
+      }
+    }
+  },
+  "combined": {
+    "records": 256,
+    "problem_groups": 256,
+    "steps": 2753,
+    "variants": {
+      "correct": 128,
+      "incorrect": 128
+    },
+    "generations": {
+      "0": 20,
+      "1": 18,
+      "2": 21,
+      "3": 19,
+      "4": 22,
+      "5": 24,
+      "6": 25,
+      "7": 37,
+      "8": 35,
+      "9": 35
+    },
+    "length_bins": {
+      "1-4": 43,
+      "13-20": 62,
+      "21+": 29,
+      "5-8": 60,
+      "9-12": 62
+    },
+    "first_error_bins": {
+      "1-4": 30,
+      "13+": 37,
+      "5-8": 30,
+      "9-12": 31,
+      "none": 128
+    },
+    "neutral_presence": {
+      "False": 135,
+      "True": 121
+    },
+    "source_rating_totals": {
+      "-1": 128,
+      "0": 278,
+      "1": 2347
+    }
+  },
+  "output_sha256": {
+    "train_translation_queue.jsonl": "d8abc9d0bf9f447f6f6e4afbdfdcdd2a81fd39c774f85badfb28aa0a02367723",
+    "dev_translation_queue.jsonl": "01eda77bf264894c3c6ea7db60ad68d5e45279c8446a81e4bb331247b1a4af8f"
+  },
+  "translation_performed": false,
+  "human_qc_performed": false,
+  "training_performed": false,
+  "global_mgsm_used": false
+}

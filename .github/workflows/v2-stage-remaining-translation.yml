@@ -1,0 +1,56 @@
+name: Stage ArabicPRM-T v2 Batch04-Batch32
+on:
+  push:
+    branches:
+      - research/arabicprm-v2-production
+    paths:
+      - ".github/workflows/v2-stage-remaining-translation.yml"
+      - "research/prm_arabic_english/stage_v2_remaining_batches.py"
+      - "research/prm_arabic_english/translation_batches/prm800k_v2_selection/**"
+      - "research/prm_arabic_english/translation_batches/prm800k_v2_batch01/source_lock.json"
+      - "research/prm_arabic_english/translation_batches/prm800k_v2_batch02/source_lock.json"
+      - "research/prm_arabic_english/translation_batches/prm800k_v2_batch03/source_lock.json"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stage-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+      - name: Freeze deterministic remaining queues with no translations
+        run: |
+          python research/prm_arabic_english/stage_v2_remaining_batches.py --output-dir remaining_v2_batches
+      - name: Validate every generated queue and lock
+        env:
+          PYTHONPATH: research/prm_arabic_english
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from materialize_translation_batch import read_queue
+          import json
+          root=Path('remaining_v2_batches')
+          report=json.loads((root/'batch04_32_manifest.json').read_text())
+          for item in report['batches']:
+              path=root/f"prm800k_v2_batch{item['batch']:02d}"
+              queues, hashes=read_queue(path)
+              lock=json.loads((path/'source_lock.json').read_text())
+              assert lock['queue_sha256']==hashes
+              assert len(queues['train'])==item['train']
+              assert len(queues['dev'])==item['dev']
+              assert sum(len(queues[s]) for s in queues)==8
+              assert sum(r['source_record']['variant']=='correct' for s in queues for r in queues[s])==4
+              assert sum(r['source_record']['variant']=='incorrect' for s in queues for r in queues[s])==4
+              assert all(r['qc']['status']=='pending' for s in queues for r in queues[s])
+              assert all(r['translation']['status']=='pending' for s in queues for r in queues[s])
+          print('Validated 29 locked eight-record queues: zero QC approvals and zero training eligibility')
+          PY
+      - name: Upload staging evidence, not training data
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabicprm-v2-batch04-batch32-source-staging
+          path: remaining_v2_batches/
+          if-no-files-found: error

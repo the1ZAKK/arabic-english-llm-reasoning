@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "source_revision": "7ecc794703b2877f63226f2477a49b34f9b25163",
+  "source_full_sha256": "1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089",
+  "queue_sha256": {
+    "train_translation_queue.jsonl": "f3770eaaf2c8b27b2239121fd9128aa159f78cafbdd5d1c60b62852d3c5fef3b",
+    "dev_translation_queue.jsonl": "107f27d00f67b700333329c3ad45d2ec7d6655c1368c38f0824bd675610ac185"
+  },
+  "records": [
+    {
+      "split": "train",
+      "index": 0,
+      "id": "prm800k_3ae7ac4a87742d322d19f01e92078204379723b179989abba6276da65ceab30e",
+      "problem_id": "d7efd04a356822108ea225a643700e64ef25f44123bb7f6380b38508fca30ef4",
+      "source_record_sha256": "aa0c19cf5e21d9221a709cc6b3431b1e100942956fe889c17d9ca76575636564"
+    },
+    {
+      "split": "train",
+      "index": 1,
+      "id": "prm800k_3c5c98d6265c6d82dde35645c94fc891262661ff4fc234a7d5d78ec746d4fddb",
+      "problem_id": "5df0581203cd4c1c5cbe2641a3cb99746097a059c308cd206e627fe2a3beb343",
+      "source_record_sha256": "bdccfbbb3443e9354db6431a0a8958799d8960fa3d6959248018a138677d6033"
+    },
+    {
+      "split": "train",
+      "index": 2,
+      "id": "prm800k_3d8a51566e40b15f5fcc991c1787b593a556ef426a1d7bad7825f392b32ac25a",
+      "problem_id": "c70267d7b3cd6ddb2898a24727fe03e68bfa893b48b1667d7433c4d461b6678e",
+      "source_record_sha256": "a8fb184ba410a003996432c299582a51ca42b149e04c496c101d690b115b5504"
+    },
+    {
+      "split": "train",
+      "index": 3,
+      "id": "prm800k_3ef300708687f708364d6fef2fe2a955d519841f7b2681b0c5b197e3a0065520",
+      "problem_id": "9327c1f1ce2d51e88b5160653961e60ec839666e033c36a77a2ba14ad3cc791c",
+      "source_record_sha256": "e15227082d43d9dd5bff6932cefeaad18d4cd9c5d155a08cdf048fc9828541f6"
+    },
+    {
+      "split": "train",
+      "index": 4,
+      "id": "prm800k_668675c5b27aec0ae52a16dad4ec96200bd6c7e49339f1784b2a27bf751d479f",
+      "problem_id": "45a3de3456758f94ebbcdde78e32a9535748d324206c06326665b6a765d55143",
+      "source_record_sha256": "ae0cb7d29e358c14d5aef1be1e0742af2177c902ce428dc113685b6de7db8956"
+    },
+    {
+      "split": "train",
+      "index": 5,
+      "id": "prm800k_6a91e2dc6c0d8968bc0f31c449be9ab245faaae336ee6e4bb28b9c88c9119c0d",
+      "problem_id": "97582c18cf47bb6274d2063dcb60bdabc8d65949957f152db9031e5918473186",
+      "source_record_sha256": "53fde53864899bb17357f5e86e87dc73df96af58e53917222cbb2487e4a98b7c"
+    },
+    {
+      "split": "train",
+      "index": 6,
+      "id": "prm800k_6d36edba45964eee3344426e7c6a8b36c28aab7684c425c39ac4b1e09c8f749d",
+      "problem_id": "c81640ab86d42717b863886a3b2bae2c98999a668e6e9d34433f20fd73e8e3ec",
+      "source_record_sha256": "96337a389051026c8ff3d53fad635fd994be98d2256a7e0633d1ae987c238337"
+    },
+    {
+      "split": "dev",
+      "index": 0,
+      "id": "prm800k_569058293760ff300bbf8f33c0c263fec2d3093aef3ebae2f0d8011bac4eccc6",
+      "problem_id": "6641585ca43211e1579df28584bad35ca98d6ffad6492b5b5a795bbb547a4c9d",
+      "source_record_sha256": "bb204cf1405d2c3c2502492bdf1834469d7b922051f3be4161654fa11b228abe"
+    }
+  ]
+}
