@@ -443,13 +443,13 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries):
                                 # protected LaTeX token without asking a small
                                 # model to reproduce that fragile final token.
                                 answer = re.search(
-                                    r"(?s)\\n\\n# Answer\\s*\\n\\s*(<P\\d+>)\\s*$",
+                                    r"(?s)\n\n# Answer\s*\n\s*(<P\d+>)\s*$",
                                     masked,
                                 )
                                 if answer:
                                     body = masked[:answer.start()]
                                     candidate = client.translate(body).rstrip()
-                                    candidate += "\\n\\n# الإجابة\\n\\n" + answer.group(1)
+                                    candidate += "\n\n# الإجابة\n\n" + answer.group(1)
                                 else:
                                     candidate = client.translate(masked)
                             candidate = restore_extras(candidate, extras)
