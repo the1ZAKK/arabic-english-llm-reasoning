@@ -4,28 +4,34 @@
   "branch": "research/arabicprm-v2-production",
   "runtime_commit": "2cadc25c8c0a01cf097e377be23c97beb11de716",
   "installer_sha256": "af08dd5e3449ffdb1bea3b0c1df9d5cb12c501809b11374e3601617a3b555bcf",
-  "ci_run_id": 38089416458,
-  "ci_url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38089416458",
+  "ci_run_id": 38090095805,
+  "ci_url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38090095805",
   "ci": [
     {
-      "job_id": 114322596295,
-      "name": "offline (ubuntu-latest)",
-      "conclusion": "success",
-      "tests_passed": 118,
-      "native_scheduled_task_preflight_passed": false,
-      "log_excerpt": [
-        "2026-10-10T21:54:50.3758517Z Ran 118 tests in 4.953s"
-      ]
-    },
-    {
-      "job_id": 114322596489,
+      "job_id": 114324590586,
       "name": "offline (windows-latest)",
       "conclusion": "success",
       "tests_passed": 118,
       "native_scheduled_task_preflight_passed": true,
+      "bootstrap_pinned_hash_verified": true,
+      "bootstrap_incorrect_hash_rejected": true,
       "log_excerpt": [
-        "2026-10-10T21:55:01.4788597Z Ran 118 tests in 11.082s\r",
-        "2026-10-10T21:55:34.8060311Z CI PASSED: immutable runtime, 24 frozen batches and native scheduled-task preflight; no inference or publication.\r"
+        "2026-10-10T22:06:01.0617173Z Ran 118 tests in 23.414s",
+        "2026-10-10T22:06:07.7807760Z BOOTSTRAP VERIFIED: pinned installer downloaded and hash matched; no installation or inference",
+        "2026-10-10T22:06:08.3990652Z BOOTSTRAP NEGATIVE CHECK PASSED: incorrect hash rejected; nothing executed.",
+        "2026-10-10T22:06:41.6993697Z CI PASSED: immutable runtime, 24 frozen batches and native scheduled-task preflight; no inference or publication."
+      ]
+    },
+    {
+      "job_id": 114324590747,
+      "name": "offline (ubuntu-latest)",
+      "conclusion": "success",
+      "tests_passed": 118,
+      "native_scheduled_task_preflight_passed": false,
+      "bootstrap_pinned_hash_verified": false,
+      "bootstrap_incorrect_hash_rejected": false,
+      "log_excerpt": [
+        "2026-10-10T22:05:33.2486440Z Ran 118 tests in 4.116s"
       ]
     }
   ],
@@ -39,7 +45,7 @@
   "training_performed": false,
   "existing_monitor_retained": true,
   "new_monitor_created": false,
-  "bootstrap_windows_ci": "pending verification on delivery commit",
+  "bootstrap_windows_ci": "passed: exact pinned installer hash verified and incorrect hash rejected",
   "verified_frozen_scope": {
     "batches": [
       9,
@@ -49,5 +55,7 @@
     "steps": 2060,
     "fields": 2252
   },
-  "preservation": "No frozen data, existing checkpoints or human-QC records changed"
+  "preservation": "No frozen data, existing checkpoints or human-QC records changed",
+  "delivery_code_commit": "d42ad5f277624b2ff4d843f3e974124e75f7d0c5",
+  "verified_at_utc": "2026-10-10T22:06:41Z"
 }
