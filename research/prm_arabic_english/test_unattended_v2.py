@@ -371,10 +371,15 @@ class WindowsFrozenInstallationChecks(unittest.TestCase):
     def test_real_pinned_archive_preflight_preserves_crlf_checkpoint_and_retry_ledger(self):
         import resume_v2_local as runner
         self.assertEqual(agent.FIELD_COUNTS, runner.EXPECTED_FIELD_COUNTS)
-        runtime = agent.install_runtime(agent.GitRepository(self.root), self.config["runtime_commit"],
+        repository = agent.GitRepository(self.root)
+        runtime = agent.install_runtime(repository, self.config["runtime_commit"],
                                         self.root / "translated_drafts/unattended_agent/runtimes")
-        for filename in ("unattended_v2.py", "resume_v2_local.py", "translation_batches/prm800k_v2_selection/train_translation_queue.jsonl"):
-            self.assertNotIn(b"\r\n", (runtime / filename).read_bytes())
+        for path in agent.runtime_paths():
+            expected = repository.command(["show", self.config["runtime_commit"] + ":" + path])
+            self.assertEqual((runtime.parent.parent / path).read_bytes(), expected)
+        # Python blobs may legitimately have CRLF in this candidate fixture's
+        # Git objects; archive preservation means byte equality, not conversion.
+        self.assertNotIn(b"\r\n", (runtime / "translation_batches/prm800k_v2_selection/train_translation_queue.jsonl").read_bytes())
         result = subprocess.run([sys.executable, str(runtime / "unattended_v2.py"), "--config",
                                  str(self.root / "translated_drafts/unattended_agent/config.json"), "--offline-check"],
                                 capture_output=True, timeout=90)
