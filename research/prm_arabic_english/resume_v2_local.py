@@ -302,10 +302,23 @@ class Ollama:
         matches = [m for m in tags["models"] if self.model in (m.get("name"), m.get("model"))]
         if len(matches) != 1 or not matches[0].get("digest"):
             raise ValueError(f"Installed model with digest not found: {self.model}; no model is pulled automatically")
-        show = self.request("/api/show", {"model": self.model})
-        controls = show.get("thinking", {}).get("values")
-        if controls is not None and False not in controls:
-            raise ValueError("This model does not support disabling thinking")
+        # Ollama /api/show thinking metadata is not authoritative across model
+        # families and versions. Probe actual behavior rather than rejecting a
+        # model based on an optional metadata field.
+        probe = self.request("/api/chat", {
+            "model": self.model,
+            "messages": [{"role": "user", "content": "Reply with exactly OK."}],
+            "think": False, "stream": False,
+            "options": {"temperature": 0, "num_ctx": self.options["num_ctx"],
+                        "num_predict": 32},
+            "keep_alive": "10m",
+        })
+        message = probe.get("message") or {}
+        if (probe.get("done") is not True or
+                probe.get("done_reason") != "stop" or
+                message.get("thinking") or
+                not (message.get("content") or "").strip()):
+            raise ValueError("Ollama thinking-off probe failed; refusing unverified model behavior")
         version = self.request("/api/version")
         gpu = "nvidia-smi unavailable"
         try:
