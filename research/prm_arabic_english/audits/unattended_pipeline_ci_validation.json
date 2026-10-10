@@ -1,0 +1,1014 @@
+{
+  "schema_version": 1,
+  "scope": "Remote offline CI; no real Ollama inference",
+  "repository": "the1ZAKK/arabic-english-llm-reasoning",
+  "branch": "research/arabicprm-v2-production",
+  "verified_code_commit_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+  "code_commit_parent_sha": "c909dfa74643f632a0ebebf419e5b366a2698f4e",
+  "all_11_triggered_workflows_passed": true,
+  "workflow_runs": [
+    {
+      "id": 38086290814,
+      "name": "ArabicPRM-T v2 Batch07 translation checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290814"
+    },
+    {
+      "id": 38086290805,
+      "name": "ArabicPRM-T v2 Batch04 translation checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290805"
+    },
+    {
+      "id": 38086290794,
+      "name": "ArabicPRM-T v2 Batch02 translation checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290794"
+    },
+    {
+      "id": 38086290817,
+      "name": "ArabicPRM-T v2 Batch01 translation checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290817"
+    },
+    {
+      "id": 38086290806,
+      "name": "ArabicPRM-T v2 local runner checks (offline)",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290806"
+    },
+    {
+      "id": 38086290807,
+      "name": "Stage ArabicPRM-T v2 Batch04-Batch32",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290807"
+    },
+    {
+      "id": 38086290797,
+      "name": "ArabicPRM-T v2 Batch03 translation checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290797"
+    },
+    {
+      "id": 38086290801,
+      "name": "ArabicPRM-T v2 Batch06 translation checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290801"
+    },
+    {
+      "id": 38086290821,
+      "name": "ArabicPRM-T v2 Batch05 translation checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290821"
+    },
+    {
+      "id": 38086290816,
+      "name": "ArabicPRM-T v2 Batch08 translation checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290816"
+    },
+    {
+      "id": 38086290827,
+      "name": "Offline research checks",
+      "head_sha": "7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9",
+      "head_branch": "research/arabicprm-v2-production",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38086290827"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 114313374588,
+      "name": "offline (windows-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290827,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run python scripts/check_reproducibility.py",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Parse the Windows launcher without starting inference",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run Windows launcher frozen-source preflight without Ollama",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 114313374824,
+      "name": "offline (ubuntu-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290827,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run python scripts/check_reproducibility.py",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Parse the Windows launcher without starting inference",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 5
+        },
+        {
+          "name": "Run Windows launcher frozen-source preflight without Ollama",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 114313374521,
+      "name": "review-artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290814,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Print authoritative queue hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Materialize protected Arabic draft",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Render bilingual QC page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Create pending QC template",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Verify QC blocks export",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Upload human review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 114313374596,
+      "name": "review-artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290805,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Print authoritative queue hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Materialize protected Arabic draft",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Render bilingual QC page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Create pending QC template",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Verify QC blocks export",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Upload human review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 114313374279,
+      "name": "review-artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290794,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Report frozen queue hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Materialize protected Arabic draft",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Render bilingual human review page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Create pending human-QC template",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Verify the QC gate still blocks export",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Upload exact review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 114313374585,
+      "name": "review-artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290817,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Materialize protected Arabic draft",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Render bilingual human review page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Create pending human-QC template",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Verify the QC gate still blocks export",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Upload exact review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        }
+      ]
+    },
+    {
+      "id": 114313374407,
+      "name": "syntax-check",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290806,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run python -m py_compile research/prm_arabic_english/bulk_draft_v2_translations.py",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "id": 114313374625,
+      "name": "stage-and-audit",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290807,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Freeze deterministic remaining queues with no translations",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Validate every generated queue and lock",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Upload staging evidence, not training data",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 114313374504,
+      "name": "review-artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290797,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Print authoritative queue hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Materialize protected Arabic draft",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Render bilingual QC page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Create pending QC template",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Verify QC blocks export",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Upload human review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 114313374466,
+      "name": "review-artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290801,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Print authoritative queue hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Materialize protected Arabic draft",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Render bilingual QC page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Create pending QC template",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Verify QC blocks export",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Upload human review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 114313374640,
+      "name": "review-artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290821,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Print authoritative queue hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Materialize protected Arabic draft",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Render bilingual QC page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Create pending QC template",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Verify QC blocks export",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Upload human review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 114313374591,
+      "name": "review-artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38086290816,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Print authoritative queue hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Materialize protected Arabic draft",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Render bilingual QC page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Create pending QC template",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Verify QC blocks export",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Upload human review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    }
+  ],
+  "linux_tests_run": 99,
+  "windows_tests_run": 99,
+  "windows_native_powershell_parse": "passed",
+  "windows_native_frozen_source_preflight": "passed",
+  "windows_source_audited_batch_count": 24,
+  "real_qwen_inference_executed": false,
+  "human_qc_completed": false,
+  "main_head_unchanged": "4e45e6122cbdacd22a82633ca29df7991b321ebf"
+}

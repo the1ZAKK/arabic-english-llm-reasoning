@@ -73,11 +73,13 @@ materialization and bilingual rendering also passed in temporary directories;
 pending-QC export was rejected. Syntax compilation, the legacy CLI help and
 `git diff --check` passed. No frozen corpus or previous review artifact was edited.
 
-GitHub CI runs this suite on Linux and Windows, parses the PowerShell launcher,
-and executes its native offline preflight on research-branch pushes. Existing
-Batch01–08 artifact workflows are retained. The pushed commit's check runs provide
-remote evidence; the delivery message reports the observed results. No local
-inference workflow was dispatched.
+GitHub CI for code commit `7cd2ab331a9bfc27e1cd7c029a79c68b2f8c7dc9`
+passed **all 11 triggered workflows / 12 jobs**. Linux and Windows each passed
+99 tests. The Windows job parsed the PowerShell launcher and executed its native
+offline preflight for all 24 batches. Batch01–08 artifact checks, the remaining
+batch staging workflow and the compatibility runner check passed. The
+[CI evidence](audits/unattended_pipeline_ci_validation.json) records exact run
+URLs, commit, branch, job and step results. No inference workflow was dispatched.
 
 PyTorch-dependent `test_reviewed_training_data.py` and
 `test_merge_reviewed_corpus.py` could not run because PyTorch is unavailable.
