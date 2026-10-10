@@ -21,3 +21,4 @@ research/prm_arabic_english/corpus_registry/arabicprm_t_v1/*.json -text whitespa
 research/prm_arabic_english/translation_batches/prm800k_qc24_batch03/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/prm_arabic_english/translation_batches/prm800k_qc24_batch03/human_review_2026-10-05.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/prm_arabic_english/translation_batches/prm800k_qc24_batch03_r1/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/prm_arabic_english/activate_v2_unattended_windows.cmd -text whitespace=cr-at-eol

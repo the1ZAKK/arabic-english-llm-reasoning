@@ -1,5 +1,12 @@
 # Windows execution: ArabicPRM-T v2 Batch09–32
 
+For automatic startup, bounded recovery and report return without repeated
+commands, use the single activation file described in
+[Unattended Windows activation](UNATTENDED_WINDOWS.md). This is the recommended
+path for the laptop owner. The older manual launcher below is retained as an
+optional diagnostic interface. Neither installation nor inference on the actual
+laptop is verified by offline CI.
+
 Run these commands on the Windows laptop holding your existing
 `translated_drafts`. The development environment cannot reach that laptop's
 localhost Ollama or inspect its checkpoints. Python 3.11, Git, Ollama and the

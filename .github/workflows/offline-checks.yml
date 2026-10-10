@@ -52,6 +52,14 @@ jobs:
         run: |
           & powershell -NoProfile -ExecutionPolicy Bypass -File research/prm_arabic_english/resume_v2_windows.ps1 -PreflightOnly
           if ($LASTEXITCODE -ne 0) { throw "Windows preflight failed: $LASTEXITCODE" }
+      - name: Verify the one-click bootstrap downloads its exact pinned installer
+        if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
+        shell: pwsh
+        env:
+          ARABICPRM_BOOTSTRAP_VERIFY_ONLY: "1"
+        run: |
+          & cmd.exe /d /c research\prm_arabic_english\activate_v2_unattended_windows.cmd
+          if ($LASTEXITCODE -ne 0) { throw "Pinned bootstrap verification failed: $LASTEXITCODE" }
       - name: Install and execute a native Windows scheduled task in offline mode
         if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
         shell: pwsh

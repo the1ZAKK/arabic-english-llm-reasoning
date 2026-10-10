@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "repository": "the1ZAKK/arabic-english-llm-reasoning",
+  "branch": "research/arabicprm-v2-production",
+  "runtime_commit": "2cadc25c8c0a01cf097e377be23c97beb11de716",
+  "installer_sha256": "af08dd5e3449ffdb1bea3b0c1df9d5cb12c501809b11374e3601617a3b555bcf",
+  "ci_run_id": 38089416458,
+  "ci_url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38089416458",
+  "ci": [
+    {
+      "job_id": 114322596295,
+      "name": "offline (ubuntu-latest)",
+      "conclusion": "success",
+      "tests_passed": 118,
+      "native_scheduled_task_preflight_passed": false,
+      "log_excerpt": [
+        "2026-10-10T21:54:50.3758517Z Ran 118 tests in 4.953s"
+      ]
+    },
+    {
+      "job_id": 114322596489,
+      "name": "offline (windows-latest)",
+      "conclusion": "success",
+      "tests_passed": 118,
+      "native_scheduled_task_preflight_passed": true,
+      "log_excerpt": [
+        "2026-10-10T21:55:01.4788597Z Ran 118 tests in 11.082s\r",
+        "2026-10-10T21:55:34.8060311Z CI PASSED: immutable runtime, 24 frozen batches and native scheduled-task preflight; no inference or publication.\r"
+      ]
+    }
+  ],
+  "actual_laptop_installation_observed": false,
+  "actual_local_inference_observed": false,
+  "actual_completed_batches": null,
+  "actual_outstanding_fields": null,
+  "execution_reports_observed": false,
+  "human_qc_performed": false,
+  "export_performed": false,
+  "training_performed": false,
+  "existing_monitor_retained": true,
+  "new_monitor_created": false,
+  "bootstrap_windows_ci": "pending verification on delivery commit",
+  "verified_frozen_scope": {
+    "batches": [
+      9,
+      32
+    ],
+    "records": 192,
+    "steps": 2060,
+    "fields": 2252
+  },
+  "preservation": "No frozen data, existing checkpoints or human-QC records changed"
+}
