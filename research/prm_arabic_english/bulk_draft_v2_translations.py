@@ -54,7 +54,8 @@ def translate(row, model, base_url, key, retries):
     for attempt in range(retries):
         try:
             r = Request(uri, data=json.dumps(request).encode("utf-8"),
-                        headers=({"Content-Type": "application/json"} |\n                                 ({"Authorization": "Bearer " + key} if key else {})),
+                        headers=({"Content-Type": "application/json"} |
+                                 ({"Authorization": "Bearer " + key} if key else {})),
                         method="POST")
             with urlopen(r, timeout=180) as response:
                 content = json.load(response)["choices"][0]["message"]["content"]
