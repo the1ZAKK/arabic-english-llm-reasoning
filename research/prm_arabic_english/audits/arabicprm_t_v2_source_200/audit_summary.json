@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-10",
+  "workflow_run_id": 38045027730,
+  "workflow_run_url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38045027730",
+  "artifact_id": 11666632672,
+  "artifact_name": "arabicprm-t-v2-source-200",
+  "artifact_zip_sha256": "d9e1739bc1b7a98f547c2ac0ae35169b50af7cbb60478bc177d30df7dd1af081",
+  "source_revision": "7ecc794703b2877f63226f2477a49b34f9b25163",
+  "source_full_sha256": "1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089",
+  "selection_manifest_sha256": "a21ce1fe1e033eb86b7739eca485509434ba72b6880e2669698ef6558cd431a4",
+  "source_lock_sha256": "bc168483952b2f153fe95dd3d0a06b5ebc86dfaa5b20fec32d9422c2d2736174",
+  "translation_queue_manifest_sha256": "4b9651d47ac3083bceab72fefdb26c53352666bd038f918c833f06664dccda91",
+  "excluded_prior_record_ids": 60,
+  "excluded_prior_problem_ids": 57,
+  "config": {
+    "seed": 42,
+    "train_problem_pairs": 80,
+    "dev_problem_pairs": 20,
+    "train_records": 160,
+    "dev_records": 40
+  },
+  "train": {
+    "records": 160,
+    "problem_pairs": 80,
+    "correct": 80,
+    "incorrect": 80,
+    "annotated_steps": 1494,
+    "supervised_steps": 1401,
+    "neutral_trajectories": 50,
+    "generations": {
+      "0": 15,
+      "1": 15,
+      "2": 15,
+      "3": 16,
+      "4": 16,
+      "5": 16,
+      "6": 16,
+      "7": 16,
+      "8": 19,
+      "9": 16
+    },
+    "length_bins": {
+      "short": 48,
+      "medium": 55,
+      "long": 57
+    },
+    "first_error_bins": {
+      "early": 32,
+      "middle": 25,
+      "late": 23
+    },
+    "output_sha256": "9b1d7cb290963301d9119dc24685b5d543ae7dede3eedcade375f11416248189"
+  },
+  "dev": {
+    "records": 40,
+    "problem_pairs": 20,
+    "correct": 20,
+    "incorrect": 20,
+    "annotated_steps": 444,
+    "supervised_steps": 426,
+    "neutral_trajectories": 9,
+    "generations": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 4,
+      "5": 4,
+      "6": 3,
+      "7": 4,
+      "8": 5,
+      "9": 4
+    },
+    "length_bins": {
+      "short": 12,
+      "medium": 15,
+      "long": 13
+    },
+    "first_error_bins": {
+      "early": 9,
+      "middle": 6,
+      "late": 5
+    },
+    "output_sha256": "332d0ae5ed28ecef0283e274b7d62e972927a0a5ae58337101d418bb4859b624"
+  },
+  "total": {
+    "records": 200,
+    "problem_pairs": 100,
+    "annotated_steps": 1938,
+    "supervised_steps": 1827,
+    "neutral_trajectories": 59
+  },
+  "problem_overlap": 0,
+  "selection_claim": "balanced/diverse paired training-source design; prior reviewed problem groups excluded; not representative of PRM800K",
+  "global_mgsm_used": false,
+  "translation_performed": false,
+  "human_qc_performed": false,
+  "training_performed": false
+}
