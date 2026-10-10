@@ -20,7 +20,7 @@ numeric sequence in EXACT original order, including numbers in prose.
 Never solve, repair, complete, reinterpret, or shorten erroneous source
 reasoning. Preserve final LaTeX that is not in a protected span verbatim.
 Return ONLY a JSON object with keys problem (string), steps (array of strings).
-The number of steps must match exactly."""
+The number of steps must match exactly. Do not include commentary, reasoning, or extra JSON keys."""
 
 def mask(source):
     index = iter(range(10000))
@@ -41,13 +41,26 @@ def check_translation(row, result):
         restore(original, draft)
     return result
 
+def schema_for(row):
+    count = len(row["source_record"]["steps"])
+    return {
+        "type": "object",
+        "properties": {
+            "problem": {"type": "string"},
+            "steps": {"type": "array", "items": {"type": "string"}, "minItems": count, "maxItems": count}
+        },
+        "required": ["problem", "steps"],
+        "additionalProperties": False
+    }
+
+
 def translate(row, model, base_url, key, retries):
     source = payload_for(row)
     request = {"model": model, "temperature": 0,
-               "response_format": {"type": "json_object"},
+               "response_format": {"type": "json_schema", "json_schema": {"name": "arabic_translation", "strict": True, "schema": schema_for(row)}},
                "messages": [
                    {"role": "system", "content": SYSTEM},
-                   {"role": "user", "content": json.dumps(source, ensure_ascii=False)}
+                   {"role": "user", "content": "Translate this JSON faithfully; output exactly the two required keys, with exactly " + str(len(source["steps"])) + " steps.\\n" + json.dumps(source, ensure_ascii=False)}
                ]}
     uri = base_url.rstrip("/") + "/chat/completions"
     error = None
@@ -58,8 +71,12 @@ def translate(row, model, base_url, key, retries):
                                  ({"Authorization": "Bearer " + key} if key else {})),
                         method="POST")
             with urlopen(r, timeout=180) as response:
-                content = json.load(response)["choices"][0]["message"]["content"]
-            return check_translation(row, json.loads(content))
+                message = json.load(response)["choices"][0]["message"]
+                content = message.get("content") or ""
+            parsed = json.loads(content)
+            if isinstance(parsed, dict) and set(parsed) != {"problem", "steps"}:
+                raise ValueError("Unexpected model response schema; returned keys: " + repr(sorted(parsed.keys())))
+            return check_translation(row, parsed)
         except Exception as exc:
             error = exc
             if attempt + 1 < retries:
@@ -104,6 +121,7 @@ def main():
         drafts = []
         for split in ("train", "dev"):
             for idx, row in enumerate(queues[split]):
+                print(f"Batch{number:02d} {split} record {idx + 1}/{len(queues[split])}: translating", flush=True)
                 result = translate(row, args.model, args.base_url, key, args.retries)
                 drafts.append({"split": split, "index": idx, **result,
                                "review_notes": "AI draft; genuine human QC pending"})
