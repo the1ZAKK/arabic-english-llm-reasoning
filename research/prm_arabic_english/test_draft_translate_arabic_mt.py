@@ -1,6 +1,6 @@
 import unittest
 
-from draft_translate_arabic_mt import spell_mt_generated_digits, translate_preserving
+from draft_translate_arabic_mt import repair_untranslated_short_span, spell_mt_generated_digits, translate_preserving
 
 
 def fake_translate(text):
@@ -40,6 +40,12 @@ class DraftTranslationTests(unittest.TestCase):
         self.assertEqual(spell_mt_generated_digits(" عربي 3 "), " عربي ثلاثة ")
         self.assertEqual(spell_mt_generated_digits(" عربي 25 "), " عربي خمسة وعشرون ")
         self.assertEqual(spell_mt_generated_digits(" عربي 3.5 "), " عربي ثلاثة فاصلة خمسة ")
+
+    def test_short_untranslated_fallback_is_narrow_and_deterministic(self):
+        self.assertEqual(repair_untranslated_short_span("# Answer\n\n[", "# Answer ["), "# الإجابة\n\n[")
+        self.assertEqual(repair_untranslated_short_span(", infinity)", ", infinity)"), ", اللانهاية)")
+        self.assertEqual(repair_untranslated_short_span("No match.", "No match."), "لا تطابق.")
+        self.assertEqual(repair_untranslated_short_span("Plain English remains", "Plain English remains"), "Plain English remains")
 
     def test_requires_arabic_output(self):
         with self.assertRaisesRegex(ValueError, "no Arabic"):
