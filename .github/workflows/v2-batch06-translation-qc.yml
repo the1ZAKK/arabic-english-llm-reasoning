@@ -1,0 +1,63 @@
+name: ArabicPRM-T v2 Batch06 translation checks
+on:
+  push:
+    branches:
+      - research/arabicprm-v2-production
+    paths:
+      - ".github/workflows/v2-batch06-translation-qc.yml"
+      - "research/prm_arabic_english/translation_batches/prm800k_v2_batch06/**"
+      - "research/prm_arabic_english/materialize_translation_batch.py"
+      - "research/prm_arabic_english/render_translation_review.py"
+      - "research/prm_arabic_english/export_reviewed_arabic.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review-artifact:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: research/prm_arabic_english
+      BATCH: research/prm_arabic_english/translation_batches/prm800k_v2_batch06
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+      - name: Print authoritative queue hashes
+        run: |
+          sha256sum "$BATCH/train_translation_queue.jsonl"
+          sha256sum "$BATCH/dev_translation_queue.jsonl"
+      - name: Materialize protected Arabic draft
+        run: |
+          python research/prm_arabic_english/materialize_translation_batch.py \
+            --queue-dir "$BATCH" --assets-dir "$BATCH" --output-dir batch06_review
+      - name: Render bilingual QC page
+        run: |
+          python research/prm_arabic_english/render_translation_review.py \
+            --input batch06_review/review_queue.jsonl \
+            --output batch06_review.html --batch-id ArabicPRM-T-v2-Batch06
+      - name: Create pending QC template
+        run: |
+          python research/prm_arabic_english/export_reviewed_arabic.py \
+            --queue batch06_review/review_queue.jsonl \
+            --decisions human_qc_pending.json --output-dir unused_export_path --make-template
+      - name: Verify QC blocks export
+        run: |
+          set +e
+          python research/prm_arabic_english/export_reviewed_arabic.py \
+            --queue batch06_review/review_queue.jsonl \
+            --decisions human_qc_pending.json --output-dir must_not_exist
+          status=$?
+          set -e
+          test "$status" -ne 0
+          test ! -e must_not_exist
+      - name: Upload human review evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabicprm-v2-batch06-human-review
+          path: |
+            batch06_review/review_queue.jsonl
+            batch06_review/report.json
+            batch06_review.html
+            human_qc_pending.json
+          if-no-files-found: error
