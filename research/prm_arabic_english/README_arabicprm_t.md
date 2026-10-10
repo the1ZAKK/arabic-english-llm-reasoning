@@ -28,6 +28,16 @@ accepted records; expand generation/domain coverage under the documented source
 sampling policy before a larger training run. Completed pilot experiments and
 the successful QC12 QLoRA infrastructure smoke remain recorded separately.
 
+A full-shard production sampler is now implemented in
+[`prm800k_production_sample.py`](prm800k_production_sample.py), with the protocol
+documented in [`PRODUCTION_SAMPLING.md`](PRODUCTION_SAMPLING.md). It requires a
+local copy of the pinned training shard and its exact full-file SHA256, performs
+deterministic problem-group sampling on pass one, then collects all eligible
+trajectories for selected groups on pass two. It preserves anchored train/dev
+assignments and refuses output if the source checksum changes or does not match
+the pinned checksum. This is infrastructure only: no full-shard scan, translation,
+training or new performance claim has been made yet.
+
 The sections below retain the observations from earlier ingestion milestones.
 
 ## Initial ingestion scope
