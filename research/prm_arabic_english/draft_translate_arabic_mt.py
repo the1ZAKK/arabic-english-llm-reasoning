@@ -23,7 +23,7 @@ EXTRA_LITERAL = re.compile(
     r"|\[\*\s*\d+\s*\]"             # literal source annotation markers
 )
 ARABIC = re.compile(r"[\u0600-\u06ff]")
-GENERATED_NUMBER = re.compile(r"(?<![\\w])[-+]?[0-9٠-٩]+(?:[.,][0-9٠-٩]+)?")
+GENERATED_NUMBER = re.compile(r"(?<![0-9٠-٩])[-+]?[0-9٠-٩]+(?:[.,][0-9٠-٩]+)?")
 
 
 _ONES = {
