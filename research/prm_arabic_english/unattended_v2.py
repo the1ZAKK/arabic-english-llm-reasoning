@@ -60,7 +60,8 @@ class GitRepository:
     def command(self, args, data=None, env=None, timeout=120):
         settings = {**os.environ, "GIT_TERMINAL_PROMPT": "0", "GCM_INTERACTIVE": "never"}
         settings.update(env or {})
-        options = ["-c", "credential.interactive=never", "-c", "core.sshCommand=ssh -o BatchMode=yes"]
+        options = ["-c", "credential.interactive=never", "-c", "core.sshCommand=ssh -o BatchMode=yes",
+                   "-c", "core.autocrlf=false", "-c", "core.eol=lf"]
         if self.helper:
             if self.helper != "manager":
                 raise ValueError("Only the supported Git Credential Manager override is allowed")

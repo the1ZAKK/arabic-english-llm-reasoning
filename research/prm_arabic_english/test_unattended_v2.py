@@ -234,6 +234,7 @@ class LocalGitPublicationChecks(unittest.TestCase):
         self.git("init", "--initial-branch=" + agent.BRANCH)
         self.git("config", "user.email", "fixture@example.invalid")
         self.git("config", "user.name", "Offline fixture")
+        self.git("config", "core.autocrlf", "true")
         for path in agent.runtime_paths():
             target = self.work / path
             target.parent.mkdir(parents=True, exist_ok=True)

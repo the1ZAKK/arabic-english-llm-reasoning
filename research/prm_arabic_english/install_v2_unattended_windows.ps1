@@ -96,7 +96,9 @@ New-Item -ItemType Directory -Path $tempRoot | Out-Null
 try {
     $archive = Join-Path $tempRoot "runtime.zip"
     $archiveArgs = @("archive", "--format=zip", "--output=$archive", $PinnedCommit) + @($manifest.files)
-    & git @archiveArgs
+    # git archive otherwise applies Windows core.autocrlf to Python/JSON blobs.
+    # This override is command-local; the user's Git settings are untouched.
+    & git -c core.autocrlf=false -c core.eol=lf @archiveArgs
     if ($LASTEXITCODE -ne 0) { throw "Could not build the pinned immutable runtime." }
     $extracted = Join-Path $tempRoot "files"
     Expand-Archive -LiteralPath $archive -DestinationPath $extracted
