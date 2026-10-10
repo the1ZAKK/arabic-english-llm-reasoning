@@ -4,6 +4,7 @@ import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "research" / "prm_arabic_english"))
 MODULES = (
     "test_prm800k_ingest",
@@ -12,6 +13,10 @@ MODULES = (
     "test_materialize_authorized_normalizations",
     "test_reviewed_export",
     "test_source_quarantine",
+    "test_prm800k_production_sample",
+    "test_select_production_translation_set",
+    "test_resume_v2_local",
+    "test_source_preserving_translation",
 )
 
 if __name__ == "__main__":

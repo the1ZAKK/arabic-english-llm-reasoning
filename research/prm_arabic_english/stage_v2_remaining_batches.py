@@ -100,13 +100,13 @@ def generate(destination, existing=ROOT):
             "queue_sha256": hashes,
             "records": lock_records["train"] + lock_records["dev"]
         }
-        (batch_dir / "source_lock.json").write_text(json.dumps(lock, indent=2) + "\n", encoding="utf-8")
+        (batch_dir / "source_lock.json").write_text(json.dumps(lock, indent=2) + "\n", encoding="utf-8", newline="\n")
         (batch_dir / "README.md").write_text(
             f"# ArabicPRM-T v2 Batch{batch:02d}\n\n"
             f"Frozen English source: {len(picked['train'])} train, {len(picked['dev'])} dev, "
             f"{current_steps} steps, four correct and four incorrect.\n\n"
             "Translation pending. No record is human-QC approved or training eligible. "
-            "Do not export or train from this directory.\n", encoding="utf-8")
+            "Do not export or train from this directory.\n", encoding="utf-8", newline="\n")
         manifests.append({"batch": batch, "train": len(picked["train"]), "dev": len(picked["dev"]),
                           "steps": current_steps, "queue_sha256": hashes, "translation": "pending",
                           "human_qc": "pending", "training_eligible": False})
@@ -125,7 +125,7 @@ def generate(destination, existing=ROOT):
         "translation_performed": False, "human_qc_performed": False,
         "export_performed": False, "training_performed": False
     }
-    (destination / "batch04_32_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    (destination / "batch04_32_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
     return manifest
 
 

@@ -1,7 +1,8 @@
 """Resume Batch09-32 on localhost Ollama; produce AI drafts and pending QC only.
 
-Compatible with the original schema-1 translation_checkpoint.json. No checkpoint,
-completed translation, or human decision is deleted. No exporter or trainer runs.
+Reads the original schema-1 translation_checkpoint.json without rewriting it.
+New validated fields and partial prose use separate resume files. No completed
+translation or human decision is replaced. No exporter or trainer runs.
 """
 import argparse
 from contextlib import contextmanager
@@ -20,10 +21,12 @@ import unicodedata
 from urllib.parse import urlsplit
 from urllib.request import Request, build_opener, ProxyHandler, HTTPRedirectHandler
 
-from bulk_draft_v2_translations import mask, NUM_TOKEN, unmask_and_validate, SCHEMA, SYSTEM
+from bulk_draft_v2_translations import mask, NUM_TOKEN, unmask_and_validate
 from materialize_translation_batch import PROTECTED, restore, read_queue, materialize
 from prm800k_ingest import REVISION, SOURCE_FILE
 from stage_v2_remaining_batches import generate, SOURCE, ROOT
+from source_preserving_translation import (PLAN_VERSION, slots_for, assemble,
+                                            validate_slot, validate_math, math_spans)
 
 SOURCE_SHA256 = "1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089"
 SELECTION_HASHES = {
@@ -31,6 +34,7 @@ SELECTION_HASHES = {
     "dev_translation_queue.jsonl": "01eda77bf264894c3c6ea7db60ad68d5e45279c8446a81e4bb331247b1a4af8f",
 }
 PLACEHOLDER = re.compile(r"<[MN]\d+>")
+VALIDATED_CHECKPOINT = "validated_fields_checkpoint.json"
 COMMAND = re.compile(r"\\[A-Za-z]+\*?")
 OPERATOR = re.compile(r"[+−±*/=<>^%÷×]|(?<![A-Za-z])-|-(?![A-Za-z])")
 BAD_SCRIPT = re.compile(r"[\u3400-\u9fff\uf900-\ufaff\u3040-\u30ff\uac00-\ud7af]")
@@ -193,17 +197,13 @@ def restore_extras(draft, extras):
 
 
 def plain_math_check(source, translated):
-    def fragments(text):
-        rest = PROTECTED.sub("", text)
-        spans = additional_math(rest)
-        values = [s[2] for s in spans]
-        for start, end, _ in reversed(spans):
-            rest = rest[:start] + rest[end:]
-        return values, OPERATOR.findall(rest), rest
-    math, operators, _ = fragments(source)
-    other, other_operators, prose = fragments(translated)
-    if other != math or operators != other_operators:
-        raise ValueError("Un-delimited LaTeX or mathematical operators changed")
+    validate_math(source, translated)
+    # All delimited and bare math, numbers and operators have already passed
+    # ordered exact-span comparison. Remove those literals for the prose check.
+    # ASCII-neighbor hyphen counting was language dependent (x-axis / x-محور).
+    prose = translated
+    for start, end in reversed(math_spans(translated)):
+        prose = prose[:start] + prose[end:]
     if BAD_SCRIPT.search(translated):
         raise ValueError("Unexpected CJK/Hangul text")
     if THINK.search(translated) and not THINK.search(source):
@@ -212,6 +212,8 @@ def plain_math_check(source, translated):
         raise ValueError("Added reasoning/list/header boundary inside a source field")
     arabic = sum(unicodedata.category(c).startswith("L") and "ARABIC" in unicodedata.name(c, "") for c in prose)
     latin = len(re.findall(r"[A-Za-z]", prose))
+    if translated == source and not slots_for(source):
+        return translated
     if not arabic or arabic < latin:
         raise ValueError("Arabic prose missing or dominated by untranslated Latin text")
     return translated
@@ -338,23 +340,45 @@ class Ollama:
                 "endpoint": self.base, "options": self.options, "think": False, "stream": False,
                 "keep_alive": "10m", "python": platform.python_version(), "platform": platform.platform(), "gpu": gpu}
 
-    def translate(self, text):
-        # UTF-8 byte length is a conservative token upper bound for this input.
-        system = SYSTEM + "\nAlso preserve <P0>, <P1> tokens in order. Return one translation field; do not add headings or lists.\n"
-        if len((system + text).encode("utf-8")) + self.options["num_predict"] > self.options["num_ctx"]:
-            raise ValueError("Source field exceeds conservative context budget; increase --num-ctx explicitly")
-        reply = self.request("/api/chat", {"model": self.model, "messages": [
+    def translate_slots(self, slots, attempt=1):
+        """Return prose only, keyed by Python-owned slots; no math placeholders."""
+        self.last_evidence = None
+        system = (
+            "Translate each English prose fragment into Modern Standard Arabic. "
+            "These are fragments of annotated mathematical reasoning. Translate "
+            "their literal meaning, including incorrect claims; never solve, "
+            "complete or correct anything. Mathematics, numbers, punctuation "
+            "at fragment boundaries and paragraph structure are retained by "
+            "the caller. Return ONLY an object with the same keys and Arabic "
+            "string values. Do not emit numbers, formulas, Latin letters, "
+            "placeholders, headings, line breaks or explanatory additions."
+        )
+        if attempt > 1:
+            system += f" Retry {attempt}: render only the supplied words, without completing the surrounding reasoning."
+        schema = {"type": "object", "properties": {k: {"type": "string"} for k in slots},
+                  "required": list(slots), "additionalProperties": False}
+        request = {"model": self.model, "messages": [
             {"role": "system", "content": system},
-            {"role": "user", "content": text}], "format": SCHEMA,
-            "think": False, "stream": False, "options": self.options, "keep_alive": "10m"})
+            {"role": "user", "content": json.dumps(slots, ensure_ascii=False)}],
+            "format": schema, "think": False, "stream": False,
+            "options": self.options, "keep_alive": "10m"}
+        if len(encoded(request)) + self.options["num_predict"] + 128 > self.options["num_ctx"]:
+            raise ValueError("Prose group exceeds conservative context budget")
+        self.last_evidence = {"request_sha256": sha(encoded(request)), "attempt": attempt}
+        reply = self.request("/api/chat", request)
+        self.last_evidence.update({"response_sha256": sha(encoded(reply)),
+                                  "done_reason": reply.get("done_reason"),
+                                  "prompt_eval_count": reply.get("prompt_eval_count"),
+                                  "eval_count": reply.get("eval_count")})
         if reply.get("done") is not True or reply.get("done_reason") != "stop":
             raise ValueError(f"Incomplete/truncated Ollama response: {reply.get('done_reason')}")
-        if reply["message"].get("thinking"):
+        message = reply.get("message") or {}
+        if message.get("thinking"):
             raise ValueError("Ollama emitted thinking despite think=false")
-        result = parse(reply["message"]["content"])
-        if not isinstance(result, dict) or set(result) != {"translation"} or not isinstance(result["translation"], str):
-            raise ValueError("Expected exactly one string translation field")
-        return result["translation"]
+        result = parse(message.get("content") or "")
+        if not isinstance(result, dict) or set(result) != set(slots) or any(not isinstance(v, str) for v in result.values()):
+            raise ValueError("Expected exactly the requested string prose slots")
+        return result
 
 
 def provenance(number, model, base_url, lock):
@@ -376,11 +400,32 @@ def load_checkpoint(path, expected, queues):
     return dict(saved["completed"]), raw
 
 
+def load_field_checkpoints(dest, expected, queues):
+    """Import legacy bytes read-only; bind new fields to that exact snapshot."""
+    legacy, original = load_checkpoint(dest / "translation_checkpoint.json", expected, queues)
+    additions, raw = load_checkpoint(dest / VALIDATED_CHECKPOINT, expected, queues)
+    if raw is not None:
+        if parse(raw).get("legacy_checkpoint_sha256") != (sha(original) if original is not None else None):
+            raise ValueError("Legacy checkpoint snapshot changed; all checkpoints preserved")
+        sources = {key: source for key, _, source in field_specs(queues)}
+        for key, value in additions.items():
+            validate_checkpoint_field(sources[key], value)
+            if key in legacy and legacy[key] != value:
+                try:
+                    validate_checkpoint_field(sources[key], legacy[key])
+                except (ValueError, TypeError):
+                    pass  # A rejected historical value remains in its original file.
+                else:
+                    raise ValueError(f"New checkpoint conflicts with validated legacy field: {key}; preserved")
+    return {**legacy, **additions}, additions, legacy, original
+
+
 def validate_payload(queues, lock, payload, number, model):
     if (payload.get("human_qc_status") != "pending" or payload.get("model") != model
-            or payload.get("batch") != f"prm800k_v2_batch{number:02d}"):
+            or payload.get("batch") != f"prm800k_v2_batch{number:02d}"
+            or payload.get("training_eligible", False) is not False):
         raise ValueError("Completed draft model/batch/QC provenance mismatch")
-    rows = materialize(queues, lock, payload)
+    rows = materialize(queues, lock, payload, preserve_source_errors=True)
     for row in rows:
         source, ar = row["source_record"], row["translation"]
         for en, translated in zip([source["problem"]] + source["steps"], [ar["problem"]] + ar["steps"]):
@@ -388,6 +433,112 @@ def validate_payload(queues, lock, payload, number, model):
         if row["training_eligible"] or row["qc"]["decision"] is not None:
             raise ValueError("Draft must remain unreviewed and ineligible for training")
     return rows
+
+
+class IncompleteBatch(RuntimeError):
+    def __init__(self, report):
+        self.report = report
+        super().__init__(f"{report['batch']} has {len(report['unresolved_fields'])} unresolved fields; prior checkpoint entries preserved")
+
+
+def field_specs(queues):
+    return [(f"{split}:{index}:{step}", row["source_record"]["id"], original)
+            for split in ("train", "dev") for index, row in enumerate(queues[split])
+            for step, original in enumerate([row["source_record"]["problem"]] + row["source_record"]["steps"])]
+
+
+def load_progress(path, prov, specs):
+    if not path.exists():
+        return {"schema_version": 1, "provenance": prov, "plan_version": PLAN_VERSION, "fields": {}}
+    saved = parse(path.read_bytes())
+    expected = {key: source for key, _, source in specs}
+    if (saved.get("schema_version") != 1 or saved.get("provenance") != prov
+            or saved.get("plan_version") != PLAN_VERSION or not isinstance(saved.get("fields"), dict)
+            or not set(saved["fields"]) <= set(expected)):
+        raise ValueError("Prose checkpoint provenance/coverage mismatch; preserved")
+    for key, field in saved["fields"].items():
+        source = expected[key]
+        slots = slots_for(source)
+        if (not isinstance(field, dict) or field.get("source_sha256") != sha(source.encode("utf-8"))
+                or not isinstance(field.get("slots"), dict) or not set(field["slots"]) <= set(slots)):
+            raise ValueError(f"Prose checkpoint source/slot mismatch: {key}; preserved")
+        if (not isinstance(field.get("attempts"), dict) or not set(field["attempts"]) <= set(slots)
+                or any(type(v) is not int or v < 0 for v in field["attempts"].values())
+                or not isinstance(field.get("errors"), dict) or not set(field["errors"]) <= set(slots)):
+            raise ValueError(f"Prose checkpoint attempt/error ledger mismatch: {key}; preserved")
+        for slot, item in field["slots"].items():
+            if not isinstance(item, dict) or item.get("source_sha256") != sha(slots[slot].encode("utf-8")):
+                raise ValueError(f"Prose checkpoint slot hash mismatch: {key}/{slot}; preserved")
+            validate_slot(slots[slot], item["translation"])
+    return saved
+
+
+def prose_groups(slots, single=False):
+    group, size = {}, 0
+    for key, text in slots.items():
+        cost = len(text.encode("utf-8")) + 100
+        if group and (single or len(group) >= 4 or size + cost > 700):
+            yield group
+            group, size = {}, 0
+        group[key], size = text, size + cost
+    if group:
+        yield group
+
+
+def draft_field(original, key, record_id, client, progress, path, log, retries):
+    slots = slots_for(original)
+    field = progress["fields"].setdefault(key, {"source_sha256": sha(original.encode("utf-8")),
+                                              "method": PLAN_VERSION if slots else "verbatim_nonlinguistic_source",
+                                              "slots": {}, "attempts": {}, "errors": {}})
+    atomic_write(path, encoded(progress))
+    for attempt in range(1, retries + 1):
+        pending = {s: text for s, text in slots.items() if s not in field["slots"]}
+        if not pending:
+            break
+        # First try a small group; retry individual failed fragments with a
+        # different instruction, rather than repeating the same failed prompt.
+        for group in prose_groups(pending, single=attempt > 1):
+            result, request_error = {}, None
+            for slot in group:
+                field["attempts"][slot] = field["attempts"].get(slot, 0) + 1
+            atomic_write(path, encoded(progress))
+            try:
+                result = client.translate_slots(group, attempt=attempt)
+            except Exception as error:
+                request_error = error
+            for slot, text in group.items():
+                candidate = result.get(slot)
+                try:
+                    if request_error is not None:
+                        raise request_error
+                    validate_slot(text, candidate)
+                except Exception as error:
+                    field["errors"][slot] = str(error)
+                    event(log, "translation_attempt_failed", field=key, slot=slot,
+                          attempt=attempt, total_attempts=field["attempts"][slot],
+                          source_record_id=record_id, source_sha256=field["source_sha256"],
+                          draft=candidate, error=str(error), evidence=getattr(client, "last_evidence", None))
+                    print(f"  {key}/{slot} attempt {attempt}/{retries}: {error}", flush=True)
+                else:
+                    field["slots"][slot] = {"source_sha256": sha(text.encode("utf-8")),
+                                            "translation": candidate, "validated_at_utc": now(),
+                                            "evidence": getattr(client, "last_evidence", None)}
+                    field["errors"].pop(slot, None)
+                # Persist siblings independently, even if another slot fails.
+                atomic_write(path, encoded(progress))
+        if attempt < retries and len(field["slots"]) != len(slots):
+            time.sleep(min(2 ** attempt, 8))
+    missing = [s for s in slots if s not in field["slots"]]
+    if missing:
+        return None, {"field": key, "source_record_id": record_id, "source_sha256": field["source_sha256"],
+                      "unresolved_slots": [{"slot": s, "source": slots[s], "error": field["errors"].get(s),
+                                            "total_attempts": field["attempts"].get(s, 0)} for s in missing]}
+    translated = assemble(original, {s: item["translation"] for s, item in field["slots"].items()})
+    # Store the same schema-1 masked string representation as legacy checkpoints.
+    # Python, not the model, constructs every M/N token and its order.
+    candidate, _ = mask(translated)
+    validate_checkpoint_field(original, candidate)
+    return candidate, None
 
 
 def draft_batch(number, staging, output, client, runtime, base_url, retries):
@@ -400,101 +551,97 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries):
     if final.exists():
         payload = parse(final.read_bytes())
         return validate_payload(queues, lock, payload, number, client.model), True
-    checkpoint = dest / "translation_checkpoint.json"
+    checkpoint = dest / VALIDATED_CHECKPOINT
     prov = provenance(number, client.model, base_url, lock)
-    completed, initial = load_checkpoint(checkpoint, prov, queues)
+    completed, additions, legacy, initial = load_field_checkpoints(dest, prov, queues)
     if initial is not None:
         create_or_verify(dest / "checkpoint_backups" / (sha(initial) + ".json"), initial)
     runtime_path = dest / "ollama_runtime.json"
     if runtime_path.exists():
         previous = parse(runtime_path.read_bytes())
+        legacy_unverified = previous.get("legacy_checkpoint_fields_runtime_unverified", bool(legacy))
         for key in ("model", "model_digest", "options", "think", "endpoint"):
             if previous.get(key) != runtime.get(key):
                 raise ValueError(f"Ollama runtime provenance changed: {key}")
     else:
+        legacy_unverified = bool(legacy)
         create_or_verify(runtime_path, encoded({**runtime, "captured_at_utc": now(),
-                         "legacy_checkpoint_fields_runtime_unverified": bool(completed)}))
-    drafts, log = [], dest / "failures.jsonl"
+                         "legacy_checkpoint_fields_runtime_unverified": bool(legacy)}))
+    specs = field_specs(queues)
+    progress_path = dest / "prose_checkpoint.json"
+    progress = load_progress(progress_path, prov, specs)
+    log, resolved, unresolved = dest / "failures.jsonl", set(), {}
+    for key, _, original in specs:
+        if key in completed:
+            try:
+                validate_checkpoint_field(original, completed[key])
+                resolved.add(key)
+            except (ValueError, TypeError) as error:
+                event(log, "checkpoint_field_rejected", field=key, draft=completed[key],
+                      source_sha256=sha(original.encode("utf-8")), error=str(error))
+
+    def status(state):
+        report = {"batch": name, "status": state, "expected_fields": len(specs),
+                  "validated_fields": len(resolved), "unresolved_fields": list(unresolved.values()),
+                  "unattempted_fields": [key for key, _, _ in specs if key not in resolved and key not in unresolved],
+                  "all_fields_validated": len(resolved) == len(specs) and not unresolved,
+                  "complete": False,
+                  "human_qc_status": "pending", "training_eligible": False,
+                  "queue_sha256": lock["queue_sha256"], "updated_at_utc": now()}
+        atomic_write(dest / "batch_status.json", encoded(report))
+        return report
+
+    status("in_progress")
+    try:
+        for key, record_id, original in specs:
+            print(f"Batch{number:02d} field {key}; validated {len(resolved)}/{len(specs)}", flush=True)
+            if key in resolved:
+                continue
+            try:
+                candidate, failure = draft_field(original, key, record_id, client, progress,
+                                                 progress_path, log, retries)
+            except (ValueError, TypeError) as error:
+                candidate, failure = None, {"field": key, "source_record_id": record_id,
+                    "source_sha256": sha(original.encode("utf-8")), "error": str(error)}
+            if failure:
+                unresolved[key] = failure
+                event(log, "field_unresolved", **failure)
+            else:
+                completed[key] = candidate
+                additions[key] = candidate
+                atomic_write(checkpoint, encoded({"provenance": prov, "completed": additions,
+                    "legacy_checkpoint_sha256": sha(initial) if initial is not None else None}))
+                event(dest / "field_audit.jsonl", "field_validated", field=key, source_record_id=record_id,
+                      source_sha256=sha(original.encode("utf-8")), checkpoint_field_sha256=sha(candidate.encode("utf-8")),
+                      method=progress["fields"][key]["method"], human_qc_status="pending")
+                resolved.add(key)
+            status("in_progress")
+    except KeyboardInterrupt:
+        status("interrupted")
+        raise
+    report = status("incomplete_unresolved_fields" if unresolved else "fields_validated")
+    if unresolved:
+        raise IncompleteBatch(report)
+    drafts = []
     for split in ("train", "dev"):
         for index, row in enumerate(queues[split]):
             record, fields = row["source_record"], []
             for step, original in enumerate([record["problem"]] + record["steps"]):
                 key = f"{split}:{index}:{step}"
-                print(f"Batch{number:02d} {split} {index + 1}/{len(queues[split])} field {step}/{len(record['steps'])}", flush=True)
-                draft, valid = completed.get(key), False
-                if key in completed:
-                    try:
-                        validate_checkpoint_field(original, draft)
-                        valid = True
-                    except (ValueError, TypeError) as error:
-                        event(log, "checkpoint_field_rejected", field=key, draft=draft,
-                              source_sha256=sha(original.encode("utf-8")), error=str(error))
-                if not valid:
-                    masked, _, extras = model_mask(original)
-                    for attempt in range(1, retries + 1):
-                        candidate = None
-                        try:
-                            # Preserve the earlier numeric-only-table workaround.
-                            lines = original.strip().splitlines()
-                            if len(lines) >= 3 and all(x.strip().startswith("|") and x.strip().endswith("|") for x in lines) and not re.search(r"[A-Za-z]", original):
-                                candidate = "الجدول التالي:\n" + masked
-                            else:
-                                # Preserve a terminal answer containing only a
-                                # protected LaTeX token without asking a small
-                                # model to reproduce that fragile final token.
-                                # Keep the preceding displayed equation and
-                                # standalone LaTeX answer in source order.
-                                equation_answer = re.search(
-                                    r"(?s)\n\n(<M\d+>)\s*\n\n# Answer\s*\n\s*(<P\d+>)\s*$",
-                                    masked,
-                                )
-                                answer = re.search(
-                                    r"(?s)\n\n# Answer\s*\n\s*(<P\d+>)\s*$",
-                                    masked,
-                                )
-                                if equation_answer:
-                                    body = masked[:equation_answer.start()]
-                                    # Translate only the prose. Small models may
-                                    # continue past a terminal colon and invent
-                                    # formulas; never admit generated math into
-                                    # a source-locked equation/answer pair.
-                                    prose = client.translate(body).strip()
-                                    if (body.rstrip().endswith(":") and
-                                            ":" in prose and
-                                            not re.search(r"<[MPN]\d+>", body)):
-                                        prose = prose.split(":", 1)[0].rstrip() + ":"
-                                    candidate = prose
-                                    candidate += "\n\n" + equation_answer.group(1)
-                                    candidate += "\n\n# الإجابة\n\n" + equation_answer.group(2)
-                                elif answer:
-                                    body = masked[:answer.start()]
-                                    candidate = client.translate(body).rstrip()
-                                    candidate += "\n\n# الإجابة\n\n" + answer.group(1)
-                                else:
-                                    candidate = client.translate(masked)
-                            candidate = restore_extras(candidate, extras)
-                            validate_checkpoint_field(original, candidate)
-                            break
-                        except Exception as error:
-                            event(log, "translation_attempt_failed", field=key, attempt=attempt,
-                                  source_record_id=record["id"], draft=candidate, error=str(error))
-                            print(f"  attempt {attempt}/{retries}: {error}", flush=True)
-                            if attempt == retries:
-                                raise RuntimeError(f"{name} {key} failed; prior checkpoint entries preserved") from error
-                            time.sleep(min(2 ** attempt, 8))
-                    # Replace an invalid old value only AFTER its replacement passes.
-                    completed[key] = candidate
-                    atomic_write(checkpoint, encoded({"provenance": prov, "completed": completed}))
-                    draft = candidate
+                draft = completed[key]
                 _, numbers = mask(original)
                 fields.append(NUM_TOKEN.sub(lambda m: numbers[int(m[1])], draft))
             drafts.append({"split": split, "index": index, "problem": fields[0], "steps": fields[1:],
                            "review_notes": "AI draft; genuine bilingual human QC pending"})
-    payload = {"translator": "Local Ollama AI draft", "model": client.model, "method": "one source field per request; protected math and numbers",
+    payload = {"translator": "Local Ollama AI draft", "model": client.model, "method": PLAN_VERSION,
                "batch": name, "human_qc_status": "pending", "training_eligible": False,
-               "runtime": runtime, "legacy_checkpoint_fields_runtime_unverified": bool(initial), "records": drafts}
+               "runtime": runtime, "legacy_checkpoint_fields_runtime_unverified": legacy_unverified,
+               "field_translation_methods": [{"field": key, "source_sha256": sha(en.encode("utf-8")),
+                   "method": progress["fields"].get(key, {}).get("method", "legacy_checkpoint_reused")}
+                   for key, _, en in specs], "records": drafts}
     rows = validate_payload(queues, lock, payload, number, client.model)
     create_or_verify(final, encoded(payload))
+    status("draft_payload_validated_pending_review_artifacts")
     return rows, False
 
 
@@ -528,6 +675,14 @@ def make_review(number, rows, dest, review_root):
               "translation_payload_sha256": sha((dest / "translations.json").read_bytes()),
               "review_html_sha256": sha(html.read_bytes())}
     create_or_verify(review / "validation_report.json", encoded(report))
+    status_path = dest / "batch_status.json"
+    previous_status = parse(status_path.read_bytes()) if status_path.exists() else {}
+    atomic_write(status_path, encoded({**previous_status, "batch": name,
+        "status": "ai_draft_validated_human_qc_pending", "complete": True,
+        "all_fields_validated": True, "expected_fields": sum(1 + len(r["translation"]["steps"]) for r in rows),
+        "validated_fields": sum(1 + len(r["translation"]["steps"]) for r in rows),
+        "unresolved_fields": [], "unattempted_fields": [], "review_queue_sha256": sha(raw),
+        "human_qc_status": "pending", "training_eligible": False, "updated_at_utc": now()}))
     return report
 
 
@@ -539,7 +694,7 @@ def preflight_batch(number, staging, output, model, base_url):
         if (dest / filename).exists() and (dest / filename).read_bytes() != (staging / name / filename).read_bytes():
             raise ValueError(f"Existing draft source copy differs: {name}/{filename}")
     expected = provenance(number, model, base_url, lock)
-    completed, _ = load_checkpoint(dest / "translation_checkpoint.json", expected, queues)
+    completed, additions, legacy, _ = load_field_checkpoints(dest, expected, queues)
     invalid = []
     for s in ("train", "dev"):
         for i, row in enumerate(queues[s]):
@@ -553,10 +708,47 @@ def preflight_batch(number, staging, output, model, base_url):
     final = dest / "translations.json"
     if final.exists():
         validate_payload(queues, lock, parse(final.read_bytes()), number, model)
+    specs = field_specs(queues)
+    progress = load_progress(dest / "prose_checkpoint.json", expected, specs)
+    rejected = {item["field"] for item in invalid}
     return {"batch": number, "records": sum(len(q) for q in queues.values()),
             "steps": sum(len(r["source_record"]["steps"]) for q in queues.values() for r in q),
             "queue_sha256": lock["queue_sha256"], "saved_fields": len(completed),
+            "legacy_saved_fields": len(legacy), "new_validated_fields": len(additions),
+            "expected_fields": len(specs), "validated_saved_fields": len(completed) - len(invalid),
+            "prose_saved_slots": sum(len(f["slots"]) for f in progress["fields"].values()),
+            "outstanding_fields": [] if final.exists() else [
+                {"field": key, "source_record_id": record_id, "source_sha256": sha(en.encode("utf-8")),
+                 "status": "invalid_saved_field" if key in rejected else "awaiting_local_inference"}
+                for key, record_id, en in specs if key not in completed or key in rejected],
             "invalid_saved_fields": invalid, "completed_draft_present_and_valid": final.exists()}
+
+
+def write_run_summary(path, summary):
+    summary["completed_batches"] = [b["batch"] for b in summary["batches"]
+                                    if b["status"] == "ai_draft_validated_human_qc_pending"]
+    summary["incomplete_batches"] = [b["batch"] for b in summary["batches"]
+                                     if b["status"] == "incomplete_unresolved_fields"]
+    summary["failed_batches"] = [b["batch"] for b in summary["batches"] if b["status"] == "failed"]
+    summary["unattempted_batches"] = [b["batch"] for b in summary["batches"] if b["status"] == "not_started"]
+    atomic_write(path, encoded(summary))
+    text = ["# ArabicPRM-T v2 execution audit", "",
+            f"Mode: `{summary['mode']}`. Human QC remains pending; no training export or training occurred.", "",
+            "Only `ai_draft_validated_human_qc_pending` means a complete mechanical draft AND review artifacts.", "",
+            "| Batch | Status | Validated / expected fields | Outstanding fields |", "|---|---|---|---|"]
+    for batch in summary["batches"]:
+        outstanding = batch.get("unresolved_fields", batch.get("outstanding_fields", []))
+        text.append(f"| {batch['batch']:02d} | {batch['status']} | {batch.get('validated_fields', batch.get('validated_saved_fields', '?'))} / {batch.get('expected_fields', '?')} | {len(outstanding) if outstanding else 'see JSON/status'} |")
+        if batch.get("error"):
+            text.extend(["", f"Batch{batch['batch']:02d}: {batch['error']}", ""])
+        for field in outstanding:
+            text.extend(["", f"- Batch{batch['batch']:02d} `{field['field']}` — source SHA256 `{field['source_sha256']}`"])
+            for slot in field.get("unresolved_slots", []):
+                text.append(f"  - `{slot['slot']}`: {slot['error']} (total attempts: {slot['total_attempts']})")
+    if summary.get("run_error"):
+        text.extend(["", "Run stopped: " + summary["run_error"]])
+    text.extend(["", "Review every problem and step for semantic equivalence, Arabic fluency, preserved source mistakes and source annotations. Mechanical checks do not establish these judgments.", ""])
+    atomic_write(path.with_suffix(".md"), "\n".join(text).encode("utf-8"))
 
 
 def main():
@@ -583,37 +775,86 @@ def main():
     with run_lock(args.output_root):
         summary = {"started_at_utc": now(), "mode": "offline_preflight" if args.preflight_only else "local_ollama_ai_drafts",
                    "human_qc_performed": False, "export_performed": False, "training_performed": False,
-                   "global_mgsm_accessed": False, "batches": []}
+                   "global_mgsm_accessed": False, "plan_version": PLAN_VERSION,
+                   "runner_sha256": sha(Path(__file__).read_bytes()),
+                   "batches": [{"batch": n, "status": "not_started"} for n in range(args.start, args.end + 1)]}
         summary_path = args.output_root / ("preflight_latest.json" if args.preflight_only else "resume_summary_latest.json")
+        active_number = None
         try:
             stage_verified(args.staging_root)
-            runtime = None if args.preflight_only else client.preflight()
-            summary["runtime"] = runtime
+            audits, audit_errors = {}, {}
             for number in range(args.start, args.end + 1):
                 try:
-                    audit = preflight_batch(number, args.staging_root, args.output_root, args.model, args.base_url)
+                    audits[number] = preflight_batch(number, args.staging_root, args.output_root, args.model, args.base_url)
+                    summary["batches"][number - args.start] = {**audits[number], "batch": number, "status": "not_started"}
+                except Exception as error:
+                    audit_errors[number] = error
+            runtime, runtime_error = None, None
+            if not args.preflight_only and any(not a.get("completed_draft_present_and_valid") for a in audits.values()):
+                for attempt in range(1, args.retries + 1):
+                    try:
+                        runtime = client.preflight()
+                        break
+                    except Exception as error:
+                        event(args.output_root / "failures.jsonl", "runtime_preflight_failed", attempt=attempt, error=str(error))
+                        if attempt == args.retries:
+                            runtime_error = error
+                            break
+                        time.sleep(min(2 ** attempt, 8))
+            summary["runtime"] = runtime
+            if runtime_error is not None:
+                summary["runtime_error"] = str(runtime_error)
+            for number in range(args.start, args.end + 1):
+                position = number - args.start
+                active_number = number
+                try:
+                    if number in audit_errors:
+                        raise audit_errors[number]
+                    audit = audits[number]
                     if args.preflight_only:
                         result = {**audit, "status": "source_audited_only"}
                     else:
+                        if runtime_error is not None and not audit["completed_draft_present_and_valid"]:
+                            raise RuntimeError(f"Local inference unavailable after bounded preflight retries: {runtime_error}")
                         rows, reused = draft_batch(number, args.staging_root, args.output_root, client, runtime, args.base_url, args.retries)
                         report = make_review(number, rows, args.output_root / f"prm800k_v2_batch{number:02d}", args.review_root)
-                        result = {"batch": number, "status": "ai_draft_validated_human_qc_pending", "reused_completed_draft": reused, **report}
+                        result = {**report, "batch": number, "status": "ai_draft_validated_human_qc_pending",
+                                  "reused_completed_draft": reused, "expected_fields": audit.get("expected_fields"),
+                                  "validated_fields": audit.get("expected_fields"), "unresolved_fields": []}
+                except IncompleteBatch as error:
+                    result = {**error.report, "batch": number, "error": str(error)}
+                    event(args.output_root / "failures.jsonl", "batch_incomplete", **result)
                 except Exception as error:
-                    result = {"batch": number, "status": "failed", "error": str(error)}
+                    status_path = args.output_root / f"prm800k_v2_batch{number:02d}" / "batch_status.json"
+                    previous_status = {}
+                    if status_path.exists():
+                        try:
+                            previous_status = parse(status_path.read_bytes())
+                        except (ValueError, OSError):
+                            pass
+                    result = {**audits.get(number, {}), **previous_status, "batch": number,
+                              "status": "failed", "complete": False, "error": str(error)}
                     event(args.output_root / "failures.jsonl", "batch_failed", **result)
-                summary["batches"].append(result)
-                atomic_write(summary_path, encoded(summary))
-                print(json.dumps(result, ensure_ascii=False), flush=True)
+                summary["batches"][position] = result
+                write_run_summary(summary_path, summary)
+                print(json.dumps({k: result[k] for k in ("batch", "status", "records", "steps", "validated_fields", "expected_fields", "error")
+                                  if k in result}, ensure_ascii=False), flush=True)
+                active_number = None
         except (Exception, KeyboardInterrupt) as error:
             summary["run_error"] = type(error).__name__ + ": " + str(error)
             event(args.output_root / "failures.jsonl", "run_stopped", error=summary["run_error"])
+            if isinstance(error, KeyboardInterrupt) and active_number is not None:
+                path = args.output_root / f"prm800k_v2_batch{active_number:02d}" / "batch_status.json"
+                stopped = parse(path.read_bytes()) if path.exists() else {}
+                summary["batches"][active_number - args.start] = {**stopped, "batch": active_number,
+                    "previous_batch_status": stopped.get("status"), "status": "interrupted", "complete": False}
         finally:
             summary["finished_at_utc"] = now()
-            atomic_write(summary_path, encoded(summary))
+            write_run_summary(summary_path, summary)
             history = args.output_root / "run_reports" / (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ") + ".json")
             create_or_verify(history, encoded(summary))
-        failed = sum(b["status"] == "failed" for b in summary["batches"])
-        print(f"Reports: {summary_path}; failed batches: {failed}; human QC remains pending", flush=True)
+        failed = sum(b["status"] in ("failed", "incomplete_unresolved_fields", "not_started", "interrupted") for b in summary["batches"])
+        print(f"Reports: {summary_path}; incomplete/failed batches: {failed}; human QC remains pending", flush=True)
         return 1 if failed or summary.get("run_error") else 0
 
 

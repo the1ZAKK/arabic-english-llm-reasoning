@@ -3,11 +3,14 @@ param(
     [ValidateRange(9, 32)][int]$End = 32,
     [ValidateRange(1, 20)][int]$Retries = 3,
     [ValidateRange(2048, 32768)][int]$NumCtx = 4096,
+    [ValidateRange(1, 2048)][int]$NumPredict = 2048,
+    [ValidateRange(1, 3600)][int]$Timeout = 600,
     [switch]$PreflightOnly
 )
 
 $ErrorActionPreference = "Stop"
 if ($Start -gt $End) { throw "Start must not exceed End." }
+if ($NumCtx -le $NumPredict) { throw "NumCtx must exceed NumPredict." }
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 Set-Location -LiteralPath $repoRoot
 
@@ -47,7 +50,8 @@ $translationArgs = @(
     "--review-root", "review_artifacts",
     "--start", "$Start", "--end", "$End",
     "--model", "qwen3:4b", "--base-url", "http://127.0.0.1:11434/v1",
-    "--num-ctx", "$NumCtx", "--retries", "$Retries"
+    "--num-ctx", "$NumCtx", "--num-predict", "$NumPredict",
+    "--timeout", "$Timeout", "--retries", "$Retries"
 )
 if ($PreflightOnly) { $translationArgs += "--preflight-only" }
 
@@ -62,4 +66,8 @@ try {
     Stop-Transcript | Out-Null
 }
 Write-Host "Console log: $consoleLog"
+Write-Host "Audit: translated_drafts\resume_summary_latest.md (or preflight_latest.md for -PreflightOnly)"
+if ($resultCode -ne 0) {
+    Write-Host "Some work remains unresolved or the run stopped. Read the audit, keep all checkpoints, and rerun the same command after addressing any runtime/source error."
+}
 exit $resultCode

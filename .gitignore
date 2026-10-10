@@ -45,6 +45,9 @@ desktop.ini
 research/english-darija-experiments/dqadqa_gsm8k_clean_pairs.jsonl
 
 # ArabicPRM-T raw source prefixes and generated staging corpora
+/frozen_staging/
+/translated_drafts/
+/review_artifacts/
 research/prm_arabic_english/data/prm800k_staging*/
 research/prm_arabic_english/data/reviewed_corpora/
 

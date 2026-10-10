@@ -40,7 +40,11 @@ def restore(source, draft):
     if NUMBER.findall(source) != NUMBER.findall(translated):
         raise ValueError("Numeric sequence changed")
     if not re.search(r"[\u0600-\u06ff]", translated):
-        raise ValueError("No Arabic text")
+        # A nonlinguistic source needs no invented Arabic label. This exception
+        # admits only the exact source, never changed mathematics or prose.
+        from source_preserving_translation import slots_for
+        if translated != source or slots_for(source):
+            raise ValueError("No Arabic text")
     return translated
 
 
@@ -62,9 +66,11 @@ def read_queue(base):
     return queues, hashes
 
 
-def materialize(queues, lock, payload):
+def materialize(queues, lock, payload, *, preserve_source_errors=False):
     expected = {(r["split"], r["index"]): r for r in lock["records"]}
     drafts = payload["records"]
+    if any(type(r.get("index")) is not int or r["index"] < 0 or r.get("split") not in queues for r in drafts):
+        raise ValueError("Invalid translation record boundary/index")
     keys = [(r["split"], r["index"]) for r in drafts]
     if len(keys) != len(set(keys)) or set(keys) != set(expected):
         raise ValueError("Translation batch coverage mismatch")
@@ -80,7 +86,7 @@ def materialize(queues, lock, payload):
             raise ValueError("Step count changed")
         try:
             problem = restore(source["problem"], draft["problem"])
-            steps = [restore(approved_translation_source(a, source['id'], n), b)
+            steps = [restore(a if preserve_source_errors else approved_translation_source(a, source['id'], n), b)
                      for n, (a, b) in enumerate(zip(source["steps"], draft["steps"]), 1)]
         except ValueError as error:
             raise ValueError(f"{split}/{index}: {error}") from error

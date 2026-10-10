@@ -1,118 +1,133 @@
-# Windows Ollama resume: ArabicPRM-T v2 Batch09-32
+# Windows execution: ArabicPRM-T v2 Batch09–32
 
-Run this on the Windows laptop that holds `translated_drafts`. ChatGPT's cloud
-terminal is a different machine and cannot reach that laptop's localhost.
-The runner uses the already-installed `qwen3:4b`; it does not download a model.
-Python 3.11 or newer is sufficient; the runner uses only the standard library.
+Run these commands on the Windows laptop holding your existing
+`translated_drafts`. The development environment cannot reach that laptop's
+localhost Ollama or inspect its checkpoints. Python 3.11, Git, Ollama and the
+installed `qwen3:4b` are sufficient; no Python packages or API credits are needed.
+Keep Ollama running and the laptop awake during drafting.
 
-## Start after the existing translation process exits
+## Update and execute
 
-If the original Batch09 command is still printing record/step progress, let it
-finish first. Do not run two translators against the same checkpoint. The
-PowerShell launcher also refuses to start while either translator is running.
+Stop any earlier translator before updating the checkout. The launcher refuses
+concurrent translators, and the Python runner holds an OS file lock. Do not
+delete checkpoints or use `git reset` or `git clean`.
 
-In CMD, from the existing checkout:
+In CMD, change to your existing repository directory, then run this setup and
+offline preflight command. The `&&` operators stop at the first failed command:
 
 ```bat
-cd /d C:\Users\brimz\Documents\arabic-english-llm-reasoning
-git switch research/arabicprm-v2-production
-git pull --ff-only origin research/arabicprm-v2-production
-powershell -NoProfile -ExecutionPolicy Bypass -File research\prm_arabic_english\resume_v2_windows.ps1 -PreflightOnly
+git switch research/arabicprm-v2-production && git pull --ff-only origin research/arabicprm-v2-production && powershell -NoProfile -ExecutionPolicy Bypass -File research\prm_arabic_english\resume_v2_windows.ps1 -PreflightOnly
+```
+
+After preflight succeeds, start the unattended run:
+
+```bat
 powershell -NoProfile -ExecutionPolicy Bypass -File research\prm_arabic_english\resume_v2_windows.ps1
 ```
 
-Stop if Git reports an error or the offline preflight exits with an error. No
-reset, clean, checkpoint deletion, or training command is needed. Use your actual
-checkout path if it differs. `-ExecutionPolicy Bypass` applies to this one
-PowerShell process; it does not change the machine's persistent policy.
+This processes Batch09 through Batch32 sequentially. It verifies and reuses valid
+saved work and creates pending review artifacts for each complete draft. Repeat
+the execution command after interruption; no cleanup is needed. A smaller range
+can be selected with `-Start 9 -End 9`. `-ExecutionPolicy Bypass` applies only to
+this PowerShell process.
 
-The final command runs Batch09 through Batch32 sequentially. Batch09 is reused
-if its completed payload passes the checks. Otherwise its valid checkpoint fields
-are reused. For a smaller range, pass `-Start 9 -End 9`, then advance the range.
-Repeat the same command after an interruption: successful batches are verified
-and reused; failed batches retain their saved work and are attempted again.
-The new runner holds an OS file lock that releases automatically on process exit.
+The launcher verifies the exact research branch and repository origin. It never
+changes branches or pulls code automatically. The Ollama preflight checks the
+installed model digest and actual thinking-off behavior. It does not download
+or change the model. Source or runtime provenance failures remain explicit.
 
-## What is checked and preserved
+## Preservation and recovery
 
-- The 256-record frozen PRM800K selection is bound to pinned train/dev queue
-  SHA256 values. Each source record's canonical SHA256, source revision/file,
-  lock record identity, order, and split are checked. Staging is regenerated in a
-  temporary directory, compared byte for byte, and only missing files are added.
-- Legacy schema-1 checkpoints retain their existing model, endpoint, batch, and
-  source-hash provenance. A changed provenance fails closed. Valid fields are
-  retained. The initial checkpoint is backed up by SHA256 before any update;
-  rejected old fields are logged with their text, and only replaced after a new
-  candidate passes. No completed translation or review file is overwritten.
-- Delimited math, inline LaTeX, complete LaTeX environments, nested command
-  arguments (including incomplete source fragments), numeric sequences,
-  mixed math/number token order, and bare operator
-  sequences are checked. The runner rejects empty or predominantly untranslated
-  Latin prose, unexpected CJK/Hangul, injected thinking/role markers, added
-  headings/list boundaries, and changed step counts. It preserves source errors,
-  ratings, labels, masks, and train/dev assignments.
-- Ollama's native `/api/chat` uses a JSON schema, `think: false`, `stream: false`,
-  temperature 0, seed 42, a 4096-token context, a 2048-token output budget, and one
-  request at a time. Truncated responses fail validation. The exact installed
-  model digest, Ollama version, runtime options, OS/Python version, and available
-  NVIDIA GPU information are recorded. Original checkpoint fields created before
-  this audit have **unverified historical runtime details**; they are not
-  retroactively attributed to the newly recorded settings.
+The 256-record frozen selection is bound to pinned queue hashes. Selected record
+hashes, canonical identity, lineage, splits, labels, masks, step counts and source
+locks are checked. Staging is generated in a temporary directory and compared
+byte for byte; only missing files are added.
 
-These are conservative mechanical checks. They do not establish translation
-equivalence, Arabic fluency, or mathematical correctness. Genuine bilingual
-human review remains necessary, including checking that deliberately incorrect
-source reasoning was not repaired. A flagged completed payload is preserved and
-reported as failed; it is not silently replaced.
+The original `translation_checkpoint.json` remains byte-for-byte unchanged.
+Valid fields are reused; an initial hash-named backup is also retained. New fields
+use `validated_fields_checkpoint.json`, bound to the original checkpoint SHA256.
+Rejected historical values remain in the original file and failure log; newly
+validated candidates go into the separate resume file. Existing completed
+payloads, frozen source copies and human-QC files are preserved.
 
-## Outputs
+Python owns every mathematical expression, number and structural boundary.
+Ollama translates only prose fragments; it receives no math placeholders.
+Python reconstructs fields from exact source literals and validates math, numeric
+order, coverage and step boundaries. Malformed expressions and incorrect
+reasoning remain as written. English inside protected LaTeX stays with the
+expression. Pure math fields are copied exactly without inference or an invented
+heading.
 
-| Location | Contents |
+Generated math, numbers, Latin text, other scripts, control characters, new lines
+and markup are rejected inside prose fragments. Each pending fragment receives
+at most `-Retries 3` attempts per invocation by default. Small-group attempts
+are followed by individual retries of failed fragments. Valid siblings remain
+saved. Unresolved fields are logged and independent fields and batches continue.
+An explicit rerun grants a new bounded budget; total attempt counters remain
+auditable.
+
+A complete AI draft requires every field to validate AND all review artifacts.
+Incomplete batches receive no newly created `translations.json`. Any failed,
+unresolved, interrupted or unattempted batch gives a nonzero exit. If Ollama is
+unavailable, existing complete payloads can still receive review artifacts.
+
+## Outputs and completion criteria
+
+| Location | Evidence |
 |---|---|
-| `translated_drafts/prm800k_v2_batchNN/` | Frozen source copies, resumable checkpoint, completed AI payload, runtime evidence, checkpoint backups, per-field failure log |
-| `review_artifacts/prm800k_v2_batchNN/` | Bilingual `review.html`, `review_queue.jsonl`, hash-bound `validation_report.json`, pending `human_qc_pending.json` |
-| `translated_drafts/resume_summary_latest.json` | Latest per-batch result; failed batches remain explicit |
-| `translated_drafts/run_reports/` | Immutable report for every invocation |
-| `translated_drafts/failures.jsonl` | Run/batch failures, including source or checkpoint validation failures |
-| `translated_drafts/console_logs/` | Windows console transcripts |
+| `translated_drafts/preflight_latest.json` and `.md` | Offline source/checkpoint audit, outstanding field IDs and hashes |
+| `translated_drafts/resume_summary_latest.json` and `.md` | Complete, incomplete, failed and unattempted batches; field/slot errors and attempt counts |
+| `translated_drafts/prm800k_v2_batchNN/batch_status.json` | Validated/expected counts, unresolved and unattempted fields |
+| `translation_checkpoint.json` | Original checkpoint, read-only |
+| `validated_fields_checkpoint.json` | New validated fields bound to the legacy snapshot |
+| `prose_checkpoint.json` | Validated fragments, source hashes, attempt/error ledger |
+| `checkpoint_backups/` | Hash-named original checkpoint backup |
+| `field_audit.jsonl`, `failures.jsonl`, `ollama_runtime.json` | Field validation, rejected values, request/response hashes, installed runtime evidence |
+| `review_artifacts/prm800k_v2_batchNN/` | Bilingual HTML/queue, validation report, pending human-QC template |
+| `translated_drafts/run_reports/`, `console_logs/` | Immutable invocation reports and Windows transcripts |
 
-Every successful batch receives its review artifacts immediately. Existing QC
-templates with the matching queue hash are preserved verbatim. New templates
-always have `human_review: false`, `reviewer: null`, and `decision: pending`.
-The runner never invokes a training exporter or trainer, and never accesses
-Global-MGSM. A successful exit means AI drafting and mechanical validation only.
-Failures in one batch are logged while later batches continue; any failure makes
-the overall command exit nonzero. A run-level frozen-selection failure stops the
-run before inference. Ctrl+C saves a run report and leaves previous checkpoints.
+Batch-local filenames above live under
+`translated_drafts/prm800k_v2_batchNN/`. Only
+`ai_draft_validated_human_qc_pending` denotes a complete mechanical draft with
+review artifacts. `source_audited_only` means no inference was performed.
+`fields_validated` and `draft_payload_validated_pending_review_artifacts`
+are intermediate states. Inspect the JSON reports after every run.
 
-## Diagnose a failure
+## Runtime and failures
 
-Read the latest summary and that batch's `failures.jsonl`. Keep all checkpoint,
-backup, and payload files. Do not delete `translated_drafts` to restart. Use the
-same model tag and endpoint as the checkpoint. A model digest/settings mismatch
-needs a deliberate provenance decision, rather than mixing runtimes silently.
-If the conservative context-budget check fails, explicitly use `-NumCtx 8192`;
-changing settings after the new runner has already saved fields will fail its
-runtime guard. Start with the intended settings and keep them fixed per batch.
+Native `/api/chat` requests use exact-key JSON schemas, `think: false`,
+`stream: false`, temperature 0, seed 42, `-NumCtx 4096`, `-NumPredict 2048`
+and `-Timeout 600` seconds. One request runs at a time. Truncated or
+thinking-bearing responses fail validation. Installed model digest, Ollama
+version, OS/Python and available NVIDIA GPU information are recorded. Old
+checkpoint fields retain explicitly unverified historical runtime details.
 
-## Verification on the development workspace
+Defaults fit all actual source fragments under the conservative offline
+request-size check. Actual speed, memory use and translation quality on the
+16 GB RAM / RTX 2060 Max-Q 4 GB laptop are untested. If Ollama stops, restart it
+and repeat the same command. Keep all checkpoint and report files. Do not bypass
+source, digest or settings failures by deleting provenance or changing frozen
+data.
+
+## Required human review and verified checks
+
+Every problem and step needs genuine bilingual review for meaning, fluency,
+unchanged source errors and alignment with labels/masks. Mechanical checks do
+not establish semantic equivalence. New templates have `human_review: false`,
+`reviewer: null` and `decision: pending`; existing human decisions are
+preserved. No training export or training runs.
 
 ```bat
-python -m unittest discover -s research\prm_arabic_english -p test_resume_v2_local.py -v
+python scripts\check_reproducibility.py
 ```
 
-Tests use temporary synthetic fixtures and a local mock HTTP server. They check
-checkpoint preservation, failed-step recovery, completed-payload reuse, frozen
-source mutations, token/math/language/boundary guards, pending-QC export blocking,
-hash-bound idempotent artifacts, runtime-digest guards, concurrent-run locking,
-and the native Ollama request format. They do not run Qwen3, train a model, or
-claim that the actual Windows batches have finished.
+The offline suite covers actual Batch09 `train:6:6`, all 2,252 frozen fields,
+request budgets, legacy bytes, bounded retries, interruptions, independent work,
+provenance, local mock HTTP and pending-QC export blocking. Synthetic responses
+are never saved as translations of actual source records. See
+[the implementation audit](AUTOMATED_TRANSLATION_AUDIT.md) and
+[machine-readable evidence](audits/unattended_pipeline_offline_validation.json).
 
-The [frozen-source audit](audits/batch09_32_frozen_source.json) verifies the
-Batch09-32 source queues: **192 trajectories, 151 train / 41 dev, 2,060 reasoning
-steps, and 2,252 fields including problems**. It records no execution or inspection
-of the laptop's checkpoint. The full upstream shard checksum is a frozen lineage
-reference; this audit rehashes the versioned selected queues and canonical records.
-
-API reference: [Ollama chat](https://docs.ollama.com/api/chat) and
-[thinking controls](https://docs.ollama.com/capabilities/thinking).
+API references: [chat](https://docs.ollama.com/api/chat),
+[structured outputs](https://docs.ollama.com/capabilities/structured-outputs) and
+[thinking](https://docs.ollama.com/capabilities/thinking).

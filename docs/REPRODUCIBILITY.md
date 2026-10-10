@@ -5,12 +5,14 @@
 Use Python 3.11. These selected existing tests use the standard library and temporary fixtures; no model download, API key or GPU is required.
 
 ```bash
-git clone https://github.com/the1ZAKK/arabic-english-llm-reasoning.git
+git clone --single-branch --branch research/arabicprm-v2-production https://github.com/the1ZAKK/arabic-english-llm-reasoning.git
 cd arabic-english-llm-reasoning
 python scripts/check_reproducibility.py
 ```
 
-The runner explicitly selects six suites covering PRM800K ingestion, translation batches, materialization, authorized normalization, reviewed exports and source quarantine. It does not run every research test: some require PyTorch or other dependencies. GitHub Actions runs the same offline command on Python 3.11.
+The runner selects ten standard-library suites covering PRM800K ingestion, frozen production sampling, translation materialization, authorized normalization, reviewed exports, source quarantine, unattended checkpoint recovery and source-preserving prose translation. The regressions include actual Batch09 `train:6:6` and in-memory checks of all 2,252 fields in Batch09–32. Synthetic responses are never saved as corpus translations. Other research tests require PyTorch, model downloads or inference dependencies. GitHub Actions runs this offline command on Linux and Windows with Python 3.11, plus the Windows launcher in offline preflight mode.
+
+For Windows checkpoints and local `qwen3:4b`, follow [the execution guide](../research/prm_arabic_english/WINDOWS_BATCH09_32.md). The [implementation audit](../research/prm_arabic_english/AUTOMATED_TRANSLATION_AUDIT.md) distinguishes verified mechanical behavior from inference still requiring execution on the laptop.
 
 ## Choose the appropriate execution layer
 
