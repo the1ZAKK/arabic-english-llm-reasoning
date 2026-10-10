@@ -22,6 +22,7 @@ jobs:
       PRM800K_REVISION: 7ecc794703b2877f63226f2477a49b34f9b25163
       PRM800K_SHA256: 1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089
       MAX_PROBLEMS: "1000"
+      PYTHONPATH: research/prm_arabic_english
     steps:
       - name: Checkout research repository
         uses: actions/checkout@v7.0.1
