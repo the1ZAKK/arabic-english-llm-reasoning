@@ -8,6 +8,7 @@ on:
       - ".github/workflows/arabicprm-t-v2-translation.yml"
       - "research/prm_arabic_english/draft_translate_arabic_mt.py"
       - "research/prm_arabic_english/test_draft_translate_arabic_mt.py"
+      - "research/prm_arabic_english/test_materialize_translation.py"
       - "research/prm_arabic_english/select_arabicprm_t_v2_source.py"
       - "research/prm_arabic_english/materialize_translation_batch.py"
       - "research/prm_arabic_english/render_translation_review.py"
