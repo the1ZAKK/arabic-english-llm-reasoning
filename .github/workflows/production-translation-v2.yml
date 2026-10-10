@@ -1,0 +1,128 @@
+name: ArabicPRM-T automated translation draft v2
+
+on:
+  push:
+    branches:
+      - research/production-subset-v2
+    paths:
+      - ".github/workflows/production-translation-v2.yml"
+      - "research/prm_arabic_english/auto_translate_marian.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONPATH: research/prm_arabic_english
+      PRM800K_REVISION: 7ecc794703b2877f63226f2477a49b34f9b25163
+      PRM800K_SHA256: 1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+
+      - name: Install translation runtime
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install transformers==4.46.3 sentencepiece==0.2.0 sacremoses==0.1.1 huggingface_hub==0.26.2
+
+      - name: Fetch pinned PRM800K shard
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
+        run: |
+          git lfs install
+          git clone --filter=blob:none https://github.com/openai/prm800k.git prm800k-source
+          git -C prm800k-source checkout "$PRM800K_REVISION"
+          git -C prm800k-source lfs pull --include="prm800k/data/phase2_train.jsonl" --exclude=""
+          echo "$PRM800K_SHA256  prm800k-source/prm800k/data/phase2_train.jsonl" | sha256sum -c -
+
+      - name: Rebuild source pool and frozen 400-record subset
+        run: |
+          python research/prm_arabic_english/prm800k_production_sample.py \
+            --input prm800k-source/prm800k/data/phase2_train.jsonl \
+            --expected-sha256 "$PRM800K_SHA256" \
+            --output-dir source_pool \
+            --max-problems 1000 --seed 42 --dev-fraction 0.2 \
+            --split-lock research/prm_arabic_english/translation_batches/prm800k_qc24/problem_split_lock.json
+          python research/prm_arabic_english/select_production_translation_subset.py \
+            --source-dir source_pool --output-dir production_subset_v2 \
+            --train-count 320 --dev-count 80 --seed 42 --max-per-problem 2 \
+            --exclude-source-lock research/prm_arabic_english/translation_batches/prm800k_qc12/source_lock.json \
+            --exclude-source-lock research/prm_arabic_english/translation_batches/prm800k_qc24/source_lock.json \
+            --exclude-source-lock research/prm_arabic_english/translation_batches/prm800k_qc24_batch03/source_lock.json
+
+      - name: Freeze source identity
+        run: |
+          python research/prm_arabic_english/materialize_translation_batch.py \
+            --queue-dir production_subset_v2/translation_batch \
+            --assets-dir production_translation_v2_assets \
+            --freeze
+
+      - name: Generate MarianMT Arabic draft
+        run: |
+          python research/prm_arabic_english/auto_translate_marian.py \
+            --queue-dir production_subset_v2/translation_batch \
+            --output production_translation_v2_assets/translations.json \
+            --model Helsinki-NLP/opus-mt-en-ar \
+            --batch-size 16
+
+      - name: Run preservation checks and materialize review queue
+        run: |
+          python research/prm_arabic_english/materialize_translation_batch.py \
+            --queue-dir production_subset_v2/translation_batch \
+            --assets-dir production_translation_v2_assets \
+            --output-dir production_subset_v2/arabic_draft
+
+      - name: Render 25-record human-QC pages
+        run: |
+          mkdir -p production_subset_v2/review_pages
+          for start in $(seq 1 25 400); do
+            end=$((start+24))
+            args=""
+            for n in $(seq "$start" "$end"); do args="$args --record-number $n"; done
+            python research/prm_arabic_english/render_translation_review.py \
+              --input production_subset_v2/arabic_draft/review_queue.jsonl \
+              --output "production_subset_v2/review_pages/qc_${start}_${end}.html" \
+              --batch-id "ArabicPRM-T-v2-${start}-${end}" $args
+          done
+
+      - name: Create pending human-QC template
+        run: |
+          python research/prm_arabic_english/export_reviewed_arabic.py \
+            --queue production_subset_v2/arabic_draft/review_queue.jsonl \
+            --decisions production_subset_v2/human_qc_template.json \
+            --output-dir unused_export \
+            --make-template
+
+      - name: Print translation report
+        run: |
+          cat production_subset_v2/arabic_draft/report.json
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          p=Path("production_subset_v2/arabic_draft/review_queue.jsonl")
+          print("ARABICPRM_T_V2_REVIEW_QUEUE_SHA256=" + hashlib.sha256(p.read_bytes()).hexdigest())
+          d=json.loads(Path("production_translation_v2_assets/translations.json").read_text(encoding="utf-8"))
+          print("TRANSLATION_DIAGNOSTICS=" + json.dumps(d["translation_diagnostics"], sort_keys=True))
+          PY
+
+      - name: Upload Arabic draft and QC pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabicprm-t-v2-human-qc-pack
+          path: |
+            production_subset_v2/manifest.json
+            production_subset_v2/translation_batch/manifest.json
+            production_subset_v2/arabic_draft/report.json
+            production_subset_v2/arabic_draft/review_queue.jsonl
+            production_subset_v2/human_qc_template.json
+            production_subset_v2/review_pages
+            production_translation_v2_assets/source_lock.json
+            production_translation_v2_assets/translations.json
+          if-no-files-found: error
