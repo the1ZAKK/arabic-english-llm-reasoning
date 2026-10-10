@@ -402,7 +402,9 @@ def main():
             loss = training_loss(logits, prepared, args.negative_weight)
             if not torch.isfinite(loss):
                 raise RuntimeError(f"Nonfinite loss for {record['id']}")
-            (loss / args.gradient_accumulation).backward()
+            group_start = ((step_number - 1) // args.gradient_accumulation) * args.gradient_accumulation
+            group_size = min(args.gradient_accumulation, len(order) - group_start)
+            (loss / group_size).backward()
             losses.append(float(loss.detach().cpu()))
 
             should_step = (
