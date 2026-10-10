@@ -15,6 +15,10 @@ on:
       - "research/prm_arabic_english/export_reviewed_arabic.py"
   workflow_dispatch:
 
+concurrency:
+  group: arabicprm-t-v2-translation-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
