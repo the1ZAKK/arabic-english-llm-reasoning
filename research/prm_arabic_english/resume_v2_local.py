@@ -454,7 +454,16 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries):
                                 )
                                 if equation_answer:
                                     body = masked[:equation_answer.start()]
-                                    candidate = client.translate(body).rstrip()
+                                    # Translate only the prose. Small models may
+                                    # continue past a terminal colon and invent
+                                    # formulas; never admit generated math into
+                                    # a source-locked equation/answer pair.
+                                    prose = client.translate(body).strip()
+                                    if (body.rstrip().endswith(":") and
+                                            ":" in prose and
+                                            not re.search(r"<[MPN]\\d+>", body)):
+                                        prose = prose.split(":", 1)[0].rstrip() + ":"
+                                    candidate = prose
                                     candidate += "\n\n" + equation_answer.group(1)
                                     candidate += "\n\n# الإجابة\n\n" + equation_answer.group(2)
                                 elif answer:
