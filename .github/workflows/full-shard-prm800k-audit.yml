@@ -1,0 +1,104 @@
+name: Full-shard PRM800K sampling audit
+
+on:
+  push:
+    branches:
+      - research/batch03-final-and-full-audit
+    paths:
+      - ".github/workflows/full-shard-prm800k-audit.yml"
+      - "research/prm_arabic_english/prm800k_production_sample.py"
+      - "research/prm_arabic_english/test_prm800k_production_sample.py"
+      - "research/prm_arabic_english/translation_batches/prm800k_qc24/problem_split_lock.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PRM800K_REVISION: 7ecc794703b2877f63226f2477a49b34f9b25163
+      PRM800K_SHA256: 1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089
+      MAX_PROBLEMS: "1000"
+      PYTHONPATH: research/prm_arabic_english
+    steps:
+      - name: Checkout research repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+
+      - name: Verify sampler tests
+        run: |
+          python -m unittest research.prm_arabic_english.test_prm800k_production_sample -v
+
+      - name: Fetch pinned PRM800K training shard
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
+        run: |
+          git lfs install
+          git clone --filter=blob:none https://github.com/openai/prm800k.git prm800k-source
+          git -C prm800k-source checkout "$PRM800K_REVISION"
+          git -C prm800k-source lfs pull --include="prm800k/data/phase2_train.jsonl" --exclude=""
+          test -f prm800k-source/prm800k/data/phase2_train.jsonl
+          echo "$PRM800K_SHA256  prm800k-source/prm800k/data/phase2_train.jsonl" | sha256sum -c -
+
+      - name: Run 1000-problem full-shard audit
+        run: |
+          python research/prm_arabic_english/prm800k_production_sample.py \
+            --input prm800k-source/prm800k/data/phase2_train.jsonl \
+            --expected-sha256 "$PRM800K_SHA256" \
+            --output-dir audit_output \
+            --max-problems "$MAX_PROBLEMS" \
+            --seed 42 \
+            --dev-fraction 0.2 \
+            --split-lock research/prm_arabic_english/translation_batches/prm800k_qc24/problem_split_lock.json
+
+      - name: Emit compact audit summary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = json.loads(Path("audit_output/manifest.json").read_text(encoding="utf-8"))
+          summary = {
+              "source_full_sha256": manifest["source_full_sha256"],
+              "source_bytes": manifest["source_bytes"],
+              "rows_read": manifest["scan"]["rows_read"],
+              "eligible_records": manifest["scan"]["eligible_records"],
+              "exclusions": manifest["scan"]["exclusions"],
+              "anchored_problem_groups": manifest["scan"]["anchored_problem_groups"],
+              "sampled_new_problem_groups": manifest["scan"]["sampled_new_problem_groups"],
+              "train_records": manifest["train_records"],
+              "dev_records": manifest["dev_records"],
+              "train_problems": manifest["train_problems"],
+              "dev_problems": manifest["dev_problems"],
+              "problem_overlap": manifest["problem_overlap"],
+              "selected_variants": manifest["selected_variants"],
+              "selected_rating_totals": manifest["selected_rating_totals"],
+              "selected_generations": manifest["selected_generations"],
+              "selected_step_lengths": manifest["selected_step_lengths"],
+              "selected_first_error_positions": manifest["selected_first_error_positions"],
+              "neutral_masked_steps": manifest["neutral_masked_steps"],
+              "supervised_steps": manifest["supervised_steps"],
+              "output_sha256": manifest["output_sha256"],
+              "global_mgsm_used": manifest["global_mgsm_used"],
+              "translation_performed": manifest["translation_performed"],
+              "training_performed": manifest["training_performed"],
+          }
+          Path("audit_summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+          print("FULL_SHARD_AUDIT_SUMMARY=" + json.dumps(summary, sort_keys=True))
+          PY
+
+      - name: Upload audit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: prm800k-full-shard-audit-1000
+          path: |
+            audit_output/manifest.json
+            audit_summary.json
+          if-no-files-found: error

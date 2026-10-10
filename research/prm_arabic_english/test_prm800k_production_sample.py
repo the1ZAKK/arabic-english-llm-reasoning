@@ -10,6 +10,7 @@ from prm800k_ingest import REVISION, SOURCE_FILE, convert, problem_key
 from prm800k_production_sample import (
     collect_selected,
     load_anchor,
+    load_split_lock,
     run,
     scan_problem_reservoir,
 )
@@ -90,6 +91,28 @@ class ProductionSamplingTests(unittest.TestCase):
             self.assertEqual(records[train_record["id"]], train_record)
             self.assertEqual(records[dev_record["id"]], dev_record)
 
+    def test_committed_split_lock_is_loaded_and_validated(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            lock = root / "problem_split_lock.json"
+            lock.write_text(json.dumps({
+                "schema_version": 1,
+                "source_revision": REVISION,
+                "assignments": {
+                    "0" * 64: "train",
+                    "1" * 64: "dev",
+                },
+            }), encoding="utf-8")
+            self.assertEqual(load_split_lock(lock), {"0" * 64: "train", "1" * 64: "dev"})
+
+            lock.write_text(json.dumps({
+                "schema_version": 1,
+                "source_revision": "wrong",
+                "assignments": {"0" * 64: "train"},
+            }), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "revision"):
+                load_split_lock(lock)
+
     def test_wrong_full_source_checksum_refuses_output(self):
         rows = [
             example("A", (1,), "solution"),
@@ -109,6 +132,7 @@ class ProductionSamplingTests(unittest.TestCase):
                 seed=42,
                 dev_fraction=0.5,
                 split_anchor_dir=None,
+                split_lock=None,
             )
             with self.assertRaisesRegex(ValueError, "pinned expected checksum"):
                 run(args)

@@ -9,16 +9,14 @@ each batch from its original queue and human decisions, verifies exact hashes,
 preserves full records and QC metadata, and excludes the four active source
 quarantines. See [corpus registry v1](corpus_registry/arabicprm_t_v1/README.md).
 
-**QC24 Batch03 human review** returned 17 ACCEPT, six source-annotation REJECT
-decisions and one REVISE. Records 5, 7, 10, 11, 16 and 18 are now quarantined,
-bringing the active catalog to ten. Their source labels are unchanged. Revision
-r1 removes only the nine literal annotation markers from record 21's negatively
-rated step 2, preserving its neutral introductory step and every step boundary.
-All 23 other translated records are unchanged. Only record 21 awaits final human
-acceptance. Both original and revised export attempts were blocked; no Batch03
-training export exists. The approved corpus v1 retains its original 32 records,
-output hashes and historical quarantine snapshot. See
-[Batch03 r1 review assets](translation_batches/prm800k_qc24_batch03_r1/README.md).
+**QC24 Batch03 human review is complete.** The original review returned 17
+ACCEPT, six source-annotation REJECT decisions and one REVISE. Records 5, 7, 10,
+11, 16 and 18 remain quarantined with unchanged source labels. Revision r1 removed
+only nine literal annotation markers from record 21's negatively rated step 2;
+Zakaria Brim gave final acceptance on 2026-10-10. The final Batch03 decision set
+is therefore **18 ACCEPT / 6 REJECT / 0 pending**. Accepted Batch03 records have
+not yet been merged into the historical approved corpus v1, which remains frozen
+at 32 records. See [Batch03 r1 review assets](translation_batches/prm800k_qc24_batch03_r1/README.md).
 
 The 5,000-row source prefix provides 4,890 eligible records and a 500-problem
 staging selection, retaining previously fixed groups. It still covers only
@@ -37,6 +35,16 @@ trajectories for selected groups on pass two. It preserves anchored train/dev
 assignments and refuses output if the source checksum changes or does not match
 the pinned checksum. This is infrastructure only: no full-shard scan, translation,
 training or new performance claim has been made yet.
+
+
+The first **full-shard 1,000-problem audit** also completed successfully on
+2026-10-10. It scanned all 97,782 source rows, found 73,792 eligible records, and
+selected 1,000 problem groups while preserving the committed 500-problem split
+lock. The selected source pool contains 6,700 trajectories and covers **all source
+generations 0 through 9**, eliminating the generations-8/9-only limitation of the
+bounded prefix. It is strongly error-heavy (924 correct vs 5,776 incorrect), so
+it is an audited source pool rather than the final translated training set. See
+[full-shard audit evidence](audits/prm800k_full_shard_1000/README.md).
 
 The sections below retain the observations from earlier ingestion milestones.
 

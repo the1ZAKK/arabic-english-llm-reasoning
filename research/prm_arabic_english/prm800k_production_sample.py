@@ -59,6 +59,24 @@ def load_anchor(directory):
     return assignment, records
 
 
+def load_split_lock(path):
+    """Load committed problem-level train/dev assignments without source rows."""
+    if path is None:
+        return {}
+    path = Path(path)
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("source_revision") != REVISION:
+        raise ValueError("Split lock source revision mismatch")
+    assignments = data.get("assignments")
+    if not isinstance(assignments, dict) or not assignments:
+        raise ValueError("Split lock assignments are missing")
+    if any(not isinstance(k, str) or len(k) != 64 for k in assignments):
+        raise ValueError("Invalid problem ID in split lock")
+    if any(split not in ("train", "dev") for split in assignments.values()):
+        raise ValueError("Invalid split value in split lock")
+    return dict(assignments)
+
+
 def _priority(seed, problem_id):
     return int(digest(f"{seed}:reservoir:{problem_id}"), 16)
 
@@ -231,7 +249,12 @@ def run(args):
     if out.exists():
         raise ValueError("Output directory already exists; choose a new path")
 
-    anchor_assignment, anchor_records = load_anchor(args.split_anchor_dir)
+    if args.split_anchor_dir and args.split_lock:
+        raise ValueError("Use either split_anchor_dir or split_lock, not both")
+    if args.split_lock:
+        anchor_assignment, anchor_records = load_split_lock(args.split_lock), {}
+    else:
+        anchor_assignment, anchor_records = load_anchor(args.split_anchor_dir)
     selected_keys, first = scan_problem_reservoir(
         source, args.max_problems, args.seed, anchor_assignment, anchor_records
     )
@@ -279,6 +302,7 @@ def run(args):
             "SHA256 threshold"
         ),
         "split_anchor_dir": str(args.split_anchor_dir) if args.split_anchor_dir else None,
+        "split_lock": str(args.split_lock) if args.split_lock else None,
         "train_records": len(rows["train"]),
         "dev_records": len(rows["dev"]),
         "train_problems": len({r["problem_id"] for r in rows["train"]}),
@@ -329,6 +353,8 @@ def main():
     parser.add_argument("--dev-fraction", type=float, default=0.2)
     parser.add_argument("--split-anchor-dir", type=Path,
                         help="Prior staging directory whose train/dev assignments must persist")
+    parser.add_argument("--split-lock", type=Path,
+                        help="Committed problem_split_lock.json whose train/dev assignments must persist")
     args = parser.parse_args()
     try:
         manifest = run(args)
