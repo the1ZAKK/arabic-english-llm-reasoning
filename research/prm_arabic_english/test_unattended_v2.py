@@ -386,7 +386,8 @@ class WindowsFrozenInstallationChecks(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout.decode("utf-8", "replace") + result.stderr.decode("utf-8", "replace"))
         self.fixture.verify(self.root)
         report = agent.read(self.root / "translated_drafts/preflight_latest.json")
-        self.assertEqual(Path(report["staging_root"]), self.root / "frozen_staging_unattended" / self.config["runtime_commit"])
+        self.assertEqual(Path(report["staging_root"]).resolve(),
+                         (self.root / "frozen_staging_unattended" / self.config["runtime_commit"]).resolve())
         checkpoint = agent.read(self.root / "translated_drafts/prm800k_v2_batch09/prose_checkpoint.json")
         self.assertTrue(all(n == 9 for n in checkpoint["fields"]["train:6:6"]["attempts"].values()))
         canonical = self.root / "frozen_staging_unattended" / self.config["runtime_commit"]

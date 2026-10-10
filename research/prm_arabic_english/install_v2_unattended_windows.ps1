@@ -38,6 +38,12 @@ Assert-ResearchRepository
 $pythonCommand = Get-Command python -ErrorAction Stop
 $python = (& $pythonCommand.Source -c "import sys; assert sys.version_info >= (3,11); print(sys.executable)")
 if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $python)) { throw "Installed Python 3.11 or newer is required." }
+# Resolve-Path can retain a Windows 8.3 alias (e.g. RUNNER~1). Bind config,
+# runtime paths and task identity to the same physical path used by Python.
+$canonicalRoot = @(& $python -c "import sys; from pathlib import Path; print(Path(sys.argv[1]).resolve())" $RepoRoot)
+if ($LASTEXITCODE -ne 0 -or $canonicalRoot.Count -ne 1) { throw "Could not resolve the authorized project path." }
+$RepoRoot = $canonicalRoot[0]
+Set-Location -LiteralPath $RepoRoot
 
 if (-not $TestOnly) {
     & git fetch --no-tags origin "refs/heads/$branch"
@@ -122,7 +128,11 @@ $config = @{
 }
 if (Test-Path -LiteralPath $configPath) {
     $old = Get-Content -LiteralPath $configPath -Raw -Encoding UTF8 | ConvertFrom-Json
-    if ($old.repo_root -ne $RepoRoot -or $old.repository -ne $repository -or $old.branch -ne $branch) {
+    if ($old.repository -ne $repository -or $old.branch -ne $branch) {
+        throw "Existing supervisor configuration binds a different project; preserved."
+    }
+    & $python -c "import sys; from pathlib import Path; assert Path(sys.argv[1]).resolve()==Path(sys.argv[3]).resolve() and Path(sys.argv[2]).resolve()==Path(sys.argv[4]).resolve(), 'Existing config root/state differ; preserved'" $old.repo_root $old.state_root $RepoRoot $stateRoot
+    if ($LASTEXITCODE -ne 0) {
         throw "Existing supervisor configuration binds a different project; preserved."
     }
 }
