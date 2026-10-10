@@ -442,11 +442,22 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries):
                                 # Preserve a terminal answer containing only a
                                 # protected LaTeX token without asking a small
                                 # model to reproduce that fragile final token.
+                                # Keep the preceding displayed equation and
+                                # standalone LaTeX answer in source order.
+                                equation_answer = re.search(
+                                    r"(?s)\n\n(<M\d+>)\s*\n\n# Answer\s*\n\s*(<P\d+>)\s*$",
+                                    masked,
+                                )
                                 answer = re.search(
                                     r"(?s)\n\n# Answer\s*\n\s*(<P\d+>)\s*$",
                                     masked,
                                 )
-                                if answer:
+                                if equation_answer:
+                                    body = masked[:equation_answer.start()]
+                                    candidate = client.translate(body).rstrip()
+                                    candidate += "\n\n" + equation_answer.group(1)
+                                    candidate += "\n\n# الإجابة\n\n" + equation_answer.group(2)
+                                elif answer:
                                     body = masked[:answer.start()]
                                     candidate = client.translate(body).rstrip()
                                     candidate += "\n\n# الإجابة\n\n" + answer.group(1)
