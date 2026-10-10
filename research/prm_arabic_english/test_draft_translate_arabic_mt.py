@@ -1,6 +1,6 @@
 import unittest
 
-from draft_translate_arabic_mt import translate_preserving
+from draft_translate_arabic_mt import spell_mt_generated_digits, translate_preserving
 
 
 def fake_translate(text):
@@ -35,6 +35,11 @@ class DraftTranslationTests(unittest.TestCase):
         source = "Reasoning [* 7] continues."
         result = translate_preserving(source, fake_translate)
         self.assertIn("[* 7]", result)
+
+    def test_mt_generated_digits_are_spelled_as_words(self):
+        self.assertEqual(spell_mt_generated_digits(" عربي 3 "), " عربي ثلاثة ")
+        self.assertEqual(spell_mt_generated_digits(" عربي 25 "), " عربي خمسة وعشرون ")
+        self.assertEqual(spell_mt_generated_digits(" عربي 3.5 "), " عربي ثلاثة فاصلة خمسة ")
 
     def test_requires_arabic_output(self):
         with self.assertRaisesRegex(ValueError, "no Arabic"):
