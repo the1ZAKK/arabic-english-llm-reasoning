@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "scope": "Fixed research-branch code and selected frozen sources only; no model checkpoints or other corpora",
+  "files": [
+    "research/prm_arabic_english/unattended_v2.py",
+    "research/prm_arabic_english/resume_v2_local.py",
+    "research/prm_arabic_english/bulk_draft_v2_translations.py",
+    "research/prm_arabic_english/source_preserving_translation.py",
+    "research/prm_arabic_english/materialize_translation_batch.py",
+    "research/prm_arabic_english/prepare_translation_batch.py",
+    "research/prm_arabic_english/prm800k_ingest.py",
+    "research/prm_arabic_english/source_quarantine.py",
+    "research/prm_arabic_english/stage_v2_remaining_batches.py",
+    "research/prm_arabic_english/render_translation_review.py",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_selection/train_translation_queue.jsonl",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_selection/dev_translation_queue.jsonl",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_selection/manifest.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_selection/source_lock.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_batch01/source_lock.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_batch02/source_lock.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_batch03/source_lock.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_batch04/source_lock.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_batch05/source_lock.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_batch06/source_lock.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_batch07/source_lock.json",
+    "research/prm_arabic_english/translation_batches/prm800k_v2_batch08/source_lock.json"
+  ]
+}

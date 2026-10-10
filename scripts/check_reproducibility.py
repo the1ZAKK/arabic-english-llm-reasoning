@@ -17,6 +17,7 @@ MODULES = (
     "test_select_production_translation_set",
     "test_resume_v2_local",
     "test_source_preserving_translation",
+    "test_unattended_v2",
 )
 
 if __name__ == "__main__":

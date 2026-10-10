@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "scope": "offline supervisor validation, not laptop translation completion",
+  "repository": "the1ZAKK/arabic-english-llm-reasoning",
+  "branch": "research/arabicprm-v2-production",
+  "starting_commit": "6cb1766c4955ccd2374ec348083112d756a37714",
+  "local_python": "3.12.14",
+  "standard_library_tests_passed": 118,
+  "frozen_source_preflight_passed_batches": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  ],
+  "frozen_records": 192,
+  "frozen_steps": 2060,
+  "frozen_fields": 2252,
+  "actual_laptop_access": false,
+  "real_qwen_inference_tested": false,
+  "human_qc_performed": false,
+  "actual_completed_batches": null,
+  "actual_outstanding_fields": null,
+  "synthetic_responses_persisted_as_real_translations": false,
+  "native_windows_installation_ci": "pending",
+  "test_log_sha256": "ad2a6645d8507e53c5e9f78b9c45f6d8c51d9d3e6c32e23983234a9cacd7b777",
+  "safeguards_verified": [
+    "Persistent per-slot cap survives reloads; no new requests once exhausted",
+    "Three-pass cap survives controller restarts and terminal publication failures",
+    "Separate bounded runtime recovery for unavailable model or failed thinking-off probe",
+    "Global frozen-source corruption stops inference; batch-local failures allow independent work",
+    "Audit success requires exactly 24 batches and every one of 2252 fields",
+    "Real temporary Git index and audit-only push preserve user index, files, synthetic checkpoints and source",
+    "Immutable runtime archives are hash verified and never overwrite installed modified files",
+    "Ollama startup uses loopback and one parallel request; no model pulls",
+    "Only research branch origin accepted; multiple push origins rejected"
+  ],
+  "batch_preflight": [
+    {
+      "batch": 9,
+      "records": 8,
+      "steps": 85,
+      "expected_fields": 93,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "583dd6e92cb8d7be9ff214bb3d7aa08d6db28bc8c770b1accd1540bdd2ab6ad0",
+        "dev_translation_queue.jsonl": "aea95eea153c5b08d1ac465ac425d77fcd801d72c54a0cfb55dc192b97a7b7c5"
+      }
+    },
+    {
+      "batch": 10,
+      "records": 8,
+      "steps": 81,
+      "expected_fields": 89,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "91b7c763e48788c4ae73283eeebb6e1dd8e92c45a86ece4203985e56688fac4a",
+        "dev_translation_queue.jsonl": "5e5eed8b48c57b34ec4f533566944788a4bcb7696a92b0f4196f6a735237714f"
+      }
+    },
+    {
+      "batch": 11,
+      "records": 8,
+      "steps": 91,
+      "expected_fields": 99,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "a833577e3692aafaf3e4adcee752c729a9ebd116ecdbf27eeb2055898f22962e",
+        "dev_translation_queue.jsonl": "5cfb1495e12d8039a78730294d358faa4ffc52a5132e90f1a2990d4b20befb92"
+      }
+    },
+    {
+      "batch": 12,
+      "records": 8,
+      "steps": 103,
+      "expected_fields": 111,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "1fcd11ddee9ac511e498cbcdb88e66defec322d624633d4edc005bab054a2ed3",
+        "dev_translation_queue.jsonl": "97cb077200ab202353cf46a318fd409d2c82839175751d4b0e9634ff1c2703b7"
+      }
+    },
+    {
+      "batch": 13,
+      "records": 8,
+      "steps": 79,
+      "expected_fields": 87,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "92c467ab801577dadf4604b6e8e48bdd0aae274f3bea1254ac64e0efe1f514a3",
+        "dev_translation_queue.jsonl": "37ca9d5fff14e1fe20ef4fb6b790689a86545cb6e76b58cb7988f25c8c9c571a"
+      }
+    },
+    {
+      "batch": 14,
+      "records": 8,
+      "steps": 64,
+      "expected_fields": 72,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "4b38dac41f73fe59928a1b59fdd3ca5c434149fea04671f42c4bff59a3c1cf70",
+        "dev_translation_queue.jsonl": "f93e97e51fa7973473fb90b1275370ed9c8e3901b686c071060e6555e032d33c"
+      }
+    },
+    {
+      "batch": 15,
+      "records": 8,
+      "steps": 74,
+      "expected_fields": 82,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "d640ebdddf239a1ff4fc48db24a132c6002d084a98fd5269128dbdde538cdcf1",
+        "dev_translation_queue.jsonl": "f4978ce208d87007dc9b066e881cd640ccb33954605b713a79f67f7f824af76d"
+      }
+    },
+    {
+      "batch": 16,
+      "records": 8,
+      "steps": 86,
+      "expected_fields": 94,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "ee2f7e9e02ee53cf0cc0bd92b872475f4ee016af2ad855d865280edd3eb3abdf",
+        "dev_translation_queue.jsonl": "84f1f91be873f59fc941f70a06c3b85e82559c4835c5f4ee0384c55d47b107f9"
+      }
+    },
+    {
+      "batch": 17,
+      "records": 8,
+      "steps": 96,
+      "expected_fields": 104,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "2494e59f2d02c2ecd209908a25cdf179cdbf23efdb135cc07691d0acc05f2493",
+        "dev_translation_queue.jsonl": "fb0b2abdab6422bd0be6134c1d46c7503e8f4d3b3d721a9767a505ecd1e1772f"
+      }
+    },
+    {
+      "batch": 18,
+      "records": 8,
+      "steps": 93,
+      "expected_fields": 101,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "045170f76b3e1c9afd82a1a8d2508b49b0fa081012ac4f75330e68a2809b8256",
+        "dev_translation_queue.jsonl": "a312e6db8508f82fe6774aa4190082904f89d76b600cbc33cbb8b1d3ece6badf"
+      }
+    },
+    {
+      "batch": 19,
+      "records": 8,
+      "steps": 87,
+      "expected_fields": 95,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "fab120f8c2f7d6411151157cb04a0592f5537a9906b1b16f5dde0f6e70a93230",
+        "dev_translation_queue.jsonl": "0679ee737613e3054661f3671aed51e063d5561cf4a967b204d50eef366317ed"
+      }
+    },
+    {
+      "batch": 20,
+      "records": 8,
+      "steps": 109,
+      "expected_fields": 117,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "28122187dd6a8fb8f64f19dbf1815b5c647e66d67fd3fc7d9e2dd754f74d3851",
+        "dev_translation_queue.jsonl": "92d476f8769793b6d6cb24b4c6a63c83d052eb33215627abab55345bb6d4a200"
+      }
+    },
+    {
+      "batch": 21,
+      "records": 8,
+      "steps": 78,
+      "expected_fields": 86,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "6ec56251563a61503a932b6d79c43f369a39ec62af71bb75fadcba1858aa43aa",
+        "dev_translation_queue.jsonl": "2604087b1327a61929756fb2b373cf4cf045b5cefbaebe583470cbfbc3d8d640"
+      }
+    },
+    {
+      "batch": 22,
+      "records": 8,
+      "steps": 90,
+      "expected_fields": 98,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "de856fb92aaecf39a9ade86fc8b7f2893d69fb073cc62d65c496c322852a4adb",
+        "dev_translation_queue.jsonl": "fb28850761fde42e924c3de281de339d96481261792b062e2eb236ca4f267c97"
+      }
+    },
+    {
+      "batch": 23,
+      "records": 8,
+      "steps": 90,
+      "expected_fields": 98,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "63f7ea4f838df01137f827f827fc670627684abe29239681955a6b18a4aae797",
+        "dev_translation_queue.jsonl": "92003a5c7126d307816689dbd4da9c39d57b34aa118e68b6f1e70538dcb225d4"
+      }
+    },
+    {
+      "batch": 24,
+      "records": 8,
+      "steps": 93,
+      "expected_fields": 101,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "c9bb25370a2a9b4b5d06857aaf9ec6eafb44c73f158048e4ac7361b1455ff7fb",
+        "dev_translation_queue.jsonl": "35e9fc9fde7e8f2401d82a7d1d5b1bf047eeaeeb0f1d3b4f0a01d7aa5bcca0f4"
+      }
+    },
+    {
+      "batch": 25,
+      "records": 8,
+      "steps": 74,
+      "expected_fields": 82,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "ee3446e8507e959a852360797c1296cdeb6554fd07ab0cc4d3a63f1a44ea05a9",
+        "dev_translation_queue.jsonl": "0aea66344a160df0772dfbfbc623dfb8a9d31fe82f966c7746ce4c7e71271c9b"
+      }
+    },
+    {
+      "batch": 26,
+      "records": 8,
+      "steps": 85,
+      "expected_fields": 93,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "662abc604b4fcef394d652380620d0d5475c5333e3a967f54c9648ea84f8f95e",
+        "dev_translation_queue.jsonl": "4d95d5c741a69b634a0cce4bb77d555da23cf0587bd06acd27a61a824c0da3ff"
+      }
+    },
+    {
+      "batch": 27,
+      "records": 8,
+      "steps": 82,
+      "expected_fields": 90,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "20389f68d7361b572d0ce6f22e6b3b106d3e7c95c1cdd2885294b0655f7163e8",
+        "dev_translation_queue.jsonl": "9947f2bcf80511ad6b2b689914a37e6298d45fdf244f5c950c0dc37289c26ed9"
+      }
+    },
+    {
+      "batch": 28,
+      "records": 8,
+      "steps": 92,
+      "expected_fields": 100,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "6e815d0acec8b1df97f6d4c14d37502af4a8d785f72fb427304445d374031884",
+        "dev_translation_queue.jsonl": "7e339d45eb36cce6199ab835448e49fc8db833f0d1773958bc8b6c36c298eccd"
+      }
+    },
+    {
+      "batch": 29,
+      "records": 8,
+      "steps": 92,
+      "expected_fields": 100,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "e864ff5253a23b533b63eb8bb8bff605c82fdcd7590054c519141f23ed4afca1",
+        "dev_translation_queue.jsonl": "a95330edcceac6a4fbb42ed7598ecb8404fcb066255abe743a5d943b608c0181"
+      }
+    },
+    {
+      "batch": 30,
+      "records": 8,
+      "steps": 66,
+      "expected_fields": 74,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "c582d48c56a14ec3f838d8ca92ab5ff78c503e17f7ce2b42f67903ae05d435d3",
+        "dev_translation_queue.jsonl": "9808c3dc0f7ce17286e3e32608dc3ca49baaf643c22e854581365ee5419c29b7"
+      }
+    },
+    {
+      "batch": 31,
+      "records": 8,
+      "steps": 96,
+      "expected_fields": 104,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "3c58963c95ef8d4473acfb82eb5ad7a90f694966ac3f9cf1c98a3d7eab8614ed",
+        "dev_translation_queue.jsonl": "25dfe5b72c2e4f2153ce7e57f3f40c723020dbd3fc2d361d2e1ea1f215132c24"
+      }
+    },
+    {
+      "batch": 32,
+      "records": 8,
+      "steps": 74,
+      "expected_fields": 82,
+      "queue_sha256": {
+        "train_translation_queue.jsonl": "600dc83325818e37a5ce87f8661a41e7b0662e728dff4a13309971f48cb7f7f6",
+        "dev_translation_queue.jsonl": "e49467e2c3bd165420651e7d121802f930bc2b0c0c0d8c334df231da418dacdf"
+      }
+    }
+  ]
+}

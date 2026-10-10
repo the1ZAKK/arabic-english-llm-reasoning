@@ -327,6 +327,35 @@ class ResumeChecks(unittest.TestCase):
         self.assertEqual(failure["unresolved_slots"][0]["total_attempts"], 3)
         self.assertEqual(set(progress["fields"]["train:0:0"]["slots"]), {"s0"})
 
+    def test_persistent_attempt_cap_survives_new_invocations_without_extra_requests(self):
+        source, progress = "Use 2.", {"fields": {}}
+        path = self.dest / "prose_checkpoint.json"
+        class Invalid(FakeClient):
+            def translate_slots(self, slots, attempt=1):
+                self.calls.append(slots)
+                return {s: "نص <M9>" for s in slots}
+        client = Invalid()
+        with patch.object(runner.time, "sleep"):
+            for _ in range(4):
+                saved = runner.parse(path.read_bytes()) if path.exists() else progress
+                candidate, failure = runner.draft_field(source, "train:0:0", "test-only", client,
+                    saved, path, self.dest / "failures.jsonl", 3, max_total_attempts=5)
+                self.assertIsNone(candidate)
+        self.assertEqual(len(client.calls), 5)
+        self.assertEqual(failure["unresolved_slots"][0]["total_attempts"], 5)
+        self.assertTrue(failure["unresolved_slots"][0]["retry_budget_exhausted"])
+
+    def test_exhausted_fragment_does_not_prevent_its_independent_sibling(self):
+        source = "Use 2 and 3."
+        progress = {"fields": {"train:0:0": {"source_sha256": runner.sha(source.encode()),
+            "method": runner.PLAN_VERSION, "slots": {}, "attempts": {"s0": 9}, "errors": {"s0": "prior failure"}}}}
+        client = FakeClient(["و"])
+        candidate, failure = runner.draft_field(source, "train:0:0", "test-only", client, progress,
+            self.dest / "prose_checkpoint.json", self.dest / "failures.jsonl", 3, max_total_attempts=9)
+        self.assertIsNone(candidate)
+        self.assertEqual(client.calls, [{"s1": "and"}])
+        self.assertEqual([f["slot"] for f in failure["unresolved_slots"]], ["s0"])
+
     def test_incomplete_run_continues_fields_and_can_resume_to_complete_qc_artifacts(self):
         client = FakeClient(["احسب", "نص خاطئ <M9>", "إذن"])
         with self.assertRaises(runner.IncompleteBatch) as caught:

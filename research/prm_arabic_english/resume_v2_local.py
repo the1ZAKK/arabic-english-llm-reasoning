@@ -485,14 +485,15 @@ def prose_groups(slots, single=False):
         yield group
 
 
-def draft_field(original, key, record_id, client, progress, path, log, retries):
+def draft_field(original, key, record_id, client, progress, path, log, retries, max_total_attempts=None):
     slots = slots_for(original)
     field = progress["fields"].setdefault(key, {"source_sha256": sha(original.encode("utf-8")),
                                               "method": PLAN_VERSION if slots else "verbatim_nonlinguistic_source",
                                               "slots": {}, "attempts": {}, "errors": {}})
     atomic_write(path, encoded(progress))
     for attempt in range(1, retries + 1):
-        pending = {s: text for s, text in slots.items() if s not in field["slots"]}
+        pending = {s: text for s, text in slots.items() if s not in field["slots"]
+                   and (max_total_attempts is None or field["attempts"].get(s, 0) < max_total_attempts)}
         if not pending:
             break
         # First try a small group; retry individual failed fragments with a
@@ -526,12 +527,14 @@ def draft_field(original, key, record_id, client, progress, path, log, retries):
                     field["errors"].pop(slot, None)
                 # Persist siblings independently, even if another slot fails.
                 atomic_write(path, encoded(progress))
-        if attempt < retries and len(field["slots"]) != len(slots):
+        if attempt < retries and any(s not in field["slots"] and
+                (max_total_attempts is None or field["attempts"].get(s, 0) < max_total_attempts) for s in slots):
             time.sleep(min(2 ** attempt, 8))
     missing = [s for s in slots if s not in field["slots"]]
     if missing:
         return None, {"field": key, "source_record_id": record_id, "source_sha256": field["source_sha256"],
                       "unresolved_slots": [{"slot": s, "source": slots[s], "error": field["errors"].get(s),
+                                            "retry_budget_exhausted": max_total_attempts is not None and field["attempts"].get(s, 0) >= max_total_attempts,
                                             "total_attempts": field["attempts"].get(s, 0)} for s in missing]}
     translated = assemble(original, {s: item["translation"] for s, item in field["slots"].items()})
     # Store the same schema-1 masked string representation as legacy checkpoints.
@@ -541,7 +544,7 @@ def draft_field(original, key, record_id, client, progress, path, log, retries):
     return candidate, None
 
 
-def draft_batch(number, staging, output, client, runtime, base_url, retries):
+def draft_batch(number, staging, output, client, runtime, base_url, retries, max_total_attempts=None):
     name = f"prm800k_v2_batch{number:02d}"
     source, dest = staging / name, output / name
     queues, lock = frozen_queue(source)
@@ -599,7 +602,7 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries):
                 continue
             try:
                 candidate, failure = draft_field(original, key, record_id, client, progress,
-                                                 progress_path, log, retries)
+                                                 progress_path, log, retries, max_total_attempts)
             except (ValueError, TypeError) as error:
                 candidate, failure = None, {"field": key, "source_record_id": record_id,
                     "source_sha256": sha(original.encode("utf-8")), "error": str(error)}
@@ -764,9 +767,10 @@ def main():
     parser.add_argument("--num-predict", type=int, default=2048)
     parser.add_argument("--timeout", type=int, default=600)
     parser.add_argument("--retries", type=int, default=3)
+    parser.add_argument("--max-total-attempts", type=int, help="Persistent per-slot attempt cap across invocations; used by the unattended supervisor")
     parser.add_argument("--preflight-only", action="store_true", help="Offline source/checkpoint audit; no inference or checkpoint changes")
     args = parser.parse_args()
-    if not (9 <= args.start <= args.end <= 32) or min(args.retries, args.timeout, args.num_predict) < 1 or args.num_ctx <= args.num_predict:
+    if not (9 <= args.start <= args.end <= 32) or min(args.retries, args.timeout, args.num_predict) < 1 or args.num_ctx <= args.num_predict or (args.max_total_attempts is not None and args.max_total_attempts < 1):
         parser.error("Invalid batch range or inference budgets")
     roots = [p.resolve() for p in (args.staging_root, args.output_root, args.review_root)]
     if len(set(roots)) != 3 or any(a in b.parents for a in roots for b in roots if a != b):
@@ -816,7 +820,7 @@ def main():
                     else:
                         if runtime_error is not None and not audit["completed_draft_present_and_valid"]:
                             raise RuntimeError(f"Local inference unavailable after bounded preflight retries: {runtime_error}")
-                        rows, reused = draft_batch(number, args.staging_root, args.output_root, client, runtime, args.base_url, args.retries)
+                        rows, reused = draft_batch(number, args.staging_root, args.output_root, client, runtime, args.base_url, args.retries, args.max_total_attempts)
                         report = make_review(number, rows, args.output_root / f"prm800k_v2_batch{number:02d}", args.review_root)
                         result = {**report, "batch": number, "status": "ai_draft_validated_human_qc_pending",
                                   "reused_completed_draft": reused, "expected_fields": audit.get("expected_fields"),
