@@ -92,6 +92,14 @@ class V2SelectionTests(unittest.TestCase):
         selected = choose_pairs(rows, 5, 42, "train", excluded={correct["id"]})[0]
         self.assertNotIn(problem, {r["problem_id"] for r in selected})
 
+    def test_prior_problem_group_exclusion_removes_all_trajectories(self):
+        rows = self.pool(6)
+        problem = problem_key("problem 0")
+        selected = choose_pairs(
+            rows, 5, 42, "train", excluded_problems={problem}
+        )[0]
+        self.assertNotIn(problem, {r["problem_id"] for r in selected})
+
     def test_requires_enough_paired_problems(self):
         rows = self.pool(3)
         with self.assertRaisesRegex(ValueError, "only 3"):
