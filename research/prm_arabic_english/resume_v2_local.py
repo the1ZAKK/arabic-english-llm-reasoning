@@ -439,7 +439,19 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries):
                             if len(lines) >= 3 and all(x.strip().startswith("|") and x.strip().endswith("|") for x in lines) and not re.search(r"[A-Za-z]", original):
                                 candidate = "الجدول التالي:\n" + masked
                             else:
-                                candidate = client.translate(masked)
+                                # Preserve a terminal answer containing only a
+                                # protected LaTeX token without asking a small
+                                # model to reproduce that fragile final token.
+                                answer = re.search(
+                                    r"(?s)\\n\\n# Answer\\s*\\n\\s*(<P\\d+>)\\s*$",
+                                    masked,
+                                )
+                                if answer:
+                                    body = masked[:answer.start()]
+                                    candidate = client.translate(body).rstrip()
+                                    candidate += "\\n\\n# الإجابة\\n\\n" + answer.group(1)
+                                else:
+                                    candidate = client.translate(masked)
                             candidate = restore_extras(candidate, extras)
                             validate_checkpoint_field(original, candidate)
                             break
