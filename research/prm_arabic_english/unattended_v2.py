@@ -24,6 +24,8 @@ REF = "refs/heads/" + BRANCH
 HERE = "research/prm_arabic_english/"
 AUDIT_PREFIX = HERE + "audits/windows_execution/"
 TERMINAL = {"completed", "completed_with_unresolved", "needs_attention"}
+# Keep archive verification importable before adding bundled modules to sys.path.
+# Regression checks bind these counts to the runner's known frozen coverage.
 FIELD_COUNTS = dict(zip(range(9, 33), (93, 89, 99, 111, 87, 72, 82, 94, 104, 101, 95, 117,
                                      86, 98, 98, 101, 82, 93, 90, 100, 100, 74, 104, 82)))
 ORIGINS = {"https://github.com/" + REPOSITORY, "https://github.com/" + REPOSITORY + ".git",
@@ -88,7 +90,7 @@ class GitRepository:
             raise ValueError("Invalid remote research SHA")
         return head
 
-    def publish(self, audit):
+    def publish(self, audit, update_latest=True):
         """A temporary index contains only generated audits, never user changes."""
         self.verify()
         for attempt in range(3):
@@ -97,9 +99,10 @@ class GitRepository:
             if not re.fullmatch(r"[0-9A-Za-z_-]+", run):
                 raise ValueError("Invalid audit report identity")
             raw = (json.dumps(audit, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
-            entries = {AUDIT_PREFIX + "latest.json": raw,
-                       AUDIT_PREFIX + "latest.md": audit_markdown(audit).encode("utf-8"),
-                       AUDIT_PREFIX + "runs/" + run + ".json": raw}
+            entries = {AUDIT_PREFIX + "runs/" + run + ".json": raw}
+            if update_latest:
+                entries.update({AUDIT_PREFIX + "latest.json": raw,
+                                AUDIT_PREFIX + "latest.md": audit_markdown(audit).encode("utf-8")})
             with tempfile.TemporaryDirectory(prefix="arabicprm-git-index-") as temp:
                 env = {"GIT_INDEX_FILE": str(Path(temp) / "index"),
                     "GIT_AUTHOR_NAME": "ArabicPRM Local Supervisor", "GIT_COMMITTER_NAME": "ArabicPRM Local Supervisor",
@@ -202,6 +205,19 @@ def compact_summary(summary):
                 "queue_sha256", "review_queue_sha256", "source_lock_sha256", "translation_payload_sha256",
                 "review_html_sha256", "legacy_saved_fields", "new_validated_fields", "error", "unattempted_fields")
         batch = {k: original[k] for k in keys if k in original}
+        copies = original.get("legacy_source_copy_checks", [])
+        if (not isinstance(copies, list) or any(not isinstance(c, dict)
+                or c.get("file") not in ("train_translation_queue.jsonl", "dev_translation_queue.jsonl", "source_lock.json")
+                or c.get("representation") != "exact_windows_crlf_envelope"
+                or any(not isinstance(c.get(k), str) or not re.fullmatch(r"[0-9a-f]{64}", c[k])
+                       for k in ("canonical_sha256", "preserved_copy_sha256"))
+                or c.get("source_content_changed") is not False or c.get("existing_file_rewritten") is not False
+                for c in copies)):
+            return compact_summary(None)
+        if copies:
+            batch["legacy_source_copy_checks"] = [{k: c[k] for k in
+                ("file", "representation", "canonical_sha256", "preserved_copy_sha256",
+                 "source_content_changed", "existing_file_rewritten")} for c in copies]
         fields = original.get("unresolved_fields", original.get("outstanding_fields", []))
         if not isinstance(fields, list) or any(not isinstance(f, dict) or not isinstance(f.get("unresolved_slots", []), list)
                 or any(not isinstance(s, dict) for s in f.get("unresolved_slots", [])) for f in fields):
@@ -320,7 +336,7 @@ class Supervisor:
     def checkpoint(self):
         save(self.state_path, self.state)
 
-    def report(self, status, error=None, publish=True, summary=None):
+    def build_audit(self, status, error=None, summary=None):
         output = self.root / "translated_drafts"
         if summary is None:
             try:
@@ -352,6 +368,10 @@ class Supervisor:
                 if isinstance(progress, dict):
                     audit["live_batch_progress"].append({"batch": number, **{k: progress[k] for k in
                         ("status", "validated_fields", "expected_fields", "updated_at_utc") if k in progress}})
+        return audit
+
+    def report(self, status, error=None, publish=True, summary=None):
+        audit = self.build_audit(status, error, summary)
         save(self.state_root / "latest_audit.json", audit)
         self.state["status"] = status
         if error:
@@ -370,9 +390,29 @@ class Supervisor:
             self.checkpoint()
         return audit
 
+    def installation_diagnostic(self, summary):
+        error = summary.get("run_error") or "Offline installation preflight blocked; see per-batch errors"
+        audit = self.build_audit("installation_preflight_failed", error, summary)
+        save(self.state_root / "installation_preflight_diagnostic.json", audit)
+        try:
+            # Preserve the live execution report and every retry/terminal-state
+            # ledger. The existing monitor's latest.json is not changed.
+            commit = self.git.publish(audit, update_latest=False)
+        except Exception as failure:
+            self.state["installation_diagnostic_publication_error"] = redact(failure)
+            self.checkpoint()
+            return False
+        self.state["last_installation_diagnostic_commit"] = commit
+        self.state.pop("installation_diagnostic_publication_error", None)
+        self.checkpoint()
+        return True
+
     def run_pipeline(self, preflight=False):
         command = [self.config["python"], str(self.runtime / "resume_v2_local.py"),
-            "--staging-root", str(self.root / "frozen_staging"),
+            # The user's older staging remains untouched. This fresh cache is
+            # generated only from verified, pinned runtime Git blobs; it must
+            # pass the same exact-byte frozen checks on every invocation.
+            "--staging-root", str(self.root / "frozen_staging_unattended" / self.config["runtime_commit"]),
             "--output-root", str(self.root / "translated_drafts"),
             "--review-root", str(self.root / "review_artifacts"),
             "--max-total-attempts", "9"]
@@ -464,6 +504,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--offline-check", action="store_true", help="CI only: verify config/runtime/source, no inference or publication")
+    parser.add_argument("--publish-installation-diagnostic", action="store_true",
+                        help="Publish a failed offline installation audit without inference or resetting retry ledgers")
     args = parser.parse_args()
     config = read(args.config)
     root, state = validate_config(config)
@@ -472,6 +514,12 @@ def main():
     from resume_v2_local import run_lock
     with run_lock(state):
         supervisor = Supervisor(config)
+        if args.publish_installation_diagnostic:
+            summary = read(root / "translated_drafts" / "preflight_latest.json")
+            if (not isinstance(summary, dict) or summary.get("mode") != "offline_preflight"
+                    or [b.get("batch") for b in summary.get("batches", [])] != list(range(9, 33))):
+                raise ValueError("Missing or out-of-scope installation preflight; no diagnostic was published")
+            return 0 if supervisor.installation_diagnostic(summary) else 1
         if args.offline_check:
             install_runtime(git, config["runtime_commit"], state / "runtimes")
             return supervisor.run_pipeline(preflight=True)

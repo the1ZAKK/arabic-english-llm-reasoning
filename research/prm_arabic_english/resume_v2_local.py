@@ -35,6 +35,9 @@ SELECTION_HASHES = {
 }
 PLACEHOLDER = re.compile(r"<[MN]\d+>")
 VALIDATED_CHECKPOINT = "validated_fields_checkpoint.json"
+EXPECTED_FIELD_COUNTS = dict(zip(range(9, 33), (93, 89, 99, 111, 87, 72, 82, 94, 104, 101, 95, 117,
+                                              86, 98, 98, 101, 82, 93, 90, 100, 100, 74, 104, 82)))
+SOURCE_COPY_FILES = ("train_translation_queue.jsonl", "dev_translation_queue.jsonl", "source_lock.json")
 COMMAND = re.compile(r"\\[A-Za-z]+\*?")
 OPERATOR = re.compile(r"[+−±*/=<>^%÷×]|(?<![A-Za-z])-|-(?![A-Za-z])")
 BAD_SCRIPT = re.compile(r"[\u3400-\u9fff\uf900-\ufaff\u3040-\u30ff\uac00-\ud7af]")
@@ -104,6 +107,42 @@ def create_or_verify(path, raw):
     finally:
         if os.path.exists(name):
             os.unlink(name)
+
+
+def verify_source_copy(path, canonical):
+    """Verify a read-only draft copy against exact trusted byte envelopes.
+
+    Frozen queues/locks and checkpoint provenance still use canonical raw-byte
+    hashes. Old Windows copies may contain the *exact* CRLF envelope of those
+    same bytes. This never normalizes a file, parses away a change, or admits a
+    changed JSON string, mixed line endings, extra whitespace or changed lock.
+    """
+    if path.name not in SOURCE_COPY_FILES or path.is_symlink():
+        raise ValueError(f"Unsafe existing draft source copy; preserved: {path}")
+    actual = path.read_bytes()
+    if actual == canonical:
+        return None
+    # JSON strings encode their own newlines as backslash+n; only the outer
+    # JSON/JSONL file separators are changed in this deterministic envelope.
+    if b"\r" not in canonical and actual == canonical.replace(b"\n", b"\r\n"):
+        return {"file": path.name, "representation": "exact_windows_crlf_envelope",
+                "canonical_sha256": sha(canonical), "preserved_copy_sha256": sha(actual),
+                "source_content_changed": False, "existing_file_rewritten": False}
+    raise ValueError(f"Existing draft source copy differs; preserved: {path}; "
+                     f"expected SHA256 {sha(canonical)}, actual SHA256 {sha(actual)}")
+
+
+def source_copy_checks(source, dest, create=False):
+    receipts = []
+    for filename in SOURCE_COPY_FILES:
+        target, canonical = dest / filename, (source / filename).read_bytes()
+        if target.exists() or target.is_symlink():
+            receipt = verify_source_copy(target, canonical)
+            if receipt:
+                receipts.append(receipt)
+        elif create:
+            create_or_verify(target, canonical)
+    return receipts
 
 
 def event(path, kind, **fields):
@@ -548,8 +587,7 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries, max
     name = f"prm800k_v2_batch{number:02d}"
     source, dest = staging / name, output / name
     queues, lock = frozen_queue(source)
-    for filename in ("train_translation_queue.jsonl", "dev_translation_queue.jsonl", "source_lock.json"):
-        create_or_verify(dest / filename, (source / filename).read_bytes())
+    copy_checks = source_copy_checks(source, dest, create=True)
     final = dest / "translations.json"
     if final.exists():
         payload = parse(final.read_bytes())
@@ -591,6 +629,8 @@ def draft_batch(number, staging, output, client, runtime, base_url, retries, max
                   "complete": False,
                   "human_qc_status": "pending", "training_eligible": False,
                   "queue_sha256": lock["queue_sha256"], "updated_at_utc": now()}
+        if copy_checks:
+            report["legacy_source_copy_checks"] = copy_checks
         atomic_write(dest / "batch_status.json", encoded(report))
         return report
 
@@ -693,9 +733,7 @@ def preflight_batch(number, staging, output, model, base_url):
     name = f"prm800k_v2_batch{number:02d}"
     queues, lock = frozen_queue(staging / name)
     dest = output / name
-    for filename in ("source_lock.json", "train_translation_queue.jsonl", "dev_translation_queue.jsonl"):
-        if (dest / filename).exists() and (dest / filename).read_bytes() != (staging / name / filename).read_bytes():
-            raise ValueError(f"Existing draft source copy differs: {name}/{filename}")
+    copy_checks = source_copy_checks(staging / name, dest)
     expected = provenance(number, model, base_url, lock)
     completed, additions, legacy, _ = load_field_checkpoints(dest, expected, queues)
     invalid = []
@@ -717,6 +755,7 @@ def preflight_batch(number, staging, output, model, base_url):
     return {"batch": number, "records": sum(len(q) for q in queues.values()),
             "steps": sum(len(r["source_record"]["steps"]) for q in queues.values() for r in q),
             "queue_sha256": lock["queue_sha256"], "saved_fields": len(completed),
+            "legacy_source_copy_checks": copy_checks,
             "legacy_saved_fields": len(legacy), "new_validated_fields": len(additions),
             "expected_fields": len(specs), "validated_saved_fields": len(completed) - len(invalid),
             "prose_saved_slots": sum(len(f["slots"]) for f in progress["fields"].values()),
@@ -781,7 +820,9 @@ def main():
                    "human_qc_performed": False, "export_performed": False, "training_performed": False,
                    "global_mgsm_accessed": False, "plan_version": PLAN_VERSION,
                    "runner_sha256": sha(Path(__file__).read_bytes()),
-                   "batches": [{"batch": n, "status": "not_started"} for n in range(args.start, args.end + 1)]}
+                   "staging_root": str(args.staging_root.resolve()),
+                   "batches": [{"batch": n, "status": "not_started", "expected_fields": EXPECTED_FIELD_COUNTS[n]}
+                               for n in range(args.start, args.end + 1)]}
         summary_path = args.output_root / ("preflight_latest.json" if args.preflight_only else "resume_summary_latest.json")
         active_number = None
         try:

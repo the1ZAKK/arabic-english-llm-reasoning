@@ -243,6 +243,67 @@ class ResumeChecks(unittest.TestCase):
         self.assertEqual(path.read_bytes(), raw)
         self.assertFalse((self.dest / "checkpoint_backups").exists())
 
+    def test_exact_crlf_draft_copies_resume_without_rewriting_source_or_legacy_checkpoint(self):
+        path, original = self.checkpoint({"train:0:0": self.answers[0], "train:0:1": self.answers[1]})
+        preserved = {}
+        for filename in runner.SOURCE_COPY_FILES:
+            target = self.dest / filename
+            target.write_bytes((self.source / filename).read_bytes().replace(b"\n", b"\r\n"))
+            preserved[target] = target.read_bytes()
+        audit = runner.preflight_batch(9, self.staging, self.output, "qwen3:4b", self.base)
+        self.assertEqual(audit["validated_saved_fields"], 2)
+        self.assertEqual(len(audit["legacy_source_copy_checks"]), 2)  # Empty dev file has identical bytes.
+        client = FakeClient([self.prose_answers[2]])
+        rows, _ = self.draft(client)
+        self.assertEqual(client.calls, [{"s0": "Therefore"}])
+        self.assertEqual(path.read_bytes(), original)
+        for target, raw in preserved.items():
+            self.assertEqual(target.read_bytes(), raw)
+        report = runner.make_review(9, rows, self.dest, self.review)
+        self.assertEqual(report["source_lock_sha256"], runner.sha(preserved[self.dest / "source_lock.json"]))
+        self.assertFalse(report["training_eligible"])
+
+    def test_line_ending_compatibility_does_not_accept_any_other_byte_changes(self):
+        original = (self.source / "source_lock.json").read_bytes()
+        path = self.dest / "source_lock.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        variants = [original + b"\n", b"\xef\xbb\xbf" + original,
+                    original.replace(b"\n", b"\r\n", 1),
+                    original.replace(b'"index": 0', b'"index": 1'),
+                    original.replace(b'"index": 0', b'"index" : 0')]
+        for changed in variants:
+            with self.subTest(changed=runner.sha(changed)):
+                path.write_bytes(changed)
+                with self.assertRaisesRegex(ValueError, "source copy differs"):
+                    runner.verify_source_copy(path, original)
+                self.assertEqual(path.read_bytes(), changed)
+        queue = self.dest / "train_translation_queue.jsonl"
+        canonical = (self.source / queue.name).read_bytes()
+        # Escaped newlines INSIDE the source string are mathematical/reasoning
+        # boundaries; changing them is never a permitted outer CRLF envelope.
+        changed = canonical.replace(b"\\n", b"\\r\\n").replace(b"\n", b"\r\n")
+        queue.write_bytes(changed)
+        with self.assertRaisesRegex(ValueError, "source copy differs"):
+            runner.verify_source_copy(queue, canonical)
+        self.assertEqual(queue.read_bytes(), changed)
+
+    def test_crlf_envelope_never_changes_frozen_hash_or_checkpoint_provenance(self):
+        path, original = self.checkpoint({"train:0:0": self.answers[0]})
+        self.dest.mkdir(parents=True, exist_ok=True)
+        canonical = (self.source / "train_translation_queue.jsonl").read_bytes()
+        crlf = canonical.replace(b"\n", b"\r\n")
+        (self.dest / "train_translation_queue.jsonl").write_bytes(crlf)
+        checkpoint = runner.parse(original)
+        checkpoint["provenance"]["queue_sha256"]["train_translation_queue.jsonl"] = runner.sha(crlf)
+        path.write_bytes(runner.encoded(checkpoint))
+        before = path.read_bytes()
+        with self.assertRaisesRegex(ValueError, "provenance"):
+            runner.preflight_batch(9, self.staging, self.output, "qwen3:4b", self.base)
+        self.assertEqual(path.read_bytes(), before)
+        (self.source / "train_translation_queue.jsonl").write_bytes(crlf)
+        with self.assertRaisesRegex(ValueError, "Frozen queue checksum"):
+            runner.frozen_queue(self.source)
+
     def test_lock_prevents_concurrent_runners(self):
         with runner.run_lock(self.output):
             with self.assertRaisesRegex(RuntimeError, "Another resume runner"):

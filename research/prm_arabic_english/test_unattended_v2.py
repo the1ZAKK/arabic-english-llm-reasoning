@@ -1,5 +1,7 @@
 """Offline supervisor regressions. No Ollama inference or real remote writes."""
 import copy
+from contextlib import redirect_stdout
+import io
 import json
 import os
 from pathlib import Path
@@ -87,6 +89,22 @@ class AuditIntegrityChecks(unittest.TestCase):
             git.verify()
         self.assertEqual(git.command.call_count, 1)
 
+    def test_source_copy_receipts_publish_only_exact_hash_evidence(self):
+        good = complete_summary()
+        receipt = {"file": "source_lock.json", "representation": "exact_windows_crlf_envelope",
+                   "canonical_sha256": "a" * 64, "preserved_copy_sha256": "b" * 64,
+                   "source_content_changed": False, "existing_file_rewritten": False,
+                   "raw_rejected_response": "must never be published"}
+        good["batches"][0]["legacy_source_copy_checks"] = [receipt]
+        compact = agent.compact_summary(good)
+        self.assertTrue(compact["all_drafts_complete"])
+        self.assertNotIn("must never", json.dumps(compact))
+        for key, value in (("source_content_changed", True), ("canonical_sha256", "wrong"),
+                           ("representation", "loosely_normalized_json")):
+            bad = copy.deepcopy(good)
+            bad["batches"][0]["legacy_source_copy_checks"][0][key] = value
+            self.assertFalse(agent.compact_summary(bad)["all_drafts_complete"])
+
 
 class SupervisorRecoveryChecks(unittest.TestCase):
     def setUp(self):
@@ -147,6 +165,30 @@ class SupervisorRecoveryChecks(unittest.TestCase):
         recovered = agent.Supervisor(self.config)
         self.assertEqual(recovered.state["finished_passes"], 3)
         self.assertIn("network", recovered.state["publication_error"])
+
+    def test_installation_diagnostic_preserves_terminal_state_and_every_retry_budget(self):
+        self.supervisor.state.update(finished_passes=3, runtime_failures=6,
+                                     status="needs_attention", error="prior exhausted budget")
+        self.supervisor.checkpoint()
+        summary = {"mode": "offline_preflight", "run_error": "fixture source mismatch",
+                   "batches": [{"batch": n, "status": "not_started", "expected_fields": count}
+                               for n, count in agent.FIELD_COUNTS.items()]}
+        self.assertTrue(self.supervisor.installation_diagnostic(summary))
+        self.supervisor.git.publish.assert_called_once()
+        self.assertEqual(self.supervisor.git.publish.call_args.kwargs, {"update_latest": False})
+        for key, value in (("finished_passes", 3), ("runtime_failures", 6),
+                           ("status", "needs_attention"), ("error", "prior exhausted budget")):
+            self.assertEqual(agent.read(self.supervisor.state_path)[key], value)
+        self.assertFalse((self.supervisor.state_root / "latest_audit.json").exists())
+        diagnostic = agent.read(self.supervisor.state_root / "installation_preflight_diagnostic.json")
+        self.assertFalse(diagnostic["all_drafts_complete"])
+        self.assertFalse(diagnostic["human_qc_completed"])
+        self.assertEqual(sum(b["expected_fields"] for b in diagnostic["batches"]), 2252)
+        self.supervisor.git.publish.side_effect = RuntimeError("fixture network failure")
+        self.assertFalse(self.supervisor.installation_diagnostic(summary))
+        self.assertEqual(self.supervisor.state["finished_passes"], 3)
+        self.assertEqual(self.supervisor.state["runtime_failures"], 6)
+        self.assertEqual(self.supervisor.state["status"], "needs_attention")
 
     def test_existing_translator_waits_without_concurrent_inference(self):
         with patch.object(agent, "translators_running", return_value=[123]), \
@@ -289,6 +331,65 @@ class LocalGitPublicationChecks(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "changed"):
             agent.install_runtime(self.repository, self.initial, base)
         self.assertEqual(file.read_bytes(), b"changed fixture\n")
+
+    def test_installation_diagnostic_publishes_history_only_without_changing_live_report(self):
+        audit = {"report_id": "offline_installation_fixture", "status": "installation_preflight_failed",
+                 "recorded_at_utc": "fixture", "runtime_commit": self.initial,
+                 "batches": [], "all_drafts_complete": False}
+        index = self.git("write-tree")
+        commit = self.repository.publish(audit, update_latest=False)
+        self.assertEqual(self.git("write-tree"), index)
+        self.assertEqual(self.git("rev-parse", "HEAD"), self.initial)
+        self.assertEqual(self.git("diff-tree", "--no-commit-id", "--name-only", "-r", commit),
+                         agent.AUDIT_PREFIX + "runs/offline_installation_fixture.json")
+
+
+class WindowsFrozenInstallationChecks(unittest.TestCase):
+    def setUp(self):
+        import windows_preflight_fixture as fixture
+        self.fixture = fixture
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name) / "project"
+        self.config = fixture.prepare(Path(__file__).resolve().parents[2], self.root, overlay=True)
+
+    def test_original_staging_path_reproduces_global_failure_without_inference(self):
+        import resume_v2_local as runner
+        argv = ["resume_v2_local.py", "--preflight-only", "--staging-root", str(self.root / "frozen_staging"),
+                "--output-root", str(self.root / "translated_drafts"), "--review-root", str(self.root / "review_artifacts")]
+        with patch.object(runner.sys, "argv", argv), patch.object(runner.Ollama, "preflight") as inference, \
+                redirect_stdout(io.StringIO()):
+            self.assertEqual(runner.main(), 1)
+        inference.assert_not_called()
+        summary = agent.read(self.root / "translated_drafts/preflight_latest.json")
+        self.assertIn("Existing frozen staging changed; preserved", summary["run_error"])
+        self.assertEqual([b["status"] for b in summary["batches"]], ["not_started"] * 24)
+        expected = agent.read(self.root / "fixture_expected.json")
+        for path, digest in expected["preserved_files"].items():
+            self.assertEqual(runner.sha((self.root / path).read_bytes()), digest)
+
+    def test_real_pinned_archive_preflight_preserves_crlf_checkpoint_and_retry_ledger(self):
+        import resume_v2_local as runner
+        self.assertEqual(agent.FIELD_COUNTS, runner.EXPECTED_FIELD_COUNTS)
+        runtime = agent.install_runtime(agent.GitRepository(self.root), self.config["runtime_commit"],
+                                        self.root / "translated_drafts/unattended_agent/runtimes")
+        for filename in ("unattended_v2.py", "resume_v2_local.py", "translation_batches/prm800k_v2_selection/train_translation_queue.jsonl"):
+            self.assertNotIn(b"\r\n", (runtime / filename).read_bytes())
+        result = subprocess.run([sys.executable, str(runtime / "unattended_v2.py"), "--config",
+                                 str(self.root / "translated_drafts/unattended_agent/config.json"), "--offline-check"],
+                                capture_output=True, timeout=90)
+        self.assertEqual(result.returncode, 0, result.stdout.decode("utf-8", "replace") + result.stderr.decode("utf-8", "replace"))
+        self.fixture.verify(self.root)
+        report = agent.read(self.root / "translated_drafts/preflight_latest.json")
+        self.assertEqual(Path(report["staging_root"]), self.root / "frozen_staging_unattended" / self.config["runtime_commit"])
+        checkpoint = agent.read(self.root / "translated_drafts/prm800k_v2_batch09/prose_checkpoint.json")
+        self.assertTrue(all(n == 9 for n in checkpoint["fields"]["train:6:6"]["attempts"].values()))
+        canonical = self.root / "frozen_staging_unattended" / self.config["runtime_commit"]
+        with self.assertRaisesRegex(ValueError, "Existing frozen staging changed"):
+            # A changed active cache still fails; the old cache is never repaired.
+            queue = canonical / "prm800k_v2_batch09/train_translation_queue.jsonl"
+            queue.write_bytes(queue.read_bytes() + b"\n")
+            runner.stage_verified(canonical)
 
 
 if __name__ == "__main__":

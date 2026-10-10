@@ -145,6 +145,16 @@ if ($running.Count -gt 0 -and -not $TestOnly) {
         $preflight = Get-Content -LiteralPath $preflightPath -Raw -Encoding UTF8 | ConvertFrom-Json
         $safeBatches = @($preflight.batches | Where-Object { $_.status -eq 'source_audited_only' })
         if ($TestOnly -or $preflight.run_error -or $preflight.batches.Count -ne 24 -or $safeBatches.Count -eq 0) {
+            if ($preflight.run_error) { Write-Host "Underlying preflight failure: $($preflight.run_error)" }
+            foreach ($blocked in @($preflight.batches | Where-Object { $_.error })) {
+                Write-Host "Batch$($blocked.batch) preflight failure: $($blocked.error)"
+            }
+            if (-not $TestOnly) {
+                & $python $worker --config $configPath --publish-installation-diagnostic
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Warning "Automatic diagnostic publication failed; local evidence was retained."
+                }
+            }
             throw "Global immutable-runtime/frozen-source preflight failed. Existing files were preserved."
         }
         Write-Host "Batch-specific preflight failures were recorded; independent verified batches will continue."
