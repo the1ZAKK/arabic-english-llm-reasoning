@@ -24,6 +24,28 @@ EXTRA_LITERAL = re.compile(
 )
 ARABIC = re.compile(r"[\u0600-\u06ff]")
 GENERATED_NUMBER = re.compile(r"(?<![0-9٠-٩])[-+]?[0-9٠-٩]+(?:[.,][0-9٠-٩]+)?")
+LATIN_WORD = re.compile(r"\\b[A-Za-z]+\\b")
+SHORT_FALLBACK_TERMS = {
+    "answer": "الإجابة",
+    "infinity": "اللانهاية",
+    "right": "صحيح",
+    "so": "إذن",
+    "and": "و",
+    "then": "ثم",
+    "therefore": "لذلك",
+    "compute": "احسب",
+    "calculate": "احسب",
+    "expand": "وسّع",
+    "factor": "حلّل",
+    "simplify": "بسّط",
+    "multiply": "اضرب",
+    "sure": "حسنًا",
+    "ok": "حسنًا",
+    "or": "أو",
+    "no": "لا",
+    "match": "تطابق",
+}
+
 
 
 _ONES = {
@@ -99,6 +121,24 @@ def spell_mt_generated_digits(text):
     return GENERATED_NUMBER.sub(_spell_generated_number, text)
 
 
+def repair_untranslated_short_span(source, decoded):
+    """Deterministically translate a tiny recognized span if MT leaves it English.
+
+    The fallback is intentionally narrow: at most three Latin words, all from a
+    fixed unambiguous math/discourse lexicon. Unknown or longer English remains
+    a hard failure so human QC cannot be bypassed by silent source copying.
+    """
+    if ARABIC.search(decoded):
+        return decoded
+    words = LATIN_WORD.findall(source)
+    if not words or len(words) > 3:
+        return decoded
+    lowered = [word.lower() for word in words]
+    if any(word not in SHORT_FALLBACK_TERMS for word in lowered):
+        return decoded
+    return LATIN_WORD.sub(lambda m: SHORT_FALLBACK_TERMS[m.group(0).lower()], source)
+
+
 def _next_span(text, start):
     matches = []
     for priority, kind, pattern in (
@@ -168,6 +208,7 @@ class MarianTranslator:
         self.transformers_version = transformers.__version__
         self.model_name = model_name
         self.num_beams = num_beams
+        self.short_fallback_count = 0
         self.tokenizer = MarianTokenizer.from_pretrained(model_name)
         self.model = MarianMTModel.from_pretrained(model_name)
         self.model.eval()
@@ -200,7 +241,11 @@ class MarianTranslator:
             decoded = self.tokenizer.batch_decode(
                 generated, skip_special_tokens=True
             )[0]
-            translated.append(spell_mt_generated_digits(decoded))
+            decoded = spell_mt_generated_digits(decoded)
+            repaired = repair_untranslated_short_span(chunk, decoded)
+            if repaired != decoded:
+                self.short_fallback_count += 1
+            translated.append(repaired)
         return leading + " ".join(translated) + trailing
 
 
@@ -254,9 +299,11 @@ def run(args):
         "date": args.date,
         "method": (
             "Marian English-to-Arabic draft; protected math, unwrapped LaTeX, "
-            "source markers and digit-form numbers copied outside the MT model"
+            "source markers and digit-form numbers copied outside the MT model; "
+            "narrow deterministic fallback for recognized short untranslated spans"
         ),
         "generation_settings": {"num_beams": args.num_beams, "max_new_tokens": 512},
+        "short_fallback_count": translator.short_fallback_count,
         "instruction": (
             "Draft only. Translate faithfully to Modern Standard Arabic. Preserve "
             "mathematical content, intentional errors, source step boundaries and "
