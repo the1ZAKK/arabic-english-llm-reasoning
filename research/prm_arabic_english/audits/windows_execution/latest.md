@@ -1,7 +1,7 @@
 # Local ArabicPRM execution audit
 
-Status: `retrying_unresolved_fields`.
-Recorded: 2026-10-16T21:03:01.086911+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
+Status: `running`.
+Recorded: 2026-10-16T21:10:53.368245+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
 
 Human QC remains pending. No training export or training was performed.
 
