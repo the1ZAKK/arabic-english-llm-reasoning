@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "report_id": "20261016T135610_8b0dbe96",
+  "repository": "the1ZAKK/arabic-english-llm-reasoning",
+  "branch": "research/arabicprm-v2-production",
+  "recorded_at_utc": "2026-10-16T13:56:10.046324+00:00",
+  "status": "running",
+  "runtime_commit": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
+  "finished_passes": 0,
+  "max_passes": 3,
+  "max_total_attempts_per_slot": 9,
+  "human_qc_completed": false,
+  "training_export_performed": false,
+  "training_performed": false,
+  "installed_model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "error": null,
+  "batches": [
+    {
+      "batch": 9,
+      "status": "failed",
+      "error": "prm800k_v2_batch09 dev:0:4 failed; prior checkpoint entries preserved",
+      "outstanding_fields": []
+    }
+  ],
+  "all_drafts_complete": false,
+  "completed_batches": [],
+  "run_error": null,
+  "runtime_error": null,
+  "model_runtime": {
+    "model": "qwen3:4b",
+    "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "ollama_version": "0.40.2",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 4096,
+      "num_predict": 2048
+    },
+    "think": false,
+    "stream": false,
+    "gpu": "NVIDIA GeForce RTX 2060 with Max-Q Design, 6144 MiB, 592.82"
+  },
+  "live_batch_progress": []
+}
