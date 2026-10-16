@@ -1,7 +1,7 @@
 # Local ArabicPRM execution audit
 
 Status: `running`.
-Recorded: 2026-10-16T16:25:09.957614+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
+Recorded: 2026-10-16T16:40:47.982607+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
 
 Human QC remains pending. No training export or training was performed.
 
@@ -1322,9 +1322,7 @@ Human QC remains pending. No training export or training was performed.
 - Batch21 `dev:1:18`: source `afc1d08bf32b604fe6213276ace5fb4508aa876f37c82fa6e3d8b53b13d9a642`; 
 
 - Batch21 `dev:1:19`: source `aa4f077bde1b7995064a3937cb364165ee5a4fa51b7a7ac69aae0fe2cf0f9901`; 
-| 22 | not_started | 0 / 98 | 98 |
-
-- Batch22 `train:0:0`: source `07197cb48b3caad95e2489411ec6d4dcded13b129835bfc90e24a8dce0bc9369`; 
+| 22 | incomplete_unresolved_fields | 52 / 98 | 46 |
 
 - Batch22 `train:0:1`: source `9799c432099f00bc72c7ebcc76914dd3be7a2a7dd16218205cbb681405653b3c`; 
 
@@ -1332,49 +1330,9 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch22 `train:0:3`: source `828901de36df68a6b88f1e87950ce61368d77970045da3010f7b0b214ce2da5b`; 
 
-- Batch22 `train:0:4`: source `0ea5977074d19b323a93e0a94cb9a5d4abeb75418234455cf38e6293403fe236`; 
-
 - Batch22 `train:0:5`: source `d3d63f5d1f98929417a81742421529a27c3e75e9d75dbd53e387f6a12a1264ec`; 
 
 - Batch22 `train:1:0`: source `4f6ee526a86b12e67fb7b4d932ce84bf11ecacfc957728f19b247a8f2b6909c8`; 
-
-- Batch22 `train:1:1`: source `12ea4eb165dc8139369b1b8d17ed8f969668650d113eba88df39a6c0f055a438`; 
-
-- Batch22 `train:1:2`: source `cba75593fe71c75a4a6765632ddcd8ff296cfe566e637cb00a6398dbffad982a`; 
-
-- Batch22 `train:1:3`: source `d6daca6e6ba61b30424eb27c8061d0eca3e61fa555499cbc4e0781eba8c9156d`; 
-
-- Batch22 `train:1:4`: source `8faae46ef3a1c74916c8ca1fc02c0fcf1476fc03ad6eff2ccf4ea51454c0141d`; 
-
-- Batch22 `train:1:5`: source `335dbc088cd1b9c382cb4acd082089fdd0b1d80f016966364dac0e03dcd6cba5`; 
-
-- Batch22 `train:1:6`: source `ca63d92aefe97b6c3e41e61a6c9a226a5809aa1091038581ff518fd7e6ef0b4b`; 
-
-- Batch22 `train:1:7`: source `ca0702492690e8bea58ff0c6693ad8f5c8d53e667bca29daf02ebf5ccdf72dde`; 
-
-- Batch22 `train:1:8`: source `1d613fd6b75679070be13ec71c1f15e7500d3a71fd80de6673824c73e7fce629`; 
-
-- Batch22 `train:1:9`: source `fc33fb253936bbfaa61b5624cdd4fa9e30cd9b51a52fb5d6400cc4a64f9d0f21`; 
-
-- Batch22 `train:1:10`: source `dfbb5b8a5d6257072255e06d5baa769c61338ec8c2011ea29584ac6376c22c42`; 
-
-- Batch22 `train:1:11`: source `35124fc5af48edb7fb97bd4e4acdf5722f61938e551a37988cdce7cdaf64b4d5`; 
-
-- Batch22 `train:1:12`: source `7d55b7e73c3dc5893b635369715483139ee83ed73404b775932eac9978e20546`; 
-
-- Batch22 `train:1:13`: source `5eeeea39b13a71090300a86407f17edffb730d5b4976ff62c82f651758ae76ff`; 
-
-- Batch22 `train:1:14`: source `98a405c3f94f622d8d94db9e8872eb292fee308d1c27bb2faca5766784dadb2d`; 
-
-- Batch22 `train:1:15`: source `4a892a843d753d21227087f5fce17b5b43abff712d40b5c901bb38cc8937f643`; 
-
-- Batch22 `train:1:16`: source `a5754badfb1028405baa75347f5a2ee10614fdc3ee9498361e992f2a5dbbb840`; 
-
-- Batch22 `train:1:17`: source `a59197cc7d6d1167a7d48fcedae116481528b2696f565cbe2ce66d06d84d998d`; 
-
-- Batch22 `train:1:18`: source `fc3a23b33f9cd61379fe63da838d61d266e21ebb964d6c1f92a929649dc36e8f`; 
-
-- Batch22 `train:1:19`: source `1b100a3938defef3990b69e0c3602d347c73117b152c270fbb3b45b692224a93`; 
 
 - Batch22 `train:1:20`: source `d2d26e2b497f1090f68fac00ee636f692844e61fe4027a6dae31f47b15f2c945`; 
 
@@ -1382,39 +1340,11 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch22 `train:2:0`: source `916cd5cd8413444ed9b61a492239c08599e1f683948675e725cfd5ae5791ffcf`; 
 
-- Batch22 `train:2:1`: source `22720e9a9b14cee33799747f937fdb1b713af63ce409674855db162b6075055c`; 
-
-- Batch22 `train:2:2`: source `3ed297358676d08c439311f62923992c7d2bc102eea53c37e87bcb44c9b479d2`; 
-
-- Batch22 `train:2:3`: source `9691f0bcb6e632ac46e88e88e2a687fdc483389daeb5e2d5995b87fa8cee8879`; 
-
-- Batch22 `train:2:4`: source `c49b82cee1ce2e378a6d760da035203992147f87b92f2751dce6b963873edad2`; 
-
 - Batch22 `train:3:0`: source `dab788f0d3e6e154542468863dedb72d5561e2b33f438615cca78da4a4580c2a`; 
-
-- Batch22 `train:3:1`: source `5e5c1c863d5c6d3d23138cd32cba4d5a0964bbd49e4549f151e7466c2a60d9d7`; 
 
 - Batch22 `train:3:2`: source `2a7fa58b4319b433effd57fe290b594546599a4656c2025400abc7e6f178f499`; 
 
-- Batch22 `train:3:3`: source `a3c5147369be9f398de9a763dfb681f239b850f50c05bf9a0c221c3d39a74c5f`; 
-
-- Batch22 `train:3:4`: source `1951449e8fd17162f5be4e7d581558dea5f21cd394a5a8ed0c001b836e6b03b2`; 
-
-- Batch22 `train:3:5`: source `6b84c05fca6804e8b64fb0aff2b2b174a35f80d7709d63b65f7b1320b8f5524e`; 
-
-- Batch22 `train:3:6`: source `5c61bdf5f65c7ecdef8f2963f0c03d537cf50d531636789aadb1a7046298097c`; 
-
-- Batch22 `train:3:7`: source `c0b5749f894725c80397fd5926c079deb471a17ae890c6a030c56ccbe05300ec`; 
-
-- Batch22 `train:3:8`: source `a79a396cafdf95e885de19075e6b0ee420b0b9bf5bb9357abaa99bd138cdbeed`; 
-
-- Batch22 `train:3:9`: source `db523528fcd84183b80953e386d8c66802b764535bf81d2e5c2680b4f3b059dc`; 
-
-- Batch22 `train:3:10`: source `55e68a10516d7111d67773201aa8b0797c80f799b0bbaaa8b6607e6d650f32bf`; 
-
 - Batch22 `train:3:11`: source `db0bbac9fd603784943829bd39a80cb5b1b9d8c886d5264a42a2f5ad8cd23d7a`; 
-
-- Batch22 `train:3:12`: source `5ee5b1bffc3bc646a3566ef585f4d40c7b7490af4b2d3cfaed35d34d94f9b93b`; 
 
 - Batch22 `train:3:13`: source `2b6a9aa9beb7b0f08cac6b707dfa7eed4f26a624eca5489bf5e12d868e72df64`; 
 
@@ -1427,10 +1357,6 @@ Human QC remains pending. No training export or training was performed.
 - Batch22 `train:4:3`: source `b3a1403951144801a32938b9ba495ec8f9f5be6356455f80c510c18e18fbcbff`; 
 
 - Batch22 `train:4:4`: source `ba9f5d50769bc0f5fee82fd488eab82676a7efe68db1149219969ac0fcc320a9`; 
-
-- Batch22 `train:4:5`: source `ae293964f0ff3ff680b86407c4d2002a62289591013a418ef099e3d171e642bd`; 
-
-- Batch22 `train:4:6`: source `845d179c0a0c448828e239cc0d6fdb1853c3c7859cbac9e110a6094bf66e8fc0`; 
 
 - Batch22 `train:4:7`: source `aec983484047a49f82d64b0d1f68192b008e3f1ab18424b0a621e730addc77a6`; 
 
@@ -1446,10 +1372,6 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch22 `dev:0:0`: source `f40084cce08bfce05976996e7c2882777512331cfaccf649bd255486cc6d51ce`; 
 
-- Batch22 `dev:0:1`: source `3187e1b334afd7cef8f192c09c9a5bc6451a3515513de3f39e8bc4029a7f2b12`; 
-
-- Batch22 `dev:0:2`: source `e9d747ac134947ccfcbaae26c2d046db163bfd9bf795aa08d7b15b8c053a9d1f`; 
-
 - Batch22 `dev:0:3`: source `8d423f1a30171d69dcf16909c6c76cff70090665052f7e1fa1a398d7d7edbba9`; 
 
 - Batch22 `dev:0:4`: source `acf38af17aeb0cc743e5a3795407249765866167082ee561f485e24d1abc3389`; 
@@ -1458,11 +1380,7 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch22 `dev:0:6`: source `e9a1d293e9315fcff5b936291266e197c9d79fba5b3aa1dc97654253512d323f`; 
 
-- Batch22 `dev:0:7`: source `2bb61317e9a0c14f0b94f3de6deebc9f4ec1349f5561da2f8d03b60eb06165b2`; 
-
 - Batch22 `dev:0:8`: source `291276861255173c52651ba94d71ea68aedbecbe5760c9649e674013f7186c85`; 
-
-- Batch22 `dev:0:9`: source `2cdca1abf7a4ba3268ee004012bc7ff16fae1f1ad7fb2d0f3f93f19782e342df`; 
 
 - Batch22 `dev:0:10`: source `d631e8c2a204e08c6b3e59f93c2de61aaefeef1a470181e05050bb3d37752e18`; 
 
@@ -1472,10 +1390,6 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch22 `dev:0:13`: source `a85359de7e870f8f2dc3a83b692c67853d30ec813511d58b96ccec010f43cda1`; 
 
-- Batch22 `dev:0:14`: source `d9f09abe2558ab9ec56d7f1833c2378db14d3d0b1d45a0f758ae67cb55f6ef3d`; 
-
-- Batch22 `dev:0:15`: source `5762543c5252c7376d07005f3cb5da0cd0c535d7406e1242c1752746f2fe1d70`; 
-
 - Batch22 `dev:0:16`: source `1845165c06bc7444cdb5e66f987c57bd3ca8f04355f4111adc2c9ee3bd698152`; 
 
 - Batch22 `dev:0:17`: source `de1ee512737e89f0048fa220d0374dd39179cb07b263a93cb564e7c4f051f30d`; 
@@ -1484,25 +1398,13 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch22 `dev:0:19`: source `11a5411d2f2c302ccbb0cb72d2c7955892cbc57b9517d7941560183d245889c5`; 
 
-- Batch22 `dev:0:20`: source `fd626173525576a07dd62b75b24bcfff5f0a26366720c34a6827e7336f0ddc4a`; 
-
-- Batch22 `dev:0:21`: source `03c272e2bd0798270e323c2af237df896c4f531e646dbd5de6f78d67f799113b`; 
-
 - Batch22 `dev:0:22`: source `8e5537bf6f25d92d49ae03fc532d5c098d09e6a8d988dca2964b0eb57198fca8`; 
 
 - Batch22 `dev:0:23`: source `10dc2915e6c8ccb033a043f8b0cb677c8b89aaa5ac18008382e6cd47bc944598`; 
 
 - Batch22 `dev:1:0`: source `e1bf488ce0d9fc4d6d93ae7df1e2fc8590ae2df6fe95e2f402e520a01489d80d`; 
 
-- Batch22 `dev:1:1`: source `d3bedc4bc7f94bd677c9afaabcde00b670103cb9137cac0d68d4d6eaa86da001`; 
-
-- Batch22 `dev:1:2`: source `66ecec31bf9b6c161d371c59491f43f12a4ebe989926bc30ad839a211293ca67`; 
-
-- Batch22 `dev:1:3`: source `274e54a1e2b12e50b0409cac427a8e9a9d817e00a909bb18035b89ed3598e7b7`; 
-
 - Batch22 `dev:1:4`: source `031f0337c12ab90fafc3187e6e7f953620c2486abc07d76d71abac97bec2b312`; 
-
-- Batch22 `dev:1:5`: source `6528a4b802d923cee16178e067629fdff8ea005eded7317ce6bcd1455657a535`; 
 
 - Batch22 `dev:1:6`: source `5cca76c066369f25631f4efa5498ec0e4868539df1e7cc557f9f442ed3b5e78c`; 
 
@@ -1510,20 +1412,12 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch22 `dev:1:8`: source `ac93f24901879012894dd1b8beb7ef7d9dfd6ce706bf08f931bc5699f5a844fc`; 
 
-- Batch22 `dev:1:9`: source `7939ad8c6a7f85743f7e6e456571c117cb97de4f029be72ba00ec35a30435350`; 
-
-- Batch22 `dev:1:10`: source `0cd36b0329d4ec88837187e4a32bb9dc6fc6bc9b7f5ce429095f9c031b8d8b36`; 
-
-- Batch22 `dev:1:11`: source `f59ab2ece5b6e8b6cee18717a0ec64604ce70f789d83fad9b67222bb31c2b0ec`; 
-
 - Batch22 `dev:1:12`: source `6790b201467d8552dda5126bb475bf90d3d4a3bd5e29b2b6024c333db7925e03`; 
 
 - Batch22 `dev:1:13`: source `eb5cd74c57fca22cb5c1d99e4a24655eace7513ec22fa00954849247cbc5d1ca`; 
-| 23 | not_started | 0 / 98 | 98 |
+| 23 | incomplete_unresolved_fields | 44 / 98 | 54 |
 
 - Batch23 `train:0:0`: source `075600c2f398f6dbbc26f8a0fceb46ed9cfd4c2b63424efb5f2f879858faf19b`; 
-
-- Batch23 `train:0:1`: source `2bc18996309e23988d2ee87de8fa1a231e59613a190c1dfe5abe91b73dfb8d31`; 
 
 - Batch23 `train:0:2`: source `2ff8677e961345ba3b06b120c8b48e554c94f0d209e9b3e123d0064aac1bc9de`; 
 
@@ -1535,37 +1429,11 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch23 `train:1:1`: source `1fc74625f1e1606e655671334c615e285665deab7d42f5a2e242196d5a8344b1`; 
 
-- Batch23 `train:1:2`: source `7716a0d84aa7e318a3a3de47c6a9a0d097380cc0abb4db45036e8416374f42cb`; 
-
-- Batch23 `train:1:3`: source `344c00aa94ea7d7cbc83ff1fb2dd07b56624723c98c6c254403284f8dc8fc361`; 
-
-- Batch23 `train:1:4`: source `2e9c3c210ca937e6cdf4679a3634454e0405435e37d8ac020b5a6ec524b34d4e`; 
-
-- Batch23 `train:1:5`: source `80b087e91f3b3589d2a9c5f97841a596660aecf7fdc279b46a26160ec3bbec20`; 
-
-- Batch23 `train:1:6`: source `f21900ff16afa52b000c242025a1a799bcde0567ab4b162262540053e21922c4`; 
-
-- Batch23 `train:1:7`: source `a0ab01c73b0d6d5c6f4ba0811e6fcf4cd6a62551547451d4e23787425857c513`; 
-
-- Batch23 `train:1:8`: source `66f5d8d3ff080d56f6e0cdfe3bbae94cc6d7670ad304bd3c9c33dbe50c01ea49`; 
-
-- Batch23 `train:1:9`: source `d9b0a3cc49d93449fd6adf8b97903611eaeebcaa24ebd0f2513a4f2440a263cf`; 
-
-- Batch23 `train:1:10`: source `c59a64a5ab6278434e1d1ab8dfb1d5d82c883da0cd18b98d5b69360c3cfa2452`; 
-
 - Batch23 `train:1:11`: source `6af8f538bcf926034c17a38532820d2e42f38db3ad96c281a46cb0cc8d91eece`; 
-
-- Batch23 `train:1:12`: source `56fc7630ea53ae853204df2752c01b43b455ff33d5ef7c2ada403ff074ac6395`; 
-
-- Batch23 `train:1:13`: source `56a2a157f858bfc344d3b78e820c2af110f4f7cd3a5ea75b4641695c46ef0804`; 
-
-- Batch23 `train:1:14`: source `7b4bc562818a0dc4473bab458b20d7e7ef0ffce63da7c33aa7db532e81a31760`; 
 
 - Batch23 `train:1:15`: source `b0cf6d9ecb9ae9712b6aa9cf042c1d0e6df38d2d28274d4e8cb7d4808153e8c1`; 
 
 - Batch23 `train:1:16`: source `3c824a3fa8b8e2ed248c8eb6101e7ffa63218d48253b0b7f1d74255ff62ae41c`; 
-
-- Batch23 `train:1:17`: source `f194baea329b51fbe8f35937f2fd2f99aac7749e4b4d28d5ae8fefaad46a91b4`; 
 
 - Batch23 `train:1:18`: source `f02e5ccd80857fe0e85e46eec6ae60504dbbe603321fc80bb1d5b269fa9395ba`; 
 
@@ -1573,21 +1441,11 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch23 `train:1:20`: source `66e17b2787cd4e043e31ac82d8f7a9c36d055ff7f4f3c220ebbc3b23ac16cdcd`; 
 
-- Batch23 `train:1:21`: source `b6487a6141f0e6604499b845f92a0cca35f0e6756997cd08b760c654ea972274`; 
-
-- Batch23 `train:1:22`: source `8db97d00560b391dc88a83ca0edcc3053e1b4bc6397f91f7674c94890835f19e`; 
-
-- Batch23 `train:1:23`: source `16f7960aa062f4f5513f0ddbb3ebdfd99b809657f5b7d859a8e0e0b0bff8c5c7`; 
-
 - Batch23 `train:2:0`: source `05a2b85e61bbb7a7c89c1b4cfdf387c5c103ba8238a00c7cf9a5be622a43f0ab`; 
-
-- Batch23 `train:2:1`: source `7a62ed1a6792534155576c7463bea6479be5cce9d9de36bfbf19c6ccfcdc7005`; 
 
 - Batch23 `train:2:2`: source `10ad928ff81de233d17c76cfa861cb4d28da48e7fe6b85a812c45b82c0d6cfcb`; 
 
 - Batch23 `train:2:3`: source `8ce50e432dbf6563376c21fc657201b27ecb66c1d285990ac8ef8a2fd775b7e3`; 
-
-- Batch23 `train:2:4`: source `ab423d9dddcc62c12ea8d7ab2c3b447e47c708e7540b449ca908043b833163d5`; 
 
 - Batch23 `train:2:5`: source `9f6b0dd760cc282a07980f4d345c1c25f40764915ac5dd94cb9e7c3ec579f85f`; 
 
@@ -1605,13 +1463,7 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch23 `train:2:12`: source `27984e4070162483bf0f7df54e98d2a542dd59e7c204c829f64840b0621ddf43`; 
 
-- Batch23 `train:3:0`: source `9759408aca852d36e984ccca82ffe6914c6c60f5ae447d1f6f2dea6efdb24a5b`; 
-
-- Batch23 `train:3:1`: source `07415799fc8e282a9c631e03924eabdf098a8dc3b4d961046eb55c8904f0fea6`; 
-
 - Batch23 `train:3:2`: source `fb31bf9c1ddfdd6943bf2cf8787faf6b4765cc033c19f34743f716ee4283a0ec`; 
-
-- Batch23 `train:3:3`: source `d97e0a17d0ed563e5cae9688c26fa87f72ffa71db0f2ef5f5d09fb4df90d4934`; 
 
 - Batch23 `train:3:4`: source `a9fd264e40f68b3ecb30869b7db4771e340c0e778d9a1f53bd75a66182b27d37`; 
 
@@ -1633,23 +1485,13 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch23 `train:5:0`: source `b1c0ece03cb7b5d5dfbdbff91bd1745ff5b41bddc8b3a5e0bc7439ff97ac7ac2`; 
 
-- Batch23 `train:5:1`: source `0ece18c81e14aff75fcbc53490dd516f38f265dd8afd80211aae0eac641de0f7`; 
-
-- Batch23 `train:5:2`: source `012b76127e63039dc42128f625ef483f72761385e4dbf2e59bd135a4a2f93aa5`; 
-
 - Batch23 `train:5:3`: source `5f840b7b997c3ff4f81704ca55a1fee7435b885ea32e0de712c2608209e1d784`; 
 
 - Batch23 `train:5:4`: source `53f5e71559a6140d27f2863f52c9e82d72e6408f756eac4b3d1fa44f58f48b16`; 
 
-- Batch23 `train:5:5`: source `22822bcdbd1cb635b38fc18aa0742f0f23120e2810d1c9804b1758e789c68eca`; 
-
-- Batch23 `train:5:6`: source `a36cab55ddff6fbe994beeee378da26932744af282324a0fb44b27a90197bfc2`; 
-
 - Batch23 `train:5:7`: source `931c50a53c2397b1e09602a5f2d9bd46067b0e32e41cd35311263f5f2ea0f3d5`; 
 
 - Batch23 `train:5:8`: source `01269524c063269a799954c6a8a0b182b0424c18a55165d3dca3eb028c93ed2a`; 
-
-- Batch23 `train:5:9`: source `8987eec80f3ca1f75cc313db216695718d4c33ac28a90f4f41cc352244e41c79`; 
 
 - Batch23 `train:5:10`: source `a9c0e40308b1590eeeaec0ac9e8d5c0c38e0ee7b199b7c5506bd5bb192cd11ff`; 
 
@@ -1661,61 +1503,27 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch23 `dev:0:0`: source `3601b55646c783d2b75cbef16833b5918cce3229bfa22d9ecd2401fbe0896db2`; 
 
-- Batch23 `dev:0:1`: source `c9fe849a362eed15b494d26c9ee36b6eb2ecc768539d2ff7deb7a8c9c01e6800`; 
-
 - Batch23 `dev:0:2`: source `3f5b14e647d42bc664c75e34fbef36520db5c1cf8f394a8e1eb415ac0df6b034`; 
-
-- Batch23 `dev:0:3`: source `8b61648939531d665a0a95881fc05deb5d6ff8fca17e267a9fa042a51c51a9ad`; 
-
-- Batch23 `dev:0:4`: source `a8ee46aea767dcaa590cd82d7ba275ab6c89c05a2d531bdf990f64be1bf7cdf7`; 
-
-- Batch23 `dev:0:5`: source `15333b93c6f44a457eeee73e90b9f9ce3acc7fe192e134c00583e4605d3b206b`; 
 
 - Batch23 `dev:0:6`: source `977e6f067077050569155d95093e2f614280b338af24570062533178dd441d2c`; 
 
 - Batch23 `dev:0:7`: source `5ecd8dcee42bbec6bc082ad959b268c2e4edf3800b98b01cf5999ade54fca7b3`; 
 
-- Batch23 `dev:0:8`: source `04c668487b586383ad62fce2117ef9e29f73b38de89baad84ef5d2e38684ccfb`; 
-
-- Batch23 `dev:0:9`: source `208cad09c72a51c61ca9987b79d0f9025a8cd60a57bb2dda1f8e8d18eb290540`; 
-
 - Batch23 `dev:0:10`: source `a7abecbb1e4bff96c178a25c35c98dbee0b15f9135f0a9fa18017b4bd1c091d6`; 
 
 - Batch23 `dev:0:11`: source `2832a49a1e136860b2ee29c2b61a5cb322d5548800499174a17df0639e4016e9`; 
-
-- Batch23 `dev:0:12`: source `53108d236eed33d3ed4f4e4d8bd1b59e3308bf8ac808af718446043bf20e4dc8`; 
 
 - Batch23 `dev:0:13`: source `09a30ca5aeb0410d4d45ea7a91759d0bab403377550bbf3ef5a76b06a85cf16a`; 
 
 - Batch23 `dev:1:0`: source `664fbce17425cd224c49d0457576d335db6e83c8f72fa2ef43ab1ca93b4e33f0`; 
 
-- Batch23 `dev:1:1`: source `75cf7059a5a720f0220951315e44954b5f3e93d459cb7de526b770732aa71e40`; 
-
-- Batch23 `dev:1:2`: source `22eefe1d814a6d01bc4e99a90ec23afff7937edc8e2d8ec7fe25a018acc6282a`; 
-
 - Batch23 `dev:1:3`: source `3f427880f03a8988dfde016dcccd403ee2a7ae5fd3c251b4ef3f7245ca33b2c4`; 
 
 - Batch23 `dev:1:4`: source `7ad7c2bfe05d520546e7dbb7d8845b00fcb131f1dfe8686e9259705d7c7ef023`; 
 
-- Batch23 `dev:1:5`: source `011c97cb6b8d1577be9ff4b8714f0afb1415588be9a9e8beffd44ba43c5c057e`; 
-
 - Batch23 `dev:1:6`: source `22c2b92cfd2142303d18715594af7c81716da28cabec2204b98a3f0260e3e538`; 
 
-- Batch23 `dev:1:7`: source `a50ba184710ba03729477b70e3ed4d24dfd0b7129d481a4ddf8da17d57c30227`; 
-
-- Batch23 `dev:1:8`: source `d8feb7169d9fc746faad2ef0940b11b215c467af0e04b1424f4fe522d62f4223`; 
-
-- Batch23 `dev:1:9`: source `fd3ce54b850f17027dd7a63c793dec2a335eeb759b9bc9299b73048a973302ff`; 
-
-- Batch23 `dev:1:10`: source `3b850b071ee409ab9665d80ecac5b05ae482cb3c8595a965961b6b79b769b816`; 
-
 - Batch23 `dev:1:11`: source `a5544abc37bfc1a6140939fb4833d71502c802fcfdbc08a8273ddebc2e13c584`; 
-
-- Batch23 `dev:1:12`: source `04ffd7e75db456b1e0be1d9f795edceee91754d6bdb4ba255edeea769af3cbda`; 
-
-- Batch23 `dev:1:13`: source `b2a94206f8ca4ea235059ff59f15c093f1f106e883bb7c776d7ab2e9d3de092e`; 
-
-- Batch23 `dev:1:14`: source `365d363d242dd09ac8686304773209791b01cfa76d6d7ff0443ae805ce806681`; 
 | 24 | not_started | 0 / 101 | 101 |
 
 - Batch24 `train:0:0`: source `22fb577753645d94e579de34a5460991255af113abf225edf610c6665ffd1593`; 
