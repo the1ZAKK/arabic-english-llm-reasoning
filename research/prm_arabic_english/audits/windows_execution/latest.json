@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "report_id": "20261016T180334_fc621400",
+  "report_id": "20261016T181054_1e67314b",
   "repository": "the1ZAKK/arabic-english-llm-reasoning",
   "branch": "research/arabicprm-v2-production",
-  "recorded_at_utc": "2026-10-16T18:03:34.991104+00:00",
-  "status": "retrying_unresolved_fields",
+  "recorded_at_utc": "2026-10-16T18:10:54.615497+00:00",
+  "status": "running",
   "runtime_commit": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
   "finished_passes": 1,
   "max_passes": 3,
@@ -21731,5 +21731,175 @@
     "think": false,
     "stream": false,
     "gpu": "NVIDIA GeForce RTX 2060 with Max-Q Design, 6144 MiB, 592.82"
-  }
+  },
+  "live_batch_progress": [
+    {
+      "batch": 9,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 92,
+      "expected_fields": 93,
+      "updated_at_utc": "2026-10-16T14:22:04.877786+00:00"
+    },
+    {
+      "batch": 10,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 42,
+      "expected_fields": 89,
+      "updated_at_utc": "2026-10-16T14:30:47.295064+00:00"
+    },
+    {
+      "batch": 11,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 34,
+      "expected_fields": 99,
+      "updated_at_utc": "2026-10-16T14:41:48.217310+00:00"
+    },
+    {
+      "batch": 12,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 52,
+      "expected_fields": 111,
+      "updated_at_utc": "2026-10-16T14:53:20.967028+00:00"
+    },
+    {
+      "batch": 13,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 45,
+      "expected_fields": 87,
+      "updated_at_utc": "2026-10-16T15:01:47.597808+00:00"
+    },
+    {
+      "batch": 14,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 27,
+      "expected_fields": 72,
+      "updated_at_utc": "2026-10-16T15:09:47.668489+00:00"
+    },
+    {
+      "batch": 15,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 40,
+      "expected_fields": 82,
+      "updated_at_utc": "2026-10-16T15:17:28.588186+00:00"
+    },
+    {
+      "batch": 16,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 38,
+      "expected_fields": 94,
+      "updated_at_utc": "2026-10-16T15:26:55.789442+00:00"
+    },
+    {
+      "batch": 17,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 42,
+      "expected_fields": 104,
+      "updated_at_utc": "2026-10-16T15:37:16.281466+00:00"
+    },
+    {
+      "batch": 18,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 46,
+      "expected_fields": 101,
+      "updated_at_utc": "2026-10-16T15:46:58.469576+00:00"
+    },
+    {
+      "batch": 19,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 39,
+      "expected_fields": 95,
+      "updated_at_utc": "2026-10-16T15:56:37.490549+00:00"
+    },
+    {
+      "batch": 20,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 51,
+      "expected_fields": 117,
+      "updated_at_utc": "2026-10-16T16:09:01.553382+00:00"
+    },
+    {
+      "batch": 21,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 31,
+      "expected_fields": 86,
+      "updated_at_utc": "2026-10-16T16:19:20.773419+00:00"
+    },
+    {
+      "batch": 22,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 52,
+      "expected_fields": 98,
+      "updated_at_utc": "2026-10-16T16:27:59.716944+00:00"
+    },
+    {
+      "batch": 23,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 44,
+      "expected_fields": 98,
+      "updated_at_utc": "2026-10-16T16:37:31.874806+00:00"
+    },
+    {
+      "batch": 24,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 53,
+      "expected_fields": 101,
+      "updated_at_utc": "2026-10-16T16:46:40.295030+00:00"
+    },
+    {
+      "batch": 25,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 38,
+      "expected_fields": 82,
+      "updated_at_utc": "2026-10-16T16:54:34.989739+00:00"
+    },
+    {
+      "batch": 26,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 29,
+      "expected_fields": 93,
+      "updated_at_utc": "2026-10-16T17:06:47.016553+00:00"
+    },
+    {
+      "batch": 27,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 30,
+      "expected_fields": 90,
+      "updated_at_utc": "2026-10-16T17:16:43.792242+00:00"
+    },
+    {
+      "batch": 28,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 48,
+      "expected_fields": 100,
+      "updated_at_utc": "2026-10-16T17:26:42.928357+00:00"
+    },
+    {
+      "batch": 29,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 51,
+      "expected_fields": 100,
+      "updated_at_utc": "2026-10-16T17:36:31.745556+00:00"
+    },
+    {
+      "batch": 30,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 34,
+      "expected_fields": 74,
+      "updated_at_utc": "2026-10-16T17:43:49.988587+00:00"
+    },
+    {
+      "batch": 31,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 42,
+      "expected_fields": 104,
+      "updated_at_utc": "2026-10-16T17:54:30.857494+00:00"
+    },
+    {
+      "batch": 32,
+      "status": "incomplete_unresolved_fields",
+      "validated_fields": 30,
+      "expected_fields": 82,
+      "updated_at_utc": "2026-10-16T18:03:27.167062+00:00"
+    }
+  ]
 }
