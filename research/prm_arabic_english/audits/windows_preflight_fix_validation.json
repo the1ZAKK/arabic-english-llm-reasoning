@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "repository": "the1ZAKK/arabic-english-llm-reasoning",
+  "branch": "research/arabicprm-v2-production",
+  "verified_at_utc": "2026-10-16T13:41:22.715693+00:00",
+  "purpose": "Windows installation preflight repair and immutable launcher validation",
+  "evidence_type": "offline_test_fixtures_no_local_inference",
+  "runtime_commit": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
+  "installer_sha256": "84b30b5869588fc79f93ec064f0e44a259fb3200e19e8191f1275e2feb70e719",
+  "launcher_sha256": "c9ef7738fc4650128840cbe4ee5d0a6217f5b35340e220dc8f924ebba67e51a4",
+  "launcher_line_endings": "ASCII with CRLF",
+  "runtime_allowlist_files": 22,
+  "runtime_validation": {
+    "workflow_run_id": 38092138614,
+    "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38092138614",
+    "head_sha": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
+    "conclusion": "success",
+    "linux_job_id": 114330569613,
+    "windows_job_id": 114330569781,
+    "tests_passed_per_platform": 126,
+    "clean_native_scheduled_task_preflight": true,
+    "legacy_crlf_native_installation_preflight": true,
+    "max_runtime_path_characters_observed": 281,
+    "batches": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "expected_fields_by_batch": [
+      93,
+      89,
+      99,
+      111,
+      87,
+      72,
+      82,
+      94,
+      104,
+      101,
+      95,
+      117,
+      86,
+      98,
+      98,
+      101,
+      82,
+      93,
+      90,
+      100,
+      100,
+      74,
+      104,
+      82
+    ],
+    "expected_field_total": 2252,
+    "fixture_checkpoint_field": "train:1:5",
+    "fixture_exhausted_retry_field": "train:6:6",
+    "fixture_original_checkpoint_read_only_and_bytes_preserved": true,
+    "fixture_prose_attempt_ledger_preserved": true,
+    "fixture_prior_runtime_and_qc_sentinels_preserved": true,
+    "fixture_status": "source_audited_only"
+  },
+  "replacement_launcher_validation": {
+    "status": "pending_final_windows_ci"
+  },
+  "integrity": {
+    "frozen_comparison_base_research_commit": "4cd39a00cdc82dc45ca62598944cfe5e6a60a5c9",
+    "protected_frozen_inputs": [
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_selection/train_translation_queue.jsonl",
+        "git_blob_sha": "22a49383fc52cd83f1fd43e67e3f5a5d9e28e091",
+        "sha256": "d8abc9d0bf9f447f6f6e4afbdfdcdd2a81fd39c774f85badfb28aa0a02367723",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_selection/dev_translation_queue.jsonl",
+        "git_blob_sha": "fa02b8987e6d14a409077f9493d20cc87a405e98",
+        "sha256": "01eda77bf264894c3c6ea7db60ad68d5e45279c8446a81e4bb331247b1a4af8f",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_selection/manifest.json",
+        "git_blob_sha": "ff1da51cb561ad4eddb1afd47b1d5d554a595ab8",
+        "sha256": "233421889a0ac1585376ee991556bbd84f44a46af470275278329280400e8665",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_selection/source_lock.json",
+        "git_blob_sha": "00ba8c8d9b262487f2ddce014da05cfa0148021e",
+        "sha256": "d42a2837af00df7b2e4c1cfaff378a01b1c6f13ac15cc41c9df38cbcdffbca88",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_batch01/source_lock.json",
+        "git_blob_sha": "3c0b7b99f0292cb91871d8a2aa340bbff6af2bd8",
+        "sha256": "0dfe1499b192a629351ff878d0abbf8ce1347e131db4b477ff1c42b6a20fb285",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_batch02/source_lock.json",
+        "git_blob_sha": "1444a4d8ada93e1fa91af81fba921e26812cc767",
+        "sha256": "4a69db8e1d25dfadb5ade22a78dbae0a4a1b17ed076e23d8f429f39476dcf4ae",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_batch03/source_lock.json",
+        "git_blob_sha": "22a7fbd326084aec4cd5b593f3bba10dd56196fb",
+        "sha256": "de1f6924c890785fd4670f38d2d56b878622afcb20f1abf7771cbe5a7260e590",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_batch04/source_lock.json",
+        "git_blob_sha": "8d35b77f61c4acf38e91935b0dca395f2679383e",
+        "sha256": "562ffac583e4897ff4b858b84694b56470221e1a193b3ec36ebfef25e8911760",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_batch05/source_lock.json",
+        "git_blob_sha": "f53370c9c4ba0dbd8d9b38f50debccd645815915",
+        "sha256": "d91192d37cb2691da2dd370179e91b3bcf58ff8be0f39da06c57d8f6f2ceb21e",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_batch06/source_lock.json",
+        "git_blob_sha": "18b07fc19c1d05886ab82629ea926c7728c0cc47",
+        "sha256": "311ba1f96cdea21fdaa563f6fd6dea4332c462dfbc584c0fc120135bfe5b656d",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_batch07/source_lock.json",
+        "git_blob_sha": "eabc6ada88fce471f3c924cc7647afa6c0d638f6",
+        "sha256": "97375eac0aec2d03e5ccf608fc71108ee1119a2dee62b26d6ecdedd352932da8",
+        "unchanged": true
+      },
+      {
+        "path": "research/prm_arabic_english/translation_batches/prm800k_v2_batch08/source_lock.json",
+        "git_blob_sha": "a6660f669f94cfaf760362a3758aad05c05f223a",
+        "sha256": "4e959a16a60dd1fda419e4383f8f0b1377edddff36f303e064e74fd132d3ecda",
+        "unchanged": true
+      }
+    ],
+    "runtime_fix_changed_paths": [
+      ".github/workflows/offline-checks.yml",
+      "research/prm_arabic_english/install_v2_unattended_windows.ps1",
+      "research/prm_arabic_english/resume_v2_local.py",
+      "research/prm_arabic_english/test_resume_v2_local.py",
+      "research/prm_arabic_english/test_unattended_v2.py",
+      "research/prm_arabic_english/unattended_v2.py",
+      "research/prm_arabic_english/windows_preflight_fixture.py"
+    ],
+    "legacy_staging_preserved": true,
+    "active_staging": "frozen_staging_unattended/<runtime_commit>",
+    "exact_canonical_or_exact_crlf_envelope_only_for_read_only_source_copies": true,
+    "canonical_frozen_queue_raw_hash_and_checkpoint_provenance_checks_unchanged": true,
+    "existing_original_checkpoints_never_rewritten": true,
+    "new_validation_and_prose_checkpoints_are_separate": true,
+    "max_total_attempts_per_prose_slot": 9,
+    "max_translation_passes": 3,
+    "retry_ledgers_not_reset": true
+  },
+  "publication_scope": {
+    "research_branch_only": true,
+    "main_modified": false,
+    "main_metadata_sha_at_verification": "4e45e6122cbdacd22a82633ca29df7991b321ebf",
+    "existing_monitor_modified": false,
+    "installation_diagnostics": "audits/windows_execution/runs/ only; latest execution report preserved"
+  },
+  "limitations": {
+    "actual_laptop_root_cause": "unconfirmed; CRLF preflight failure reproduced in disposable fixtures",
+    "actual_laptop_installation_verified": false,
+    "actual_local_ollama_inference_observed": false,
+    "offline_fixture_fields_are_not_translated_drafts": true,
+    "legacy_runtime_and_checkpoint_semantics": "not newly verified on the user laptop",
+    "human_semantic_review": "pending",
+    "human_approval_fabricated": false,
+    "training_export_performed": false,
+    "training_started": false
+  }
+}
