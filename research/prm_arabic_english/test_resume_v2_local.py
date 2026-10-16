@@ -621,5 +621,52 @@ class OllamaProtocolChecks(unittest.TestCase):
             thread.join(timeout=3)
 
 
+
+class OllamaOutageRegression(unittest.TestCase):
+    def test_connection_refusal_preserves_attempts_and_stops_dispatch(self):
+        from urllib.error import URLError
+
+        class OfflineClient:
+            last_evidence = None
+            def __init__(self):
+                self.calls = 0
+            def translate_slots(self, slots, attempt=1):
+                self.calls += 1
+                raise URLError(OSError(10061, "connection refused"))
+
+        with tempfile.TemporaryDirectory() as tmp:
+            checkpoint = Path(tmp) / "prose_progress.json"
+            log = Path(tmp) / "failures.jsonl"
+            progress = {"fields": {}}
+            client = OfflineClient()
+            original = "Compute 2 + 2"
+            key = "train:0:0"
+            with self.assertRaises(runner.OllamaTransportOutage):
+                runner.draft_field(original, key, "synthetic-fixture", client,
+                                   progress, checkpoint, log, 3, 9)
+            self.assertEqual(client.calls, 1)
+            counts = dict(progress["fields"][key]["attempts"])
+            self.assertTrue(counts)
+            self.assertTrue(all(n == 1 for n in counts.values()))
+            self.assertEqual(runner.parse(checkpoint.read_bytes())["fields"][key]["attempts"], counts)
+            events = [json.loads(x) for x in log.read_text(encoding="utf-8").splitlines()]
+            self.assertEqual([e["event"] for e in events], ["ollama_transport_outage"])
+            self.assertFalse(any(e["event"] == "translation_attempt_failed" for e in events))
+            # No resets/refunds on restart; the second transport failure is
+            # separately recorded against the same durable attempt counters.
+            with self.assertRaises(runner.OllamaTransportOutage):
+                runner.draft_field(original, key, "synthetic-fixture", client,
+                                   progress, checkpoint, log, 3, 9)
+            self.assertEqual(client.calls, 2)
+            self.assertTrue(all(n == 2 for n in progress["fields"][key]["attempts"].values()))
+
+    def test_quality_failures_are_not_transport_outages(self):
+        self.assertFalse(runner.is_ollama_transport_error(ValueError("bad Arabic prose")))
+        self.assertFalse(runner.is_ollama_transport_error(RuntimeError("missing placeholder")))
+        from urllib.error import URLError
+        self.assertTrue(runner.is_ollama_transport_error(URLError("connection refused")))
+        self.assertTrue(runner.is_ollama_transport_error(TimeoutError("model service timeout")))
+
+
 if __name__ == "__main__":
     unittest.main()
