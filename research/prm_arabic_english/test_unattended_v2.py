@@ -398,5 +398,22 @@ class WindowsFrozenInstallationChecks(unittest.TestCase):
             runner.stage_verified(canonical)
 
 
+
+class RecoveryUpgradeChecks(unittest.TestCase):
+    def test_upgrade_requires_consent_and_exact_installer_hash(self):
+        import hashlib
+        import re
+        launcher = Path(__file__).with_name("upgrade_v2_transport_recovery_windows.cmd").read_text(encoding="utf-8")
+        self.assertIn("choice /C YN", launcher)
+        self.assertIn("if errorlevel 2 goto cancelled", launcher)
+        self.assertIn("Get-FileHash", launcher)
+        self.assertIn("ARABICPRM_BOOTSTRAP_VERIFY_ONLY", launcher)
+        commit = re.search(r"(?i)Pinned runtime: ([0-9a-f]{40})", launcher).group(1)
+        expected = re.search(r"(?i)\$actual -ne '([0-9a-f]{64})'", launcher).group(1)
+        script = "research/prm_arabic_english/install_v2_unattended_windows.ps1"
+        raw = subprocess.check_output(["git", "show", f"{commit}:{script}"],
+                                      cwd=Path(__file__).resolve().parents[2])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), expected)
+
 if __name__ == "__main__":
     unittest.main()
