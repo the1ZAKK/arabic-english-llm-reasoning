@@ -1,7 +1,7 @@
 # Local ArabicPRM execution audit
 
-Status: `running`.
-Recorded: 2026-10-16T23:45:09.329737+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
+Status: `completed_with_unresolved`.
+Recorded: 2026-10-16T23:52:51.868031+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
 
 Human QC remains pending. No training export or training was performed.
 
@@ -2161,7 +2161,7 @@ Human QC remains pending. No training export or training was performed.
 - Batch30 `dev:1:7`: source `9050bbbdb101740295fe6af4ca5f4acfaac6138e94682abe640b3b3eba1215b1`; 
 
 - Batch30 `dev:1:9`: source `c288a3e7f3a929cc644357ab10c8ebbc14a0553c0d3a9487c546252f9a256152`; 
-| 31 | not_started | 43 / 104 | 61 |
+| 31 | incomplete_unresolved_fields | 43 / 104 | 61 |
 
 - Batch31 `train:0:0`: source `72819fb4ba7ffdcd6d7899593a2f2e98a270d00fc32df6fb2c146310127de8cf`; 
 
@@ -2284,7 +2284,7 @@ Human QC remains pending. No training export or training was performed.
 - Batch31 `dev:1:22`: source `31ebde17c11d045185cb689a6a8a2bd76f09563f2032e5944b482d186983bddb`; 
 
 - Batch31 `dev:1:23`: source `78a86d6e4cd4425e87324e1268e4d009f6c20cef72cc379336e3e91795df5d34`; 
-| 32 | not_started | 32 / 82 | 50 |
+| 32 | incomplete_unresolved_fields | 32 / 82 | 50 |
 
 - Batch32 `train:0:3`: source `4b1c0c3c0c2c996c56498f2cc208dab5382db220a0bf5da9b9cd90a3f3696253`; 
 
