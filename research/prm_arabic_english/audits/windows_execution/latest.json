@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "report_id": "20261016T184150_672c302d",
+  "report_id": "20261016T185728_7f7293bc",
   "repository": "the1ZAKK/arabic-english-llm-reasoning",
   "branch": "research/arabicprm-v2-production",
-  "recorded_at_utc": "2026-10-16T18:41:50.407150+00:00",
+  "recorded_at_utc": "2026-10-16T18:57:28.865166+00:00",
   "status": "running",
   "runtime_commit": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
   "finished_passes": 1,
@@ -3098,817 +3098,2159 @@
     },
     {
       "batch": 13,
-      "status": "not_started",
+      "status": "incomplete_unresolved_fields",
       "expected_fields": 87,
-      "validated_saved_fields": 45,
+      "validated_fields": 47,
       "queue_sha256": {
         "train_translation_queue.jsonl": "92c467ab801577dadf4604b6e8e48bdd0aae274f3bea1254ac64e0efe1f514a3",
         "dev_translation_queue.jsonl": "37ca9d5fff14e1fe20ef4fb6b790689a86545cb6e76b58cb7988f25c8c9c571a"
       },
-      "legacy_saved_fields": 0,
-      "new_validated_fields": 45,
+      "error": "prm800k_v2_batch13 has 40 unresolved fields; prior checkpoint entries preserved",
+      "unattempted_fields": [],
       "outstanding_fields": [
-        {
-          "field": "train:0:2",
-          "source_record_id": "prm800k_7219b75112912de666dba9eee07467be470d0a65591e1794569df8ca5a0ba355",
-          "source_sha256": "bf22f558020b3bc87922f4b32ef6117ac8970c3e3fa7a93c5b70675bbce35b48",
-          "unresolved_slots": []
-        },
         {
           "field": "train:1:1",
           "source_record_id": "prm800k_73c30c771f71fafb01adad7869b5f5e304f3d037a25aee6daec57b04ccb8683c",
           "source_sha256": "5f05fe781f2d8820f2444b49d973020884200645017ab176d2c9e96fd90860d3",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:2",
           "source_record_id": "prm800k_73c30c771f71fafb01adad7869b5f5e304f3d037a25aee6daec57b04ccb8683c",
           "source_sha256": "35f99ed278cb44eb79f0f3a105e010cc44bdcce210206d25682c469ef31d62ef",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:6",
           "source_record_id": "prm800k_73c30c771f71fafb01adad7869b5f5e304f3d037a25aee6daec57b04ccb8683c",
           "source_sha256": "1fbc5a8272481040f67b6b0c6226db294eca622ee3f41faeeef67cb8606b48c3",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:9",
           "source_record_id": "prm800k_73c30c771f71fafb01adad7869b5f5e304f3d037a25aee6daec57b04ccb8683c",
           "source_sha256": "ec89313d5a00e1ab5ac1053016f3ae77676e4c046e2951edb5b8197a0e05c82a",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:0",
           "source_record_id": "prm800k_74998929f52e3a010e45e2c04a7eae4adc537f7fcb4162252dedbc6d1ab16295",
           "source_sha256": "62f46a5159ae4ec4996b8e48d38bb9898bb3d63df22f83fb02df489fe7ef4abc",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:6",
           "source_record_id": "prm800k_74998929f52e3a010e45e2c04a7eae4adc537f7fcb4162252dedbc6d1ab16295",
           "source_sha256": "552d3144ac4fcaeee00c48d43a32f63ae3f954fce403faeeec5f7cff54030a4c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:8",
           "source_record_id": "prm800k_74998929f52e3a010e45e2c04a7eae4adc537f7fcb4162252dedbc6d1ab16295",
           "source_sha256": "856ba689cb3449f711472a363baf8e9dc4db03ad0f28d64ed606db5ab48dc4ff",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:10",
           "source_record_id": "prm800k_74998929f52e3a010e45e2c04a7eae4adc537f7fcb4162252dedbc6d1ab16295",
           "source_sha256": "2defb533a5630e5315b8bf1f92bb011fc2a6cc55ecde81cd6937299f024f2fdc",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s4",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s5",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s6",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s9",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s32",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s33",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s34",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:0",
           "source_record_id": "prm800k_80ea481abde356e9167f4c39392b823c9d534ac4028106c38d142b4c2b014df9",
           "source_sha256": "3ed82043f92f68040ef4a647249fbc019db63ab75f5912b621999f1ce3c74911",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:1",
           "source_record_id": "prm800k_80ea481abde356e9167f4c39392b823c9d534ac4028106c38d142b4c2b014df9",
           "source_sha256": "2a8c8c55274e7270651df6af9b3c4ae43951079ce2143c544e42d87a0d6e01e7",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s5",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:2",
           "source_record_id": "prm800k_80ea481abde356e9167f4c39392b823c9d534ac4028106c38d142b4c2b014df9",
           "source_sha256": "7bdcb2c8ecc3fc586887aed2530059e29531f9d27ce51effb3a29a34e79eba6b",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s4",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:3",
           "source_record_id": "prm800k_80ea481abde356e9167f4c39392b823c9d534ac4028106c38d142b4c2b014df9",
           "source_sha256": "5719ec2a7ff0ad05e8236b2206fc6c05d329afce1410f2677a865766a380d3cf",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s4",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:5",
           "source_record_id": "prm800k_80ea481abde356e9167f4c39392b823c9d534ac4028106c38d142b4c2b014df9",
           "source_sha256": "58a1b1d4dadfa5ba21c95eabd70e4d9cb2128ebef7186ce37f8561e4a0b79908",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:11",
           "source_record_id": "prm800k_80ea481abde356e9167f4c39392b823c9d534ac4028106c38d142b4c2b014df9",
           "source_sha256": "4f9ca9e8839c8cc6c2bfa1b4c1a519e37c4bff6e8317f2833841bcd97727280f",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:0",
           "source_record_id": "prm800k_817d721c07e779551fc1f8b37c5a7031172266c621685e35c59e3b4e8755a86e",
           "source_sha256": "b4e454097ccee57f1318e91e434d52fc1fb9480205ac0cf012d3a6349aeccdbc",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s5",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:1",
           "source_record_id": "prm800k_817d721c07e779551fc1f8b37c5a7031172266c621685e35c59e3b4e8755a86e",
           "source_sha256": "c7d098ea95d3126b92b66aed819d1de8840c68a67d0dbaf5547b005fb1528027",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:4",
           "source_record_id": "prm800k_817d721c07e779551fc1f8b37c5a7031172266c621685e35c59e3b4e8755a86e",
           "source_sha256": "50fd9262735098291b4bfe8b372919e89cd1438a554b14108f32a554def57803",
-          "unresolved_slots": []
-        },
-        {
-          "field": "train:4:11",
-          "source_record_id": "prm800k_817d721c07e779551fc1f8b37c5a7031172266c621685e35c59e3b4e8755a86e",
-          "source_sha256": "308649b496ce77c91a391264d58caef20ba47a6766ec2d3ac83bdd361d0e4b13",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:13",
           "source_record_id": "prm800k_817d721c07e779551fc1f8b37c5a7031172266c621685e35c59e3b4e8755a86e",
           "source_sha256": "d5ce10b250d5c949152d340e789415b864b9c7458708ccbfd2d5a9b06d39a936",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:17",
           "source_record_id": "prm800k_817d721c07e779551fc1f8b37c5a7031172266c621685e35c59e3b4e8755a86e",
           "source_sha256": "9b8aacd7d3907b73ca12aa281b20331ac1fcca81c9dbb5cb34782df771679fbb",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:20",
           "source_record_id": "prm800k_817d721c07e779551fc1f8b37c5a7031172266c621685e35c59e3b4e8755a86e",
           "source_sha256": "78a86d6e4cd4425e87324e1268e4d009f6c20cef72cc379336e3e91795df5d34",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:0",
           "source_record_id": "prm800k_8180b03a3e024c9f02d9066d4e45da6a974e21125277c633f31a33d380263f77",
           "source_sha256": "db933d65ceb645bed88e1c67215053778841f4bcb768a9abe898cfb8a1c01831",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:1",
           "source_record_id": "prm800k_8180b03a3e024c9f02d9066d4e45da6a974e21125277c633f31a33d380263f77",
           "source_sha256": "2d672caadeb688283f8288a7d7343fa44aca539105909c0cadc8bdeac1f4ba3a",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:2",
           "source_record_id": "prm800k_8180b03a3e024c9f02d9066d4e45da6a974e21125277c633f31a33d380263f77",
           "source_sha256": "ef101ace8fe3f94803b5fc2e85a915bf9ed7aed3f8d2b78e3add9e2860b8758a",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:4",
           "source_record_id": "prm800k_8180b03a3e024c9f02d9066d4e45da6a974e21125277c633f31a33d380263f77",
           "source_sha256": "fe9b7f855a8e93fce1a48f6859eef6fc5f061daa3bc6e85168075793fa96bb35",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:5",
           "source_record_id": "prm800k_8180b03a3e024c9f02d9066d4e45da6a974e21125277c633f31a33d380263f77",
           "source_sha256": "0de4225043121e121ffd98c5997dcec6da3f300711f6c62895bb9010c459ef80",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:10",
           "source_record_id": "prm800k_8180b03a3e024c9f02d9066d4e45da6a974e21125277c633f31a33d380263f77",
           "source_sha256": "33d73c3c591415bbb122e9ec7b36640eb56fe7ad7b87d77945869cbd4ea5175e",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:11",
           "source_record_id": "prm800k_8180b03a3e024c9f02d9066d4e45da6a974e21125277c633f31a33d380263f77",
           "source_sha256": "647b05b0699cd4ad0119c6e4af89aed670fcac26bb159207ef8f2a962379d0c7",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:12",
           "source_record_id": "prm800k_8180b03a3e024c9f02d9066d4e45da6a974e21125277c633f31a33d380263f77",
           "source_sha256": "06fe0e513213c0bc37dacdaa8934b941c170f82dd31946b8230b9913c7d7f3b6",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:0",
           "source_record_id": "prm800k_843a22abcfcd020047badb71144ea99775b71841013b9e4677587dc3e95685f4",
           "source_sha256": "6224cb1e8d82cf0ed108b55cf7f74389136981a37eab4ef995122cbfafe4e23b",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s4",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s5",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s6",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s7",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s8",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:1",
           "source_record_id": "prm800k_843a22abcfcd020047badb71144ea99775b71841013b9e4677587dc3e95685f4",
           "source_sha256": "b054c7bf889007fc9cbd31a766b73aa92f0ced5def6093fd5a1ac2c6979349a0",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:2",
           "source_record_id": "prm800k_843a22abcfcd020047badb71144ea99775b71841013b9e4677587dc3e95685f4",
           "source_sha256": "fffd82bf13ce56a18c9191b689d316d074ba041b1b8be4582e7dfc277fb99866",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:3",
           "source_record_id": "prm800k_843a22abcfcd020047badb71144ea99775b71841013b9e4677587dc3e95685f4",
           "source_sha256": "892fa7276bd2358673bbe0810822191e0d7b6b8b43fa127a1ef52c7453224bf3",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:4",
           "source_record_id": "prm800k_843a22abcfcd020047badb71144ea99775b71841013b9e4677587dc3e95685f4",
           "source_sha256": "bd768ea4df894518d8931bc85cd04a6f1458d92d40d9110e4cf974ed59bd2aa6",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:0",
           "source_record_id": "prm800k_4ed7832683fdb8055650fce8c888daf12a2a449c069a3ef614275da3f132350f",
           "source_sha256": "26f3d2c53188a3bde60bdcc19cadb75e232b6c9cdff190fa70db9db94a046c1e",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:2",
           "source_record_id": "prm800k_4ed7832683fdb8055650fce8c888daf12a2a449c069a3ef614275da3f132350f",
           "source_sha256": "8d5ea1b1747ef99136ba00cdd600e4defaa0a88f13e7df4146262ebd1b1231d8",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:3",
           "source_record_id": "prm800k_4ed7832683fdb8055650fce8c888daf12a2a449c069a3ef614275da3f132350f",
           "source_sha256": "136eae26403e772a02a722e9472b318f17ede669007f0a635f2219495caacaea",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:4",
           "source_record_id": "prm800k_4ed7832683fdb8055650fce8c888daf12a2a449c069a3ef614275da3f132350f",
           "source_sha256": "7606d4e714eda48bfe31422c75045b925a9a0eb15d918d110e62013d1edb2e59",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:5",
           "source_record_id": "prm800k_4ed7832683fdb8055650fce8c888daf12a2a449c069a3ef614275da3f132350f",
           "source_sha256": "dc69bc5200c7c5b1f36037018662a36815be818017f2c209d864b322df4d4cc6",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:6",
           "source_record_id": "prm800k_4ed7832683fdb8055650fce8c888daf12a2a449c069a3ef614275da3f132350f",
           "source_sha256": "3f8b7354289075788f5ca7b6814335c413cde54c0b4e555da62b5e7c232749c3",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:7",
           "source_record_id": "prm800k_4ed7832683fdb8055650fce8c888daf12a2a449c069a3ef614275da3f132350f",
           "source_sha256": "ccb59232b9726dbf300f6b91f0d8a76e7980e0eb47f512facfae73cbaa0b9908",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         }
       ]
     },
     {
       "batch": 14,
-      "status": "not_started",
+      "status": "incomplete_unresolved_fields",
       "expected_fields": 72,
-      "validated_saved_fields": 27,
+      "validated_fields": 29,
       "queue_sha256": {
         "train_translation_queue.jsonl": "4b38dac41f73fe59928a1b59fdd3ca5c434149fea04671f42c4bff59a3c1cf70",
         "dev_translation_queue.jsonl": "f93e97e51fa7973473fb90b1275370ed9c8e3901b686c071060e6555e032d33c"
       },
-      "legacy_saved_fields": 0,
-      "new_validated_fields": 27,
+      "error": "prm800k_v2_batch14 has 43 unresolved fields; prior checkpoint entries preserved",
+      "unattempted_fields": [],
       "outstanding_fields": [
         {
           "field": "train:0:0",
           "source_record_id": "prm800k_77d082d33f8fa195d63d5178ba6d6fa9807f0ac70e33ee5a0ac5ae45f3190ae9",
           "source_sha256": "77cd3ef73ab76a153e462c009016b64172768d93142c54012cb0731b33bf8b59",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:0:2",
           "source_record_id": "prm800k_77d082d33f8fa195d63d5178ba6d6fa9807f0ac70e33ee5a0ac5ae45f3190ae9",
           "source_sha256": "2de5e6adf4c2f0ec6533ec08cbc5a2c58bad6b115420ab75f86d2ab79da86676",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:0",
           "source_record_id": "prm800k_7ab34a31c09b7b9d75ee14c45854448b1984bb647a9b92fa6b55702cbfeb903b",
           "source_sha256": "d5722be397e39e7ea1fcfb82cdc9597c3301232c7e2545f7d7e1f290f8bf0e69",
-          "unresolved_slots": []
-        },
-        {
-          "field": "train:1:3",
-          "source_record_id": "prm800k_7ab34a31c09b7b9d75ee14c45854448b1984bb647a9b92fa6b55702cbfeb903b",
-          "source_sha256": "8694f2a39efe8f3421cecb68db59f4349f780548ebfbb6c08bb8c15662360024",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:4",
           "source_record_id": "prm800k_7ab34a31c09b7b9d75ee14c45854448b1984bb647a9b92fa6b55702cbfeb903b",
           "source_sha256": "22c0f068618a0d5e7e0627abfc5ad7fa39db161db26e1cea5b4df784155eda7a",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:6",
           "source_record_id": "prm800k_7ab34a31c09b7b9d75ee14c45854448b1984bb647a9b92fa6b55702cbfeb903b",
           "source_sha256": "e87958bd699ce8d2f4c62d8d33ff74cdef9cce34a98f24b1d7b1f130c5428178",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:0",
           "source_record_id": "prm800k_7b7c32cc56c800f7cd227504556614bd95c70f72f018e0585b8518821507a7da",
           "source_sha256": "e0291dd20eee43642a868f1c8e6c71e0a8615c8d42151d50b80899bba7be6b37",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:2",
           "source_record_id": "prm800k_7b7c32cc56c800f7cd227504556614bd95c70f72f018e0585b8518821507a7da",
           "source_sha256": "2f4764d214cea7741c1330fbdde4eac9a180d7436887f2c868fa7af65e0608a9",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:3",
           "source_record_id": "prm800k_7b7c32cc56c800f7cd227504556614bd95c70f72f018e0585b8518821507a7da",
           "source_sha256": "54d92af4ade0dc1c1cb7d0abb6549c8af432a72e1d4ed0a3165bbbdc219769e3",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:4",
           "source_record_id": "prm800k_7b7c32cc56c800f7cd227504556614bd95c70f72f018e0585b8518821507a7da",
           "source_sha256": "18842b6bebdf291549984b5fd0f315056387b11fb0459fe751a9fa72739adb60",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:5",
           "source_record_id": "prm800k_7b7c32cc56c800f7cd227504556614bd95c70f72f018e0585b8518821507a7da",
           "source_sha256": "08639deb4f6d66a56dfb6df187f81805124d0e501be62ef23b3ea6e2c59bac9b",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:6",
           "source_record_id": "prm800k_7b7c32cc56c800f7cd227504556614bd95c70f72f018e0585b8518821507a7da",
           "source_sha256": "9a9bf919b42872935184e5d4a0e4cf6c5e1a6b6746913b1f37135676db096928",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:8",
           "source_record_id": "prm800k_7b7c32cc56c800f7cd227504556614bd95c70f72f018e0585b8518821507a7da",
           "source_sha256": "e6aa63d7b83bd024d835b89081de48e8ffc446f645991b6d0cb309bedc4180a5",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:9",
           "source_record_id": "prm800k_7b7c32cc56c800f7cd227504556614bd95c70f72f018e0585b8518821507a7da",
           "source_sha256": "8c3a3920194d6a9d86b9a4a78034a7097fdd967fc99f4981190b65d6102c96fa",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:0",
           "source_record_id": "prm800k_7bc3e138f23cc17c39f12c10a292e4509d8f0d4117147cae0d305c64fada45ec",
           "source_sha256": "8136f67ae1b29cff2ad091447f1b017a1122866bde1db3d6860d70c58bc284ac",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s4",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s6",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:0",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "552255d4945bf96dc011b16c55a392e4e0bc23ee35cf649d745de65be67eeb11",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:1",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "ca84eb6fdce511271c29ae84a6d7518e0cefda808810feb3034437d790ac23d1",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:2",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "7f1a2a83a2210fe4e3d28e5aef85ad33099796dbccbef0cee5dc727c2f402ee1",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:3",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "59048111277c5069dfac47ca4b9e86ecaed5c52743b2c4d4b78f9beaecfe0c37",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:4",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "9b34722483be4a1ac2e303e58e11976a847afc6bf9c0f56e9f831ee72a27300c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:6",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "1fdb853b0ed7c971d0f6206509e0fb844d14dee9166f1547704a9b153d20945d",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s4",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:7",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "3d1e29dba0c7235d86486b7e9cfb0b1eac59f60cc9097cc8c9857aa65d7d806e",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s5",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s6",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:10",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "7bf78b67ab734936e4efe910bd3f6a940cc6cac666cad3464cb8c3457a44b279",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s5",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s6",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:11",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "e770ea2266dcc9eb6a0c3b06578933850905050cb082df90849fe2ab23bfbd2c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:13",
           "source_record_id": "prm800k_851eba2bbfaab9aa56548a28db8046eab9ec329fd60e6486aa6b3df490cb0f95",
           "source_sha256": "f9b4f2cd0cec07f0f6ee03422b6b095213a4da23ac460ebdd190a0767e749bc9",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:0",
           "source_record_id": "prm800k_85585f3f0f5203797448c3038909061b7fc5e4d8335cc6d66ef27e93bca4b31b",
           "source_sha256": "75e5aafa104fa2c491557ace449c2c3ed95e2f4e64e42b695575c8fbdc247e6a",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:1",
           "source_record_id": "prm800k_85585f3f0f5203797448c3038909061b7fc5e4d8335cc6d66ef27e93bca4b31b",
           "source_sha256": "5f8561d8bba1cffe053a6a7a70a08a22f4b413cad393e1aeb3695033574c89df",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Generated mathematical content/placeholder in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:2",
           "source_record_id": "prm800k_85585f3f0f5203797448c3038909061b7fc5e4d8335cc6d66ef27e93bca4b31b",
           "source_sha256": "3902299be7e8f2191a889b43657b4dc6922fed450d56598b290241b912f44866",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:3",
           "source_record_id": "prm800k_85585f3f0f5203797448c3038909061b7fc5e4d8335cc6d66ef27e93bca4b31b",
           "source_sha256": "a992404cf39f588f08d9844156451b29176361332b19b3d448313cb4a92e598f",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:4",
           "source_record_id": "prm800k_85585f3f0f5203797448c3038909061b7fc5e4d8335cc6d66ef27e93bca4b31b",
           "source_sha256": "6c6f747a0100f34c6ab1f75dc7cde1728bd1943bef9c9c414ed201739e45c40e",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s5",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:0",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "f56de6dcfcb47dfecdc22a8ea70e48f92ac59025bf9eb758b2e2dad5bf68c389",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:1",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "1ddf5b273827dafee2ad486652cda218c67fea8ca2287d5bfeda2c65eb005e0e",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s4",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:2",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "ce0cf08e2d50f47e6734975b3263a13e396dd1b0a3d2ef9585127a6ccfe4a16c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:6",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "dff1986dcd476e736819ab285736634868160f5b17ecd777b91cfe69281a1f9e",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:7",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "92e8c5d158016c229e0f2f0e6e5b6b2b13e6974a6bc9ac1e04d3d6c2741d2137",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s8",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:9",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "51085fe20c2ba84c7e623cc190801d907d8a692bfccd8a6ec203e479a83b6739",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:10",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "1dd0e08e64242001b8170d5a02477c4a9ca9cd3fcb63465249a91210e85f287c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:13",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "8ac18c29534480c10823b7bbb961c58ac70ff73ef28c63688af4b10007c63bd6",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:17",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "ac4b3c2a8a68f1aaaf8d00a59107797772fb9d5dcdb619e5e75abafabe05ab83",
-          "unresolved_slots": []
-        },
-        {
-          "field": "train:6:19",
-          "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
-          "source_sha256": "32a193236bca26dbc9bdf4d280fb119130f03f37aa0e451b0571c9f91c64a52b",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:21",
           "source_record_id": "prm800k_895d2cee36e327f263d948ba2fd7d1c7e45e63c88adb887071d2e631d116e8b5",
           "source_sha256": "d305993dde72c2d7b92dade59e23faba9eaa986091110d5d2d6700c3a50465c1",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:0",
           "source_record_id": "prm800k_6fbfef8264cf9394ba0fe99b331b57d2663c341dc472aa229a5eeed89fec7e3d",
           "source_sha256": "b348f2608cda0100d94c78472accb53d1d1556505863244b986b53a38032b244",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:1",
           "source_record_id": "prm800k_6fbfef8264cf9394ba0fe99b331b57d2663c341dc472aa229a5eeed89fec7e3d",
           "source_sha256": "24e027bbe17437cfba7038821e9575cdea36d879e04ef1d602a7056a45b41fa2",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:3",
           "source_record_id": "prm800k_6fbfef8264cf9394ba0fe99b331b57d2663c341dc472aa229a5eeed89fec7e3d",
           "source_sha256": "81b9e89e4a0f0c860a336f44cb0ee146d78ed2d2053dd6e294fc10913f24a5ac",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:4",
           "source_record_id": "prm800k_6fbfef8264cf9394ba0fe99b331b57d2663c341dc472aa229a5eeed89fec7e3d",
           "source_sha256": "390ace5384f5f01f5a09efd73061135091a16dad290e362e395d56e03b56f5c5",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         }
       ]
     },
     {
       "batch": 15,
-      "status": "not_started",
+      "status": "incomplete_unresolved_fields",
       "expected_fields": 82,
-      "validated_saved_fields": 40,
+      "validated_fields": 41,
       "queue_sha256": {
         "train_translation_queue.jsonl": "d640ebdddf239a1ff4fc48db24a132c6002d084a98fd5269128dbdde538cdcf1",
         "dev_translation_queue.jsonl": "f4978ce208d87007dc9b066e881cd640ccb33954605b713a79f67f7f824af76d"
       },
-      "legacy_saved_fields": 0,
-      "new_validated_fields": 40,
+      "error": "prm800k_v2_batch15 has 41 unresolved fields; prior checkpoint entries preserved",
+      "unattempted_fields": [],
       "outstanding_fields": [
         {
           "field": "train:0:2",
           "source_record_id": "prm800k_83e895e626c69e65c673c2b0a26d6ff646d34c15d59bcf64b69664af67859092",
           "source_sha256": "1e6c8786e90dd30f8bb37ee617a805dfbda4b4e5527f93fa48e761e7d2e187ae",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:0:8",
           "source_record_id": "prm800k_83e895e626c69e65c673c2b0a26d6ff646d34c15d59bcf64b69664af67859092",
           "source_sha256": "2ef5e4f1fc83d8d2be30a5bd98ed30b3f578d11f1c7d4ca923a417db32456374",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:0:12",
           "source_record_id": "prm800k_83e895e626c69e65c673c2b0a26d6ff646d34c15d59bcf64b69664af67859092",
           "source_sha256": "00800a1f96b92eee7ce021b5986f204dbe825acfa1390e4328927e4763f839d6",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:0:15",
           "source_record_id": "prm800k_83e895e626c69e65c673c2b0a26d6ff646d34c15d59bcf64b69664af67859092",
           "source_sha256": "14a0f3303ca95a040e4ee4456ee5eb6292af3e747a18e363e3237b6cf5b890af",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:1",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "031eb91e089fde33a66bec99ce72e60f3be8b724c56e32bf6b1e8ec36be8ef50",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:3",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "89ac5eb9c55e67fa28e3d86c2563afc4070e8bb3196099d1210c73139901a6e2",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:4",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "e5e9862f799023af0092739fabb65446ffd8654bbd195f4155126d52be1aa2fc",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:5",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "fc96e62cc67d3e8b90b0512bee02db9681a22bf255b08583a1f256929e0be57c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:8",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "317b32df21ad7f05bf913b7b0f7c1cfb7e00e1b1658750a37fc24ef11f3481c8",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:9",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "6bbcc9cc215515224e0afdd274b0bf9efcea0da0a1b658ef368912031d10814f",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:10",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "3d08b37cdf5c2183bc5d33dda0ba25815d4430bcfee0340f1f5bc1eb3adff06f",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:12",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "3d08b37cdf5c2183bc5d33dda0ba25815d4430bcfee0340f1f5bc1eb3adff06f",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:1:14",
           "source_record_id": "prm800k_84a4899a0ba45f136bc30dde550d8c2e5fe30143a3c55581c3de1c4b1ae11645",
           "source_sha256": "3d08b37cdf5c2183bc5d33dda0ba25815d4430bcfee0340f1f5bc1eb3adff06f",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:0",
           "source_record_id": "prm800k_88de4cc56f43553d351286992ae743dcab0789a80111cd27df3a00ebe64c3624",
           "source_sha256": "fc26744a416af7fca9c30543815b32b046aa12421f084598b17bbb5347559fed",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:1",
           "source_record_id": "prm800k_88de4cc56f43553d351286992ae743dcab0789a80111cd27df3a00ebe64c3624",
           "source_sha256": "76e174c01011fd5af9e826972044432d17a9e976d25a7bc51a059e1c51527f62",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:2",
           "source_record_id": "prm800k_88de4cc56f43553d351286992ae743dcab0789a80111cd27df3a00ebe64c3624",
           "source_sha256": "235fe4444bc4e7cc9be5a06725e1d8f42cfa1d5a281dc91d7ec93a173540174c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:3",
           "source_record_id": "prm800k_88de4cc56f43553d351286992ae743dcab0789a80111cd27df3a00ebe64c3624",
           "source_sha256": "cfcc8e4542b16a9cde992b4601c1564108749779c80183a6b3b0d8253e315561",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:4",
           "source_record_id": "prm800k_88de4cc56f43553d351286992ae743dcab0789a80111cd27df3a00ebe64c3624",
           "source_sha256": "975df37ef320776ffc182ae8e6257ab24ae38e6f488f40462b91c64f67980e00",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:6",
           "source_record_id": "prm800k_88de4cc56f43553d351286992ae743dcab0789a80111cd27df3a00ebe64c3624",
           "source_sha256": "654e2b53dfb2d436b298167701a40cc6818564552d007fb8a2489785c5f2d69c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:2:7",
           "source_record_id": "prm800k_88de4cc56f43553d351286992ae743dcab0789a80111cd27df3a00ebe64c3624",
           "source_sha256": "1cfcb58048ef1bb46fa8af91258f4283619a4c56385223f084fefd24496705d9",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:0",
           "source_record_id": "prm800k_899908d9ffa872bee600d9c375c5e3d17b3bde30267436ef81f6f1ced8a21924",
           "source_sha256": "b4dbaeaff54b715a812f6c8837c9ad612180ae47d373a771b548f415de87354f",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:4",
           "source_record_id": "prm800k_899908d9ffa872bee600d9c375c5e3d17b3bde30267436ef81f6f1ced8a21924",
           "source_sha256": "7f05515c5c3fa7deb4f195df869646e12d8ff3e527b478c1d2d921e9b7d65eb3",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:3:7",
           "source_record_id": "prm800k_899908d9ffa872bee600d9c375c5e3d17b3bde30267436ef81f6f1ced8a21924",
           "source_sha256": "0a40ba517c314a8c53920fec348ceffdad13c6f227e11ab122a4628d73a377ae",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:0",
           "source_record_id": "prm800k_93e5363c44eb5260443ed61ed568b84aa734ed19608a71c0887aea1861926386",
           "source_sha256": "e7316af12ac1c935e7456df4a72eabda6d7984f8eb12c824a40eb29c378faabc",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:2",
           "source_record_id": "prm800k_93e5363c44eb5260443ed61ed568b84aa734ed19608a71c0887aea1861926386",
           "source_sha256": "2a18b4445dcdf65404495322cc8ca870f86653a4269bf7a4619a0ef39b7db4d2",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:3",
           "source_record_id": "prm800k_93e5363c44eb5260443ed61ed568b84aa734ed19608a71c0887aea1861926386",
           "source_sha256": "2d5d2ea725c9991b30be01f3ad0d8c20b639bcb7722b327626bbbaf89a13d2fe",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:4:4",
           "source_record_id": "prm800k_93e5363c44eb5260443ed61ed568b84aa734ed19608a71c0887aea1861926386",
           "source_sha256": "84b32e9f6dfa3b1d5bedaf11fba46ed5295559cdd0803e39666ae0dedac389c3",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:0",
           "source_record_id": "prm800k_95aab797b2ee64466f25c0f7c9dc0877bb330369a8ce282912e881ff0b995ee9",
           "source_sha256": "86196650d8af829181c6dc02755e0ea715dd8339f24bf6efbef92aac12cc8280",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:5:2",
           "source_record_id": "prm800k_95aab797b2ee64466f25c0f7c9dc0877bb330369a8ce282912e881ff0b995ee9",
           "source_sha256": "c1c12c2dfc20d99c6c8b774e04d029567bb259a1375425562c146793c55ef6db",
-          "unresolved_slots": []
-        },
-        {
-          "field": "train:5:3",
-          "source_record_id": "prm800k_95aab797b2ee64466f25c0f7c9dc0877bb330369a8ce282912e881ff0b995ee9",
-          "source_sha256": "bcbfe993b9593da97bb7f430c11f8eaa25141760895e4af35407f258da341349",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:0",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "9ef34fe3370ab718c2980be0ac16786ff51c47df75f9130bed319f5f0eddbc68",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:1",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "cc256372664d8e29744561756b11818344da748108bb8e6335ae83756a5fad01",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:3",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "69dc2ca5fc632ccaf1ce46830e54acf0edb4d050c083fb2b7ffc433f1bda6cd8",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:4",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "33beb7f239e742d33bcdc75a2530f401ffb974b736121ba5f512a110d12311d3",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:5",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "a304976bff59263968292fdeb60afaf43a6bc1e90ff330b70b8c4ff1ae9efb1c",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:10",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "50313ed7ecd8c492b5d61d60202496b7426556daae85ec7372f5e8ea6f8ef4eb",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:11",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "4e562a1bc070caf91f371e3dfc8ef20145c5126d5e5e5e73e7e0163876873ad6",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:12",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "7e1c0a3c9a63d165992c98f1b61f3d53018a6c4175659db41a01598f48bf3b3f",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "train:6:13",
           "source_record_id": "prm800k_9a1f3a4ce9478229d206730fefc9cd170c40056171c429a36bef6cf0815b8def",
           "source_sha256": "dfa143df5dee0d145a504c8578d23ba56c592b4080e59696f8582fd4327e70ce",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s2",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s3",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:0",
           "source_record_id": "prm800k_575811e7d8b192ed3005564d72f82a21d82523d350cd72d8cec5d3a31887bcc5",
           "source_sha256": "487aa58dc8ab1197d936a26756ed249325162f3ad3beb14e8e7f0a564e7ac0b6",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            },
+            {
+              "slot": "s1",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:3",
           "source_record_id": "prm800k_575811e7d8b192ed3005564d72f82a21d82523d350cd72d8cec5d3a31887bcc5",
           "source_sha256": "b1790b780580ab27a1eaeb8606d7b100ce2e71a91e849fc400e103962e895f13",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         },
         {
           "field": "dev:0:6",
           "source_record_id": "prm800k_575811e7d8b192ed3005564d72f82a21d82523d350cd72d8cec5d3a31887bcc5",
           "source_sha256": "b03a0c960d6010c9db33d979556bfa1ab683fc00efd7a8b8a95ad2d6fe4dbba5",
-          "unresolved_slots": []
+          "unresolved_slots": [
+            {
+              "slot": "s0",
+              "error": "Unexpected script or control/line boundary in prose slot",
+              "total_attempts": 6,
+              "retry_budget_exhausted": false
+            }
+          ]
         }
       ]
     },
@@ -9726,31 +11068,31 @@
     },
     {
       "batch": 13,
-      "status": "in_progress",
+      "status": "incomplete_unresolved_fields",
       "validated_fields": 47,
       "expected_fields": 87,
-      "updated_at_utc": "2026-10-16T18:41:45.938413+00:00"
+      "updated_at_utc": "2026-10-16T18:42:03.462067+00:00"
     },
     {
       "batch": 14,
       "status": "incomplete_unresolved_fields",
-      "validated_fields": 27,
+      "validated_fields": 29,
       "expected_fields": 72,
-      "updated_at_utc": "2026-10-16T15:09:47.668489+00:00"
+      "updated_at_utc": "2026-10-16T18:48:18.451571+00:00"
     },
     {
       "batch": 15,
       "status": "incomplete_unresolved_fields",
-      "validated_fields": 40,
+      "validated_fields": 41,
       "expected_fields": 82,
-      "updated_at_utc": "2026-10-16T15:17:28.588186+00:00"
+      "updated_at_utc": "2026-10-16T18:53:59.646303+00:00"
     },
     {
       "batch": 16,
-      "status": "incomplete_unresolved_fields",
-      "validated_fields": 38,
+      "status": "in_progress",
+      "validated_fields": 39,
       "expected_fields": 94,
-      "updated_at_utc": "2026-10-16T15:26:55.789442+00:00"
+      "updated_at_utc": "2026-10-16T18:57:20.709367+00:00"
     },
     {
       "batch": 17,
