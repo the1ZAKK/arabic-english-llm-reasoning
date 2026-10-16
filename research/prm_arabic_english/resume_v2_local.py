@@ -474,6 +474,16 @@ def validate_payload(queues, lock, payload, number, model):
     return rows
 
 
+class OllamaTransportOutage(RuntimeError):
+    """Ollama I/O outage, not a rejected Arabic translation."""
+
+
+def is_ollama_transport_error(error):
+    """Classify connectivity/timeout failure, not translation quality."""
+    from urllib.error import URLError
+    return isinstance(error, (URLError, ConnectionError, TimeoutError, OSError))
+
+
 class IncompleteBatch(RuntimeError):
     def __init__(self, report):
         self.report = report
@@ -546,6 +556,17 @@ def draft_field(original, key, record_id, client, progress, path, log, retries, 
                 result = client.translate_slots(group, attempt=attempt)
             except Exception as error:
                 request_error = error
+            if request_error is not None and is_ollama_transport_error(request_error):
+                # Persist existing attempts exactly; never refund historical
+                # outages or label one failed HTTP request as multiple quality errors.
+                event(log, "ollama_transport_outage", field=key,
+                      slots=list(group), attempts={s: field["attempts"][s] for s in group},
+                      source_record_id=record_id, source_sha256=field["source_sha256"],
+                      error=str(request_error))
+                for slot in group:
+                    field["errors"][slot] = str(request_error)
+                atomic_write(path, encoded(progress))
+                raise OllamaTransportOutage(str(request_error)) from request_error
             for slot, text in group.items():
                 candidate = result.get(slot)
                 try:
@@ -866,6 +887,18 @@ def main():
                         result = {**report, "batch": number, "status": "ai_draft_validated_human_qc_pending",
                                   "reused_completed_draft": reused, "expected_fields": audit.get("expected_fields"),
                                   "validated_fields": audit.get("expected_fields"), "unresolved_fields": []}
+                except OllamaTransportOutage as error:
+                    summary["runtime_error"] = "Ollama transport outage: " + str(error)
+                    result = {**audits.get(number, {}), "batch": number,
+                              "status": "interrupted", "complete": False,
+                              "error": summary["runtime_error"]}
+                    event(args.output_root / "failures.jsonl", "ollama_transport_outage",
+                          batch=number, error=str(error))
+                    summary["batches"][position] = result
+                    write_run_summary(summary_path, summary)
+                    # Suspend all further requests until the supervisor's
+                    # bounded runtime recovery checks pass.
+                    break
                 except IncompleteBatch as error:
                     result = {**error.report, "batch": number, "error": str(error)}
                     event(args.output_root / "failures.jsonl", "batch_incomplete", **result)
