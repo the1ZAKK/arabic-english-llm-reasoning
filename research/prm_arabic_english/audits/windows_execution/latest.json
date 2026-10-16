@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "report_id": "20261016T142055_b611bdf6",
+  "report_id": "20261016T143631_93d1d642",
   "repository": "the1ZAKK/arabic-english-llm-reasoning",
   "branch": "research/arabicprm-v2-production",
-  "recorded_at_utc": "2026-10-16T14:20:55.106599+00:00",
+  "recorded_at_utc": "2026-10-16T14:36:31.894873+00:00",
   "status": "running",
   "runtime_commit": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
   "finished_passes": 0,
@@ -19,12 +19,12 @@
       "batch": 9,
       "status": "incomplete_unresolved_fields",
       "expected_fields": 93,
-      "validated_fields": 91,
+      "validated_fields": 92,
       "queue_sha256": {
         "train_translation_queue.jsonl": "583dd6e92cb8d7be9ff214bb3d7aa08d6db28bc8c770b1accd1540bdd2ab6ad0",
         "dev_translation_queue.jsonl": "aea95eea153c5b08d1ac465ac425d77fcd801d72c54a0cfb55dc192b97a7b7c5"
       },
-      "error": "prm800k_v2_batch09 has 2 unresolved fields; prior checkpoint entries preserved",
+      "error": "prm800k_v2_batch09 has 1 unresolved fields; prior checkpoint entries preserved",
       "unattempted_fields": [],
       "legacy_source_copy_checks": [
         {
@@ -38,33 +38,20 @@
       ],
       "outstanding_fields": [
         {
-          "field": "train:0:2",
-          "source_record_id": "prm800k_4b1dba5c82c780d410cc4d4fe5cd66445872f05c74755b75c323715dfbc08805",
-          "source_sha256": "2138e34042e2917b0c072b966bbc3e3394148dd1fe11670cac9d72babbd2928a",
-          "unresolved_slots": [
-            {
-              "slot": "s0",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
-              "retry_budget_exhausted": false
-            }
-          ]
-        },
-        {
           "field": "dev:0:4",
           "source_record_id": "prm800k_34e044e8ab1ee1d51a5c994dbbdfe4aa94cd12693b2e2bc96674c67ff25da14a",
           "source_sha256": "b45b40bc81ba167394614a34aec633c7a2caebd1892e3bd131bac107a5c548e6",
           "unresolved_slots": [
             {
               "slot": "s1",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -90,14 +77,14 @@
           "unresolved_slots": [
             {
               "slot": "s2",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s3",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -109,14 +96,14 @@
           "unresolved_slots": [
             {
               "slot": "s2",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s4",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -128,20 +115,20 @@
           "unresolved_slots": [
             {
               "slot": "s1",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s3",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -153,8 +140,8 @@
           "unresolved_slots": [
             {
               "slot": "s2",
-              "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -167,19 +154,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s3",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -192,7 +179,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -205,7 +192,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -218,7 +205,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -231,7 +218,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -244,7 +231,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -257,7 +244,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -270,7 +257,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -283,7 +270,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -296,7 +283,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -309,7 +296,7 @@
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -322,13 +309,13 @@
             {
               "slot": "s4",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s5",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -341,25 +328,25 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s3",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -372,7 +359,7 @@
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -385,19 +372,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -410,19 +397,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -435,19 +422,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -460,19 +447,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -485,19 +472,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -510,19 +497,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -535,19 +522,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -560,19 +547,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -585,31 +572,31 @@
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s3",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s4",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s5",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -622,7 +609,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -635,7 +622,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -648,7 +635,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -661,7 +648,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -674,7 +661,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -687,13 +674,13 @@
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s3",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -706,19 +693,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -731,19 +718,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s3",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -756,19 +743,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -781,19 +768,19 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s1",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -806,13 +793,13 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -825,7 +812,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -838,7 +825,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -851,7 +838,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -864,7 +851,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -877,7 +864,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -890,7 +877,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -903,7 +890,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -916,7 +903,7 @@
             {
               "slot": "s0",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -929,13 +916,13 @@
             {
               "slot": "s2",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             },
             {
               "slot": "s3",
               "error": "Unexpected script or control/line boundary in prose slot",
-              "total_attempts": 3,
+              "total_attempts": 6,
               "retry_budget_exhausted": false
             }
           ]
@@ -13693,23 +13680,23 @@
     {
       "batch": 9,
       "status": "incomplete_unresolved_fields",
-      "validated_fields": 91,
+      "validated_fields": 92,
       "expected_fields": 93,
-      "updated_at_utc": "2026-10-16T13:57:21.727047+00:00"
+      "updated_at_utc": "2026-10-16T14:22:04.877786+00:00"
     },
     {
       "batch": 10,
       "status": "incomplete_unresolved_fields",
       "validated_fields": 42,
       "expected_fields": 89,
-      "updated_at_utc": "2026-10-16T14:15:05.661686+00:00"
+      "updated_at_utc": "2026-10-16T14:30:47.295064+00:00"
     },
     {
       "batch": 11,
       "status": "in_progress",
-      "validated_fields": 0,
+      "validated_fields": 16,
       "expected_fields": 99,
-      "updated_at_utc": "2026-10-16T14:15:17.248518+00:00"
+      "updated_at_utc": "2026-10-16T14:36:31.618038+00:00"
     }
   ]
 }
