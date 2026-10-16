@@ -1,7 +1,7 @@
 # Local ArabicPRM execution audit
 
 Status: `running`.
-Recorded: 2026-10-16T17:27:36.852814+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
+Recorded: 2026-10-16T17:43:04.451352+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
 
 Human QC remains pending. No training export or training was performed.
 
@@ -2065,11 +2065,9 @@ Human QC remains pending. No training export or training was performed.
 - Batch28 `dev:1:9`: source `c633494f416589da92087ac5b94be126d9c04ac9b1c6d32d03936810102985cc`; 
 
 - Batch28 `dev:1:11`: source `520df3091cf7a7b383b0681d0e1b6e66674c5ad8d68d40e34dc1811ed3c88606`; 
-| 29 | not_started | 0 / 100 | 100 |
+| 29 | incomplete_unresolved_fields | 51 / 100 | 49 |
 
 - Batch29 `train:0:0`: source `b7ba6b4c19c20864a254a1506e3cf19654c41002008e620625dd9d5fea67e298`; 
-
-- Batch29 `train:0:1`: source `959fd4e3aa41ae324ea979259f8e7c0e2d53b2739949c5548e707c2ccfeb4e5b`; 
 
 - Batch29 `train:0:2`: source `079d4aaea46aa1b550d54dda8c3ede420214ece5cd278069f2f46057423167b9`; 
 
@@ -2081,12 +2079,6 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch29 `train:0:6`: source `5027295d4e485c20b169a5d685f04b7ca42e58ee1f197ecf2e5a793f5bb2c01b`; 
 
-- Batch29 `train:0:7`: source `c08b114ab5fbaca70a8f8aca343263d777381418c8257f9f739c6cf374ba1743`; 
-
-- Batch29 `train:0:8`: source `38b83253c00c522d72ba3b44e63d5bb5ff63f6b1889f4f7d3fe5213b7128b8ea`; 
-
-- Batch29 `train:0:9`: source `28103ec2f5be9a0dfe1a865870d543219f05ec07da1f1334c6ee67d8bc7cb75d`; 
-
 - Batch29 `train:0:10`: source `1d873f6c3a6253d8bde3d6b10e81779701ecd501292adf5e12d3c51932c9632f`; 
 
 - Batch29 `train:0:11`: source `2bdd8d57f46db8ce09ae8674abc143a3f394e6d43d59519e9f939944c8f0ad3a`; 
@@ -2095,55 +2087,17 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch29 `train:1:0`: source `d3f9861bac5c897953711ede44d9468a5d2ce9f2462b1062e5b5b1b5fbfcd0b1`; 
 
-- Batch29 `train:1:1`: source `f5178cce8624585d9d169f0bd9e8fdc91f19dd720d5a7e860bbaa87783f27a78`; 
-
-- Batch29 `train:1:2`: source `9691533db113bd7c91d73523063393279e67bdd5527e607694d9e067934fb41b`; 
-
 - Batch29 `train:2:0`: source `9b3edc95798c4be4ed0ca4b497ad037775ee26938127bc9232ab3480bb1cc213`; 
-
-- Batch29 `train:2:1`: source `82f008c9ab744b517c78330ac8c714d5e868262e9a71d63f548d3c4505c22177`; 
-
-- Batch29 `train:2:2`: source `1270aa17687d09cb1841b97760558e3cceec2337c6be60bfa8adbf86d1b2458d`; 
 
 - Batch29 `train:2:3`: source `797022bad6a80241c3b7b592b72dfb9bff7bb4f2d4fcb3b4ac3a54881daa123c`; 
 
 - Batch29 `train:2:4`: source `2ae9cea66418f922f01316e7327c92bf170d33e00005a3bbd5d0a03929788613`; 
 
-- Batch29 `train:2:5`: source `c380aaf56199f5ada15cfa1e3e23474273a1de5269259c2d948754b8d99231fd`; 
-
 - Batch29 `train:2:6`: source `45ad2bf7481ea029e65409fb42e3c4ae4ec5350e154e62327e8c275bbf2f12df`; 
-
-- Batch29 `train:2:7`: source `1c55d926526f721861cd00a75166d3b31b5704ae7fbb884808d059ef08db03aa`; 
-
-- Batch29 `train:2:8`: source `29b989911be44d2247a449405e05d0aaca07161461325615959b853a48c31e43`; 
-
-- Batch29 `train:2:9`: source `1800586f9a0fab7f1875b895f478e805fea507a2bc9d220b00a21fc39e3e1ba1`; 
-
-- Batch29 `train:2:10`: source `6fb995bda920517b9bd385e2491b21fc295ca146bba9575657fa46d6496e9094`; 
-
-- Batch29 `train:2:11`: source `778578de2b9e4ad8bf6ea70178f774a64e1a97cd1391cb07dd71f300316fa4d4`; 
 
 - Batch29 `train:2:12`: source `a0b7756d87a36bb0a398f0ed913891dc810243dd1101eb6e5ad8fea02c425667`; 
 
-- Batch29 `train:2:13`: source `edfcdb4d4b8bce0fa506c4efd1597d59e6a4f963c97cf41ef89a8bba6e2cb61b`; 
-
-- Batch29 `train:2:14`: source `6d6628b1cb00cf9529c1fe24fde15a98c01f505f96239a6be0528f1fbb74e5b2`; 
-
-- Batch29 `train:2:15`: source `2ad0e64e50009f4cbcfa22ebb548f62adfa03561a288d9ea9656020dabbf8144`; 
-
 - Batch29 `train:2:16`: source `a2cc4913a0015302af156da1dcddf0522ecd5028710407c1e4bfaf906315aa83`; 
-
-- Batch29 `train:2:17`: source `01728138870984db36a1222ad2f3ba95cfac5c6aebc74d32615e9a7ee0fda2a3`; 
-
-- Batch29 `train:3:0`: source `750f958e03c5c213c98f85580adbce2e65821adf8321a63d965e40762c70ce90`; 
-
-- Batch29 `train:3:1`: source `5f8a676fb39ec8bb434bc7b6d08a47884c1ded5c894bad8d2bcca6cc0c3cbc38`; 
-
-- Batch29 `train:3:2`: source `e4ea084f5c62786d53a9e0429b143579cfacd613d92ffde368550eb9e966528d`; 
-
-- Batch29 `train:3:3`: source `47e280c4f588e5ac6f5e2b6f85b237c3feebaaf949980bf8ed927a6743b932e0`; 
-
-- Batch29 `train:3:4`: source `c448336f8012ea239b0dd9d16da285e1b28f614d53911cfa43271dda26a6cb7b`; 
 
 - Batch29 `train:3:5`: source `4a3fa74502c8a311d3d30e481860d52e182c9740816f85e7c83deda481898cb5`; 
 
@@ -2153,35 +2107,13 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch29 `train:4:0`: source `7268cf9720286ca7fd3d441b450622601dfed6229714cd1cb1f99d20d830266a`; 
 
-- Batch29 `train:4:1`: source `1addd77419d13d35271d176d5eb3134f4952622edb582e470f64c4314c3c6680`; 
-
-- Batch29 `train:4:2`: source `939801ee38d02593fe5ea8ea80c25fbde2854770091056259f035cc0521fc4c0`; 
-
 - Batch29 `train:4:3`: source `0b4a678099b839ebc64decaaefc41bfa0c2cd242ce03d42876a2593ce3f938c9`; 
 
-- Batch29 `train:4:4`: source `79275cb0fa6aa893fefcff3fc59697f5d65b0c95f6da3268c75b1d436f1acd7d`; 
-
 - Batch29 `train:4:5`: source `851761d925d58ad529f7d4672aa43e780b515de702bd14c7521985fed23063f1`; 
-
-- Batch29 `train:4:6`: source `a342b08f1ff080d7b95432d03ac0e7fc5e15517cd57a01d5a9df7eca32d83b84`; 
-
-- Batch29 `train:4:7`: source `0b5929686197d4358c2dea1b81cfd9c541b4726776e8340125bf6198022aa7ea`; 
-
-- Batch29 `train:4:8`: source `bcd094a17b025fbd00a4de60b48e56a8205320784bdf4d7a46e82b5185057355`; 
-
-- Batch29 `train:4:9`: source `3aeb3c294d3e4cac3f1fd1864c1f4ac8f2ac94e7b72dbda7c2abd6cbe88418c7`; 
-
-- Batch29 `train:4:10`: source `75574140e49e8ab83b7fd8f821c842f7fe8cdecbba3c0623fa017dcf746c07c8`; 
-
-- Batch29 `train:4:11`: source `a342b08f1ff080d7b95432d03ac0e7fc5e15517cd57a01d5a9df7eca32d83b84`; 
-
-- Batch29 `train:4:12`: source `027e578ac3cb1d13e2fb025b535696f49edf2b5283396ddcbc868241372d239a`; 
 
 - Batch29 `train:4:13`: source `fba6bcc54342d465d49320fcf53e9885dfe35a5ccbfd3b3ecfd94325784e3f12`; 
 
 - Batch29 `train:5:0`: source `e42569cb7b0e758e0a8b86237fde69a78d9d753e65455360d048e0b6d4bc3f1b`; 
-
-- Batch29 `train:5:1`: source `2258327d82a71dcc34983b90967a0a50cfc9aa0823afe081990bf6a56bb0df36`; 
 
 - Batch29 `train:5:2`: source `409933a05ea1f347707093cf3159a5612cf8e9f563aa5f809269f30ffa0e033e`; 
 
@@ -2197,31 +2129,13 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch29 `dev:0:0`: source `05effc5563c4d7d344f9427715e4f7510a15084bf35c7bf4fe88a79322a2f6ff`; 
 
-- Batch29 `dev:0:1`: source `604fc7b69e4f990486639b48436719db1f6b28501dd1260208ea0f9d7bb75c09`; 
-
-- Batch29 `dev:0:2`: source `169d6ae245ffa57f7939f80c4737715e86076ffbb67efcb63e20c298c0387589`; 
-
 - Batch29 `dev:0:3`: source `33a3736038337f5dbe608721d458162d8bf533b78aa99f80b37b112ae7afeaf6`; 
 
-- Batch29 `dev:0:4`: source `d2a6b16ea99199e825bd02dfa22da5bbbe2872ab40f53ff467e57be8e2ed1f20`; 
-
-- Batch29 `dev:0:5`: source `047af9f040682e05084e17ca695abdc3f273c754045c0a5f01ec54260b9fd45a`; 
-
-- Batch29 `dev:0:6`: source `e5b27e707af2ec4ab58ee603b02ef0857207692b7b0665253cb8bcdf07bcbc24`; 
-
-- Batch29 `dev:0:7`: source `7ec87e5bf8a257f4125874f5decbac87cfe02ef1fb1c1947e095ee9c6972b380`; 
-
 - Batch29 `dev:0:8`: source `dd8411dbb5fd3beea191298fa086877965b04e712da78af9f53a348cf081efab`; 
-
-- Batch29 `dev:0:9`: source `cfc621e4f6987ac9f59e68b471243bf5d0daa027ea08c5e0c19cce7cd179941d`; 
-
-- Batch29 `dev:0:10`: source `89173bdea0d49da3858f4c1115b943ce8de3c5ae417cfef183ba80fece52b52c`; 
 
 - Batch29 `dev:0:11`: source `e9930f54009bed888c2c31b0c540d38ce4355850894816be2d57a6c428fdeb99`; 
 
 - Batch29 `dev:1:0`: source `2b326bc053b70069cca2234382a781a6bf5a91e35b7bb832f608aafeb32d368f`; 
-
-- Batch29 `dev:1:1`: source `3b6aaef4e9d6adb8f9266ee0f2d25fba320a9ad3275f8cfe1a67442741955c49`; 
 
 - Batch29 `dev:1:2`: source `16e164b58ad393b8c936c21bcff60f5702557a8ba42c77f5b6eafe04547071c1`; 
 
@@ -2237,29 +2151,13 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch29 `dev:1:8`: source `766d7a047425725a78f03c0857857e3076d3d961e7c46fed084ae4db98cb7d60`; 
 
-- Batch29 `dev:1:9`: source `d9c1a41e4a649cf72a37fb19ea5d1990348acd388d08aef4bb2f85dc9d095e72`; 
-
 - Batch29 `dev:1:10`: source `852997dda77dd37cf0241a029cc4593bc26edd6ee26bc838d6fc31abb4545172`; 
-
-- Batch29 `dev:1:11`: source `61ca74c248d80cc65578389a71bfe4a09cf1818a44cf0e47f9a3bdf514e1812e`; 
 
 - Batch29 `dev:1:12`: source `57c6bcb60869690d211af6a093cb6eb96db7374eb8539a536d179a9b4d291631`; 
 
-- Batch29 `dev:1:13`: source `78cfaba2dd64096ea8b711318f79e70a197bdfa20c62e5f3caa583e038594ddb`; 
-
 - Batch29 `dev:1:14`: source `e26a79bbf05f11340a5062e1a5d7a66a2ae237a25da1ead83c6ff7f8ba7c2d7f`; 
 
-- Batch29 `dev:1:15`: source `41caa21e39cc0deeefcb1fd8428af90f1e1d8cd5ef9389acd5922ae19cce5273`; 
-
 - Batch29 `dev:1:16`: source `12e572ee093e70c4c6b58a4d37e7dab7fe8a6a8e4614449af9b28bc9b311cc36`; 
-
-- Batch29 `dev:1:17`: source `8f3b3db263905f94b07af8245427cdb33cf2d628c2cd83a79afa403b78229286`; 
-
-- Batch29 `dev:1:18`: source `7ae0333c437927c6ede1155d8c151d6a3e4f20a7513498fb556af0e31d1dd960`; 
-
-- Batch29 `dev:1:19`: source `7cf8b9328195dee4b8405b448f205439116afadea39b13a8bd40a55cb8c17633`; 
-
-- Batch29 `dev:1:20`: source `6fd53d60d3e3cee6de8f4b286827cb57127086a42f96fe1d7f72d059c3cd1317`; 
 
 - Batch29 `dev:1:21`: source `77920f06eb5641913e586bab9f2dffd808a3f648672c6af0ccc00082009a6c3c`; 
 
