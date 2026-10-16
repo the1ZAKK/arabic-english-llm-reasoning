@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "report_id": "20261016T140544_67ea8e50",
+  "report_id": "20261016T141040_2a8f3ed4",
   "repository": "the1ZAKK/arabic-english-llm-reasoning",
   "branch": "research/arabicprm-v2-production",
-  "recorded_at_utc": "2026-10-16T14:05:44.920811+00:00",
+  "recorded_at_utc": "2026-10-16T14:10:40.801979+00:00",
   "status": "waiting_for_existing_translator",
   "runtime_commit": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
   "finished_passes": 0,
