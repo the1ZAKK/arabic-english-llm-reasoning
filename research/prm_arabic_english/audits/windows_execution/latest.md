@@ -1,7 +1,7 @@
 # Local ArabicPRM execution audit
 
 Status: `running`.
-Recorded: 2026-10-16T19:13:00.020881+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
+Recorded: 2026-10-16T19:28:30.173466+00:00. Runtime commit: `38bc9e759d8c71315281d42ae5c0e4371ca748bd`.
 
 Human QC remains pending. No training export or training was performed.
 
@@ -822,7 +822,7 @@ Human QC remains pending. No training export or training was performed.
 - Batch17 `dev:1:11`: source `c40d616bb626371e884fe0353a8ff3210fabd4ff42a8d89497d20299ca7559ed`; 
 
 - Batch17 `dev:1:14`: source `0e0cb4512840180fb22d059a77efd95109136ca9d5606d640154548d82f78f8d`; 
-| 18 | not_started | 46 / 101 | 55 |
+| 18 | incomplete_unresolved_fields | 49 / 101 | 52 |
 
 - Batch18 `train:0:0`: source `7bf61474821d8206323c2839852590ee2b7765e7e4a75730a8aa2c71c972593f`; 
 
@@ -896,8 +896,6 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch18 `train:5:7`: source `37170b87f1fa9ff8f848ab85488ec400278466e29cd3642491e8e060e97f96f9`; 
 
-- Batch18 `train:5:8`: source `1cc9023a776f592c82b8f5abfcf256a9906fda96f6393fbafda57a36749c9cc3`; 
-
 - Batch18 `train:5:9`: source `44dddf61f9d5c048c98e10fb76afb5a1fc674ddb276bd57be9518c187b4a5bff`; 
 
 - Batch18 `train:5:10`: source `f4463f34a59936d101a535905109db5875e28a8d334f4b03bb7d21e43f4e6f5c`; 
@@ -905,8 +903,6 @@ Human QC remains pending. No training export or training was performed.
 - Batch18 `dev:0:5`: source `afe448439ea153ad3735ed5ab2c40b1519d2219392ea1655a05ce77788835a09`; 
 
 - Batch18 `dev:0:6`: source `57e342029c6e57d5d69d0856365bd800b2e97479df3f84fb07d36ed3bcf38340`; 
-
-- Batch18 `dev:0:9`: source `413028725d260b69845298b7381bc7ae90d38ddac231dad7aeb1f65b1ee8ee27`; 
 
 - Batch18 `dev:0:10`: source `4c26759065bd84720cd4262a892062f9333930db62cea945b0f734b5d15b938a`; 
 
@@ -930,10 +926,8 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch18 `dev:1:4`: source `72b89f65c0ffec6a8ee7fafb9bfc62deb75f332cb8a614a2161bd1c1058c34c2`; 
 
-- Batch18 `dev:1:6`: source `dca89dc5947536d04b2cfd68bb521cc0fa496ad07ce3df7563feb51b963e2b79`; 
-
 - Batch18 `dev:1:8`: source `ab68964797406110085d9f3de51d0795e5d7db8312ff7a3707cf3c9493d63335`; 
-| 19 | not_started | 39 / 95 | 56 |
+| 19 | incomplete_unresolved_fields | 42 / 95 | 53 |
 
 - Batch19 `train:0:0`: source `c521cb63c1b63766bbcdc90e53ff7fcb66dec02790d313b77908d5b8a5fbc841`; 
 
@@ -942,8 +936,6 @@ Human QC remains pending. No training export or training was performed.
 - Batch19 `train:0:2`: source `1505535c085f6cb286e37c7d5ed84a06267090e731d128fdf23225a1409cdb69`; 
 
 - Batch19 `train:0:3`: source `6df4c3fa69af3c498a31e05235367eb162461015ae34dc3e43a4e9337d34c704`; 
-
-- Batch19 `train:0:4`: source `b265e91373c9972c5b8e242fdb558b87e2eb4887f1c029bb67da34f1285e8f1b`; 
 
 - Batch19 `train:0:8`: source `ce3d18ff22a9cc25a2bd178f2052363cbbf341dcb32377d7cb202acb5a86346f`; 
 
@@ -1015,8 +1007,6 @@ Human QC remains pending. No training export or training was performed.
 
 - Batch19 `dev:0:0`: source `480e2c82823d3c3e62373e3f553529e89b214927a305ceda3263445a41ff88e0`; 
 
-- Batch19 `dev:0:2`: source `8ac7686e1643249c742072ba2ee6e6f3eba0ef7223ddb3d17d3bd23a587b9986`; 
-
 - Batch19 `dev:0:4`: source `100f4292a1825b4c72e4cc113b7726305560e5082bd37f1a55a5a8bba8f5eab6`; 
 
 - Batch19 `dev:0:5`: source `ff28173b86976d29b44c6cbceda98031ebe5d3b340ace266e4e3de1a7d508dde`; 
@@ -1024,8 +1014,6 @@ Human QC remains pending. No training export or training was performed.
 - Batch19 `dev:0:6`: source `d51b6cd01284162c542e2733d50977b7134bd8210ace6f709c44d35bf4458346`; 
 
 - Batch19 `dev:0:7`: source `4d2b0db3df8d8fdbb8e428397acffa6e66ef4740626ef57d9a5dedc5dcf0a48d`; 
-
-- Batch19 `dev:0:8`: source `522b20e8a7909de28591714c012556f0ff22cfe2862e5ee88143d5e98b8a11c3`; 
 
 - Batch19 `dev:0:12`: source `9a591234299bdbf819edb5afcf1135e4e0c6f0f9026a58c58d4fe7aa50a867f9`; 
 
