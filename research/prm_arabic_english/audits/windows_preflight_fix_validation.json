@@ -2,7 +2,7 @@
   "schema_version": 1,
   "repository": "the1ZAKK/arabic-english-llm-reasoning",
   "branch": "research/arabicprm-v2-production",
-  "verified_at_utc": "2026-10-16T13:41:22.715693+00:00",
+  "verified_at_utc": "2026-10-16T13:46:32.471974+00:00",
   "purpose": "Windows installation preflight repair and immutable launcher validation",
   "evidence_type": "offline_test_fixtures_no_local_inference",
   "runtime_commit": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
@@ -82,7 +82,37 @@
     "fixture_status": "source_audited_only"
   },
   "replacement_launcher_validation": {
-    "status": "pending_final_windows_ci"
+    "status": "passed",
+    "workflow_run_id": 38909957473,
+    "url": "https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38909957473",
+    "tested_research_commit": "35245a351689af7fb610d0713095203df2ab2f11",
+    "completed_at_utc": "2026-10-16T13:45:10Z",
+    "conclusion": "success",
+    "linux_job_id": 117002990579,
+    "windows_job_id": 117002991197,
+    "tests_passed_per_platform": 126,
+    "tested_launcher_git_blob": "b3037311979784c16f2839a456b1643c32923761",
+    "production_pinned_runtime_commit": "38bc9e759d8c71315281d42ae5c0e4371ca748bd",
+    "native_ci_runtime_commit": "35245a351689af7fb610d0713095203df2ab2f11",
+    "all_22_runtime_allowlist_blobs_identical_between_commits": true,
+    "downloaded_installer_sha256": "84b30b5869588fc79f93ec064f0e44a259fb3200e19e8191f1275e2feb70e719",
+    "correct_hash_verified": true,
+    "wrong_hash_rejected_with_failing_exit_before_execution": true,
+    "clean_native_scheduled_task_preflight": true,
+    "legacy_crlf_native_scheduled_task_preflight": true,
+    "protected_fixture_bytes_and_retry_limits_preserved": true,
+    "max_runtime_path_characters_observed": 281,
+    "no_ollama_inference_or_execution_report_publication_in_ci": true,
+    "windows_log_markers": [
+      "2026-10-16T13:43:42.3768127Z Ran 126 tests in 45.006s",
+      "2026-10-16T13:43:42.3768776Z OK",
+      "2026-10-16T13:43:51.6889426Z BOOTSTRAP VERIFIED: pinned installer downloaded and hash matched; no installation or inference",
+      "2026-10-16T13:43:52.3925739Z BOOTSTRAP NEGATIVE CHECK PASSED: incorrect hash rejected; nothing executed.",
+      "2026-10-16T13:44:27.5101671Z CI PASSED: immutable runtime, 24 frozen batches and native scheduled-task preflight; no inference or publication.",
+      "2026-10-16T13:45:03.9148387Z CI PASSED: immutable runtime, 24 frozen batches and native scheduled-task preflight; no inference or publication.",
+      "2026-10-16T13:45:04.4769448Z WINDOWS LEGACY FIXTURE PASSED: CRLF files, original Batch09 checkpoint, nine-attempt ledger and QC sentinel preserved; 24 batches / 2252 fields; no inference.",
+      "2026-10-16T13:45:04.4770329Z WINDOWS PATH COVERAGE: 281 characters in the immutable runtime."
+    ]
   },
   "integrity": {
     "frozen_comparison_base_research_commit": "4cd39a00cdc82dc45ca62598944cfe5e6a60a5c9",

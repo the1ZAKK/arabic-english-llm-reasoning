@@ -144,6 +144,10 @@ bytes remained identical. This is offline fixture evidence, not the user's
 checkpoint contents or real Qwen translations.
 See [verified fix evidence](audits/windows_preflight_fix_validation.json) and
 [previous activation evidence](audits/windows_activation_verified.json).
+The replacement launcher and its exact pinned installer passed the
+[final Linux/Windows checks](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/38909957473)
+on 16 October 2026, including correct/incorrect hash checks, both native task
+fixtures and a 281-character runtime path.
 Actual laptop speed, GPU memory behavior and Qwen translation quality remain
 untested until local execution is observed.
 
