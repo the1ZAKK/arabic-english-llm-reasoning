@@ -622,6 +622,26 @@ class OllamaProtocolChecks(unittest.TestCase):
 
 
 
+    def test_revised_prompt_prohibits_historical_boundary_failures(self):
+        client = runner.Ollama("http://127.0.0.1:11434", "qwen3:4b", 4096, 1024, 2)
+        sent = []
+        def mocked_request(path, data=None):
+            sent.append((path, data))
+            return {"done": True, "done_reason": "stop",
+                    "message": {"content": json.dumps({"s0": "نص تجريبي"}), "thinking": ""}}
+        client.request = mocked_request
+        self.assertEqual(client.translate_slots({"s0": "the answer is"}), {"s0": "نص تجريبي"})
+        system = sent[0][1]["messages"][0]["content"]
+        for prohibition in ("mid-sentence", "English words", "newlines", "tabs",
+                            "invisible formatting characters", "alternative scripts",
+                            "reasoning is wrong"):
+            self.assertIn(prohibition, system)
+        self.assertFalse(sent[0][1]["think"])
+        self.assertFalse(sent[0][1]["stream"])
+        self.assertEqual(sent[0][1]["options"]["temperature"], 0)
+
+
+
 class OllamaOutageRegression(unittest.TestCase):
     def test_connection_refusal_preserves_attempts_and_stops_dispatch(self):
         from urllib.error import URLError
