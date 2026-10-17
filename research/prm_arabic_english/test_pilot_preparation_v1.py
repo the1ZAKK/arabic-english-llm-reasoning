@@ -2,6 +2,7 @@
 from collections import Counter
 from contextlib import ExitStack, redirect_stdout
 import copy
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -350,6 +351,20 @@ class FullPlanValidationTests(unittest.TestCase):
         plan = copy.deepcopy(self.plan)
         plan["permission_to_generate"] = True
         self.verify_tampered(plan, "safety binding")
+
+
+class PilotBootstrapTests(unittest.TestCase):
+    def test_exact_launcher_checksum_and_tested_installer_pin(self):
+        root = Path(__file__).resolve().parents[2]
+        path = Path(__file__).with_name("verify_recovery_pilot20_windows_v1.cmd")
+        raw = path.read_bytes()
+        expected, name = path.with_suffix(".cmd.sha256").read_text(encoding="ascii").split()
+        self.assertEqual(name, path.name)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), expected)
+        self.assertEqual(raw.count(b"\n"), raw.count(b"\r\n"))
+        installer = package.base.git(root, "show", "HEAD:" + package.base.PREFIX + "install_pilot_preparation_windows_v1.ps1")
+        self.assertIn(hashlib.sha256(installer).hexdigest().encode("ascii"), raw)
+        self.assertIn(b"e1b96d656dac406a7af3abfae73637a3a1964653", raw)
 
 
 if __name__ == "__main__":

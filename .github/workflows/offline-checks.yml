@@ -60,6 +60,38 @@ jobs:
         run: |
           & powershell -NoProfile -ExecutionPolicy Bypass -File research/prm_arabic_english/install_pilot_preparation_windows_v1.ps1 -RepoRoot "$pwd" -PinnedCommit "$env:PINNED_PILOT_SHA" -PackageOnly
           if ($LASTEXITCODE -ne 0) { throw "Native pilot preparation package failed: $LASTEXITCODE" }
+      - name: Verify pilot launcher SHA256 and block an incorrect hash before installer execution
+        if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
+        shell: pwsh
+        env:
+          ARABICPRM_PILOT_VERIFY_ONLY: "1"
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = "$pwd/research/prm_arabic_english/verify_recovery_pilot20_windows_v1.cmd"
+          $verified = @(& cmd.exe /d /c $launcher 2>&1)
+          $verifiedExit = $LASTEXITCODE
+          $verified | ForEach-Object { Write-Host $_ }
+          if ($verifiedExit -ne 0 -or -not ($verified -match 'PILOT BOOTSTRAP VERIFIED:')) {
+            throw "Pilot bootstrap exact-hash verification failed: $verifiedExit"
+          }
+          $badLauncher = Join-Path $env:TEMP ("ArabicPRM-pilot-bad-hash-" + [guid]::NewGuid().ToString('N') + '.cmd')
+          try {
+            $original = [IO.File]::ReadAllText($launcher)
+            $digest = [regex]::Match($original, '[0-9a-f]{64}').Value
+            if (-not $digest) { throw 'Missing pinned pilot installer hash' }
+            [IO.File]::WriteAllText($badLauncher, $original.Replace($digest, ('0' * 64)), [Text.Encoding]::ASCII)
+            $rejected = @(& cmd.exe /d /c $badLauncher 2>&1)
+            $rejectedExit = $LASTEXITCODE
+            $rejected | ForEach-Object { Write-Host $_ }
+            if ($rejectedExit -eq 0 -or ($rejected -match 'PILOT BOOTSTRAP VERIFIED:') -or
+                -not ($rejected -match 'Pilot preparation installer SHA256 mismatch')) {
+              throw 'Incorrect pilot installer hash did not block execution'
+            }
+            Write-Host 'PILOT NEGATIVE HASH CHECK PASSED: nothing executed.'
+          } finally {
+            Remove-Item -LiteralPath $badLauncher -Force -ErrorAction SilentlyContinue
+          }
+          exit 0
       - name: Package pinned recovery from raw Git blobs without inference or changing historical state
         if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
         shell: pwsh

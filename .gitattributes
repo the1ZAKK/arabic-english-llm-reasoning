@@ -23,3 +23,4 @@ research/prm_arabic_english/translation_batches/prm800k_qc24_batch03/human_revie
 research/prm_arabic_english/translation_batches/prm800k_qc24_batch03_r1/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/prm_arabic_english/activate_v2_unattended_windows.cmd -text whitespace=cr-at-eol
 research/prm_arabic_english/prepare_v2_recovery_windows.cmd -text whitespace=cr-at-eol
+research/prm_arabic_english/verify_recovery_pilot20_windows_v1.cmd -text whitespace=cr-at-eol
