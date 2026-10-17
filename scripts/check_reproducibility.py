@@ -19,6 +19,7 @@ MODULES = (
     "test_source_preserving_translation",
     "test_unattended_v2",
     "test_triage_exhausted_v2",
+    "test_prepare_v2_recovery",
 )
 
 if __name__ == "__main__":
