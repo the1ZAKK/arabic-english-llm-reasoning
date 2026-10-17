@@ -101,8 +101,18 @@ def file_bytes(path):
     return path.read_bytes() if path.exists() else b""
 
 
+def run_files(root):
+    # The original read-only preparation helper returns OS-native separators.
+    # This version's receipts use one portable representation on both systems.
+    original = preparation.recovery_files_snapshot(root)
+    files = {name.replace("\\", "/"): digest for name, digest in original.items()}
+    if len(files) != len(original):
+        raise ValueError("Ambiguous portable recovery artifact paths")
+    return files
+
+
 def immutable_artifacts(run):
-    files = preparation.recovery_files_snapshot(run)
+    files = run_files(run)
     # Only these two existing runner outputs are mutable/appended by design.
     return {k: v for k, v in files.items() if k not in ("attempts.jsonl", "summary.json") and
             not k.endswith("/batch_status.json")}
@@ -124,7 +134,7 @@ def read_state(run, control, plan, consent):
     approval = recovery.safe_path(run / "approved_budget.json")
     if approval.exists() and approval.read_bytes() != legacy.encoded(budget):
         raise ValueError("Immutable approved budget changed; no replacement allowance permitted")
-    files = preparation.recovery_files_snapshot(run)
+    files = run_files(run)
     if not approval.exists() and files:
         raise ValueError("Missing immutable approval beside run artifacts; no reset permitted")
     journal = file_bytes(run / "attempts.jsonl")
@@ -194,8 +204,8 @@ def verify_materialized(run, plan, accepted):
         staging, expected = root / "staging", root / "expected"
         legacy.stage_verified(staging)
         recovery.materialize_recovery(plan, accepted, expected, staging)
-        allowed = preparation.recovery_files_snapshot(expected)
-        for name in preparation.recovery_files_snapshot(run):
+        allowed = run_files(expected)
+        for name in run_files(run):
             if name in ("approved_budget.json", "attempts.jsonl", "runtime.json", "summary.json"):
                 continue
             if name not in allowed:
@@ -211,7 +221,7 @@ def verify_materialized(run, plan, accepted):
                 if legacy.parse(actual.read_bytes()).get("review_queue_sha256") != legacy.parse(wanted.read_bytes())["review_queue_sha256"]:
                     raise ValueError("Existing human QC binds a different queue; preserved")
             elif actual.read_bytes() != wanted.read_bytes():
-                raise ValueError("Accepted recovery artifact differs from validated journal; preserved")
+                raise ValueError(f"Accepted recovery artifact differs from validated journal; preserved: {name}")
 
 
 class GuardedClient:

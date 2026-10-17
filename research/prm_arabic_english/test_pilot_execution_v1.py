@@ -30,6 +30,12 @@ class ExecutionTests(unittest.TestCase):
 
     def patches(self, case):
         stack = ExitStack()
+        # Verify the real fixture branch/origin once. State-machine cases focus
+        # on snapshots/consent/ledgers; unchanged Git provenance is also covered
+        # by the existing runner and native package tests, without thousands of
+        # duplicate Git process launches on Windows.
+        package.base.require_repository(case.repo)
+        stack.enter_context(patch.object(package.base, "require_repository", return_value=None))
         proof = {k: v for k, v in case.plan.items() if k != "plan_sha256"}
         stack.enter_context(patch.object(preparation, "EXPECTED_PLAN", case.plan["plan_sha256"]))
         stack.enter_context(patch.object(execution, "EXPECTED_MODEL_DIGEST", case.plan["model_digest"]))
@@ -106,6 +112,12 @@ class ExecutionTests(unittest.TestCase):
             self.launch(case, [], metadata=metadata)
         self.assertFalse((self.control(case) / "consent.json").exists())
         self.assertFalse((case.run_dir / "approved_budget.json").exists())
+
+    def test_wrong_fixture_branch_is_rejected_before_metadata_or_confirmation(self):
+        case = self.case()
+        package.base.git(case.repo, "symbolic-ref", "HEAD", "refs/heads/disposable-wrong-branch")
+        with self.assertRaisesRegex(ValueError, "research branch"):
+            self.launch(case, [], [])
 
     def test_tampered_plan_and_original_checkpoint_stop_before_metadata(self):
         for file in ("plan", "checkpoint"):
@@ -317,6 +329,16 @@ class ExecutionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "rollback|deletion"):
             self.launch(case, [], [execution.CONFIRMATION])
 
+    def test_windows_artifact_paths_exclude_only_mutable_timestamped_status_files(self):
+        files = {"approved_budget.json": "approval", "attempts.jsonl": "journal", "summary.json": "summary",
+                 r"batches\batch09\batch_status.json": "mutable-status",
+                 r"fields\batch09\train_0_1.json": "accepted-field",
+                 r"review_artifacts\batch09\human_qc_pending.json": "human-record"}
+        with patch.object(preparation, "recovery_files_snapshot", return_value=files):
+            self.assertEqual(execution.immutable_artifacts(Path("unused")), {
+                "approved_budget.json": "approval", "fields/batch09/train_0_1.json": "accepted-field",
+                "review_artifacts/batch09/human_qc_pending.json": "human-record"})
+
     def test_actual_utc_timestamp_validation_and_identity_controls(self):
         case = self.case()
         with self.patches(case):
@@ -368,7 +390,8 @@ class PackageTests(unittest.TestCase):
         root = Path(__file__).parent
         script = (root / "install_pilot_execution_windows_v1.ps1").read_text()
         for name in ("pilot_execution_runtime_v1.py", "recovery_runtime.py"):
-            self.assertIn(hashlib.sha256((root / name).read_bytes()).hexdigest(), script)
+            canonical = package.base.git(root.parents[1], "show", "HEAD:" + package.base.PREFIX + name)
+            self.assertIn(hashlib.sha256(canonical).hexdigest(), script)
         self.assertNotIn("--yes", script)
         self.assertNotIn("Register-ScheduledTask", script)
         self.assertNotIn("ollama pull", script)
