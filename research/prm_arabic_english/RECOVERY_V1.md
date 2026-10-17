@@ -37,3 +37,9 @@ The standard offline suite includes recovery protocol, language/script/math/boun
 The CI matrix runs on Ubuntu and Windows with Python 3.11. Native Windows CI also parses the installer under PowerShell and packages the pinned runtime using Windows PowerShell 5.1, verifying all 2,252 canonical frozen fields without inference. Once these checks pass, a single preparation launcher can be pinned to that tested commit and installer SHA256; its download/hash rejection path is tested separately before delivery.
 
 This environment cannot inspect the laptop's private checkpoint bytes, installed Ollama behavior, GPU or live prompt quality. Those remain unverified until local preparation and a separately approved inference budget. Automated checks never constitute human QC.
+
+## Tested launcher pin
+
+`prepare_v2_recovery_windows.cmd` was prepared after implementation commit `ca2d6e0df6fcf81405bd48835b27b55f42a7a9e2` passed all 158 tests on Ubuntu and Windows, native recovery packaging, and the existing scheduled-task/CRLF preservation checks: [CI run 39013624724](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39013624724).
+
+It pins that commit and installer SHA256 `573d05d0a6ca5166e7c52d150ec0bb95810f99103ebe21bdc93e43185b2f7880`. Its own checksum is stored in `prepare_v2_recovery_windows.cmd.sha256`; `.gitattributes` preserves the launcher's exact CRLF bytes. The release CI additionally runs the real pinned download under Windows CMD/PowerShell and deliberately substitutes an incorrect hash to prove that no installer executes. The console stays open after preparation or an error. No budget approval or inference is implied by running this launcher.

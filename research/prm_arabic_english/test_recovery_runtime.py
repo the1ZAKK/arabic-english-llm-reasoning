@@ -1,5 +1,6 @@
 """Pinned recovery packaging tests; all repositories and corruption are disposable."""
 import json
+import hashlib
 from pathlib import Path
 import subprocess
 import tempfile
@@ -52,6 +53,12 @@ class RecoveryRuntimeTests(unittest.TestCase):
         receipt = json.loads((worker.parents[1] / "runtime_sha256.json").read_bytes())
         self.assertEqual(receipt["inference_requests"], 0)
         self.assertEqual(len(receipt["sha256"]), len(runtime.supported_paths()))
+        extra = worker / "unlisted_module.py"
+        extra.write_bytes(b"unexpected")
+        with self.assertRaisesRegex(ValueError, "unexpected or missing"):
+            runtime.install(self.repo, self.sha, fetch=False)
+        self.assertEqual(extra.read_bytes(), b"unexpected")
+        extra.unlink()  # Remove only our deliberate disposable corruption fixture.
         altered = worker / "recover_v2.py"
         altered.write_bytes(b"tampered")
         with self.assertRaisesRegex(ValueError, "runtime changed"):
@@ -68,6 +75,21 @@ class RecoveryRuntimeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "allowlist"):
             runtime.install(self.repo, self.sha, fetch=False)
         self.assertFalse(recovery.recovery_root(self.repo).exists())
+
+
+class RecoveryBootstrapTests(unittest.TestCase):
+    def test_launcher_hash_and_pinned_installer_bytes_are_exact(self):
+        project = Path(__file__).resolve().parents[2]
+        path = Path(__file__).with_name("prepare_v2_recovery_windows.cmd")
+        raw = path.read_bytes()
+        checksum, name = path.with_suffix(".cmd.sha256").read_text(encoding="ascii").split()
+        self.assertEqual(name, path.name)
+        self.assertEqual(checksum, hashlib.sha256(raw).hexdigest())
+        self.assertEqual(raw.count(b"\n"), raw.count(b"\r\n"))
+        # Compare with canonical Git bytes, independent of checkout CRLF settings.
+        installer = runtime.git(project, "show", "HEAD:" + runtime.PREFIX + "install_v2_recovery_windows.ps1")
+        self.assertIn(hashlib.sha256(installer).hexdigest().encode("ascii"), raw)
+        self.assertIn(b"ca2d6e0df6fcf81405bd48835b27b55f42a7a9e2", raw)
 
 
 if __name__ == "__main__":
