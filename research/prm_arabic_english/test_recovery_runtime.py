@@ -16,7 +16,10 @@ class RecoveryRuntimeTests(unittest.TestCase):
         # Exercise Python/Git blob verification beyond Windows MAX_PATH.
         self.repo = Path(self.temp.name) / ("long-recovery-path-" * 5) / ("nested-project-" * 5)
         self.repo.mkdir(parents=True)
-        subprocess.run(["git", "init", "-b", runtime.BRANCH, str(self.repo)], check=True, capture_output=True)
+        # Git creates template hook paths during init, before a local config exists.
+        # The long-path option must therefore be present on this first command.
+        subprocess.run(["git", "-c", "core.longpaths=true", "init", "-b", runtime.BRANCH, str(self.repo)],
+                       check=True, capture_output=True)
         for name, value in (("user.name", "Offline Fixture"), ("user.email", "fixture@example.invalid"), ("core.longpaths", "true")):
             runtime.git(self.repo, "config", name, value)
         runtime.git(self.repo, "remote", "add", "origin", "https://github.com/the1ZAKK/arabic-english-llm-reasoning.git")
