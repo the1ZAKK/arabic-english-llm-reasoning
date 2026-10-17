@@ -23,6 +23,7 @@ MODULES = (
     "test_recover_v2",
     "test_recovery_runtime",
     "test_pilot_preparation_v1",
+    "test_pilot_execution_v1",
 )
 
 if __name__ == "__main__":
