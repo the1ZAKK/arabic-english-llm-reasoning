@@ -363,6 +363,21 @@ class ExecutionTests(unittest.TestCase):
 
 
 class PackageTests(unittest.TestCase):
+    def test_final_launcher_has_exact_crlf_checksum_and_tested_commit_installer_pin(self):
+        root = Path(__file__).parent
+        launcher = root / "execute_recovery_pilot20_windows_v1.cmd"
+        raw = launcher.read_bytes()
+        expected, filename = launcher.with_suffix(".cmd.sha256").read_text(encoding="ascii").split()
+        self.assertEqual(filename, launcher.name)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), expected)
+        self.assertEqual(raw.count(b"\n"), raw.count(b"\r\n"))
+        commit = "654ddb75e94b2e7d8b788613a09e52cb759f37dc"
+        installer = package.base.git(root.parents[1], "show", commit + ":" + package.base.PREFIX + "install_pilot_execution_windows_v1.ps1")
+        self.assertIn(commit.encode("ascii"), raw)
+        self.assertIn(hashlib.sha256(installer).hexdigest().encode("ascii"), raw)
+        self.assertIn(b"ARABICPRM_PILOT_EXEC_VERIFY_ONLY", raw)
+        self.assertNotIn(b"--yes", raw)
+
     def test_separate_execution_package_keeps_original_runner_hashes_and_refuses_tampering(self):
         fixture = old_package.RecoveryRuntimeTests()
         fixture.setUp()

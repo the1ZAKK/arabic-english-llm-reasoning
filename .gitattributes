@@ -26,3 +26,4 @@ research/prm_arabic_english/prepare_v2_recovery_windows.cmd -text whitespace=cr-
 research/prm_arabic_english/verify_recovery_pilot20_windows_v1.cmd -text whitespace=cr-at-eol
 research/prm_arabic_english/pilot_execution*_v1.py -text
 research/prm_arabic_english/install_pilot_execution_windows_v1.ps1 -text
+research/prm_arabic_english/execute_recovery_pilot20_windows_v1.cmd -text whitespace=cr-at-eol

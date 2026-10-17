@@ -68,3 +68,14 @@ The test suite covers synthetic approval identities/timestamps, exact caps and r
 The first implementation CI ([39019880026](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39019880026)) passed Linux and exposed two Windows issues: a test hashed checkout CRLF instead of canonical Git bytes, and native backslashes prevented recognition of the mutable timestamped `batch_status.json`. The fix normalizes only new workflow receipt paths, compares all substantive batch-status fields, and continues to hash accepted artifacts and QC records. An explicit Windows-path regression and wrong-branch regression were added. No historical file or original validation rule was changed.
 
 Release commit, CI links and launcher SHA256 are published with the tested launcher. The final confirmation is performed personally on the laptop; development and CI do not execute any real Ollama generation.
+
+## Final Windows launcher pin
+
+The execution launcher was prepared only after `654ddb75e94b2e7d8b788613a09e52cb759f37dc` passed **208 tests on Windows and Linux**, plus native Windows canonical package verification: [implementation CI 39020573824](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39020573824). The launcher pins that exact tested implementation; subsequent branch edits cannot change its code selection.
+
+- Launcher: `execute_recovery_pilot20_windows_v1.cmd`, with exact CRLF bytes preserved by `.gitattributes`.
+- Launcher SHA256: `f35fc748c3870bef18f3454bfc0316e7d78fd17182488160587fb2eef097a6a9`.
+- Pinned installer SHA256: `6f2c5b3aabb9d56b154ae93948a37f747bf9d6594f2be748c1146e248fa8fce0`.
+- Installer URL: `https://raw.githubusercontent.com/the1ZAKK/arabic-english-llm-reasoning/654ddb75e94b2e7d8b788613a09e52cb759f37dc/research/prm_arabic_english/install_pilot_execution_windows_v1.ps1`.
+
+The final release CI adds the real Windows CMD download/hash check, deliberate incorrect-installer-hash rejection before code execution, and the launcher's checksum regression. `ARABICPRM_PILOT_EXEC_VERIFY_ONLY=1` terminates before installer execution; it grants no consent and cannot dispatch generation. Normal use omits this CI-only verification setting and still requires the person's interactive laptop confirmation.
