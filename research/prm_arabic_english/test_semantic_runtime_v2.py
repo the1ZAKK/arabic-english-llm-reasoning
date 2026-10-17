@@ -11,6 +11,22 @@ import test_recovery_runtime as old_package
 
 
 class SemanticPackageTests(unittest.TestCase):
+    def test_launcher_exact_crlf_sha256_and_tested_installer_pin(self):
+        root = Path(__file__).parent
+        launcher = root / "verify_semantic_recovery_windows_v2.cmd"
+        raw = launcher.read_bytes()
+        expected, name = launcher.with_suffix(".cmd.sha256").read_text(encoding="ascii").split()
+        self.assertEqual(name, launcher.name)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), expected)
+        self.assertEqual(raw.count(b"\n"), raw.count(b"\r\n"))
+        tested_commit = "2ce19a17570829495856da1f732d96b06694f402"
+        installer = package.base.git(root.parents[1], "show", tested_commit + ":" + package.base.PREFIX + "install_semantic_recovery_windows_v2.ps1")
+        self.assertIn(tested_commit.encode("ascii"), raw)
+        self.assertIn(hashlib.sha256(installer).hexdigest().encode("ascii"), raw)
+        self.assertIn(b"ARABICPRM_SEMANTIC_VERIFY_ONLY", raw)
+        self.assertNotIn(b"--execute", raw)
+        self.assertNotIn(b"--approval", raw)
+
     def fixture(self):
         fixture = old_package.RecoveryRuntimeTests()
         fixture.setUp()

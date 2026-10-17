@@ -7,8 +7,8 @@
 | Recovery-v1-baseline | Actual original plan read-only | 1,075/2,252 fields mechanically complete; nine historical attempts per unresolved slot |
 | Recovery-v1-pilot20 | User-reported completed; actual report/HTML missing | Reported 20 requests / 20 accepted fragments / zero remaining. Semantic results and post-pilot field totals unknown. Permanently closed; never reset |
 | Repository-strict-audit-v2 | Reproducible offline audit of 64 committed drafts | 45 complete records under current strict checks; 35 field failures requiring investigation; not a semantic-error rate |
-| Recovery-v2-prototype | Verified at 270d537; Windows/Linux CI 39053835394 passed; two more integration cases added | Context/glossary/risk heuristics and pending human UI; no model results, approval identity or inference allowance |
+| Recovery-v2-prototype | Verified at 270d537 and 2ce19a1; Windows/Linux CI 39053835394 and 39055459666 passed | Context/glossary/risk heuristics and pending human UI; full ledger integration and immutable restart verified on synthetic evidence; no model results or inference allowance |
 | Recovery-v2-paired-diagnostic | Source-risk proposal: 12 slots / 24 requests, pending actual-pilot audit and design review | No approved budget; no generated outputs; no comparison result; source-only plan context verified |
-| Downstream PRM / QLoRA | Offline contracts/config/methodology implemented; six tests; CI pending | No trainer, run, export or GPU feasibility claim; historical scripts unsafe to import offline |
+| Downstream PRM / QLoRA | Offline contracts/config/methodology implemented; six tests passed on both platforms in CI 39055459666 | No trainer, run, export or GPU feasibility claim; historical scripts unsafe to import offline |
 
 Raw private laptop approvals, attempt ledgers, checkpoints and unapproved outputs remain local. Public records contain aggregate evidence and artifact identities only. Software tests use deterministic synthetic responses and establish software behavior, not translation accuracy.
