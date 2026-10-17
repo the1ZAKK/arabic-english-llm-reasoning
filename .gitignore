@@ -61,3 +61,6 @@ research/prm_arabic_english/checkpoints/reviewed_qlora_smoke*/
 !.env.example
 .DS_Store
 Thumbs.db
+
+# Private immutable recovery ledgers, approvals, runtime receipts and pending outputs
+/recovery_artifacts/

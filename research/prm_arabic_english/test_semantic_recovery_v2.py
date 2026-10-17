@@ -176,6 +176,22 @@ class HumanReviewTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unavailable"):
             review.validate_decisions(actual, document)
 
+    def test_separate_human_import_preserves_the_immutable_audit_and_detects_tampering(self):
+        actual = audit()
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / baseline.digest(actual)
+            review.write_review(target, actual, {"approved": False})
+            decision = Path(directory) / "synthetic_pending.json"
+            decision.write_bytes(legacy.encoded(review.pending(actual)))
+            imported = review.import_decisions(target / "semantic_audit.json", decision)
+            self.assertTrue((imported / "human_decisions.json").is_file())
+            self.assertFalse(imported.is_relative_to(target))
+            review.write_review(target, actual, {"approved": False})
+            changed = copy.deepcopy(actual)
+            changed["items"][0]["recorded_arabic"] = "مختلف"
+            with self.assertRaisesRegex(ValueError, "integrity mismatch"):
+                review.validate_decisions(changed, review.pending(changed))
+
     def test_untrusted_source_cannot_break_out_of_json_or_create_network_content(self):
         actual = audit()
         actual["items"][0]["context"]["problem"] = '</script><img src="https://invalid.test/" onerror="attack()">'
@@ -236,6 +252,25 @@ class FrozenContextTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unknown or already accepted"):
             semantic.completion_inventory(self.fixture.plan, {"unknown": "جزء"})
 
+    def test_public_diagnostic_proposal_matches_actual_frozen_context_payload_hashes(self):
+        proposal = legacy.parse(Path(semantic.__file__).with_name("semantic_experiment_proposal_v2.json").read_bytes())
+        self.assertEqual(proposal["proposed_new_requests"], 24)
+        self.assertEqual(proposal["generation_requests_authorized"], 0)
+        self.assertFalse(proposal["approved"])
+        fields = {(f["batch"], f["field"]): f for f in self.fixture.plan["fields"]}
+        jobs = []
+        for item in proposal["paired_sample"]:
+            number, key, slot = item["job"].split("/")
+            text = baseline.slots_for(fields[int(number), key]["source"])[slot]
+            jobs.append({"id": item["job"], "source": text, "slot_sha256": legacy.sha(text.encode("utf-8"))})
+        reconstructed = semantic.contexts({"fields": self.fixture.plan["fields"], "jobs": jobs}, self.fixture.staging)
+        for item in proposal["paired_sample"]:
+            source = reconstructed[item["job"]]
+            self.assertEqual(item["source_sha256"], source["source_slot_sha256"])
+            self.assertEqual(item["context_sha256"], baseline.digest(source))
+            self.assertEqual(item["contextual_request_sha256"], baseline.digest(semantic.request_for(source)))
+            self.assertEqual(item["baseline_request_sha256"], baseline.digest(baseline.request_for(source["target_english"])))
+
 
 class PilotEvidenceTests(unittest.TestCase):
     def make_report(self):
@@ -278,6 +313,27 @@ class PilotEvidenceTests(unittest.TestCase):
         html.write_bytes(html.read_bytes() + b'<script>attack()</script>')
         with self.assertRaisesRegex(ValueError, "Active content"):
             self.validate(case, target, report)
+
+    def test_full_laptop_offline_prepare_verifies_closed_ledger_and_safe_restart(self):
+        case, target, report = self.make_report()
+        helper = execution_fixture.ExecutionTests()
+        mapping = {job["id"]: {**context(job["source"], case.plan["fields"][1]["source"]),
+                              "job": job["id"], "slot": job["slot"]} for job in case.plan["jobs"]}
+        original = semantic.inputs_snapshot(case.repo / "recovery_artifacts" / "recovery-v1")
+        with helper.patches(case), patch.object(semantic, "MODEL_DIGEST", case.plan["model_digest"]), \
+                patch.object(semantic, "contexts", return_value=mapping), \
+                patch("urllib.request.OpenerDirector.open", side_effect=AssertionError("No network permitted")):
+            output, artifact, _ = semantic.prepare(case.repo)
+            self.assertTrue(artifact["evidence"]["full_reservation_ledger_verified"])
+            self.assertTrue(artifact["local_protected_snapshot_verified"])
+            self.assertEqual(artifact["generation_requests_authorized"], 0)
+            self.assertEqual(semantic.prepare(case.repo)[0], output)
+            self.assertEqual(original, semantic.inputs_snapshot(case.repo / "recovery_artifacts" / "recovery-v1"))
+            self.assertEqual(case.before, baseline.snapshot(case.repo))
+            journal = case.run_dir / "attempts.jsonl"
+            journal.write_bytes(journal.read_bytes()[:-1])  # Disposable corruption fixture only.
+            with self.assertRaises(ValueError):
+                semantic.prepare(case.repo)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "offline_prm_research_contract_v2",
+  "status": "proposal_only_NOT_a_training_launcher",
+  "training_authorized": false,
+  "export_authorized": false,
+  "generation_requests_authorized": 0,
+  "candidate_model_id": "Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B",
+  "model_revision": null,
+  "environment_lock": null,
+  "neutral_policy": "null_target_masked_not_negative",
+  "source_group_split": "inherit_frozen_train_dev_never_move_groups",
+  "data_policy": "No export. Complete genuine human review, align sources/Arabic/ratings, preserve originals and obtain explicit authorization first.",
+  "candidate_resource_probe_NOT_executed": {
+    "microbatch": 1,
+    "sequence_lengths_to_measure": [128, 256, 512],
+    "quantization": "4bit_nf4_candidate",
+    "compute_dtype": "float16_candidate_requires_hardware_verification",
+    "double_quantization": true,
+    "gradient_checkpointing": true,
+    "lora_rank_candidate": 4,
+    "target_modules_candidate": "all-linear",
+    "gradient_accumulation_candidate": 8,
+    "learning_rate_candidate": 0.0001,
+    "feasible_on_4GB": null,
+    "policy": "No model load or probe authorized. These are unvalidated design candidates, not a memory or quality guarantee. Reject truncation that loses step/reward alignment. Record measured peak allocated/reserved memory, token lengths, versions, CUDA and artifact hashes before selecting a run config."
+  },
+  "evaluation": {
+    "threshold": 0.5,
+    "metrics": ["masked step BCE", "balanced accuracy", "per-class recall", "Brier", "log loss", "first-error localization"],
+    "uncertainty_unit": "source_problem_group",
+    "ablation_design": ["English source baseline", "reviewed Arabic with same source-group split", "isolated versus contextual translation diagnostic"],
+    "forbidden_dataset": "Global-MGSM; never access"
+  }
+}

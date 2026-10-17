@@ -1,0 +1,131 @@
+{
+  "active_budget_id": null,
+  "actual_pilot_evidence_available": false,
+  "approved": false,
+  "approved_at_utc": null,
+  "approved_by": null,
+  "arms": [
+    "v1_isolated_fragment_payload_in_new_experiment",
+    "msa-context-glossary-v2"
+  ],
+  "baseline_pilot_status": "closed_never_renewed",
+  "baseline_plan_sha256": "446191b88e072c291ff34388a7fbb4166a6813639a63bb2ef54896431c6e7e4e",
+  "evidence_basis": "source-risk stratification; sample/budget remain provisional until actual pilot semantic review and human design review",
+  "execution_implemented": false,
+  "gate": "Read actual pilot artifacts, complete provisional AI review and genuine human design review, then obtain a separate explicit diagnostic budget. This proposal cannot pass any recovery-v1 approval validator.",
+  "generation_requests_authorized": 0,
+  "kind": "arabicprm_recovery_v2_experiment_proposal_NOT_APPROVED",
+  "metrics": [
+    "script/structure compliance per charged request",
+    "paired human semantic-fidelity decisions",
+    "operation/relation/entity preservation",
+    "source-owned literal fidelity",
+    "human correction rate and review time"
+  ],
+  "model": "qwen3:4b",
+  "paired_sample": [
+    {
+      "baseline_request_sha256": "7336115e01afe93eda0ff87dc18da1546b58d0a7a7500304d84bc6a949dbd8ea",
+      "context_sha256": "06d1d0183fd9f8979fd4cdecddf098b7b8b35d43c2513ec20d65b82720d84fae",
+      "contextual_request_sha256": "52e7b55d6705f1b4b08abd0bcd2de9b3263f3fa0ddae8fe458e6b5ab34ada2eb",
+      "job": "10/train:1:18/s0",
+      "source_sha256": "628ed21730654908a1ad5879622c2076eec813dce15eba70cd813ca2b09c21b9",
+      "stratum": "subtract"
+    },
+    {
+      "baseline_request_sha256": "48093d8fac9004d49456f1ba7a0d35134a0abc3f3e2524701d5aea849d33846f",
+      "context_sha256": "fea4a92e97920334e38e99d142e0ac8b3ecac4a40ba9be0e7fba05141710bbef",
+      "contextual_request_sha256": "4f9630a3fda43da95b4c44b46c7385346767512b3541f5692f0b5c2633417e55",
+      "job": "10/train:1:8/s0",
+      "source_sha256": "750abb6961e0951aee6dd61bd4c4e5c0759d98bacf577ef319781b73275cf9ce",
+      "stratum": "circle"
+    },
+    {
+      "baseline_request_sha256": "65aee0e4dc1bf237e311bd16b5ea983bc18d902f37b37534f367f1147ea72d20",
+      "context_sha256": "df23c6ac07e92ca43fec873a2e0f21603ab98a019ea0b3be3756b00ab1b6df44",
+      "contextual_request_sha256": "60c0a774e87c0ec6fdd31733762832e4298d7506d8e727901cd2ce4c851a92f2",
+      "job": "16/train:0:0/s0",
+      "source_sha256": "1c6f59f4b8d33aa3aee1203dee08292a0e0364aed5f016e27d44a9b05c6cea48",
+      "stratum": "radius"
+    },
+    {
+      "baseline_request_sha256": "02e3a4e6ef8006b325947f4ded401c02f41521f7440c0100e52b774865df95bc",
+      "context_sha256": "64b7d70233636586a208c891d558f6ac052d78207c7a3b2da435f1dacc82ba5d",
+      "contextual_request_sha256": "f8047f21ddffbb3c5983f32d89bb08bc81b459d37bcdbdcd4dcd659ac0686628",
+      "job": "21/train:2:3/s1",
+      "source_sha256": "815bcce8e56084d2c7b39c9f4fd8c0a1e5c42298dc089051540e25c502a60577",
+      "stratum": "iff"
+    },
+    {
+      "baseline_request_sha256": "30400bac664f1a1e4040a1a6190f7d841dde08c4905e82f4f25bd9ec484a624b",
+      "context_sha256": "c8a51f96fb186c71fd95cd223c2a24b373803d897342b07be8bdd3919b381351",
+      "contextual_request_sha256": "c991482d5493196b82fb49c6d5ba757d0809adc9c13fa73e469af5ebdc785f4f",
+      "job": "10/train:0:4/s2",
+      "source_sha256": "103999f5efa64e066a957ce0c42a068ec76751e1811f6c8fbab7672d94c511ae",
+      "stratum": "less_equal"
+    },
+    {
+      "baseline_request_sha256": "f0e5b2d0435f20a5cf8cba5e2c90b2608c7709d69c99a4e359faeb4fc72947f2",
+      "context_sha256": "8ca13094821593882f62f97c6c94f436a03f62a44fc03a4480c6bac72ccdbd4a",
+      "contextual_request_sha256": "afc130110346b2ba72a8b9b3165b9f0124a940ab6c70499dac08c8e1d4ae93f4",
+      "job": "10/train:0:4/s4",
+      "source_sha256": "4ccdd13ee51ec57cd5b8c2cd910abb4cb7dd0ca6f006a0f790a8cbd0bddde7b1",
+      "stratum": "greater"
+    },
+    {
+      "baseline_request_sha256": "04262ec2fd83413e9979044b02cf3ea48076361245472bd12b1942be35044727",
+      "context_sha256": "75cce283937d9b6665ed6554ee4c471a15dc326b87a31a1a58bc83adb66a816d",
+      "contextual_request_sha256": "63b2c1934b14ae793b034219621315dc7460f459d64c188addae923783854625",
+      "job": "10/train:1:0/s3",
+      "source_sha256": "6401b843e73d354d489ba2443ef483dd43d38d4a10beed30c721d517c8d71fc4",
+      "stratum": "interval"
+    },
+    {
+      "baseline_request_sha256": "8a88bce76d757f3f67ee2b1a92f6d824d9bbcece2e19c51918ab7b18c23cb540",
+      "context_sha256": "d4067a0097812a52973fa7a45f7c7034af5b584f34e41fa70c5079dfde779581",
+      "contextual_request_sha256": "52f833d7d28412c51eb8c6f284da79d724ee9fcc97874d9ade735f4914e65d8d",
+      "job": "10/train:1:19/s0",
+      "source_sha256": "5a1bd7843f57a10e334e4ce002f03b17212824c06359e2ee1a789062c559a4cd",
+      "stratum": "square"
+    },
+    {
+      "baseline_request_sha256": "19ff6d73d2b7e3c9a4ebb2a681138c909f00b61660c24f99e9b624863a537e2e",
+      "context_sha256": "6144e1491093dbded294c365a0c315bd8ac4d82f79819b08ab3f459f975e77b0",
+      "contextual_request_sha256": "363213bcf81dc82a51b7c87f22d927854e1968bdd678d014e553686e6320d867",
+      "job": "10/train:0:0/s3",
+      "source_sha256": "0f233f45352f068d82d0fcd0f8f408b3c2c0a4ebfacc384716b023049a0c175d",
+      "stratum": "digit"
+    },
+    {
+      "baseline_request_sha256": "9b316bf7a0c982047859c42d7842efc3d07c41efeb7ea71c3616e6a030d3a143",
+      "context_sha256": "7df6de6fa5236406b8cec957c6c2df2f4539c052866aa899800d38a7df755f29",
+      "contextual_request_sha256": "5bb705ea4d3e59175bef1069e1fa55683ef07a5d70ff00a39d86e9d2c59b528f",
+      "job": "10/train:0:5/s3",
+      "source_sha256": "5d8f958ab312f95131aa4bf858043c2a8e15fa646eb6736b4929c35b21d7a35a",
+      "stratum": "between"
+    },
+    {
+      "baseline_request_sha256": "14b7e0ec91d1ab4cbe4f7e0c5cac55f9b4f7a50dc3c8610532e3a026fa64224a",
+      "context_sha256": "a86c283a43816f45b309599dbe39c456985dd5ff9238ad1d0402d918de8be29b",
+      "contextual_request_sha256": "c700f5bdde2bcdfba228e8e3ea59d6e227a58059793b9db3512b4e8add8e54ee",
+      "job": "10/train:0:0/s2",
+      "source_sha256": "ad28b8b545675ed34af1a04a5919c6c25038b3e98c08478ac166b243fe9b465d",
+      "stratum": "base"
+    },
+    {
+      "baseline_request_sha256": "a3f5dbf4b3683a1d4c2b0840c95debe202ba41c5a2df9423c860231f1c29c42a",
+      "context_sha256": "aec2a7c7fe7463576c468368c3aee994527875ccc0ace16480200cf79c1afb48",
+      "contextual_request_sha256": "6e0a6fe106b4ac5fa6004266f10b5e0a51c838e6f38decebc512a94da0bf80a9",
+      "job": "10/train:0:7/s2",
+      "source_sha256": "6201111b83a0cb5b0922cb37cc442b9a40e24e3b1ce100a4bb204f4c63fd2ac0",
+      "stratum": "and"
+    }
+  ],
+  "prompt_version": "msa-context-glossary-v2",
+  "proposed_max_attempts_per_slot_per_arm": 1,
+  "proposed_new_requests": 24,
+  "proposed_tokens_per_request": 512,
+  "required_model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "schema_version": 1,
+  "version": "recovery-v2"
+}
