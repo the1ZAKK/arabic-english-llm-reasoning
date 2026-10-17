@@ -396,7 +396,7 @@ class Ollama:
             "letters and ordinary Arabic punctuation in each string; do not "
             "copy English words, model commentary, bullet symbols, code fences, "
             "newlines, tabs, invisible formatting characters, or alternative scripts. "
-            "Preserve the source meaning even where the reasoning is wrong.";"
+            "Preserve the source meaning even where the reasoning is wrong."
         )
         if attempt > 1:
             system += f" Retry {attempt}: render only the supplied words, without completing the surrounding reasoning."
