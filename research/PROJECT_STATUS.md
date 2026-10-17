@@ -10,10 +10,12 @@ Working branch: `research/arabicprm-v2-production`. This inventory supersedes ol
 | Baseline trajectory completion in Batch09–32 | 9 all-fields-mechanical / 176 partial / 7 with no complete fields | Mechanical completeness does not establish semantic correctness |
 | Recovery-v1 pilot | User reports 20/20 requests, 20 accepted fragments, no requests left | Actual `report.json` and `pilot_review.html` unavailable in this session. Counts, output semantics and post-pilot complete-field counts remain unverified |
 | Historical v1 accepted registry | Recorded 32 accepted records / 298 steps, separate cohort | Existing recorded decisions preserved; do not add to v2 completion; manifest says pilot trainer incompatible |
-| Recovery-v2 | Separate contextual/glossary/semantic-risk prototype in development | Offline tests, review interface, Windows packaging and CI required; zero new inference authorized |
+| Recovery-v2 | Separate context/glossary/risk prototype and pending review UI implemented, 20 new tests pass locally | Full CI / Windows packaging still pending; zero new inference authorized |
 | Training / evaluation | Historical GPU scripts inspected using AST only; model loads occur at top level | Do not import them for offline checks. New masked-label and evaluation contracts, real human QC, resource measurements and explicit authorization required |
 | Thesis / conclusions | Provenance and methodological evidence available; semantic and downstream results missing | No invented accuracy, training results, overall completion percentage or human QC |
 
 Original execution workflow: commit `4434b29fdbce65abf13fcbd8ede03223c7e106b1`, [Windows/Linux CI 39049708362](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39049708362), 209 offline tests per platform. This does not prove translation quality.
+
+Read-only audit milestone: `65e803620919324b89adf88b2e74e1d23365d4ca`, [CI 39053290606](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39053290606), both Windows and Linux passed. Source-only recovery-v2 preparation verified all 2,005 original unresolved contexts; actual Arabic outputs remain unavailable. Its deterministic source-risk proposal contains 12 paired slots / 24 proposed requests, not an approved allowance.
 
 Plan: `446191b88e072c291ff34388a7fbb4166a6813639a63bb2ef54896431c6e7e4e`. Model: `qwen3:4b`, digest `359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7`. The old 20-request allowance is closed; this work authorizes zero new requests. No training, export, scheduled tasks, model downloads or Global-MGSM access.

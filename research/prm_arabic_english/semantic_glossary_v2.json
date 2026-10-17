@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "version": "arabic-math-glossary-v1",
+  "status": "curated_AI_proposal_requires_bilingual_human_review",
+  "policy": "Variants are prompt guidance and provisional risk indicators, never automatic semantic approval or a replacement for structural validators.",
+  "sources": [
+    {"id": "nccd-arithmetic", "url": "https://nccd.gov.jo/EBV4.0/Root_Storage/AR/FW/Math_Framework_Arabic.pdf", "scope": "Official Arabic curriculum usage for arithmetic and circle/radius/diameter terminology; indexed text inspected. Direct PDF fetch timed out. Not an exhaustive bilingual standard."},
+    {"id": "nccd-grade5", "url": "https://nccd.gov.jo/EBV4.0/Root_Storage/AR/Math/2025/G05/2/MT05/WB/MA.05.WB2_2025.pdf", "scope": "Official examples distinguishing addition, subtraction and difference; indexed text inspected."},
+    {"id": "mathworld-circles", "url": "https://mathworld.wolfram.com/Circle-CircleIntersection.html", "scope": "Circle-intersection mathematics, not Arabic translation authority. Source errors must remain separate from translation fidelity."}
+  ],
+  "terms": [
+    {"id":"subtract","english":"\\bsubtract(?:ing|ed|s|ion)?\\b","arabic":["طرح","بطرح"],"accepted":"طرح","suspect":"استثن|استثناء|جمع|ضرب","group":"arithmetic_operation","note":"Subtracting as an initial fragment may be بطرح. الاستثناء denotes exclusion/exception, not the subtraction operation."},
+    {"id":"add","english":"\\badd(?:ing|ed|s|ition)?\\b","arabic":["جمع","بإضافة"],"accepted":"جمع|اضاف|نضيف","suspect":"طرح|قسمة","group":"arithmetic_operation","note":"Choose the grammatical form from the complete source sentence."},
+    {"id":"multiply","english":"\\b(?:multiply(?:ing)?|multipl(?:ied|ies|ication))\\b","arabic":["ضرب","بضرب"],"accepted":"ضرب","suspect":"قسمة|طرح","group":"arithmetic_operation","note":"Preserve the operation; never carry it out in the fragment."},
+    {"id":"divide","english":"\\b(?:divid(?:e|es|ed|ing)|division)\\b","arabic":["قسمة","بقسمة"],"accepted":"قسم","suspect":"ضرب|جمع","group":"arithmetic_operation","note":"Dividing by and dividing into require direction-sensitive human review."},
+    {"id":"square","english":"\\bsquar(?:e|es|ed|ing)\\b","arabic":["تربيع","بتربيع"],"accepted":"تربيع|مربع|نربع","suspect":"جذر|تنصيف","group":"arithmetic_operation","note":"Translate squaring literally even if the source applies it incorrectly."},
+    {"id":"square_root","english":"\\bsquare roots?\\b","arabic":["الجذر التربيعي"],"accepted":"جذر.{0,10}تربيعي","suspect":"تكعيبي","group":"arithmetic_operation","note":"This longer term takes precedence over square at the same source position."},
+    {"id":"sum","english":"\\bsum\\b","arabic":["مجموع"],"accepted":"مجموع|جمع","suspect":"فرق|حاصل ضرب","group":"arithmetic_operation","note":"A sum is distinct from a product or difference."},
+    {"id":"difference","english":"\\bdifference\\b","arabic":["فرق"],"accepted":"فرق|طرح","suspect":"مجموع|حاصل ضرب","group":"arithmetic_operation","note":"Direction and absolute difference may depend on the source context."},
+    {"id":"circle","english":"\\bcircles?\\b","arabic":["دائرة","دائرتان","دوائر"],"accepted":"دائر|دوائر","suspect":"كرة|دوران","group":"geometric_entity","note":"A circle, disk, sphere and rotation are distinct concepts. Inflection is context dependent."},
+    {"id":"radius","english":"\\b(?:radius|radii)\\b","arabic":["نصف قطر","أنصاف أقطار"],"accepted":"نصف.{0,12}قطر|انصاف.{0,12}اقطار","suspect":"محيط|قطر كامل","group":"geometric_entity","note":"Accept appropriate singular, dual and plural forms; do not confuse radius with diameter."},
+    {"id":"diameter","english":"\\bdiameters?\\b","arabic":["قطر","أقطار"],"accepted":"قطر|اقطار","suspect":"نصف.{0,4}قطر","group":"geometric_entity","note":"Diameter must not silently become radius."},
+    {"id":"center","english":"\\bcent(?:er|re)s?\\b","arabic":["مركز","مراكز"],"accepted":"مركز|مراكز","suspect":"محيط|حافة","group":"geometric_entity","note":"Possessive agreement and dual forms require context."},
+    {"id":"intersect","english":"\\bintersect(?:s|ed|ing|ion)?\\b","arabic":["يتقاطع","تقاطع"],"accepted":"تقاطع|تتقاطع|يتقاطع","suspect":"متوازي|توازي","group":"geometric_relation","note":"Do not repair an incomplete source intersection criterion while translating."},
+    {"id":"interval","english":"\\binterval notation\\b|\\bintervals?\\b","arabic":["ترميز الفترات","فترة","مجال"],"accepted":"فتر|مجال|مجالات","suspect":"فاصل زمني","group":"mathematical_notation","note":"Regional terminology varies. Preserve brackets, endpoints and open/closed status in source-owned literals."},
+    {"id":"less_equal","english":"\\bless than or equal to\\b","arabic":["أقل من أو يساوي","لا يتجاوز"],"accepted":"(?:اقل|اصغر).{0,14}(?:يساو|تساو)|لا يتجاوز|لا يزيد","suspect":"اكبر|يزيد على","group":"comparison","note":"Both comparison direction and inclusion of equality matter."},
+    {"id":"greater_equal","english":"\\bgreater than or equal to\\b","arabic":["أكبر من أو يساوي","لا يقل عن"],"accepted":"اكبر.{0,14}(?:يساو|تساو)|لا يقل","suspect":"اصغر|اقل من","group":"comparison","note":"Do not remove the equality alternative."},
+    {"id":"less","english":"\\bless than\\b","arabic":["أقل من","أصغر من"],"accepted":"اقل من|اصغر من","suspect":"اكبر من","group":"comparison","note":"A strict relation must not acquire equality."},
+    {"id":"greater","english":"\\bgreater than\\b","arabic":["أكبر من"],"accepted":"اكبر من","suspect":"اقل من|اصغر من","group":"comparison","note":"A strict relation must not acquire equality."},
+    {"id":"iff","english":"\\bif and only if\\b","arabic":["إذا وفقط إذا"],"accepted":"اذا وفقط اذا|حين وفقط حين|شرط لازم وكاف","suspect":"","group":"logical_connective","note":"An ordinary if is not equivalent to if and only if."},
+    {"id":"if","english":"\\bif\\b","arabic":["إذا"],"accepted":"اذا|ان كان|لو","suspect":"اذا وفقط اذا","group":"logical_connective","note":"Do not upgrade a one-way condition to equivalence."},
+    {"id":"and","english":"\\band\\b","arabic":["و"],"accepted":"و","suspect":"او","group":"logical_connective","note":"A one-word fragment needs sentence context; prefix agreement is reviewed by a human."},
+    {"id":"or","english":"\\bor\\b","arabic":["أو"],"accepted":"او","suspect":"","group":"logical_connective","note":"Inclusive/exclusive meaning must follow the source, not be inferred."},
+    {"id":"between","english":"\\bbetween\\b","arabic":["بين"],"accepted":"بين","suspect":"خارج","group":"comparison","note":"Endpoint inclusion is not supplied when the English source leaves it unspecified."},
+    {"id":"base","english":"\\bbase\\b","arabic":["أساس"],"accepted":"اساس|قاعدة","suspect":"ارتفاع","group":"mathematical_notation","note":"Number-system base and geometric base differ; use the problem context."},
+    {"id":"digit","english":"\\bdigits?\\b","arabic":["أرقام","خانات"],"accepted":"ارقام|رقم|خانات|خانة","suspect":"اعداد كاملة","group":"mathematical_notation","note":"Distinguish digits from complete numbers."}
+  ]
+}

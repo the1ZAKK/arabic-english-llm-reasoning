@@ -7,8 +7,8 @@
 | Recovery-v1-baseline | Actual original plan read-only | 1,075/2,252 fields mechanically complete; nine historical attempts per unresolved slot |
 | Recovery-v1-pilot20 | User-reported completed; actual report/HTML missing | Reported 20 requests / 20 accepted fragments / zero remaining. Semantic results and post-pilot field totals unknown. Permanently closed; never reset |
 | Repository-strict-audit-v2 | Reproducible offline audit of 64 committed drafts | 45 complete records under current strict checks; 35 field failures requiring investigation; not a semantic-error rate |
-| Recovery-v2-prototype | Development only | Context/glossary/risk heuristics; no model results, approval identity or inference allowance |
-| Recovery-v2-paired-diagnostic | Proposal pending actual-pilot audit and design review | No approved budget; no generated outputs; no comparison result |
+| Recovery-v2-prototype | Implemented; 20 additional offline tests, own CI pending | Context/glossary/risk heuristics and pending human UI; no model results, approval identity or inference allowance |
+| Recovery-v2-paired-diagnostic | Source-risk proposal: 12 slots / 24 requests, pending actual-pilot audit and design review | No approved budget; no generated outputs; no comparison result; source-only plan context verified |
 | Downstream PRM / QLoRA | Preparation only | No run, no export, no GPU feasibility claim; historical scripts unsafe to import offline |
 
 Raw private laptop approvals, attempt ledgers, checkpoints and unapproved outputs remain local. Public records contain aggregate evidence and artifact identities only. Software tests use deterministic synthetic responses and establish software behavior, not translation accuracy.
