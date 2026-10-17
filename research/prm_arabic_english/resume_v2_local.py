@@ -390,7 +390,13 @@ class Ollama:
             "at fragment boundaries and paragraph structure are retained by "
             "the caller. Return ONLY an object with the same keys and Arabic "
             "string values. Do not emit numbers, formulas, Latin letters, "
-            "placeholders, headings, line breaks or explanatory additions."
+            "placeholders, headings, line breaks or explanatory additions. "
+            "Each input is a standalone prose fragment: if it ends mid-sentence, "
+            "leave the Arabic translation equally incomplete. Output only Arabic "
+            "letters and ordinary Arabic punctuation in each string; do not "
+            "copy English words, model commentary, bullet symbols, code fences, "
+            "newlines, tabs, invisible formatting characters, or alternative scripts. "
+            "Preserve the source meaning even where the reasoning is wrong.";"
         )
         if attempt > 1:
             system += f" Retry {attempt}: render only the supplied words, without completing the surrounding reasoning."
