@@ -1,0 +1,336 @@
+{
+  "committed_draft_records": 64,
+  "committed_v2_batches_01_08": [
+    {
+      "batch": 1,
+      "draft_sha256": "a911c5e6289c9c843290794df474e2160cfce4ab32e452b37b2d02e436540e49",
+      "fields_checked": 86,
+      "human_qc_status": "pending",
+      "mechanical_validation": "requires_revalidation_without_modification",
+      "records": 8,
+      "records_passing_current_strict_checks": 5,
+      "source_lock_sha256": "0dfe1499b192a629351ff878d0abbf8ce1347e131db4b477ff1c42b6a20fb285",
+      "steps": 78,
+      "strict_check_failures": [
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:0:0"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:4:4"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:4:8"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:0"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:1"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:8"
+        }
+      ],
+      "training_eligible": false,
+      "translator_recorded_as_AI_assistant": true
+    },
+    {
+      "batch": 2,
+      "draft_sha256": "a5fadc04594f066409308de283b75e482682e0a72dd0e4e559c30d42afc7263f",
+      "fields_checked": 136,
+      "human_qc_status": "pending",
+      "mechanical_validation": "requires_revalidation_without_modification",
+      "records": 8,
+      "records_passing_current_strict_checks": 7,
+      "source_lock_sha256": "4a69db8e1d25dfadb5ade22a78dbae0a4a1b17ed076e23d8f429f39476dcf4ae",
+      "steps": 128,
+      "strict_check_failures": [
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:1:0"
+        }
+      ],
+      "training_eligible": false,
+      "translator_recorded_as_AI_assistant": true
+    },
+    {
+      "batch": 3,
+      "draft_sha256": "8cef528152d9dfb0c49335397322cdd48b1facf8d5c0cdf3a88b3873e70d41e1",
+      "fields_checked": 89,
+      "human_qc_status": "pending",
+      "mechanical_validation": "requires_revalidation_without_modification",
+      "records": 8,
+      "records_passing_current_strict_checks": 6,
+      "source_lock_sha256": "de1f6924c890785fd4670f38d2d56b878622afcb20f1abf7771cbe5a7260e590",
+      "steps": 81,
+      "strict_check_failures": [
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:0"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:1"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:4"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:7"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:9"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:1"
+        }
+      ],
+      "training_eligible": false,
+      "translator_recorded_as_AI_assistant": true
+    },
+    {
+      "batch": 4,
+      "draft_sha256": "6a743087e6ccbaa0ce085e57e2e0949656e4818638393463a5f5aed19ed6d46c",
+      "fields_checked": 99,
+      "human_qc_status": "pending",
+      "mechanical_validation": "requires_revalidation_without_modification",
+      "records": 8,
+      "records_passing_current_strict_checks": 6,
+      "source_lock_sha256": "562ffac583e4897ff4b858b84694b56470221e1a193b3ec36ebfef25e8911760",
+      "steps": 91,
+      "strict_check_failures": [
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:1"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:6:2"
+        }
+      ],
+      "training_eligible": false,
+      "translator_recorded_as_AI_assistant": true
+    },
+    {
+      "batch": 5,
+      "draft_sha256": "a06e16231f60fad1f62938efb186c2b71149f5685e6589c04c2a528d812a0e7c",
+      "fields_checked": 94,
+      "human_qc_status": "pending",
+      "mechanical_validation": "requires_revalidation_without_modification",
+      "records": 8,
+      "records_passing_current_strict_checks": 6,
+      "source_lock_sha256": "d91192d37cb2691da2dd370179e91b3bcf58ff8be0f39da06c57d8f6f2ceb21e",
+      "steps": 86,
+      "strict_check_failures": [
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:12"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:2"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:5"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:9"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:13"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:14"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:15"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:16"
+        }
+      ],
+      "training_eligible": false,
+      "translator_recorded_as_AI_assistant": true
+    },
+    {
+      "batch": 6,
+      "draft_sha256": "0acb60dade2ead72e8fcb83d0987b6fe107bdf9a44dc7f0a32b0634a36491583",
+      "fields_checked": 92,
+      "human_qc_status": "pending",
+      "mechanical_validation": "requires_revalidation_without_modification",
+      "records": 8,
+      "records_passing_current_strict_checks": 4,
+      "source_lock_sha256": "311ba1f96cdea21fdaa563f6fd6dea4332c462dfbc584c0fc120135bfe5b656d",
+      "steps": 84,
+      "strict_check_failures": [
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:0:7"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:10"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:6:8"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "dev:0:0"
+        }
+      ],
+      "training_eligible": false,
+      "translator_recorded_as_AI_assistant": true
+    },
+    {
+      "batch": 7,
+      "draft_sha256": "76b0be63d43077f8cd9170d7c381e4cdaf500fde07007786684adfa83a98de21",
+      "fields_checked": 68,
+      "human_qc_status": "pending",
+      "mechanical_validation": "requires_revalidation_without_modification",
+      "records": 8,
+      "records_passing_current_strict_checks": 7,
+      "source_lock_sha256": "97375eac0aec2d03e5ccf608fc71108ee1119a2dee62b26d6ecdedd352932da8",
+      "steps": 60,
+      "strict_check_failures": [
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:1:2"
+        }
+      ],
+      "training_eligible": false,
+      "translator_recorded_as_AI_assistant": true
+    },
+    {
+      "batch": 8,
+      "draft_sha256": "665cd8cc9d31e50b9b89de4b200a8e4f0292cde47b86a8e8536bf4ceaf2a46f1",
+      "fields_checked": 93,
+      "human_qc_status": "pending",
+      "mechanical_validation": "requires_revalidation_without_modification",
+      "records": 8,
+      "records_passing_current_strict_checks": 4,
+      "source_lock_sha256": "4e959a16a60dd1fda419e4383f8f0b1377edddff36f303e064e74fd132d3ecda",
+      "steps": 85,
+      "strict_check_failures": [
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:0:8"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:0"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:1"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:3:2"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:4:1"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:4:3"
+        },
+        {
+          "error": "Exact mathematical expressions/identifiers or numeric order changed",
+          "field": "train:5:1"
+        }
+      ],
+      "training_eligible": false,
+      "translator_recorded_as_AI_assistant": true
+    }
+  ],
+  "completed_pilot": {
+    "new_requests_authorized": 0,
+    "old_allowance_reusable": false,
+    "state": "user_reported_exhausted_actual_artifacts_not_yet_supplied",
+    "user_reported_accepted_fragments": 20,
+    "user_reported_requests": 20,
+    "verified_semantic_accuracy": null
+  },
+  "global_mgsm_accessed": false,
+  "historical_v1_registry": {
+    "new_human_QC_performed": false,
+    "recorded_accepted_records": 32,
+    "recorded_steps": 298,
+    "scope": "separate historical v1 cohort; do not add to v2 completion counts",
+    "training_compatible": false
+  },
+  "human_qc_for_v2": "pending",
+  "inference_requests": 0,
+  "kind": "public_project_evidence_v2",
+  "legacy_gpu_scripts_static_inspection": {
+    "eval_pilot_baseline.py": {
+      "executed": false,
+      "import_not_safe_for_offline_audit": true,
+      "main_guard_present": false,
+      "model_load_calls_in_source": 2
+    },
+    "eval_reloaded_pilot.py": {
+      "executed": false,
+      "import_not_safe_for_offline_audit": true,
+      "main_guard_present": false,
+      "model_load_calls_in_source": 3
+    },
+    "train_arabicprm_pilot.py": {
+      "executed": false,
+      "import_not_safe_for_offline_audit": true,
+      "main_guard_present": false,
+      "model_load_calls_in_source": 2
+    }
+  },
+  "model_downloads": 0,
+  "recovery_baseline": {
+    "fields": 2252,
+    "historical_attempts_per_unresolved_slot": 9,
+    "plan_sha256": "446191b88e072c291ff34388a7fbb4166a6813639a63bb2ef54896431c6e7e4e",
+    "records": {
+      "after_pilot_record_progress": "unknown_until_actual_pilot_artifacts_are_verified",
+      "field_completion_by_record": {
+        "all_fields_mechanical": 9,
+        "no_complete_fields": 7,
+        "partial_fields": 176
+      },
+      "plan_sha256": "446191b88e072c291ff34388a7fbb4166a6813639a63bb2ef54896431c6e7e4e",
+      "records": 192,
+      "source": "actual_plan_field_inventory"
+    },
+    "unresolved_fields": 1177,
+    "unresolved_slots": 2005,
+    "validated_fields": 1075
+  },
+  "schema_version": 1,
+  "selected_records": 256,
+  "selected_steps": 2753,
+  "selection_manifest_sha256": "233421889a0ac1585376ee991556bbd84f44a46af470275278329280400e8665",
+  "source_full_sha256": "1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089",
+  "source_problem_group_leakage": 0,
+  "source_revision": "7ecc794703b2877f63226f2477a49b34f9b25163",
+  "split_records": {
+    "dev": 52,
+    "train": 204
+  },
+  "training_and_export": "not_started_or_authorized_by_this_work"
+}
