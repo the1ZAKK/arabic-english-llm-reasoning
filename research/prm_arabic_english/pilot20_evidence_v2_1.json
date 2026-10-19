@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "kind": "arabicprm_laptop_evidence_revalidation_v2_1",
+  "subject_audit_sha256": "3942a346a653ee2c3f579f7a0ae83d1f83c6bba722336cf1a4a2180d44aaefec",
+  "uploaded_audit_file_sha256": "6a6734331feb9e4af9105a0ca63b8f3a694813d6aaf34927aec10d4753fe6ef7",
+  "uploaded_qc_markdown_sha256": "ec2161957605f8016ceb046c96b14c3704cb1bebdef660e0c3bfba31c89a387b",
+  "plan_sha256": "446191b88e072c291ff34388a7fbb4166a6813639a63bb2ef54896431c6e7e4e",
+  "model": "qwen3:4b",
+  "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "generation_prompt_version": "msa-single-fragment-v1",
+  "historical_review_prompt_version": "msa-context-glossary-v2",
+  "cloud_recomputed": [
+    "all_20_item_context_source_output_hashes",
+    "exact_companion_markdown",
+    "canonical_frozen_source_contexts_and_native_ratings",
+    "initial_dispatch_order",
+    "all_original_risk_analyses",
+    "entire_baseline_and_post_pilot_mechanical_inventories"
+  ],
+  "laptop_attested_not_cloud_replayed": {
+    "charged_requests": 20,
+    "remaining_requests": 0,
+    "reservation_ledger_verified_by_original_laptop_tool": true,
+    "report_file_sha256": "c16e51de0a6f0f022403916e4c913206afe09df9e3a662fea48283df6b7f07a2",
+    "html_file_sha256": "088fa7f75e9890ade9fdd5fd505a62fc9a4ad5474f00a0eaa9ddacedbadba00e",
+    "report_identity": "aacbc8a49224827d20ee994697c52a4738110ab04e81e5835c658d5e9ac0445e"
+  },
+  "limitation": "Derived audit and Markdown supplied; raw pilot report/HTML, approval and reservation ledger not uploaded. Hashes bind evidence but do not authenticate a device or human.",
+  "completion_inventory": {
+    "baseline": {
+      "scope": "Batch09-32 only; mechanical completeness is not semantic approval",
+      "fields": 2252,
+      "baseline_complete_fields": 1075,
+      "additional_accepted_fragments": 0,
+      "additional_complete_fields": 0,
+      "complete_fields": 1075,
+      "remaining_fields": 1177,
+      "records": 192,
+      "field_completion_by_record": {
+        "all_fields_mechanical": 9,
+        "no_complete_fields": 7,
+        "partial_fields": 176
+      },
+      "remaining_slots": 2005,
+      "original_pilot_allowance": "closed_never_reused",
+      "new_generation_requests_authorized": 0,
+      "human_qc_status": "pending",
+      "training_eligible": false
+    },
+    "after_pilot": {
+      "scope": "Batch09-32 only; mechanical completeness is not semantic approval",
+      "fields": 2252,
+      "baseline_complete_fields": 1075,
+      "additional_accepted_fragments": 20,
+      "additional_complete_fields": 14,
+      "complete_fields": 1089,
+      "remaining_fields": 1163,
+      "records": 192,
+      "field_completion_by_record": {
+        "all_fields_mechanical": 11,
+        "no_complete_fields": 7,
+        "partial_fields": 174
+      },
+      "remaining_slots": 1985,
+      "original_pilot_allowance": "closed_never_reused",
+      "new_generation_requests_authorized": 0,
+      "human_qc_status": "pending",
+      "training_eligible": false
+    }
+  },
+  "human_qc_status": "pending",
+  "semantic_acceptance": "not_established",
+  "training_eligible": false,
+  "generation_requests_authorized": 0,
+  "old_pilot": "closed_never_reused"
+}

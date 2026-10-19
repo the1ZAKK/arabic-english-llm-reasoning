@@ -1,5 +1,11 @@
 # Session handoff
 
+## Current evidence update — 2026-10-19
+
+Remote head was 2394467dbce62a1fc9adbb9e1b7872ce392beba6 at session start. Actual `semantic_audit.json` and `provisional_bilingual_QC.md` have now been supplied and independently revalidated. See [PILOT20_FINDINGS_V2_1.md](PILOT20_FINDINGS_V2_1.md) and the public safe aggregate. All 20 hashes, frozen contexts, old analyses, initial order and entire completion inventories reproduce; Markdown matches exactly. The audit canonical identity is 3942a346a653ee2c3f579f7a0ae83d1f83c6bba722336cf1a4a2180d44aaefec. Raw ledger/approval/report/HTML were not uploaded, so reservation accounting is laptop-attested, not cloud-replayed. Actual generation was v1, not the proposed v2 prompt.
+
+Post-pilot Batch09–32: 1,089 complete / 1,163 remaining fields, 1,985 missing slots, 11 complete / 174 partial / 7 no-complete-field trajectories. Human QC pending; semantic approval not established. Subtraction/geometry/interval/grammar issues and separate original score/circle reasoning errors are documented. Source native ratings (including negative score and positive circle steps) remain unchanged. Develop separate v2.1 files and tests, not edits to historical v2 evidence or original plan-bound code. The older missing-output paragraphs below describe the prior session only.
+
 The latest verified **code and launcher** milestone is `0ef991fdbf2a0fe3cf0269aabfcc3665637ee870`: [CI 39056158971](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39056158971) passed 245 offline tests on both Windows and Linux, native recovery-v2 package verification and real CMD correct/incorrect-installer-hash checks. Legacy scheduled-task execution was skipped. The containing final handoff commit changes documentation only; verify its branch head and attached checks when resuming. No continuing background execution is implied.
 
 ## Durable milestones
