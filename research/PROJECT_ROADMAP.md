@@ -14,3 +14,5 @@
 | Future | Separately versioned segmentation study | Provisional design concern documented; no migration implemented | Investigate English compound and LaTeX annotation policy cases without editing the old parser, prepared plan, checkpoints or validated data |
 
 Next safe action: implement separate recovery-v2.1 risks/prompts and usable resumable offline QC from the verified real pilot findings, then test both platforms. The raw report/ledger remain local, while the uploaded derived audit supplies all 20 actual Arabic candidates. Preserve the old v2 workflow and evidence. Human QC and any new diagnostic budget remain explicit gates. The project is not scientifically complete; no indefinite background execution is implied by this roadmap.
+
+Current v2.1 milestone: finish deterministic policy/QC/native-package CI, publish a pinned offline follow-up launcher, and complete the [diagnostic readiness decision](RECOVERY_V2_1_DIAGNOSTIC_DECISION.md). Human semantic/design review, future paired executor development and separate inference authorization remain outstanding. Safe development does not imply approval to run the 24 requests.

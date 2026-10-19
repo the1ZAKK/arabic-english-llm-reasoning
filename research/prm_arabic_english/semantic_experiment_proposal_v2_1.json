@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "kind": "arabicprm_recovery_v2_1_diagnostic_proposal_NOT_APPROVED",
+  "version": "recovery-v2.1",
+  "prompt_version": "msa-context-glossary-v2.1",
+  "baseline_plan_sha256": "446191b88e072c291ff34388a7fbb4166a6813639a63bb2ef54896431c6e7e4e",
+  "subject_audit_sha256": "3942a346a653ee2c3f579f7a0ae83d1f83c6bba722336cf1a4a2180d44aaefec",
+  "generation_prompt_of_observed_pilot": "msa-single-fragment-v1",
+  "model": "qwen3:4b",
+  "required_model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "glossary_sha256": "7a9a1d2bc74b21c82c6098f2ae9f33a10eda4cf5b5345debc87d2ea06f2e8308",
+  "paired_sample": [
+    {
+      "job": "10/train:0:0/s3",
+      "stratum": "observed_agreement_review",
+      "source_record_id": "prm800k_4eb844d9caeb687bb967241a02872c143905253fbe108de7e41ec6103c432202",
+      "source_sha256": "0f233f45352f068d82d0fcd0f8f408b3c2c0a4ebfacc384716b023049a0c175d",
+      "context_sha256": "6144e1491093dbded294c365a0c315bd8ac4d82f79819b08ab3f459f975e77b0",
+      "control_request_sha256": "19ff6d73d2b7e3c9a4ebb2a681138c909f00b61660c24f99e9b624863a537e2e",
+      "contextual_request_sha256": "9e400720f5e291a22b09a14a138764385166c89239de9edd2e511ffe92cae313",
+      "dispatch_arms": [
+        "control",
+        "contextual"
+      ]
+    },
+    {
+      "job": "10/train:0:5/s3",
+      "stratum": "observed_agreement_review",
+      "source_record_id": "prm800k_4eb844d9caeb687bb967241a02872c143905253fbe108de7e41ec6103c432202",
+      "source_sha256": "5d8f958ab312f95131aa4bf858043c2a8e15fa646eb6736b4929c35b21d7a35a",
+      "context_sha256": "7df6de6fa5236406b8cec957c6c2df2f4539c052866aa899800d38a7df755f29",
+      "control_request_sha256": "9b316bf7a0c982047859c42d7842efc3d07c41efeb7ea71c3616e6a030d3a143",
+      "contextual_request_sha256": "b71b66aa3061d66a64a5d3382cd2d4384371d8617acd8b6c041275c5626512b8",
+      "dispatch_arms": [
+        "contextual",
+        "control"
+      ]
+    },
+    {
+      "job": "10/train:1:0/s3",
+      "stratum": "observed_terminology_and_sentence_review",
+      "source_record_id": "prm800k_530481bb7a56f44c906a88b5448ff033e82e8ad0d8a7d8bb6c4b1f0ef821be29",
+      "source_sha256": "6401b843e73d354d489ba2443ef483dd43d38d4a10beed30c721d517c8d71fc4",
+      "context_sha256": "75cce283937d9b6665ed6554ee4c471a15dc326b87a31a1a58bc83adb66a816d",
+      "control_request_sha256": "04262ec2fd83413e9979044b02cf3ea48076361245472bd12b1942be35044727",
+      "contextual_request_sha256": "2ebfa6433b321185149d4315db1e35ff85a4a92828aa6a1f4054f8bd4caf1994",
+      "dispatch_arms": [
+        "control",
+        "contextual"
+      ]
+    },
+    {
+      "job": "10/train:1:14/s0",
+      "stratum": "observed_changed_mathematical_meaning_or_operation",
+      "source_record_id": "prm800k_530481bb7a56f44c906a88b5448ff033e82e8ad0d8a7d8bb6c4b1f0ef821be29",
+      "source_sha256": "2dfb87a8495060738f31e2cf07bf845e169da1a48d63be89cfc55971f6e4e272",
+      "context_sha256": "7dd4caf6f872c3b5314f20cc25388e213678080755b8a344cf5bcb82b2e97272",
+      "control_request_sha256": "abb74b7323c194ecbb5402f0a6b0f91134a2d0938f20874f326ce8b50b6c657d",
+      "contextual_request_sha256": "f187e3f82aab7f19ac72ec6f5e01a9fefb45813a6d95423b7a93aaba23d510ab",
+      "dispatch_arms": [
+        "contextual",
+        "control"
+      ]
+    },
+    {
+      "job": "10/train:1:17/s0",
+      "stratum": "observed_agreement_review",
+      "source_record_id": "prm800k_530481bb7a56f44c906a88b5448ff033e82e8ad0d8a7d8bb6c4b1f0ef821be29",
+      "source_sha256": "567cbb6b9e6c2689a864eea97be4655d1e6e3a342bd2942d1634ba154cfe0397",
+      "context_sha256": "bdd7ce4ff42b7b3ab3e0ffd42a1db1a820b9ac610630982669027a8b3ec37314",
+      "control_request_sha256": "1c60d140ed82a71903fe73734065763bd349bb798806d92af71f8ba26437c552",
+      "contextual_request_sha256": "b0c1c61684158f8164764159ee048b9dfaa9a8f1689c0869735a90f2b162eb7e",
+      "dispatch_arms": [
+        "control",
+        "contextual"
+      ]
+    },
+    {
+      "job": "10/train:1:18/s0",
+      "stratum": "observed_changed_mathematical_meaning_or_operation",
+      "source_record_id": "prm800k_530481bb7a56f44c906a88b5448ff033e82e8ad0d8a7d8bb6c4b1f0ef821be29",
+      "source_sha256": "628ed21730654908a1ad5879622c2076eec813dce15eba70cd813ca2b09c21b9",
+      "context_sha256": "06d1d0183fd9f8979fd4cdecddf098b7b8b35d43c2513ec20d65b82720d84fae",
+      "control_request_sha256": "7336115e01afe93eda0ff87dc18da1546b58d0a7a7500304d84bc6a949dbd8ea",
+      "contextual_request_sha256": "7f432f04e48c40ba824f195fb879c298d1c27a341170bb2f9f25cc93148daeb0",
+      "dispatch_arms": [
+        "contextual",
+        "control"
+      ]
+    },
+    {
+      "job": "10/train:1:19/s0",
+      "stratum": "faithful_translation_of_flawed_source_control",
+      "source_record_id": "prm800k_530481bb7a56f44c906a88b5448ff033e82e8ad0d8a7d8bb6c4b1f0ef821be29",
+      "source_sha256": "5a1bd7843f57a10e334e4ce002f03b17212824c06359e2ee1a789062c559a4cd",
+      "context_sha256": "d4067a0097812a52973fa7a45f7c7034af5b584f34e41fa70c5079dfde779581",
+      "control_request_sha256": "8a88bce76d757f3f67ee2b1a92f6d824d9bbcece2e19c51918ab7b18c23cb540",
+      "contextual_request_sha256": "a33392fdfa8e317defa52167d1135f6328397a325952c858bb68317b7c63fbbb",
+      "dispatch_arms": [
+        "control",
+        "contextual"
+      ]
+    },
+    {
+      "job": "12/train:2:0/s5",
+      "stratum": "fresh_problem_less_equal_control",
+      "source_record_id": "prm800k_67c655639afdde7d0c0a03d5850badedc3c22fb4741c8fbe8adb6e276440c66e",
+      "source_sha256": "83dd05199d1b6f86271a2ed9962b975120108d051197060929fd1b4d32c07c33",
+      "context_sha256": "2071a4943ec4fbcba829d5809ed78c0d819738f932e74e57cd7d2ce2bdddbf97",
+      "control_request_sha256": "10b092b30f4a2d155b3236bfbe63b88c71f11fadb286c020f5a5c06a23647cfb",
+      "contextual_request_sha256": "2eb4e612f803cad79cae26dba0be5655f4c63be5f7c2faf7702b80404db1553b",
+      "dispatch_arms": [
+        "contextual",
+        "control"
+      ]
+    },
+    {
+      "job": "17/train:4:7/s2",
+      "stratum": "fresh_problem_greater_control",
+      "source_record_id": "prm800k_a0dec0230e7d15be414d547ba1fc4209fc78f0cb6ad0e70a39665e265ebf9172",
+      "source_sha256": "4ccdd13ee51ec57cd5b8c2cd910abb4cb7dd0ca6f006a0f790a8cbd0bddde7b1",
+      "context_sha256": "ec8510c87b1b545301eeb579dd60cdf10bc7de31ecaa0b1dfed72252614ca266",
+      "control_request_sha256": "f0e5b2d0435f20a5cf8cba5e2c90b2608c7709d69c99a4e359faeb4fc72947f2",
+      "contextual_request_sha256": "e442facfd1d8b16a2468ff17cf2e18130f66b2ad28dd8908f8ec835c1fa338fc",
+      "dispatch_arms": [
+        "control",
+        "contextual"
+      ]
+    },
+    {
+      "job": "13/train:6:0/s4",
+      "stratum": "fresh_problem_circle_control",
+      "source_record_id": "prm800k_843a22abcfcd020047badb71144ea99775b71841013b9e4677587dc3e95685f4",
+      "source_sha256": "b93d3bcecff5d7493a58a41ea44f7196a46295f6512ebc06940510676a666384",
+      "context_sha256": "a7ec6273df65f97c38c93307550e888bcfcf6effc681a7e98865c86f0b344a1a",
+      "control_request_sha256": "90e5def87b783a5d2323625a6dfd24e46075dd15c4df8c98e2b361030da13c29",
+      "contextual_request_sha256": "62d1136f94365ec724d5410a61a9b441c0ada19dbc17cb57d198f8d280ca1d08",
+      "dispatch_arms": [
+        "contextual",
+        "control"
+      ]
+    },
+    {
+      "job": "21/train:2:3/s1",
+      "stratum": "fresh_problem_iff_control",
+      "source_record_id": "prm800k_aa7d446a4d7348343c5d789ae8883da80caef004516a843d66d279c94b34d34e",
+      "source_sha256": "815bcce8e56084d2c7b39c9f4fd8c0a1e5c42298dc089051540e25c502a60577",
+      "context_sha256": "64b7d70233636586a208c891d558f6ac052d78207c7a3b2da435f1dacc82ba5d",
+      "control_request_sha256": "02e3a4e6ef8006b325947f4ded401c02f41521f7440c0100e52b774865df95bc",
+      "contextual_request_sha256": "8e62c0bc5c4dd70b96cb149aaee65a040de9f16df5d348930a214eb8cde1e832",
+      "dispatch_arms": [
+        "control",
+        "contextual"
+      ]
+    },
+    {
+      "job": "16/train:0:0/s0",
+      "stratum": "fresh_problem_radius_control",
+      "source_record_id": "prm800k_898d9e56600d0c572f0569a4bdca039c1ed9a65be7cd3ba648c574ed376e1994",
+      "source_sha256": "1c6f59f4b8d33aa3aee1203dee08292a0e0364aed5f016e27d44a9b05c6cea48",
+      "context_sha256": "df23c6ac07e92ca43fec873a2e0f21603ab98a019ea0b3be3756b00ab1b6df44",
+      "control_request_sha256": "65aee0e4dc1bf237e311bd16b5ea983bc18d902f37b37534f367f1147ea72d20",
+      "contextual_request_sha256": "2fb8fb5a35f015f155f80ebf8eca0205c1b527b842a493bb9f731e0a1a1d0283",
+      "dispatch_arms": [
+        "contextual",
+        "control"
+      ]
+    }
+  ],
+  "source_problem_groups": 7,
+  "proposed_max_new_requests": 24,
+  "proposed_max_attempts_per_slot_per_arm": 1,
+  "proposed_max_attempts_per_slot": 2,
+  "proposed_tokens_per_request": 512,
+  "common_options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 4096,
+    "num_predict": 512
+  },
+  "arms": [
+    "v1_isolated_prompt_common_4096_context_options",
+    "msa-context-glossary-v2.1"
+  ],
+  "accounting_policy": "Reserve durably before dispatch; transport failure/crash consumes reservation; no automatic replacement, retry, refund or renewed budget. Missing outcomes remain in charged-request denominator.",
+  "dispatch_order": [
+    {
+      "job": "10/train:0:0/s3",
+      "arm": "control"
+    },
+    {
+      "job": "10/train:0:0/s3",
+      "arm": "contextual"
+    },
+    {
+      "job": "10/train:0:5/s3",
+      "arm": "contextual"
+    },
+    {
+      "job": "10/train:0:5/s3",
+      "arm": "control"
+    },
+    {
+      "job": "10/train:1:0/s3",
+      "arm": "control"
+    },
+    {
+      "job": "10/train:1:0/s3",
+      "arm": "contextual"
+    },
+    {
+      "job": "10/train:1:14/s0",
+      "arm": "contextual"
+    },
+    {
+      "job": "10/train:1:14/s0",
+      "arm": "control"
+    },
+    {
+      "job": "10/train:1:17/s0",
+      "arm": "control"
+    },
+    {
+      "job": "10/train:1:17/s0",
+      "arm": "contextual"
+    },
+    {
+      "job": "10/train:1:18/s0",
+      "arm": "contextual"
+    },
+    {
+      "job": "10/train:1:18/s0",
+      "arm": "control"
+    },
+    {
+      "job": "10/train:1:19/s0",
+      "arm": "control"
+    },
+    {
+      "job": "10/train:1:19/s0",
+      "arm": "contextual"
+    },
+    {
+      "job": "12/train:2:0/s5",
+      "arm": "contextual"
+    },
+    {
+      "job": "12/train:2:0/s5",
+      "arm": "control"
+    },
+    {
+      "job": "17/train:4:7/s2",
+      "arm": "control"
+    },
+    {
+      "job": "17/train:4:7/s2",
+      "arm": "contextual"
+    },
+    {
+      "job": "13/train:6:0/s4",
+      "arm": "contextual"
+    },
+    {
+      "job": "13/train:6:0/s4",
+      "arm": "control"
+    },
+    {
+      "job": "21/train:2:3/s1",
+      "arm": "control"
+    },
+    {
+      "job": "21/train:2:3/s1",
+      "arm": "contextual"
+    },
+    {
+      "job": "16/train:0:0/s0",
+      "arm": "contextual"
+    },
+    {
+      "job": "16/train:0:0/s0",
+      "arm": "control"
+    }
+  ],
+  "evaluation": {
+    "primary": "blinded human semantic-fidelity decisions on original outputs, before AI suggestions or arm identity",
+    "secondary": [
+      "hard Arabic/structure compliance per charged request",
+      "operation/entity/relation preservation",
+      "grammar and interval terminology",
+      "faithfulness to flawed source",
+      "human correction proposals and measured review time"
+    ],
+    "report": "paired wins/ties/losses/unresolved and per-stratum descriptions; display failures and source-group clustering; no population efficacy or training-quality claim",
+    "limitations": "Purposive development sample; observed-error cases reused; only twelve pairs; prompt/context/glossary bundle confounded; blind labels and independent correction review required in a future executor/review package."
+  },
+  "approved": false,
+  "approved_by": null,
+  "approved_at_utc": null,
+  "active_budget_id": null,
+  "generation_requests_authorized": 0,
+  "execution_implemented": false,
+  "old_pilot": "closed_never_reused",
+  "gate": "Genuine human findings/design review, separate explicit approval bound to this canonical proposal hash and exact runtime/model/sample/limits, tested executor and final affirmative laptop confirmation. No execution route exists here."
+}

@@ -50,7 +50,7 @@ jobs:
         run: |
           $tokens = $null
           $errors = $null
-          foreach ($script in @("resume_v2_windows.ps1", "install_v2_unattended_windows.ps1", "install_v2_recovery_windows.ps1", "install_pilot_preparation_windows_v1.ps1", "install_pilot_execution_windows_v1.ps1", "install_semantic_recovery_windows_v2.ps1")) {
+          foreach ($script in @("resume_v2_windows.ps1", "install_v2_unattended_windows.ps1", "install_v2_recovery_windows.ps1", "install_pilot_preparation_windows_v1.ps1", "install_pilot_execution_windows_v1.ps1", "install_semantic_recovery_windows_v2.ps1", "install_semantic_recovery_windows_v2_1.ps1")) {
             [System.Management.Automation.Language.Parser]::ParseFile(
               "$pwd/research/prm_arabic_english/$script",
               [ref]$tokens, [ref]$errors) | Out-Null
@@ -64,6 +64,14 @@ jobs:
         run: |
           & powershell -NoProfile -ExecutionPolicy Bypass -File research/prm_arabic_english/install_semantic_recovery_windows_v2.ps1 -RepoRoot "$pwd" -PinnedCommit "$env:PINNED_SEMANTIC_SHA" -PackageOnly
           if ($LASTEXITCODE -ne 0) { throw "Native offline semantic package failed: $LASTEXITCODE" }
+      - name: Verify separate recovery-v2.1 follow-up package with no model or budget access
+        if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
+        shell: pwsh
+        env:
+          PINNED_FOLLOWUP_SHA: ${{ github.sha }}
+        run: |
+          & powershell -NoProfile -ExecutionPolicy Bypass -File research/prm_arabic_english/install_semantic_recovery_windows_v2_1.ps1 -RepoRoot "$pwd" -PinnedCommit "$env:PINNED_FOLLOWUP_SHA" -PackageOnly
+          if ($LASTEXITCODE -ne 0) { throw "Native v2.1 follow-up packaging failed: $LASTEXITCODE" }
       - name: Verify offline semantic CMD SHA256 and block a tampered hash before installer execution
         if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
         shell: pwsh

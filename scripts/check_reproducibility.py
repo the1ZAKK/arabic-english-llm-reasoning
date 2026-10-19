@@ -29,6 +29,9 @@ MODULES = (
     "test_semantic_runtime_v2",
     "test_research_contracts_v2",
     "test_laptop_evidence_v2_1",
+    "test_semantic_policy_v2_1",
+    "test_semantic_followup_v2_1",
+    "test_semantic_runtime_v2_1",
 )
 
 if __name__ == "__main__":

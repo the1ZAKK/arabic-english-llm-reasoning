@@ -42,3 +42,9 @@ Private `/recovery_artifacts/` is Git-ignored. Do not force-add approvals, revie
 5. `RESEARCH_PROTOCOL_V2.md` is a methodology/thesis working draft with verified aggregates and unknown-result placeholders. No new inference, training, export, model download, task installation or Global-MGSM access occurred. Do not claim the project is scientifically complete or that CI proves translation quality.
 
 Continue safe work when genuine new evidence arrives, verify current GitHub state first, and update the status/roadmap/registry/decisions/handoff after meaningful verified milestones.
+
+## Recovery-v2.1 development milestone
+
+Evidence commit aceacd47bedcc1cb1122f6a6986091e8b5f04bfb passed CI 39219153070: 249 tests each on Linux/Windows plus native checks. New v2.1 files preserve old v2 bytes: `semantic_policy_v2_1.py`, glossary v1.1, follow-up/review Python and JS, and separate offline runtime/installer. New UI can load prior v2.1 decisions, preserves unchanged reviewer/timestamp fields, and requires attestation for changed non-pending decisions. AI analysis is collapsed; original output, correction proposal and English/source-label cautions are separate.
+
+All20 provisional AI case findings: two serious meaning/operation risks, one terminology/sentence issue, three agreement review cases (two interpretation/register dependent), fourteen with no identified issue. Not human labels or a quality estimate. Revised inactive diagnostic proposal 4327d769e30fdf2324d0d8000b4c828d3d311917993987af23c98687f1e0aa6d has twelve pairs across seven problems, including observed errors and fresh controls, 24 maximum new reservations, one per slot per arm, 512 tokens. No executor or budget exists. See the exact gates in RECOVERY_V2_1_DIAGNOSTIC_DECISION.md. Complete the current implementation CI before declaring the new milestone verified.

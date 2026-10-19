@@ -16,3 +16,9 @@
 Evidence update: [PILOT20_FINDINGS_V2_1.md](PILOT20_FINDINGS_V2_1.md); aggregate `pilot20_evidence_v2_1.json`. Historical v2 risk flags missed agreement/possessive issues; all new judgments remain provisional AI review.
 
 Raw private laptop approvals, attempt ledgers, checkpoints and unapproved outputs remain local. Public records contain aggregate evidence and artifact identities only. Software tests use deterministic synthetic responses and establish software behavior, not translation accuracy.
+
+| New experiment / development | State | Evidence / limits |
+|---|---|---|
+| Pilot20-derived-evidence-v2.1 | aceacd47, CI 39219153070 passed 249 tests on each platform | Canonical audit 3942a346, exact Markdown, all20 hashes/contexts/inventories reproduced; reservation ledger laptop-attested |
+| Recovery-v2.1-diagnostic-design | NOT APPROVED; proposal 4327d769 | 12 pairs / 7 problem groups / 24 proposed reservations, 1 per arm, 512 tokens; human design review and separately tested executor required |
+| Recovery-v2.1-policy-and-QC | Separate implementation, offline verification underway | Versioned glossary, narrow risk checks, unchanged hard validators, all20 provisional case notes, human-record import/resume; no inference |
