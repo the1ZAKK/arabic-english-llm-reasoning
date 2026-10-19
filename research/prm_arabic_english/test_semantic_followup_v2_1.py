@@ -242,6 +242,8 @@ class FrozenDiagnosticTests(unittest.TestCase):
 
     def test_exact_new_proposal_payloads_sources_and_cap_are_reproducible(self):
         proposal = legacy.parse(Path(followup.__file__).with_name('semantic_experiment_proposal_v2_1.json').read_bytes())
+        self.assertEqual(baseline.digest(proposal), '4327d769e30fdf2324d0d8000b4c828d3d311917993987af23c98687f1e0aa6d')
+        self.assertEqual(proposal['glossary_sha256'], legacy.sha(followup.policy.GLOSSARY.read_bytes()))
         fields = {(f['batch'], f['field']): f for f in self.fixture.plan['fields']}
         jobs = []
         for entry in proposal['paired_sample']:
