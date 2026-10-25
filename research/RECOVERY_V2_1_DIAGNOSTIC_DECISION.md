@@ -30,7 +30,7 @@ Twelve source-bound slots form twelve pairs / at most 24 new reservations. Six c
 | Control | Isolated v1 prompt in a new experiment; never reuse old pilot outputs as a prospective paired control |
 | Intervention | `msa-context-glossary-v2.1`: full field, problem, adjacent steps, compact contextual glossary |
 | Current approval identity / time / active budget | None / None / None |
-| Current authorized requests / execution implementation | 0 / absent |
+| Current authorized requests / execution implementation | 0 / separate runner implemented; verification tracked in DIAGNOSTIC24_RUNNER_V2_1.md |
 
 The long circle criterion originally exceeded the conservative byte/token envelope. Compact glossary prompt notes and shorter system wording now retain the complete source context without truncation. Every selected contextual payload plus 512 generated tokens and a 128-unit margin fits the existing 4096 conservative envelope. Tests recompute exact payload hashes; none sends a request. Prompt/glossary edits after this proposal require a new identity and renewed design review.
 
@@ -53,3 +53,5 @@ The laptop must then verify protected snapshots, source/checkpoint hashes, histo
 Until those gates are met, continue offline review and deterministic development only. All human-QC states remain pending, all proposals inactive, and CI demonstrates software behavior rather than translation quality.
 
 Software verification: implementation f8fba2b passed [Windows/Linux CI39221246449](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39221246449), 282 tests per platform plus native offline Windows packaging. This resolves software preparation checks, not the human, executor or inference-authorization gates above.
+
+The user subsequently authorized **building and testing** the separate runner. See [DIAGNOSTIC24_RUNNER_V2_1.md](DIAGNOSTIC24_RUNNER_V2_1.md) for the implemented execution-release binding, immutable allowance and blinding protocol. The frozen proposal remains unchanged; no active budget, actual approval identity/time or real generation has been created. Execution still requires a separate explicit decision after the final tested release is pinned.

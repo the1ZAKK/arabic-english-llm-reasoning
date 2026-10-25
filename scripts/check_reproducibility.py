@@ -33,6 +33,8 @@ MODULES = (
     "test_semantic_followup_v2_1",
     "test_semantic_runtime_v2_1",
     "test_ai_review_v2_1",
+    "test_diagnostic_v2_1",
+    "test_diagnostic_runtime_v2_1",
 )
 
 if __name__ == "__main__":
