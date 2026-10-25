@@ -2,23 +2,18 @@
 
 | ID | State / evidence | Result / limitation |
 |---|---|---|
-| Frozen-v2-selection | Verified from frozen queues and manifest; source revision `7ecc794703b2877f63226f2477a49b34f9b25163` | 256 unique source problem groups; 204/52 train/dev; no group leakage |
-| Historical-v1-registry | Existing immutable accepted registry; separate cohort | Recorded 32 records; no new human review performed here |
-| Recovery-v1-baseline | Actual original plan read-only | 1,075/2,252 fields mechanically complete; nine historical attempts per unresolved slot |
-| Recovery-v1-pilot20 | Actual derived laptop audit 3942a346 and companion revalidated against frozen plan; generation prompt msa-single-fragment-v1 | 20 mechanically accepted fragments; +14 fields / +2 trajectories. 20 spent / zero left and reservation proof laptop-attested, not cloud-replayed. Provisional semantic/source risks identified; human QC pending; permanently closed |
-| Repository-strict-audit-v2 | Reproducible offline audit of 64 committed drafts | 45 complete records under current strict checks; 35 field failures requiring investigation; not a semantic-error rate |
-| Strict-policy-case-inspection | Three Batch01 failures inspected read-only; see STRICT_REVALIDATION_NOTES_V2.md | One English compound math-span false positive and two frozen-environment annotation differences observed; no general category totals, parser fix, draft edit or human QC |
-| Recovery-v2-prototype | Verified at 270d537 and 2ce19a1; Windows/Linux CI 39053835394 and 39055459666 passed | Context/glossary/risk heuristics and pending human UI; full ledger integration and immutable restart verified on synthetic evidence; no model results or inference allowance |
-| Recovery-v2-paired-diagnostic | Original source-only proposal preserved; actual-pilot audit now available, v2.1 revision/design review underway | No approved budget; no generated outputs; no comparison result; source-only plan context verified |
-| Recovery-v2-Windows-offline-launcher | Verified publication 0ef991f, CI 39056158971; 245 tests each on Windows/Linux plus native package/CMD checks | Pins tested implementation 2ce19a1; SHA256 67320c2326cb109e8697b31b43eddf14c0772ab7c016ec3926c86ce1415335f5; no model access or old budget reuse |
-| Downstream PRM / QLoRA | Offline contracts/config/methodology implemented; six tests passed on both platforms in CI 39055459666 | No trainer, run, export or GPU feasibility claim; historical scripts unsafe to import offline |
+| Frozen-v2-selection | Source revision 7ecc794703b2877f63226f2477a49b34f9b25163 verified | 256 unique source groups; 204/52 train/dev; 2,753 steps; no train/dev group leakage |
+| Historical-v1-registry | Existing immutable accepted registry; separate cohort | Recorded 32 records / 298 steps; no new human QC here; not v2 completion |
+| Recovery-v1-baseline | Original plan 446191b8; unchanged | 1,075/2,252 mechanically complete fields; historical nine attempts per unresolved slot |
+| Recovery-v1-pilot20 | Actual derived laptop audit 3942a346 and exact Markdown revalidated; generation prompt msa-single-fragment-v1 | 20 mechanically accepted fragments; +14 fields / +2 trajectories. Twenty charged / zero left and reservation proof laptop-attested, not cloud-replayed. Permanently closed |
+| Repository-strict-audit-v2 | Reproducible current-policy audit of 64 committed drafts | 45 whole records pass; 35 field failures across 19 records; not a semantic-error rate |
+| Strict-policy-case-inspection | Three cases investigated read-only | English compound math-span false positive and two frozen-LaTeX annotation differences; no parser/draft edit or human decision |
+| Recovery-v2-prototype | Historical separate prompt/glossary/risk prototype; CI 39053835394 and 39055459666 passed | Source-only proposal and pending-review UI; no v2 model-generation result |
+| Recovery-v2-Windows-v2.0 | Publication 0ef991f; CI 39056158971, 245 tests each plus native package/hash checks | Historical launcher pins 2ce19a1; preserved unchanged; user used it to produce the uploaded derived audit |
+| Pilot20-derived-evidence-v2.1 | aceacd47; CI 39219153070, 249 tests per platform | All20 item/source/output/context hashes, exact Markdown, original analyses and entire inventories independently reproduced. Source/label errors separated |
+| Recovery-v2.1-policy-and-QC | Implementation 25d308f; exact proposal/glossary binding f8fba2b; CI 39221246449 | Separate policy/glossary, observed/false-positive regressions, all20 provisional case notes, immutable QC import/resume. Both platforms passed 282 offline tests (Linux 53.045 s; Windows 320.236 s), including native Windows v2.1 packaging. Scheduled-task execution was skipped. CI validates software behavior, not semantic quality. |
+| Recovery-v2-paired-diagnostic-original | Original source-only v2 proposal retained unchanged | Superseded for prospective review by v2.1; never approved or executed |
+| Recovery-v2.1-diagnostic-design | NOT APPROVED; canonical proposal 4327d769e30fdf2324d0d8000b4c828d3d311917993987af23c98687f1e0aa6d | 12 pairs / 7 source problems; max24 new reservations, 1 per arm / 2 per slot, 512 tokens. No executor or active approval |
+| Downstream PRM / QLoRA | Offline contracts/config/methodology only | No training/export, model download, GPU resource measurement or downstream result |
 
-Evidence update: [PILOT20_FINDINGS_V2_1.md](PILOT20_FINDINGS_V2_1.md); aggregate `pilot20_evidence_v2_1.json`. Historical v2 risk flags missed agreement/possessive issues; all new judgments remain provisional AI review.
-
-Raw private laptop approvals, attempt ledgers, checkpoints and unapproved outputs remain local. Public records contain aggregate evidence and artifact identities only. Software tests use deterministic synthetic responses and establish software behavior, not translation accuracy.
-
-| New experiment / development | State | Evidence / limits |
-|---|---|---|
-| Pilot20-derived-evidence-v2.1 | aceacd47, CI 39219153070 passed 249 tests on each platform | Canonical audit 3942a346, exact Markdown, all20 hashes/contexts/inventories reproduced; reservation ledger laptop-attested |
-| Recovery-v2.1-diagnostic-design | NOT APPROVED; proposal 4327d769 | 12 pairs / 7 problem groups / 24 proposed reservations, 1 per arm, 512 tokens; human design review and separately tested executor required |
-| Recovery-v2.1-policy-and-QC | Separate implementation, offline verification underway | Versioned glossary, narrow risk checks, unchanged hard validators, all20 provisional case notes, human-record import/resume; no inference |
+[Findings](PILOT20_FINDINGS_V2_1.md) and [diagnostic decision](RECOVERY_V2_1_DIAGNOSTIC_DECISION.md) are provisional AI research review. Current all20 review findings are not human labels, held-out accuracy or evidence that v2.1 improves generation. Newly added regression cases are development fixtures. Raw private outputs, approval identities, attempt ledgers, checkpoints and human-review records remain private; Git contains code, deterministic test fixtures, source-bound inactive proposals and permissible aggregate evidence only.

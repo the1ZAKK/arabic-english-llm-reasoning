@@ -32,3 +32,4 @@ research/prm_arabic_english/install_semantic_recovery_windows_v2.ps1 -text
 research/prm_arabic_english/verify_semantic_recovery_windows_v2.cmd -text whitespace=cr-at-eol
 research/prm_arabic_english/laptop_evidence_v2_1.py -text
 research/prm_arabic_english/install_semantic_recovery_windows_v2_1.ps1 -text
+research/prm_arabic_english/verify_semantic_recovery_windows_v2_1.cmd -text whitespace=cr-at-eol

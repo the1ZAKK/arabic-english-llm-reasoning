@@ -1,5 +1,7 @@
 # Windows offline recovery-v2 review preparation
 
+This page records the historical v2.0 delivery. The actual derived pilot evidence has since been revalidated. Use [the separate v2.1 follow-up workflow](RECOVERY_V2_1_WINDOWS.md) for current prompts, risks and resumable QC; the old launcher bytes and original artifacts remain unchanged.
+
 Download `prm_arabic_english/verify_semantic_recovery_windows_v2.cmd` from the containing GitHub commit, keep its `.cmd` extension and double-click it. No CMD or PowerShell commands are needed. The existing repository must be on `research/arabicprm-v2-production` under your Windows Documents directory, with Git and Python 3.11+ available. It fetches verified code from GitHub; it never contacts Ollama. There is no inference confirmation because this launcher cannot execute inference.
 
 The launcher pins implementation commit **`2ce19a17570829495856da1f732d96b06694f402`**, after [Windows/Linux CI 39055459666](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39055459666) passed 244 tests each and native Windows recovery-v2 packaging verified 2,252 frozen fields, 25 glossary terms and unchanged original code hashes. Publication commit **`0ef991fdbf2a0fe3cf0269aabfcc3665637ee870`** passed [CI 39056158971](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/39056158971): 245 tests on both platforms, native correct-hash download and tampered-hash rejection before installer execution. CI establishes software behavior, not real translation accuracy or completed human QC.

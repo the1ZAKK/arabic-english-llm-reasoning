@@ -72,6 +72,38 @@ jobs:
         run: |
           & powershell -NoProfile -ExecutionPolicy Bypass -File research/prm_arabic_english/install_semantic_recovery_windows_v2_1.ps1 -RepoRoot "$pwd" -PinnedCommit "$env:PINNED_FOLLOWUP_SHA" -PackageOnly
           if ($LASTEXITCODE -ne 0) { throw "Native v2.1 follow-up packaging failed: $LASTEXITCODE" }
+      - name: Verify offline v2.1 CMD SHA256 and reject tampering before any installer runs
+        if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
+        shell: pwsh
+        env:
+          ARABICPRM_SEMANTIC_FOLLOWUP_VERIFY_ONLY: "1"
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = "$pwd/research/prm_arabic_english/verify_semantic_recovery_windows_v2_1.cmd"
+          $verified = @(& cmd.exe /d /c $launcher 2>&1)
+          $verifiedExit = $LASTEXITCODE
+          $verified | ForEach-Object { Write-Host $_ }
+          if ($verifiedExit -ne 0 -or -not ($verified -match 'SEMANTIC V2.1 BOOTSTRAP VERIFIED:')) {
+            throw "Offline v2.1 bootstrap verification failed: $verifiedExit"
+          }
+          $badLauncher = Join-Path $env:TEMP ("ArabicPRM-followup-bad-hash-" + [guid]::NewGuid().ToString('N') + '.cmd')
+          try {
+            $original = [IO.File]::ReadAllText($launcher)
+            $digest = [regex]::Match($original, '[0-9a-f]{64}').Value
+            if (-not $digest) { throw 'Missing pinned follow-up installer hash' }
+            [IO.File]::WriteAllText($badLauncher, $original.Replace($digest, ('0' * 64)), [Text.Encoding]::ASCII)
+            $rejected = @(& cmd.exe /d /c $badLauncher 2>&1)
+            $rejectedExit = $LASTEXITCODE
+            $rejected | ForEach-Object { Write-Host $_ }
+            if ($rejectedExit -eq 0 -or ($rejected -match 'SEMANTIC V2.1 BOOTSTRAP VERIFIED:') -or
+                -not ($rejected -match 'Offline v2.1 semantic installer SHA256 mismatch')) {
+              throw 'Incorrect v2.1 hash failed to block installer execution'
+            }
+            Write-Host 'SEMANTIC V2.1 NEGATIVE HASH CHECK PASSED: nothing executed.'
+          } finally {
+            Remove-Item -LiteralPath $badLauncher -Force -ErrorAction SilentlyContinue
+          }
+          exit 0
       - name: Verify offline semantic CMD SHA256 and block a tampered hash before installer execution
         if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
         shell: pwsh

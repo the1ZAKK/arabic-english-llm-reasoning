@@ -12,6 +12,24 @@ import test_recovery_runtime as old_package
 
 
 class FollowupPackageTests(unittest.TestCase):
+    def test_final_launcher_crlf_hash_and_verified_implementation_pin(self):
+        root = Path(__file__).parent
+        launcher = root / 'verify_semantic_recovery_windows_v2_1.cmd'
+        raw = launcher.read_bytes()
+        expected, name = launcher.with_suffix('.cmd.sha256').read_text(encoding='ascii').split()
+        self.assertEqual(name, launcher.name)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), expected)
+        self.assertEqual(raw.count(b'\n'), raw.count(b'\r\n'))
+        self.assertIn(b'f8fba2b9ee23c1332638a659353dae7df7e91e4a', raw)
+        installer = root / 'install_semantic_recovery_windows_v2_1.ps1'
+        installer_sha = hashlib.sha256(installer.read_bytes()).hexdigest()
+        self.assertEqual(installer_sha, 'e72e531ca0ee89b0cc2344c672635adedacce5856b27fdd4e880e47585b51eb8')
+        self.assertIn(installer_sha.encode('ascii'), raw)
+        self.assertIn(b'ARABICPRM_SEMANTIC_FOLLOWUP_VERIFY_ONLY', raw)
+        self.assertIn(b'human_review_v2_1.html', raw)
+        for forbidden in (b'--execute', b'--approval', b'--yes', b'Register-ScheduledTask', b'ollama pull'):
+            self.assertNotIn(forbidden, raw)
+
     def fixture(self):
         fixture = old_package.RecoveryRuntimeTests()
         fixture.setUp()
