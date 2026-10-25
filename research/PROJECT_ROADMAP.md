@@ -14,3 +14,5 @@
 | Future | Separate segmentation/parser study | Three strict-policy cases documented read-only | New version/plan if pursued; do not migrate historical checkpoints or change frozen literal policy silently |
 
 [Diagnostic decision](RECOVERY_V2_1_DIAGNOSTIC_DECISION.md): ready for design review after software checks, not ready to execute or scale. Software CI cannot resolve the human/scientific gates. The old20 allowance is permanently closed. This roadmap creates no scheduled/background task or new inference authorization.
+
+GPT Work AI-review follow-up: the user requested completion by GPT rather than manually filling the human form. [AI-review workflow](AI_REVIEW_WORKFLOW_V2_1.md) records all20 explicit contextual decisions in a separate AI-only report: 14 provisionally acceptable, four clear revision recommendations, two context/style advisories. Human QC remains pending; the AI record cannot validate as human approval or a recovery budget. Original records and the tested launcher remain unchanged; no new Ollama requests are authorized or sent.

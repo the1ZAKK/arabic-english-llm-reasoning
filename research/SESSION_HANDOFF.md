@@ -39,3 +39,5 @@ Continue safe offline work when new real reviewer evidence or a concrete authori
 | 2ce19a1 / 0ef991f / 2394467 | Historical offline package/launcher/handoff; CI39055459666 / CI39056158971 / CI39056703469 |
 | aceacd47 | Actual derived pilot evidence revalidation; CI39219153070 passed249 each, native checks, tasks skipped |
 | 25d308f / f8fba2b | Separate v2.1 implementation / exact proposal binding; current CI above |
+
+GPT Work AI-review follow-up: the user requested completion by GPT rather than manually filling the human form. [AI-review workflow](AI_REVIEW_WORKFLOW_V2_1.md) records all20 explicit contextual decisions in a separate AI-only report: 14 provisionally acceptable, four clear revision recommendations, two context/style advisories. Human QC remains pending; the AI record cannot validate as human approval or a recovery budget. Original records and the tested launcher remain unchanged; no new Ollama requests are authorized or sent.
