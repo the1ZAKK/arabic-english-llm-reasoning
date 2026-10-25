@@ -1,6 +1,6 @@
 # ArabicPRM-T v2 project evidence
 
-Only `research/arabicprm-v2-production` is authorized. The latest verified software publication is `9b002e3665ab4100336ba1cd0e78015676bbcb2f`: [CI 40169998501](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/40169998501) passed **335 tests on each of Windows and Linux**, native canonical packaging, CMD correct/wrong-hash checks and CI approval/execution guards. Scheduled-task integration was skipped. The diagnostic preparation launcher pins tested core `e26fdbfb84c8381a4cef400ed2f8969841157ccc`; execution-release identity is `4ab6aca826555d7e0583840a0edcefd3606d796adc9727870ab0340f6facbb85`. No diagnostic budget is active. CI verifies software behavior, not translation quality or human QC.
+Only `research/arabicprm-v2-production` is authorized. The pinned diagnostic execution/preparation publication is `9b002e3665ab4100336ba1cd0e78015676bbcb2f`: [CI 40169998501](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/40169998501) passed **335 tests on each of Windows and Linux**, native canonical packaging, CMD correct/wrong-hash checks and CI approval/execution guards. Scheduled-task integration was skipped. The diagnostic preparation launcher pins tested core `e26fdbfb84c8381a4cef400ed2f8969841157ccc`; execution-release identity is `4ab6aca826555d7e0583840a0edcefd3606d796adc9727870ab0340f6facbb85`. No diagnostic budget is active. CI verifies software behavior, not translation quality or human QC.
 
 | Scope | Verified state | Scientific limitation |
 |---|---|---|
@@ -13,6 +13,7 @@ Only `research/arabicprm-v2-production` is authorized. The latest verified softw
 | English source/label concerns | Reversed score relation already rated −1; inspected flawed circle reasoning rated +1 | Preserve English and ratings; source-reasoning concerns are separate from translation errors |
 | Recovery-v2.1 software | Separate glossary/policy/prompts, immutable follow-up, resumable QC, inactive paired proposal and native offline package | Policy efficacy remains unmeasured; the separate diagnostic executor is verified but has no active approval or generation |
 | Diagnostic24 | Fixed 12-pair / 7-problem-group design and separate tested runner, proposal 4327d769; zero authorized requests | Human findings/design review, separate budget, local integrity/model checks and final local confirmation required |
+| Diagnostic24 offline assessment | Separate blinded assessment importer, immutable seals and paired reporting implemented; see [workflow](DIAGNOSTIC24_ASSESSMENT_V2_1.md) | No prospective results or actual reviewer records exist; AI remains distinct from human QC and portable bundles do not replay local ledgers |
 | Historical v1 registry | Recorded 32 accepted records / 298 steps, separate cohort | Preserve recorded QC; never add this cohort to v2 completion or infer trainer compatibility |
 | Training/evaluation | Pure offline masking/alignment/metric contracts and methodology only | No training, data export, GPU-feasibility result, model download or Global-MGSM access |
 

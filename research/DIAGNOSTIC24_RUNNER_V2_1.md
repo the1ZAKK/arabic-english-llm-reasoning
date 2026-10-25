@@ -72,6 +72,8 @@ GPT can review the resulting blind file as a separately identified AI assessor. 
 
 After any eventual authorized run, use `LATEST_REPORT.txt` to locate the newest immutable bundle. Supply only `blind_review.json` to the initial assessor; retain `report.json` and `unblinding_key.json` privately until those assessments are recorded. GPT may complete an explicitly AI-only assessment, avoiding another manual pilot20 form. Save decisions/corrections in a new separate file with the assessor's actual status; never edit the immutable report bundle or impersonate a human reviewer. Genuine human review, source-error adjudication and wider-recovery approval remain separate gates.
 
+The [separate offline assessment importer](DIAGNOSTIC24_ASSESSMENT_V2_1.md) now validates and seals those records before operator analysis. It is outside this pinned execution runtime; all existing runtime fingerprints and launcher bytes remain unchanged. No diagnostic data or actual assessor decisions have been produced by developing it.
+
 ## Verification and remaining local checks
 
 Tests use disposable synthetic plan/proposal/model identities and fake responses; their active consent cannot validate against the real production bindings. Regression coverage includes caps, each arm's single attempt, cancellation, immutable identity/time, wrong model, interrupted reservation/POST/outcome publication, transport and metadata failures, source/output/report tampering, missing anchors, code upgrades, concurrent runners, English/mixed outputs, mathematics/numerals/boundaries, token overrun, balanced blind mapping and package/source fingerprints. Native Windows checks package the exact canonical blobs and verify all 24 frozen payloads without approval, model access or scheduled tasks.
