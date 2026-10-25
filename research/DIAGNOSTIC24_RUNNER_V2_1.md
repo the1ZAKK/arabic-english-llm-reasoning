@@ -35,6 +35,8 @@ The delivered preparation launcher uses the first mode only. Approval/execution 
 
 ## Tested release and Windows preparation
 
+Publication `9b002e3665ab4100336ba1cd0e78015676bbcb2f` passed [CI40169998501](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/40169998501): **335 tests each**, Windows527.371s / Linux72.018s, native diagnostic package, exact CMD hash, wrong-hash rejection and both forbidden CI modes. Scheduled-task integration was skipped. The preparation launcher remains unchanged.
+
 Core commit `e26fdbfb84c8381a4cef400ed2f8969841157ccc` passed [Windows/Linux CI40169169137](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/40169169137): 334 tests per platform (Windows 484.814s, Linux 71.391s), native Windows canonical packaging and all 24 frozen payload checks. Both scheduled-task integration steps were skipped. This verifies software behavior, not translation quality or completed human QC.
 
 | Item | SHA256 |
