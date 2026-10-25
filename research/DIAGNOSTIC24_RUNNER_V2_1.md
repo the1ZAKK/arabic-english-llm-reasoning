@@ -4,6 +4,25 @@ This implements the fixed twelve-pair design from [the diagnostic decision](RECO
 
 The proposed limits remain **24 generation reservations total, one per slot per arm, two across both arms per slot, 512 generated tokens per request**, on the exact original plan/model digest. All24 source/context/payload identities and counterbalanced dispatch order remain bound to proposal `4327d769e30fdf2324d0d8000b4c828d3d311917993987af23c98687f1e0aa6d`. A source-only offline check reconstructs2252 frozen fields and verifies all24 proposed payload hashes without the private original plan or a model.
 
+## Fixed dispatch sequence
+
+Each row has two reservations in the displayed order. Failures never reorder the remaining rows, replace observations or resend a reserved arm. After an interruption the next selection is the first reservation not yet charged, regardless of whether previous responses passed mechanical validation.
+
+| Reservations | Frozen slot | Arm order |
+|---|---|---|
+| 1–2 | `10/train:0:0/s3` | control, contextual |
+| 3–4 | `10/train:0:5/s3` | contextual, control |
+| 5–6 | `10/train:1:0/s3` | control, contextual |
+| 7–8 | `10/train:1:14/s0` | contextual, control |
+| 9–10 | `10/train:1:17/s0` | control, contextual |
+| 11–12 | `10/train:1:18/s0` | contextual, control |
+| 13–14 | `10/train:1:19/s0` | control, contextual |
+| 15–16 | `12/train:2:0/s5` | contextual, control |
+| 17–18 | `17/train:4:7/s2` | control, contextual |
+| 19–20 | `13/train:6:0/s4` | contextual, control |
+| 21–22 | `21/train:2:3/s1` | control, contextual |
+| 23–24 | `16/train:0:0/s0` | contextual, control |
+
 ## Separate actions
 
 | Mode | Behavior |
@@ -35,6 +54,8 @@ GPT can review the resulting blind file as a separately identified AI assessor. 
 ## Verification and remaining local checks
 
 Tests use disposable synthetic plan/proposal/model identities and fake responses; their active consent cannot validate against the real production bindings. Regression coverage includes caps, each arm's single attempt, cancellation, immutable identity/time, wrong model, interrupted reservation/POST/outcome publication, transport and metadata failures, source/output/report tampering, missing anchors, code upgrades, concurrent runners, English/mixed outputs, mathematics/numerals/boundaries, token overrun, balanced blind mapping and package/source fingerprints. Native Windows checks package the exact canonical blobs and verify all24 frozen payloads without approval, model access or scheduled tasks.
+
+The initial diagnostic CI run [40168461707](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/40168461707) passed333 Linux tests but caught two Windows fingerprint failures. Fifteen existing runtime files lacked canonical-byte checkout attributes. The fix marks those paths `-text` and carries the same attributes into disposable packaging fixtures; it changes no runtime blob or frozen source bytes. A forced Windows/CRLF checkout regression checks every fingerprint and separately proves that manually changed CRLF bytes still fail. Hash validation is not normalized or relaxed.
 
 The cloud can verify supplied source/plan bytes and construct a **static-only preparation**. It cannot replay private laptop history or confirm the currently installed model here. The laptop's default preparation must recheck its existing exhausted20 ledger, protected files and original9-attempt supervisor/checkpoints. Execution must later observe the exact installed model digest; no model needs to run for preparation.
 

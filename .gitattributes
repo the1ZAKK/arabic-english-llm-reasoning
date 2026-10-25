@@ -36,3 +36,21 @@ research/prm_arabic_english/verify_semantic_recovery_windows_v2_1.cmd -text whit
 research/prm_arabic_english/ai_review_v2_1.py -text
 research/prm_arabic_english/diagnostic_* -text
 research/prm_arabic_english/install_diagnostic24_windows_v2_1.ps1 -text
+
+# The diagnostic fingerprints exact canonical bytes; preserve existing runtime
+# blobs at checkout without changing their contents or historical identities.
+research/prm_arabic_english/recover_v2.py -text
+research/prm_arabic_english/recovery_runtime.py -text
+research/prm_arabic_english/prepare_v2_recovery.py -text
+research/prm_arabic_english/triage_exhausted_v2.py -text
+research/prm_arabic_english/resume_v2_local.py -text
+research/prm_arabic_english/source_preserving_translation.py -text
+research/prm_arabic_english/bulk_draft_v2_translations.py -text
+research/prm_arabic_english/materialize_translation_batch.py -text
+research/prm_arabic_english/prepare_translation_batch.py -text
+research/prm_arabic_english/prm800k_ingest.py -text
+research/prm_arabic_english/source_quarantine.py -text
+research/prm_arabic_english/stage_v2_remaining_batches.py -text
+research/prm_arabic_english/render_translation_review.py -text
+research/prm_arabic_english/pilot_preparation_v1.py -text
+research/prm_arabic_english/pilot_plan_binding_v1.json -text

@@ -2,6 +2,7 @@
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import unittest
 from unittest.mock import patch
 
@@ -41,8 +42,26 @@ class DiagnosticPackageTests(unittest.TestCase):
         for name in [*package.ADDITIONS, 'diagnostic_runtime_manifest_v2_1.json']:
             path = package.base.PREFIX + name
             (fixture.repo / path).write_bytes((project / path).read_bytes())
+        (fixture.repo / '.gitattributes').write_bytes((project / '.gitattributes').read_bytes())
         fixture.commit()
         return fixture
+
+    def test_forced_windows_checkout_preserves_exact_fingerprints_without_normalization(self):
+        fixture = self.fixture()
+        subprocess.run(['git', '-c', 'core.longpaths=true', '-c', 'core.autocrlf=true',
+            '-c', 'core.eol=crlf', 'checkout-index', '--force', '--all'],
+            cwd=fixture.repo, check=True, capture_output=True)
+        for name, digest in plan.code_hashes().items():
+            self.assertEqual(hashlib.sha256((fixture.repo / package.base.PREFIX / name).read_bytes()).hexdigest(), digest, name)
+        # The fix preserves canonical bytes at checkout. A manually changed CRLF
+        # envelope still fails; the execution fingerprint is never normalized.
+        target = fixture.repo / package.base.PREFIX / 'pilot_preparation_v1.py'
+        before = target.read_bytes()
+        self.assertNotIn(b'\r', before)
+        target.write_bytes(before.replace(b'\n', b'\r\n'))
+        fixture.commit()
+        with self.assertRaisesRegex(ValueError, 'fingerprint'):
+            package.install(fixture.repo, fixture.sha, fetch=False)
 
     def test_exact_immutable_canonical_package_and_history_preservation(self):
         fixture = self.fixture()
