@@ -31,6 +31,27 @@ class PublicDiagnosticBindingTests(unittest.TestCase):
             plan.proposal()
 
 
+class DiagnosticBootstrapTests(unittest.TestCase):
+    def test_pinned_launcher_bytes_hash_and_preparation_only_path(self):
+        root = Path(__file__).parent
+        project = root.resolve().parents[1]
+        path = root / 'prepare_diagnostic24_windows_v2_1.cmd'
+        raw = path.read_bytes()
+        checksum, name = path.with_suffix('.cmd.sha256').read_text(encoding='ascii').split()
+        self.assertEqual(name, path.name)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), checksum)
+        self.assertGreater(raw.count(b'\n'), 0)
+        self.assertEqual(raw.count(b'\n'), raw.count(b'\r\n'))
+        raw.decode('ascii')
+        installer = package.base.git(project, 'show', 'HEAD:' + package.base.PREFIX + 'install_diagnostic24_windows_v2_1.ps1')
+        self.assertIn(hashlib.sha256(installer).hexdigest().encode('ascii'), raw)
+        self.assertIn(b'e26fdbfb84c8381a4cef400ed2f8969841157ccc', raw)
+        self.assertIn(b'-Mode prepare', raw)
+        self.assertIn(b'ARABICPRM_DIAGNOSTIC24_VERIFY_ONLY', raw)
+        for forbidden in (b'-Mode execute', b'-Mode approve', b'--execute', b'--approve-only', b'--yes', b'Register-ScheduledTask'):
+            self.assertNotIn(forbidden, raw)
+
+
 class DiagnosticPackageTests(unittest.TestCase):
     def fixture(self):
         fixture = old_package.RecoveryRuntimeTests()

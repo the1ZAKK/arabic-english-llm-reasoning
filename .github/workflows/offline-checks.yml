@@ -64,6 +64,47 @@ jobs:
         run: |
           & powershell -NoProfile -ExecutionPolicy Bypass -File research/prm_arabic_english/install_diagnostic24_windows_v2_1.ps1 -RepoRoot "$pwd" -PinnedCommit "$env:PINNED_DIAGNOSTIC_SHA" -PackageOnly
           if ($LASTEXITCODE -ne 0) { throw "Native diagnostic24 package failed: $LASTEXITCODE" }
+      - name: Verify diagnostic24 CMD hash, reject tampering, and block CI approval or execution
+        if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
+        shell: pwsh
+        env:
+          ARABICPRM_DIAGNOSTIC24_VERIFY_ONLY: "1"
+          PINNED_DIAGNOSTIC_SHA: ${{ github.sha }}
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = "$pwd/research/prm_arabic_english/prepare_diagnostic24_windows_v2_1.cmd"
+          $verified = @(& cmd.exe /d /c $launcher 2>&1)
+          $verifiedExit = $LASTEXITCODE
+          $verified | ForEach-Object { Write-Host $_ }
+          if ($verifiedExit -ne 0 -or -not ($verified -match 'DIAGNOSTIC24 BOOTSTRAP VERIFIED:')) {
+            throw "Diagnostic24 bootstrap verification failed: $verifiedExit"
+          }
+          $badLauncher = Join-Path $env:TEMP ("ArabicPRM-diagnostic24-bad-hash-" + [guid]::NewGuid().ToString('N') + '.cmd')
+          try {
+            $original = [IO.File]::ReadAllText($launcher)
+            $digest = [regex]::Match($original, '[0-9a-f]{64}').Value
+            if (-not $digest) { throw 'Missing diagnostic24 installer hash' }
+            [IO.File]::WriteAllText($badLauncher, $original.Replace($digest, ('0' * 64)), [Text.Encoding]::ASCII)
+            $rejected = @(& cmd.exe /d /c $badLauncher 2>&1)
+            $rejectedExit = $LASTEXITCODE
+            $rejected | ForEach-Object { Write-Host $_ }
+            if ($rejectedExit -eq 0 -or ($rejected -match 'DIAGNOSTIC24 BOOTSTRAP VERIFIED:') -or
+                -not ($rejected -match 'Diagnostic24 installer SHA256 mismatch')) {
+              throw 'Incorrect diagnostic24 hash failed to block installer execution'
+            }
+            Write-Host 'DIAGNOSTIC24 NEGATIVE HASH CHECK PASSED: nothing executed.'
+          } finally {
+            Remove-Item -LiteralPath $badLauncher -Force -ErrorAction SilentlyContinue
+          }
+          foreach ($mode in @('approve', 'execute')) {
+            $blocked = @(& powershell -NoProfile -ExecutionPolicy Bypass -File research/prm_arabic_english/install_diagnostic24_windows_v2_1.ps1 -RepoRoot "$pwd" -PinnedCommit "$env:PINNED_DIAGNOSTIC_SHA" -PackageOnly -Mode $mode 2>&1)
+            $blockedExit = $LASTEXITCODE
+            if ($blockedExit -eq 0 -or -not ($blocked -match 'CI packaging cannot approve or execute')) {
+              throw "Native CI mode guard failed for $mode"
+            }
+            Write-Host "DIAGNOSTIC24 CI MODE BLOCKED: $mode; zero consent/model/generation requests."
+          }
+          exit 0
       - name: Verify separate recovery-v2 offline package without model access or old budget reuse
         if: runner.os == 'Windows' && github.ref == 'refs/heads/research/arabicprm-v2-production'
         shell: pwsh
