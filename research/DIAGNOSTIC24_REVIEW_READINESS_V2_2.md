@@ -13,7 +13,7 @@
 | Actual laptop preparation | The user reports `offline_preparation_zero_requests`, history verified, zero consumed, no active budget and 24 `not_attempted` outputs. Those are retained as user-reported local findings. Actual private diagnostic report/blind bytes are absent here; there is no invented new report hash, ledger replay or installed-model observation |
 | Current experiment status | No new generation requests, active diagnostic approval, actual diagnostic translations, human outcome labels, corpus approval, training or data export were produced |
 
-Tests establish software contracts, not translation accuracy, authenticated independence, completed human QC or device security. Node event tests exercise the embedded HTML script; a full browser-rendering/human-usability study remains outstanding.
+Tests establish software contracts, not translation accuracy, authenticated independence, completed human QC or device security. Node event tests exercise the embedded HTML script; the separate [native-browser follow-up](DIAGNOSTIC24_BROWSER_VERIFICATION_V2_2.md) adds Chrome/Edge fixture DOM/CSP, saved-file resume and screenshot evidence without changing frozen identities. A human-usability/accessibility study and actual human design review remain outstanding.
 
 ## Methodological findings and safe improvements
 

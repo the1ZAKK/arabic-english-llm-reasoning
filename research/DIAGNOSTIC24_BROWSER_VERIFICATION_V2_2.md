@@ -24,13 +24,26 @@ The output report distinguishes WebDriver control requests from generation: `web
 
 The Windows case reached the synthetic fixture, whose global `urllib` prohibition also blocked the legitimate loopback WebDriver control request. The controller now uses a dedicated `http.client` connection fixed to its own allocated loopback port, rejects redirects/model-port routes and remains separate from the unchanged model-network prohibition. No model request caused that failure. Screenshots now return explicitly to the intended page/card region, and layout diagnostics retain overflow-control IDs. New CI must pass before these fixes are marked verified.
 
+## Observed native-browser evidence
+
+At [49126bf](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/49126bf704d7fc61923e056f39a680740e7a69a6), both native browser steps passed in [CI 41211729105](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41211729105). Archive digests and all inner SHA256 sums were independently checked after download, and screenshots from both platforms were visually inspected. The full-suite/native-launcher jobs remain separate checks; a passed browser step alone does not establish the entire workflow result.
+
+| Observed browser | Narrow actual viewport / page width | Browser-report SHA256 | Artifact ZIP SHA256 |
+|---|---|---|---|
+| Linux / chrome 156.0.8078.47 | 390 / 375 px; zero overflow controls | `653f375cd9b013f04902e9465a475cb2800d6d3dd35a2eeaecc6796cbc7ff901` | `24671f8a6dcbd1559f82a05b5cda55f78079f1b054f3b4b1f95d97d02666df07` |
+| Windows / MicrosoftEdge 155.0.4283.62 | 492 / 477 px; zero overflow controls | `b60eca9e5abaf5c730e2739183dc67257df64ef605bfc6080f52b2c768ad9cd0` | `9f2418b5010c163191f943ccacea1d56953d1b28cc9ade2f66939e5e47b0df64` |
+
+All 24 positions remained present. CSP enforcement, missing-output locks, real Blob JSON, native file-input resume, wrong-kind rejection, fresh attestations, zero-duration/unchanged-clock preservation and Python rejection of an invalid numerical correction passed. English source and literal mathematics remain LTR; Arabic candidates are RTL. Edge's minimum headless window produced 492 CSS pixels despite a 390-pixel request; this is not a claim of phone emulation or a 390-pixel Edge test. Chrome actually reported 390 pixels. Artifact retention is finite; these hashes and the code preserve the verification identity.
+
+Visual inspection additionally found the default monospace fallback made Arabic candidate text small on Windows. The separate v2.2 candidate/correction controls now inherit the readable body font. A new native typography assertion requires the body font family and at least 16 px; that subsequent change requires renewed CI/screenshots. No source/candidate text, frozen ZIP, prompt, validator or experiment identity changes.
+
 ## CI and evidence
 
 The shared offline workflow runs this check before the full Python suite and existing native Windows launcher/hash/mode guards. Browser failures fail the job; absent installed binaries fail closed rather than silently skip or download. The upload action is pinned to the observed official v7.0.2 commit `cf430e030ddbb5b0abf93d22962f4752f3646cd9`.
 
 Only the dedicated fixture evidence directory is uploaded, under `reviewer-browser-evidence-Linux` or `reviewer-browser-evidence-Windows`, with 14-day retention. It contains screenshots, a machine-readable report, observed browser version/driver hash, source-snapshot identity and SHA256 sums. Temporary profiles, operator keys, private laptop provenance, actual reviewer records and saved fixture drafts are excluded. CI artifacts can expire; the committed code and source bindings reproduce the check with an installed matching browser/driver.
 
-Local boundary/contract tests remain standard-library only. This cloud workspace has no installed browser/driver; the native entry point was observed to fail closed without creating evidence. Real-browser success and screenshots must therefore be established from completed Windows/Linux CI and visually inspected before describing the gap as resolved. The earlier 465-test milestone remains the verified baseline until those new CI checks pass.
+Local boundary/contract tests remain standard-library only. This cloud workspace has no installed browser/driver; the native entry point was observed to fail closed without creating evidence. Native-browser fixture success was subsequently observed as recorded above. The new typography change still requires its own completed Windows/Linux CI and screenshot inspection; the cloud workspace itself has not run a native browser.
 
 Even successful browser tests are not an accessibility certification, human-comprehension study, translation-quality result, authenticated blinding proof or human design approval. A qualified reviewer must still inspect the [design package](DIAGNOSTIC24_DESIGN_REVIEW_V2_1.md), disclose exposure/conflicts and make an actual decision. The [decision package](DIAGNOSTIC24_REVIEW_READINESS_V2_2.md) retains the separate owner-authorization and final laptop-confirmation gates.
 

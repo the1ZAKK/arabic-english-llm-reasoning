@@ -181,10 +181,15 @@ def check_synthetic(browser, temporary, output):
         require(blind == original and plan.history_snapshot(fixture.repo) == fixture.before, 'Synthetic source/history changed')
         rtl = browser.script("return [...document.querySelectorAll('.candidate pre')].some(e=>/[\\u0600-\\u06ff]/.test(e.textContent)&&getComputedStyle(e).direction==='rtl');")
         require(rtl, 'Actual browser did not present Arabic candidates right-to-left')
+        typography = browser.script("""const body=getComputedStyle(document.body);
+          return {body_family:body.fontFamily,candidates:[...document.querySelectorAll('.candidate pre')].filter(e=>/[\\u0600-\\u06ff]/.test(e.textContent)).map(e=>({family:getComputedStyle(e).fontFamily,size:parseFloat(getComputedStyle(e).fontSize)})),
+            corrections:[...document.querySelectorAll('[id^=correction-]')].map(e=>({family:getComputedStyle(e).fontFamily,size:parseFloat(getComputedStyle(e).fontSize)}))};""")
+        require(all(x['family']==typography['body_family'] and x['size']>=16 for x in typography['candidates']+typography['corrections']),
+                'Arabic candidate/correction controls use a small or inconsistent monospace fallback')
         return {'scope': 'disposable synthetic partial-run and AI draft; no actual reviewer', 'all24_retained': True,
                 'native_file_resume': True, 'fresh_attestations': True, 'zero_duration_preserved': True,
                 'wrong_kind_blocked': True, 'invalid_correction_blocked_by_python': True,
-                'csp': csp_check(browser), 'screenshot': screenshot(browser, output, 'synthetic-ai-desktop',
+                'csp': csp_check(browser), 'typography': typography, 'screenshot': screenshot(browser, output, 'synthetic-ai-desktop',
                     label='SYNTHETIC BROWSER FIXTURE — NOT REAL PILOT OUTPUTS OR QC',selector='.pair')}
     finally:
         fixture.doCleanups()
