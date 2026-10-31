@@ -1,5 +1,7 @@
 # Evidence-gated roadmap
 
+Current verified code milestone: `f24b835e2abd8b7581c2814c38f20cc6102bdf01`, [CI 41202286513](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41202286513), **465 tests on each of Windows and Linux**, plus native Windows package/hash/tamper and CI mode guards. Scheduled-task integration was skipped. The [completed v2.2 decision package](DIAGNOSTIC24_REVIEW_READINESS_V2_2.md) records exact unchanged identities, source/methodological findings, evidence limits and the pending human gates. This is readiness for genuine human design review. This milestone activates no budget and creates no diagnostic outputs, human approvals, training run or data export.
+
 Offline design-review follow-up is verified at `90fb484` ([CI 41200983458](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41200983458), 446 tests each on Windows/Linux plus native guards). The next implemented usability step is the separate [neutral blinded draft interface](DIAGNOSTIC24_BLINDED_INTERFACE_V2_2.md), which requires only original blind evidence and keeps operator/AI materials away from primary assessors. Next scientific dependencies remain actual qualified-human design review, independent reviewer/adjudicator assignments and a separately recorded owner decision; no new inference is authorized. Local browser appearance and comprehension are not established by Node event tests.
 
 | Priority | Milestone | State | Remaining gate |
