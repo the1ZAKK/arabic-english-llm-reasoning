@@ -37,7 +37,7 @@ def snapshot():
     require(core.digest(release) == assessment.RELEASE_SHA, 'Frozen execution release changed')
     require(legacy.sha((PACKAGE/'ArabicPRM_Diagnostic24_Design_Review.zip').read_bytes()) == ZIP_SHA,
             'Original reviewer ZIP changed')
-    return {str(p.relative_to(ROOT)): legacy.sha(p.read_bytes()) for p in
+    return {p.relative_to(ROOT).as_posix(): legacy.sha(p.read_bytes()) for p in
             [PACKAGE/'START_HERE.html', PACKAGE/'design_review_PENDING.json', PROBE, Path(__file__),
              Path(controller.__file__), Path(fixtures.__file__), Path(fixtures.__file__).with_name('test_diagnostic_v2_1.py'),
              Path(ui.__file__), ui.SCRIPT, *[Path(plan.__file__).parent/n for n in release['code_sha256']]]}

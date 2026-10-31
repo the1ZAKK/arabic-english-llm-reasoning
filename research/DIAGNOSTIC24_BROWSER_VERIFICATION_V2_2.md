@@ -24,6 +24,10 @@ The output report distinguishes WebDriver control requests from generation: `web
 
 The Windows case reached the synthetic fixture, whose global `urllib` prohibition also blocked the legitimate loopback WebDriver control request. The controller now uses a dedicated `http.client` connection fixed to its own allocated loopback port, rejects redirects/model-port routes and remains separate from the unchanged model-network prohibition. No model request caused that failure. Screenshots now return explicitly to the intended page/card region, and layout diagnostics retain overflow-control IDs. New CI must pass before these fixes are marked verified.
 
+## Full Windows-suite portability finding
+
+The browser steps passed at `49126bf`, but its full Windows suite in [CI 41211729105](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41211729105) caught one new snapshot-metadata test failure: Windows keys used backslashes while the portable assertions used forward slashes. Every listed protected hash matched; this was not a changed source or translation. The browser-only snapshot now uses `Path.as_posix()` for canonical relative keys, leaving all file bytes, original ledgers and frozen execution identities unchanged. The subsequent typography commit `cd4137a` passed its native browser steps too; the same known snapshot issue required this separate correction and a renewed full Windows/Linux run.
+
 ## Observed native-browser evidence
 
 At [49126bf](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/49126bf704d7fc61923e056f39a680740e7a69a6), both native browser steps passed in [CI 41211729105](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41211729105). Archive digests and all inner SHA256 sums were independently checked after download, and screenshots from both platforms were visually inspected. The full-suite/native-launcher jobs remain separate checks; a passed browser step alone does not establish the entire workflow result.
