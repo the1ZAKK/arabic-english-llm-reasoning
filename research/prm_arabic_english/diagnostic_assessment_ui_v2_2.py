@@ -34,7 +34,9 @@ def render(blind, kind='ai'):
         '<title>Blinded assessment — unsealed draft</title><style>body{font:17px system-ui;line-height:1.5;max-width:1150px;margin:2rem auto;padding:1rem;color:#18313f}'
         'pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f8;padding:1rem}details,article{border:1px solid #abc;padding:1rem;margin:1rem 0}'
         'textarea{width:95%;min-height:4rem}input,select,button{font:inherit;margin:.3rem;padding:.35rem}label{display:block;margin:.4rem 0}'
-        '.notice{background:#fff0cf;padding:1rem}.categories label{display:inline-block}code{overflow-wrap:anywhere}.ar{direction:rtl;text-align:right}</style>',
+        '.notice{background:#fff0cf;padding:1rem}.categories label{display:inline-block}code{overflow-wrap:anywhere}.ar{direction:rtl;text-align:right}'
+        '*{box-sizing:border-box}input,select,button{min-width:0;max-width:calc(100% - .6rem)}textarea{max-width:100%}'
+        'fieldset{min-width:0}.pair,.candidate{min-width:0;overflow-wrap:anywhere}button{white-space:normal}</style>',
         '<h1>Blinded A/B assessment / تقييم معمى</h1><p class="notice">Mode: <strong>' + h(kind.upper()) +
         '</strong>. All records start pending. This interface saves an UNSEALED DRAFT, not validated human QC or an execution approval. '
         'The unchanged Python importer must validate corrections, Arabic, mathematics, numbers and boundaries before sealing.</p>',

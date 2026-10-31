@@ -22,6 +22,7 @@ window.__reviewMetrics = function () {
   return {pairs: document.querySelectorAll('.pair').length, candidates: document.querySelectorAll('.candidate').length,
     design_slots: document.querySelectorAll('.slot').length, source_problems: document.querySelectorAll('.problem').length,
     viewport: window.innerWidth, page_width: document.documentElement.scrollWidth, unnamed_controls: unnamed,
+    overflow_controls: controls.filter(e=>e.getBoundingClientRect().right>document.documentElement.clientWidth+1).map(e=>e.id),
     nonlocal_page_resources: performance.getEntriesByType('resource').filter(r => !r.name.startsWith('file:') && !r.name.startsWith('blob:')).length,
     csp: document.querySelector('meta[http-equiv="Content-Security-Policy"]').content,
     errors: window.__reviewProbe.errors.slice()};

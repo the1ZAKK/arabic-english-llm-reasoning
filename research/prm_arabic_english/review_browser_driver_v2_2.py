@@ -2,6 +2,7 @@
 
 No Selenium Manager, downloads, shared browser profile, login or scheduling.
 """
+import http.client
 import json
 import os
 from pathlib import Path
@@ -9,9 +10,7 @@ import shutil
 import socket
 import subprocess
 import time
-from urllib.error import HTTPError, URLError
 from urllib.parse import quote
-from urllib.request import build_opener, HTTPRedirectHandler, ProxyHandler, Request
 
 
 class BrowserCheckError(RuntimeError):
@@ -45,33 +44,32 @@ def installed(kind='auto', *, windows=None, environ=None, which=None):
     return kind, browser.resolve(), driver.resolve()
 
 
-class NoRedirect(HTTPRedirectHandler):
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
-        raise BrowserCheckError('WebDriver redirects are forbidden')
-
-
 class Browser:
     def __init__(self, kind, executable, driver, temporary):
         self.kind, self.executable, self.driver = kind, Path(executable), Path(driver)
         self.temporary = Path(temporary)
         self.process = self.session = self.log = None
         self.calls = 0
-        # Proxy bypass applies solely to the controller's newly allocated loopback port.
-        # No Internet destination or caller-supplied URL can use this client.
-        self.opener = build_opener(ProxyHandler({}), NoRedirect())
+        # Dedicated local control transport, separate from the fixture's global
+        # urllib/model-network prohibition. No proxy or Internet URL is accepted.
 
     def request(self, method, path, payload=None, timeout=20):
-        if not path.startswith('/') or '://' in path or '\\' in path or self.port == 11434:
+        if method not in ('GET','POST','DELETE') or not path.startswith('/') or '://' in path or '\\' in path or self.port == 11434:
             raise BrowserCheckError('Only the owned WebDriver route is permitted')
         data = None if payload is None else json.dumps(payload).encode('utf-8')
-        req = Request('http://127.0.0.1:'+str(self.port)+path, data=data, method=method,
-                      headers={'Content-Type': 'application/json; charset=utf-8'})
+        connection = http.client.HTTPConnection('127.0.0.1', self.port, timeout=timeout)
         self.calls += 1
         try:
-            with self.opener.open(req, timeout=timeout) as response:
-                document = json.loads(response.read().decode('utf-8'))
-        except HTTPError as error:
-            raise BrowserCheckError('WebDriver '+str(error.code)+': '+error.read().decode('utf-8')[:2000]) from None
+            connection.request(method, path, body=data, headers={'Content-Type': 'application/json; charset=utf-8'})
+            response = connection.getresponse()
+            raw = response.read().decode('utf-8')
+            if 300 <= response.status < 400:
+                raise BrowserCheckError('WebDriver redirects are forbidden')
+            if response.status >= 400:
+                raise BrowserCheckError('WebDriver '+str(response.status)+': '+raw[:2000])
+            document = json.loads(raw)
+        finally:
+            connection.close()
         value = document.get('value')
         if isinstance(value, dict) and value.get('error'):
             raise BrowserCheckError(str(value))
@@ -93,7 +91,7 @@ class Browser:
                 try:
                     if self.request('GET', '/status', timeout=1).get('ready'):
                         break
-                except (URLError, TimeoutError, ConnectionError):
+                except (OSError, http.client.HTTPException):
                     pass
                 if time.monotonic() >= deadline:
                     raise BrowserCheckError('Installed WebDriver startup timed out')

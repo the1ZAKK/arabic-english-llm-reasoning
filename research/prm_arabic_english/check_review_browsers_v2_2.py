@@ -70,11 +70,14 @@ def saved(browser, expected):
     return browser.script('return window.__reviewProbe.captures.at(-1);')
 
 
-def screenshot(browser, output, name, *, width=1280, height=1000, label):
+def screenshot(browser, output, name, *, width=1280, height=1000, label, selector=None):
     browser.command('POST', '/window/rect', {'width': width, 'height': height})
     browser.script("""let mark=document.getElementById('browser-test-notice');
       if(!mark){mark=document.createElement('p');mark.id='browser-test-notice';document.body.prepend(mark);}
-      mark.textContent=arguments[0];mark.style='background:#e8dcff;padding:12px;font-weight:bold';""", label)
+      mark.textContent=arguments[0];mark.style='background:#e8dcff;padding:12px;font-weight:bold;position:sticky;top:0;z-index:100';
+      window.scrollTo(0,0);""", label)
+    if selector:
+        browser.script("window.scrollTo(0,document.querySelector(arguments[0]).getBoundingClientRect().top+window.scrollY-100);",selector)
     metrics = browser.script('return window.__reviewMetrics();')
     require(not metrics['unnamed_controls'], 'A reviewer control has no accessible name')
     require(not metrics['errors'], 'Browser script error: '+str(metrics['errors']))
@@ -123,7 +126,8 @@ def check_empty(browser, temporary, output):
     desktop = screenshot(browser, output, 'empty-blind-desktop', label='PUBLIC SOURCE / EMPTY TEST FIXTURE — NOT LAPTOP EVIDENCE')
     mobile = screenshot(browser, output, 'empty-blind-mobile', width=390, height=900,
                         label='EMPTY TEST FIXTURE — NO GENERATED OUTPUTS OR HUMAN REVIEW')
-    require(mobile['layout']['page_width'] <= mobile['layout']['viewport']+1, 'Blind form overflows a narrow viewport')
+    require(mobile['layout']['page_width'] <= mobile['layout']['viewport']+1,
+            'Blind form overflows a narrow viewport: '+json.dumps(mobile['layout']))
     return {'scope': 'real twelve source contexts; synthetic zero spec; all outputs absent', 'csp': csp_check(browser),
             'desktop': desktop, 'mobile': mobile, 'all24_missing_locked': True}
 
@@ -181,7 +185,7 @@ def check_synthetic(browser, temporary, output):
                 'native_file_resume': True, 'fresh_attestations': True, 'zero_duration_preserved': True,
                 'wrong_kind_blocked': True, 'invalid_correction_blocked_by_python': True,
                 'csp': csp_check(browser), 'screenshot': screenshot(browser, output, 'synthetic-ai-desktop',
-                    label='SYNTHETIC BROWSER FIXTURE — NOT REAL PILOT OUTPUTS OR QC')}
+                    label='SYNTHETIC BROWSER FIXTURE — NOT REAL PILOT OUTPUTS OR QC',selector='.pair')}
     finally:
         fixture.doCleanups()
 

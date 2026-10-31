@@ -18,6 +18,12 @@ The controller uses standard-library WebDriver HTTP **only on its own newly allo
 
 The output report distinguishes WebDriver control requests from generation: `webdriver_loopback_requests` is a browser-test count; `generation_requests_authorized` remains zero. Page resource metrics cover the page, not every background packet of an installed browser. No Ollama client, generation request, model download, scheduled task, training or corpus write is part of this check.
 
+## Findings from the first native run
+
+[Commit e975d67](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/e975d67517e48b8a263ed144c88507b19d211795) / [CI 41211169902](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41211169902) failed closed and retained screenshot evidence. Installed Chrome rendered a horizontal overflow at the narrow viewport; the separate v2.2 form now constrains control widths and fieldset sizing, without hiding text or altering source/candidate bytes. Existing generated artifacts remain immutable; the changed tool hash gives a new interface identity. The frozen design ZIP and experiment do not change.
+
+The Windows case reached the synthetic fixture, whose global `urllib` prohibition also blocked the legitimate loopback WebDriver control request. The controller now uses a dedicated `http.client` connection fixed to its own allocated loopback port, rejects redirects/model-port routes and remains separate from the unchanged model-network prohibition. No model request caused that failure. Screenshots now return explicitly to the intended page/card region, and layout diagnostics retain overflow-control IDs. New CI must pass before these fixes are marked verified.
+
 ## CI and evidence
 
 The shared offline workflow runs this check before the full Python suite and existing native Windows launcher/hash/mode guards. Browser failures fail the job; absent installed binaries fail closed rather than silently skip or download. The upload action is pinned to the observed official v7.0.2 commit `cf430e030ddbb5b0abf93d22962f4752f3646cd9`.
@@ -28,4 +34,4 @@ Local boundary/contract tests remain standard-library only. This cloud workspace
 
 Even successful browser tests are not an accessibility certification, human-comprehension study, translation-quality result, authenticated blinding proof or human design approval. A qualified reviewer must still inspect the [design package](DIAGNOSTIC24_DESIGN_REVIEW_V2_1.md), disclose exposure/conflicts and make an actual decision. The [decision package](DIAGNOSTIC24_REVIEW_READINESS_V2_2.md) retains the separate owner-authorization and final laptop-confirmation gates.
 
-Implementation references: [Chrome's official headless documentation](https://developer.chrome.com/docs/automation-and-testing/headless-cli) and the official [Windows](https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-Readme.md) / [Linux](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md) runner inventories. Installed versions are observed during CI rather than inferred from a changing inventory page.
+Implementation references: [W3C WebDriver](https://www.w3.org/TR/webdriver2/), [Microsoft's Edge capabilities](https://learn.microsoft.com/en-us/microsoft-edge/webdriver/capabilities-edge-options), [Chrome's official headless documentation](https://developer.chrome.com/docs/automation-and-testing/headless-cli) and the official [Windows](https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-Readme.md) / [Linux](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md) runner inventories. Installed versions are observed during CI rather than inferred from a changing inventory page.

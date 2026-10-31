@@ -1,7 +1,6 @@
 """Browser-controller boundaries, not a replacement for native browser CI."""
 import base64
 from contextlib import nullcontext
-import io
 import json
 from pathlib import Path
 import struct
@@ -35,17 +34,23 @@ class BrowserBoundaryTests(unittest.TestCase):
         browser = driver.Browser('chrome','synthetic-browser','synthetic-driver',Path('.'))
         for port,route in [(11434,'/status'),(49152,'https://example.invalid'),(49152,'//https://example.invalid'),(49152,'/bad\\route')]:
             browser.port=port
-            with self.subTest(port=port,route=route),patch.object(browser.opener,'open',side_effect=AssertionError('No network')):
+            with self.subTest(port=port,route=route),patch.object(driver.http.client,'HTTPConnection',side_effect=AssertionError('No network')):
                 with self.assertRaises(driver.BrowserCheckError):browser.request('GET',route)
-        with self.assertRaisesRegex(driver.BrowserCheckError,'redirects'):
-            driver.NoRedirect().redirect_request(None,None,302,'',{},'https://example.invalid')
+        browser.port=49152
+        response=SimpleNamespace(status=302,read=lambda:b'')
+        with patch.object(driver.http.client,'HTTPConnection') as connect:
+            connect.return_value.getresponse.return_value=response
+            with self.assertRaisesRegex(driver.BrowserCheckError,'redirects'):browser.request('GET','/status')
+            connect.return_value.close.assert_called_once()
 
     def test_controller_http_is_fixed_to_owned_loopback_driver(self):
         browser = driver.Browser('chrome','synthetic-browser','synthetic-driver',Path('.'));browser.port=49152
-        response=io.BytesIO(b'{"value":{"ready":true}}')
-        with patch.object(browser.opener,'open',return_value=response) as opened:
+        response=SimpleNamespace(status=200,read=lambda:b'{"value":{"ready":true}}')
+        with patch.object(driver.http.client,'HTTPConnection') as connect:
+            connect.return_value.getresponse.return_value=response
             self.assertEqual(browser.request('GET','/status'),{'ready':True})
-        self.assertEqual(opened.call_args.args[0].full_url,'http://127.0.0.1:49152/status')
+            connect.assert_called_once_with('127.0.0.1',49152,timeout=20)
+            connect.return_value.request.assert_called_once_with('GET','/status',body=None,headers={'Content-Type':'application/json; charset=utf-8'})
 
     def test_failed_driver_start_closes_log_without_any_session_or_request(self):
         with tempfile.TemporaryDirectory() as name:
