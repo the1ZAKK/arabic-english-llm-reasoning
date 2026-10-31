@@ -1,5 +1,7 @@
 # Native browser verification for offline review forms
 
+Current verified outcome: implementation `f86fec8` passed full Windows/Linux [CI 41212959885](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41212959885), 477 tests each plus real browser and native Windows guards. See the [completed results and checkout audit](DIAGNOSTIC24_BROWSER_RESULTS_V2_2.md). Earlier pending/failure notes below are versioned history; human design review and execution approval remain outstanding.
+
 This separate development check closes the gap between the existing Node DOM mocks and actual browser behavior. It uses installed Chrome/ChromeDriver on Linux and Edge/EdgeDriver on Windows, with no browser installer, Selenium Manager, model endpoint or production input. The frozen reviewer ZIP, original launchers, proposal, 42 execution fingerprints, checkpoints, translations and QC records remain unchanged.
 
 The implementation is `prm_arabic_english/check_review_browsers_v2_2.py`. Its only options are `--browser auto|chrome|edge` and `--output-dir`. It requires a fresh evidence directory. Inside the repository, outputs are restricted to a separate `recovery_artifacts/diagnostic-browser-checks-v2.2/<new-directory>/` namespace. It cannot accept private reports, mappings, real assessment files, approvals, inference commands or training/export modes.
