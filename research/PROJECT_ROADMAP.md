@@ -1,5 +1,7 @@
 # Evidence-gated roadmap
 
+Offline design-review follow-up is verified at `90fb484` ([CI 41200983458](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41200983458), 446 tests each on Windows/Linux plus native guards). The next implemented usability step is the separate [neutral blinded draft interface](DIAGNOSTIC24_BLINDED_INTERFACE_V2_2.md), which requires only original blind evidence and keeps operator/AI materials away from primary assessors. Next scientific dependencies remain actual qualified-human design review, independent reviewer/adjudicator assignments and a separately recorded owner decision; no new inference is authorized. Local browser appearance and comprehension are not established by Node event tests.
+
 | Priority | Milestone | State | Remaining gate |
 |---|---|---|---|
 | 1 | Frozen sources, locks and baseline accounting | Verified and preserved | Never silently repair sources or reset historical nine-attempt counters |

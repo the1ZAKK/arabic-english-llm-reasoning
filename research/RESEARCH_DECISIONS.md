@@ -1,5 +1,7 @@
 # Research decisions
 
+Blinded assessment usability decision: add a separate v2.2 HTML draft interface, rather than modifying the frozen v2.1 execution or assessment schemas. Read only the explicitly supplied blind queue and public bindings; never load operator files or AI semantic hints. Preserve every planned observation, require actual metadata for work, clear attestations after saves/resume and preserve unchanged timestamps. Browser checks are draft-format checks; Python hard validation and immutable sealing remain mandatory. This addresses review effort without equating usability, agreement or software tests with human scientific approval. The preceding independent handoff follow-up passed 446 tests per platform in [CI 41200983458](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41200983458).
+
 1. Preserve frozen English, mathematical literals, recorded ratings, checkpoints and accepted Arabic exactly. Flag source reasoning errors separately; faithful translation must not silently correct them.
 2. Count slots, complete fields and complete trajectories separately. Twenty accepted fragments cannot be called twenty complete fields or records without reconstruction.
 3. Treat current strict-check failures in historical drafts as revalidation work. Do not rewrite original drafts or infer semantic-error counts from a mechanical check.
