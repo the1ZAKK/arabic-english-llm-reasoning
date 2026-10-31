@@ -1,5 +1,7 @@
 # ArabicPRM-T v2 project evidence
 
+Current offline continuation: [two-assessor comparison](DIAGNOSTIC24_REVIEW_COMPARISON_V2_1.md) now preserves and compares two sealed blind assessments, retains all24 planned outputs, separates missing/uncertain/discordant observations and generates an entirely pending adjudication checklist. This is software preparation with synthetic/public-empty-source tests, not actual reviewer evidence or completed adjudication. The original assessment tool and pinned diagnostic execution/preparation release remain byte-identical. Diagnostic24 is still unapproved/unexecuted; human QC remains pending.
+
 Only `research/arabicprm-v2-production` is authorized. The pinned diagnostic execution/preparation publication is `9b002e3665ab4100336ba1cd0e78015676bbcb2f`: [CI 40169998501](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/40169998501) passed **335 tests on each of Windows and Linux**, native canonical packaging, CMD correct/wrong-hash checks and CI approval/execution guards. Scheduled-task integration was skipped. The diagnostic preparation launcher pins tested core `e26fdbfb84c8381a4cef400ed2f8969841157ccc`; execution-release identity is `4ab6aca826555d7e0583840a0edcefd3606d796adc9727870ab0340f6facbb85`. No diagnostic budget is active. CI verifies software behavior, not translation quality or human QC.
 
 | Scope | Verified state | Scientific limitation |

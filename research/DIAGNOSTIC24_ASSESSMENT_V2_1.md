@@ -45,6 +45,8 @@ The tool seals the supplied assessment before loading the operator mapping and b
 
 Twelve purposive pairs across seven source problems remain a small clustered development diagnostic. There is no held-out efficacy estimate, causal attribution to one prompt component, automated development-gate pass, corpus accuracy claim or training/export permission. The [scientific decision criteria](RECOVERY_V2_1_DIAGNOSTIC_DECISION.md) still require genuine independent human review and adjudication.
 
+Once two actual assessments of the same blind snapshot are sealed, the separate [reviewer comparison](DIAGNOSTIC24_REVIEW_COMPARISON_V2_1.md) can expose label/severity disagreements and correction proposals without loading arm identities. It preserves both records and generates a pending adjudication checklist. Agreement, including identical corrections, never confers human QC or correction approval.
+
 ## Verification
 
 Regression tests use disposable non-production plan/model/proposal identities and synthetic outcomes. They cover source/candidate/order tampering, AI/human separation, missing metadata, hard-failure promotion, correction mathematics/numbers/language/boundaries, missing-response accounting, error ties, source-label separation, approval/runtime/counter corruption, seal tampering, idempotent import, source-file races and early unblinding. Public-source tests reconstruct the real twelve contexts/seven groups as empty pending tasks. An actual CLI subprocess denies socket access and preserves a synthetic nine-attempt checkpoint.
