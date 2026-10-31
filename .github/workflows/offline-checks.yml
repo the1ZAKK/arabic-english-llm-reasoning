@@ -46,6 +46,16 @@ jobs:
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.11"
+      - name: Check actual installed Edge or Chrome on public and synthetic review fixtures only
+        run: python -B research/prm_arabic_english/check_review_browsers_v2_2.py --output-dir "${{ runner.temp }}/arabicprm-browser-evidence"
+      - name: Retain browser screenshots and fixture-only verification evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: reviewer-browser-evidence-${{ runner.os }}
+          path: ${{ runner.temp }}/arabicprm-browser-evidence
+          if-no-files-found: warn
+          retention-days: 14
       - run: python scripts/check_reproducibility.py
       - name: Parse the Windows launcher without starting inference
         if: runner.os == 'Windows'
