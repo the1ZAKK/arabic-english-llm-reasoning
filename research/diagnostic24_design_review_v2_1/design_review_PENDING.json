@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "kind": "arabicprm_diagnostic24_human_design_review_v2_1",
+  "package_sha256": "68406f6103e729f32a3071eb4815492337a972a8dc175633855b76be27b8a0aa",
+  "proposal_sha256": "4327d769e30fdf2324d0d8000b4c828d3d311917993987af23c98687f1e0aa6d",
+  "release_sha256": "4ab6aca826555d7e0583840a0edcefd3606d796adc9727870ab0340f6facbb85",
+  "assessor_kind": "human",
+  "reviewer_identity": null,
+  "reviewed_at_utc": null,
+  "timestamp_source": null,
+  "human_attested": false,
+  "identity_authenticated": false,
+  "decision": "pending",
+  "summary": "",
+  "checks": {
+    "scope": {
+      "status": "pending",
+      "note": ""
+    },
+    "selection": {
+      "status": "pending",
+      "note": ""
+    },
+    "comparison": {
+      "status": "pending",
+      "note": ""
+    },
+    "rubric": {
+      "status": "pending",
+      "note": ""
+    },
+    "source": {
+      "status": "pending",
+      "note": ""
+    },
+    "blinding": {
+      "status": "pending",
+      "note": ""
+    },
+    "accounting": {
+      "status": "pending",
+      "note": ""
+    },
+    "missing": {
+      "status": "pending",
+      "note": ""
+    },
+    "adjudication": {
+      "status": "pending",
+      "note": ""
+    },
+    "decision": {
+      "status": "pending",
+      "note": ""
+    }
+  },
+  "slots": [
+    {
+      "job": "10/train:0:0/s3",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "10/train:0:5/s3",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "10/train:1:0/s3",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "10/train:1:14/s0",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "10/train:1:17/s0",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "10/train:1:18/s0",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "10/train:1:19/s0",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "12/train:2:0/s5",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "17/train:4:7/s2",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "13/train:6:0/s4",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "21/train:2:3/s1",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "job": "16/train:0:0/s0",
+      "status": "pending",
+      "note": ""
+    }
+  ],
+  "disclosures": {
+    "policy_development": {
+      "status": "not_disclosed",
+      "details": ""
+    },
+    "pilot_or_examples_exposure": {
+      "status": "not_disclosed",
+      "details": ""
+    },
+    "interests": {
+      "status": "not_disclosed",
+      "details": ""
+    },
+    "reviewer_relationships": {
+      "status": "not_disclosed",
+      "details": ""
+    }
+  },
+  "question_answers": {
+    "limited_claim": "",
+    "bundled_prompt": "",
+    "source_ambiguity": "",
+    "reviewer_roles": "",
+    "incomplete_run": "",
+    "conditional_scale": ""
+  },
+  "acknowledgements": {
+    "design_is_not_budget": false,
+    "preserve_source_and_labels": false,
+    "separate_outcome_assessors": false,
+    "missing_requests_not_refunded": false
+  },
+  "review_scope": "design_only_not_execution_or_translation_qc",
+  "human_qc_status": "pending",
+  "generation_requests_authorized": 0,
+  "active_budget_created": false,
+  "training_eligible": false
+}

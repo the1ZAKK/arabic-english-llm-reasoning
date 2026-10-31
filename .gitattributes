@@ -55,3 +55,4 @@ research/prm_arabic_english/stage_v2_remaining_batches.py -text
 research/prm_arabic_english/render_translation_review.py -text
 research/prm_arabic_english/pilot_preparation_v1.py -text
 research/prm_arabic_english/pilot_plan_binding_v1.json -text
+research/diagnostic24_design_review_v2_1/* -text

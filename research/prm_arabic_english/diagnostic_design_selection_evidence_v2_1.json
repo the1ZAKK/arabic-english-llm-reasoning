@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "arabicprm_diagnostic24_private_selection_replay_v2_1",
+  "plan_sha256": "446191b88e072c291ff34388a7fbb4166a6813639a63bb2ef54896431c6e7e4e",
+  "plan_file_sha256": "559ec98308f8912f1431d0366ed6536f15e0564a1b0f486f928bec96f3a27d0c",
+  "proposal_sha256": "4327d769e30fdf2324d0d8000b4c828d3d311917993987af23c98687f1e0aa6d",
+  "eligible_contexts": 2005,
+  "eligible_context_order_sha256": "03cb00434c54cd128cb513acb08550fd51310ce6a756a3a562bb084a0464dda0",
+  "historical_nine_attempt_entries": 2005,
+  "all_twelve_slots_and_full_proposal_reproduced": true,
+  "private_checkpoint_files_replayed": false,
+  "private_laptop_ledger_replayed": false,
+  "generation_requests_authorized": 0,
+  "human_design_review_status": "pending"
+}

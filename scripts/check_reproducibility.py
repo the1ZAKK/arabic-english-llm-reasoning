@@ -37,6 +37,7 @@ MODULES = (
     "test_diagnostic_runtime_v2_1",
     "test_diagnostic_assessment_v2_1",
     "test_diagnostic_review_comparison_v2_1",
+    "test_diagnostic_design_review_v2_1",
 )
 
 if __name__ == "__main__":

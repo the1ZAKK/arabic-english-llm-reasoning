@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "research/prm_arabic_english/**"
+      - "research/diagnostic24_design_review_v2_1/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
       - "scripts/check_reproducibility.py"
@@ -11,6 +12,7 @@ on:
   pull_request:
     paths:
       - "research/prm_arabic_english/**"
+      - "research/diagnostic24_design_review_v2_1/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
       - "scripts/check_reproducibility.py"
@@ -40,6 +42,7 @@ jobs:
             .github
             scripts
             research/prm_arabic_english
+            research/diagnostic24_design_review_v2_1
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.11"

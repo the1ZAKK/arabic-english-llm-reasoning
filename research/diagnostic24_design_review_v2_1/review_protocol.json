@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "kind": "arabicprm_diagnostic24_design_protocol_v2_1",
+  "title": "ArabicPRM-T v2.1: human experimental design review / المراجعة البشرية لتصميم التجربة",
+  "sections": [
+    {
+      "title": "Objective and hypothesis / الهدف والفرضية",
+      "en": "Determine whether the contextual glossary policy is promising enough to justify a larger independently reviewed recovery experiment. The working hypothesis is fewer semantic translation errors at known operation, geometry, interval and agreement sentinels, while preserving literal fidelity on new problem groups. This is a qualitative development diagnostic, not a confirmatory accuracy or downstream PRM experiment.",
+      "ar": "نراجع ما إذا كانت سياسة السياق والمسرد تستحق تجربة استرداد أوسع تخضع لمراجعة مستقلة. الفرضية هي تقليل أخطاء المعنى في حالات تشخيصية مع الحفاظ على أمانة الترجمة. هذه تجربة تطوير صغيرة وليست تقديرا لدقة المجموعة أو دليلا على تحسن نموذج تقييم الاستدلال."
+    },
+    {
+      "title": "What is frozen / ما الذي يجب الحفاظ عليه",
+      "en": "The proposal, twelve slots, both exact prompts, model digest, dispatch sequence and execution release are already frozen. Review may accept the design or request a separately versioned replacement. Do not edit these identities, English reasoning, source labels, original Arabic, checkpoints or historical attempts. Design approval does not activate a generation budget.",
+      "ar": "المقترح والمقاطع الاثنا عشر والمطالبات وهوية النموذج وترتيب الإرسال وإصدار التنفيذ ثابتة. يمكن قبول التصميم أو طلب مقترح جديد بإصدار مستقل. لا تعدل النص الإنجليزي أو تصنيفاته أو الترجمات الأصلية أو نقاط الحفظ أو المحاولات السابقة. قبول التصميم لا يفعّل ميزانية التوليد."
+    },
+    {
+      "title": "Selection and limits of inference / الاختيار وحدود الاستنتاج",
+      "en": "Six slots revisit observed risks; one tests faithfulness to flawed English; five are first eligible terminology matches from distinct problem groups outside the pilot groups. Selection follows the original unresolved-context order and the existing prompt-length gate, not random sampling. There are seven source problems: five slots share the circle problem and two share the base-number problem. All selected fields are in the training split; five are problem fields and seven are reasoning-step fields. Fresh means new to this diagnostic's pilot problem groups, not verified correct, held out, or representative. Do not report twelve independent problems or use slot-level significance tests as population evidence.",
+      "ar": "الاختيار قصدي وليس عشوائيا: ست حالات مخاطر سابقة وحالة أمانة لمصدر خاطئ وخمس حالات من مسائل أخرى. توجد سبع مسائل فقط؛ خمس حالات من مسألة الدائرتين وحالتان من مسألة الأساس العددي. جميع الحقول المختارة من قسم التدريب. الحالات الجديدة ليست مرجعا صحيحا مضمونا ولا عينة ممثلة."
+    },
+    {
+      "title": "Fair comparison and bundled intervention / عدالة المقارنة",
+      "en": "Both arms use the same source target and identical non-message request settings, schema and hard validators. Control uses the original isolated v1 prompt with a synthetic few-shot example. Contextual v2.1 instead uses full field/problem/adjacent-step context and glossary guidance, including an explicit three-digit wording example. Message count, wording, demonstrations and input length differ. This fairly compares two complete policies under common settings; it does not isolate the causal effect of context or glossary alone, match input tokens, or reproduce historical retry prompts. Twelve new control requests are required; never reuse the exhausted pilot as the control arm.",
+      "ar": "يترجم الذراعان المقطع الإنجليزي نفسه بالإعدادات والمدققات الصارمة نفسها. تختلف الرسائل والأمثلة وطول المدخلات والسياق والمسرد. لذلك نقارن سياستين كاملتين ولا نعزل أثر السياق أو المسرد وحده. لا يجوز إعادة استعمال مخرجات التجربة المنتهية بدلا من ذراع الضبط الجديد."
+    },
+    {
+      "title": "Translation fidelity versus source correctness / أمانة الترجمة وصحة المصدر",
+      "en": "Judge what the English actually says, in full context, even if the reasoning is wrong or the native rating is positive. Record source concerns separately with the exact source span and a counterexample or rationale. In the circle trajectory, the intersection criterion omits a lower distance bound and squaring a negative-side inequality is not equivalent. Fresh contexts also contain source arithmetic or approximation concerns. The option Circle is an intentionally wrong multiple-choice option in a sphere problem: translate the option rather than replace it with the correct answer. None of these observations authorizes a source or label repair.",
+      "ar": "احكم على أمانة نقل ما يقوله النص الإنجليزي فعلا ولو كان الاستدلال خاطئا أو تصنيفه الأصلي موجبا. سجل مشكلة المصدر في خانة مستقلة. لا تصلح شرط تقاطع الدائرتين أو خطوات الحساب أثناء الترجمة. كلمة Circle خيار في سؤال جوابه كرة؛ يجب ترجمة الخيار نفسه لا استبداله بالجواب الصحيح."
+    },
+    {
+      "title": "Blinded assessment and role separation / التقييم المعمى وفصل الأدوار",
+      "en": "This design package reveals prompts, known risks and proposed examples. Prefer design reviewers who will not be the future blinded outcome assessors. If a person serves both roles, disclose exposure and downgrade the independence claim; do not claim pristine blinding. Before generation, assign two bilingual mathematics assessors where feasible and a separate adjudicator. Give assessors only blind_review.json and neutral instructions; keep this design package, AI suggestions, operator reports and the key away from them. Review A/B independently and record each candidate's own error evidence before comparing. No discussion or mapping access before each assessment is sealed. Sealing order proves only this tool's behavior, not a person's prior exposure.",
+      "ar": "تكشف هذه الحزمة المطالبات والمخاطر المعروفة والأمثلة؛ يفضل ألا يكون مراجع التصميم هو مقيم المخرجات المعماة لاحقا. يجب الإفصاح عن أي اطلاع سابق وعدم الادعاء باستقلال أو تعمية لم يتحققا. يتلقى المقيم ملف المراجعة المعمى والتعليمات المحايدة فقط، دون اقتراحات الذكاء الاصطناعي أو نتائج المشغل أو مفتاح الأذرع."
+    },
+    {
+      "title": "Missing observations and accounting / المخرجات المفقودة واحتساب المحاولات",
+      "en": "Keep all twelve pairs and all twenty-four planned outputs. Mechanical acceptance is reported per charged reservation, with planned, charged, failed, interrupted and unattempted counts separate. Missing responses stay pending/unresolved, not faithful or invented translation errors. Available candidates need a faithful, translation_error or uncertain judgment before unblinding. Both-error ties are not success. Every failed request or crash consumes its reservation; there is no automatic retry, replacement, refund or additional allowance. A stopped partial run remains partial; later resume needs the same budget and local confirmation. Do not unblind a partial run if the same reviewers must assess resumed outputs blind.",
+      "ar": "احتفظ بجميع الأزواج الاثني عشر والمخرجات الأربع والعشرين المخططة. افصل المحاولات المحجوزة عن غير المنفذة، والمخرجات المفقودة عن الأخطاء المؤكدة. فشل الطلب أو الانقطاع يستهلك الحجز ولا يعاد رده أو استبداله. التعادل في الخطأ ليس نجاحا. لا تكشف هوية الأذرع في تشغيل جزئي إذا كان المقيم نفسه سيقيم المخرجات المستأنفة تعمية."
+    },
+    {
+      "title": "Independent adjudication / الفصل المستقل في الخلافات",
+      "en": "Preserve both sealed records before discussion. A third bilingual mathematics reviewer, distinct from both assessors and any correction proposer, considers original English/Arabic, disagreements, severity differences, uncertainty and each exact correction proposal. Resolve source concerns separately. Agreement alone never approves a candidate or a correction. Retain unresolved cases when evidence is insufficient; document the rationale and actual identity/time/attestation for every non-pending adjudication. Corrections need an independent decision and unchanged hard validators before any later corpus-level review. Adjudication is not permission to edit original outputs, export data or train.",
+      "ar": "احفظ سجلي التقييم قبل النقاش. يراجع شخص ثالث مؤهل، مختلف عن المقيمين وعن مقترح التصحيح، النصين الأصليين والخلافات وكل اقتراح تصحيح كما هو. تعالج مخاوف المصدر مستقلة. الاتفاق وحده لا يعتمد ترجمة أو تصحيحا، وتبقى الحالات غير المحسومة معلقة مع توثيق السبب والهوية والوقت الفعليين."
+    },
+    {
+      "title": "Predeclared development decision / قرار التطوير المحدد مسبقا",
+      "en": "No hard Arabic/math/number/boundary violation may be promoted as faithful. Require human-confirmed faithful contextual outputs for both serious sentinels, resolution of interval/possessive and clear digit agreement problems, and no newly confirmed major or critical contextual regression on fresh controls. Any critical error, missing or unresolved sentinel, unresolved correction or unavailable independent review blocks wider recovery. Passing this qualitative gate only justifies designing a larger reviewed experiment; it is not efficacy, corpus approval or execution authorization. Record descriptive pair outcomes by stratum and source group; do not turn this convenience sample into an accuracy percentage or independent-pair p-value.",
+      "ar": "لا تقبل مخالفة صلبة بوصفها ترجمة أمينة. يجب حسم حالتي الخطر الجسيم والمصطلحات والاتفاق النحوي، والتحقق من عدم ظهور تراجع جسيم جديد في الحالات الأخرى. غياب مخرج أو استمرار غموض أو عدم توافر مراجعة مستقلة يمنع التوسع. اجتياز البوابة يبرر تصميم تجربة أكبر فقط، ولا يعني اعتماد المجموعة أو السماح بالتنفيذ."
+    }
+  ],
+  "rubric": [
+    {
+      "id": "operation",
+      "en": "Preserve the mathematical operation and its direction; subtract is not except or add.",
+      "ar": "حافظ على العملية واتجاهها؛ الطرح ليس استثناء أو جمعا."
+    },
+    {
+      "id": "relation",
+      "en": "Preserve strict/non-strict comparison, equality, negation and both directions of if and only if.",
+      "ar": "حافظ على المقارنة الصارمة أو غير الصارمة والنفي والتكافؤ المنطقي."
+    },
+    {
+      "id": "entity",
+      "en": "Preserve circle/sphere, radius/diameter, ordinal references and singular/dual/plural entities.",
+      "ar": "ميز الدائرة من الكرة ونصف القطر من القطر والمثنى من المفرد والجمع."
+    },
+    {
+      "id": "interval",
+      "en": "Preserve interval terminology and all source-owned interval brackets, endpoints and infinities.",
+      "ar": "استعمل مصطلحات الفترات مع الحفاظ على حدودها وأقواسها كما وردت في المصدر."
+    },
+    {
+      "id": "grammar",
+      "en": "Require grammatical, intelligible MSA in the full sentence. Accept valid inflection and paraphrase; do not mark every register preference as an error.",
+      "ar": "اطلب عربية فصحى سليمة ومفهومة ضمن الجملة، واقبل البدائل والتصريفات الصحيحة ولا تحول كل تفضيل أسلوبي إلى خطأ."
+    },
+    {
+      "id": "mathematics",
+      "en": "Frozen formula bytes, identifiers and separators are restored outside the fragment; never repeat, normalize or repair them in the Arabic value.",
+      "ar": "تعاد الصيغ والمعرفات والفواصل المحفوظة خارج المقطع؛ لا تكررها أو تصلحها داخل قيمة الترجمة."
+    },
+    {
+      "id": "numerical_fidelity",
+      "en": "Keep all source-owned numbers unchanged. Add no numeric claim absent from the target; preserve source mistakes separately.",
+      "ar": "لا تغير أرقام المصدر ولا تضف ادعاء عدديا غائبا عن المقطع، وسجل خطأ المصدر منفصلا."
+    },
+    {
+      "id": "reasoning_boundary",
+      "en": "Translate only the requested prose span, including incomplete connectives; add no explanation, solution or extra step.",
+      "ar": "ترجم المقطع المطلوب وحده ولو كان ناقصا، دون شرح أو حل أو خطوة إضافية."
+    },
+    {
+      "id": "language",
+      "en": "Output must satisfy the shared Arabic-only fragment rules. English-only or mixed-language responses are failures, even when mathematical literals are intact.",
+      "ar": "يجب استيفاء قواعد المقطع العربي؛ المخرج الإنجليزي أو المختلط لغويا فشل ولو سلمت الصيغ."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "faithful",
+      "en": "Mechanically accepted and semantically faithful with acceptable grammar; not a claim that the English reasoning is correct.",
+      "ar": "مقبول آليا وأمين المعنى وسليم لغويا، دون ادعاء صحة الاستدلال الإنجليزي."
+    },
+    {
+      "id": "translation_error",
+      "en": "An identified translation error with explanation, category and severity. Minor: localized grammar/terminology without changed inference. Major: changed operation, entity, relation or material omission. Critical: severe corruption or invented/removed reasoning that makes the translation unusable; adjudicate severity independently.",
+      "ar": "خطأ محدد مع تفسير وفئة ودرجة: طفيف لغوي موضعي، جسيم يغير العملية أو الكيان أو العلاقة، وحرج يفسد الاستدلال أو يضيفه أو يحذفه بصورة تجعل الترجمة غير صالحة."
+    },
+    {
+      "id": "uncertain",
+      "en": "Available output with unresolved ambiguity or insufficient evidence; give a reason. Do not convert uncertainty into success.",
+      "ar": "مخرج متاح لكن معناه ملتبس أو الأدلة غير كافية؛ اذكر السبب ولا تعد الغموض نجاحا."
+    },
+    {
+      "id": "pending",
+      "en": "Not reviewed or no candidate available. Missing outputs cannot receive fabricated judgments or corrections.",
+      "ar": "لم يراجع بعد أو لا يوجد مخرج؛ لا تختلق حكما أو تصحيحا للنص المفقود."
+    }
+  ],
+  "examples": [
+    {
+      "topic": "Arithmetic operation / العملية الحسابية",
+      "english": "Subtracting",
+      "suspect": "الاستثناء",
+      "faithful_example": "بطرح",
+      "note": "Illustrative AI-authored example, not a newly generated or human-approved corpus translation. Do not replace subtract with exception."
+    },
+    {
+      "topic": "Number agreement / المطابقة العددية",
+      "english": "using only three digits",
+      "suspect": "باستخدام ثلاث أرقام فقط",
+      "faithful_example": "باستخدام ثلاثة أرقام فقط؛ أو باستخدام ثلاث خانات فقط",
+      "note": "Both nouns permit different correct numeral forms. Do not flag the valid alternative ثلاث خانات."
+    },
+    {
+      "topic": "Geometry terminology / مصطلحات الهندسة",
+      "english": "Circle (an option in a sphere problem)",
+      "suspect": "كرة",
+      "faithful_example": "دائرة",
+      "note": "Translate the quoted option, even when it is not the correct answer to the problem. Context must not turn translation into solving."
+    },
+    {
+      "topic": "Radius / نصف القطر",
+      "english": "the radius",
+      "suspect": "القطر",
+      "faithful_example": "نصف القطر",
+      "note": "Radius and diameter denote different quantities; preserve the source-owned numerical value outside the fragment."
+    },
+    {
+      "topic": "Interval and possessive / الفترة والإضافة",
+      "english": "Enter your answer using interval notation",
+      "suspect": "أدخل إجابةك باستخدام ترميز الفاصل",
+      "faithful_example": "أدخل إجابتك باستخدام ترميز الفترات",
+      "note": "Illustrative wording only, not a required reference translation; accept equivalent correct MSA in context."
+    },
+    {
+      "topic": "Fidelity to flawed reasoning / أمانة نقل استدلال خاطئ",
+      "english": "Two circles intersect if and only if the distance between their centers is at most the sum of their radii.",
+      "suspect": "A translation that silently adds the missing lower-distance condition",
+      "faithful_example": "Retain the source's incomplete criterion and record the English mathematical concern separately.",
+      "note": "The mathematical correction is not an authorized translation correction. No original English, labels or Arabic may be edited."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "limited_claim",
+      "question": "Will the reviewer accept a purposive, clustered, qualitative diagnostic rather than a population efficacy estimate? / هل تقبل حدود الاستنتاج التشخيصي؟"
+    },
+    {
+      "id": "bundled_prompt",
+      "question": "Is the bundled policy comparison useful despite different demonstrations, wording and input lengths? / هل تقبل مقارنة السياستين الكاملتين؟"
+    },
+    {
+      "id": "source_ambiguity",
+      "question": "How will source errors, context-dependent agreement and repeating versus purely periodic decimals be adjudicated without source repair? / كيف تفصل غموض المصدر عن الترجمة؟"
+    },
+    {
+      "id": "reviewer_roles",
+      "question": "Who will supply two independent bilingual assessments and third-person adjudication; what prior exposure or conflicts must be disclosed? / من سيقيم ومن سيفصل في الخلافات؟"
+    },
+    {
+      "id": "incomplete_run",
+      "question": "Will missing sentinels or partial runs remain inconclusive, without replacement requests or early unblinding? / هل ستبقى النتائج المفقودة غير حاسمة؟"
+    },
+    {
+      "id": "conditional_scale",
+      "question": "Does passing only permit planning a larger independently reviewed experiment, with new approval before any wider inference? / هل يبقى التوسع مشروطا بموافقة جديدة؟"
+    }
+  ],
+  "references": [
+    {
+      "title": "Freitag et al. (2021), Experts, Errors, and Context",
+      "url": "https://aclanthology.org/2021.tacl-1.87/",
+      "use": "Supports explicit error analysis and expert review with context. This project's small diagnostic and exact rubric are project decisions, not a validated MQM implementation."
+    },
+    {
+      "title": "van der Lee et al. (2019), Best practices for human evaluation",
+      "url": "https://aclanthology.org/W19-8643/",
+      "use": "Motivates explicit task instructions and transparent evaluation procedures; it does not certify this design or authenticate reviewers."
+    },
+    {
+      "title": "Lightman et al. (2023), Let's Verify Step by Step",
+      "url": "https://arxiv.org/abs/2305.20050",
+      "use": "Source context for process supervision and PRM800K. No result from that paper is presented as a result of ArabicPRM-T."
+    }
+  ],
+  "source_case_notes": [
+    {
+      "topic": "Circle criterion and squaring",
+      "en": "AI source concern, not a source repair: radii 7 and 1 with centre distance 5 satisfy 5 <= 7+1 but fail |7-1| <= 5. At k=-40, -2 <= sqrt(k+40) is true while 4 <= k+40 is false. The actual two-circle distance bounds would give -36 <= k <= 104; the original trajectory omits the upper bound. Preserve its statements and native labels.",
+      "ar": "ملاحظة آلية عن المصدر وليست إصلاحا له: شرط تقاطع الدائرتين ناقص، وتربيع المتباينة ذات الطرف السالب ليس مكافئا لها. تبقى العبارات والتصنيفات الأصلية محفوظة."
+    },
+    {
+      "topic": "Base-number reasoning",
+      "en": "AI source concern: b=4 gives 16 <= 62 < 64, so it meets the trajectory's own three-place condition. Its last statement that 64 is too big needs separate source/label inspection, never translation repair.",
+      "ar": "عند الأساس أربعة يتحقق الشرط المذكور في الاستدلال؛ العبارة الأخيرة عن كبر القيمة تحتاج مراجعة مستقلة للمصدر لا إصلاح الترجمة."
+    },
+    {
+      "topic": "Disjoint integer pairs",
+      "en": "AI source concern: after choosing {1,2}, the source later chooses {1,4}, which shares an element despite the stated disjointness constraint. A faithful translation must preserve the contradiction and its original label.",
+      "ar": "اختيار الزوجين المذكورين يخالف شرط عدم الاشتراك في عنصر. يجب حفظ التناقض وتصنيفه الأصلي ونقله بأمانة."
+    },
+    {
+      "topic": "Barrel and hemisphere arithmetic",
+      "en": "AI source concern in the unselected reasoning context: 1500/(2000/3) = 9/4, not 27/4. Rounding trips would give 3 under the stated full-bucket assumptions. The selected radius fragment is judged independently; do not alter the source arithmetic or rating.",
+      "ar": "في سياق الاستدلال غير المستهدف خطأ حسابي في قسمة الحجمين؛ يبقى الحكم على ترجمة مقطع نصف القطر مستقلا عن هذا الخطأ."
+    },
+    {
+      "topic": "Coin probability",
+      "en": "AI source concern: for independent fair-coin counts with n and n+1 flips, symmetry gives probability 1/2 that the latter is strictly greater. The source's 0.5078 is not an exact answer; even its displayed normal-tail approximation needs checking. Preserve the selected greater-than relation and source numbers, without importing this correction.",
+      "ar": "يعطي التناظر احتمالا مقداره نصف في مسألة الرمي العادل المستقل؛ النتيجة العددية الأصلية تحتاج مراجعة. لا تغير علاقة أكبر من أو الأرقام المحفوظة أثناء الترجمة."
+    },
+    {
+      "topic": "Decimal-period terminology",
+      "en": "Contextual ambiguity, not an automatic source error: repeating may mean eventually repeating or purely periodic from the first digit. A reduced fraction with denominator coprime to ten has a purely periodic decimal; 1/6 is an eventually repeating counterexample to the broader wording. Period dividing twelve need not mean least period exactly twelve. The given reciprocal problem supplies relevant context; do not silently strengthen or weaken its iff claim.",
+      "ar": "قد يقصد بالدورية التكرار بعد مقدمة أو التكرار منذ أول رقم. كما أن قسمة طول الدورة على اثني عشر لا تعني أن أقصر دورة طولها اثنا عشر. يحتاج ذلك حكما سياقيا لا وسم خطأ آليا."
+    }
+  ],
+  "human_design_review_status": "pending",
+  "generation_requests_authorized": 0,
+  "training_eligible": false
+}
