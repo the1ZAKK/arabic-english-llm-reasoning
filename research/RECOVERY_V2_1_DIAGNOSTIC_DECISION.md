@@ -4,6 +4,8 @@
 
 The subsequent [independent AI design review](DIAGNOSTIC24_AI_DESIGN_REVIEW_V2_1.md) replays the exact source/payload identities and full selection from the original hash-bound private plan. The [self-contained bilingual package](DIAGNOSTIC24_DESIGN_REVIEW_V2_1.md) now makes the genuine human-design gate reviewable without code knowledge. The limited qualitative design is technically ready for human approval; actual review, assessor/adjudicator independence, separate owner budget consent and laptop evidence remain outstanding. Fresh controls can contain flawed English, and five slots share one source problem. The [exact authorization request](DIAGNOSTIC24_AUTHORIZATION_REQUEST_V2_1.md) stays inactive.
 
+The source-only package passed CI41184975964 at63ab397 (404 tests per platform). A subsequent [independent-adjudication importer](DIAGNOSTIC24_ADJUDICATION_V2_1.md) prepares the later correction-review stage while preserving all sealed inputs. Its software completion does not supply real human design/outcome decisions, authenticate independence, apply corrections or activate the experiment.
+
 ## What the recorded pilot supports
 
 The uploaded canonical audit `3942a346a653ee2c3f579f7a0ae83d1f83c6bba722336cf1a4a2180d44aaefec` and its exact Markdown were independently revalidated against frozen sources and the original plan. Twenty mechanically accepted fragments add 14 fields and two complete trajectories. The laptop reports twenty charged requests and zero remaining; its reservation proof is laptop-attested, not replayed in the cloud. The old allowance is closed permanently.

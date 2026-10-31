@@ -32,6 +32,8 @@ The CLI accepts only `--repo-root`, `--left-assessment` and `--right-assessment`
 
 The pending checklist is **not an importable approval**. Actual adjudication and any future correction-import tooling require a separate reviewed workflow; this milestone does not manufacture their completion. Agreement never inserts a candidate or correction into a checkpoint or training corpus. Human QC and training eligibility remain pending/false, and generation authorization remains zero.
 
+The subsequent [separate adjudication workflow](DIAGNOSTIC24_ADJUDICATION_V2_1.md) now prepares a distinct strict schema and imports actually supplied third-person human judgments. This original checklist stays a planning artifact and is not silently activated. Neither workflow applies corrections, grants corpus approval or authorizes requests.
+
 Re-running identical inputs verifies the existing directory. Changed or additional output files block reuse without being overwritten. Original inputs, assessment directories, protected history and diagnostic ledger/guard roots are checked before and after processing. Portable assessment seals are consistency evidence, not device authentication or a replay of the private laptop reservation ledger.
 
 ## Use after eventual authorized generation
