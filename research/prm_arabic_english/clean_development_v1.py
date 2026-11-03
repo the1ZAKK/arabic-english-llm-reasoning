@@ -21,6 +21,16 @@ RELEASE_SHA = "4ab6aca826555d7e0583840a0edcefd3606d796adc9727870ab0340f6facbb85"
 FINGERPRINT_MAP_SHA = "3688b2566717dec7de7ae07c8ca645bff80260bed22257965877c87c763e24c2"
 PREFIX = "research/prm_arabic_english/"
 HEX = re.compile(r"[0-9a-f]{40}")
+# Public Git blobs required by the existing offline installer regression tests.
+# This allowlist does not contain local recovery artifacts or historical outputs.
+HISTORICAL_INSTALLERS = (
+    ("01c51fcbe96f529f2332d0b1d1041e98bafbc60f", "install_v2_unattended_windows.ps1",
+     "84b30b5869588fc79f93ec064f0e44a259fb3200e19e8191f1275e2feb70e719"),
+    ("654ddb75e94b2e7d8b788613a09e52cb759f37dc", "install_pilot_execution_windows_v1.ps1",
+     "6f2c5b3aabb9d56b154ae93948a37f747bf9d6594f2be748c1146e248fa8fce0"),
+    ("2ce19a17570829495856da1f732d96b06694f402", "install_semantic_recovery_windows_v2.ps1",
+     "0a13839d25de50216a1c0e2e7f2a2ce31838c9f155eff406b18c0fee0948a249"),
+)
 
 
 class Blocked(ValueError):
@@ -207,7 +217,30 @@ def verify_protected(root):
     return len(hashes)
 
 
-def create(git, original, dest, pin, report, verify_release=verify_protected, original_expected=OLD):
+def hydrate_installers(git, dest, installers):
+    objects = {}
+    for commit, name, expected in installers:
+        path = PREFIX + name
+        raw = git.run(dest, "ls-tree", "-z", commit, "--", path)
+        if not raw.endswith(b"\0") or raw.count(b"\0") != 1:
+            raise Blocked("historical_installer_tree_entry_missing")
+        metadata, filename = raw[:-1].split(b"\t", 1)
+        mode, kind, oid = metadata.decode("ascii").split()
+        if (mode not in ("100644", "100755") or kind != "blob" or
+                filename.decode("utf-8") != path or not HEX.fullmatch(oid)):
+            raise Blocked("unexpected_historical_installer_tree_entry")
+        objects[oid] = expected
+    if objects:
+        git.run(dest, "fetch", "--filter=blob:none", "--no-tags", "--no-write-fetch-head",
+                "--no-recurse-submodules", "origin", *objects, network=True)
+    for oid, expected in objects.items():
+        if hashlib.sha256(git.run(dest, "cat-file", "blob", oid)).hexdigest() != expected:
+            raise Blocked("historical_installer_hash_mismatch")
+    return len(installers)
+
+
+def create(git, original, dest, pin, report, verify_release=verify_protected, original_expected=OLD,
+           historical_installers=HISTORICAL_INSTALLERS):
     if not HEX.fullmatch(pin):
         raise Blocked("launcher_not_pinned")
     if original == dest or original in dest.parents or dest in original.parents:
@@ -231,7 +264,7 @@ def create(git, original, dest, pin, report, verify_release=verify_protected, or
                         ("core.sparseCheckout", "true"), ("core.sparseCheckoutCone", "false"),
                         ("remote.origin.promisor", "true"), ("remote.origin.partialclonefilter", "blob:none")):
         git.run(dest, "config", "--local", name, value)
-    git.run(dest, "fetch", "--depth=1", "--filter=blob:none", "--no-tags", "--no-recurse-submodules",
+    git.run(dest, "fetch", "--filter=blob:none", "--no-tags", "--no-recurse-submodules",
             "origin", REF + ":" + TRACKING, network=True)
     report["fetched_head"] = decode(git.run(dest, "rev-parse", "--verify", TRACKING))
     if report["fetched_head"] != pin:
@@ -250,6 +283,7 @@ def create(git, original, dest, pin, report, verify_release=verify_protected, or
     upstream = decode(git.run(dest, "rev-parse", "--symbolic-full-name", "@{upstream}"))
     if (branch != REF or report["new_head"] != pin or url != git.endpoint or upstream != TRACKING):
         raise Blocked("new_checkout_identity_mismatch")
+    report["historical_installer_fixtures_verified"] = hydrate_installers(git, dest, historical_installers)
     outside_blobs_absent(git, dest, outside)
     report["tracked_file_bytes_verified"] = verify_worktree(dest, selected)
     report["protected_fingerprints_verified"] = verify_release(dest)
@@ -271,6 +305,7 @@ def initial_report(original, dest, pin):
             "expected_head": pin, "original_head": None, "new_head": None,
             "new_directory_created": False, "branch_verified": False,
             "protected_fingerprints_verified": 0, "tracked_file_bytes_verified": 0,
+            "historical_installer_fixtures_verified": 0,
             "outside_scope_blobs_absent": False, "original_checkout_updates_by_launcher": 0,
             "local_artifacts_copied": 0, "generation_requests_authorized": 0,
             "prior_overlap_review": {"basis": "user_reported_prior_preflight",
@@ -284,6 +319,7 @@ def initial_report(original, dest, pin):
 def sanitized(report):
     keys = ("kind", "status", "expected_branch", "expected_head", "original_head", "new_head",
             "branch_verified", "protected_fingerprints_verified", "tracked_file_bytes_verified",
+            "historical_installer_fixtures_verified",
             "outside_scope_blobs_absent", "original_checkout_updates_by_launcher", "local_artifacts_copied",
             "generation_requests_authorized", "reason", "new_directory_created")
     return {**{k: report[k] for k in keys if k in report},

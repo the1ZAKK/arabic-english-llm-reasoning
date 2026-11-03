@@ -26,13 +26,21 @@ class CleanCheckout(unittest.TestCase):
         self._g(self.remote, "init", "--initial-branch=" + clean.BRANCH)
         self._g(self.remote, "config", "uploadpack.allowFilter", "true")
         self._g(self.remote, "config", "uploadpack.allowAnySHA1InWant", "true")
+        older = b"historical public installer fixture\n"
+        self._put(self.remote, clean.PREFIX + "fixture-installer.ps1", older)
+        self._g(self.remote, "add", ".")
+        self._g(self.remote, "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid",
+                "commit", "-m", "historical fixture")
+        self.historical = self._g(self.remote, "rev-parse", "HEAD")
+        self.installers = [(self.historical, "fixture-installer.ps1", hashlib.sha256(older).hexdigest())]
+        (self.remote / clean.PREFIX / "fixture-installer.ps1").unlink()
         self._put(self.remote, "README.md", b"root fixture\n")
         self._put(self.remote, clean.PREFIX + "sentinel.txt", b"tracked research fixture\n")
         self._put(self.remote, clean.PREFIX + "Arabic [note].txt", b"literal bracket path\n")
         self._put(self.remote, "research/PROJECT_STATUS.md", b"tracked project status\n")
         self._put(self.remote, "research/global_mgsm_200/synthetic.txt", b"EXCLUDED OFFLINE FIXTURE\n")
         self._put(self.remote, "research/other-project/source.md", b"another excluded fixture\n")
-        self._g(self.remote, "add", ".")
+        self._g(self.remote, "add", "-A")
         self._g(self.remote, "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid",
                 "commit", "-m", "first fixture")
         self.pin = self._g(self.remote, "rev-parse", "HEAD")
@@ -62,9 +70,10 @@ class CleanCheckout(unittest.TestCase):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
 
-    def _run(self, pin=None, verify=lambda path: 42):
+    def _run(self, pin=None, verify=lambda path: 42, installers=None):
         clean.create(self.git, self.original, self.dest, pin or self.pin,
-                     self.report, verify_release=verify, original_expected=self.old)
+                     self.report, verify_release=verify, original_expected=self.old,
+                     historical_installers=self.installers if installers is None else installers)
 
     def tearDown(self):
         self.assertEqual((self.original / ".git/index").read_bytes(), self.index)
@@ -78,6 +87,10 @@ class CleanCheckout(unittest.TestCase):
         self.assertEqual(self.report["new_head"], self.pin)
         self.assertEqual(self.report["tracked_file_bytes_verified"], 4)
         self.assertEqual(self.report["protected_fingerprints_verified"], 42)
+        self.assertEqual(self.report["historical_installer_fixtures_verified"], 1)
+        old_bytes = self.git.run(self.dest, "show", self.historical + ":" + clean.PREFIX + "fixture-installer.ps1")
+        self.assertEqual(hashlib.sha256(old_bytes).hexdigest(), self.installers[0][2])
+        self.assertFalse((self.dest / clean.PREFIX / "fixture-installer.ps1").exists())
         self.assertTrue(self.report["outside_scope_blobs_absent"])
         self.assertFalse((self.dest / "research/global_mgsm_200").exists())
         self.assertFalse((self.dest / "research/other-project").exists())
@@ -132,6 +145,11 @@ class CleanCheckout(unittest.TestCase):
             self._run(verify=reject)
         self.assertFalse(self.report["branch_verified"])
         self.assertEqual(self.report["generation_requests_authorized"], 0)
+
+    def test_wrong_historical_installer_hash_stops_before_success(self):
+        with self.assertRaisesRegex(clean.Blocked, "historical_installer_hash_mismatch"):
+            self._run(installers=[(self.historical, "fixture-installer.ps1", "0" * 64)])
+        self.assertFalse(self.report["branch_verified"])
 
     def test_original_head_change_blocks_before_fetch(self):
         with patch.object(self.git, "tip", side_effect=AssertionError("must not contact remote")):
