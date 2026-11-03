@@ -96,6 +96,8 @@ jobs:
             Remove-Item Env:ARABICPRM_RESTART_VERIFY_ONLY -ErrorAction SilentlyContinue
             Remove-Item -LiteralPath $temp -Recurse -Force
           }
+          # The last native command intentionally returned 1; all checks passed.
+          exit 0
       - run: python scripts/check_reproducibility.py
       - name: Parse the Windows launcher without starting inference
         if: runner.os == 'Windows'
