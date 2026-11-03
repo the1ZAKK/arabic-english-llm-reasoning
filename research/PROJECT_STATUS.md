@@ -1,5 +1,7 @@
 # ArabicPRM-T v2 project evidence
 
+Separate development checkout: the [Windows launcher](WINDOWS_CLEAN_DEVELOPMENT_V1.md) prepares a pinned sparse sibling after the reported private backup, with no edits to the original or copy of local research artifacts. Its CI tests use offline Git fixtures; successful creation on the actual laptop requires the sanitized local receipt.
+
 Windows synchronization: the reported laptop HEAD `c909dfa` is an ancestor of the previously verified `f72bffb` (115 incoming, 0 local-only commits for that exact pair). The dirty working tree remains unresolved. The [offline sync preflight](WINDOWS_SYNC_PREFLIGHT_V1.md) produces a private verified backup and collision report; it performs no checkout updates. The reported laptop has matching Ollama metadata and valid zero-request preparation, but this is not human QC.
 
 Restart continuation (2026-11-03): implementation [e435fa6](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/e435fa6e9e2ca07ead8810df7d0155466a0900e9); see [CI 41636006966](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41636006966) for Windows/Linux results and the native CMD guard. The [restart checker](WINDOWS_RESTART_CHECK_V1.md) verifies existing evidence and local metadata without running preparation or inference. The cloud session has not observed the laptop after the restart. Human design review and independent reviewer assignments are the next scientific gate.

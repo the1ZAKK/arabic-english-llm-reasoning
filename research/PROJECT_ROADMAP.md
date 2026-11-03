@@ -1,5 +1,7 @@
 # Evidence-gated roadmap
 
+Use the [separate development checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) to continue offline code work after local verification. Keep the dirty checkout and backup intact, review overlaps privately before carrying any changes forward, and keep genuine design review and execution authorization separate.
+
 After the laptop restart, run the [offline sync preflight](WINDOWS_SYNC_PREFLIGHT_V1.md) to classify the dirty tree and preserve the local state before considering a separate checkout. Continue the qualified design review and reviewer assignment in parallel. No active diagnostic budget or new generation is authorized.
 
 Next after restart (2026-11-03): run the [read-only local checker](WINDOWS_RESTART_CHECK_V1.md) once and continue genuine [design review](DIAGNOSTIC24_REVIEWER_BRIEF_V2_2.md) in parallel. Use the [QC workload and triage](CORPUS_QC_WORKLOAD_V2_2.md) to plan early-batch and later-batch work separately. Do not infer held-out readiness from one mechanically complete later dev trajectory. The implementation is [e435fa6](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/e435fa6e9e2ca07ead8810df7d0155466a0900e9); matrix evidence is in [CI 41636006966](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41636006966).

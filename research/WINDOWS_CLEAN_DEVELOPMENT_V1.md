@@ -1,0 +1,16 @@
+# Separate Windows development checkout
+
+Use this after the private [sync preflight](WINDOWS_SYNC_PREFLIGHT_V1.md) when the original checkout contains local work or protected artifacts. Keep that checkout and its verified backup in place. The new folder is for development and offline checks; it has no local pilot history, diagnostic reservations, model state, or human review records imported from the laptop.
+
+Download the CMD and matching SHA256 from the **Windows artifact on the passing research-branch CI run**. The checked-in builder packages the exact Git blob of the helper, binds it to that run's commit SHA and emits one standalone CMD. The wrapper checks the embedded helper before running installed Python. Run it once from Downloads. It uses the original checkout at `Documents/arabic-english-llm-reasoning` to read its Git branch and HEAD only, and creates the sibling `Documents/arabic-english-llm-reasoning-development`. It makes no Git writes to the original, does not open the verified backup, and never copies private artifacts or resolves overlaps.
+
+The launcher contacts only the configured GitHub HTTPS origin through Git. It requires the pinned research ref before creating the folder, after a blob-filtered fetch and at final verification. It makes a shallow sparse checkout of project scripts, checks, documentation and tracked ArabicPRM research files. Other project files are excluded, and uniquely out-of-scope blobs are checked for absence. The tool verifies the branch, remote, upstream and commit; hashes each materialized file against the pinned tree; and independently checks the 42 frozen SHA256 fingerprints. A clean Git status is required. The 2,005 historical counters belong to the original local plan and are preserved in place; the new checkout cannot independently replay them.
+
+| Console status | Meaning |
+|---|---|
+| `clean_development_checkout_verified` | A separate verified checkout exists. Use it for code development and offline checks only. The original and overlap review remain unchanged. |
+| `blocked_preserve_original` | An existing destination, unexpected ref, unsupported path, fetch failure or failed verification blocked the operation. Any newly created incomplete folder is retained for inspection; it is not verified. The launcher never overwrites an existing destination. |
+
+The console prints two files under `%LOCALAPPDATA%\ArabicPRM\clean-development-v1`: keep **report.json** private; share only **share-status.json**, which contains public Git SHAs, outcome codes and verification counts. Do not send a screenshot of the full console, which displays local paths. If a newer commit appears on GitHub, use a newly tested launcher for that commit. Do not run the old launcher against a changed branch or clear a destination automatically.
+
+Compare the overlaps in the original private preflight with the exact verified new commit. Determine which changes are intended code work and which are local research evidence; review code changes before carrying them forward individually. The local research artifacts, verified backup and completed pilot remain in place. [Design review](DIAGNOSTIC24_HUMAN_DECISION_CHECKLIST_V2_2.md), independent reviewer assignments and separate execution authorization remain outstanding.

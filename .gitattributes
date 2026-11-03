@@ -64,3 +64,6 @@ research/prm_arabic_english/check_arabicprm_restart_windows_v1.cmd -text whitesp
 # Standalone sync preflight: exact embedded helper and CRLF CMD bytes.
 research/prm_arabic_english/sync_preflight_v1.py -text
 research/prm_arabic_english/check_arabicprm_sync_windows_v1.cmd -text whitespace=cr-at-eol
+
+# Windows development checkout packages bind exact helper bytes at the tested SHA.
+research/prm_arabic_english/clean_development_v1.py -text

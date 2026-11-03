@@ -1,5 +1,7 @@
 # Research decisions
 
+Preserve the dirty checkout and verified backup in place. Use an [exact pinned sparse checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) for development rather than changing the original. Verify canonical worktree bytes and frozen fingerprints, exclude unrelated data, and share only the sanitized receipt.
+
 Windows sync decision: compare exact commit identities separately from uncommitted files. A proven ancestor is insufficient authorization to update a dirty checkout. The [sync preflight](WINDOWS_SYNC_PREFLIGHT_V1.md) makes an outside-the-checkout private snapshot and reports overlaps; it does not advance the original branch or copy anything to GitHub.
 
 Restart and QC decisions (2026-11-03), [e435fa6](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/e435fa6e9e2ca07ead8810df7d0155466a0900e9), [CI 41636006966](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/41636006966): observe existing local state before considering a repeat preparation. Separate the required model digest from an observed tag. Use span-match patterns and split/label strata for review planning only; they neither waive validators nor establish translation accuracy. Retain the [12-pair comparison](DIAGNOSTIC24_REVIEWER_BRIEF_V2_2.md) as a small clustered diagnostic pending genuine human design review, with no claim that it is a representative held-out test.
