@@ -44,6 +44,7 @@ MODULES = (
     "test_review_browser_checks_v2_2",
     "test_restart_check_v1",
     "test_corpus_workload_v2_2",
+    "test_sync_preflight_v1",
 )
 
 if __name__ == "__main__":

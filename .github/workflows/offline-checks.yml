@@ -98,6 +98,59 @@ jobs:
           }
           # The last native command intentionally returned 1; all checks passed.
           exit 0
+      - name: Verify native sync CMD preserves a dirty checkout
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = (Resolve-Path research/prm_arabic_english/check_arabicprm_sync_windows_v1.cmd).Path
+          $sandbox = Join-Path $env:RUNNER_TEMP ('arabicprm sync '+[guid]::NewGuid().ToString('N'))
+          $fixture = Join-Path $sandbox 'Documents/arabic-english-llm-reasoning'
+          New-Item -ItemType Directory -Path $fixture -Force | Out-Null
+          $originalProfile, $originalLocal = $env:USERPROFILE, $env:LOCALAPPDATA
+          try {
+            $env:ARABICPRM_SYNC_VERIFY_ONLY = '1'
+            $verified = @(& cmd.exe /d /c $launcher 2>&1)
+            if ($LASTEXITCODE -ne 0 -or -not ($verified -match 'SYNC HELPER VERIFIED:')) { throw 'Sync CMD payload verification failed' }
+            $bad = Join-Path $sandbox 'tampered.cmd'
+            $raw = [IO.File]::ReadAllText($launcher)
+            $changed = [regex]::new('(?m)^rem ARABICPRM-SYNC-PAYLOAD [A-Za-z0-9+/]').Replace($raw,'rem ARABICPRM-SYNC-PAYLOAD !',1)
+            [IO.File]::WriteAllText($bad,$changed,[Text.Encoding]::ASCII)
+            $rejected = @(& cmd.exe /d /c ('"'+$bad+'"') 2>&1)
+            if ($LASTEXITCODE -ne 1 -or -not ($rejected -match 'Sync helper SHA256 mismatch')) { throw 'Tampered sync CMD was not blocked' }
+            Remove-Item Env:ARABICPRM_SYNC_VERIFY_ONLY
+            & git -C $fixture init -q --initial-branch research/arabicprm-v2-production
+            if ($LASTEXITCODE -ne 0) { throw 'Fixture Git initialization failed' }
+            & git -C $fixture remote add origin https://github.com/the1ZAKK/arabic-english-llm-reasoning.git
+            if ($LASTEXITCODE -ne 0) { throw 'Fixture remote setup failed' }
+            [IO.File]::WriteAllText((Join-Path $fixture 'tracked.txt'),'original')
+            & git -C $fixture add tracked.txt
+            if ($LASTEXITCODE -ne 0) { throw 'Fixture stage failed' }
+            & git -C $fixture -c user.name=Fixture -c user.email=fixture@example.invalid commit -qm initial
+            if ($LASTEXITCODE -ne 0) { throw 'Fixture commit failed' }
+            [IO.File]::WriteAllText((Join-Path $fixture 'tracked.txt'),'local working bytes')
+            [IO.File]::WriteAllText((Join-Path $fixture 'private.txt'),'untracked bytes')
+            $index = (Get-FileHash (Join-Path $fixture '.git/index')).Hash
+            $head = & git -C $fixture rev-parse HEAD
+            $env:USERPROFILE = $sandbox
+            $env:LOCALAPPDATA = $sandbox
+            $observed = @(& cmd.exe /d /c $launcher 2>&1)
+            $observed | Write-Host
+            if ($LASTEXITCODE -ne 0 -or -not ($observed -match 'backup_verified_review_required')) { throw 'Expected verified private backup' }
+            $reports = @(Get-ChildItem (Join-Path $sandbox 'ArabicPRM/sync-preflight-v1') -Recurse -Filter 'report.json')
+            if ($reports.Count -ne 1) { throw 'Expected one report' }
+            $report = Get-Content -Raw -LiteralPath $reports[0].FullName | ConvertFrom-Json
+            $copy = Join-Path $reports[0].Directory.FullName 'snapshot'
+            if ($report.head -ne $head -or $report.checkout_updates -ne 0 -or $report.generation_requests_authorized -ne 0 -or $report.changed_paths.Count -ne 2) { throw 'Unexpected sync fixture report' }
+            if ((Get-FileHash (Join-Path $copy '.git/index')).Hash -ne $index -or (Get-FileHash (Join-Path $fixture '.git/index')).Hash -ne $index -or (Get-Content -Raw (Join-Path $copy 'private.txt')) -ne 'untracked bytes' -or (Get-Content -Raw (Join-Path $fixture 'tracked.txt')) -ne 'local working bytes') { throw 'Sync fixture did not preserve exact local bytes' }
+            Write-Host 'SYNC CMD VERIFIED: dirty checkout and Git index unchanged.'
+          } finally {
+            $env:USERPROFILE = $originalProfile
+            $env:LOCALAPPDATA = $originalLocal
+            Remove-Item Env:ARABICPRM_SYNC_VERIFY_ONLY -ErrorAction SilentlyContinue
+            Remove-Item -LiteralPath $sandbox -Recurse -Force
+          }
+          exit 0
       - run: python scripts/check_reproducibility.py
       - name: Parse the Windows launcher without starting inference
         if: runner.os == 'Windows'

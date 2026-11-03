@@ -60,3 +60,7 @@ research/diagnostic24_design_review_v2_1/* -text
 # Standalone restart observation: exact embedded helper and CRLF CMD bytes.
 research/prm_arabic_english/restart_check_v1.py -text
 research/prm_arabic_english/check_arabicprm_restart_windows_v1.cmd -text whitespace=cr-at-eol
+
+# Standalone sync preflight: exact embedded helper and CRLF CMD bytes.
+research/prm_arabic_english/sync_preflight_v1.py -text
+research/prm_arabic_english/check_arabicprm_sync_windows_v1.cmd -text whitespace=cr-at-eol
