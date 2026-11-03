@@ -23,6 +23,16 @@ Batch01–08 is a separate queue: 45/64 whole records passed current strict scre
 
 A read-only replay of the strict checker, using the same Batch01–08 inputs as `project_evidence_v2.collect()`, found the same exact-math fingerprint failure on all 35 blocked fields. Failures in Batch01 through Batch08 were 6, 1, 6, 2, 8, 4, 1 and 7. In each blocked source/candidate pair, the ordered sequences of decimal digit runs matched after mapping Unicode decimal digits to their ASCII values. That rules out a simple inserted, omitted or changed digit run in this comparison. It does not check signs, decimal points, fractions, operators, identifiers, or where a number attaches to the reasoning. All 35 remain blocked.
 
+For triage only, partition the unchanged source fingerprint into delimited spans (full matches of the existing `PROTECTED` expression, or beginning with `\\begin{`, `\\[` or `\\(`) and all other spans. Check each list independently for nonoverlapping, exact, ordered occurrences in the candidate:
+
+| Separate span checks | Blocked fields | First review action |
+|---|---:|---|
+| Delimited pass; other spans fail | 31 | Compare bare expressions and the prose touching their boundaries. Nine have no delimited spans. |
+| Delimited fail; other spans pass | 2 | Inspect the unchanged display-environment annotation cases separately from the equations. |
+| Both pass separately; combined order fails | 2 | Inspect ordering and overlap between the two span groups. |
+
+The 35 fields are 29 train steps, five train problems and one dev problem. These are observable mismatch patterns, not proven causes. The replay always preserved the original checker outcome; nothing in this partition can accept a field.
+
 Review the parser-boundary and display-math annotation cases already identified in [strict revalidation notes](STRICT_REVALIDATION_NOTES_V2.md) first. For other cases, compare literal expressions and operators alongside the complete English and Arabic fields. Track a suspected parser artifact, an actual translation change, a source issue and an unresolved case separately; require evidence for each classification. Neither matching digits nor a parser suspicion clears the mechanical gate or supplies human QC.
 
 For review planning, keep three lanes: complete records for full bilingual review; partial records for missing-fragment recovery planning; source reasoning/annotation disputes for a separate qualified adjudicator. Inspect negative and neutral contexts alongside positive steps, including the reasoning before and after the target. The apparently small dev negative subset is only 5/21 mechanically complete, and just one whole dev trajectory is mechanically complete. Evaluating only complete cases would select an unusual subset. Do not move any group across splits to improve counts. Record actual person, exposure, item dispositions and review time when genuine review occurs; this inventory measures fields and slots, not person-hours or QC accuracy.
