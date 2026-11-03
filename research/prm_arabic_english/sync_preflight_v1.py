@@ -72,8 +72,20 @@ def outside_scope(name):
     return "globalmgsm" in re.sub("[^a-z0-9]", "", name.casefold())
 
 
+def io_path(path):
+    """Address long local paths without changing the machine's settings."""
+    if os.name != "nt":
+        return path
+    absolute = str(path if path.is_absolute() else path.absolute())
+    if absolute.startswith("\\\\?\\"):
+        return Path(absolute)
+    if absolute.startswith("\\\\"):
+        return Path("\\\\?\\UNC\\" + absolute[2:])
+    return Path("\\\\?\\" + absolute)
+
+
 def ordinary(path, relative=None):
-    s = path.lstat()
+    s = io_path(path).lstat()
     if (not (stat.S_ISREG(s.st_mode) or stat.S_ISDIR(s.st_mode))
             or getattr(s, "st_file_attributes", 0) & 0x400):
         raise Blocked("alias_or_non_regular_entry", relative)
@@ -104,7 +116,7 @@ def inventory(root):
         if not stat.S_ISDIR(s.st_mode):
             raise Blocked("not_a_directory", rel or ".")
         dirs[rel] = fingerprint(s)
-        with os.scandir(path) as entries:
+        with os.scandir(io_path(path)) as entries:
             names = sorted(e.name for e in entries)
         for name in names:
             child = f"{rel}/{name}" if rel else name
@@ -135,7 +147,7 @@ def git(repo, *args, accepted=(0,), overrides=()):
     env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull,
                GIT_OPTIONAL_LOCKS="0", GIT_ATTR_NOSYSTEM="1", GIT_TERMINAL_PROMPT="0",
                GIT_NO_LAZY_FETCH="1")
-    flags = ("-c", "core.fsmonitor=false", "-c", "core.untrackedCache=false",
+    flags = ("-c", "core.longpaths=true", "-c", "core.fsmonitor=false", "-c", "core.untrackedCache=false",
              "-c", f"core.hooksPath={os.devnull}", "-c", "protocol.allow=never")
     result = subprocess.run(["git", "--no-pager", "--no-optional-locks", "--no-replace-objects",
                              *flags, *overrides, *args], cwd=repo, env=env,
@@ -206,9 +218,9 @@ def snapshot(root, destination, before):
         raise Blocked("insufficient_space_for_private_backup")
     records = {}
     for rel in sorted(dirs, key=lambda s: (s.count("/"), s)):
-        (destination / rel).mkdir()
+        io_path(destination / rel).mkdir()
     for rel, expected in files.items():
-        src, out = root / rel, destination / rel
+        src, out = io_path(root / rel), io_path(destination / rel)
         if fingerprint(ordinary(src, rel)) != expected:
             raise Blocked("source_changed_during_backup", rel)
         h = hashlib.sha256()

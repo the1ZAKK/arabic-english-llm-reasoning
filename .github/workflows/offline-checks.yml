@@ -130,6 +130,12 @@ jobs:
             if ($LASTEXITCODE -ne 0) { throw 'Fixture commit failed' }
             [IO.File]::WriteAllText((Join-Path $fixture 'tracked.txt'),'local working bytes')
             [IO.File]::WriteAllText((Join-Path $fixture 'private.txt'),'untracked bytes')
+            [IO.File]::AppendAllText((Join-Path $fixture '.git/info/exclude'),"`nrecovery_artifacts/`n")
+            $longRel = 'recovery_artifacts\' + ('a'*64) + '\' + ('b'*64) + '\' + ('c'*64) + '\private.txt'
+            $longSource = '\\?\' + (Join-Path $fixture $longRel)
+            if ($longSource.Length -le 264) { throw 'Expected a long-path fixture' }
+            [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($longSource)) | Out-Null
+            [IO.File]::WriteAllText($longSource,'long ignored bytes')
             $index = (Get-FileHash (Join-Path $fixture '.git/index')).Hash
             $head = & git -C $fixture rev-parse HEAD
             $env:USERPROFILE = $sandbox
@@ -141,9 +147,10 @@ jobs:
             if ($reports.Count -ne 1) { throw 'Expected one report' }
             $report = Get-Content -Raw -LiteralPath $reports[0].FullName | ConvertFrom-Json
             $copy = Join-Path $reports[0].Directory.FullName 'snapshot'
-            if ($report.head -ne $head -or $report.checkout_updates -ne 0 -or $report.generation_requests_authorized -ne 0 -or $report.changed_paths.Count -ne 2) { throw 'Unexpected sync fixture report' }
+            if ($report.head -ne $head -or $report.checkout_updates -ne 0 -or $report.generation_requests_authorized -ne 0 -or $report.changed_paths.Count -ne 3) { throw 'Unexpected sync fixture report' }
             if ((Get-FileHash (Join-Path $copy '.git/index')).Hash -ne $index -or (Get-FileHash (Join-Path $fixture '.git/index')).Hash -ne $index -or (Get-Content -Raw (Join-Path $copy 'private.txt')) -ne 'untracked bytes' -or (Get-Content -Raw (Join-Path $fixture 'tracked.txt')) -ne 'local working bytes') { throw 'Sync fixture did not preserve exact local bytes' }
-            Write-Host 'SYNC CMD VERIFIED: dirty checkout and Git index unchanged.'
+            if ([IO.File]::ReadAllText('\\?\' + (Join-Path $copy $longRel)) -ne 'long ignored bytes' -or [IO.File]::ReadAllText($longSource) -ne 'long ignored bytes') { throw 'Sync fixture did not preserve the long ignored path' }
+            Write-Host 'SYNC CMD VERIFIED: dirty checkout, Git index and long ignored path preserved.'
           } finally {
             $env:USERPROFILE = $originalProfile
             $env:LOCALAPPDATA = $originalLocal
