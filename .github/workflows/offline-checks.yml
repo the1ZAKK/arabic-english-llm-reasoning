@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "research/prm_arabic_english/**"
+      - ".gitattributes"
       - "research/diagnostic24_design_review_v2_1/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -12,6 +13,7 @@ on:
   pull_request:
     paths:
       - "research/prm_arabic_english/**"
+      - ".gitattributes"
       - "research/diagnostic24_design_review_v2_1/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -56,6 +58,44 @@ jobs:
           path: ${{ runner.temp }}/arabicprm-browser-evidence
           if-no-files-found: warn
           retention-days: 14
+      - name: Verify native restart CMD payload, tamper rejection and read-only missing-checkout report
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = (Resolve-Path research/prm_arabic_english/check_arabicprm_restart_windows_v1.cmd).Path
+          $temp = Join-Path $env:RUNNER_TEMP ('arabicprm restart '+[guid]::NewGuid().ToString('N'))
+          New-Item -ItemType Directory -Path $temp | Out-Null
+          $originalProfile, $originalLocal = $env:USERPROFILE, $env:LOCALAPPDATA
+          try {
+            $env:ARABICPRM_RESTART_VERIFY_ONLY = '1'
+            $good = @(& cmd.exe /d /c $launcher 2>&1)
+            $good | Write-Host
+            if ($LASTEXITCODE -ne 0 -or -not ($good -match 'RESTART HELPER VERIFIED:')) { throw 'Exact restart CMD did not verify' }
+            $bad = Join-Path $temp 'tampered.cmd'
+            $raw = [IO.File]::ReadAllText($launcher)
+            $changed = [regex]::new('(?m)^rem ARABICPRM-PAYLOAD [A-Za-z0-9+/]').Replace($raw,'rem ARABICPRM-PAYLOAD !',1)
+            [IO.File]::WriteAllText($bad,$changed,[Text.Encoding]::ASCII)
+            $rejected = @(& cmd.exe /d /c ('"'+$bad+'"') 2>&1)
+            $rejected | Write-Host
+            if ($LASTEXITCODE -ne 1 -or -not ($rejected -match 'Restart helper SHA256 mismatch')) { throw 'Tampered restart helper was not blocked' }
+            Remove-Item Env:ARABICPRM_RESTART_VERIFY_ONLY
+            $env:USERPROFILE = $temp
+            $env:LOCALAPPDATA = $temp
+            $observed = @(& cmd.exe /d /c $launcher 2>&1)
+            $observed | Write-Host
+            if ($LASTEXITCODE -ne 1 -or -not ($observed -match 'local_checks_need_attention')) { throw 'Expected read-only fixture status' }
+            $reportFiles = @(Get-ChildItem (Join-Path $temp 'ArabicPRM/restart-checks-v1') -Filter '*.json')
+            if ($reportFiles.Count -ne 1) { throw 'Expected one fixture restart report' }
+            $report = Get-Content -Raw -LiteralPath $reportFiles[0].FullName | ConvertFrom-Json
+            if ($report.ollama.status -ne 'metadata_probe_skipped' -or $report.generation_requests_authorized -ne 0 -or $report.checkout.status -ne 'unverified' -or (Test-Path (Join-Path $temp 'Documents'))) { throw 'Restart fixture changed protected state or contacted model metadata' }
+            Write-Host 'RESTART CMD VERIFIED: no installation, model contact or checkout writes.'
+          } finally {
+            $env:USERPROFILE = $originalProfile
+            $env:LOCALAPPDATA = $originalLocal
+            Remove-Item Env:ARABICPRM_RESTART_VERIFY_ONLY -ErrorAction SilentlyContinue
+            Remove-Item -LiteralPath $temp -Recurse -Force
+          }
       - run: python scripts/check_reproducibility.py
       - name: Parse the Windows launcher without starting inference
         if: runner.os == 'Windows'

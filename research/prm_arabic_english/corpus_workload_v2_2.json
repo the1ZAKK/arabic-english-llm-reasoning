@@ -1,0 +1,183 @@
+{
+  "batch01_08_separate_strict_screen": {
+    "field_or_record_check_failures": 35,
+    "fields_screened": 757,
+    "records": 64,
+    "whole_records_passing": 45
+  },
+  "batch09_32": {
+    "after": {
+      "fields_by_split_and_source_label": [
+        {
+          "complete_fields": 5,
+          "fields": 21,
+          "incomplete_fields": 16,
+          "missing_prose_slots": 25,
+          "split": "dev",
+          "stratum": "negative"
+        },
+        {
+          "complete_fields": 21,
+          "fields": 39,
+          "incomplete_fields": 18,
+          "missing_prose_slots": 27,
+          "split": "dev",
+          "stratum": "neutral_masked"
+        },
+        {
+          "complete_fields": 189,
+          "fields": 405,
+          "incomplete_fields": 216,
+          "missing_prose_slots": 351,
+          "split": "dev",
+          "stratum": "positive"
+        },
+        {
+          "complete_fields": 7,
+          "fields": 41,
+          "incomplete_fields": 34,
+          "missing_prose_slots": 79,
+          "split": "dev",
+          "stratum": "problem_text"
+        },
+        {
+          "complete_fields": 32,
+          "fields": 75,
+          "incomplete_fields": 43,
+          "missing_prose_slots": 73,
+          "split": "train",
+          "stratum": "negative"
+        },
+        {
+          "complete_fields": 97,
+          "fields": 166,
+          "incomplete_fields": 69,
+          "missing_prose_slots": 103,
+          "split": "train",
+          "stratum": "neutral_masked"
+        },
+        {
+          "complete_fields": 708,
+          "fields": 1354,
+          "incomplete_fields": 646,
+          "missing_prose_slots": 1027,
+          "split": "train",
+          "stratum": "positive"
+        },
+        {
+          "complete_fields": 30,
+          "fields": 151,
+          "incomplete_fields": 121,
+          "missing_prose_slots": 300,
+          "split": "train",
+          "stratum": "problem_text"
+        }
+      ],
+      "records_by_split": {
+        "dev": {
+          "complete_records": 1,
+          "no_complete_fields": 2,
+          "partial_records": 38,
+          "records": 41
+        },
+        "train": {
+          "complete_records": 10,
+          "no_complete_fields": 5,
+          "partial_records": 136,
+          "records": 151
+        }
+      }
+    },
+    "before": {
+      "fields_by_split_and_source_label": [
+        {
+          "complete_fields": 4,
+          "fields": 21,
+          "incomplete_fields": 17,
+          "missing_prose_slots": 27,
+          "split": "dev",
+          "stratum": "negative"
+        },
+        {
+          "complete_fields": 21,
+          "fields": 39,
+          "incomplete_fields": 18,
+          "missing_prose_slots": 27,
+          "split": "dev",
+          "stratum": "neutral_masked"
+        },
+        {
+          "complete_fields": 189,
+          "fields": 405,
+          "incomplete_fields": 216,
+          "missing_prose_slots": 351,
+          "split": "dev",
+          "stratum": "positive"
+        },
+        {
+          "complete_fields": 7,
+          "fields": 41,
+          "incomplete_fields": 34,
+          "missing_prose_slots": 79,
+          "split": "dev",
+          "stratum": "problem_text"
+        },
+        {
+          "complete_fields": 32,
+          "fields": 75,
+          "incomplete_fields": 43,
+          "missing_prose_slots": 73,
+          "split": "train",
+          "stratum": "negative"
+        },
+        {
+          "complete_fields": 97,
+          "fields": 166,
+          "incomplete_fields": 69,
+          "missing_prose_slots": 103,
+          "split": "train",
+          "stratum": "neutral_masked"
+        },
+        {
+          "complete_fields": 697,
+          "fields": 1354,
+          "incomplete_fields": 657,
+          "missing_prose_slots": 1040,
+          "split": "train",
+          "stratum": "positive"
+        },
+        {
+          "complete_fields": 28,
+          "fields": 151,
+          "incomplete_fields": 123,
+          "missing_prose_slots": 305,
+          "split": "train",
+          "stratum": "problem_text"
+        }
+      ],
+      "records_by_split": {
+        "dev": {
+          "complete_records": 0,
+          "no_complete_fields": 2,
+          "partial_records": 39,
+          "records": 41
+        },
+        "train": {
+          "complete_records": 9,
+          "no_complete_fields": 5,
+          "partial_records": 137,
+          "records": 151
+        }
+      }
+    },
+    "historical_slots_at_nine": 2005
+  },
+  "generation_requests_authorized": 0,
+  "human_qc_status": "pending",
+  "kind": "arabicprm_aggregate_qc_workload_v2_2",
+  "laptop_reservation_ledger_replayed": false,
+  "plan_sha256": "446191b88e072c291ff34388a7fbb4166a6813639a63bb2ef54896431c6e7e4e",
+  "schema_version": 1,
+  "training_eligible": false,
+  "verified_derived_pilot_audit_sha256": "3942a346a653ee2c3f579f7a0ae83d1f83c6bba722336cf1a4a2180d44aaefec"
+}
