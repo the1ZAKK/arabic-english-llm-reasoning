@@ -1,5 +1,7 @@
 # Research decisions
 
+For the proposed diagnostic, retain all planned positions, define operational usability on the unchanged first response, and report both pair and equal-source-group differences with explicit uncertainty bounds. [Analysis v2.3](DIAGNOSTIC24_DECISION_PACKAGE_V2_3.md) preserves source concerns, mechanical failures and assessor disagreement without implying QC or a component-level causal effect. The plan awaits human review and no frozen experiment files change.
+
 Preserve the dirty checkout and verified backup in place. Use an [exact pinned sparse checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) for development rather than changing the original. Verify canonical worktree bytes and frozen fingerprints, exclude unrelated data, and share only the sanitized receipt.
 
 Windows sync decision: compare exact commit identities separately from uncommitted files. A proven ancestor is insufficient authorization to update a dirty checkout. The [sync preflight](WINDOWS_SYNC_PREFLIGHT_V1.md) makes an outside-the-checkout private snapshot and reports overlaps; it does not advance the original branch or copy anything to GitHub.

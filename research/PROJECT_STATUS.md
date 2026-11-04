@@ -1,5 +1,7 @@
 # ArabicPRM-T v2 project evidence
 
+The user reports a verified separate Windows development checkout at `0a4ffd2`. The original and verified backup remain separate. [Private overlap review](WINDOWS_PRIVATE_OVERLAP_REVIEW_V1.md) is still pending. The [diagnostic decision and analysis plan](DIAGNOSTIC24_DECISION_PACKAGE_V2_3.md) adds a prospective usability endpoint, logical bounds and source-group sensitivity. No outcomes or human decisions exist for the diagnostic.
+
 Separate development checkout: the [Windows launcher](WINDOWS_CLEAN_DEVELOPMENT_V1.md) prepares a pinned sparse sibling after the reported private backup, with no edits to the original or copy of local research artifacts. Its CI tests use offline Git fixtures; successful creation on the actual laptop requires the sanitized local receipt.
 
 Windows synchronization: the reported laptop HEAD `c909dfa` is an ancestor of the previously verified `f72bffb` (115 incoming, 0 local-only commits for that exact pair). The dirty working tree remains unresolved. The [offline sync preflight](WINDOWS_SYNC_PREFLIGHT_V1.md) produces a private verified backup and collision report; it performs no checkout updates. The reported laptop has matching Ollama metadata and valid zero-request preparation, but this is not human QC.

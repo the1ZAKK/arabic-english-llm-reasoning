@@ -46,6 +46,8 @@ MODULES = (
     "test_corpus_workload_v2_2",
     "test_sync_preflight_v1",
     "test_clean_development_v1",
+    "test_private_overlap_review_v1",
+    "test_diagnostic_decision_analysis_v2_3",
 )
 
 if __name__ == "__main__":

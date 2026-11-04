@@ -1,0 +1,78 @@
+{
+  "all_targets_train": true,
+  "dispatch_first": {
+    "contextual": 6,
+    "control": 6
+  },
+  "generation_requests_authorized": 0,
+  "groups": [
+    {
+      "equal_group_weight_share": "1/7",
+      "group": 1,
+      "pair_weighted_share": "1/6",
+      "pairs": [
+        1,
+        2
+      ]
+    },
+    {
+      "equal_group_weight_share": "1/7",
+      "group": 2,
+      "pair_weighted_share": "5/12",
+      "pairs": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "equal_group_weight_share": "1/7",
+      "group": 3,
+      "pair_weighted_share": "1/12",
+      "pairs": [
+        8
+      ]
+    },
+    {
+      "equal_group_weight_share": "1/7",
+      "group": 4,
+      "pair_weighted_share": "1/12",
+      "pairs": [
+        9
+      ]
+    },
+    {
+      "equal_group_weight_share": "1/7",
+      "group": 5,
+      "pair_weighted_share": "1/12",
+      "pairs": [
+        10
+      ]
+    },
+    {
+      "equal_group_weight_share": "1/7",
+      "group": 6,
+      "pair_weighted_share": "1/12",
+      "pairs": [
+        11
+      ]
+    },
+    {
+      "equal_group_weight_share": "1/7",
+      "group": 7,
+      "pair_weighted_share": "1/12",
+      "pairs": [
+        12
+      ]
+    }
+  ],
+  "human_design_decision": "pending",
+  "kind": "arabicprm_diagnostic24_prospective_analysis_v2_3",
+  "pair_denominator": 12,
+  "planned_output_denominator": 24,
+  "proposal_sha256": "4327d769e30fdf2324d0d8000b4c828d3d311917993987af23c98687f1e0aa6d",
+  "results": null,
+  "training_eligible": false
+}
