@@ -1,0 +1,126 @@
+{
+  "batch_bindings": [
+    {
+      "batch": 1,
+      "draft_sha256": "a911c5e6289c9c843290794df474e2160cfce4ab32e452b37b2d02e436540e49",
+      "source_lock_sha256": "0dfe1499b192a629351ff878d0abbf8ce1347e131db4b477ff1c42b6a20fb285"
+    },
+    {
+      "batch": 2,
+      "draft_sha256": "a5fadc04594f066409308de283b75e482682e0a72dd0e4e559c30d42afc7263f",
+      "source_lock_sha256": "4a69db8e1d25dfadb5ade22a78dbae0a4a1b17ed076e23d8f429f39476dcf4ae"
+    },
+    {
+      "batch": 3,
+      "draft_sha256": "8cef528152d9dfb0c49335397322cdd48b1facf8d5c0cdf3a88b3873e70d41e1",
+      "source_lock_sha256": "de1f6924c890785fd4670f38d2d56b878622afcb20f1abf7771cbe5a7260e590"
+    },
+    {
+      "batch": 4,
+      "draft_sha256": "6a743087e6ccbaa0ce085e57e2e0949656e4818638393463a5f5aed19ed6d46c",
+      "source_lock_sha256": "562ffac583e4897ff4b858b84694b56470221e1a193b3ec36ebfef25e8911760"
+    },
+    {
+      "batch": 5,
+      "draft_sha256": "a06e16231f60fad1f62938efb186c2b71149f5685e6589c04c2a528d812a0e7c",
+      "source_lock_sha256": "d91192d37cb2691da2dd370179e91b3bcf58ff8be0f39da06c57d8f6f2ceb21e"
+    },
+    {
+      "batch": 6,
+      "draft_sha256": "0acb60dade2ead72e8fcb83d0987b6fe107bdf9a44dc7f0a32b0634a36491583",
+      "source_lock_sha256": "311ba1f96cdea21fdaa563f6fd6dea4332c462dfbc584c0fc120135bfe5b656d"
+    },
+    {
+      "batch": 7,
+      "draft_sha256": "76b0be63d43077f8cd9170d7c381e4cdaf500fde07007786684adfa83a98de21",
+      "source_lock_sha256": "97375eac0aec2d03e5ccf608fc71108ee1119a2dee62b26d6ecdedd352932da8"
+    },
+    {
+      "batch": 8,
+      "draft_sha256": "665cd8cc9d31e50b9b89de4b200a8e4f0292cde47b86a8e8536bf4ceaf2a46f1",
+      "source_lock_sha256": "4e959a16a60dd1fda419e4383f8f0b1377edddff36f303e064e74fd132d3ecda"
+    }
+  ],
+  "fields_by_split_and_native_role": [
+    {
+      "in_whole_passing_trajectory": 5,
+      "individually_passing": 5,
+      "passing_but_in_blocked_trajectory": 0,
+      "role": "negative",
+      "screened": 5,
+      "split": "dev"
+    },
+    {
+      "in_whole_passing_trajectory": 14,
+      "individually_passing": 14,
+      "passing_but_in_blocked_trajectory": 0,
+      "role": "neutral_masked",
+      "screened": 14,
+      "split": "dev"
+    },
+    {
+      "in_whole_passing_trajectory": 75,
+      "individually_passing": 79,
+      "passing_but_in_blocked_trajectory": 4,
+      "role": "positive",
+      "screened": 79,
+      "split": "dev"
+    },
+    {
+      "in_whole_passing_trajectory": 10,
+      "individually_passing": 10,
+      "passing_but_in_blocked_trajectory": 0,
+      "role": "problem_text",
+      "screened": 11,
+      "split": "dev"
+    },
+    {
+      "in_whole_passing_trajectory": 21,
+      "individually_passing": 27,
+      "passing_but_in_blocked_trajectory": 6,
+      "role": "negative",
+      "screened": 27,
+      "split": "train"
+    },
+    {
+      "in_whole_passing_trajectory": 37,
+      "individually_passing": 53,
+      "passing_but_in_blocked_trajectory": 16,
+      "role": "neutral_masked",
+      "screened": 59,
+      "split": "train"
+    },
+    {
+      "in_whole_passing_trajectory": 301,
+      "individually_passing": 486,
+      "passing_but_in_blocked_trajectory": 185,
+      "role": "positive",
+      "screened": 509,
+      "split": "train"
+    },
+    {
+      "in_whole_passing_trajectory": 35,
+      "individually_passing": 48,
+      "passing_but_in_blocked_trajectory": 13,
+      "role": "problem_text",
+      "screened": 53,
+      "split": "train"
+    }
+  ],
+  "generation_requests_authorized": 0,
+  "human_qc_status": "pending",
+  "interpretation": "mechanical_coverage_not_semantic_accuracy_or_human_QC",
+  "kind": "arabicprm_early_mechanical_selection_attrition_v2_3",
+  "source_scope": "committed_Batch01_to_08_only",
+  "training_eligible": false,
+  "trajectories_by_split": {
+    "dev": {
+      "total": 11,
+      "whole_mechanically_passing": 10
+    },
+    "train": {
+      "total": 53,
+      "whole_mechanically_passing": 35
+    }
+  }
+}

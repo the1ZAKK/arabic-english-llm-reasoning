@@ -48,6 +48,7 @@ MODULES = (
     "test_clean_development_v1",
     "test_private_overlap_review_v1",
     "test_diagnostic_decision_analysis_v2_3",
+    "test_early_qc_attrition_v2_3",
 )
 
 if __name__ == "__main__":
