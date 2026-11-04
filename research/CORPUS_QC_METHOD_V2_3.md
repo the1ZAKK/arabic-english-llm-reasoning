@@ -33,3 +33,5 @@ Reproduce with `python -B research/prm_arabic_english/early_qc_attrition_v2_3.py
 A usable training record would require verified original provenance, approved bilingual fidelity, preserved masks and labels, and separately authorized export and training. A negative or erroneous English step can have a faithful Arabic translation; an Arabic correction of the underlying mathematics would alter the object being scored. Put native source rating disagreements in adjudication without silently changing labels. Unavailable and unresolved fields stay visible. Treat neutral steps as context and exclude them from supervised scoring. Any held-out experiment must use disjoint source groups and show label/coverage attrition, including exclusions due to translation or source disputes.
 
 The 12-pair diagnostic is a development exercise for failure modes. Its [analysis plan](DIAGNOSTIC24_DECISION_PACKAGE_V2_3.md) and calibration are not a corpus audit, and no new corpus decision, export or training is made here.
+
+The [v2.4 prospective audit options](CORPUS_QC_SAMPLING_PLAN_V2_4.md) quantify reviewer workload and hypothetical detection separately; no sample has been drawn.

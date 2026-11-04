@@ -1,6 +1,6 @@
 # Session handoff
 
-The laptop user reports `clean_development_checkout_verified` at `0a4ffd2`, with 428 tracked files and 42 fingerprints verified. No private receipt was uploaded. The original checkout and backup remain separate; the [private worksheet](WINDOWS_PRIVATE_OVERLAP_REVIEW_V1.md) gives the next read-only step. For research, use the [pending human decision package and analysis plan](DIAGNOSTIC24_DECISION_PACKAGE_V2_3.md) and [corpus QC method](CORPUS_QC_METHOD_V2_3.md). No inference, budget activation, corpus approval or local file transfer occurred.
+The user reports the private comparison `c909dfa` to `0a4ffd2` finished with 15 potential overlaps, none new and zero checkout updates. Preserve both laptop checkouts, the backup and private worksheet. No transfer is proposed from counts alone. [Human design routing](DIAGNOSTIC24_HUMAN_HANDOFF_V2_4.md), [audit planning](CORPUS_QC_SAMPLING_PLAN_V2_4.md), and [thesis claims and boundaries](ARABICPRMT_THESIS_EVIDENCE_V2_4.md) record the next decisions; no draw, approval, budget or output exists.
 
 Windows development continuation: use the [pinned separate checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) after the reported verified backup. The launcher leaves the original checkout and backup untouched. Review the sanitized success or stop receipt before any local sync claim; overlap review, qualified design approval and independent assessor assignments remain pending.
 

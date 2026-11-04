@@ -1,6 +1,6 @@
 # ArabicPRM-T v2 project evidence
 
-The user reports a verified separate Windows development checkout at `0a4ffd2`. The original and verified backup remain separate. [Private overlap review](WINDOWS_PRIVATE_OVERLAP_REVIEW_V1.md) is still pending. The [diagnostic decision and analysis plan](DIAGNOSTIC24_DECISION_PACKAGE_V2_3.md) adds a prospective usability endpoint, logical bounds and source-group sensitivity. No outcomes or human decisions exist for the diagnostic.
+The user reports the private overlap comparison completed from `c909dfa` to the verified development checkout `0a4ffd2`: 15 potential overlaps, no new matches, no checkout writes or inference authorization. No private files were supplied and no change is selected for transfer. The [human decision handoff](DIAGNOSTIC24_HUMAN_HANDOFF_V2_4.md), [prospective corpus audit](CORPUS_QC_SAMPLING_PLAN_V2_4.md), and [thesis evidence summary](ARABICPRMT_THESIS_EVIDENCE_V2_4.md) are ready for review; no actual review or draw has occurred.
 
 Separate development checkout: the [Windows launcher](WINDOWS_CLEAN_DEVELOPMENT_V1.md) prepares a pinned sparse sibling after the reported private backup, with no edits to the original or copy of local research artifacts. Its CI tests use offline Git fixtures; successful creation on the actual laptop requires the sanitized local receipt.
 

@@ -1,5 +1,7 @@
 # Private overlap worksheet after the clean-development check
 
+The user reports the read-only comparison succeeded for `c909dfa` against `0a4ffd2`: 15 potential overlaps remain, with no new matches, checkout writes or inference authorization. No private worksheet was supplied or inspected here. That comparison leaves the original, backup and worksheet in place. The counts identify no specific change to recover. If a concrete local change later proves necessary, nominate it for separate human review with its purpose and evidence locally; do not automatically transfer it.
+
 The user reports that the separate development checkout verified at `0a4ffd2db38d13914dbcd0a5aecee2572f507cd5`. Keep it separate from the original checkout and verified backup. The 15 possible overlaps came from the **earlier** comparison with `f72bffb`; neither a backup nor a successful clean checkout resolves them.
 
 Download [private_overlap_review_v1.py](prm_arabic_english/private_overlap_review_v1.py) to Downloads. Use the **original sync-preflight** private `report.json` next to `backup_manifest.json` (under the timestamped `sync-preflight-v1` folder), not the clean-development share receipt. In PowerShell run this once, replacing the last quoted argument with the report's actual path:

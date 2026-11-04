@@ -1,6 +1,6 @@
 # Evidence-gated roadmap
 
-With the separate development checkout reported verified, review local overlaps using the [private worksheet](WINDOWS_PRIVATE_OVERLAP_REVIEW_V1.md). Keep original evidence in place. Next research gates are [human design review and analysis-plan acceptance](DIAGNOSTIC24_DECISION_PACKAGE_V2_3.md), independent assessor assignments, and separately authorized execution. Use [corpus QC methodology](CORPUS_QC_METHOD_V2_3.md) to distinguish work triage from an optional probability audit.
+The user reports the read-only overlap comparison completed: 15 potential matches, none new, no transfer. Keep the original, backup and worksheet untouched. Use the [human handoff](DIAGNOSTIC24_HUMAN_HANDOFF_V2_4.md) for genuine design review and distinct assessor roles. Decide on capacity for the [optional early-draft probability audit](CORPUS_QC_SAMPLING_PLAN_V2_4.md) before drawing or seeing reviews.
 
 Use the [separate development checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) to continue offline code work after local verification. Keep the dirty checkout and backup intact, review overlaps privately before carrying any changes forward, and keep genuine design review and execution authorization separate.
 

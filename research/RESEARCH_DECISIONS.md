@@ -1,6 +1,6 @@
 # Research decisions
 
-For the proposed diagnostic, retain all planned positions, define operational usability on the unchanged first response, and report both pair and equal-source-group differences with explicit uncertainty bounds. [Analysis v2.3](DIAGNOSTIC24_DECISION_PACKAGE_V2_3.md) preserves source concerns, mechanical failures and assessor disagreement without implying QC or a component-level causal effect. The plan awaits human review and no frozen experiment files change.
+Keep neutral synthetic calibration and its facilitator key separate from the real design package. Preserve the prospective v2.3 diagnostic endpoint. For the independent early-draft quality question, include blocked groups in the [probability audit frame](CORPUS_QC_SAMPLING_PLAN_V2_4.md); compare review capacity with finite-population calculations rather than treating the mechanical screen as semantic labels.
 
 Preserve the dirty checkout and verified backup in place. Use an [exact pinned sparse checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) for development rather than changing the original. Verify canonical worktree bytes and frozen fingerprints, exclude unrelated data, and share only the sanitized receipt.
 

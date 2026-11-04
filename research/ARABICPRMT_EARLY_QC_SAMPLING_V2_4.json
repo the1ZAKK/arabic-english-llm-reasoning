@@ -1,0 +1,194 @@
+{
+  "draw_performed": false,
+  "early_attrition_canonical_sha256": "f9809256234eecb142ac15fc5c4a32ef308a1d5feaad07a71bd3357a46ce937e",
+  "estimand": "source_group_rate_with_at_least_one_major_or_critical_translation_error_in_original_candidates",
+  "frame_fields": 757,
+  "frame_groups": 64,
+  "frame_scope": "Batch01_to_08_committed_drafts_unique_source_problem_groups",
+  "generation_requests_authorized": 0,
+  "human_qc_status": "pending",
+  "kind": "arabicprm_early_qc_prospective_sampling_v2_4",
+  "options": [
+    {
+      "expected_field_positions": {
+        "decimal": 266.75873,
+        "exact": "84029/315"
+      },
+      "expected_two_assessor_field_judgments": {
+        "decimal": 533.51746,
+        "exact": "168058/315"
+      },
+      "group_review_capacity": 24,
+      "strata": [
+        {
+          "frame_fields": 394,
+          "frame_groups": 35,
+          "group_inclusion_probability": "9/35",
+          "mechanical_stratum": "whole_pass",
+          "proposed_group_draw": 9,
+          "split": "train"
+        },
+        {
+          "frame_fields": 254,
+          "frame_groups": 18,
+          "group_inclusion_probability": "2/9",
+          "mechanical_stratum": "blocked",
+          "proposed_group_draw": 4,
+          "split": "train"
+        },
+        {
+          "frame_fields": 104,
+          "frame_groups": 10,
+          "group_inclusion_probability": "1",
+          "mechanical_stratum": "whole_pass",
+          "proposed_group_draw": 10,
+          "split": "dev"
+        },
+        {
+          "frame_fields": 5,
+          "frame_groups": 1,
+          "group_inclusion_probability": "1",
+          "mechanical_stratum": "blocked",
+          "proposed_group_draw": 1,
+          "split": "dev"
+        }
+      ],
+      "worst_case_detection_if_all_selected_groups_are_resolved": {
+        "1": {
+          "decimal": 0.222222,
+          "exact": "2/9"
+        },
+        "13": {
+          "decimal": 0.984176,
+          "exact": "1022799/1039244"
+        },
+        "7": {
+          "decimal": 0.87005,
+          "exact": "2263/2601"
+        }
+      }
+    },
+    {
+      "expected_field_positions": {
+        "decimal": 365.377778,
+        "exact": "16442/45"
+      },
+      "expected_two_assessor_field_judgments": {
+        "decimal": 730.755556,
+        "exact": "32884/45"
+      },
+      "group_review_capacity": 32,
+      "strata": [
+        {
+          "frame_fields": 394,
+          "frame_groups": 35,
+          "group_inclusion_probability": "2/5",
+          "mechanical_stratum": "whole_pass",
+          "proposed_group_draw": 14,
+          "split": "train"
+        },
+        {
+          "frame_fields": 254,
+          "frame_groups": 18,
+          "group_inclusion_probability": "7/18",
+          "mechanical_stratum": "blocked",
+          "proposed_group_draw": 7,
+          "split": "train"
+        },
+        {
+          "frame_fields": 104,
+          "frame_groups": 10,
+          "group_inclusion_probability": "1",
+          "mechanical_stratum": "whole_pass",
+          "proposed_group_draw": 10,
+          "split": "dev"
+        },
+        {
+          "frame_fields": 5,
+          "frame_groups": 1,
+          "group_inclusion_probability": "1",
+          "mechanical_stratum": "blocked",
+          "proposed_group_draw": 1,
+          "split": "dev"
+        }
+      ],
+      "worst_case_detection_if_all_selected_groups_are_resolved": {
+        "1": {
+          "decimal": 0.388889,
+          "exact": "7/18"
+        },
+        "13": {
+          "decimal": 0.999534,
+          "exact": "122207/122264"
+        },
+        "7": {
+          "decimal": 0.976887,
+          "exact": "36137/36992"
+        }
+      }
+    },
+    {
+      "expected_field_positions": {
+        "decimal": 463.996825,
+        "exact": "146159/315"
+      },
+      "expected_two_assessor_field_judgments": {
+        "decimal": 927.993651,
+        "exact": "292318/315"
+      },
+      "group_review_capacity": 40,
+      "strata": [
+        {
+          "frame_fields": 394,
+          "frame_groups": 35,
+          "group_inclusion_probability": "19/35",
+          "mechanical_stratum": "whole_pass",
+          "proposed_group_draw": 19,
+          "split": "train"
+        },
+        {
+          "frame_fields": 254,
+          "frame_groups": 18,
+          "group_inclusion_probability": "5/9",
+          "mechanical_stratum": "blocked",
+          "proposed_group_draw": 10,
+          "split": "train"
+        },
+        {
+          "frame_fields": 104,
+          "frame_groups": 10,
+          "group_inclusion_probability": "1",
+          "mechanical_stratum": "whole_pass",
+          "proposed_group_draw": 10,
+          "split": "dev"
+        },
+        {
+          "frame_fields": 5,
+          "frame_groups": 1,
+          "group_inclusion_probability": "1",
+          "mechanical_stratum": "blocked",
+          "proposed_group_draw": 1,
+          "split": "dev"
+        }
+      ],
+      "worst_case_detection_if_all_selected_groups_are_resolved": {
+        "1": {
+          "decimal": 0.542857,
+          "exact": "19/35"
+        },
+        "13": {
+          "decimal": 0.999996,
+          "exact": "7014871/7014897"
+        },
+        "7": {
+          "decimal": 0.997538,
+          "exact": "294919/295647"
+        }
+      }
+    }
+  ],
+  "proposed_design": "dev_census_and_stratified_train_srs_without_replacement",
+  "review_capacity_selected": null,
+  "sample_seed": null,
+  "training_eligible": false
+}
