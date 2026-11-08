@@ -91,12 +91,12 @@ def run(args):
     if args.dev_per_class > args.train_per_class:
         raise ValueError("Dev quota should not exceed train quota")
 
-    quarantines = set()
-    if args.quarantine_ids:
-        data = json.loads(Path(args.quarantine_ids).read_text(encoding="utf-8"))
-        if not isinstance(data, list):
-            raise ValueError("Quarantine IDs must be a JSON array of record IDs")
-        quarantines = set(data)
+    data = json.loads(Path(args.quarantine_catalog).read_text(encoding="utf-8"))
+    if not isinstance(data, dict) or not isinstance(data.get("records"), list):
+        raise ValueError("Invalid quarantine catalog")
+    quarantines = {entry["id"] for entry in data["records"] if entry.get("active") is True}
+    if not quarantines:
+        raise ValueError("Active quarantine catalog unexpectedly empty")
     all_rows = {}
     for split in ("train", "dev"):
         rows = load_jsonl(source / f"{split}_en.jsonl")
@@ -133,6 +133,7 @@ def run(args):
         "seed": args.seed,
         "selection_method": "greedy minimum-count generation, length, error-position and problem; SHA256 tie-break",
         "class_quotas_per_split": {"train": args.train_per_class, "dev": args.dev_per_class},
+        "quarantine_catalog_sha256": sha(args.quarantine_catalog),
         "quarantine_excluded_ids": sorted(quarantines),
         "selected_counts": {s: dict(Counter(r["variant"] for r in selected[s])) for s in selected},
         "generation_counts": {s: dict(sorted(Counter(bucket(r)[0] for r in selected[s]).items())) for s in selected},
@@ -162,8 +163,8 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--train-per-class", type=int, default=200)
     parser.add_argument("--dev-per-class", type=int, default=50)
-    parser.add_argument("--quarantine-ids", type=Path,
-                        help="Reviewed JSON array of quarantined source record IDs")
+    parser.add_argument("--quarantine-catalog", type=Path, required=True,
+                        help="Versioned source_quarantine.json; all active IDs are excluded")
     args = parser.parse_args()
     print(json.dumps(run(args), indent=2))
 
