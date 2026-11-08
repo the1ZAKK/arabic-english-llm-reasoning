@@ -1,0 +1,70 @@
+name: ArabicPRM-T v2 deterministic source selection
+
+on:
+  push:
+    branches:
+      - research/arabicprm-t-v2-selection
+    paths:
+      - ".github/workflows/arabicprm-t-v2-selection.yml"
+      - "research/prm_arabic_english/select_arabicprm_t_v2.py"
+      - "research/prm_arabic_english/test_select_arabicprm_t_v2.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    env:
+      PYTHONPATH: research/prm_arabic_english
+      PRM800K_REVISION: 7ecc794703b2877f63226f2477a49b34f9b25163
+      PRM800K_SHA256: 1110237feeb51d1bc200cb37b8f965cfdc1036eac7d506094049366fe7dc1089
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Offline selection tests
+        run: python -m unittest research.prm_arabic_english.test_select_arabicprm_t_v2 -v
+      - name: Fetch exact pinned source
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
+        run: |
+          git lfs install
+          git clone --filter=blob:none https://github.com/openai/prm800k.git prm800k-source
+          git -C prm800k-source checkout "$PRM800K_REVISION"
+          git -C prm800k-source lfs pull --include="prm800k/data/phase2_train.jsonl" --exclude=""
+          echo "$PRM800K_SHA256  prm800k-source/prm800k/data/phase2_train.jsonl" | sha256sum -c -
+      - name: Rebuild verified 1000-problem pool
+        run: |
+          python research/prm_arabic_english/prm800k_production_sample.py \
+            --input prm800k-source/prm800k/data/phase2_train.jsonl \
+            --expected-sha256 "$PRM800K_SHA256" \
+            --output-dir source_pool \
+            --max-problems 1000 \
+            --seed 42 \
+            --dev-fraction 0.2 \
+            --split-lock research/prm_arabic_english/translation_batches/prm800k_qc24/problem_split_lock.json
+      - name: Select balanced v2 translation candidates
+        run: |
+          python research/prm_arabic_english/select_arabicprm_t_v2.py \
+            --source-dir source_pool \
+            --output-dir v2_selection \
+            --seed 42 \
+            --train-per-class 200 \
+            --dev-per-class 50 \
+            --quarantine-catalog research/prm_arabic_english/source_quarantine.json
+      - name: Show manifest
+        run: cat v2_selection/selection_manifest.json
+      - name: Upload private-review English candidate pool
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabicprm-t-v2-english-candidates
+          path: |
+            v2_selection/train_en.jsonl
+            v2_selection/dev_en.jsonl
+            v2_selection/selection_manifest.json
+          if-no-files-found: error
+          retention-days: 30
