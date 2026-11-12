@@ -1,0 +1,165 @@
+{
+  "client_timezone": "Asia/Shanghai",
+  "kind": "native_pilot_source_screen_v3_2",
+  "observed_on_client_date": "2026-11-13",
+  "problems_enrolled": 0,
+  "raw_problem_text_or_answers_published": false,
+  "rightsholders_contacted": false,
+  "screen_type": "AI_technical_source_screen_not_human_validation",
+  "sources": [
+    {
+      "bibliographic_credit_as_displayed": {
+        "author": "محمد بن موسى الخوارزمي",
+        "editors": [
+          "علي مصطفى مشرفة",
+          "محمد مرسي أحمد"
+        ],
+        "publisher": "الجامعة المصرية، كلية العلوم",
+        "year": 1939
+      },
+      "bibliographic_url": "https://sites.dlib.nyu.edu/viewer/books/columbia_aco000196/1?embed=1&lang=ar",
+      "evidence": [
+        {
+          "locator": "catalogue author/edition/provider fields and rights notice",
+          "observation": "Provider identifies this Arabic 1939 Egyptian University edition and expresses a public-domain belief; this is a provider statement, not an item-specific clearance.",
+          "url": "https://sites.dlib.nyu.edu/viewer/books/columbia_aco000196/1?embed=1&lang=ar"
+        },
+        {
+          "locator": "copyright guidelines",
+          "observation": "NYU says it investigated publication-country restrictions and believes displayed material is public domain.",
+          "url": "https://aco.dlib.nyu.edu/about"
+        },
+        {
+          "locator": "PDF pages 1 and 29, 1-based; title and opening of original text",
+          "observation": "Title distinguishes the original author from modern editors; the opening identifies the work as composed by al-Khwarizmi. No problem or answer was enrolled.",
+          "short_quote": "هذا كتاب وضعه محمد بن موسى الخوارزمي",
+          "url": "https://mc.dlib.nyu.edu/files/books/columbia_aco000196/columbia_aco000196_lo.pdf"
+        }
+      ],
+      "explicit_translation": false,
+      "inspected_pdf_bytes": 9048530,
+      "inspected_pdf_sha256": "9a06321be6708ad0faa07be53c63bd31eb94bdcb8a1bb0bf8a4fe6cf34452426",
+      "inspected_pdf_url": "https://mc.dlib.nyu.edu/files/books/columbia_aco000196/columbia_aco000196_lo.pdf",
+      "institution": "NYU Arabic Collections Online / Columbia University Libraries",
+      "item_permission_status": "not_cleared",
+      "notes": "Historical source lead; do not claim modern Arabic representativeness or count a book as a problem. PDF was inspected privately, not committed or exported as a dataset.",
+      "origin_screen": "documentary_support_item_review_pending",
+      "persistent_url": "https://hdl.handle.net/2333.1/9s4mw8vz",
+      "potential_domains": [
+        "arithmetic_number_theory",
+        "algebra",
+        "geometry",
+        "applied_word_problems"
+      ],
+      "remaining_checks": [
+        "Select exact problem/page and confirm original-text versus editorial material.",
+        "Assess historical Arabic register, mathematical validity and family duplication.",
+        "Document applicable private-pilot permission scope for the selected material; provider belief is not universal legal clearance."
+      ],
+      "source_id": "ACO-KHW-1939",
+      "title": "كتاب الجبر والمقابلة"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "authors": [
+          "عدنان بن ماجد عبدالرحمن بري",
+          "محمود محمد ابراهيم",
+          "انور احمد محمد"
+        ]
+      },
+      "bibliographic_url": "https://ksupress.ksu.edu.sa/ar/textbooks",
+      "evidence": [
+        {
+          "locator": "catalogue entry for the title",
+          "observation": "The publisher lists an Arabic title and credited authors. This alone does not prove item-level native authorship or grant reuse.",
+          "url": "https://ksupress.ksu.edu.sa/ar/textbooks"
+        },
+        {
+          "locator": "rights and licensing page, heading/body",
+          "observation": "The rights page is a coming-soon placeholder and the site carries a reserved-rights footer. No applicable reuse grant was found in these inspected pages.",
+          "short_quote": "قريبا...",
+          "url": "https://ksupress.ksu.edu.sa/ar/node/306"
+        }
+      ],
+      "explicit_translation": false,
+      "inspected_pdf_sha256": null,
+      "institution": "دار جامعة الملك سعود للنشر",
+      "item_permission_status": "not_cleared",
+      "notes": "Authorship strings are catalogue credits, not appointed reviewers or a finding of native origin.",
+      "origin_screen": "undetermined",
+      "potential_domains": [
+        "probability_combinatorics",
+        "applied_word_problems"
+      ],
+      "remaining_checks": [
+        "Obtain the actual edition and item locators.",
+        "Establish original-language and derivation history for each problem.",
+        "Obtain or verify private-pilot permission; no author or rightsholder was contacted."
+      ],
+      "source_id": "KSU-PRESS-PROB",
+      "title": "مبادئ الإحصاء والاحتمالات"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "hosting_course_page": "العنود عبدالله الزغيبي; 100 إحص - مقرر سابق",
+        "worksheet_original_author": "not established"
+      },
+      "bibliographic_url": "https://faculty.ksu.edu.sa/ar/aalzughibi/course/168645",
+      "evidence": [
+        {
+          "locator": "counting-exercise attachment and site footer",
+          "observation": "Official teaching page links a counting worksheet and identifies course references; the footer reserves rights.",
+          "url": "https://faculty.ksu.edu.sa/ar/aalzughibi/course/168645"
+        },
+        {
+          "locator": "PDF pages 1-2, numbered items and homework references",
+          "observation": "Several items refer back to a textbook. Arabic hosting and wording do not settle the original language or individual item lineage.",
+          "url": "https://faculty.ksu.edu.sa/sites/default/files/tmryn_trq_ld_1_0.pdf"
+        }
+      ],
+      "explicit_translation": false,
+      "inspected_pdf_sha256": null,
+      "institution": "King Saud University faculty teaching pages",
+      "item_permission_status": "not_cleared",
+      "notes": "A useful provenance warning, not a cleared native problem bank. No worksheet problem text or answer is reproduced in the kit.",
+      "origin_screen": "undetermined",
+      "potential_domains": [
+        "probability_combinatorics"
+      ],
+      "remaining_checks": [
+        "Trace textbook-referenced items to the actual original edition.",
+        "Obtain applicable permission and an independent native-origin determination.",
+        "Do not assume the hosting lecturer authored all questions."
+      ],
+      "source_id": "KSU-COUNTING-SHEET",
+      "title": "تمارين طرق العد - مقرر 100 إحص"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "arabic_translation_year": 2009,
+        "author": "Timothy Gowers",
+        "original_english_year": 2002,
+        "translator": "انتصارات محمد حسن الشبكي"
+      },
+      "bibliographic_url": "https://downloads.hindawi.org/books/17075726.pdf",
+      "evidence": [
+        {
+          "locator": "PDF pages 3-4, 1-based; title and copyright pages",
+          "observation": "The publisher explicitly credits a translator, identifies an English original, and reserves rights in the translation and original. Exclude from the native pilot.",
+          "short_quote": "Mathematics was originally published in English in 2002.",
+          "url": "https://downloads.hindawi.org/books/17075726.pdf"
+        }
+      ],
+      "explicit_translation": true,
+      "inspected_pdf_sha256": null,
+      "institution": "Hindawi Foundation",
+      "item_permission_status": "not_cleared",
+      "notes": "Negative control for origin screening. Not counted as a native source or an eligible problem.",
+      "origin_screen": "translated_excluded",
+      "potential_domains": [],
+      "remaining_checks": [],
+      "source_id": "HINDAWI-GOWERS-TRANSLATED",
+      "title": "الرياضيات: مقدمة قصيرة جدا"
+    }
+  ]
+}

@@ -62,7 +62,8 @@ def header(doc, kind):
 def benchmark_audit(rows, required_splits=("train", "dev", "test")):
     """Validate final metadata declarations; never authenticate or enroll items."""
     require(bool(rows), "Empty benchmark frame")
-    require(required_splits in (("train", "dev", "test"), ("dev", "test")), "Explicit train/dev/test or dev/test design required")
+    require(required_splits in (("train", "dev", "test"), ("dev", "test"), ("dev",)),
+            "Explicit train/dev/test, dev/test or development-only design required")
     unique([r.get("problem_id") for r in rows], "One unique Arabic-side problem group per row required")
     ownership = defaultdict(set)
     normalized = set()

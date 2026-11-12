@@ -1,5 +1,7 @@
 # Session handoff
 
+v3.2 intake checkpoint: [ARABIC_NATIVE_PILOT_V3_2.md](ARABIC_NATIVE_PILOT_V3_2.md) and `research/native_pilot_v3_2/` contain actual source-screening metadata and an empty twenty-slot manifest. No problem text, reference answer, reviewer identity or judgment is fabricated. Public kit has zero entered candidates and source-ready items. Existing v3 provenance checks support explicit dev-only use; default benchmark requirements remain strict. Continue with private real item/reference and human/timing evidence. Keep original laptop checkouts, backup, overlap work, frozen42 and histories untouched. No inference, scoring, training, export or active allowance.
+
 ## v3.1 continuation checkpoint
 
 Read [ARABICPRMT_V3_1_PROGRESS.md](ARABICPRMT_V3_1_PROGRESS.md) first. Feasibility

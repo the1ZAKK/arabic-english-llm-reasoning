@@ -1,0 +1,168 @@
+{
+  "candidate_metadata_complete_records": 0,
+  "entered_candidate_records": 0,
+  "excluded_candidate_records": 0,
+  "families_above_two_problem_cap": 0,
+  "human_validation_complete": false,
+  "interpretation": "Declared intake completeness only; references are private pointers and are not followed or authenticated.",
+  "kind": "native_pilot_collection_audit_v3_2",
+  "purpose": "development_only",
+  "register_counts": {},
+  "slot_status": [
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-ARI-01",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-ARI-02",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-ARI-03",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-ARI-04",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-ALG-01",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-ALG-02",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-ALG-03",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-ALG-04",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-GEO-01",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-GEO-02",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-GEO-03",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-GEO-04",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-PRO-01",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-PRO-02",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-PRO-03",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-PRO-04",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-APP-01",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-APP-02",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-APP-03",
+      "stage": "target_only"
+    },
+    {
+      "blockers": [
+        "actual_problem_not_collected"
+      ],
+      "slot_id": "AN32-APP-04",
+      "stage": "target_only"
+    }
+  ],
+  "source_families_recorded": 0,
+  "source_leads_confirmed_translated": 1,
+  "source_leads_screened": 4,
+  "source_provenance_authenticated": false,
+  "source_ready_cohort_complete": false,
+  "source_ready_for_human_review": 0,
+  "target_by_domain": {
+    "algebra": 4,
+    "applied_word_problems": 4,
+    "arithmetic_number_theory": 4,
+    "geometry": 4,
+    "probability_combinatorics": 4
+  },
+  "target_problems": 20,
+  "training_or_export_eligibility_granted": false
+}

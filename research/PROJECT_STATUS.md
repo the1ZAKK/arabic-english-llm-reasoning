@@ -1,5 +1,7 @@
 # ArabicPRM-T v2 project evidence
 
+v3.2 intake milestone: [development-only native pilot](ARABIC_NATIVE_PILOT_V3_2.md) prepares twenty target slots across five domains and a primary-source register. Four source leads were screened, including one confirmed English-derived exclusion. Actual enrolled problems, item permission clearances and qualified human reviews remain zero. A source record is not a benchmark item; no authorship, answer or identity is invented. Existing v3 validators are reused, with an explicit dev-only mode. Frozen artifacts and all model-execution boundaries remain unchanged.
+
 ## v3.1 diagnosis and operational readiness
 
 [Scientific progress](ARABICPRMT_V3_1_PROGRESS.md) separates actual retained-score

@@ -1,5 +1,7 @@
 # Experiment and evidence registry
 
+v3.2 source/intake preparation — primary evidence register (ACO historical Arabic edition, KSU publisher/course leads, and a Hindawi translation excluded from native origin), twenty four-per-domain dev slots, reproducible empty intake report and strict offline checks. Actual problem records, source-level human validations, reviewer assignments and new model observations: zero. Only source metadata and templates are published, not raw books/problem datasets.
+
 v3.1 scoring continuation — read-only [replay](PERFORMANCE_GAP_DIAGNOSIS_V3_1.json)
 binds the preserved thirteen v3 inputs and reports rounding robustness. The
 [recorded scoring analyzer](SCORING_DIAGNOSIS_V3_1.md) validates condition roles,

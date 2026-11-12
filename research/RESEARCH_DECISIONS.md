@@ -1,5 +1,7 @@
 # Research decisions
 
+v3.2 — Separate screened source leads, entered candidate metadata, source readiness and completed human validation. Do not infer native authorship from Arabic wording or institutional hosting; reject the explicitly translated source as native. Treat public-domain/provider notices as evidence to assess for exact items/scopes, not fabricated blanket permission. Keep all pilot families development-only and distinct canonical lineages; target twenty problems with at most two per template family. No automated human endorsement or budget creation.
+
 v3.1 — Existing-score reaggregation and rounding analysis cannot identify a
 quantization cause or an adaptation-only effect. Require unchanged input IDs,
 tokenizer/extraction/software/device/determinism and matched numerical settings

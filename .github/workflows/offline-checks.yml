@@ -7,6 +7,7 @@ on:
       - "model_utils/io_utils.py"
       - ".gitattributes"
       - "research/diagnostic24_design_review_v2_1/**"
+      - "research/native_pilot_v3_2/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
       - "scripts/check_reproducibility.py"
@@ -18,6 +19,7 @@ on:
       - "model_utils/io_utils.py"
       - ".gitattributes"
       - "research/diagnostic24_design_review_v2_1/**"
+      - "research/native_pilot_v3_2/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
       - "scripts/check_reproducibility.py"
@@ -50,6 +52,7 @@ jobs:
             model_utils
             research/prm_arabic_english
             research/diagnostic24_design_review_v2_1
+            research/native_pilot_v3_2
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.11"

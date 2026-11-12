@@ -1,5 +1,7 @@
 # Evidence-gated roadmap
 
+Next v3.2 step: use the [twenty-slot development intake](ARABIC_NATIVE_PILOT_V3_2.md) to obtain actual item-specific origin/permission evidence and qualified human review. Four source leads are documented; neither institutional hosting nor an Arabic translation establishes native origin. Complete the human/timing pilot before treating 100/250/500 as staffed or scientifically sufficient. No scoring or generation is authorized.
+
 Current v3.1 links: [capacity/collection](BENCHMARK_FEASIBILITY_V3_1.md),
 [controlled scoring](SCORING_DIAGNOSIS_V3_1.md), [fixed-pool operations](RERANKING_OPERATIONS_V3_1.md),
 and [scientific report](ARABICPRMT_V3_1_PROGRESS.md). Next is actual staffing/work-rate
