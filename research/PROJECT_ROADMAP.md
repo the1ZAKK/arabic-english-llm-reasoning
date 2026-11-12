@@ -1,5 +1,25 @@
 # Evidence-gated roadmap
 
+## Active scientific priorities
+
+| Priority | Deliverable | Actual state / remaining evidence |
+|---|---|---|
+| 1 | Audit and narrow thesis claims | Retained scores and synthetic pilot reproduced; original twenty-example reuse identified. See [audit](RETAINED_EVIDENCE_AUDIT_V3.md). |
+| 2 | Native benchmark and human rubric | [Specification](ARABIC_NATIVE_BENCHMARK_V1.md) ready; actual licensed native sources, Arabic mathematics reviewers and annotations missing. Target 500 problems, 80/20 native/translated, not a completed dataset. |
+| 3 | Diagnose before further fine-tuning | [Content-controlled and generation/selection design](ARABIC_NATIVE_STUDY_V3.md) and offline paired gap/Brier tools implemented; no new scored observations or cause established. |
+| 4 | Demonstrate downstream solving benefit | Fixed-pool K=1/2/4/8 replay implemented; actual authorized candidate pools, human final outcomes and pinned scorer evidence missing. Primary: Arabic-native K=8 base-versus-first accuracy. |
+| 5 | Possible adaptation and final thesis | Only after diagnosis, authentic QC and separate authorization. Report bounded results and limits; do not claim general Arabic efficacy or English equivalence from twenty problems. |
+| Supporting | Translation fidelity / corpus quality | [Short sampled protocol](TRANSLATION_QC_SHORT_PROTOCOL.md); preserve frozen data. No new reviewer infrastructure or translation generation on the critical path. |
+
+Resolve the proposed size/power/resource tradeoff with the supervisor. A 240-native
+problem test targets roughly 10-point changes under illustrative independence
+assumptions; it cannot rule out smaller effects, and source clustering reduces
+information. Actual human provenance and annotations are scientific dependencies,
+not forms software can complete. The translation diagnostic24 remains inactive
+and deferred. No model operation or new budget is authorized.
+
+## Historical recovery roadmap
+
 Supervisor revision (2026-11-12) supersedes the translation-first priorities below: (1) audit and narrow claims, (2) specify a majority-native Arabic benchmark and genuine human step annotation, (3) diagnose the language gap with content-controlled comparisons, (4) measure held-out final-answer success with fixed candidate pools, (5) only then consider separately authorized adaptation. Start with the [source-bound evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md). No generation, training or active budget is authorized. Earlier recovery milestones remain preserved as history.
 
 The user reports the read-only overlap comparison completed: 15 potential matches, none new, no transfer. Keep the original, backup and worksheet untouched. Use the [human handoff](DIAGNOSTIC24_HUMAN_HANDOFF_V2_4.md) for genuine design review and distinct assessor roles. Decide on capacity for the [optional early-draft probability audit](CORPUS_QC_SAMPLING_PLAN_V2_4.md) before drawing or seeing reviews.

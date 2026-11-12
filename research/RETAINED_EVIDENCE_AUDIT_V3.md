@@ -23,7 +23,8 @@ related templates, uncertain bilingual equivalence or missing annotator evidence
 The rows are not eighty independent experimental units. Native source-family
 clustering cannot be reconstructed from their IDs alone.
 
-One of the eighty AR/EN candidate pairs has different recorded step counts.
+One of the eighty AR/EN candidate pairs has different recorded step counts:
+problem ID `6`, category `correct`, has seven Arabic steps and six English steps.
 Whole-response averages remain reproducible, but a stepwise language comparison
 needs an explicit bilingual alignment audit. The retained CSV step scores are
 rounded to four decimals; this audit uses their original `average_score`, not
@@ -60,3 +61,21 @@ model-client imports. Exact original bytes are preserved on Windows using
 targeted Git attributes. The new tests reject missing categories, duplicates,
 invalid scores and misaligned steps. CI proves this replay, not annotation
 quality or the validity of the historical category assignments.
+
+## Additional recorded-score diagnosis
+
+The retained nominally correct category is uniquely highest on **12/20 Arabic
+base**, **16/20 Arabic adapted**, **20/20 English base** and **20/20 English adapted**
+problems; there are no highest-score ties in these sets. Against the individual
+arithmetic/logic/completely-wrong categories, Arabic base wins 18/20, 16/20 and
+16/20 respectively; the adapted scorer wins 18/20, 18/20 and 19/20. All English
+comparisons win 20/20. These counts are reproduced in the aggregate artifact.
+
+This demonstrates a **nominal ordering weakness as well as an absolute-score
+shift** within the selected set: a strictly monotonic score recalibration alone
+cannot change the within-problem ordering. It does not determine whether the
+underlying cause is language representation, label error, bilingual content
+mismatch, segmentation or another confound. The category labels remain
+unverified, and the four candidates were authored with a correct category by
+construction. Do not call these counts generated-solution accuracy or downstream
+solver improvement. They motivate the native, human-labeled fixed-pool experiment.

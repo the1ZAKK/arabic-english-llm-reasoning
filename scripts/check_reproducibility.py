@@ -51,6 +51,7 @@ MODULES = (
     "test_early_qc_attrition_v2_3",
     "test_early_qc_sampling_plan_v2_4",
     "test_evidence_audit_v3",
+    "test_native_study_v1",
 )
 
 if __name__ == "__main__":

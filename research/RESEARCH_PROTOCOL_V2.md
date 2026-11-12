@@ -1,5 +1,7 @@
 # ArabicPRM-T v2 research protocol and thesis working draft
 
+Current direction: [supervisor-directed study v3](ARABIC_NATIVE_STUDY_V3.md), [native benchmark](ARABIC_NATIVE_BENCHMARK_V1.md) and [short translation QC](TRANSLATION_QC_SHORT_PROTOCOL.md). The earlier protocol/evidence below is historical; native human-labeled diagnosis and downstream solving now take priority.
+
 **Historical protocol notice (2026-11-12).** Translation-corpus and score-margin work below remains a record of the earlier study. The current supervisor requires a majority Arabic-native, genuinely human-labeled benchmark, language-gap diagnosis before further adaptation, and held-out downstream solving evaluation. The [evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md) supersedes broader interpretations of the old twenty-problem and synthetic-pilot results. No new experiment is authorized.
 
 Status: evidence-grounded methodology plus **planned** experiments. No new inference, human semantic acceptance, training, model download or corpus export occurred in this work. Preserve all earlier experiment files and genuine recorded QC decisions. Current safe aggregates are in [PROJECT_STATUS.md](PROJECT_STATUS.md); unknown results stay unknown.

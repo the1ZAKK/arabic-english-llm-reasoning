@@ -1,5 +1,9 @@
 # Arabic-English and Moroccan Darija Mathematical Reasoning in LLMs
 
+## Current ArabicPRM-T scientific direction
+
+The supervisor-directed [native-Arabic study](research/ARABIC_NATIVE_STUDY_V3.md) prioritizes qualified human Arabic step labels, diagnosis before more fine-tuning, and held-out final-answer gains from fixed-pool PRM reranking. The [audit](research/RETAINED_EVIDENCE_AUDIT_V3.md) reproduces the earlier selected twenty-problem results but narrows generalization and retention claims. The proposed 500-problem frame is not collected data; no new inference, training, native annotations or downstream gains are claimed. Other historical studies below were not re-audited in this revision.
+
 ## Reproduce the offline checks
 
 Start with [the reproducibility guide](docs/REPRODUCIBILITY.md). With Python 3.11, run `python scripts/check_reproducibility.py` to check ingestion, translation review, exports and quarantine using temporary fixtures without API keys or a GPU. Benchmark and training reproduction require their documented environments and inputs.

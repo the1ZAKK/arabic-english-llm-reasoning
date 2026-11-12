@@ -1,5 +1,31 @@
 # Session handoff
 
+## Active handoff: supervisor revision
+
+Start with [study v3](ARABIC_NATIVE_STUDY_V3.md), [native benchmark/rubric](ARABIC_NATIVE_BENCHMARK_V1.md),
+[retained evidence](RETAINED_EVIDENCE_AUDIT_V3.md), and [offline tools](NATIVE_STUDY_TOOLS_V1.md).
+The meaningful next dependency is actual evidence-backed Arabic-native source
+collection and qualified Arabic human annotation capacity, followed by separately
+authorized diagnosis/scoring and fixed-pool solving evaluation. More fine-tuning,
+translation generation or approval interfaces are not the next research step.
+
+`evidence_audit_v3.py` reads twelve named retained inputs and static AST literals,
+not legacy model imports. `native_study_v1.py` validates metadata declarations,
+replays paired score/Brier contrasts with family bootstrap, and compares recorded
+fixed pools without generating or loading a model. Synthetic tests are not new
+experimental results. The target is 500 unique groups, 80/20 native/translated;
+none has been collected or labeled by this work.
+
+Commit `90dd38a` is the audit milestone; Linux passed, Windows exposed a UTF-8
+reader issue in CI 43207008836. Explicit encoding is fixed. All 556 local offline tests passed (63.182 s),
+including an actual non-UTF8-default subprocess regression; verify the renewed
+Windows/Linux matrix before claiming cross-platform success. Preserve original local checkout,
+backup, private worksheet, all 15 overlaps, all frozen42/runtime/proposal bytes,
+historical nine-attempt counters and genuine QC records. No local artifact was
+migrated. No inference, active budget, training, unreviewed export or human approval.
+
+## Earlier operational handoffs (historical)
+
 Active supervisor directive (2026-11-12): continue the Arabic-native evaluation pivot rather than adding recovery approval infrastructure. [Audit v3](RETAINED_EVIDENCE_AUDIT_V3.md) checks twelve retained inputs, reproduces four 20-problem score sets and the synthetic pilot aggregates, and identifies reused evaluation examples and one bilingual step-count mismatch. Independent native-source provenance, Arabic human labels, causal gap diagnosis and downstream solving evidence remain missing. Preserve both laptop checkouts, the backup, overlap worksheet and all frozen artifacts. Offline code/docs/tests only. Earlier handoffs below are historical.
 
 The user reports the private comparison `c909dfa` to `0a4ffd2` finished with 15 potential overlaps, none new and zero checkout updates. Preserve both laptop checkouts, the backup and private worksheet. No transfer is proposed from counts alone. [Human design routing](DIAGNOSTIC24_HUMAN_HANDOFF_V2_4.md), [audit planning](CORPUS_QC_SAMPLING_PLAN_V2_4.md), and [thesis claims and boundaries](ARABICPRMT_THESIS_EVIDENCE_V2_4.md) record the next decisions; no draw, approval, budget or output exists.

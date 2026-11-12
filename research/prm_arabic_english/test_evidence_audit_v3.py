@@ -1,6 +1,9 @@
 import csv
 import json
+import os
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -10,13 +13,17 @@ import evidence_audit_v3 as audit
 class RetainedEvidenceTests(unittest.TestCase):
     def test_real_source_bound_aggregate_replay(self):
         root = Path(__file__).parent
-        expected = json.loads((root.parent / "RETAINED_EVIDENCE_AUDIT_V3.json").read_text())
+        expected = json.loads((root.parent / "RETAINED_EVIDENCE_AUDIT_V3.json").read_text(encoding="utf-8"))
         self.assertEqual(audit.audit(root), expected)
         self.assertEqual(expected["pilot_split"]["pair_id_groups"], {"train": 40, "dev": 10})
         self.assertEqual(expected["pilot_split"]["recorded_sources"], ["synthetic_pilot"])
         self.assertTrue(expected["arabic_generalization_reuses_all_20_baseline_examples"])
         self.assertEqual(expected["cross_language_step_count_disagreements"], 1)
         self.assertEqual(expected["generation_requests"], 0)
+        sets = expected["historical_score_sets"]
+        self.assertEqual([sets[k]["nominal_category_ordering"]["nominal_correct_unique_highest"]
+                          for k in ("arabic_base", "english_base", "arabic_adapted", "english_adapted")],
+                         [12, 20, 16, 20])
 
     def test_bootstrap_uses_problem_values_and_fixed_seed(self):
         result = audit.mean_interval([-.2, .4, .1], draws=100)
@@ -55,6 +62,12 @@ class RetainedEvidenceTests(unittest.TestCase):
             path.write_text("raise RuntimeError('must not execute')\nexamples = [{'id': 1}]\n")
             self.assertEqual(audit.example_list(path), [{"id": 1}])
 
+    def test_arabic_evidence_does_not_depend_on_default_locale_encoding(self):
+        env = {**os.environ, "PYTHONUTF8": "0", "PYTHONCOERCECLOCALE": "0",
+               "LC_ALL": "C", "PYTHONIOENCODING": "utf-8"}
+        raw = subprocess.check_output([sys.executable, "-B", str(Path(audit.__file__))], env=env)
+        self.assertEqual(json.loads(raw)["pilot_split"]["pair_id_groups"], {"train": 40, "dev": 10})
+
     def test_pilot_does_not_invent_step_labels_or_accept_misalignment(self):
         record = {"id": "x", "pair_id": "p", "step_labels": [1.0], "step_probs": [.5],
                   "trajectory_score": .5, "variant": "correct"}
@@ -62,6 +75,13 @@ class RetainedEvidenceTests(unittest.TestCase):
                          {"step_probs": []}, {"step_probs": [float("inf")]}):
             with self.assertRaises(ValueError):
                 audit.pilot_metrics([{**record, **override}])
+
+    def test_nominal_ordering_reports_ties_without_using_category_to_break_them(self):
+        groups = {"p": {c: {"average_score": .5} for c in audit.CATEGORIES}}
+        result = audit.nominal_ordering(groups)
+        self.assertEqual(result["nominal_correct_unique_highest"], 0)
+        self.assertEqual(result["nominal_correct_tied_highest"], 1)
+        self.assertEqual(result["pairwise_ties"], {c: 1 for c in audit.CATEGORIES[1:]})
 
 
 if __name__ == "__main__":

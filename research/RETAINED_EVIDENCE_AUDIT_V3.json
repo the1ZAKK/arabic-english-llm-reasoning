@@ -13,6 +13,27 @@
         "logic_error": 0.5934893038567333
       },
       "correct_minus_mean_wrong": 0.19022744563149496,
+      "nominal_category_ordering": {
+        "limitation": "Authored categories, not qualified human-verified solver outcomes; no generated-candidate evaluation.",
+        "nominal_correct_pairwise_wins": {
+          "arithmetic_error": 18,
+          "completely_wrong": 19,
+          "logic_error": 18
+        },
+        "nominal_correct_rank_counts": {
+          "1": 16,
+          "2": 3,
+          "3": 1
+        },
+        "nominal_correct_tied_highest": 0,
+        "nominal_correct_unique_highest": 16,
+        "pairwise_ties": {
+          "arithmetic_error": 0,
+          "completely_wrong": 0,
+          "logic_error": 0
+        },
+        "problem_groups": 20
+      },
       "problems": 20,
       "responses": 80
     },
@@ -24,6 +45,27 @@
         "logic_error": 0.4466117953896404
       },
       "correct_minus_mean_wrong": 0.10804321394651813,
+      "nominal_category_ordering": {
+        "limitation": "Authored categories, not qualified human-verified solver outcomes; no generated-candidate evaluation.",
+        "nominal_correct_pairwise_wins": {
+          "arithmetic_error": 18,
+          "completely_wrong": 16,
+          "logic_error": 16
+        },
+        "nominal_correct_rank_counts": {
+          "1": 12,
+          "2": 6,
+          "3": 2
+        },
+        "nominal_correct_tied_highest": 0,
+        "nominal_correct_unique_highest": 12,
+        "pairwise_ties": {
+          "arithmetic_error": 0,
+          "completely_wrong": 0,
+          "logic_error": 0
+        },
+        "problem_groups": 20
+      },
       "problems": 20,
       "responses": 80
     },
@@ -35,6 +77,25 @@
         "logic_error": 0.5793444124446805
       },
       "correct_minus_mean_wrong": 0.35627980112173924,
+      "nominal_category_ordering": {
+        "limitation": "Authored categories, not qualified human-verified solver outcomes; no generated-candidate evaluation.",
+        "nominal_correct_pairwise_wins": {
+          "arithmetic_error": 20,
+          "completely_wrong": 20,
+          "logic_error": 20
+        },
+        "nominal_correct_rank_counts": {
+          "1": 20
+        },
+        "nominal_correct_tied_highest": 0,
+        "nominal_correct_unique_highest": 20,
+        "pairwise_ties": {
+          "arithmetic_error": 0,
+          "completely_wrong": 0,
+          "logic_error": 0
+        },
+        "problem_groups": 20
+      },
       "problems": 20,
       "responses": 80
     },
@@ -46,6 +107,25 @@
         "logic_error": 0.5698109321172409
       },
       "correct_minus_mean_wrong": 0.35617440282927687,
+      "nominal_category_ordering": {
+        "limitation": "Authored categories, not qualified human-verified solver outcomes; no generated-candidate evaluation.",
+        "nominal_correct_pairwise_wins": {
+          "arithmetic_error": 20,
+          "completely_wrong": 20,
+          "logic_error": 20
+        },
+        "nominal_correct_rank_counts": {
+          "1": 20
+        },
+        "nominal_correct_tied_highest": 0,
+        "nominal_correct_unique_highest": 20,
+        "pairwise_ties": {
+          "arithmetic_error": 0,
+          "completely_wrong": 0,
+          "logic_error": 0
+        },
+        "problem_groups": 20
+      },
       "problems": 20,
       "responses": 80
     }

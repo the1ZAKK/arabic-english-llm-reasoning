@@ -1,5 +1,14 @@
 # Experiment and evidence registry
 
+2026-11-12 — Native-study v1 preparation: [scientific protocol](ARABIC_NATIVE_STUDY_V3.md),
+[human rubric/provenance](ARABIC_NATIVE_BENCHMARK_V1.md), and pure offline metadata,
+paired gap/Brier, fixed-pool reranking and sample-size analysis. All test inputs
+are synthetic; target 500 groups/240-native test is prospective. Actual native
+items, human annotations, candidate pools and new scorer observations: **none**.
+No native benchmark performance, downstream gain, generation, training, dataset
+release, budget or human endorsement. Original translated-corpus accounting is
+retained in the [short supporting QC table](TRANSLATION_QC_SHORT_PROTOCOL.md).
+
 2026-11-12 — Retained-evidence audit v3: deterministic read-only replay, twelve SHA256-bound inputs, 20 matched problem IDs/80 rows per scoring set, pilot dev ten groups/79 steps. All original result bytes retained. New aggregate output: [RETAINED_EVIDENCE_AUDIT_V3.json](RETAINED_EVIDENCE_AUDIT_V3.json). No inference, training, new human labels or downstream result. Previously named generalization/retention runs reuse original examples and must be interpreted as selected-set comparisons.
 
 | ID | State / evidence | Result / limitation |

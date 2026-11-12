@@ -1,5 +1,27 @@
 # ArabicPRM-T v2 project evidence
 
+## Current supervisor-directed study (2026-11-12)
+
+The [revised scientific design](ARABIC_NATIVE_STUDY_V3.md) prioritizes native Arabic
+problem solving, genuine Arabic human labels and diagnosis before adaptation.
+The [evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md) reproduces old results but
+establishes no new benchmark or downstream gain. The proposed frame is 500 unique
+problems (400 native/100 translated), with a locked 240-native/60-translated test.
+These are targets, not collected data or an inference allowance.
+
+The [native provenance/rubric specification](ARABIC_NATIVE_BENCHMARK_V1.md),
+[recorded-score/pool analysis tools](NATIVE_STUDY_TOOLS_V1.md) and
+[short supporting translation QC](TRANSLATION_QC_SHORT_PROTOCOL.md) are implemented.
+Real source acquisition, qualified independent Arabic annotation, immutable scorer
+pins and future authorized observations remain missing. The optional diagnostic24
+is deferred and inactive; the closed pilot20 stays exhausted. No inference,
+training, export or human approval was produced.
+
+Audit commit `90dd38a` passed Linux CI; Windows found a new audit-reader default
+encoding bug in [run 43207008836](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43207008836).
+The reader now explicitly uses UTF-8; complete renewed matrix verification is
+required. Historical operational notes below do not supersede this direction.
+
 Current scientific direction (2026-11-12): the supervisor requires a larger Arabic-native evaluation, qualified Arabic human step labels, diagnosis before further adaptation, and downstream final-answer gains. The [retained-evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md) reproduces the old results and narrows their claims. Arabic generalization and English retention reuse the original twenty-example sets; the adaptation dev set has ten problem groups. No native benchmark, independent human annotation or downstream reranking result is established. Translation recovery is supporting work, not the critical research path. The prior operational history below is preserved.
 
 The user reports the private overlap comparison completed from `c909dfa` to the verified development checkout `0a4ffd2`: 15 potential overlaps, no new matches, no checkout writes or inference authorization. No private files were supplied and no change is selected for transfer. The [human decision handoff](DIAGNOSTIC24_HUMAN_HANDOFF_V2_4.md), [prospective corpus audit](CORPUS_QC_SAMPLING_PLAN_V2_4.md), and [thesis evidence summary](ARABICPRMT_THESIS_EVIDENCE_V2_4.md) are ready for review; no actual review or draw has occurred.

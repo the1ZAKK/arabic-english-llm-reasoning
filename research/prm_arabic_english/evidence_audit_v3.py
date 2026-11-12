@@ -83,6 +83,27 @@ def gaps(groups):
             for k, v in sorted(groups.items())}
 
 
+def nominal_ordering(groups):
+    """Ordering against retained category tags, not authenticated solving truth."""
+    unique_top, tied_top = 0, 0
+    ranks = Counter()
+    wins, ties = Counter(), Counter()
+    for values in groups.values():
+        correct = values["correct"]["average_score"]
+        rank = 1 + sum(values[c]["average_score"] > correct for c in CATEGORIES[1:])
+        ranks[str(rank)] += 1
+        wrong_ties = sum(values[c]["average_score"] == correct for c in CATEGORIES[1:])
+        unique_top += int(rank == 1 and wrong_ties == 0)
+        tied_top += int(rank == 1 and wrong_ties > 0)
+        for c in CATEGORIES[1:]:
+            wins[c] += int(correct > values[c]["average_score"])
+            ties[c] += int(correct == values[c]["average_score"])
+    return {"problem_groups": len(groups), "nominal_correct_unique_highest": unique_top,
+            "nominal_correct_tied_highest": tied_top, "nominal_correct_rank_counts": dict(sorted(ranks.items())),
+            "nominal_correct_pairwise_wins": dict(wins), "pairwise_ties": dict(ties),
+            "limitation": "Authored categories, not qualified human-verified solver outcomes; no generated-candidate evaluation."}
+
+
 def example_list(path):
     # Parsing literals is safe; importing legacy scripts would load models.
     for node in ast.parse(path.read_text(encoding="utf-8-sig")).body:
@@ -127,7 +148,8 @@ def audit(root):
     for name, groups in scores.items():
         result[name] = {"problems": len(groups), "responses": sum(map(len, groups.values())),
                         "category_mean_scores": {c: mean(v[c]["average_score"] for v in groups.values()) for c in CATEGORIES},
-                        "correct_minus_mean_wrong": mean(gaps(groups).values())}
+                        "correct_minus_mean_wrong": mean(gaps(groups).values()),
+                        "nominal_category_ordering": nominal_ordering(groups)}
     for language in ("arabic", "english"):
         a, b = scores[language + "_base"], scores[language + "_adapted"]
         if any(a[k][c][f] != b[k][c][f] for k in keys for c in CATEGORIES
@@ -143,13 +165,13 @@ def audit(root):
               for name, (a, b) in differences.items()}
     pilot = {}
     for name, filename in (("base", "pilot_baseline_results.json"), ("reloaded", "pilot_reloaded_results.json")):
-        doc = json.loads((root / filename).read_text())
+        doc = json.loads((root / filename).read_text(encoding="utf-8-sig"))
         measured = pilot_metrics(doc["records"])
         expected = (doc["step_metrics"]["discrimination"], doc["trajectory_metrics"]["discrimination_gap"]) if name == "base" else (doc["step_discrimination"], doc["trajectory_gap"])
         if any(not math.isclose(measured[k], v, abs_tol=1e-10) for k, v in zip(("step_gap", "trajectory_gap"), expected)):
             raise ValueError("Recorded pilot aggregates do not reproduce")
         pilot[name] = measured
-    split_rows = {s: [json.loads(line) for line in (root / f"data/pilot_{s}.jsonl").read_text().splitlines() if line.strip()]
+    split_rows = {s: [json.loads(line) for line in (root / f"data/pilot_{s}.jsonl").read_text(encoding="utf-8-sig").splitlines() if line.strip()]
                   for s in ("train", "dev")}
     group_sets = {s: {r["pair_id"] for r in rs} for s, rs in split_rows.items()}
     problem_sets = {s: {" ".join(r["problem"].split()) for r in rs} for s, rs in split_rows.items()}

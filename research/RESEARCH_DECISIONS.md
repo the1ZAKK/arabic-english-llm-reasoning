@@ -1,5 +1,18 @@
 # Research decisions
 
+2026-11-12 — Implement [native study v3](ARABIC_NATIVE_STUDY_V3.md) and
+[benchmark/rubric v1](ARABIC_NATIVE_BENCHMARK_V1.md), deferring diagnostic24 as
+supporting work. Target 80/20 evidenced Arabic-native/translated origin, with
+minimum/maximum requirements checked in each split. Originally Arabic reasoning
+and qualified human Arabic labels are separate requirements. Use content-aligned
+AR-original/EN-mirror scoring to diagnose the gap and independent original-language
+pools to study generation/selection, without conflating those comparisons. Fix
+candidate pools across rerankers and use native held-out final-answer accuracy;
+score margins alone cannot establish solver gains. Keep sample size provisional
+until staffing, power and family clustering are resolved. Compact
+[translation QC](TRANSLATION_QC_SHORT_PROTOCOL.md) replaces additional QC interface
+work as a priority. No actual native annotations or experiment authorization.
+
 2026-11-12 — Adopt the supervisor’s scientific pivot: at least 50% independently evidenced Arabic-native benchmark problems, at most 30% translated; originally Arabic reasoning and qualified Arabic-speaking human step annotation are separate required dimensions. Inherited English labels cannot satisfy this requirement. Diagnose scoring/generation causes before further fine-tuning and require held-out solver success beyond margins. [Evidence audit v3](RETAINED_EVIDENCE_AUDIT_V3.md) narrows prior claims. Retain old records; do not activate the optional translation diagnostic or create approvals.
 
 Keep neutral synthetic calibration and its facilitator key separate from the real design package. Preserve the prospective v2.3 diagnostic endpoint. For the independent early-draft quality question, include blocked groups in the [probability audit frame](CORPUS_QC_SAMPLING_PLAN_V2_4.md); compare review capacity with finite-population calculations rather than treating the mechanical screen as semantic labels.
