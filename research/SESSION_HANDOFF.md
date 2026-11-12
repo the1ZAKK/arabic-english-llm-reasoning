@@ -1,5 +1,7 @@
 # Session handoff
 
+Active supervisor directive (2026-11-12): continue the Arabic-native evaluation pivot rather than adding recovery approval infrastructure. [Audit v3](RETAINED_EVIDENCE_AUDIT_V3.md) checks twelve retained inputs, reproduces four 20-problem score sets and the synthetic pilot aggregates, and identifies reused evaluation examples and one bilingual step-count mismatch. Independent native-source provenance, Arabic human labels, causal gap diagnosis and downstream solving evidence remain missing. Preserve both laptop checkouts, the backup, overlap worksheet and all frozen artifacts. Offline code/docs/tests only. Earlier handoffs below are historical.
+
 The user reports the private comparison `c909dfa` to `0a4ffd2` finished with 15 potential overlaps, none new and zero checkout updates. Preserve both laptop checkouts, the backup and private worksheet. No transfer is proposed from counts alone. [Human design routing](DIAGNOSTIC24_HUMAN_HANDOFF_V2_4.md), [audit planning](CORPUS_QC_SAMPLING_PLAN_V2_4.md), and [thesis claims and boundaries](ARABICPRMT_THESIS_EVIDENCE_V2_4.md) record the next decisions; no draw, approval, budget or output exists.
 
 Windows development continuation: use the [pinned separate checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) after the reported verified backup. The launcher leaves the original checkout and backup untouched. Review the sanitized success or stop receipt before any local sync claim; overlap review, qualified design approval and independent assessor assignments remain pending.

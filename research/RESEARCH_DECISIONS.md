@@ -1,5 +1,7 @@
 # Research decisions
 
+2026-11-12 — Adopt the supervisor’s scientific pivot: at least 50% independently evidenced Arabic-native benchmark problems, at most 30% translated; originally Arabic reasoning and qualified Arabic-speaking human step annotation are separate required dimensions. Inherited English labels cannot satisfy this requirement. Diagnose scoring/generation causes before further fine-tuning and require held-out solver success beyond margins. [Evidence audit v3](RETAINED_EVIDENCE_AUDIT_V3.md) narrows prior claims. Retain old records; do not activate the optional translation diagnostic or create approvals.
+
 Keep neutral synthetic calibration and its facilitator key separate from the real design package. Preserve the prospective v2.3 diagnostic endpoint. For the independent early-draft quality question, include blocked groups in the [probability audit frame](CORPUS_QC_SAMPLING_PLAN_V2_4.md); compare review capacity with finite-population calculations rather than treating the mechanical screen as semantic labels.
 
 Preserve the dirty checkout and verified backup in place. Use an [exact pinned sparse checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) for development rather than changing the original. Verify canonical worktree bytes and frozen fingerprints, exclude unrelated data, and share only the sanitized receipt.

@@ -1,5 +1,7 @@
 # Evidence-gated roadmap
 
+Supervisor revision (2026-11-12) supersedes the translation-first priorities below: (1) audit and narrow claims, (2) specify a majority-native Arabic benchmark and genuine human step annotation, (3) diagnose the language gap with content-controlled comparisons, (4) measure held-out final-answer success with fixed candidate pools, (5) only then consider separately authorized adaptation. Start with the [source-bound evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md). No generation, training or active budget is authorized. Earlier recovery milestones remain preserved as history.
+
 The user reports the read-only overlap comparison completed: 15 potential matches, none new, no transfer. Keep the original, backup and worksheet untouched. Use the [human handoff](DIAGNOSTIC24_HUMAN_HANDOFF_V2_4.md) for genuine design review and distinct assessor roles. Decide on capacity for the [optional early-draft probability audit](CORPUS_QC_SAMPLING_PLAN_V2_4.md) before drawing or seeing reviews.
 
 Use the [separate development checkout](WINDOWS_CLEAN_DEVELOPMENT_V1.md) to continue offline code work after local verification. Keep the dirty checkout and backup intact, review overlaps privately before carrying any changes forward, and keep genuine design review and execution authorization separate.

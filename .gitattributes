@@ -67,3 +67,17 @@ research/prm_arabic_english/check_arabicprm_sync_windows_v1.cmd -text whitespace
 
 # Windows development checkout packages bind exact helper bytes at the tested SHA.
 research/prm_arabic_english/clean_development_v1.py -text
+
+# Retained evaluation evidence: hash exact original blobs on both platforms.
+research/prm_arabic_english/arabic_prm_results.csv -text
+research/prm_arabic_english/english_prm_results.csv -text
+research/prm_arabic_english/arabic_generalization_arabicprm_results.csv -text
+research/prm_arabic_english/english_retention_arabicprm_results.csv -text
+research/prm_arabic_english/test_arabic_prm.py -text
+research/prm_arabic_english/test_english_prm.py -text
+research/prm_arabic_english/eval_arabic_generalization.py -text
+research/prm_arabic_english/eval_english_retention.py -text
+research/prm_arabic_english/pilot_baseline_results.json -text
+research/prm_arabic_english/pilot_reloaded_results.json -text
+research/prm_arabic_english/data/pilot_train.jsonl -text
+research/prm_arabic_english/data/pilot_dev.jsonl -text

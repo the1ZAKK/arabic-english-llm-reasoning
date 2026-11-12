@@ -1,5 +1,7 @@
 # Experiment and evidence registry
 
+2026-11-12 — Retained-evidence audit v3: deterministic read-only replay, twelve SHA256-bound inputs, 20 matched problem IDs/80 rows per scoring set, pilot dev ten groups/79 steps. All original result bytes retained. New aggregate output: [RETAINED_EVIDENCE_AUDIT_V3.json](RETAINED_EVIDENCE_AUDIT_V3.json). No inference, training, new human labels or downstream result. Previously named generalization/retention runs reuse original examples and must be interpreted as selected-set comparisons.
+
 | ID | State / evidence | Result / limitation |
 |---|---|---|
 | Frozen-v2-selection | Source revision 7ecc794703b2877f63226f2477a49b34f9b25163 verified | 256 unique source groups; 204/52 train/dev; 2,753 steps; no train/dev group leakage |

@@ -1,5 +1,7 @@
 # ArabicPRM-T: thesis evidence and claim boundaries
 
+**Scope correction (2026-11-12).** This page records the earlier translation-focused work. Use the [retained-evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md) for the current limitations on adaptation, generalization and retention claims. A native Arabic benchmark, independent Arabic human step labels and downstream solving gains remain unmeasured. The proposed recovery diagnostic is no longer the critical path.
+
 These statements separate measured results, user-reported local verification and prospective analysis. They do not authorize a run or promote data.
 
 | Claim suitable for the thesis | Evidence and denominator | Boundary |
