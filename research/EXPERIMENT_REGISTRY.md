@@ -1,5 +1,14 @@
 # Experiment and evidence registry
 
+v3.1 offline milestone — [feasibility planner](BENCHMARK_FEASIBILITY_V3_1.md)
+compares six size/origin options, including native authoring, permissions screening,
+reference checks, two-assessor Arabic labels/outcomes, limited English mirrors and
+adjudication. Exact independent paired-test power is checked by exhaustive small
+outcomes and null rejection rates; clustered effective-n is explicitly heuristic.
+New native items/labels, model observations and active allowances: zero. Recorded
+reranking now rejects contradictory canonical-answer outcomes and reports the
+oracle/selection distinction. No original candidate or human record was edited.
+
 Verification for this continuation: 558 local offline tests passed (62.690 s), comprising the prior 525 and 33 new audit/native-study regressions. CI sparse inputs now include the three existing model-utility source files, never model weights; the helper is parsed and its preparer is probed only with a synthetic tokenizer. Original thirteen audit inputs are unchanged, with exact-byte Git attributes for reproducibility. The published commit’s Windows/Linux Actions jobs are the cross-platform evidence, not semantic or human approval.
 
 Retained-scoring continuation: the [source-bound pipeline audit](RETAINED_EVIDENCE_AUDIT_V3.md#scoring-pipeline-and-precision-audit)

@@ -1,5 +1,23 @@
 # Evidence-gated roadmap
 
+## v3.1 practical sequence
+
+1. Use the [feasibility comparison](BENCHMARK_FEASIBILITY_V3_1.md) to decide actual
+   staffing and source strategy. Time dev-only calibration with qualified people
+   before committing a study size; do not default to 500 without resources.
+2. Enroll permission-cleared original Arabic problems; split whole families into
+   dev/test before outcomes. Prefer a native-only core; preserve independent Arabic
+   labels and double review at every size. No new training frame is needed now.
+3. Diagnose reward formatting, alignment and matched-precision adaptation before
+   further fine-tuning. Existing-score reaggregation is not a new model control.
+4. Use the same K=8 Arabic pools across selectors and independently judge all final
+   outcomes. Separate oracle absence from selection failure. A 100-problem plan is
+   feasibility evidence; 250 is exploratory; larger claims need adequate native n,
+   family-aware uncertainty, staffing and actual outcomes.
+
+These are prospective steps, not authorization, staffing commitments or collected
+benchmark data. Earlier v3 size/split targets below remain historical proposals.
+
 ## Active scientific priorities
 
 | Priority | Deliverable | Actual state / remaining evidence |

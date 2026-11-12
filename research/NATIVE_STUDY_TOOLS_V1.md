@@ -118,3 +118,16 @@ Do not discover/import arbitrary legacy `test_*prm.py` modules: several load
 models at import time. New regressions check provenance axes, quotas, leakage,
 coverage, masks, calibration, whole-family resampling, pool tampering, tied scores,
 transport/generation failures, unresolved human outcomes and paired inference.
+
+## v3.1 additions
+
+`benchmark --evaluation-only --input FILE.json` explicitly audits dev/test metadata
+without a training split; default behavior still requires train/dev/test. Origin,
+human-label and provenance requirements are identical. Unknown human judgments
+remain unknown. The reranking reader rejects conflicting known final outcomes for
+one canonical answer; it cannot adjudicate them. Selection diagnostics distinguish
+known oracle absence from avoidable selection errors, retaining all problems in
+primary accuracy and bounds. Conditional selection efficiency is secondary.
+
+The [v3.1 feasibility planner](BENCHMARK_FEASIBILITY_V3_1.md) compares costs and exact
+independent-pair power. No planning result authenticates people or activates runs.

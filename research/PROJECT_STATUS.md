@@ -1,5 +1,21 @@
 # ArabicPRM-T v2 project evidence
 
+## v3.1: feasibility before collection
+
+The [costed collection plan](BENCHMARK_FEASIBILITY_V3_1.md) compares 100/250/500
+problems and native-only versus 80/20 origin. It prefers an all-native dev/test
+core, two fixed Arabic traces/problem with two qualified human assessors, and a
+limited English-mirror subset. No training split is reserved before diagnosis.
+All effort and power values are assumptions; no people, permissions, items or
+labels have been obtained. Even the 100-native option assumes 172–436 combined
+person-hours; 500 assumes 655–1,715. The exact paired-test power calculation and
+workload table are reproducible offline, not new model or human evidence.
+
+The recorded-pool analyzer now rejects contradictory final-answer judgments for
+one canonical answer and separately reports oracle availability versus avoidable
+selection failure. It does not impute unresolved human judgments. Frozen data,
+execution identities, pilot budgets and genuine QC remain untouched.
+
 Retained-scoring continuation: the [source-bound pipeline audit](RETAINED_EVIDENCE_AUDIT_V3.md#scoring-pipeline-and-precision-audit)
 identifies 160 blank-line reward positions per language and explicitly different
 quantization declarations across the old base/adapted runners. Rounded-score

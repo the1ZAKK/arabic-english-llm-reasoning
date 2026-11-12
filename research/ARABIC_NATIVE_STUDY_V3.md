@@ -1,5 +1,7 @@
 # Arabic-native PRM study: diagnosis and downstream evaluation
 
+**Prospective v3.1 revision:** see the [costed native-only/dev-test plan](BENCHMARK_FEASIBILITY_V3_1.md). The original size/split/mirror targets below are retained as the earlier proposal; no protected execution identity is changed.
+
 **Status: prospective scientific design, not an executed experiment.** This
 replaces the translation-first priorities of the earlier protocol. The
 [retained-evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md) reproduces the historical

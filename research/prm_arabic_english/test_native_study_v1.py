@@ -62,6 +62,15 @@ def pools():
 
 
 class NativeFrameTests(unittest.TestCase):
+    def test_explicit_evaluation_only_design_does_not_relax_origin_or_human_rules(self):
+        rows = [r for r in frame() if r["split"] != "train"]
+        result = study.benchmark_audit(rows, ("dev", "test"))
+        self.assertEqual(result["composition"]["overall"]["problems"], 20)
+        with self.assertRaises(ValueError): study.benchmark_audit(rows)
+        with self.assertRaises(ValueError): study.benchmark_audit(frame(), ("dev", "test"))
+        rows[0]["label_origin"] = "inherited_prm800k"
+        with self.assertRaises(ValueError): study.benchmark_audit(rows, ("dev", "test"))
+
     def test_three_axes_and_per_split_composition(self):
         result = study.benchmark_audit(frame())
         self.assertEqual(result["composition"]["overall"]["problems"], 30)
@@ -237,8 +246,32 @@ class RerankingTests(unittest.TestCase):
         for p in doc["problems"]:
             for i, c in enumerate(p["candidates"]):
                 c["answer_key"] = "canonical_half" if i in (1, 2) else f"other{i}"
+                c["outcome"] = i in (1, 2)
         result = study.rerank(doc)["results"]["8"]["strata"]["arabic_native"]
         self.assertEqual(result["methods"]["answer_majority"]["accuracy"], 1)
+
+    def test_same_canonical_answer_cannot_be_both_correct_and_incorrect(self):
+        doc = pools(); doc["problems"][0]["candidates"][2]["answer_key"] = "right"
+        with self.assertRaisesRegex(ValueError, "Contradictory"):
+            study.rerank(doc)
+
+    def test_unresolved_equivalent_answer_is_not_automatically_human_labeled(self):
+        doc = pools(); c = doc["problems"][0]["candidates"][2]
+        c.update(answer_key="right", outcome=None)
+        study.rerank(doc)
+        self.assertIsNone(c["outcome"])
+
+    def test_oracle_absence_and_avoidable_selection_loss_are_distinct(self):
+        result = study.rerank(pools())["results"]["8"]["strata"]["arabic_native"]
+        self.assertEqual(result["selection_diagnostics"]["first"]["known_avoidable_selection_failures"], 3)
+        self.assertEqual(result["selection_diagnostics"]["base"]["oracle_minus_selected_accuracy_bounds"], [0, 0])
+        doc = pools()
+        for p in doc["problems"]:
+            for c in p["candidates"]: c.update(outcome=False, answer_key="all_wrong")
+        metrics = study.rerank(doc)["results"]["8"]["strata"]["arabic_native"]["selection_diagnostics"]["first"]
+        self.assertEqual(metrics["known_oracle_available_problems"], 0)
+        self.assertEqual(metrics["known_avoidable_selection_failures"], 0)
+        self.assertIsNone(metrics["selection_success_given_known_available"])
 
 
 class PlanningTests(unittest.TestCase):

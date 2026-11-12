@@ -1,5 +1,19 @@
 # Session handoff
 
+## Active v3.1 handoff
+
+Use [BENCHMARK_FEASIBILITY_V3_1.md](BENCHMARK_FEASIBILITY_V3_1.md) and its reproducible
+JSON to distinguish future scope, assumed hours/power and missing real staffing.
+The core is proposed native-only dev/test, two fixed step-labeled Arabic traces,
+K=8 Arabic final outcomes and limited English mirrors. All human/provenance
+requirements remain real dependencies; no approval form or active budget exists.
+`benchmark_feasibility_v3_1.py` performs arithmetic/power only. The existing
+metadata auditor adds explicit evaluation-only splits; inherited labels and origin
+shortcuts remain rejected. The pool replay rejects conflicting canonical outcomes
+and preserves unknowns, with oracle/selection diagnostics. Actual sources, human
+annotations, new scores and model generations: none. Preserve all original laptop
+checkouts, private overlap work, frozen42 and histories. Continue offline only.
+
 Retained-scoring continuation: the [source-bound pipeline audit](RETAINED_EVIDENCE_AUDIT_V3.md#scoring-pipeline-and-precision-audit)
 identifies 160 blank-line reward positions per language and explicitly different
 quantization declarations across the old base/adapted runners. Rounded-score

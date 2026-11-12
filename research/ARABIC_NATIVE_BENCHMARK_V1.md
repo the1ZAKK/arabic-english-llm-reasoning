@@ -1,5 +1,7 @@
 # Arabic-native benchmark and human annotation specification
 
+**Prospective v3.1 revision:** see the [costed native-only/dev-test plan](BENCHMARK_FEASIBILITY_V3_1.md). The original size/split/mirror targets below are retained as the earlier proposal; no protected execution identity is changed.
+
 Prospective specification supporting [the revised study](ARABIC_NATIVE_STUDY_V3.md).
 No examples, annotations or approvals are created by this document.
 

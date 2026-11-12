@@ -1,0 +1,646 @@
+{
+  "assumptions": {
+    "absolute_gains": [
+      0.05,
+      0.1
+    ],
+    "adjudication_fraction_of_units": [
+      0.1,
+      0.25
+    ],
+    "alpha_two_sided": 0.05,
+    "arabic_traces_labeled": 2,
+    "candidates_per_problem": 8,
+    "cluster_design_effect_scenario": 1.2,
+    "contingency_fraction": 0.15,
+    "dev_fraction": 0.2,
+    "discordance_fraction": 0.3,
+    "independent_assessors": 2,
+    "minutes_per_adjudication": [
+      1,
+      3
+    ],
+    "minutes_per_control_fidelity_check": [
+      4,
+      10
+    ],
+    "minutes_per_final_outcome": [
+      0.75,
+      2
+    ],
+    "minutes_per_independent_mirror_check": [
+      2,
+      4
+    ],
+    "minutes_per_native_problem_authored": [
+      15,
+      40
+    ],
+    "minutes_per_problem_mirror": [
+      4,
+      8
+    ],
+    "minutes_per_reference_check": [
+      5,
+      12
+    ],
+    "minutes_per_source_screen": [
+      3,
+      8
+    ],
+    "minutes_per_step_judgment": [
+      0.5,
+      1
+    ],
+    "minutes_per_trace_mirror": [
+      3,
+      6
+    ],
+    "minutes_per_translated_control_preparation": [
+      8,
+      20
+    ],
+    "native_authoring_fraction": 1.0,
+    "native_fractions": [
+      1.0,
+      0.8
+    ],
+    "native_mirror_dev_target": 20,
+    "native_mirror_test_target": 60,
+    "sizes": [
+      100,
+      250,
+      500
+    ],
+    "source_eligibility_fraction": 0.8,
+    "steps_per_trace": 8,
+    "unresolved_fraction_scenario": 0.1
+  },
+  "assumptions_sha256": "ea3403ec67fb9d3a5b059c5a94f18a9236970e72c698c32985a06b25a22081ea",
+  "human_capacity_verified": false,
+  "human_work_rates_measured": false,
+  "inference_allowance_created": false,
+  "kind": "benchmark_feasibility_v3_1",
+  "limitations": [
+    "Hours are unmeasured low/high assumptions, not confidence intervals or allocated staff time.",
+    "Power is exact only for independent paired Bernoulli units under the specified discordance and gain.",
+    "The reduced-n clustering/unresolved scenario is a planning heuristic, not actual clustered power.",
+    "Mirrors do not add source problems or convert native Arabic origin into translated Arabic origin.",
+    "All Arabic traces and outcomes retain two independent qualified human assessments at every size."
+  ],
+  "normal_approximation_reference": [
+    {
+      "absolute_accuracy_gain": 0.05,
+      "alpha_two_sided": 0.05,
+      "discordance_assumption": 0.3,
+      "hypothetical_independent_pairs": 942,
+      "limitation": "Conservative normal planning approximation, not achieved power; inflate for source clustering and unresolved outcomes.",
+      "target_power": 0.8
+    },
+    {
+      "absolute_accuracy_gain": 0.1,
+      "alpha_two_sided": 0.05,
+      "discordance_assumption": 0.3,
+      "hypothetical_independent_pairs": 236,
+      "limitation": "Conservative normal planning approximation, not achieved power; inflate for source clustering and unresolved outcomes.",
+      "target_power": 0.8
+    }
+  ],
+  "options": [
+    {
+      "arabic_step_judgments": 3200,
+      "english_generation_positions_in_core": 0,
+      "english_step_judgments": 2560,
+      "final_outcome_judgments": 1600,
+      "future_arabic_generation_positions": 800,
+      "future_base_scoring_candidate_records": 960,
+      "heuristic_independent_equivalent_n_scenario": 60,
+      "independent_native_test_problem_assumption": 80,
+      "native_candidates_authored_under_assumption": 125.0,
+      "native_english_mirror_problem_target": 80,
+      "native_fraction": 1.0,
+      "optional_existing_adapter_scoring_candidate_records": 960,
+      "person_hours_by_task": {
+        "arabic_final_outcome_assessments": [
+          20.0,
+          53.333333333333336
+        ],
+        "arabic_step_assessments": [
+          26.666666666666668,
+          53.333333333333336
+        ],
+        "english_mirror_step_assessments": [
+          21.333333333333332,
+          42.666666666666664
+        ],
+        "english_problem_mirror_creation": [
+          5.333333333333333,
+          10.666666666666666
+        ],
+        "english_trace_mirror_creation": [
+          8.0,
+          16.0
+        ],
+        "independent_control_fidelity_checks": [
+          0.0,
+          0.0
+        ],
+        "independent_mirror_fidelity_checks": [
+          8.0,
+          16.0
+        ],
+        "independent_reference_checks": [
+          16.666666666666668,
+          40.0
+        ],
+        "original_arabic_problem_authoring": [
+          31.25,
+          83.33333333333333
+        ],
+        "source_screening": [
+          6.25,
+          16.666666666666668
+        ],
+        "third_reviewer_adjudication": [
+          6.3,
+          47.25
+        ],
+        "translated_control_preparation": [
+          0.0,
+          0.0
+        ]
+      },
+      "power_at_heuristic_n_not_exact_cluster_power": {
+        "0.05": 0.07089848225644811,
+        "0.1": 0.22084643588779998
+      },
+      "power_if_independent_native_test": {
+        "0.05": 0.08693317251699696,
+        "0.1": 0.2948930351608366
+      },
+      "problems": 100,
+      "source_candidates_to_screen_assuming_eligibility": 125,
+      "splits": {
+        "dev": {
+          "native": 20,
+          "translated": 0
+        },
+        "test": {
+          "native": 80,
+          "translated": 0
+        }
+      },
+      "total_person_hours_including_contingency": [
+        172.27,
+        436.1375
+      ],
+      "training_problems_reserved": 0
+    },
+    {
+      "arabic_step_judgments": 3200,
+      "english_generation_positions_in_core": 0,
+      "english_step_judgments": 2432,
+      "final_outcome_judgments": 1600,
+      "future_arabic_generation_positions": 800,
+      "future_base_scoring_candidate_records": 952,
+      "heuristic_independent_equivalent_n_scenario": 48,
+      "independent_native_test_problem_assumption": 64,
+      "native_candidates_authored_under_assumption": 100.0,
+      "native_english_mirror_problem_target": 76,
+      "native_fraction": 0.8,
+      "optional_existing_adapter_scoring_candidate_records": 952,
+      "person_hours_by_task": {
+        "arabic_final_outcome_assessments": [
+          20.0,
+          53.333333333333336
+        ],
+        "arabic_step_assessments": [
+          26.666666666666668,
+          53.333333333333336
+        ],
+        "english_mirror_step_assessments": [
+          20.266666666666666,
+          40.53333333333333
+        ],
+        "english_problem_mirror_creation": [
+          5.066666666666666,
+          10.133333333333333
+        ],
+        "english_trace_mirror_creation": [
+          7.6,
+          15.2
+        ],
+        "independent_control_fidelity_checks": [
+          1.3333333333333333,
+          3.3333333333333335
+        ],
+        "independent_mirror_fidelity_checks": [
+          7.6,
+          15.2
+        ],
+        "independent_reference_checks": [
+          16.666666666666668,
+          40.0
+        ],
+        "original_arabic_problem_authoring": [
+          25.0,
+          66.66666666666667
+        ],
+        "source_screening": [
+          6.25,
+          16.666666666666668
+        ],
+        "third_reviewer_adjudication": [
+          6.193333333333333,
+          46.45
+        ],
+        "translated_control_preparation": [
+          2.6666666666666665,
+          6.666666666666667
+        ]
+      },
+      "power_at_heuristic_n_not_exact_cluster_power": {
+        "0.05": 0.058029369268795046,
+        "0.1": 0.1696164730053321
+      },
+      "power_if_independent_native_test": {
+        "0.05": 0.07421593022197914,
+        "0.1": 0.23593484736773215
+      },
+      "problems": 100,
+      "source_candidates_to_screen_assuming_eligibility": 125,
+      "splits": {
+        "dev": {
+          "native": 16,
+          "translated": 4
+        },
+        "test": {
+          "native": 64,
+          "translated": 16
+        }
+      },
+      "total_person_hours_including_contingency": [
+        167.10649999999998,
+        422.6441666666666
+      ],
+      "training_problems_reserved": 0
+    },
+    {
+      "arabic_step_judgments": 8000,
+      "english_generation_positions_in_core": 0,
+      "english_step_judgments": 2560,
+      "final_outcome_judgments": 4000,
+      "future_arabic_generation_positions": 2000,
+      "future_base_scoring_candidate_records": 2160,
+      "heuristic_independent_equivalent_n_scenario": 150,
+      "independent_native_test_problem_assumption": 200,
+      "native_candidates_authored_under_assumption": 313.0,
+      "native_english_mirror_problem_target": 80,
+      "native_fraction": 1.0,
+      "optional_existing_adapter_scoring_candidate_records": 2160,
+      "person_hours_by_task": {
+        "arabic_final_outcome_assessments": [
+          50.0,
+          133.33333333333334
+        ],
+        "arabic_step_assessments": [
+          66.66666666666667,
+          133.33333333333334
+        ],
+        "english_mirror_step_assessments": [
+          21.333333333333332,
+          42.666666666666664
+        ],
+        "english_problem_mirror_creation": [
+          5.333333333333333,
+          10.666666666666666
+        ],
+        "english_trace_mirror_creation": [
+          8.0,
+          16.0
+        ],
+        "independent_control_fidelity_checks": [
+          0.0,
+          0.0
+        ],
+        "independent_mirror_fidelity_checks": [
+          8.0,
+          16.0
+        ],
+        "independent_reference_checks": [
+          41.666666666666664,
+          100.0
+        ],
+        "original_arabic_problem_authoring": [
+          78.25,
+          208.66666666666666
+        ],
+        "source_screening": [
+          15.65,
+          41.733333333333334
+        ],
+        "third_reviewer_adjudication": [
+          12.55,
+          94.125
+        ],
+        "translated_control_preparation": [
+          0.0,
+          0.0
+        ]
+      },
+      "power_at_heuristic_n_not_exact_cluster_power": {
+        "0.05": 0.16357458974981626,
+        "0.1": 0.5645729285219242
+      },
+      "power_if_independent_native_test": {
+        "0.05": 0.21472886116686035,
+        "0.1": 0.7034035327062865
+      },
+      "problems": 250,
+      "source_candidates_to_screen_assuming_eligibility": 313,
+      "splits": {
+        "dev": {
+          "native": 50,
+          "translated": 0
+        },
+        "test": {
+          "native": 200,
+          "translated": 0
+        }
+      },
+      "total_person_hours_including_contingency": [
+        353.56749999999994,
+        916.0037499999999
+      ],
+      "training_problems_reserved": 0
+    },
+    {
+      "arabic_step_judgments": 8000,
+      "english_generation_positions_in_core": 0,
+      "english_step_judgments": 2560,
+      "final_outcome_judgments": 4000,
+      "future_arabic_generation_positions": 2000,
+      "future_base_scoring_candidate_records": 2160,
+      "heuristic_independent_equivalent_n_scenario": 120,
+      "independent_native_test_problem_assumption": 160,
+      "native_candidates_authored_under_assumption": 250.0,
+      "native_english_mirror_problem_target": 80,
+      "native_fraction": 0.8,
+      "optional_existing_adapter_scoring_candidate_records": 2160,
+      "person_hours_by_task": {
+        "arabic_final_outcome_assessments": [
+          50.0,
+          133.33333333333334
+        ],
+        "arabic_step_assessments": [
+          66.66666666666667,
+          133.33333333333334
+        ],
+        "english_mirror_step_assessments": [
+          21.333333333333332,
+          42.666666666666664
+        ],
+        "english_problem_mirror_creation": [
+          5.333333333333333,
+          10.666666666666666
+        ],
+        "english_trace_mirror_creation": [
+          8.0,
+          16.0
+        ],
+        "independent_control_fidelity_checks": [
+          3.3333333333333335,
+          8.333333333333334
+        ],
+        "independent_mirror_fidelity_checks": [
+          8.0,
+          16.0
+        ],
+        "independent_reference_checks": [
+          41.666666666666664,
+          100.0
+        ],
+        "original_arabic_problem_authoring": [
+          62.5,
+          166.66666666666666
+        ],
+        "source_screening": [
+          15.65,
+          41.733333333333334
+        ],
+        "third_reviewer_adjudication": [
+          12.55,
+          94.125
+        ],
+        "translated_control_preparation": [
+          6.666666666666667,
+          16.666666666666668
+        ]
+      },
+      "power_at_heuristic_n_not_exact_cluster_power": {
+        "0.05": 0.12901090191219935,
+        "0.1": 0.45444373501919433
+      },
+      "power_if_independent_native_test": {
+        "0.05": 0.17414479763869314,
+        "0.1": 0.5962072373978428
+      },
+      "problems": 250,
+      "source_candidates_to_screen_assuming_eligibility": 313,
+      "splits": {
+        "dev": {
+          "native": 40,
+          "translated": 10
+        },
+        "test": {
+          "native": 160,
+          "translated": 40
+        }
+      },
+      "total_person_hours_including_contingency": [
+        346.955,
+        896.4537499999999
+      ],
+      "training_problems_reserved": 0
+    },
+    {
+      "arabic_step_judgments": 16000,
+      "english_generation_positions_in_core": 0,
+      "english_step_judgments": 2560,
+      "final_outcome_judgments": 8000,
+      "future_arabic_generation_positions": 4000,
+      "future_base_scoring_candidate_records": 4160,
+      "heuristic_independent_equivalent_n_scenario": 300,
+      "independent_native_test_problem_assumption": 400,
+      "native_candidates_authored_under_assumption": 625.0,
+      "native_english_mirror_problem_target": 80,
+      "native_fraction": 1.0,
+      "optional_existing_adapter_scoring_candidate_records": 4160,
+      "person_hours_by_task": {
+        "arabic_final_outcome_assessments": [
+          100.0,
+          266.6666666666667
+        ],
+        "arabic_step_assessments": [
+          133.33333333333334,
+          266.6666666666667
+        ],
+        "english_mirror_step_assessments": [
+          21.333333333333332,
+          42.666666666666664
+        ],
+        "english_problem_mirror_creation": [
+          5.333333333333333,
+          10.666666666666666
+        ],
+        "english_trace_mirror_creation": [
+          8.0,
+          16.0
+        ],
+        "independent_control_fidelity_checks": [
+          0.0,
+          0.0
+        ],
+        "independent_mirror_fidelity_checks": [
+          8.0,
+          16.0
+        ],
+        "independent_reference_checks": [
+          83.33333333333333,
+          200.0
+        ],
+        "original_arabic_problem_authoring": [
+          156.25,
+          416.6666666666667
+        ],
+        "source_screening": [
+          31.25,
+          83.33333333333333
+        ],
+        "third_reviewer_adjudication": [
+          22.966666666666665,
+          172.25
+        ],
+        "translated_control_preparation": [
+          0.0,
+          0.0
+        ]
+      },
+      "power_at_heuristic_n_not_exact_cluster_power": {
+        "0.05": 0.31472356447781347,
+        "0.1": 0.8735668010675137
+      },
+      "power_if_independent_native_test": {
+        "0.05": 0.41184109923233786,
+        "0.1": 0.9513215659733992
+      },
+      "problems": 500,
+      "source_candidates_to_screen_assuming_eligibility": 625,
+      "splits": {
+        "dev": {
+          "native": 100,
+          "translated": 0
+        },
+        "test": {
+          "native": 400,
+          "translated": 0
+        }
+      },
+      "total_person_hours_including_contingency": [
+        655.2699999999999,
+        1714.5541666666666
+      ],
+      "training_problems_reserved": 0
+    },
+    {
+      "arabic_step_judgments": 16000,
+      "english_generation_positions_in_core": 0,
+      "english_step_judgments": 2560,
+      "final_outcome_judgments": 8000,
+      "future_arabic_generation_positions": 4000,
+      "future_base_scoring_candidate_records": 4160,
+      "heuristic_independent_equivalent_n_scenario": 240,
+      "independent_native_test_problem_assumption": 320,
+      "native_candidates_authored_under_assumption": 500.0,
+      "native_english_mirror_problem_target": 80,
+      "native_fraction": 0.8,
+      "optional_existing_adapter_scoring_candidate_records": 4160,
+      "person_hours_by_task": {
+        "arabic_final_outcome_assessments": [
+          100.0,
+          266.6666666666667
+        ],
+        "arabic_step_assessments": [
+          133.33333333333334,
+          266.6666666666667
+        ],
+        "english_mirror_step_assessments": [
+          21.333333333333332,
+          42.666666666666664
+        ],
+        "english_problem_mirror_creation": [
+          5.333333333333333,
+          10.666666666666666
+        ],
+        "english_trace_mirror_creation": [
+          8.0,
+          16.0
+        ],
+        "independent_control_fidelity_checks": [
+          6.666666666666667,
+          16.666666666666668
+        ],
+        "independent_mirror_fidelity_checks": [
+          8.0,
+          16.0
+        ],
+        "independent_reference_checks": [
+          83.33333333333333,
+          200.0
+        ],
+        "original_arabic_problem_authoring": [
+          125.0,
+          333.3333333333333
+        ],
+        "source_screening": [
+          31.25,
+          83.33333333333333
+        ],
+        "third_reviewer_adjudication": [
+          22.966666666666665,
+          172.25
+        ],
+        "translated_control_preparation": [
+          13.333333333333334,
+          33.333333333333336
+        ]
+      },
+      "power_at_heuristic_n_not_exact_cluster_power": {
+        "0.05": 0.25443057984633133,
+        "0.1": 0.7862716654015905
+      },
+      "power_if_independent_native_test": {
+        "0.05": 0.33523151433000353,
+        "0.1": 0.8952703154096263
+      },
+      "problems": 500,
+      "source_candidates_to_screen_assuming_eligibility": 625,
+      "splits": {
+        "dev": {
+          "native": 80,
+          "translated": 20
+        },
+        "test": {
+          "native": 320,
+          "translated": 80
+        }
+      },
+      "total_person_hours_including_contingency": [
+        642.3324999999999,
+        1676.220833333333
+      ],
+      "training_problems_reserved": 0
+    }
+  ],
+  "source_items_collected": 0
+}

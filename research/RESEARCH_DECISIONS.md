@@ -1,5 +1,16 @@
 # Research decisions
 
+v3.1 — Prefer 100% evidenced native Arabic for the primary dev/test benchmark.
+The supervisor's origin constraints do not require translated controls; an 80/20
+alternative is costed but reduces native test power. Reserve no training split
+before diagnosis. Reduce the proposed step-labeled candidate subset from four to
+two fixed positions and use limited bilingual mirrors, while preserving two
+qualified independent human assessments of every included Arabic step and all K=8
+final outcomes. This is an explicit prospective design revision, not a change to
+frozen runtime/proposal identities. Existing score/label records remain original.
+Reject conflicting known outcomes for one canonical final answer; never infer a
+human judgment for an unresolved candidate from another candidate's label.
+
 2026-11-12 — Preserve all original scores while separately auditing reward segmentation. Both old language sets include 160 empty-line reward positions. The rounded aggregation sensitivity does not remove the gap. Do not retrofit the frozen pipeline or infer that formatting fully explains language weakness. Require an unadapted-base control at matched adapter quantization/extraction before attributing old twenty-problem changes to adaptation. Helper-source inspection and synthetic tokenizer tests use no model.
 
 2026-11-12 — Implement [native study v3](ARABIC_NATIVE_STUDY_V3.md) and

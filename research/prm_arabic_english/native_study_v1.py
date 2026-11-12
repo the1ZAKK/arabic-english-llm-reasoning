@@ -59,16 +59,17 @@ def header(doc, kind):
         require(sha(doc.get(key)), "Benchmark and annotation evidence identities required")
 
 
-def benchmark_audit(rows):
+def benchmark_audit(rows, required_splits=("train", "dev", "test")):
     """Validate final metadata declarations; never authenticate or enroll items."""
     require(bool(rows), "Empty benchmark frame")
+    require(required_splits in (("train", "dev", "test"), ("dev", "test")), "Explicit train/dev/test or dev/test design required")
     unique([r.get("problem_id") for r in rows], "One unique Arabic-side problem group per row required")
     ownership = defaultdict(set)
     normalized = set()
     counts = defaultdict(Counter)
     for row in rows:
         split, origin = row.get("split"), row.get("origin")
-        require(split in ("train", "dev", "test"), "Unknown split")
+        require(split in required_splits, "Unknown or disallowed split")
         require(origin in ("arabic_native", "translated"), "Unresolved origin cannot count as native or enrolled")
         require(row.get("source_language") == ("ar" if origin == "arabic_native" else "en"),
                 "Origin/source language disagreement; translated cohort is English-origin")
@@ -89,7 +90,7 @@ def benchmark_audit(rows):
         require(row.get("independent_review_complete") is True, "Independent annotation/adjudication declaration missing")
         counts[split][origin] += 1
         counts["overall"][origin] += 1
-    require(set(counts) == {"train", "dev", "test", "overall"}, "All three study splits required")
+    require(set(counts) == {*required_splits, "overall"}, "All declared study splits required")
     require(all(len(s) == 1 for s in ownership.values()), "Family/lineage crosses evaluation splits")
     composition = {}
     for split, c in sorted(counts.items()):
@@ -241,6 +242,19 @@ def paired_outcomes(first, second, families):
             "p_value_limitation": "Exact McNemar only with complete outcomes and one problem per independent source family."}
 
 
+def selection_loss(oracle, selected, keys):
+    """Keep absent correct solutions separate from avoidable selection errors."""
+    lower = [max(0, int(oracle[k] is True) - int(selected[k] is not False)) for k in keys]
+    upper = [max(0, int(oracle[k] is not False) - int(selected[k] is True)) for k in keys]
+    available = [k for k in keys if oracle[k] is True]
+    return {"known_oracle_available_problems": len(available),
+            "known_avoidable_selection_failures": sum(oracle[k] is True and selected[k] is False for k in keys),
+            "oracle_minus_selected_accuracy_bounds": [mean(lower), mean(upper)],
+            "selection_success_given_known_available": mean(int(selected[k]) for k in available)
+                if available and all(type(selected[k]) is bool for k in available) else None,
+            "limitation": "Conditional selection success is secondary; primary accuracy retains every planned problem."}
+
+
 def rerank(doc, k_values=(1, 2, 4, 8)):
     header(doc, "recorded_candidate_reranking_v1")
     require(doc.get("evaluation_split") == "test", "Reranking analysis requires frozen held-out test declaration")
@@ -259,10 +273,16 @@ def rerank(doc, k_values=(1, 2, 4, 8)):
         candidates = problem.get("candidates", [])
         require(len(candidates) == max(k_values), "Keep every prespecified generation position, including failures")
         unique([c.get("candidate_id") for c in candidates], "Unique generation-order candidate IDs required")
+        answer_outcomes = {}
         for c in candidates:
             require(c.get("generation_status") in ("generated", "failed"), "Explicit generation availability required")
             require(c.get("outcome") is None or type(c.get("outcome")) is bool, "Human outcome is Boolean or unresolved")
             require(c.get("answer_key") is None or identifier(c.get("answer_key")), "Canonical human answer key or abstention required")
+            if c.get("answer_key") is not None and c.get("outcome") is not None:
+                key, outcome = c["answer_key"], c["outcome"]
+                require(key not in answer_outcomes or answer_outcomes[key] == outcome,
+                        "Contradictory final outcomes for the same canonical answer; human adjudication required")
+                answer_outcomes[key] = outcome
             require(set(c.get("scores", {})) == set(scorers), "All scorers must share exactly the same candidates")
             for score in c["scores"].values():
                 require(score is None or probability(score), "Finite numeric probability or explicit missing score required")
@@ -309,6 +329,8 @@ def rerank(doc, k_values=(1, 2, 4, 8)):
                     {v: outcomes[reference][v] for v in keys}, {v: outcomes[name][v] for v in keys}, families)
             strata[origin] = {"methods": {name: outcome_summary([v[key] for key in keys]) for name, v in outcomes.items()},
                              "uniform_random_expected_accuracy_bounds": [mean(random_bounds[v][i] for v in keys) for i in (0, 1)],
+                             "selection_diagnostics": {name: selection_loss(outcomes["oracle"], v, keys)
+                                                       for name, v in outcomes.items() if name != "oracle"},
                              "comparisons": comparisons}
         reports[str(k)] = {"strata": strata, "missing_score_fallback_problems": dict(fallbacks),
                            "failed_generation_positions": failures}
@@ -334,7 +356,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("analysis", choices=("benchmark", "gap", "rerank", "sample-size"))
     parser.add_argument("--input", type=Path)
+    parser.add_argument("--evaluation-only", action="store_true", help="Benchmark metadata explicitly has dev/test, no train split")
     args = parser.parse_args()
+    if args.evaluation_only and args.analysis != "benchmark":
+        parser.error("--evaluation-only applies only to benchmark metadata")
     if args.analysis == "sample-size":
         report = [paired_sample_size(d, .3) for d in (.1, .05)]
     else:
@@ -342,7 +367,8 @@ def main():
             parser.error("--input is required")
         raw = args.input.read_bytes()
         doc = json.loads(raw, parse_constant=lambda s: (_ for _ in ()).throw(ValueError("Nonfinite JSON")))
-        report = {"analysis": {"benchmark": benchmark_audit, "gap": paired_gap, "rerank": rerank}[args.analysis](doc),
+        analyze = (lambda rows: benchmark_audit(rows, ("dev", "test"))) if args.evaluation_only else benchmark_audit
+        report = {"analysis": {"benchmark": analyze, "gap": paired_gap, "rerank": rerank}[args.analysis](doc),
                   "input_sha256": hashlib.sha256(raw).hexdigest()}
     print(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False))
 
