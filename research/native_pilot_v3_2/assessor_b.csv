@@ -1,0 +1,1 @@
+﻿kind,slot_id,problem_sha256,reference_sha256,trace_id,trace_sha256,step_index,step_sha256,reviewer_ref,decision,origin_decision,reference_decision,global_consistency,depends_on_prior_error,first_error_step,notes,recorded_at_utc

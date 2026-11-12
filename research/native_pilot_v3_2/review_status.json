@@ -1,0 +1,102 @@
+{
+  "actual_adjudication_records": 0,
+  "actual_independent_judgment_records": {
+    "assessor_a": 0,
+    "assessor_b": 0
+  },
+  "complete_declared_annotation_records": false,
+  "disagreement_units_before_adjudication": 0,
+  "human_identity_or_judgment_authenticity_verified": false,
+  "interpretation": "Consistency and missingness only. Agreement/adjudication is not authenticated human approval; no inference or downstream efficacy measured.",
+  "kind": "native_pilot_review_audit_v3_2",
+  "missing_independent_judgment_records_for_declared_units": 40,
+  "missing_planned_traces": 40,
+  "observed_steps_per_trace": {
+    "count": 0,
+    "maximum": null,
+    "median": null,
+    "minimum": null
+  },
+  "parsed_inputs_sha256": {
+    "adjudication": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "assessor_a": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "assessor_b": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection": "6e4d968253f6094a8b05fa5a46a8db401ceb959cac9a9ed8758ae316098a1a8f",
+    "reviewers": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "screening": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "source_register": "6cca4a50144036bfade74639f45313f99792d4c4a6a8b9b64331c372aadaadf6",
+    "timing": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "traces": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "pre_adjudication_agreement_by_unit_kind": {
+    "final": {
+      "declared_units": 0,
+      "disagreement_units": 0,
+      "exact_agreement_units": 0,
+      "paired_units": 0,
+      "pairs_containing_uncertainty": 0,
+      "raw_exact_agreement_including_uncertain_not_accuracy": null,
+      "unpaired_units": 0
+    },
+    "problem": {
+      "declared_units": 20,
+      "disagreement_units": 0,
+      "exact_agreement_units": 0,
+      "paired_units": 0,
+      "pairs_containing_uncertainty": 0,
+      "raw_exact_agreement_including_uncertain_not_accuracy": null,
+      "unpaired_units": 20
+    },
+    "step": {
+      "declared_units": 0,
+      "disagreement_units": 0,
+      "exact_agreement_units": 0,
+      "paired_units": 0,
+      "pairs_containing_uncertainty": 0,
+      "raw_exact_agreement_including_uncertain_not_accuracy": null,
+      "unpaired_units": 0
+    }
+  },
+  "purpose": "development_only",
+  "registered_human_roles": [],
+  "registered_traces": 0,
+  "resolved_declared_units": 0,
+  "resolved_dependency_conflicts": [],
+  "resolved_final_judgments": {},
+  "resolved_first_error_conflicts": [],
+  "resolved_step_labels": {},
+  "screening": {
+    "dispositions": {},
+    "entered_candidates_missing_screening_log": 0,
+    "interpretation": "Retain all candidates, including rejects/pending. Proposed intake is not verified native yield; no eligibility fraction is imputed.",
+    "observed_screened_candidates": 0
+  },
+  "timing": {
+    "interpretation": "Descriptive observed time only; no automatic planner override, capacity claim or statistical interval.",
+    "observed_events": 0,
+    "observed_person_hours": 0.0,
+    "planner_time_parameters_not_measured": [
+      "minutes_per_adjudication",
+      "minutes_per_control_fidelity_check",
+      "minutes_per_final_outcome",
+      "minutes_per_independent_mirror_check",
+      "minutes_per_native_problem_authored",
+      "minutes_per_problem_mirror",
+      "minutes_per_reference_check",
+      "minutes_per_source_screen",
+      "minutes_per_step_judgment",
+      "minutes_per_trace_mirror",
+      "minutes_per_translated_control_preparation"
+    ],
+    "tasks": {}
+  },
+  "training_or_export_eligibility_granted": false,
+  "unassigned_human_roles": [
+    "adjudicator",
+    "assessor_a",
+    "assessor_b"
+  ],
+  "unpaired_units": 20,
+  "unresolved_paired_units": 0,
+  "valid_native_problem_decisions": 0
+}

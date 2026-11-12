@@ -2,6 +2,17 @@
 
 v3.2 intake checkpoint: [ARABIC_NATIVE_PILOT_V3_2.md](ARABIC_NATIVE_PILOT_V3_2.md) and `research/native_pilot_v3_2/` contain actual source-screening metadata and an empty twenty-slot manifest. No problem text, reference answer, reviewer identity or judgment is fabricated. Public kit has zero entered candidates and source-ready items. Existing v3 provenance checks support explicit dev-only use; default benchmark requirements remain strict. Continue with private real item/reference and human/timing evidence. Keep original laptop checkouts, backup, overlap work, frozen42 and histories untouched. No inference, scoring, training, export or active allowance.
 
+v3.2 annotation checkpoint: [instructions](native_pilot_v3_2/HUMAN_ANNOTATION.md),
+seven header-only CSVs and `native_pilot_review_v3_2.py` are prepared. Public
+`collection_status.json` and `review_status.json` replay zero actual human/material
+evidence. The [feasibility decision](ARABIC_NATIVE_FEASIBILITY_V3_2.md) defines what
+real collection/timing must precede a 100/250/500 commitment. Source-intake commit
+`3db483a` passed 602 tests each on Windows/Linux plus native guards in CI 43284081912;
+check the current continuation commit's Actions run for its own evidence. Next is
+permission-backed item selection and actual qualified people, not inference or
+another interface. No local private artifacts were read/moved/uploaded; local
+evidence authentication and reviewer recruitment remain human tasks.
+
 ## v3.1 continuation checkpoint
 
 Read [ARABICPRMT_V3_1_PROGRESS.md](ARABICPRMT_V3_1_PROGRESS.md) first. Feasibility

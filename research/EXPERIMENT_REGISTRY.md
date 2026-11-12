@@ -2,6 +2,14 @@
 
 v3.2 source/intake preparation — primary evidence register (ACO historical Arabic edition, KSU publisher/course leads, and a Hindawi translation excluded from native origin), twenty four-per-domain dev slots, reproducible empty intake report and strict offline checks. Actual problem records, source-level human validations, reviewer assignments and new model observations: zero. Only source metadata and templates are published, not raw books/problem datasets.
 
+v3.2 human-feasibility preparation — header-only A/B/C, source-screening, trace,
+reviewer and timing worksheets; Arabic/English rubric; read-only consistency and
+weighted work-rate analysis. All 20 native-problem targets and 40 source/human trace
+targets remain unfilled. No actual people, human timestamps, labels or observations
+are generated. This human-only pilot is separate from later K=8 model solving.
+Source-intake `3db483a`: 602 tests/platform and native Windows guards passed in
+[CI 43284081912](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43284081912).
+
 v3.1 scoring continuation — read-only [replay](PERFORMANCE_GAP_DIAGNOSIS_V3_1.json)
 binds the preserved thirteen v3 inputs and reports rounding robustness. The
 [recorded scoring analyzer](SCORING_DIAGNOSIS_V3_1.md) validates condition roles,

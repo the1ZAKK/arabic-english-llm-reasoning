@@ -2,6 +2,13 @@
 
 Next v3.2 step: use the [twenty-slot development intake](ARABIC_NATIVE_PILOT_V3_2.md) to obtain actual item-specific origin/permission evidence and qualified human review. Four source leads are documented; neither institutional hosting nor an Arabic translation establishes native origin. Complete the human/timing pilot before treating 100/250/500 as staffed or scientifically sufficient. No scoring or generation is authorized.
 
+Use the completed [human protocol and worksheets](native_pilot_v3_2/HUMAN_ANNOTATION.md)
+to measure all-candidate rejection/rights yield, actual trace lengths, independent
+agreement and contributor time. The [feasibility report](ARABIC_NATIVE_FEASIBILITY_V3_2.md)
+defines the staged decision; no human work or staffing is currently established.
+Source-intake software passed Windows/Linux CI 43284081912. Do not replace missing
+modern native coverage with translations or silently move pilot families to test.
+
 Current v3.1 links: [capacity/collection](BENCHMARK_FEASIBILITY_V3_1.md),
 [controlled scoring](SCORING_DIAGNOSIS_V3_1.md), [fixed-pool operations](RERANKING_OPERATIONS_V3_1.md),
 and [scientific report](ARABICPRMT_V3_1_PROGRESS.md). Next is actual staffing/work-rate

@@ -109,6 +109,8 @@ def collection_report(rows, register):
             if not sha(row.get(key)): blockers.append("missing:" + key)
         if row.get("difficulty") not in ("introductory", "intermediate", "advanced"):
             blockers.append("difficulty_not_assessed")
+        elif row["difficulty"] != row["target_difficulty"]:
+            blockers.append("assessed_difficulty_does_not_match_target")
         if row.get("language_register") not in ("modern", "historical"):
             blockers.append("register_not_assessed")
         complete_capture = not blockers

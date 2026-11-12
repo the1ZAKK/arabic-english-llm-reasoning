@@ -84,5 +84,8 @@ intake status. It does not follow private file references or authenticate source
 truth. It reuses the v3 identity/validation primitives; the existing benchmark
 auditor now accepts an explicit development-only split without relaxing human,
 origin or provenance requirements. No model, scoring, budget, training or data
-export path is introduced. Full human acceptance and timing checks are separate
-from this initial collection screen; neither CI nor preparation is human approval.
+export path is introduced. The separate [human worksheets and instructions](native_pilot_v3_2/HUMAN_ANNOTATION.md)
+and `native_pilot_review_v3_2.py` check human-record consistency and timing without
+authenticating or inventing human work. The [feasibility report](ARABIC_NATIVE_FEASIBILITY_V3_2.md)
+distinguishes current evidence from targets and describes the 100/250/500 decision.
+Neither CI nor preparation is human approval.

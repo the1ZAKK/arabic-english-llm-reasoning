@@ -1,0 +1,1 @@
+﻿event_id,slot_id,trace_id,reviewer_ref,person_key_sha256,role,task,unit_count,started_at_utc,ended_at_utc,interruption_minutes,active_minutes,notes

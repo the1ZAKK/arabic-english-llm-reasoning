@@ -110,6 +110,12 @@ class PilotIntakeTests(unittest.TestCase):
         self.assertEqual(report["candidate_metadata_complete_records"], 19)
         self.assertIn("missing:reference_answer", report["slot_status"][0]["blockers"])
 
+    def test_assessed_difficulty_must_fit_the_slot_instead_of_just_retaining_its_target_label(self):
+        rows = filled_rows(); rows[0]["difficulty"] = "advanced"
+        report = pilot.collection_report(rows, source_register())
+        self.assertEqual(report["source_ready_for_human_review"], 19)
+        self.assertIn("assessed_difficulty_does_not_match_target", report["slot_status"][0]["blockers"])
+
     def test_source_register_cannot_turn_a_known_translation_into_native_evidence(self):
         register = source_register(); register["sources"][1]["origin_screen"] = "documentary_support_item_review_pending"
         with self.assertRaisesRegex(ValueError, "translation"):

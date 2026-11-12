@@ -2,6 +2,16 @@
 
 v3.2 intake milestone: [development-only native pilot](ARABIC_NATIVE_PILOT_V3_2.md) prepares twenty target slots across five domains and a primary-source register. Four source leads were screened, including one confirmed English-derived exclusion. Actual enrolled problems, item permission clearances and qualified human reviews remain zero. A source record is not a benchmark item; no authorship, answer or identity is invented. Existing v3 validators are reused, with an explicit dev-only mode. Frozen artifacts and all model-execution boundaries remain unchanged.
 
+v3.2 human-pilot preparation: [feasibility finding](ARABIC_NATIVE_FEASIBILITY_V3_2.md)
+and [Arabic/English annotation kit](native_pilot_v3_2/HUMAN_ANNOTATION.md) add
+independent A/B, separate C, all-candidate screening and observed timing worksheets.
+Read-only checks retain missing/uncertain judgments, distinguish local validity,
+propagation and final correctness, and report pre-adjudication agreement by unit.
+All actual human/material counts remain zero. Source-intake commit `3db483a`
+passed **602 tests on Windows and Linux**, plus native Windows package/hash guards,
+in [CI 43284081912](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43284081912).
+The annotation continuation has its own current-commit Actions evidence.
+
 ## v3.1 diagnosis and operational readiness
 
 [Scientific progress](ARABICPRMT_V3_1_PROGRESS.md) separates actual retained-score

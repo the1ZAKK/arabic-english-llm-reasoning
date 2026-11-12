@@ -2,6 +2,15 @@
 
 v3.2 — Separate screened source leads, entered candidate metadata, source readiness and completed human validation. Do not infer native authorship from Arabic wording or institutional hosting; reject the explicitly translated source as native. Treat public-domain/provider notices as evidence to assess for exact items/scopes, not fabricated blanket permission. Keep all pilot families development-only and distinct canonical lineages; target twenty problems with at most two per template family. No automated human endorsement or budget creation.
 
+v3.2 human-feasibility scope — Use original-Arabic source/human traces without model
+generation; authors remain separate from two assessors and an adjudicator. Preserve
+each original judgment and bind C to both originals. Report unresolved/missing units,
+raw agreement by unit kind (uncertain ties are not accuracy), error-class coverage
+and actual time. Correct final answers can have invalid reasoning. Retain rejected
+source work when estimating yield; reuse v3.1 capacity assumptions only after real
+timing/staff review. Human-only feasibility does not establish model efficacy or
+automatically grant native authorship, dataset approval or training/export rights.
+
 v3.1 — Existing-score reaggregation and rounding analysis cannot identify a
 quantization cause or an adaptation-only effect. Require unchanged input IDs,
 tokenizer/extraction/software/device/determinism and matched numerical settings
