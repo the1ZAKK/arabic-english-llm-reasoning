@@ -1,5 +1,15 @@
 # Research decisions
 
+v3.1 — Existing-score reaggregation and rounding analysis cannot identify a
+quantization cause or an adaptation-only effect. Require unchanged input IDs,
+tokenizer/extraction/software/device/determinism and matched numerical settings
+for each attributed contrast; a CPU/FP16 versus GPU/NF4 comparison is confounded.
+Distinguish lexical newline anchors from human mathematical steps. Primary
+operational selection must not read human correctness/neutral masks or references.
+Keep human-canonical answer voting expert-assisted unless a separate pinned,
+reference-blind parser exists. Four-cell interactions require the same complete
+items. No scoring runner, execution consent or missing identity is fabricated.
+
 v3.1 — Prefer 100% evidenced native Arabic for the primary dev/test benchmark.
 The supervisor's origin constraints do not require translated controls; an 80/20
 alternative is costed but reduces native test power. Reserve no training split

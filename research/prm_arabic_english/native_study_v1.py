@@ -255,6 +255,20 @@ def selection_loss(oracle, selected, keys):
             "limitation": "Conditional selection success is secondary; primary accuracy retains every planned problem."}
 
 
+def selector_positions(candidates, scorers):
+    """Decisions use generation order, answer keys and rewards, never outcomes."""
+    positions, fallback = {"first": 0}, set()
+    votes = Counter(c.get("answer_key") for c in candidates if c.get("answer_key") is not None)
+    positions["answer_majority"] = max(range(len(candidates)), key=lambda i: votes[candidates[i].get("answer_key")]) if votes else 0
+    for name in scorers:
+        missing = any(c["generation_status"] == "generated" and c["scores"][name] is None for c in candidates)
+        positions[name] = 0 if missing else max(range(len(candidates)), key=lambda i: candidates[i]["scores"][name]
+                         if candidates[i]["generation_status"] == "generated" else -math.inf)
+        if missing:
+            fallback.add(name)
+    return positions, fallback
+
+
 def rerank(doc, k_values=(1, 2, 4, 8)):
     header(doc, "recorded_candidate_reranking_v1")
     require(doc.get("evaluation_split") == "test", "Reranking analysis requires frozen held-out test declaration")
@@ -296,25 +310,24 @@ def rerank(doc, k_values=(1, 2, 4, 8)):
     reports = {}
     for k in k_values:
         outcomes, random_bounds = defaultdict(dict), {}
+        selected_manifest, vote_manifest = {}, {}
         fallbacks, failures = Counter(), 0
         for p in problems:
             key, candidates = p["problem_id"], p["candidates"][:k]
             failures += sum(c["generation_status"] == "failed" for c in candidates)
-            outcomes["first"][key] = candidates[0]["outcome"]
-            votes = Counter(c["answer_key"] for c in candidates if c["answer_key"] is not None)
-            majority = max(range(k), key=lambda i: votes[candidates[i]["answer_key"]]) if votes else 0
-            outcomes["answer_majority"][key] = candidates[majority]["outcome"]
+            positions, missing = selector_positions(candidates, scorers)
+            selected_manifest[key] = {name: candidates[index]["candidate_id"] for name, index in positions.items()
+                                      if name != "answer_majority"}
+            vote_manifest[key] = candidates[positions["answer_majority"]]["candidate_id"]
+            for name, index in positions.items():
+                outcomes[name][key] = candidates[index]["outcome"]
             values = [c["outcome"] for c in candidates]
             outcomes["oracle"][key] = True if True in values else (None if None in values else False)
             random_bounds[key] = (sum(v is True for v in values) / k, sum(v is not False for v in values) / k)
             for name in scorers:
-                missing = any(c["generation_status"] == "generated" and c["scores"][name] is None for c in candidates)
                 # Missing reward scores trigger the registered first-position fallback;
                 # failed generations remain in the pool with -infinity reward.
-                selected = 0 if missing else max(range(k), key=lambda i: candidates[i]["scores"][name]
-                        if candidates[i]["generation_status"] == "generated" else -math.inf)
-                fallbacks[name] += int(missing)
-                outcomes[name][key] = candidates[selected]["outcome"]
+                fallbacks[name] += int(name in missing)
         strata = {}
         for origin in ("all", "arabic_native", "translated"):
             subset = [p for p in problems if origin == "all" or p["origin"] == origin]
@@ -333,12 +346,15 @@ def rerank(doc, k_values=(1, 2, 4, 8)):
                                                        for name, v in outcomes.items() if name != "oracle"},
                              "comparisons": comparisons}
         reports[str(k)] = {"strata": strata, "missing_score_fallback_problems": dict(fallbacks),
+                           "selection_manifest_sha256": digest(selected_manifest),
+                           "canonical_vote_manifest_sha256": digest(vote_manifest),
                            "failed_generation_positions": failures}
     return {"primary_endpoint": "Arabic-native held-out final-answer accuracy at K=8; base versus first",
             "primary_k_available": 8 in k_values, "results": reports,
             "score_tie_policy": "earliest_generation_position_without_consulting_outcome",
             "missing_score_policy": "fallback_to_first_position_for_that_scorer_and_problem",
             "pool_sha256": doc["candidate_pool_sha256"], "human_outcomes_authenticated": False,
+            "answer_majority_interpretation": "Expert-assisted canonical-answer comparator unless a pinned reference-blind parser supplies keys; no automatic-voting efficacy claim.",
             "interpretation": "Recorded-pool selection, not new generation, training, or population-wide efficacy."}
 
 

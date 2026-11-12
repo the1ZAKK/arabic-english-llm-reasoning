@@ -131,3 +131,12 @@ primary accuracy and bounds. Conditional selection efficiency is secondary.
 
 The [v3.1 feasibility planner](BENCHMARK_FEASIBILITY_V3_1.md) compares costs and exact
 independent-pair power. No planning result authenticates people or activates runs.
+
+The [v3.1 scoring analyzer](SCORING_DIAGNOSIS_V3_1.md) adds exact-input/offset and
+matched precision/adaptation checks for supplied records only. The [operational
+plan](RERANKING_OPERATIONS_V3_1.md) defines what selectors may see. The primary
+selection hash excludes canonical voting; its separate hash may depend on human
+answer equivalence work. The pure selector works before an annotation file exists.
+Do not invent an annotation hash or human label to call the later full replay.
+The answer-majority comparator is expert-assisted unless keys come from a pinned
+reference-blind parser. No such automated parser is claimed here.

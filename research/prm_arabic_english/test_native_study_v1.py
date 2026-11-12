@@ -255,6 +255,28 @@ class RerankingTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Contradictory"):
             study.rerank(doc)
 
+    def test_selected_candidate_hash_is_independent_of_human_outcome_labels(self):
+        doc = pools(); first = study.rerank(doc)["results"]["8"]["selection_manifest_sha256"]
+        for p in doc["problems"]:
+            for c in p["candidates"]: c["outcome"] = not c["outcome"]
+        changed = study.rerank(doc)["results"]["8"]["selection_manifest_sha256"]
+        self.assertEqual(first, changed)
+        doc["problems"][0]["candidates"][0]["scores"]["base"] = 1.
+        self.assertNotEqual(first, study.rerank(doc)["results"]["8"]["selection_manifest_sha256"])
+        doc = pools(); before = study.rerank(doc)["results"]["8"]
+        for p in doc["problems"]:
+            for i, c in enumerate(p["candidates"]):
+                c["answer_key"] = "wrong_vote_group" if i in (3, 4, 5) else f"unique{i}"
+        after = study.rerank(doc)["results"]["8"]
+        self.assertEqual(before["selection_manifest_sha256"], after["selection_manifest_sha256"])
+        self.assertNotEqual(before["canonical_vote_manifest_sha256"], after["canonical_vote_manifest_sha256"])
+
+    def test_selector_operates_before_human_answers_or_annotations_exist(self):
+        candidates = [{"generation_status": "generated", "scores": {"base": v}} for v in (.1, .9)]
+        positions, fallback = study.selector_positions(candidates, ["base"])
+        self.assertEqual(positions, {"first": 0, "answer_majority": 0, "base": 1})
+        self.assertEqual(fallback, set())
+
     def test_unresolved_equivalent_answer_is_not_automatically_human_labeled(self):
         doc = pools(); c = doc["problems"][0]["candidates"][2]
         c.update(answer_key="right", outcome=None)

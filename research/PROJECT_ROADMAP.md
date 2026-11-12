@@ -1,5 +1,13 @@
 # Evidence-gated roadmap
 
+Current v3.1 links: [capacity/collection](BENCHMARK_FEASIBILITY_V3_1.md),
+[controlled scoring](SCORING_DIAGNOSIS_V3_1.md), [fixed-pool operations](RERANKING_OPERATIONS_V3_1.md),
+and [scientific report](ARABICPRMT_V3_1_PROGRESS.md). Next is actual staffing/work-rate
+calibration and permission-backed native sourcing, not another interface or a
+fine-tuning run. Matched scoring needs real pinned observations under separate
+consent; no model outputs are created by the analyzers. Conditional feasibility
+and software readiness are not an approved benchmark or established solving gain.
+
 ## v3.1 practical sequence
 
 1. Use the [feasibility comparison](BENCHMARK_FEASIBILITY_V3_1.md) to decide actual

@@ -43,6 +43,8 @@ Exact paired-test power below assumes independent native problems, a true 10-poi
 accuracy gain, discordance q=.30, and two-sided exact McNemar alpha .05. It is not
 power of a completed study. Hours include all roles, original native authoring,
 two human assessments, English mirror work, assumed adjudication and 15% reserve.
+Here q describes disagreement in correctness between the two selectors, not
+disagreement between annotators.
 
 | Total problems | Dev/test | Native test, 100% native core | Exact power for +10 points | Assumed person-hours, native core | Appropriate role |
 |---|---|---:|---:|---:|---|

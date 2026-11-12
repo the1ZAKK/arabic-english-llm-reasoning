@@ -98,6 +98,12 @@ class FeasibilityTests(unittest.TestCase):
         raw = subprocess.check_output([sys.executable, "-B", str(Path(feasibility.__file__))])
         self.assertEqual(json.loads(raw), feasibility.plan())
 
+    def test_cache_does_not_bypass_boolean_or_integer_type_validation(self):
+        feasibility.exact_independent_power(1, .3, .1, .05)
+        with self.assertRaises(ValueError): feasibility.exact_independent_power(True, .3, .1, .05)
+        feasibility.exact_independent_power(80, 1., .1, .05)
+        with self.assertRaises(ValueError): feasibility.exact_independent_power(80, True, .1, .05)
+
 
 if __name__ == "__main__":
     unittest.main()

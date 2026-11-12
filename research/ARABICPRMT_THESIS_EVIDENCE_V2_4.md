@@ -1,5 +1,7 @@
 # ArabicPRM-T: thesis evidence and claim boundaries
 
+Current v3.1 scientific summary: [feasibility and diagnosis](ARABICPRMT_V3_1_PROGRESS.md). Planning hours/power are hypothetical; rounding-robust retained score differences do not establish a complete cause, native generalization or solving improvement. No human outcomes or new model observations are created.
+
 Current direction: [supervisor-directed study v3](ARABIC_NATIVE_STUDY_V3.md), [native benchmark](ARABIC_NATIVE_BENCHMARK_V1.md) and [short translation QC](TRANSLATION_QC_SHORT_PROTOCOL.md). The earlier protocol/evidence below is historical; native human-labeled diagnosis and downstream solving now take priority.
 
 **Scope correction (2026-11-12).** This page records the earlier translation-focused work. Use the [retained-evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md) for the current limitations on adaptation, generalization and retention claims. A native Arabic benchmark, independent Arabic human step labels and downstream solving gains remain unmeasured. The proposed recovery diagnostic is no longer the critical path.

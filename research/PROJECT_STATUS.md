@@ -1,5 +1,21 @@
 # ArabicPRM-T v2 project evidence
 
+## v3.1 diagnosis and operational readiness
+
+[Scientific progress](ARABICPRMT_V3_1_PROGRESS.md) separates actual retained-score
+findings, assumed capacity/power and missing observations. The new [scoring
+procedure](SCORING_DIAGNOSIS_V3_1.md) checks matched-runtime records and Unicode
+reward anchors without a model client. It reports missing cells and optional
+four-cell interactions. Nonempty EN–AR gap difference remains about 0.2277 under
+rounding bounds [0.2275,0.2279]; the full language weakness is not explained.
+
+The [reranking operation plan](RERANKING_OPERATIONS_V3_1.md) freezes automated
+first/PRM choices before human outcomes and keeps expert-assisted canonical voting
+separate. The original frozen histories and QC remain untouched. Feasibility
+commit `90a8208` passed 573 tests on each platform in [CI 43218101318](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43218101318).
+The current published commit's Actions run provides its own validation evidence.
+No native items, human labels or new model observations were collected.
+
 ## v3.1: feasibility before collection
 
 The [costed collection plan](BENCHMARK_FEASIBILITY_V3_1.md) compares 100/250/500

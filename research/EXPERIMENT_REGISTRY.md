@@ -1,5 +1,15 @@
 # Experiment and evidence registry
 
+v3.1 scoring continuation — read-only [replay](PERFORMANCE_GAP_DIAGNOSIS_V3_1.json)
+binds the preserved thirteen v3 inputs and reports rounding robustness. The
+[recorded scoring analyzer](SCORING_DIAGNOSIS_V3_1.md) validates condition roles,
+exact input-token identity, source Unicode offsets, reward boundaries, missing
+cells and matched four-cell interactions using synthetic tests only. It executes
+zero model forwards. [Reranking operations](RERANKING_OPERATIONS_V3_1.md) now bind
+automated choices independently of outcomes and human canonical keys, and label
+expert-assisted voting explicitly. New native data, human labels, model records,
+training, active allowances and export: none. Real downstream efficacy is missing.
+
 v3.1 offline milestone — [feasibility planner](BENCHMARK_FEASIBILITY_V3_1.md)
 compares six size/origin options, including native authoring, permissions screening,
 reference checks, two-assessor Arabic labels/outcomes, limited English mirrors and

@@ -50,7 +50,7 @@ def binomial_probabilities(n, p):
     return tuple(v / total for v in values)
 
 
-@lru_cache(maxsize=2048)
+@lru_cache(maxsize=2048, typed=True)
 def critical_lower(discordant, alpha):
     cumulative, cutoff = 0., -1
     for k, probability in enumerate(binomial_probabilities(discordant, .5)):
@@ -62,7 +62,7 @@ def critical_lower(discordant, alpha):
     return cutoff
 
 
-@lru_cache(maxsize=128)
+@lru_cache(maxsize=128, typed=True)
 def exact_independent_power(n, discordance, gain, alpha=.05):
     """Unconditional power of the exact two-sided McNemar rule.
 

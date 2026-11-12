@@ -1,5 +1,24 @@
 # Session handoff
 
+## v3.1 continuation checkpoint
+
+Read [ARABICPRMT_V3_1_PROGRESS.md](ARABICPRMT_V3_1_PROGRESS.md) first. Feasibility
+commit `90a8208` passed Windows/Linux 573 tests in CI 43218101318. The current
+continuation adds `scoring_diagnosis_v3_1.py`, the source-bound existing replay,
+matched scoring/offset/factorial checks, and the fixed-pool operational procedure.
+It contains no model client, generation or approval action. `selector_positions`
+works before answer keys/annotations exist; automated choices and expert-vote
+choices have distinct hashes. Human correctness is never used to choose the PRM
+candidate. The v3 aggregate report's Git attributes now preserve exact bytes
+across fresh Windows checkouts without rewriting its existing blob.
+
+Native sourcing, qualified staff/work rates, actual mathematical annotations,
+pinned PRM-runtime observations and final-answer outcomes remain missing. Use
+actual capacity before selecting a study size. Any future model forward pass is a
+separate authorization boundary. Preserve both laptop checkouts, backup, private
+overlap work, frozen42, original data and all histories; do not infer human QC
+completion from CI. Current per-commit Windows/Linux Actions is authoritative.
+
 ## Active v3.1 handoff
 
 Use [BENCHMARK_FEASIBILITY_V3_1.md](BENCHMARK_FEASIBILITY_V3_1.md) and its reproducible

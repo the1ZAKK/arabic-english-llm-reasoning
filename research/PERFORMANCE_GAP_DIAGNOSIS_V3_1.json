@@ -1,0 +1,92 @@
+{
+  "base_en_minus_ar_nonempty_gap": {
+    "bootstrap_draws": 5000,
+    "estimate": 0.22769979761904763,
+    "percentile_95_interval": [
+      0.18227082936507938,
+      0.27507808333333333
+    ],
+    "seed": 20261112,
+    "selection_bias_corrected": false,
+    "unit": "problem_id",
+    "units": 20
+  },
+  "base_en_minus_ar_rounding_only_bounds": [
+    0.22749979761904765,
+    0.2278997976190476
+  ],
+  "hypotheses": {
+    "adapter_only_effect": "Not identified: need base versus existing adapter at identical NF4 runtime and extraction.",
+    "blank_aggregation": "Existing-score sensitivity is testable; changing input rendering needs new controlled scores.",
+    "downstream_selection_gain": "Requires shared recorded pools, pinned scorers and actual human final-answer outcomes.",
+    "generator_quality": "Requires authorized original-language candidate generations with independent final outcomes.",
+    "native_arabic_generalization": "Requires a new provenance-backed native sample and qualified independent Arabic labels.",
+    "pure_monotone_calibration": "Cannot repair the retained nominal within-problem ordering; valid labels/fidelity remain unverified.",
+    "quantization_cause": "Not identified: checked-in configurations differ, but matched-runtime observations are absent.",
+    "rounding_only_explanation": "Deterministic rounding bounds cannot cover the observed nonempty gap contrast.",
+    "semantic_step_alignment": "New token-offset evidence and qualified human step maps required; line counts alone are insufficient."
+  },
+  "inference_allowance_created": false,
+  "kind": "existing_scoring_diagnosis_v3_1",
+  "limitations": [
+    "Selected twenty-problem development evidence and unverified authored category tags.",
+    "Rounding bounds assume the recorded four-decimal nearest formatting; they are not statistical intervals.",
+    "Bootstrap intervals condition on the selected problem IDs, with unknown additional source clustering.",
+    "No input tokens were changed, no scores regenerated, no human labels created."
+  ],
+  "new_model_observations": 0,
+  "retained_input_sha256": {
+    "../../model_utils/io_utils.py": "5332b7a9b0feeb0d707c249c38e7f551e9157175c3401feedd402512828a50cf",
+    "arabic_generalization_arabicprm_results.csv": "147a261a50ee752528ad4804e6e690f061055e62104cef06f56c06b1ae413383",
+    "arabic_prm_results.csv": "b20030b0f5f987f7c502571a343e33d2ffc5c08dd3058c431a39ec1a9a450700",
+    "data/pilot_dev.jsonl": "3e6e85be51f3ae0086d5eb0d376e962108682a42644b58a8833059a7614b671d",
+    "data/pilot_train.jsonl": "0131b4da2bfd5f408a9d87b3c0831e2ac925e321e0a1aedd22fee8f211e3befc",
+    "english_prm_results.csv": "fd06dda0aa0f945bea97a6cab3227e5dbcf3a9d0e2d6f22f9fbf73332aef99cc",
+    "english_retention_arabicprm_results.csv": "985ec15d7db143b240be0074e4bf4ca0ad83a77636d84e551003d270075c0832",
+    "eval_arabic_generalization.py": "974d82b95a2d78c8a8d57c6d7b091bdcae4e61e4dc896bef090e7030a5ba4fe3",
+    "eval_english_retention.py": "1ebdbe9ff3439c01c32725dfd13c02a726a65af4dff66b41621a795e3aee3eba",
+    "pilot_baseline_results.json": "33ec14c4ed7adeef708f0f41c361ff5c188223d1806dd5b891cccbf88e423d98",
+    "pilot_reloaded_results.json": "fd7356f44a226054ea76390aebddc2447239992203fbc12f77aea9d5a8bbe357",
+    "test_arabic_prm.py": "7624910473535adec1866115786e7eb355eb0974ba038235d61ca53d9256265f",
+    "test_english_prm.py": "4203f210cf3bf919f47207f47f065fa1a3425a1e97c15fae198e578bc9ac6b96"
+  },
+  "score_sets": {
+    "arabic_adapted": {
+      "nominal_correct_definitely_unique_top": 16,
+      "nominal_correct_possibly_top": 16,
+      "nonempty_gap_point": 0.19422079365079364,
+      "rounding_only_bounds": [
+        0.19412079365079365,
+        0.19432079365079363
+      ]
+    },
+    "arabic_base": {
+      "nominal_correct_definitely_unique_top": 13,
+      "nominal_correct_possibly_top": 13,
+      "nonempty_gap_point": 0.10705536904761903,
+      "rounding_only_bounds": [
+        0.10695536904761907,
+        0.10715536904761905
+      ]
+    },
+    "english_adapted": {
+      "nominal_correct_definitely_unique_top": 20,
+      "nominal_correct_possibly_top": 20,
+      "nonempty_gap_point": 0.33264262698412694,
+      "rounding_only_bounds": [
+        0.332542626984127,
+        0.332742626984127
+      ]
+    },
+    "english_base": {
+      "nominal_correct_definitely_unique_top": 20,
+      "nominal_correct_possibly_top": 20,
+      "nonempty_gap_point": 0.33475516666666666,
+      "rounding_only_bounds": [
+        0.3346551666666667,
+        0.3348551666666667
+      ]
+    }
+  },
+  "v3_report_sha256": "0ee0f5c9c0e96b8ba749b61206aa52155963e71c96ecf4db377b2ecbc60324c0"
+}
