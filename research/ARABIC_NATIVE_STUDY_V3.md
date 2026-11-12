@@ -32,6 +32,14 @@ Arabic after adaptation. A strictly monotonic recalibration cannot fix ordering
 in that selected set. Unverified tags, bilingual equivalence and alignment remain
 confounds; this is not a real generated-pool solving result.
 
+The [pipeline audit](RETAINED_EVIDENCE_AUDIT_V3.md#scoring-pipeline-and-precision-audit)
+also identifies empty-line rewards (160 per language) and different declared
+quantization configurations in old base/adapted runners. Excluding empty positions
+from rounded recorded scores leaves a base EN–AR gap difference about 0.2277,
+so that measurement issue does not explain the full discrepancy. A future
+unadapted-base control at the adapter's exact quantization/extraction settings
+is needed before attributing changes to adaptation. No old output is rewritten.
+
 ## Two complementary comparisons
 
 **Content-controlled scoring diagnosis.** Use Arabic-original traces from the

@@ -1,5 +1,16 @@
 # Experiment and evidence registry
 
+Verification for this continuation: 558 local offline tests passed (62.690 s), comprising the prior 525 and 33 new audit/native-study regressions. CI sparse inputs now include the three existing model-utility source files, never model weights; the helper is parsed and its preparer is probed only with a synthetic tokenizer. Original thirteen audit inputs are unchanged, with exact-byte Git attributes for reproducibility. The published commit’s Windows/Linux Actions jobs are the cross-platform evidence, not semantic or human approval.
+
+Retained-scoring continuation: the [source-bound pipeline audit](RETAINED_EVIDENCE_AUDIT_V3.md#scoring-pipeline-and-precision-audit)
+identifies 160 blank-line reward positions per language and explicitly different
+quantization declarations across the old base/adapted runners. Rounded-score
+aggregation excluding blank positions retains an EN–AR gap difference about
+0.2277; this is a sensitivity analysis, not regenerated scores or a complete cause.
+The audit now hashes thirteen named inputs, including the unchanged helper source.
+Future matched-precision unadapted-base scoring is needed before adapter-only
+attribution. No source, checkpoint, translation or human record is repaired.
+
 2026-11-12 — Native-study v1 preparation: [scientific protocol](ARABIC_NATIVE_STUDY_V3.md),
 [human rubric/provenance](ARABIC_NATIVE_BENCHMARK_V1.md), and pure offline metadata,
 paired gap/Brier, fixed-pool reranking and sample-size analysis. All test inputs

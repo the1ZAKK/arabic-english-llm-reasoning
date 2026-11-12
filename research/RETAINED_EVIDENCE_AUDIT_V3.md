@@ -1,7 +1,7 @@
 # Retained evidence audit: supervisor-directed scientific revision
 
 Audit baseline: research branch `cd0e2c2880b0010ff7ba8645f508b2e4578a171a`.
-The [aggregate replay](RETAINED_EVIDENCE_AUDIT_V3.json) hashes twelve retained
+The [aggregate replay](RETAINED_EVIDENCE_AUDIT_V3.json) hashes thirteen retained
 inputs and recomputes their metrics without importing legacy model runners.
 No new model evaluation, annotation or inference took place.
 
@@ -79,3 +79,45 @@ mismatch, segmentation or another confound. The category labels remain
 unverified, and the four candidates were authored with a correct category by
 construction. Do not call these counts generated-solution accuracy or downstream
 solver improvement. They motivate the native, human-labeled fixed-pool experiment.
+
+## Scoring-pipeline and precision audit
+
+Static inspection of the retained runners and `model_utils/io_utils.py` found
+that `prepare_input` splits the untrimmed literal response on every newline and
+flags **every segment**, including empty first/last segments, for a reward. Each
+of the eighty candidates in each language has two such empty boundary lines.
+The recorded counts exactly match raw newline segments: **160/547 Arabic** and
+**160/546 English** reward positions are blank. A deterministic test executes only
+the extracted input-preparation function with a synthetic tokenizer; it imports
+neither the helper's torch/numpy imports nor a model. No helper or source is fixed.
+
+A read-only sensitivity analysis excludes those empty positions **only from a
+new aggregate of the retained four-decimal CSV scores**. It does not remove any
+tokens from the original model input, regenerate scores or replace original
+results. Rounding and the lack of a fresh controlled run limit its interpretation.
+
+| Recorded set | All-position gap, rounded CSV | Nonempty-position gap, rounded CSV | Nominal correct uniquely highest after exclusion |
+|---|---:|---:|---:|
+| Arabic base | 0.108042 | 0.107055 | 13/20 |
+| English base | 0.356175 | 0.334755 | 20/20 |
+| Arabic adapted | 0.190226 | 0.194221 | 16/20 |
+| English adapted | 0.356277 | 0.332643 | 20/20 |
+
+The base EN–AR gap difference remains about **0.227700** after this aggregation
+sensitivity. Empty-line inclusion changes measured scores and one Arabic ranking,
+but does not remove the selected-set ordering/gap discrepancy. This is evidence
+for a concrete measurement issue, not a complete explanation of Arabic weakness.
+Future diagnosis must explicitly verify mathematical step/reward alignment and
+mask nonreasoning steps under a frozen policy; retain the old results unchanged.
+
+The checked-in base runners load `PRM_MODEL.from_pretrained` without an explicit
+4-bit configuration, whereas adapted retention/generalization runners explicitly
+declare NF4 4-bit quantization and float16 compute. Both use the same model name
+without an immutable revision pin. Base extraction uses `derive_step_rewards`;
+adapted extraction directly indexes reward flags. Those single-batch masks appear
+equivalent in the inspected source, but the historical execution environment is
+not authenticated by source code alone. Consequently **adapter-only attribution
+of these old twenty-problem adapted-versus-base changes is not established**. A future controlled
+comparison must include an unadapted base at the same quantization/runtime,
+tokenizer, step extraction and aggregation as the adapter. It requires separately
+authorized scoring; no new training is needed to perform that eventual diagnosis.

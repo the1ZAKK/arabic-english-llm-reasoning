@@ -112,6 +112,55 @@ def example_list(path):
     raise ValueError("Explicit historical examples literal missing")
 
 
+def runtime_declarations(path):
+    """Checked-in settings, not proof of the environment of a historical run."""
+    tree = ast.parse(path.read_text(encoding="utf-8-sig"))
+    calls = [n for n in ast.walk(tree) if isinstance(n, ast.Call)]
+    loaders = [n for n in calls if isinstance(n.func, ast.Attribute) and
+               isinstance(n.func.value, ast.Name) and n.func.value.id == "PRM_MODEL" and
+               n.func.attr == "from_pretrained"]
+    require_loader = len(loaders) == 1
+    if not require_loader:
+        raise ValueError("Unambiguous historical base model loader required")
+    quantized = any(isinstance(n.func, ast.Name) and n.func.id == "BitsAndBytesConfig" and
+                    any(k.arg == "load_in_4bit" and isinstance(k.value, ast.Constant) and k.value.value is True
+                        for k in n.keywords) for n in calls)
+    return {"explicit_4bit_configuration": quantized,
+            "base_model_loader_keyword_names": sorted(k.arg for k in loaders[0].keywords if k.arg),
+            "model_revision_explicitly_pinned": any(k.arg == "revision" for k in loaders[0].keywords),
+            "reward_extraction": "derive_step_rewards" if any(isinstance(n.func, ast.Name) and
+                n.func.id == "derive_step_rewards" for n in calls) else "direct_reward_flag_mask",
+            "historical_execution_environment_authenticated": False}
+
+
+def blank_line_sensitivity(groups, examples):
+    """Counterfactual aggregation from rounded CSV scores; no rescoring/repair."""
+    stripped, rounded = defaultdict(dict), defaultdict(dict)
+    positions, blanks = 0, 0
+    for example in examples:
+        key = str(example["id"])
+        for category in CATEGORIES:
+            segments = example["responses"][category].split("\n")
+            row = groups[key][category]
+            scores = [finite(v) for v in row["step_scores"].split()]
+            if len(segments) != len(scores) or not any(s.strip() for s in segments):
+                raise ValueError("Raw newline segments do not align with recorded reward positions")
+            nonempty = [score for segment, score in zip(segments, scores) if segment.strip()]
+            positions += len(scores)
+            blanks += len(scores) - len(nonempty)
+            stripped[key][category] = {"average_score": mean(nonempty)}
+            rounded[key][category] = {"average_score": mean(scores)}
+    if set(stripped) != set(groups):
+        raise ValueError("Literal/recorded problem coverage differs")
+    return {"recorded_reward_positions": positions, "blank_line_reward_positions": blanks,
+            "nonempty_line_reward_positions": positions - blanks,
+            "gap_all_positions_rounded": mean(gaps(rounded).values()),
+            "gap_excluding_blank_positions_rounded": mean(gaps(stripped).values()),
+            "nominal_correct_unique_highest_excluding_blanks": nominal_ordering(stripped)["nominal_correct_unique_highest"],
+            "precision": "CSV scores rounded to four decimal places; sensitivity only, not new model outputs.",
+            "original_scores_or_sources_modified": False}
+
+
 def pilot_metrics(records):
     positives, negatives, correct, incorrect = [], [], [], []
     ids = set()
@@ -140,6 +189,7 @@ def audit(root):
     paths = [*SCORES.values(), *SCRIPTS, "pilot_baseline_results.json", "pilot_reloaded_results.json",
              "data/pilot_train.jsonl", "data/pilot_dev.jsonl"]
     fingerprints = {n: hashlib.sha256((root / n).read_bytes()).hexdigest() for n in paths}
+    fingerprints["../../model_utils/io_utils.py"] = hashlib.sha256((root.parents[1] / "model_utils/io_utils.py").read_bytes()).hexdigest()
     scores = {name: read_scores(root / path) for name, path in SCORES.items()}
     keys = set(scores["arabic_base"])
     if any(set(g) != keys for g in scores.values()):
@@ -156,6 +206,10 @@ def audit(root):
                for f in ("problem", "response", "num_steps")):
             raise ValueError("Within-language retained candidate content changed")
     examples = {n: example_list(root / n) for n in SCRIPTS}
+    runtime = {n: runtime_declarations(root / n) for n in SCRIPTS}
+    sample_scripts = {"arabic_base": SCRIPTS[0], "english_base": SCRIPTS[1],
+                      "arabic_adapted": SCRIPTS[2], "english_adapted": SCRIPTS[3]}
+    sensitivity = {name: blank_line_sensitivity(groups, examples[sample_scripts[name]]) for name, groups in scores.items()}
     ar_reused = examples[SCRIPTS[0]] == examples[SCRIPTS[2]]
     en_reused = examples[SCRIPTS[1]] == examples[SCRIPTS[3]]
     differences = {"english_minus_arabic_base_gap": ("english_base", "arabic_base"),
@@ -179,6 +233,7 @@ def audit(root):
         raise ValueError("Historical pilot group/exact-problem split overlap")
     return {"schema_version": 1, "kind": "retained_evidence_audit_v3", "input_sha256": fingerprints,
             "historical_score_sets": result, "paired_problem_bootstrap": paired,
+            "checked_in_runtime_declarations": runtime, "blank_line_aggregation_sensitivity": sensitivity,
             "arabic_generalization_reuses_all_20_baseline_examples": ar_reused,
             "english_retention_reuses_all_20_baseline_examples": en_reused,
             "cross_language_step_count_disagreements": sum(scores["arabic_base"][k][c]["num_steps"] != scores["english_base"][k][c]["num_steps"] for k in keys for c in CATEGORIES),
@@ -192,6 +247,8 @@ def audit(root):
                             "No immutable model/tokenizer revision or complete run environment in score CSVs.",
                             "Step scores in CSVs are rounded; aggregate average_score is used unchanged.",
                             "AR/EN content fidelity, native authorship and pretraining contamination remain unverified.",
+                            "Both language scripts score empty boundary lines; reported average scores include these positions.",
+                            "Checked-in adapted scripts explicitly declare 4-bit quantization unlike original baseline loaders; adapter-only attribution is unverified.",
                             "Intervals describe resampling this selected set, not external population generalization.",
                             "No recorded candidate-generation/reranking experiment or downstream solving gain."],
             "generation_requests": 0, "training_performed": False, "dataset_exported": False}

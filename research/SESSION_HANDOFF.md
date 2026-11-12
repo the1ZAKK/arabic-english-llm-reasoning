@@ -1,5 +1,14 @@
 # Session handoff
 
+Retained-scoring continuation: the [source-bound pipeline audit](RETAINED_EVIDENCE_AUDIT_V3.md#scoring-pipeline-and-precision-audit)
+identifies 160 blank-line reward positions per language and explicitly different
+quantization declarations across the old base/adapted runners. Rounded-score
+aggregation excluding blank positions retains an EN–AR gap difference about
+0.2277; this is a sensitivity analysis, not regenerated scores or a complete cause.
+The audit now hashes thirteen named inputs, including the unchanged helper source.
+Future matched-precision unadapted-base scoring is needed before adapter-only
+attribution. No source, checkpoint, translation or human record is repaired.
+
 ## Active handoff: supervisor revision
 
 Start with [study v3](ARABIC_NATIVE_STUDY_V3.md), [native benchmark/rubric](ARABIC_NATIVE_BENCHMARK_V1.md),
@@ -9,17 +18,19 @@ collection and qualified Arabic human annotation capacity, followed by separatel
 authorized diagnosis/scoring and fixed-pool solving evaluation. More fine-tuning,
 translation generation or approval interfaces are not the next research step.
 
-`evidence_audit_v3.py` reads twelve named retained inputs and static AST literals,
-not legacy model imports. `native_study_v1.py` validates metadata declarations,
+`evidence_audit_v3.py` reads thirteen named retained inputs and static AST literals,
+including the unchanged scoring-helper source; it never imports legacy model runners. `native_study_v1.py` validates metadata declarations,
 replays paired score/Brier contrasts with family bootstrap, and compares recorded
 fixed pools without generating or loading a model. Synthetic tests are not new
 experimental results. The target is 500 unique groups, 80/20 native/translated;
 none has been collected or labeled by this work.
 
 Commit `90dd38a` is the audit milestone; Linux passed, Windows exposed a UTF-8
-reader issue in CI 43207008836. Explicit encoding is fixed. All 556 local offline tests passed (63.182 s),
-including an actual non-UTF8-default subprocess regression; verify the renewed
-Windows/Linux matrix before claiming cross-platform success. Preserve original local checkout,
+reader issue in CI 43207008836, fixed in `26b6307`. The expanded audit now passes
+all 558 local tests (62.690 s), including non-UTF8-default and model-free blank-line
+regressions. Check the exact published commit in the
+[Actions history](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions?query=branch%3Aresearch%2Farabicprm-v2-production)
+for both Windows/Linux jobs and native guards. Preserve original local checkout,
 backup, private worksheet, all 15 overlaps, all frozen42/runtime/proposal bytes,
 historical nine-attempt counters and genuine QC records. No local artifact was
 migrated. No inference, active budget, training, unreviewed export or human approval.

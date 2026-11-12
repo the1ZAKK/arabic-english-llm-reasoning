@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "research/prm_arabic_english/**"
+      - "model_utils/io_utils.py"
       - ".gitattributes"
       - "research/diagnostic24_design_review_v2_1/**"
       - "research/*.md"
@@ -14,6 +15,7 @@ on:
   pull_request:
     paths:
       - "research/prm_arabic_english/**"
+      - "model_utils/io_utils.py"
       - ".gitattributes"
       - "research/diagnostic24_design_review_v2_1/**"
       - "research/*.md"
@@ -45,6 +47,7 @@ jobs:
           sparse-checkout: |
             .github
             scripts
+            model_utils
             research/prm_arabic_english
             research/diagnostic24_design_review_v2_1
       - uses: actions/setup-python@v7.0.0

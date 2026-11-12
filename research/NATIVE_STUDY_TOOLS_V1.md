@@ -18,6 +18,13 @@ The first three require authentic supplied evidence; no such native study inputs
 exist yet. Keep private files outside the public checkout. These commands are
 optional analysis interfaces, not laptop setup steps or inference launchers.
 
+The separate retained-evidence auditor also reads the checked-in
+`model_utils/io_utils.py` source, without importing it, and validates a rounded
+blank-line aggregation sensitivity against the raw AST response literals. The
+offline CI sparse checkout includes only that utility source directory in
+addition to existing research code, with no model weights. Its static runtime
+declarations are not authenticated historical run settings.
+
 ## Benchmark metadata
 
 Input is a list of problem-group dictionaries with the fields in the

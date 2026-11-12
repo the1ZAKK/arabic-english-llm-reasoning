@@ -1,5 +1,89 @@
 {
   "arabic_generalization_reuses_all_20_baseline_examples": true,
+  "blank_line_aggregation_sensitivity": {
+    "arabic_adapted": {
+      "blank_line_reward_positions": 160,
+      "gap_all_positions_rounded": 0.19022627314814816,
+      "gap_excluding_blank_positions_rounded": 0.19422079365079364,
+      "nominal_correct_unique_highest_excluding_blanks": 16,
+      "nonempty_line_reward_positions": 387,
+      "original_scores_or_sources_modified": false,
+      "precision": "CSV scores rounded to four decimal places; sensitivity only, not new model outputs.",
+      "recorded_reward_positions": 547
+    },
+    "arabic_base": {
+      "blank_line_reward_positions": 160,
+      "gap_all_positions_rounded": 0.10804218584656085,
+      "gap_excluding_blank_positions_rounded": 0.10705536904761903,
+      "nominal_correct_unique_highest_excluding_blanks": 13,
+      "nonempty_line_reward_positions": 387,
+      "original_scores_or_sources_modified": false,
+      "precision": "CSV scores rounded to four decimal places; sensitivity only, not new model outputs.",
+      "recorded_reward_positions": 547
+    },
+    "english_adapted": {
+      "blank_line_reward_positions": 160,
+      "gap_all_positions_rounded": 0.3562768683862434,
+      "gap_excluding_blank_positions_rounded": 0.33264262698412694,
+      "nominal_correct_unique_highest_excluding_blanks": 20,
+      "nonempty_line_reward_positions": 386,
+      "original_scores_or_sources_modified": false,
+      "precision": "CSV scores rounded to four decimal places; sensitivity only, not new model outputs.",
+      "recorded_reward_positions": 546
+    },
+    "english_base": {
+      "blank_line_reward_positions": 160,
+      "gap_all_positions_rounded": 0.35617463955026457,
+      "gap_excluding_blank_positions_rounded": 0.33475516666666666,
+      "nominal_correct_unique_highest_excluding_blanks": 20,
+      "nonempty_line_reward_positions": 386,
+      "original_scores_or_sources_modified": false,
+      "precision": "CSV scores rounded to four decimal places; sensitivity only, not new model outputs.",
+      "recorded_reward_positions": 546
+    }
+  },
+  "checked_in_runtime_declarations": {
+    "eval_arabic_generalization.py": {
+      "base_model_loader_keyword_names": [
+        "device_map",
+        "dtype",
+        "quantization_config"
+      ],
+      "explicit_4bit_configuration": true,
+      "historical_execution_environment_authenticated": false,
+      "model_revision_explicitly_pinned": false,
+      "reward_extraction": "direct_reward_flag_mask"
+    },
+    "eval_english_retention.py": {
+      "base_model_loader_keyword_names": [
+        "device_map",
+        "dtype",
+        "quantization_config"
+      ],
+      "explicit_4bit_configuration": true,
+      "historical_execution_environment_authenticated": false,
+      "model_revision_explicitly_pinned": false,
+      "reward_extraction": "direct_reward_flag_mask"
+    },
+    "test_arabic_prm.py": {
+      "base_model_loader_keyword_names": [
+        "device_map"
+      ],
+      "explicit_4bit_configuration": false,
+      "historical_execution_environment_authenticated": false,
+      "model_revision_explicitly_pinned": false,
+      "reward_extraction": "derive_step_rewards"
+    },
+    "test_english_prm.py": {
+      "base_model_loader_keyword_names": [
+        "device_map"
+      ],
+      "explicit_4bit_configuration": false,
+      "historical_execution_environment_authenticated": false,
+      "model_revision_explicitly_pinned": false,
+      "reward_extraction": "derive_step_rewards"
+    }
+  },
   "cross_language_step_count_disagreements": 1,
   "dataset_exported": false,
   "english_retention_reuses_all_20_baseline_examples": true,
@@ -131,6 +215,7 @@
     }
   },
   "input_sha256": {
+    "../../model_utils/io_utils.py": "5332b7a9b0feeb0d707c249c38e7f551e9157175c3401feedd402512828a50cf",
     "arabic_generalization_arabicprm_results.csv": "147a261a50ee752528ad4804e6e690f061055e62104cef06f56c06b1ae413383",
     "arabic_prm_results.csv": "b20030b0f5f987f7c502571a343e33d2ffc5c08dd3058c431a39ec1a9a450700",
     "data/pilot_dev.jsonl": "3e6e85be51f3ae0086d5eb0d376e962108682a42644b58a8833059a7614b671d",
@@ -151,6 +236,8 @@
     "No immutable model/tokenizer revision or complete run environment in score CSVs.",
     "Step scores in CSVs are rounded; aggregate average_score is used unchanged.",
     "AR/EN content fidelity, native authorship and pretraining contamination remain unverified.",
+    "Both language scripts score empty boundary lines; reported average scores include these positions.",
+    "Checked-in adapted scripts explicitly declare 4-bit quantization unlike original baseline loaders; adapter-only attribution is unverified.",
     "Intervals describe resampling this selected set, not external population generalization.",
     "No recorded candidate-generation/reranking experiment or downstream solving gain."
   ],

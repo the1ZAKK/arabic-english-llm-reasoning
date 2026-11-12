@@ -6,7 +6,7 @@
 |---|---|---|
 | 1 | Audit and narrow thesis claims | Retained scores and synthetic pilot reproduced; original twenty-example reuse identified. See [audit](RETAINED_EVIDENCE_AUDIT_V3.md). |
 | 2 | Native benchmark and human rubric | [Specification](ARABIC_NATIVE_BENCHMARK_V1.md) ready; actual licensed native sources, Arabic mathematics reviewers and annotations missing. Target 500 problems, 80/20 native/translated, not a completed dataset. |
-| 3 | Diagnose before further fine-tuning | [Content-controlled and generation/selection design](ARABIC_NATIVE_STUDY_V3.md) and offline paired gap/Brier tools implemented; no new scored observations or cause established. |
+| 3 | Diagnose before further fine-tuning | [Content-controlled and generation/selection design](ARABIC_NATIVE_STUDY_V3.md) and offline gap/Brier tools implemented. The [pipeline audit](RETAINED_EVIDENCE_AUDIT_V3.md#scoring-pipeline-and-precision-audit) identifies blank-line rewards and a declared precision confound; a complete explanation still needs controlled observations. |
 | 4 | Demonstrate downstream solving benefit | Fixed-pool K=1/2/4/8 replay implemented; actual authorized candidate pools, human final outcomes and pinned scorer evidence missing. Primary: Arabic-native K=8 base-versus-first accuracy. |
 | 5 | Possible adaptation and final thesis | Only after diagnosis, authentic QC and separate authorization. Report bounded results and limits; do not claim general Arabic efficacy or English equivalence from twenty problems. |
 | Supporting | Translation fidelity / corpus quality | [Short sampled protocol](TRANSLATION_QC_SHORT_PROTOCOL.md); preserve frozen data. No new reviewer infrastructure or translation generation on the critical path. |

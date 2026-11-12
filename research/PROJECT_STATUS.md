@@ -1,5 +1,14 @@
 # ArabicPRM-T v2 project evidence
 
+Retained-scoring continuation: the [source-bound pipeline audit](RETAINED_EVIDENCE_AUDIT_V3.md#scoring-pipeline-and-precision-audit)
+identifies 160 blank-line reward positions per language and explicitly different
+quantization declarations across the old base/adapted runners. Rounded-score
+aggregation excluding blank positions retains an EN–AR gap difference about
+0.2277; this is a sensitivity analysis, not regenerated scores or a complete cause.
+The audit now hashes thirteen named inputs, including the unchanged helper source.
+Future matched-precision unadapted-base scoring is needed before adapter-only
+attribution. No source, checkpoint, translation or human record is repaired.
+
 ## Current supervisor-directed study (2026-11-12)
 
 The [revised scientific design](ARABIC_NATIVE_STUDY_V3.md) prioritizes native Arabic
@@ -19,8 +28,12 @@ training, export or human approval was produced.
 
 Audit commit `90dd38a` passed Linux CI; Windows found a new audit-reader default
 encoding bug in [run 43207008836](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43207008836).
-The reader now explicitly uses UTF-8; complete renewed matrix verification is
-required. Historical operational notes below do not supersede this direction.
+The UTF-8 fix is in `26b6307`. The expanded pipeline audit passes all 558 local
+offline tests (62.690 s), including the non-UTF8-default regression and a
+model-free preparer probe. Per-commit Windows/Linux results are in the
+[research-branch Actions history](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions?query=branch%3Aresearch%2Farabicprm-v2-production).
+Both matrix jobs must pass for a tested-release claim. Historical notes below
+do not supersede this scientific direction.
 
 Current scientific direction (2026-11-12): the supervisor requires a larger Arabic-native evaluation, qualified Arabic human step labels, diagnosis before further adaptation, and downstream final-answer gains. The [retained-evidence audit](RETAINED_EVIDENCE_AUDIT_V3.md) reproduces the old results and narrows their claims. Arabic generalization and English retention reuse the original twenty-example sets; the adaptation dev set has ten problem groups. No native benchmark, independent human annotation or downstream reranking result is established. Translation recovery is supporting work, not the critical research path. The prior operational history below is preserved.
 

@@ -1,5 +1,7 @@
 # Research decisions
 
+2026-11-12 — Preserve all original scores while separately auditing reward segmentation. Both old language sets include 160 empty-line reward positions. The rounded aggregation sensitivity does not remove the gap. Do not retrofit the frozen pipeline or infer that formatting fully explains language weakness. Require an unadapted-base control at matched adapter quantization/extraction before attributing old twenty-problem changes to adaptation. Helper-source inspection and synthetic tokenizer tests use no model.
+
 2026-11-12 — Implement [native study v3](ARABIC_NATIVE_STUDY_V3.md) and
 [benchmark/rubric v1](ARABIC_NATIVE_BENCHMARK_V1.md), deferring diagnostic24 as
 supporting work. Target 80/20 evidenced Arabic-native/translated origin, with
