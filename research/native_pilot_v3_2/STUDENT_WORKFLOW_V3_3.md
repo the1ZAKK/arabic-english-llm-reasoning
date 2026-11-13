@@ -1,5 +1,13 @@
 # Student-led collection and Arabic trace writing
 
+**v3.4 update:** the [private algebra capture](../ARABIC_NATIVE_CAPTURE_V3_4.md)
+now has a short exact statement and separately checked reference. Origin/use,
+provisional difficulty, family/overlap and genuine human validation remain pending.
+Use the private blank exercise to author personally; no attempt is supplied by the
+assistant. The same-page solution and this conversation may expose the answer:
+record actual exposure rather than claiming an unseen first solution. Arithmetic
+and geometry readings remain incomplete. The earlier selection guidance follows.
+
 Use the existing twenty-slot manifest, trace CSV, assessor worksheets and timing
 log. Start with one actual question per available domain, then expand gradually.
 The [source shortlist](domain_source_screening_v3_3.csv) contains sources only;

@@ -21,9 +21,9 @@
     "adjudication": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "assessor_a": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "assessor_b": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-    "collection": "37dfaf625a483e93606af8ca02c701655def6d9dc33212d0349c5ec28f32846c",
+    "collection": "cf4054dcfea014c822d3e433829dfa4e1162cad0143ab2b6fe3d01663f321636",
     "reviewers": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-    "screening": "89c81b41974b590c8a2fba6bcaedb2b55887962eb8fc51bf034835599bd647d0",
+    "screening": "e952704cb5ebd2c961db52c14b1bdcac20498d6215563b6b95bbe09cdca48f9d",
     "source_register": "2ee99435d82cb5ab97df2f2aa5906dc518d2ec9ef41d9a3220e4a53eceb6460a",
     "timing": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "traces": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
@@ -67,11 +67,11 @@
   "resolved_step_labels": {},
   "screening": {
     "dispositions": {
-      "pending": 1
+      "pending": 3
     },
     "entered_candidates_missing_screening_log": 0,
     "interpretation": "Retain all candidates, including rejects/pending. Proposed intake is not verified native yield; no eligibility fraction is imputed.",
-    "observed_screened_candidates": 1
+    "observed_screened_candidates": 3
   },
   "timing": {
     "interpretation": "Descriptive observed time only; no automatic planner override, capacity claim or statistical interval.",

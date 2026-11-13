@@ -86,5 +86,6 @@ research/RETAINED_EVIDENCE_AUDIT_V3.json -text
 
 # Source-inspection evidence is linked by its actual file SHA256 on both platforms.
 research/native_pilot_v3_2/algebra_item_screen_v3_3.json -text
+research/native_pilot_v3_2/source_capture_status_v3_4.json -text
 # Retain the pre-existing Windows CSV line endings; only the located slot changes.
 research/native_pilot_v3_2/collection_manifest.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -53,11 +53,7 @@
     },
     {
       "blockers": [
-        "missing:problem_text_ref",
         "missing:reference_answer",
-        "missing:problem_sha256",
-        "missing:normalized_problem_sha256",
-        "difficulty_not_assessed",
         "native_origin_unresolved_or_not_native",
         "private_pilot_permission_not_documented",
         "overlap_audit_pending_or_positive"

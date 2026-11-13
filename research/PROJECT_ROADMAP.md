@@ -1,6 +1,19 @@
 # Evidence-gated roadmap
 
-**Current v3.3 action:** follow the [five-domain source shortlist and collection report](ARABIC_NATIVE_COLLECTION_V3_3.md).
+## v3.4 next measurable work
+
+The [first private source-backed capture](ARABIC_NATIVE_CAPTURE_V3_4.md) is ready
+for qualified transcription/origin/reference and use-scope checks, not benchmark
+inclusion. The student can write an honestly disclosed Arabic attempt in the
+private blank exercise; no personal authorship is supplied by AI. Obtain genuine
+independent Arabic labels and observed effort before choosing 100/250/500 problems.
+Resolve essential arithmetic numerals and geometry letter/fraction/diagram readings
+with a qualified reader; keep them pending until then. One historical famous
+quadratic family cannot supply modern Arabic coverage, contamination-free testing,
+a language-gap explanation or downstream efficacy. No new infrastructure or
+translation diagnostic is needed to complete this human collection milestone.
+
+**Earlier v3.3 action:** follow the [five-domain source shortlist and collection report](ARABIC_NATIVE_COLLECTION_V3_3.md).
 The student selects actual questions, records exact source/use evidence, writes
 Arabic attempts and logs real effort. Begin with accessible arithmetic/algebra/
 geometry sources; resolve the applied locator and combinatorics access/rights.

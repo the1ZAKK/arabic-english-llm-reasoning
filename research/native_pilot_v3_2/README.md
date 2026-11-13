@@ -1,5 +1,16 @@
 # Arabic-native pilot intake materials
 
+**Current v3.4:** [one private source-backed capture](../ARABIC_NATIVE_CAPTURE_V3_4.md)
+and [technical evidence](source_capture_status_v3_4.json). The private algebra
+statement/reference are complete; the public worksheet withholds the answer, so
+public metadata-complete count remains zero. Source-ready/eligible problems,
+student attempts and human judgments remain zero. Arithmetic and geometry were
+visually inspected but essential readings are pending. The screening ledger now
+has three pending technical records; the historical first row is unchanged.
+Use the separately delivered private blank exercise for actual personal Arabic
+writing, with honest source/conversation solution-exposure disclosure. No AI or
+source-worked trace is registered as student work. Earlier v3.3 snapshot follows.
+
 Read [the v3.2 pilot plan](../ARABIC_NATIVE_PILOT_V3_2.md) first.
 
 **v3.3 student-led continuation:** read the [short collection progress report](../ARABIC_NATIVE_COLLECTION_V3_3.md),

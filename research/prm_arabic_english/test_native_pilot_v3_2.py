@@ -52,14 +52,28 @@ class PilotIntakeTests(unittest.TestCase):
         self.assertEqual(candidate["problem_id"], "DEV:KHW-1939:P20:01")
         self.assertEqual(candidate["origin"], "unknown")
         self.assertEqual(candidate["permission_status"], "pending")
-        self.assertEqual(candidate["problem_text_ref"], "")
+        self.assertEqual(candidate["problem_text_ref"], "PRIVATE:algebra_problem_ar.txt (not published)")
         self.assertEqual(candidate["reference_answer"], "")
-        evidence_bytes = (pilot.KIT / "algebra_item_screen_v3_3.json").read_bytes()
+        evidence_bytes = (pilot.KIT / "source_capture_status_v3_4.json").read_bytes()
         self.assertEqual(candidate["origin_evidence_sha256"], hashlib.sha256(evidence_bytes).hexdigest())
         evidence = json.loads(evidence_bytes)
         self.assertFalse(evidence["human_review_complete"])
         self.assertFalse(evidence["question_or_answer_text_published"])
-        self.assertFalse(evidence["developer_trace_authored"])
+        self.assertEqual(evidence["private_completed_problem_captures"], 1)
+        self.assertEqual(evidence["eligible_problems"], 0)
+        self.assertEqual(evidence["student_developer_traces"], 0)
+        self.assertEqual(evidence["independent_human_annotations"], 0)
+        for key in ("problem_sha256", "normalized_problem_sha256", "permission_status", "training_overlap"):
+            self.assertEqual(candidate[key], evidence["algebra"][key])
+        self.assertEqual(candidate["difficulty"], "intermediate")  # Provisional AI assessment only.
+        self.assertTrue(evidence["algebra"]["worked_solution_visible_on_same_page"])
+        for key in ("arithmetic_attempt", "geometry_attempt"):
+            self.assertEqual(evidence[key]["status"], "pending_no_reliable_complete_problem_or_reference")
+        # The old AI screen is preserved, not rewritten into a completed human review.
+        old_bytes = (pilot.KIT / "algebra_item_screen_v3_3.json").read_bytes()
+        self.assertEqual(hashlib.sha256(old_bytes).hexdigest(),
+                         "13141d7d5520e971346f34cb8be22dd6ad6bf47586aa38e08cc2d5d9fe03777e")
+        self.assertFalse(json.loads(old_bytes)["private_transcription_available"])
 
         # v3.3 book records must never become automatically eligible questions.
         with (pilot.KIT / "domain_source_screening_v3_3.csv").open(encoding="utf-8-sig", newline="") as stream:

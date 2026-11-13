@@ -1,6 +1,23 @@
 # ArabicPRM-T v2 project evidence
 
-## v3.3 student-led collection
+## v3.4 private source capture — current
+
+[Actual capture and pending manuscript readings](ARABIC_NATIVE_CAPTURE_V3_4.md):
+**one private al-Khwarizmi problem capture**, original main text at PDF p.34 /
+printed p.20, with separately checked reference/requested quantity and both branches.
+Arithmetic ff.3r/4r and geometry ff.30r/45v were visually inspected but remain
+incomplete; no values were guessed. The existing kit has one answer-redacted public
+candidate, three pending technical screenings, and zero source-ready/eligible or
+human-approved problems. Private metadata is complete for one capture; public
+metadata deliberately lacks its answer. Student traces, reviewers and labels: zero.
+The private blank exercise is assistant-prepared, not student work; actual exposure
+to the same-page solution and conversation must be disclosed. Original v3.3 evidence,
+source register, frozen42, histories and human records are unchanged. No model
+operation, active allowance, training or dataset release. Baseline `50b4396` passed
+627 tests/platform in [CI 43394674413](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43394674413);
+this milestone requires its own per-commit Windows/Linux evidence.
+
+## Prior v3.3 collection snapshot
 
 [Collection progress and next actions](ARABIC_NATIVE_COLLECTION_V3_3.md) record
 five one-per-domain source-level screenings in the reused v3.2 kit. Four source

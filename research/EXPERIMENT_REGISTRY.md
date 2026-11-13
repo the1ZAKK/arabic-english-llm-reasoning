@@ -1,5 +1,18 @@
 # Experiment and evidence registry
 
+v3.4 source capture (2026-11-13) — [source report](ARABIC_NATIVE_CAPTURE_V3_4.md)
+and hash-linked technical metadata record **one private original Arabic algebra
+capture**, with exact statement/reference identities and offline arithmetic checking
+of both original branches and requested quantity. Separate source-worked summary
+and modern interpretation; editorial footnotes excluded. A private blank exercise
+contains no student attempt or human judgment. QDL arithmetic ff.3r/4r and geometry
+ff.30r/45v were actually inspected but incomplete: zero captured items from them.
+The public worksheet redacts the answer, so it reports zero complete public
+metadata records; the private worksheet reports one. Both have zero source-ready /
+eligible problems. Three pending technical screens are not three complete problems.
+No people/labels/timing, model observations, inference, scoring, training, active
+budget or public problem-data export. All frozen artifacts and prior records remain.
+
 v3.3 student-led source collection (2026-11-13, Asia/Shanghai) — five populated
 source-level screenings, one per domain; eight registry records (four retained,
 four added). QDL Arabic witnesses cover arithmetic/geometry and an attributed

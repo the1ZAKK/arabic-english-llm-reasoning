@@ -1,5 +1,16 @@
 # Research decisions
 
+v3.4 — A private, source-backed technical capture is distinct from selected-item
+clearance, authentic human origin/reference validation, student authorship and
+independent Arabic labels. Keep question/answer text and student work private;
+publish provenance/status/hashes only. The existing public metadata validator must
+retain its missing-answer blocker for the answer-redacted view rather than using a
+placeholder answer or weakening eligibility. Retain both algebra branches and the
+original square/root distinction. Source workings, assistant paraphrases and blank
+exercises are not student traces; actual solution exposure must be disclosed.
+Pending manuscript numerical letters, operands, units and diagrams are not inferred.
+No source reasoning, historical record or frozen execution identity is corrected.
+
 v3.3 — The student owns collection, Arabic attempt authorship, preservation,
 self-checking and coordination. Record human-written attempts as developer-authored
 via the existing provider/origin-evidence fields, with no claim of external expert

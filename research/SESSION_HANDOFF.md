@@ -1,6 +1,34 @@
 # Session handoff
 
-## Current v3.3 continuation
+## Current v3.4 handoff
+
+Read [ARABIC_NATIVE_CAPTURE_V3_4.md](ARABIC_NATIVE_CAPTURE_V3_4.md) and
+`native_pilot_v3_2/source_capture_status_v3_4.json`. Remote baseline `50b4396` was
+current. One private algebra capture/reference and blank Arabic student exercise
+were prepared from the actual PDF p.34 / printed p.20; both source branches and
+the requested square quantity passed exact offline arithmetic. Private capture
+count is one, public answer-redacted metadata-complete count zero, eligible count
+zero. Arithmetic IO Islamic1748 ff.3r/4r and geometry Add MS7470 ff.30r/45v remain
+pending for essential readings; never reconstruct their numbers from plausibility.
+Original v3.3 screen/register and first screening entry remain preserved. New
+pending technical screens are not human work or measured source yield.
+
+The private packet is delivered to the user separately; its raw content, private
+location and identity are not stored in Git. A future agent must obtain that
+actual packet before claiming to inspect its private bytes. The public evidence
+binds exact problem/reference/private-capture hashes. Reuse existing intake/review
+scripts on a private kit, without following pointers automatically. All human CSVs
+remain header-only. Independent origin/reference/difficulty/use/overlap decisions
+and personally authored Arabic attempts are next; full completion still needs A/B
+plus distinct C. Source/conversation exposure must be recorded honestly.
+
+No inference/scoring/training, budget or data-release authorization. Preserve both
+original laptop checkouts, backup, overlap worksheet, frozen42, checkpoints, attempts,
+outputs and human-QC records. Inspect the current commit's Actions for its own
+Windows/Linux and native-guard evidence; prior `50b4396` passed 627/platform in
+CI 43394674413. Software verification does not establish Arabic quality or review.
+
+## Prior v3.3 checkpoint
 
 Read [ARABIC_NATIVE_COLLECTION_V3_3.md](ARABIC_NATIVE_COLLECTION_V3_3.md) and the
 reused kit's `domain_source_screening_v3_3.csv`, `STUDENT_WORKFLOW_V3_3.md` and
