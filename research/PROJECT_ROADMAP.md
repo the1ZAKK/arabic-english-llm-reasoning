@@ -1,5 +1,20 @@
 # Evidence-gated roadmap
 
+## v3.7 next scientific dependency
+
+[Three actual modern captures](ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md) replace
+source-catalogue-only progress for three development slots. Resolve exact
+Arabic-original exercise lineage and applicable use basis, obtain qualified
+independent Arabic problem/reference/step/final work, and measure real human effort.
+Retain the matrix source-working discrepancy, university-level geometry difficulty
+question and shared Constantine source group. No human/native accuracy is inferred
+from three technical answers; no 100/250/500 feasibility claim is yet measured.
+Preserve the previous exposed student trace and private packet. Do not expand
+infrastructure to substitute for missing people/permissions. The existing controlled
+scoring scope still needs actual runtime/token/family binding and separate consent;
+held-out fixed-pool solving evaluation needs approved native items, candidates,
+independent final judgments and authorized observations. No model operation now.
+
 ## v3.6 next scientific work
 
 The [student submission](ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md) is integrated

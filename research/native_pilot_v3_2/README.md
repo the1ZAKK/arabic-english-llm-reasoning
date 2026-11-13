@@ -1,5 +1,16 @@
 # Arabic-native pilot intake materials
 
+**Current v3.7:** [three modern source-backed captures](../ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md)
+across probability/combinatorics, algebra and geometry, with exact visual source
+locators and separate technical references. The existing manifest now has four
+answer-redacted candidate rows; all origin/use/human/overlap gates remain pending,
+with zero eligible problems. The [capture evidence](modern_capture_status_v3_7.json)
+and separate private packet distinguish three metadata-complete private modern
+records from the redacted public view. Both Constantine items share one provisional
+source-course family; an inconsistent source-working line is preserved separately.
+Prior twelve source records, historical screens, original student packet and all
+human worksheets are preserved. Below are prior milestone snapshots.
+
 **Current v3.6:** [one submitted Arabic attempt is registered privately](../ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md),
 with student-stated authorship, prior answer exposure and reported AI feedback.
 The private copy preserves the original v3.4 archive and uploaded bytes, stores

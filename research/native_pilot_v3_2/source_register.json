@@ -511,6 +511,60 @@
       "screening_disposition": "excluded_translated_origin_for_native_pilot",
       "source_id": "SUST-CAMBRIDGE-TRANSLATION-2015",
       "title": "ترجمة الصفحات (1–50) من كتاب الاحتمالات والإحصاء"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "academic_year_as_cover": "2016-2017",
+        "prepared_by": [
+          "ركاب صورية",
+          "بوشقوف مسعودة",
+          "وعرعار نورية"
+        ]
+      },
+      "bibliographic_url": "https://fac.umc.edu.dz/fstech/cours/G%20Transport/math.pdf",
+      "documented_primary_text_language": "ar",
+      "evidence": [
+        {
+          "locator": "PDF p.1 cover; PDF p.5 / printed p.1 signed introduction",
+          "observation": "Cover identifies the three preparers and 2016-2017 course. Arabic introduction describes the locally prepared teaching sequence; it does not attribute each exercise.",
+          "url": "https://fac.umc.edu.dz/fstech/cours/G%20Transport/math.pdf"
+        },
+        {
+          "locator": "PDF p.15 / printed p.10 example 2; PDF p.95 / printed p.86 example 4",
+          "observation": "Two actual Arabic source problems and their printed answers were visually inspected. Matrix solution has a b/d intermediate inconsistency while its final matrix is correct; preserve source wording.",
+          "url": "https://fac.umc.edu.dz/fstech/cours/G%20Transport/math.pdf"
+        },
+        {
+          "locator": "PDF pp.98-101 / printed pp.88-91 references; title/preface",
+          "observation": "Three named course preparers, Arabic body and a signed pedagogical introduction are verified. Printed pp.88-91 cite Arabic books and English/French sources. This neither proves translation of these items nor proves their Arabic-original composition. Individual lineage and applicable permission remain pending.",
+          "url": "https://fac.umc.edu.dz/fstech/cours/G%20Transport/math.pdf"
+        }
+      ],
+      "explicit_translation": false,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": true,
+      "inspected_pdf_bytes": 2515588,
+      "inspected_pdf_sha256": "70f30106d87a0482bc89fab44187b5b3e23235201aa8516a227d4bf55664f9e2",
+      "inspected_pdf_url": "https://fac.umc.edu.dz/fstech/cours/G%20Transport/math.pdf",
+      "institution": "Université des Frères Mentouri Constantine; official Faculty of Technology teaching directory",
+      "item_permission_status": "not_cleared",
+      "language_register": "modern",
+      "notes": "Selected problem text/answers and all source pages remain outside the public repository. No human trace, model output or eligible benchmark item is created.",
+      "origin_screen": "documentary_support_item_review_pending",
+      "potential_domains": [
+        "algebra",
+        "geometry"
+      ],
+      "recorded_at_utc": "2026-11-13T15:54:11Z",
+      "remaining_checks": [
+        "Trace original-language and item-specific exercise lineage; mixed references do not establish either original authorship or translation.",
+        "Document actual applicable private-pilot use basis; no rightsholder contacted or permission granted.",
+        "Qualified independent reference, source-error, step/final, difficulty, family and overlap review; keep both course items in the same source group."
+      ],
+      "rights_evidence_status": "no_applicable_reuse_grant_located_in_inspected_pages",
+      "screen_type": "AI_technical_primary_source_screen_not_human_validation",
+      "source_id": "UMC-MATH2-2016-2017",
+      "title": "دروس رياضيات 2"
     }
   ],
   "v3_3_continuation": {
@@ -538,5 +592,12 @@
     "prior_eight_entries_sha256": "f6982f1c375e94c68a17711be36590f77c8e92f836d96d7f078e4502906aa4e7",
     "recorded_at_utc": "2026-11-13T14:10:24Z",
     "screening_file": "modern_source_screening_v3_6.csv"
+  },
+  "v3_7_continuation": {
+    "baseline_commit": "1f2603a1c039d584b47b6d5aa0ef01ff5e874092",
+    "new_source_records": 1,
+    "prior_entries_unchanged": true,
+    "prior_twelve_entries_sha256": "d429a09415d385ffae55fb6516103da5b13e9a39c83613fafcdba24dc671fb57",
+    "source_capture_evidence": "modern_capture_status_v3_7.json"
   }
 }

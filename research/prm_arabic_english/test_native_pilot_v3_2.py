@@ -40,15 +40,15 @@ class PilotIntakeTests(unittest.TestCase):
         rows = pilot.read_csv(pilot.KIT / "collection_manifest.csv", pilot.COLLECTION_FIELDS)
         report = pilot.collection_report(rows, register)
         self.assertEqual(report, json.loads((pilot.KIT / "collection_status.json").read_bytes()))
-        self.assertEqual((report["target_problems"], report["source_leads_screened"]), (20, 12))
-        self.assertEqual(report["entered_candidate_records"], 1)
+        self.assertEqual((report["target_problems"], report["source_leads_screened"]), (20, 13))
+        self.assertEqual(report["entered_candidate_records"], 4)
         self.assertEqual(report["candidate_metadata_complete_records"], 0)
         self.assertEqual(report["source_ready_for_human_review"], 0)
         self.assertEqual(report["source_leads_confirmed_translated"], 2)
         self.assertFalse(report["human_validation_complete"])
         self.assertFalse(report["training_or_export_eligibility_granted"])
 
-        candidate = next(r for r in rows if r["problem_id"])
+        candidate = next(r for r in rows if r["problem_id"] == "DEV:KHW-1939:P20:01")
         self.assertEqual(candidate["problem_id"], "DEV:KHW-1939:P20:01")
         self.assertEqual(candidate["origin"], "unknown")
         self.assertEqual(candidate["permission_status"], "pending")
@@ -67,6 +67,32 @@ class PilotIntakeTests(unittest.TestCase):
             self.assertEqual(candidate[key], evidence["algebra"][key])
         self.assertEqual(candidate["difficulty"], "intermediate")  # Provisional AI assessment only.
         self.assertTrue(evidence["algebra"]["worked_solution_visible_on_same_page"])
+        modern_bytes = (pilot.KIT / "modern_capture_status_v3_7.json").read_bytes()
+        modern = json.loads(modern_bytes)
+        self.assertEqual(modern["new_private_problem_captures"], 3)
+        self.assertEqual(modern["combined_private_problem_captures"], 4)
+        self.assertEqual(modern["confirmed_arabic_original_new_items"], 0)
+        self.assertEqual(modern["benchmark_eligible_problems"], 0)
+        self.assertEqual(modern["independent_human_annotations"], 0)
+        self.assertEqual(modern["model_operations"], 0)
+        self.assertFalse(modern["public_problem_or_answer_text"])
+        self.assertFalse(modern["source_documents_redistributed"])
+        selected = {r["slot_id"]: r for r in rows}
+        self.assertEqual({i["domain"] for i in modern["items"]},
+                         {"algebra", "geometry", "probability_combinatorics"})
+        for item in modern["items"]:
+            row = selected[item["slot_id"]]
+            self.assertEqual(row["origin"], "unknown")
+            self.assertEqual(row["permission_status"], "pending")
+            self.assertEqual(row["reference_answer"], "")
+            self.assertEqual(row["eligibility"], "pending")
+            self.assertEqual(row["origin_evidence_sha256"], hashlib.sha256(modern_bytes).hexdigest())
+            for key in ("problem_id", "problem_sha256", "normalized_problem_sha256", "family_id"):
+                self.assertEqual(row[key], item[key])
+            self.assertNotIn("reference_answer", item)
+        self.assertEqual(selected["AN32-ALG-01"]["family_id"], selected["AN32-GEO-03"]["family_id"])
+        self.assertEqual(core.digest(register["sources"][:12]),
+                         register["v3_7_continuation"]["prior_twelve_entries_sha256"])
         for key in ("arithmetic_attempt", "geometry_attempt"):
             self.assertEqual(evidence[key]["status"], "pending_no_reliable_complete_problem_or_reference")
         # The old AI screen is preserved, not rewritten into a completed human review.

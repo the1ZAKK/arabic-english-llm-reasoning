@@ -1,5 +1,18 @@
 # Experiment and evidence registry
 
+v3.7 modern source capture (13 November 2026, Asia/Shanghai) —
+[collection report](ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md),
+[source identities/counts](native_pilot_v3_2/modern_capture_status_v3_7.json).
+Three short private captures: Tlemcen printed p.9 example 2; Constantine printed
+p.10 inverse example 2 and p.86 area example 4. Three technical references checked,
+one source-working inconsistency preserved. Four combined captures, zero new
+verified Arabic-original items/use grants/independent human judgments or eligible
+problems. Three pending item screens append to preserved history; one course lead
+appends to twelve preserved source records. Same-source items remain clustered.
+Existing collection/review tools replay private/redacted views without eligibility
+promotion. Student solution/private packet and all frozen artifacts unchanged;
+no new trace, model observation, allowance, scoring, training or dataset release.
+
 v3.6 student integration and offline continuation (13 November 2026, Asia/Shanghai)
 — [progress](ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md). Actual uploaded handoff read,
 file hash verified, one stated-authored Arabic attempt registered in a separate

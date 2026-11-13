@@ -1,6 +1,6 @@
 {
   "candidate_metadata_complete_records": 0,
-  "entered_candidate_records": 1,
+  "entered_candidate_records": 4,
   "excluded_candidate_records": 0,
   "families_above_two_problem_cap": 0,
   "human_validation_complete": false,
@@ -39,10 +39,13 @@
     },
     {
       "blockers": [
-        "actual_problem_not_collected"
+        "missing:reference_answer",
+        "native_origin_unresolved_or_not_native",
+        "private_pilot_permission_not_documented",
+        "overlap_audit_pending_or_positive"
       ],
       "slot_id": "AN32-ALG-01",
-      "stage": "target_only"
+      "stage": "candidate_blocked"
     },
     {
       "blockers": [
@@ -84,10 +87,13 @@
     },
     {
       "blockers": [
-        "actual_problem_not_collected"
+        "missing:reference_answer",
+        "native_origin_unresolved_or_not_native",
+        "private_pilot_permission_not_documented",
+        "overlap_audit_pending_or_positive"
       ],
       "slot_id": "AN32-GEO-03",
-      "stage": "target_only"
+      "stage": "candidate_blocked"
     },
     {
       "blockers": [
@@ -98,10 +104,13 @@
     },
     {
       "blockers": [
-        "actual_problem_not_collected"
+        "missing:reference_answer",
+        "native_origin_unresolved_or_not_native",
+        "private_pilot_permission_not_documented",
+        "overlap_audit_pending_or_positive"
       ],
       "slot_id": "AN32-PRO-01",
-      "stage": "target_only"
+      "stage": "candidate_blocked"
     },
     {
       "blockers": [
@@ -153,9 +162,9 @@
       "stage": "target_only"
     }
   ],
-  "source_families_recorded": 1,
+  "source_families_recorded": 3,
   "source_leads_confirmed_translated": 2,
-  "source_leads_screened": 12,
+  "source_leads_screened": 13,
   "source_provenance_authenticated": false,
   "source_ready_cohort_complete": false,
   "source_ready_for_human_review": 0,

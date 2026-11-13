@@ -1,5 +1,18 @@
 # Research decisions
 
+v3.7 — Count actual source-backed captures separately from verified Arabic-native
+and benchmark-eligible problems: three new captures, four total, zero eligible.
+Local Arabic preparer credit/preface and mixed bibliographies do not settle each
+exercise's first language or grant reuse. Keep all selected origin/use cases
+pending; preserve known non-Arabic/translated exclusions. Do not infer translation
+solely from a French/English reference list. Retain original flawed source working
+separately from its correct final answer and any future translation/human labels.
+Declare layout-normalized transcription and assistant solution exposure; keep both
+Constantine items in one source-course group and geometry difficulty provisional.
+Reuse the existing worksheets/validators, preserve the student's private submission,
+and collect real independent Arabic judgments before efficacy claims or wider scale.
+No prepared score cell, source answer or AI arithmetic check is a model observation.
+
 v3.6 — Accept the user's supplied Arabic solution as **student-stated authorship**,
 not independently authenticated work. Preserve its exact bytes, reported prior
 answer exposure, subsequent AI feedback and unknown original writing time. Register

@@ -1,5 +1,43 @@
 # Session handoff
 
+## Current v3.7 handoff — three modern captures, origin/use/humans pending
+
+Read [ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md](ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md)
+and `native_pilot_v3_2/modern_capture_status_v3_7.json`. Three source-backed private
+captures across probability/combinatorics, algebra and geometry now have exact
+official PDF hashes, visually verified PDF/printed pages and separate technically
+checked references. The new private packet reuses v3.2 worksheets and contains
+short captures, not source PDFs/page images. Retrieve that actual packet for text
+bytes; do not reconstruct them from public metadata. No previous student trace/key
+or local historical artifact was migrated. Its v3.6 packet is unchanged.
+
+Tlemcen: PDF p.13 / printed p.9 example 2, correction p.14 / printed p.10.
+Constantine Mathematics 2: PDF p.15 / printed p.10 inverse example 2; PDF p.95 /
+printed p.86 area example 4. Matrix source has inconsistent intermediate assignments
+but a correct final inverse; preserve both separately. Geometry capture discloses
+typesetting/prose omission and source-domain notation; polar-integration target
+fit needs qualified review. Both Constantine items share one source-course family.
+
+All selected original-language/use/overlap/human gates remain pending. Three new
+captures plus the old historical one give four total, **zero eligible**; public
+manifest has four answer-redacted candidates and zero metadata-complete rows,
+new private kit has three metadata-complete modern rows and zero source-ready.
+The previous student trace remains separately stated-authored/exposed, with no
+independent annotation added. Public human CSVs are still header-only. Prior
+twelve registry entries and old screening bytes are preserved; one course and
+three pending screens were appended. No new validator framework or test cases;
+existing data/accounting assertions are updated. Baseline `1f2603a` passed 630 per
+platform in [CI43441942994](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43441942994).
+Inspect this revision's Actions for full offline/native verification.
+
+Next obtain real item-original/use evidence, independent qualified Arabic reference/
+step/final labels and observed human work rates. The 160-item/320-cell scoring
+scope remains unchanged/unattempted; actual runtime and token/family alignment
+are absent. Future held-out reranking needs approved native items, fixed candidates,
+scores and independent final outcomes. No inference/scoring/training/budget/export,
+scheduling, Global-MGSM or main change is authorized/performed. Preserve frozen42,
+all 2,005 nine-attempt histories, original source data, student packet and human QC.
+
 ## Current v3.6 handoff — one stated student attempt, QC pending
 
 Start with [ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md](ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md)

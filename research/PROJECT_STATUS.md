@@ -1,5 +1,20 @@
 # ArabicPRM-T v2 project evidence
 
+## v3.7 modern collection — current
+
+[Actual source captures](ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md): **three new
+modern problems across three domains**, four total with the historical capture.
+Official Tlemcen/Constantine PDFs were hashed and original pages visually checked;
+private technical references agree with enumeration, inverse and domain/area checks.
+One inconsistent intermediate source-working line is retained as a source concern.
+All three item-origin/use/overlap and independent Arabic human decisions remain
+pending: **zero eligible benchmark problems and zero new independent labels**.
+Both Constantine items share one source-course group. Public answers remain redacted;
+human templates and the v3.6 student packet are preserved. Reused validators only;
+no new execution path or model observations. The v3.6 baseline passed 630 tests per
+platform in [CI43441942994](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43441942994).
+This collection revision has its own per-commit offline/native CI evidence.
+
 ## v3.6 student submission — current
 
 [Private integration and source progress](ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md):
