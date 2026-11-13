@@ -7,17 +7,22 @@ the populated [five-domain source screening](domain_source_screening_v3_3.csv),
 and [student workflow](STUDENT_WORKFLOW_V3_3.md). Use a private copy of the
 [developer trace sheet](DEVELOPER_TRACE_TEMPLATE.md) when actually writing Arabic
 attempts. The source register now contains eight leads: four preserved v3.2
-records and four new records. No individual questions or human records are added.
+records and four new records. One original-text algebra candidate is now located
+on PDF page 34 / printed page 20, with [technical evidence](algebra_item_screen_v3_3.json).
+It is pending in the existing manifest/item ledger; no source question text, answer,
+developer attempt or human review has been supplied.
 
 - `source_register.json`: observed source/rights metadata and explicit unknowns;
   source leads are not enrolled problems. Three new QDL items have explicit
   provider public-domain marks; selected-item clearance remains pending.
-- `collection_manifest.csv`: twenty planned development slots, four/domain;
-  actual problem IDs, sources, answers and evidence remain empty.
+- `collection_manifest.csv`: twenty development slots, four/domain; one algebra
+  slot has source-candidate metadata, with transcription, reference and eligibility
+  pending. Other slots remain empty targets.
 - `collection_status.json`: reproducible current intake counts and blockers.
 - [HUMAN_ANNOTATION.md](HUMAN_ANNOTATION.md): short Arabic/English instructions.
 - `screening_log.csv`: every actual item considered, including rejected/pending
-  candidates, so source yield cannot be inferred only from selected successes.
+  candidates; currently one pending AI technical source inspection, not a human
+  judgment. Source yield cannot be inferred only from selected successes.
 - `reviewers.csv` and `traces.csv`: actual private role/evidence and original-Arabic
   trace identities, without public personal or mathematical content.
 - `assessor_a.csv`, `assessor_b.csv`, `adjudication.csv`: separate independent

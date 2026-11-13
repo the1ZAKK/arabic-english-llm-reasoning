@@ -1,6 +1,7 @@
-"""Synthetic intake records and the public empty kit; no human/model results."""
+"""Synthetic intake records and public source-only evidence; no human/model results."""
 from copy import deepcopy
 import csv
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -40,13 +41,27 @@ class PilotIntakeTests(unittest.TestCase):
         report = pilot.collection_report(rows, register)
         self.assertEqual(report, json.loads((pilot.KIT / "collection_status.json").read_bytes()))
         self.assertEqual((report["target_problems"], report["source_leads_screened"]), (20, 8))
-        self.assertEqual(report["entered_candidate_records"], 0)
+        self.assertEqual(report["entered_candidate_records"], 1)
+        self.assertEqual(report["candidate_metadata_complete_records"], 0)
         self.assertEqual(report["source_ready_for_human_review"], 0)
         self.assertEqual(report["source_leads_confirmed_translated"], 1)
         self.assertFalse(report["human_validation_complete"])
         self.assertFalse(report["training_or_export_eligibility_granted"])
 
-        # v3.3 reuses this kit: populated source metadata must never count as questions.
+        candidate = next(r for r in rows if r["problem_id"])
+        self.assertEqual(candidate["problem_id"], "DEV:KHW-1939:P20:01")
+        self.assertEqual(candidate["origin"], "unknown")
+        self.assertEqual(candidate["permission_status"], "pending")
+        self.assertEqual(candidate["problem_text_ref"], "")
+        self.assertEqual(candidate["reference_answer"], "")
+        evidence_bytes = (pilot.KIT / "algebra_item_screen_v3_3.json").read_bytes()
+        self.assertEqual(candidate["origin_evidence_sha256"], hashlib.sha256(evidence_bytes).hexdigest())
+        evidence = json.loads(evidence_bytes)
+        self.assertFalse(evidence["human_review_complete"])
+        self.assertFalse(evidence["question_or_answer_text_published"])
+        self.assertFalse(evidence["developer_trace_authored"])
+
+        # v3.3 book records must never become automatically eligible questions.
         with (pilot.KIT / "domain_source_screening_v3_3.csv").open(encoding="utf-8-sig", newline="") as stream:
             shortlist = list(csv.DictReader(stream))
         self.assertEqual(len(shortlist), 5)

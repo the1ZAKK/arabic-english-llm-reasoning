@@ -4,6 +4,10 @@ Use the existing twenty-slot manifest, trace CSV, assessor worksheets and timing
 log. Start with one actual question per available domain, then expand gradually.
 The [source shortlist](domain_source_screening_v3_3.csv) contains sources only;
 the student must inspect actual question text before treating one as collected.
+One source-located [algebra candidate](algebra_item_screen_v3_3.json) is recorded
+at PDF page 34 / printed page 20. Its original problem quantity and solution
+branches need checking. A worked solution is visible on the same page: disclose
+exposure, and do not call a reference-informed attempt an unseen first solution.
 
 1. **Select and preserve.** Read the original Arabic question, record its exact
    witness/page/item, and save permissible source/evidence privately. Keep the
@@ -29,6 +33,8 @@ the student must inspect actual question text before treating one as collected.
    annotation or a model output. Hash actual trace/step/evidence bytes, never
    placeholders. The source/reference authoring and trace provider roles remain
    disclosed. Use trace positions 1/2 only for actual prespecified traces.
+   Copying/paraphrasing the source's worked steps belongs under
+   `trace_origin=source_worked_arabic`, not developer-authored original reasoning.
 5. **Separate self-checks from labels.** Keep your self-check in the evidence
    folder. Leave `assessor_a.csv`, `assessor_b.csv` and `adjudication.csv` to the
    actual independent qualified people. They must not see your proposed labels,

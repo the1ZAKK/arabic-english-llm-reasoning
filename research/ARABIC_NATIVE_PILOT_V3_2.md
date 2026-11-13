@@ -4,7 +4,8 @@
 adds four documented source leads and a populated five-domain source screening
 to the reused kit. The four-lead source table/counts below describe the v3.2
 milestone; current register totals are in the replayable collection status.
-No individual question or completed human review has been added.
+One source-located algebra candidate now has metadata in the reused manifest;
+transcription, reference, eligibility and human review remain pending.
 
 **Target:** twenty genuinely Arabic-native mathematics problems, four each in
 arithmetic/number theory, algebra, geometry, probability/combinatorics and applied

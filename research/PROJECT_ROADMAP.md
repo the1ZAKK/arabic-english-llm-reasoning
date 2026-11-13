@@ -4,6 +4,9 @@
 The student selects actual questions, records exact source/use evidence, writes
 Arabic attempts and logs real effort. Begin with accessible arithmetic/algebra/
 geometry sources; resolve the applied locator and combinatorics access/rights.
+One algebra candidate is now source-located at PDF p. 34 / printed p. 20: privately
+transcribe and verify it, preserving the requested quantity and branches. Its
+same-page worked solution requires honest exposure disclosure before authorship.
 Obtain actual independent Arabic mathematical labels. Source-level metadata and
 developer self-checks cannot fill the native benchmark or its human-review gate.
 No new framework, model run or inference-approval form is the next task.

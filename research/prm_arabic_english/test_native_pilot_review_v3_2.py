@@ -67,7 +67,9 @@ class HumanPilotWorksheetTests(unittest.TestCase):
         self.assertEqual(result["actual_independent_judgment_records"], {"assessor_a": 0, "assessor_b": 0})
         self.assertEqual(result["missing_independent_judgment_records_for_declared_units"], 40)
         self.assertEqual(result["timing"]["observed_events"], 0)
-        self.assertEqual(result["screening"]["observed_screened_candidates"], 0)
+        self.assertEqual(result["screening"]["observed_screened_candidates"], 1)
+        self.assertEqual(result["screening"]["dispositions"], {"pending": 1})
+        self.assertEqual(result["screening"]["entered_candidates_missing_screening_log"], 0)
         self.assertFalse(result["complete_declared_annotation_records"])
 
     def test_synthetic_complete_metadata_does_not_authenticate_humans_or_grant_export(self):

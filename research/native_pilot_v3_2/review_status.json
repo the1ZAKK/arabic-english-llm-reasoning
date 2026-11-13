@@ -21,10 +21,10 @@
     "adjudication": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "assessor_a": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "assessor_b": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-    "collection": "6e4d968253f6094a8b05fa5a46a8db401ceb959cac9a9ed8758ae316098a1a8f",
+    "collection": "37dfaf625a483e93606af8ca02c701655def6d9dc33212d0349c5ec28f32846c",
     "reviewers": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-    "screening": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-    "source_register": "a49b69ae59d7b8f795ccfb36bfa19e113a293c6f3b1acb8322917e5214be4715",
+    "screening": "89c81b41974b590c8a2fba6bcaedb2b55887962eb8fc51bf034835599bd647d0",
+    "source_register": "2ee99435d82cb5ab97df2f2aa5906dc518d2ec9ef41d9a3220e4a53eceb6460a",
     "timing": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "traces": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
@@ -66,10 +66,12 @@
   "resolved_first_error_conflicts": [],
   "resolved_step_labels": {},
   "screening": {
-    "dispositions": {},
+    "dispositions": {
+      "pending": 1
+    },
     "entered_candidates_missing_screening_log": 0,
     "interpretation": "Retain all candidates, including rejects/pending. Proposed intake is not verified native yield; no eligibility fraction is imputed.",
-    "observed_screened_candidates": 0
+    "observed_screened_candidates": 1
   },
   "timing": {
     "interpretation": "Descriptive observed time only; no automatic planner override, capacity claim or statistical interval.",

@@ -7,19 +7,26 @@ reused kit's `domain_source_screening_v3_3.csv`, `STUDENT_WORKFLOW_V3_3.md` and
 `DEVELOPER_TRACE_TEMPLATE.md`. Five source-level records cover five domains; the
 register contains the four unchanged v3.2 entries plus four new entries. Three
 QDL provider public-domain marks are verified metadata, not selected-item or human
-approval. ACO prior scan evidence is retained; no new scan was obtained. The
+approval. ACO prior scan evidence is retained; a visual follow-up opened the actual
+NYU PDF page 34 / printed page 20 and located one original-text algebra candidate.
+No new PDF-byte hash or raw source text is supplied. The
 combinatorics edition needs lawful access/rights inspection. The applied insert
 needs its author/folio conflict resolved from actual images before question entry.
 
-Actual questions, developer attempts, assigned reviewers and human records remain
-zero; item ledger/manifest are not populated from book titles. The student next
-inspects actual source pages privately and authors original Arabic attempts with
+One pending candidate is recorded in the manifest/item ledger, supported by
+`algebra_item_screen_v3_3.json`; other entries remain targets. Fully transcribed/
+eligible questions, developer attempts, assigned reviewers and human records are
+zero. Check the original requested quantity and branches, exclude editorial
+footnotes, and disclose the same-page worked solution before trace authorship.
+The student next transcribes/verifies actual source pages privately and authors Arabic attempts with
 honest exposure/revision records. Start real external review on a small batch;
 the unchanged full completion gate requires A/B plus distinct C. Never represent
 student self-checks as independent labels. Preserve original laptop checkouts,
 backup, private overlap work, frozen42 and histories. No inference/scoring,
 training, export or budget activation. Baseline `8a8730f` passed 627 tests/platform
 and native guards in CI 43287100870; inspect current commit's Actions as well.
+Source shortlist `ce695b7` passed 627 tests/platform and native guards in CI
+43392186612; the visual-evidence follow-up has its own per-commit CI.
 
 ## Earlier v3.2 checkpoint
 

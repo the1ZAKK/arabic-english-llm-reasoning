@@ -5,7 +5,7 @@ AN32-ARI-03,arithmetic_number_theory,intermediate,dev,,,,,,unknown,,,,,,,,,pendi
 AN32-ARI-04,arithmetic_number_theory,intermediate,dev,,,,,,unknown,,,,,,,,,pending,private_development_pilot,,,unknown,pending,
 AN32-ALG-01,algebra,introductory,dev,,,,,,unknown,,,,,,,,,pending,private_development_pilot,,,unknown,pending,
 AN32-ALG-02,algebra,introductory,dev,,,,,,unknown,,,,,,,,,pending,private_development_pilot,,,unknown,pending,
-AN32-ALG-03,algebra,intermediate,dev,,,,,,unknown,,,,,,,,,pending,private_development_pilot,,,unknown,pending,
+AN32-ALG-03,algebra,intermediate,dev,DEV:KHW-1939:P20:01,ACO-KHW-1939,PDF page 34 of 130 (1-based); printed page 20; original main-text paragraph under الأموال والعدد التي تعدل الجذور; exclude modern editorial footnotes,DEV:KHW:original-p20-equation-family,ACO-KHW-1939:printed20:original-example-1,unknown,13141d7d5520e971346f34cb8be22dd6ad6bf47586aa38e08cc2d5d9fe03777e,ar,historical,,,,,,pending,private_development_pilot,,,unknown,pending,"AI source-located worked example only. Native origin, transcription/reference, requested quantity, branches, use scope, difficulty and overlap need independent checks. No human review."
 AN32-ALG-04,algebra,intermediate,dev,,,,,,unknown,,,,,,,,,pending,private_development_pilot,,,unknown,pending,
 AN32-GEO-01,geometry,introductory,dev,,,,,,unknown,,,,,,,,,pending,private_development_pilot,,,unknown,pending,
 AN32-GEO-02,geometry,introductory,dev,,,,,,unknown,,,,,,,,,pending,private_development_pilot,,,unknown,pending,

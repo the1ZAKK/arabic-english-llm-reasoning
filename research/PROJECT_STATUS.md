@@ -13,11 +13,17 @@ folio/signature conflict and a separately credited insert author.
 The student [writes and logs original Arabic attempts](native_pilot_v3_2/STUDENT_WORKFLOW_V3_3.md)
 as **developer-authored**, with separate self-checks. A first external qualified
 review can begin a single-reviewer development batch; the existing independent
-A/B plus C completion gate is unchanged. Actual questions, developer traces,
-assigned reviewers and human labels remain zero. No new model observation or
-budget exists. Baseline `8a8730f` passed 627 tests/platform in
+A/B plus C completion gate is unchanged. Fully captured/eligible questions, developer traces,
+assigned reviewers and human labels remain zero. A visual follow-up has located
+one original-text algebra candidate (PDF p. 34 / printed p. 20), pending in the
+existing item ledger/manifest; no text capture, reference or eligibility is claimed.
+No new model observation or budget exists. Baseline `8a8730f` passed 627 tests/platform in
 [CI 43287100870](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43287100870);
 the current continuation has its own per-commit Actions evidence.
+
+Source-screening milestone `ce695b7` passed 627 tests on each platform plus native
+guards in [CI 43392186612](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43392186612).
+The candidate-evidence follow-up retains all historical sources and human records.
 
 ## Earlier v3.2 preparation
 

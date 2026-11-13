@@ -7,9 +7,19 @@ inheritance insert, with three explicit provider public-domain marks. ACO algebr
 is reused; a national-library record and indexed institutional study identify the
 2005 Arabic combinatorics route, whose access/rights remain pending. A catalogue
 folio inconsistency is recorded without correction. Student-authored trace sheet
-and process reuse existing CSVs and human-review validators. Actual questions,
-traces, human assessments, measured human time and new model observations: zero.
+and process reuse existing CSVs and human-review validators. Fully captured/eligible
+questions, developer traces, human assessments, measured human time and new model
+observations: zero.
 No raw books/questions/answers or private identity data are published.
+
+v3.3 visual follow-up — the cloud browser displayed an original Arabic worked
+algebra example at PDF page 34 / printed page 20. One source-located candidate,
+`DEV:KHW-1939:P20:01`, is pending in the existing manifest/item ledger, with
+hash-linked AI technical metadata. Original requested quantity, branches,
+transcription/reference, use scope, overlap and independent origin review remain
+pending. Same-page worked-solution exposure is disclosed. No human approval or
+new PDF-byte hash is asserted. `ce695b7` passed 627 tests/platform and native
+guards in CI 43392186612 before this follow-up.
 
 Baseline `8a8730f`: 627 tests each Windows/Linux and native guards passed in
 [CI 43287100870](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43287100870).

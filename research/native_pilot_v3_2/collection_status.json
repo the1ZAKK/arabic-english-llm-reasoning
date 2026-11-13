@@ -1,6 +1,6 @@
 {
   "candidate_metadata_complete_records": 0,
-  "entered_candidate_records": 0,
+  "entered_candidate_records": 1,
   "excluded_candidate_records": 0,
   "families_above_two_problem_cap": 0,
   "human_validation_complete": false,
@@ -53,10 +53,17 @@
     },
     {
       "blockers": [
-        "actual_problem_not_collected"
+        "missing:problem_text_ref",
+        "missing:reference_answer",
+        "missing:problem_sha256",
+        "missing:normalized_problem_sha256",
+        "difficulty_not_assessed",
+        "native_origin_unresolved_or_not_native",
+        "private_pilot_permission_not_documented",
+        "overlap_audit_pending_or_positive"
       ],
       "slot_id": "AN32-ALG-03",
-      "stage": "target_only"
+      "stage": "candidate_blocked"
     },
     {
       "blockers": [
@@ -150,7 +157,7 @@
       "stage": "target_only"
     }
   ],
-  "source_families_recorded": 0,
+  "source_families_recorded": 1,
   "source_leads_confirmed_translated": 1,
   "source_leads_screened": 8,
   "source_provenance_authenticated": false,

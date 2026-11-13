@@ -16,6 +16,14 @@ potential confounds/costs; do not claim a modern representative benchmark from t
 shortlist. Source metadata, questions, developer attempts and independent labels
 remain separate stages. No frozen artifact or execution policy is changed.
 
+v3.3 visual evidence — One original-text algebra example was located in the actual
+scan; record it as a pending source candidate rather than an eligible captured
+question. Keep its requested quantity, all branches and original/editorial layers
+distinct. Do not interpret visible source workings as a developer's independent
+first attempt. The evidence is an AI technical source screen, never a human label.
+Its actual metadata-file SHA256 is byte-preserved across Windows/Linux; the old
+PDF hash is retained only as prior v3.2 evidence, not a new byte verification.
+
 v3.2 — Separate screened source leads, entered candidate metadata, source readiness and completed human validation. Do not infer native authorship from Arabic wording or institutional hosting; reject the explicitly translated source as native. Treat public-domain/provider notices as evidence to assess for exact items/scopes, not fabricated blanket permission. Keep all pilot families development-only and distinct canonical lineages; target twenty problems with at most two per template family. No automated human endorsement or budget creation.
 
 v3.2 human-feasibility scope — Use original-Arabic source/human traces without model

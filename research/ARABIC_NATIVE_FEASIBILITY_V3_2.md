@@ -2,7 +2,8 @@
 
 **Historical v3.2 counts below:** the [v3.3 source-collection continuation](ARABIC_NATIVE_COLLECTION_V3_3.md)
 expands the reused source register to eight leads and records a five-domain
-shortlist. Actual question, trace and human-review counts remain zero.
+shortlist and locates one pending algebra candidate. Fully captured/eligible
+questions, developer traces and human reviews remain zero.
 
 **Decision: materials ready for human collection; actual feasibility unproven.**
 The [twenty-slot plan](ARABIC_NATIVE_PILOT_V3_2.md) is development-only, four per
