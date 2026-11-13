@@ -1,5 +1,14 @@
 # Research decisions
 
+v3.5 — Milestone titles do not confer human validation. Reuse the actual preserved
+v3.4 packet and v3.2 worksheets; a blank exercise, assistant arithmetic or a
+consistent hash cannot stand in for student authorship or independent human review.
+No authentic new submission was supplied here, so report the first-problem gate as
+blocked. Preserve originals, actual exposure, disagreements and measured timing in
+separate private working records; do not populate them speculatively. A disclosed
+single-reviewer development result remains distinct from full independent A/B/C
+completion. New frameworks and model runs are not the next dependency.
+
 v3.4 — A private, source-backed technical capture is distinct from selected-item
 clearance, authentic human origin/reference validation, student authorship and
 independent Arabic labels. Keep question/answer text and student work private;

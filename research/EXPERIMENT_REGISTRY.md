@@ -1,5 +1,15 @@
 # Experiment and evidence registry
 
+v3.5 evidence check (13 November 2026, Asia/Shanghai) —
+[human-development progress](ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md). The existing
+private v3.4 archive/inner hashes and original capture were verified unchanged;
+existing private/public intake and human-review reports replayed. The exercise
+remains blank and all human worksheets header-only. One private technical source
+capture, zero human-validated problems, student traces, reviewer roles, judgments,
+adjudications or human timing. No new authentic human submission supplied in this
+continuation. This is a missing-evidence finding, not a completed human pilot or
+new experiment. No raw/private content, identity, approval or outcome is published.
+
 v3.4 source capture (2026-11-13) — [source report](ARABIC_NATIVE_CAPTURE_V3_4.md)
 and hash-linked technical metadata record **one private original Arabic algebra
 capture**, with exact statement/reference identities and offline arithmetic checking

@@ -1,5 +1,16 @@
 # Evidence-gated roadmap
 
+## v3.5 immediate dependency
+
+Complete the [existing al-Khwarizmi human-development item](ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md)
+before treating v3.5 as achieved. The supplied packet has no student attempt or
+human judgments. Use a separate private working copy for actual personally written
+Arabic reasoning, qualified independent source/reference/step/final review, use/
+overlap evidence and measured sessions. Keep original submissions and disagreements.
+One external reviewer can start a disclosed development result; full A/B plus
+separate-C completion and the larger native benchmark remain outstanding. No new
+inference, scoring, training or software infrastructure resolves missing human work.
+
 ## v3.4 next measurable work
 
 The [first private source-backed capture](ARABIC_NATIVE_CAPTURE_V3_4.md) is ready

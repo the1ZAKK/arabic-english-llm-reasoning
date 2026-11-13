@@ -1,6 +1,33 @@
 # Session handoff
 
-## Current v3.4 handoff
+## Current v3.5 handoff — genuine human records missing
+
+Read [ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md](ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md).
+Remote and cloud checkout were confirmed at `cd4bf167`; baseline
+[CI43400431661](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43400431661)
+passed 627 tests/platform and native safeguards. The actual existing private v3.4
+packet was inspected, with archive/all inner hashes verified and all files left
+unchanged. Private/public v3.2 validator outputs match the preserved reports.
+The student's exercise is blank; reviewers/traces/A/B/adjudication/timing have no
+rows. There are zero human-validated items, not a completed v3.5 problem.
+
+No new human submission was attached or found in the scoped accessible materials;
+this is not a claim about unshared Windows files or unindexed records. Do not
+reconstruct or fabricate submissions. Reuse the user's existing private packet
+for personal Arabic authorship with actual solution-exposure disclosure, then
+obtain qualified independent origin/reference and step/final judgments and real
+use/overlap/timing evidence. Preserve originals and separate corrections/disputes.
+A single reviewer can begin a labeled development result; the full A/B and distinct
+C protocol remains unchanged. Keep private text, identities and populated sheets
+out of GitHub. No new packet/application was necessary for this evidence check.
+
+The 37 existing intake/review tests passed after correcting an initial root-directory
+test invocation. This continuation changes sanitized documentation only; inspect
+its published revision's Windows/Linux Actions for its own software verification.
+Frozen42, all historical sources/answers/attempts and human records remain intact.
+No inference, PRM scoring, training, active budget, export or main modification.
+
+## Prior v3.4 handoff
 
 Read [ARABIC_NATIVE_CAPTURE_V3_4.md](ARABIC_NATIVE_CAPTURE_V3_4.md) and
 `native_pilot_v3_2/source_capture_status_v3_4.json`. Remote baseline `50b4396` was

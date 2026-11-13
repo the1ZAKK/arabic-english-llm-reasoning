@@ -1,6 +1,20 @@
 # ArabicPRM-T v2 project evidence
 
-## v3.4 private source capture — current
+## v3.5 human-evidence check — current
+
+[First-problem progress report](ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md): the actual
+v3.4 private packet and its inner hashes were checked unchanged, and existing
+intake/review reports replayed. The student exercise is blank; human-role, trace,
+assessment, adjudication and timing worksheets have no records. **Zero
+human-validated problems.** No new authentic submission was supplied in this
+continuation; unshared laptop records are outside this check. One private source
+capture remains pending qualified human source/reference/use/overlap review and
+actual Arabic reasoning/independent labels. This is an evidence-check milestone,
+not completed v3.5 human validation. No new framework, human approval, model
+operation or active allowance. `cd4bf167` passed 627 tests each Windows/Linux plus
+native safeguards in [CI43400431661](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43400431661).
+
+## Prior v3.4 private source capture
 
 [Actual capture and pending manuscript readings](ARABIC_NATIVE_CAPTURE_V3_4.md):
 **one private al-Khwarizmi problem capture**, original main text at PDF p.34 /
