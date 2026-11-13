@@ -1,5 +1,21 @@
 # Research decisions
 
+v3.3 — The student owns collection, Arabic attempt authorship, preservation,
+self-checking and coordination. Record human-written attempts as developer-authored
+via the existing provider/origin-evidence fields, with no claim of external expert
+labels or model generation. One qualified external reviewer can begin an explicitly
+single-reviewer development stage; this does not replace the existing independent
+A/B plus distinct C completion gate or establish inter-rater reliability. Do not
+ask three outsiders to repeat source collection or have C redo all A/B work.
+
+v3.3 source scope — Five historical-work leads are documented, not five collected
+native questions. Preserve existing exclusions, actual rights notices and separate
+authorship layers. Keep the QDL inheritance insert's conflicting locator unresolved
+until images substantiate it. Historical Arabic and manuscript transcription are
+potential confounds/costs; do not claim a modern representative benchmark from this
+shortlist. Source metadata, questions, developer attempts and independent labels
+remain separate stages. No frozen artifact or execution policy is changed.
+
 v3.2 — Separate screened source leads, entered candidate metadata, source readiness and completed human validation. Do not infer native authorship from Arabic wording or institutional hosting; reject the explicitly translated source as native. Treat public-domain/provider notices as evidence to assess for exact items/scopes, not fabricated blanket permission. Keep all pilot families development-only and distinct canonical lineages; target twenty problems with at most two per template family. No automated human endorsement or budget creation.
 
 v3.2 human-feasibility scope — Use original-Arabic source/human traces without model

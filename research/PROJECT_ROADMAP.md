@@ -1,6 +1,16 @@
 # Evidence-gated roadmap
 
-Next v3.2 step: use the [twenty-slot development intake](ARABIC_NATIVE_PILOT_V3_2.md) to obtain actual item-specific origin/permission evidence and qualified human review. Four source leads are documented; neither institutional hosting nor an Arabic translation establishes native origin. Complete the human/timing pilot before treating 100/250/500 as staffed or scientifically sufficient. No scoring or generation is authorized.
+**Current v3.3 action:** follow the [five-domain source shortlist and collection report](ARABIC_NATIVE_COLLECTION_V3_3.md).
+The student selects actual questions, records exact source/use evidence, writes
+Arabic attempts and logs real effort. Begin with accessible arithmetic/algebra/
+geometry sources; resolve the applied locator and combinatorics access/rights.
+Obtain actual independent Arabic mathematical labels. Source-level metadata and
+developer self-checks cannot fill the native benchmark or its human-review gate.
+No new framework, model run or inference-approval form is the next task.
+
+## Earlier v3.2 preparation guidance
+
+The v3.2 step prepared the [twenty-slot development intake](ARABIC_NATIVE_PILOT_V3_2.md) for actual item-specific origin/permission evidence and qualified human review. Its initial four source leads are retained in the expanded v3.3 register; neither institutional hosting nor an Arabic translation establishes native origin. Complete the human/timing pilot before treating 100/250/500 as staffed or scientifically sufficient. No scoring or generation is authorized.
 
 Use the completed [human protocol and worksheets](native_pilot_v3_2/HUMAN_ANNOTATION.md)
 to measure all-candidate rejection/rights yield, actual trace lengths, independent

@@ -160,6 +160,219 @@
       "remaining_checks": [],
       "source_id": "HINDAWI-GOWERS-TRANSLATED",
       "title": "الرياضيات: مقدمة قصيرة جدا"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "author": "بهاء الدين محمد بن حسين العاملي",
+        "composition_as_catalogued": "Safar 1004 / October 1595",
+        "copy_as_catalogued": "Rabi II 1046 / September-October 1636",
+        "scribe": "غلام محمد عبد القدر الجائي",
+        "witness": "IO Islamic 1748"
+      },
+      "bibliographic_url": "https://www.qdl.qa/en/archive/81055/vdc_100106886354.0x000001",
+      "evidence": [
+        {
+          "locator": "Content; authorial and scribal colophons; chapter list",
+          "observation": "Arabic work attributed to al-Amili, distinct from this later scribal copy; integer and fraction chapters are catalogued at ff. 2v-9v and 9v-13r.",
+          "url": "https://www.qdl.qa/en/archive/81055/vdc_100106886354.0x000001"
+        },
+        {
+          "locator": "Copyright: How to use this content / IO Islamic 1748 / Usage terms",
+          "observation": "The item is explicitly marked Public Domain.",
+          "url": "https://www.qdl.qa/en/archive/81055/vdc_100106886354.0x000001"
+        },
+        {
+          "locator": "Public Domain content; user responsibilities",
+          "observation": "Provider describes a most-territories public-domain belief, not a worldwide warranty.",
+          "url": "https://www.qdl.qa/en/copyright-ethical-terms-reuse"
+        }
+      ],
+      "explicit_translation": false,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": false,
+      "inspected_pdf_sha256": null,
+      "institution": "Qatar Digital Library / British Library Oriental Manuscripts",
+      "item_permission_status": "not_cleared",
+      "language_register": "historical",
+      "notes": "Catalogue and rights metadata verified; no page image, problem text, answer or human review is claimed.",
+      "origin_screen": "documentary_support_item_review_pending",
+      "potential_domains": [
+        "arithmetic_number_theory"
+      ],
+      "primary_problem_text_inspected_in_v3_3": false,
+      "recorded_at_utc": "2026-11-13T08:06:40Z",
+      "remaining_checks": [
+        "Inspect the original Arabic main text and identify one self-contained numerical exercise; do not treat a chapter locator as a collected problem.",
+        "Distinguish main text from dense later marginal/interlinear notes; preserve witness and original problem lineage.",
+        "Record exact selected-item text/answer and applicable intended-use rights evidence privately."
+      ],
+      "rights_evidence_status": "provider_public_domain_mark_verified",
+      "screen_type": "AI_technical_source_screen_not_human_validation",
+      "source_id": "QDL-AMILI-IO1748",
+      "source_register_language": "Arabic",
+      "title": "خلاصة الحساب"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "author": "جمشيد بن مسعود الكاشي",
+        "copy_as_catalogued": "2 Shawwal 997 / 14 August 1589",
+        "witness": "Add MS 7470"
+      },
+      "bibliographic_url": "https://www.qdl.qa/en/archive/81055/vdc_100040164536.0x000001",
+      "evidence": [
+        {
+          "locator": "Content; fourth treatise; Arabic opening and colophon",
+          "observation": "An authored Arabic mathematics compendium, with mensuration at ff. 28v-61r; copyist and original author are distinguished.",
+          "url": "https://www.qdl.qa/en/archive/81055/vdc_100040164536.0x000001"
+        },
+        {
+          "locator": "Copyright: How to use this content / Add MS 7470 / Usage terms",
+          "observation": "The item is explicitly marked Public Domain.",
+          "url": "https://www.qdl.qa/en/archive/81055/vdc_100040164536.0x000001"
+        },
+        {
+          "locator": "Public Domain content; user responsibilities",
+          "observation": "The provider mark is documented; final selected-item use remains a project check.",
+          "url": "https://www.qdl.qa/en/copyright-ethical-terms-reuse"
+        }
+      ],
+      "explicit_translation": false,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": false,
+      "inspected_pdf_sha256": null,
+      "institution": "Qatar Digital Library / British Library Oriental Manuscripts",
+      "item_permission_status": "not_cleared",
+      "language_register": "historical",
+      "notes": "Geometry route with primary catalogue locators and explicit rights mark. No individual exercise has been read or enrolled.",
+      "origin_screen": "documentary_support_item_review_pending",
+      "potential_domains": [
+        "geometry"
+      ],
+      "primary_problem_text_inspected_in_v3_3": false,
+      "recorded_at_utc": "2026-11-13T08:06:40Z",
+      "remaining_checks": [
+        "Select and inspect one mensuration exercise and its diagram in ff. 28v-61r.",
+        "Retain original quantities, units and statement; document any earlier-source derivation and exact lineage.",
+        "Record readable transcription/reference and exact item/use evidence before intake."
+      ],
+      "rights_evidence_status": "provider_public_domain_mark_verified",
+      "screen_type": "AI_technical_source_screen_not_human_validation",
+      "source_id": "QDL-KASHI-ADD7470",
+      "source_register_language": "Arabic",
+      "title": "مفتاح الحساب"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "author": "أبو جعفر أحمد بن إبراهيم بن منعم العبدري",
+        "introduction": "إدريس لمرابط",
+        "isbn": "9981941522",
+        "pages_as_catalogued": 379,
+        "publisher": "دار الأمان للطباعة والنشر والتوزيع، الرباط",
+        "year": 2005
+      },
+      "bibliographic_url": "https://www.bibliotheque.nat.tn/BNTK/doc/SYRACUSE/5473401/%D9%81%D9%82%D9%87-%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%A8?_lg=ar-TN",
+      "evidence": [
+        {
+          "locator": "Arabic catalogue: title, author, introduction credit, edition, language, ISBN",
+          "observation": "The national library documents the historical Arabic work in a 2005 Moroccan edition. A catalogue record is not access to its problem text.",
+          "url": "https://www.bibliotheque.nat.tn/BNTK/doc/SYRACUSE/5473401/%D9%81%D9%82%D9%87-%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%A8?_lg=ar-TN"
+        },
+        {
+          "locator": "Afaq al-Thaqafa wa-al-Turath 49 (2005), Abu Bakr Khalid Saad Allah, pp. 172-181; search-indexed excerpts only",
+          "observation": "The institutional journal index describes a dedicated combinatorial section. The complete article and 2005 book were not retrieved or inspected.",
+          "url": "https://www.almajidcenter.org/wp-content/uploads/2022/05/Publication/Attachments/Afaq%20Magazine/Issue%2049.pdf"
+        }
+      ],
+      "explicit_translation": false,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": false,
+      "inspected_pdf_sha256": null,
+      "institution": "Bibliotheque Nationale de Tunisie; Juma Al Majid Center scholarly journal",
+      "item_permission_status": "not_cleared",
+      "language_register": "historical",
+      "notes": "Promising original-Arabic historical combinatorics route, supported by catalogue and indexed scholarly evidence; source-text and rights confirmation remain pending.",
+      "origin_screen": "documentary_support_item_review_pending",
+      "potential_domains": [
+        "probability_combinatorics"
+      ],
+      "primary_problem_text_inspected_in_v3_3": false,
+      "recorded_at_utc": "2026-11-13T08:06:40Z",
+      "remaining_checks": [
+        "Obtain lawful access to the identified Arabic edition or a separately rights-documented original manuscript.",
+        "Check an actual combinatorial problem against the original Arabic text; do not translate a modern French study and call it native.",
+        "Inspect edition copyright terms or obtain applicable private-research permission; no reuse grant or rightsholder contact is claimed."
+      ],
+      "rights_evidence_status": "no_selected_edition_reuse_grant_verified",
+      "screen_type": "AI_technical_source_screen_not_human_validation",
+      "source_id": "BNT-IBNMUNIM-2005",
+      "source_register_language": "Arabic",
+      "title": "فقه الحساب"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "host_main_work": "حاوي اللباب وشرح تلخيص أعمال الحساب",
+        "host_main_work_author": "أحمد بن رجب ابن المجدي",
+        "insert_author_as_catalogued": "محمد ابن المرحوم الشيخ يوسف الفرضي",
+        "insert_date_as_catalogued": "27 Dhu al-Qadah 1157 / 29 December (?) 1744",
+        "witness": "Add MS 7469"
+      },
+      "bibliographic_url": "https://www.qdl.qa/en/archive/81055/vdc_100040139973.0x000001",
+      "evidence": [
+        {
+          "locator": "Content: later bifolium ff. 181-182 and its separately named author; Written in Arabic",
+          "observation": "Catalogue identifies an Arabic commentary on inheritance-share calculation in an inserted bifolium; do not attribute it to the host author Ibn al-Majdi.",
+          "url": "https://www.qdl.qa/en/archive/81055/vdc_100040139973.0x000001"
+        },
+        {
+          "locator": "Same paragraph: ff. 181-182, but parenthetical signature reference says f. 102r, lines 15-16",
+          "observation": "Internal locator inconsistency retained unresolved; no folio correction or visual verification is invented.",
+          "url": "https://www.qdl.qa/en/archive/81055/vdc_100040139973.0x000001"
+        },
+        {
+          "locator": "Copyright: How to use this content / Add MS 7469 / Usage terms",
+          "observation": "The host manuscript, including the listed folios, is marked Public Domain.",
+          "url": "https://www.qdl.qa/en/archive/81055/vdc_100040139973.0x000001"
+        },
+        {
+          "locator": "Public Domain content; user responsibilities",
+          "observation": "Provider rights evidence is distinct from selected-problem eligibility.",
+          "url": "https://www.qdl.qa/en/copyright-ethical-terms-reuse"
+        }
+      ],
+      "explicit_translation": false,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": false,
+      "inspected_pdf_sha256": null,
+      "institution": "Qatar Digital Library / British Library Oriental Manuscripts",
+      "item_permission_status": "not_cleared",
+      "language_register": "historical",
+      "notes": "Descriptive source label, not an invented original title. Applied-domain lead is conditional on image/locator and premise checks.",
+      "origin_screen": "documentary_support_item_review_pending",
+      "potential_domains": [
+        "applied_word_problems"
+      ],
+      "primary_problem_text_inspected_in_v3_3": false,
+      "recorded_at_utc": "2026-11-13T08:06:40Z",
+      "remaining_checks": [
+        "Resolve the conflicting folio/signature locator by viewing actual images before selecting a problem.",
+        "Choose a self-contained arithmetic distribution problem with explicit shares; exclude implicit or disputed legal premises unless an appropriately competent reviewer resolves them.",
+        "Keep the inserted work, its author and the host commentary as distinct provenance layers."
+      ],
+      "rights_evidence_status": "provider_public_domain_mark_verified",
+      "screen_type": "AI_technical_source_screen_not_human_validation",
+      "source_id": "QDL-FARAID-ADD7469",
+      "source_register_language": "Arabic",
+      "title": "تعليق في حساب أنصبة الميراث (وصف فهرسي لأوراق مضافة إلى Add MS 7469)"
     }
-  ]
+  ],
+  "v3_3_continuation": {
+    "developer_traces_authored": 0,
+    "existing_source_reused": "ACO-KHW-1939",
+    "external_human_reviews_completed": 0,
+    "individual_questions_collected": 0,
+    "new_source_records": 4,
+    "recorded_at_utc": "2026-11-13T08:06:40Z",
+    "scope": "source_level_metadata_only",
+    "shortlist_file": "domain_source_screening_v3_3.csv"
+  }
 }

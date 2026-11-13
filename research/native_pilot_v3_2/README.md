@@ -2,8 +2,16 @@
 
 Read [the v3.2 pilot plan](../ARABIC_NATIVE_PILOT_V3_2.md) first.
 
+**v3.3 student-led continuation:** read the [short collection progress report](../ARABIC_NATIVE_COLLECTION_V3_3.md),
+the populated [five-domain source screening](domain_source_screening_v3_3.csv),
+and [student workflow](STUDENT_WORKFLOW_V3_3.md). Use a private copy of the
+[developer trace sheet](DEVELOPER_TRACE_TEMPLATE.md) when actually writing Arabic
+attempts. The source register now contains eight leads: four preserved v3.2
+records and four new records. No individual questions or human records are added.
+
 - `source_register.json`: observed source/rights metadata and explicit unknowns;
-  four leads are not four enrolled problems.
+  source leads are not enrolled problems. Three new QDL items have explicit
+  provider public-domain marks; selected-item clearance remains pending.
 - `collection_manifest.csv`: twenty planned development slots, four/domain;
   actual problem IDs, sources, answers and evidence remain empty.
 - `collection_status.json`: reproducible current intake counts and blockers.

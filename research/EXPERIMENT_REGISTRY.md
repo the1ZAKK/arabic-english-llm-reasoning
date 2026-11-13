@@ -1,5 +1,20 @@
 # Experiment and evidence registry
 
+v3.3 student-led source collection (2026-11-13, Asia/Shanghai) — five populated
+source-level screenings, one per domain; eight registry records (four retained,
+four added). QDL Arabic witnesses cover arithmetic/geometry and an attributed
+inheritance insert, with three explicit provider public-domain marks. ACO algebra
+is reused; a national-library record and indexed institutional study identify the
+2005 Arabic combinatorics route, whose access/rights remain pending. A catalogue
+folio inconsistency is recorded without correction. Student-authored trace sheet
+and process reuse existing CSVs and human-review validators. Actual questions,
+traces, human assessments, measured human time and new model observations: zero.
+No raw books/questions/answers or private identity data are published.
+
+Baseline `8a8730f`: 627 tests each Windows/Linux and native guards passed in
+[CI 43287100870](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43287100870).
+Current commit's Actions supplies its own verification.
+
 v3.2 source/intake preparation — primary evidence register (ACO historical Arabic edition, KSU publisher/course leads, and a Hindawi translation excluded from native origin), twenty four-per-domain dev slots, reproducible empty intake report and strict offline checks. Actual problem records, source-level human validations, reviewer assignments and new model observations: zero. Only source metadata and templates are published, not raw books/problem datasets.
 
 v3.2 human-feasibility preparation — header-only A/B/C, source-screening, trace,

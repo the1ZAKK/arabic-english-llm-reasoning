@@ -3,7 +3,8 @@
 **Purpose / الهدف:** test whether twenty evidenced original-Arabic problems can
 be collected and independently annotated at a realistic cost. This is a human
 development exercise, not a model-performance experiment. All people are currently
-unassigned; the CSV files contain headers only. Software checks cannot confirm
+unassigned; reviewer, trace, assessor, adjudication and timing CSVs contain headers
+only. Software checks cannot confirm
 that an actual person performed a review.
 
 ## Before review / قبل التقييم

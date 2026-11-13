@@ -1,5 +1,28 @@
 # Session handoff
 
+## Current v3.3 continuation
+
+Read [ARABIC_NATIVE_COLLECTION_V3_3.md](ARABIC_NATIVE_COLLECTION_V3_3.md) and the
+reused kit's `domain_source_screening_v3_3.csv`, `STUDENT_WORKFLOW_V3_3.md` and
+`DEVELOPER_TRACE_TEMPLATE.md`. Five source-level records cover five domains; the
+register contains the four unchanged v3.2 entries plus four new entries. Three
+QDL provider public-domain marks are verified metadata, not selected-item or human
+approval. ACO prior scan evidence is retained; no new scan was obtained. The
+combinatorics edition needs lawful access/rights inspection. The applied insert
+needs its author/folio conflict resolved from actual images before question entry.
+
+Actual questions, developer attempts, assigned reviewers and human records remain
+zero; item ledger/manifest are not populated from book titles. The student next
+inspects actual source pages privately and authors original Arabic attempts with
+honest exposure/revision records. Start real external review on a small batch;
+the unchanged full completion gate requires A/B plus distinct C. Never represent
+student self-checks as independent labels. Preserve original laptop checkouts,
+backup, private overlap work, frozen42 and histories. No inference/scoring,
+training, export or budget activation. Baseline `8a8730f` passed 627 tests/platform
+and native guards in CI 43287100870; inspect current commit's Actions as well.
+
+## Earlier v3.2 checkpoint
+
 v3.2 intake checkpoint: [ARABIC_NATIVE_PILOT_V3_2.md](ARABIC_NATIVE_PILOT_V3_2.md) and `research/native_pilot_v3_2/` contain actual source-screening metadata and an empty twenty-slot manifest. No problem text, reference answer, reviewer identity or judgment is fabricated. Public kit has zero entered candidates and source-ready items. Existing v3 provenance checks support explicit dev-only use; default benchmark requirements remain strict. Continue with private real item/reference and human/timing evidence. Keep original laptop checkouts, backup, overlap work, frozen42 and histories untouched. No inference, scoring, training, export or active allowance.
 
 v3.2 annotation checkpoint: [instructions](native_pilot_v3_2/HUMAN_ANNOTATION.md),

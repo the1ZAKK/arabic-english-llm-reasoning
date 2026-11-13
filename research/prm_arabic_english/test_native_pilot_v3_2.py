@@ -39,12 +39,25 @@ class PilotIntakeTests(unittest.TestCase):
         rows = pilot.read_csv(pilot.KIT / "collection_manifest.csv", pilot.COLLECTION_FIELDS)
         report = pilot.collection_report(rows, register)
         self.assertEqual(report, json.loads((pilot.KIT / "collection_status.json").read_bytes()))
-        self.assertEqual((report["target_problems"], report["source_leads_screened"]), (20, 4))
+        self.assertEqual((report["target_problems"], report["source_leads_screened"]), (20, 8))
         self.assertEqual(report["entered_candidate_records"], 0)
         self.assertEqual(report["source_ready_for_human_review"], 0)
         self.assertEqual(report["source_leads_confirmed_translated"], 1)
         self.assertFalse(report["human_validation_complete"])
         self.assertFalse(report["training_or_export_eligibility_granted"])
+
+        # v3.3 reuses this kit: populated source metadata must never count as questions.
+        with (pilot.KIT / "domain_source_screening_v3_3.csv").open(encoding="utf-8-sig", newline="") as stream:
+            shortlist = list(csv.DictReader(stream))
+        self.assertEqual(len(shortlist), 5)
+        self.assertEqual({r["domain"] for r in shortlist}, set(pilot.DOMAINS))
+        self.assertEqual(len({r["source_id"] for r in shortlist}), 5)
+        sources = pilot.source_index(register)
+        self.assertTrue(all(r["source_id"] in sources for r in shortlist))
+        self.assertEqual({r["screening_level"] for r in shortlist}, {"source_not_problem"})
+        self.assertEqual({r["eligibility"] for r in shortlist}, {"development_source_lead_only"})
+        self.assertEqual(sum(r["rights_evidence_status"] == "provider_public_domain_mark_verified" for r in shortlist), 3)
+        self.assertTrue(all(sources[r["source_id"]]["item_permission_status"] == "not_cleared" for r in shortlist))
 
     def test_four_targets_per_domain_two_difficulties_and_dev_only(self):
         rows = pilot.target_rows()

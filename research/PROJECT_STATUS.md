@@ -1,5 +1,26 @@
 # ArabicPRM-T v2 project evidence
 
+## v3.3 student-led collection
+
+[Collection progress and next actions](ARABIC_NATIVE_COLLECTION_V3_3.md) record
+five one-per-domain source-level screenings in the reused v3.2 kit. Four source
+records were added, retaining the original four: eight total, including the prior
+translation exclusion. Three selected QDL items have explicit provider public-domain
+marks; ACO's belief is recorded separately and the 2005 combinatorics edition's
+reuse remains pending. The applied manuscript lead has an unresolved catalogue
+folio/signature conflict and a separately credited insert author.
+
+The student [writes and logs original Arabic attempts](native_pilot_v3_2/STUDENT_WORKFLOW_V3_3.md)
+as **developer-authored**, with separate self-checks. A first external qualified
+review can begin a single-reviewer development batch; the existing independent
+A/B plus C completion gate is unchanged. Actual questions, developer traces,
+assigned reviewers and human labels remain zero. No new model observation or
+budget exists. Baseline `8a8730f` passed 627 tests/platform in
+[CI 43287100870](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43287100870);
+the current continuation has its own per-commit Actions evidence.
+
+## Earlier v3.2 preparation
+
 v3.2 intake milestone: [development-only native pilot](ARABIC_NATIVE_PILOT_V3_2.md) prepares twenty target slots across five domains and a primary-source register. Four source leads were screened, including one confirmed English-derived exclusion. Actual enrolled problems, item permission clearances and qualified human reviews remain zero. A source record is not a benchmark item; no authorship, answer or identity is invented. Existing v3 validators are reused, with an explicit dev-only mode. Frozen artifacts and all model-execution boundaries remain unchanged.
 
 v3.2 human-pilot preparation: [feasibility finding](ARABIC_NATIVE_FEASIBILITY_V3_2.md)

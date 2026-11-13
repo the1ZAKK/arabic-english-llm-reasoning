@@ -1,5 +1,11 @@
 # v3.2: development-only Arabic-native human feasibility pilot
 
+**v3.3 continuation:** [student-led collection](ARABIC_NATIVE_COLLECTION_V3_3.md)
+adds four documented source leads and a populated five-domain source screening
+to the reused kit. The four-lead source table/counts below describe the v3.2
+milestone; current register totals are in the replayable collection status.
+No individual question or completed human review has been added.
+
 **Target:** twenty genuinely Arabic-native mathematics problems, four each in
 arithmetic/number theory, algebra, geometry, probability/combinatorics and applied
 word problems. Each domain has two introductory and two intermediate target

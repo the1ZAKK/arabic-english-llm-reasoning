@@ -1,5 +1,9 @@
 # v3.2 feasibility finding and next scientific decision
 
+**Historical v3.2 counts below:** the [v3.3 source-collection continuation](ARABIC_NATIVE_COLLECTION_V3_3.md)
+expands the reused source register to eight leads and records a five-domain
+shortlist. Actual question, trace and human-review counts remain zero.
+
 **Decision: materials ready for human collection; actual feasibility unproven.**
 The [twenty-slot plan](ARABIC_NATIVE_PILOT_V3_2.md) is development-only, four per
 domain, with two introductory and two intermediate slots in each. Its target is
