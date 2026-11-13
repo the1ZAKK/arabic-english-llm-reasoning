@@ -154,8 +154,8 @@
     }
   ],
   "source_families_recorded": 1,
-  "source_leads_confirmed_translated": 1,
-  "source_leads_screened": 8,
+  "source_leads_confirmed_translated": 2,
+  "source_leads_screened": 12,
   "source_provenance_authenticated": false,
   "source_ready_cohort_complete": false,
   "source_ready_for_human_review": 0,

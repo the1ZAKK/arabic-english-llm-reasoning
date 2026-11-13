@@ -1,6 +1,47 @@
 # Session handoff
 
-## Current v3.5 handoff — genuine human records missing
+## Current v3.6 handoff — one stated student attempt, QC pending
+
+Start with [ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md](ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md)
+and [SCORING_DEVELOPMENT_SCOPE_V3_6.md](SCORING_DEVELOPMENT_SCOPE_V3_6.md). The
+private handoff arrived after an initial missing-attachment check. Its instructions
+and actual Arabic solution were read and the handoff checksum matched. A separate
+private package preserves the uploaded ZIP/files, all 26 original v3.4 files, the
+old blank template and exact submitted solution. Do not publish its private text,
+identities, ledger or assessment evidence; obtain the actual delivered packet to
+inspect private bytes in a future session rather than reconstructing them.
+
+The private v3.2 ledger has one `human_original_arabic` DECLARATION with explicit
+student-stated provenance, prior answer exposure, reported subsequent AI feedback
+and unknown original writing time. The coordinator's random private linkage key
+is not verified personal identity. Twelve exact formatting units retain seven
+numbered steps and surrounding claims, all independent labels/semantic boundaries
+pending. Two submitted substitution checks are developer QC; AI arithmetic and
+real-domain advice remain separate, with no correction applied. Private integration
+authorization grants no source clearance, data release, training or model operation.
+Reviewers/A/B/adjudication/timing remain header-only, valid native decisions zero,
+planned trace positions still missing 39. Public templates have zero trace rows;
+the sanitized private status is `native_pilot_v3_2/student_integration_status_v3_6.json`.
+
+The source register appends four records to eight preserved entries. Tlemcen's
+Arabic course and OPU's Arabic book remain item/rights pending. Actual Oum el
+Bouaghi PDFs are English despite the Arabic host; the SUST probability text is an
+explicit translation. No new modern problem is approved. Existing intake now
+blocks declared native origin against known English/French primary text.
+
+The static `prospective_scoring_scope_v3_6.json` binds 160 retained item hashes and
+320 prospective matched NF4 cells with AB/BA/BA/AB ID-block order; every score is
+null/unattempted, all authorization zero. Runtime/input/family identities remain
+missing; this is not runnable observation data or a budget. The exposed student
+trace is excluded. Human QC, item-level modern provenance, actual runtime
+feasibility and separately authorized controlled observations remain next.
+
+All 54 targeted intake/review/scoring-analysis tests passed. Inspect this revision's
+Windows/Linux Actions for full offline/native checks. Preserve originals, source
+hashes, checkpoints, historical attempts, human records and frozen42; no inference,
+scoring, training, export, budget, scheduling or main change is authorized/performed.
+
+## Prior v3.5 handoff — genuine human records missing
 
 Read [ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md](ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md).
 Remote and cloud checkout were confirmed at `cd4bf167`; baseline

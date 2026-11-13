@@ -1,5 +1,24 @@
 # Evidence-gated roadmap
 
+## v3.6 next scientific work
+
+The [student submission](ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md) is integrated
+privately as stated authorship, with exposure/AI feedback disclosed. Next obtain
+actual independent Arabic source/reference/step/final review, real use/overlap and
+family evidence, and measured effort. A self-check or arithmetic audit supplies
+no independent labels. Human semantic boundaries for the twelve formatting blocks
+remain pending; preserve the original seven numbered steps and submitted wording.
+
+Prioritize an exact modern exercise from the Tlemcen Arabic course, tracing its
+source-book lineage and applicable use basis; the OPU algebra title needs lawful
+primary-page access. Exclude the observed English course PDFs and confirmed Arabic
+translation. Four source screens are not four collected native problems. The
+[source-bound scoring draft](SCORING_DEVELOPMENT_SCOPE_V3_6.md) is prepared but needs
+actual matched PRM/runtime/input identities, feasibility and separate authorization.
+It cannot establish native efficacy or solving gain; the exposed student attempt
+cannot become held-out/model-generated evidence. Full native QC and larger held-out
+fixed-pool solving evaluation remain the supervisor-directed priorities.
+
 ## v3.5 immediate dependency
 
 Complete the [existing al-Khwarizmi human-development item](ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md)

@@ -1,6 +1,29 @@
 # ArabicPRM-T v2 project evidence
 
-## v3.5 human-evidence check — current
+## v3.6 student submission — current
+
+[Private integration and source progress](ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md):
+the uploaded handoff was received and its solution hash verified. **One
+student-stated Arabic trace** is registered privately with prior answer exposure
+and reported subsequent AI feedback. The original seven numbered steps are intact;
+twelve exact formatting blocks include the surrounding mathematical claims, with
+human semantic boundaries/labels pending. Student substitution checks are developer
+QC; the AI arithmetic audit is separate. All original v3.4 and uploaded files are
+preserved; public trace/human worksheets remain empty templates. Independent
+reviewers, labels, timings and benchmark-eligible items remain **zero**.
+
+Four modern source screens append to the original eight: an Arabic Tlemcen course,
+a publisher-catalogued Arabic algebra book, an English-document exclusion despite
+Arabic hosting, and an explicitly translated probability exclusion. No new modern
+problem or permission is claimed. The intake guard now rejects known non-Arabic
+primary texts as native. The [prospective scoring scope](SCORING_DEVELOPMENT_SCOPE_V3_6.md)
+binds 160 retained bilingual items / 320 proposed matched NF4 cells, all unattempted,
+with no model identities invented or authorization created. The student attempt
+is excluded from that model roster. Baseline `f5b7dab` passed 627/platform in
+[CI43403620373](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/43403620373);
+this continuation has its own per-commit offline and native-guard evidence.
+
+## Prior v3.5 human-evidence check
 
 [First-problem progress report](ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md): the actual
 v3.4 private packet and its inner hashes were checked unchanged, and existing

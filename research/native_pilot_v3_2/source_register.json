@@ -363,6 +363,154 @@
       "source_id": "QDL-FARAID-ADD7469",
       "source_register_language": "Arabic",
       "title": "تعليق في حساب أنصبة الميراث (وصف فهرسي لأوراق مضافة إلى Add MS 7469)"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "prepared_by": "د. جمعة زكرياء",
+        "year": 2021
+      },
+      "bibliographic_url": "https://fseg.univ-tlemcen.dz/assets/uploads/fseg/formations/postegraduations/Rerecherche/L1-stat2%20Probabilit%C3%A9s.pdf",
+      "documented_primary_text_language": "ar",
+      "evidence": [
+        {
+          "locator": "title page; introductory preface; contents; printed p.99 references",
+          "observation": "The official university PDF identifies its preparer/year and presents Arabic teaching text for the first-year Statistics 2 curriculum. Its preface describes preparation/editing of the course. References include Arabic works and Schaum/McGraw-Hill routes, so original Arabic composition of every exercise is not established.",
+          "url": "https://fseg.univ-tlemcen.dz/assets/uploads/fseg/formations/postegraduations/Rerecherche/L1-stat2%20Probabilit%C3%A9s.pdf"
+        }
+      ],
+      "explicit_translation": false,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": false,
+      "inspected_pdf_sha256": null,
+      "institution": "Université Abou Bekr Belkaid Tlemcen, faculty of economic/commercial/management sciences",
+      "item_permission_status": "not_cleared",
+      "notes": "Primary extracted title/preface/body/references inspected; image rendering timed out. Source-level evidence only: no exact problem capture, verified item lineage, native-origin approval or new PDF-byte hash. The absence of a translation notice is not proof of original item authorship.",
+      "origin_screen": "documentary_support_item_review_pending",
+      "potential_domains": [
+        "probability_combinatorics",
+        "applied_word_problems"
+      ],
+      "recorded_at_utc": "2026-11-13T14:10:24Z",
+      "remaining_checks": [
+        "Obtain/read the original PDF pages visually and trace a selected exercise through cited source books; preserve actual units and mathematical relations.",
+        "Verify exact item-origin and private-use basis with the responsible author/rightsholder or applicable notice before intake; no contact or permission is claimed.",
+        "Check mathematical reference and modern-domain/difficulty fit independently; retain all student/source/AI roles separately."
+      ],
+      "rights_evidence_status": "no_applicable_reuse_grant_found_in_inspected_text",
+      "screen_type": "AI_technical_primary_source_screen_not_human_validation",
+      "source_id": "TLEMCEN-JOUMAA-PROB-2021",
+      "title": "محاضرات في الإحتمالات"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "ISBN_field_as_displayed": "350500",
+        "author": "عبد الواحد أبو حمدة",
+        "edition_field": "1",
+        "pages": 520
+      },
+      "bibliographic_url": "https://www.opu.dz/node/11646",
+      "evidence": [
+        {
+          "locator": "author, language, edition, page-count and footer fields",
+          "observation": "Publisher catalogue credits the author and language Arabe, first edition and 520 pages. It displays 350500 in an ISBN field and an all-rights-reserved footer. This short code is retained as displayed, not treated as a validated ISBN or a reuse grant.",
+          "url": "https://www.opu.dz/node/11646"
+        }
+      ],
+      "explicit_translation": false,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": false,
+      "inspected_pdf_sha256": null,
+      "institution": "Office des Publications Universitaires, Algeria",
+      "item_permission_status": "not_cleared",
+      "notes": "Modern Arabic educational book lead; publisher metadata is verified but actual title/copyright/preface/problem pages are not inspected. No publication year or original-language history is inferred.",
+      "origin_screen": "undetermined",
+      "potential_domains": [
+        "algebra"
+      ],
+      "recorded_at_utc": "2026-11-13T14:10:24Z",
+      "remaining_checks": [
+        "Obtain lawful edition access and inspect original-language/preface/rights pages, exact item and derivation.",
+        "Resolve the catalogue ISBN field against the physical title/copyright page; do not invent digits or a date.",
+        "Verify applicable private-pilot permission; no purchase or rightsholder contact is authorized/performed."
+      ],
+      "rights_evidence_status": "publisher_reserved_rights_no_selected_item_grant",
+      "screen_type": "AI_technical_primary_source_screen_not_human_validation",
+      "source_id": "OPU-ABUHAMDA-ALG1",
+      "title": "الجبر 1"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "course_year_as_printed": "2023-2024",
+        "produced_by": "Yamina Soula"
+      },
+      "bibliographic_url": "https://www.univ-oeb.dz/fsesnv/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D8%AF%D8%B1%D9%88%D8%B3-%D9%81%D9%8A-%D8%A7%D9%84%D8%AC%D8%A8%D8%B1-1-%D9%88%D8%A7%D9%84%D8%AC%D8%A8%D8%B1-2-%D8%A7%D9%84%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0/",
+      "documented_primary_text_language": "en",
+      "evidence": [
+        {
+          "locator": "Arabic announcement and two download links",
+          "observation": "The official Arabic announcement credits the lecturer and links Algebra 1 and Algebra 2.",
+          "url": "https://www.univ-oeb.dz/fsesnv/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D8%AF%D8%B1%D9%88%D8%B3-%D9%81%D9%8A-%D8%A7%D9%84%D8%AC%D8%A8%D8%B1-1-%D9%88%D8%A7%D9%84%D8%AC%D8%A8%D8%B1-2-%D8%A7%D9%84%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0/"
+        },
+        {
+          "locator": "PDF pp.1-7 (1-based), title/preface/body",
+          "observation": "The actually linked Algebra 1 text is English, despite its Arabic download filename and host page.",
+          "url": "https://www.univ-oeb.dz/fsesnv/wp-content/uploads/2026/10/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D8%AC%D8%A8%D8%B1-1.pdf"
+        },
+        {
+          "locator": "PDF pp.1-5 (1-based), title/preface/body",
+          "observation": "The actually linked Algebra 2 text is also English.",
+          "url": "https://www.univ-oeb.dz/fsesnv/wp-content/uploads/2026/10/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D8%AC%D8%A8%D8%B1-2.pdf"
+        }
+      ],
+      "explicit_translation": false,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": false,
+      "inspected_pdf_sha256": null,
+      "institution": "Université Larbi Ben Mhidi Oum El Bouaghi, faculty of exact sciences",
+      "item_permission_status": "not_cleared",
+      "notes": "Excluded for the observed source language; not asserted to be an Arabic translation. Do not automatically translate these courses and count them as native Arabic.",
+      "origin_screen": "undetermined",
+      "potential_domains": [],
+      "recorded_at_utc": "2026-11-13T14:10:24Z",
+      "remaining_checks": [
+        "Use only if an independently evidenced originally Arabic edition is actually supplied, under a new source record and use/origin review."
+      ],
+      "rights_evidence_status": "no_applicable_reuse_grant_verified",
+      "screen_type": "AI_technical_primary_source_screen_not_human_validation",
+      "screening_disposition": "excluded_non_arabic_source_for_native_pilot",
+      "source_id": "OEB-SOULA-ALG-EN",
+      "title": "Algebra 1 / Algebra 2 (Arabic announcement, English linked course texts)"
+    },
+    {
+      "bibliographic_credit_as_displayed": {
+        "date_as_catalogued": "2015-09-06",
+        "source_authors_as_titled": "جيه. تشامبرز و جيه. كروشو و بي. بالام"
+      },
+      "bibliographic_url": "https://repository.sustech.edu/handle/123456789/12624",
+      "documented_primary_text_language": "ar",
+      "evidence": [
+        {
+          "locator": "title, date, abstract and description",
+          "observation": "The university repository explicitly identifies a language dissertation translating pages 1–50 of the Cambridge-series Probability and Statistics text; it describes retaining source examples/exams/figures. Official Arabic hosting is not native origin.",
+          "url": "https://repository.sustech.edu/handle/123456789/12624"
+        }
+      ],
+      "explicit_translation": true,
+      "human_native_origin_review_complete": false,
+      "individual_problem_selected": false,
+      "inspected_pdf_sha256": null,
+      "institution": "Sudan University of Science and Technology repository, College of Languages",
+      "item_permission_status": "not_cleared",
+      "notes": "Confirmed translation exclusion, not a native problem collection. No question/answer copied; no new permission or original author identity is asserted.",
+      "origin_screen": "translated_excluded",
+      "potential_domains": [],
+      "recorded_at_utc": "2026-11-13T14:10:24Z",
+      "remaining_checks": [],
+      "rights_evidence_status": "no_applicable_item_reuse_grant_verified",
+      "screen_type": "AI_technical_primary_source_screen_not_human_validation",
+      "screening_disposition": "excluded_translated_origin_for_native_pilot",
+      "source_id": "SUST-CAMBRIDGE-TRANSLATION-2015",
+      "title": "ترجمة الصفحات (1–50) من كتاب الاحتمالات والإحصاء"
     }
   ],
   "v3_3_continuation": {
@@ -381,5 +529,14 @@
       "recorded_at_utc": "2026-11-13T08:27:18Z",
       "status": "one_original_arabic_worked_example_located_no_transcription_or_human_validation"
     }
+  },
+  "v3_6_continuation": {
+    "independent_human_validations": 0,
+    "new_source_problems_collected": 0,
+    "new_source_screens": 4,
+    "original_arabic_item_origin_not_automatically_cleared": true,
+    "prior_eight_entries_sha256": "f6982f1c375e94c68a17711be36590f77c8e92f836d96d7f078e4502906aa4e7",
+    "recorded_at_utc": "2026-11-13T14:10:24Z",
+    "screening_file": "modern_source_screening_v3_6.csv"
   }
 }

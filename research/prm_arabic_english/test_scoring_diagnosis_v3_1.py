@@ -48,6 +48,41 @@ def recorded(four=False):
 
 
 class ExistingEvidenceTests(unittest.TestCase):
+    def test_v3_6_scope_binds_actual_retained_inputs_without_execution_or_invented_scores(self):
+        root = Path(__file__).parent
+        scope = json.loads((root / "prospective_scoring_scope_v3_6.json").read_bytes())
+        self.assertFalse(scope["approved"])
+        self.assertIsNone(scope["approved_by"])
+        self.assertIsNone(scope["approved_at_utc"])
+        self.assertEqual(scope["model_forward_operations_authorized"], 0)
+        self.assertEqual(scope["new_observations"], 0)
+        self.assertFalse(scope["active_budget_created"])
+        self.assertFalse(scope["student_submission_included"])
+        self.assertEqual((len(scope["items"]), len(scope["proposed_dispatch_order"])), (160, 320))
+        self.assertEqual([b["condition_order"] for b in scope["blocks"]],
+                         [["base_nf4", "adapter_nf4"], ["adapter_nf4", "base_nf4"],
+                          ["adapter_nf4", "base_nf4"], ["base_nf4", "adapter_nf4"]])
+        expected = {}
+        for language, filename in (("ar", "test_arabic_prm.py"), ("en", "test_english_prm.py")):
+            self.assertEqual(scope["source_script_sha256"][filename], hashlib.sha256((root / filename).read_bytes()).hexdigest())
+            for row in diagnosis.retained.example_list(root / filename):
+                for category in diagnosis.retained.CATEGORIES:
+                    expected[f"retained:{row['id']}:{language}:{category}"] = (
+                        hashlib.sha256(row["problem"].encode()).hexdigest(),
+                        hashlib.sha256(row["responses"][category].encode()).hexdigest())
+        for item in scope["items"]:
+            self.assertEqual((item["problem_utf8_sha256"], item["response_utf8_sha256"]), expected[item["item_id"]])
+            self.assertIsNone(item["input_ids_sha256"])
+            self.assertIsNone(item["human_step_map_sha256"])
+            self.assertIsNone(item["family_id"])
+            self.assertNotIn("source_text", item)
+        cells = scope["proposed_dispatch_order"]
+        self.assertEqual({(c["item_id"], c["condition"]) for c in cells},
+                         {(item, role) for item in expected for role in ("base_nf4", "adapter_nf4")})
+        self.assertTrue(all(c["status"] == "not_attempted" and c["scores"] is None for c in cells))
+        with self.assertRaisesRegex(ValueError, "Wrong diagnosis kind"):
+            diagnosis.recorded_report(scope)
+
     def test_real_retained_replay_bounds_and_no_new_observations(self):
         report = diagnosis.existing_report()
         saved = json.loads((Path(__file__).parents[1] / "PERFORMANCE_GAP_DIAGNOSIS_V3_1.json").read_bytes())

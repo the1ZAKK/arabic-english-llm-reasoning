@@ -81,6 +81,22 @@ class HumanPilotWorksheetTests(unittest.TestCase):
         self.assertFalse(result["training_or_export_eligibility_granted"])
         self.assertEqual(result["screening"]["entered_candidates_missing_screening_log"], 20)
 
+    def test_student_declared_trace_without_review_does_not_create_human_validation(self):
+        data = fixture()
+        trace = dict(data[3][0], trace_origin="human_original_arabic",
+                     provider_ref="SYNTHETIC-student-stated",
+                     provider_person_key_sha256=core.digest("SYNTHETIC-private-provider-key"),
+                     step_sha256_json=json.dumps([core.digest(f"SYNTHETIC-formatting-unit-{i}") for i in range(12)]))
+        result = review.review_report(data[0], data[1], [], [trace], [], [], [], [], [])
+        self.assertEqual((result["registered_traces"], result["missing_planned_traces"]), (1, 39))
+        self.assertEqual(result["actual_independent_judgment_records"], {"assessor_a": 0, "assessor_b": 0})
+        self.assertEqual(result["valid_native_problem_decisions"], 0)
+        self.assertEqual(result["missing_independent_judgment_records_for_declared_units"], 66)
+        self.assertEqual(result["resolved_step_labels"], {})
+        self.assertFalse(result["complete_declared_annotation_records"])
+        self.assertFalse(result["human_identity_or_judgment_authenticity_verified"])
+        self.assertFalse(result["training_or_export_eligibility_granted"])
+
     def test_same_person_alias_and_duplicate_role_cannot_be_independent_review(self):
         for field in ("person_key_sha256", "role", "reviewer_ref"):
             data = fixture(); data[2][1][field] = data[2][0][field]

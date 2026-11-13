@@ -1,5 +1,24 @@
 # Experiment and evidence registry
 
+v3.6 student integration and offline continuation (13 November 2026, Asia/Shanghai)
+— [progress](ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md). Actual uploaded handoff read,
+file hash verified, one stated-authored Arabic attempt registered in a separate
+private copy; v3.4 originals/uploaded bytes preserved. Seven numbered steps and
+five surrounding formatting blocks retained without human labels; two supplied
+substitution checks stored as developer QC. Exact arithmetic supports the reported
+branches; real-number wording is an unapplied AI advisory. Authorship, exposure,
+reported AI feedback and unknown original writing time are explicit. Independent
+review/annotation/timing and eligible benchmark items: zero.
+
+Four actual source-level screens append to eight preserved records. New intake
+regression blocks a documented English/French source being declared originally
+Arabic; Arabic hosting is not original-language evidence. No new cleared modern
+problem or permission. [Scoring scope](SCORING_DEVELOPMENT_SCOPE_V3_6.md): 160 actual
+retained item hashes, 320 prospective base/adapter NF4 cells, four AB/BA/BA/AB ID
+blocks, no scores and zero model authorization. Not an execution manifest or new
+experiment result. The student's exposed trace is excluded. No inference/scoring,
+training, active allowance, private text/identity publication or frozen/main change.
+
 v3.5 evidence check (13 November 2026, Asia/Shanghai) —
 [human-development progress](ARABIC_NATIVE_HUMAN_PROGRESS_V3_5.md). The existing
 private v3.4 archive/inner hashes and original capture were verified unchanged;

@@ -1,0 +1,4597 @@
+{
+  "active_budget_created": false,
+  "aggregations": [
+    "all_reward_positions",
+    "nonempty_reward_positions_from_same_vector"
+  ],
+  "approved": false,
+  "approved_at_utc": null,
+  "approved_by": null,
+  "automatic_retries_or_replacements": false,
+  "baseline_research_commit": "f5b7dab2396bdd710d3d3c0d7fea267fb17510a5",
+  "blocks": [
+    {
+      "basis": "Retained-ID development blocks, not verified independent source families",
+      "block": 1,
+      "condition_order": [
+        "base_nf4",
+        "adapter_nf4"
+      ],
+      "problem_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "basis": "Retained-ID development blocks, not verified independent source families",
+      "block": 2,
+      "condition_order": [
+        "adapter_nf4",
+        "base_nf4"
+      ],
+      "problem_ids": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
+    },
+    {
+      "basis": "Retained-ID development blocks, not verified independent source families",
+      "block": 3,
+      "condition_order": [
+        "adapter_nf4",
+        "base_nf4"
+      ],
+      "problem_ids": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ]
+    },
+    {
+      "basis": "Retained-ID development blocks, not verified independent source families",
+      "block": 4,
+      "condition_order": [
+        "base_nf4",
+        "adapter_nf4"
+      ],
+      "problem_ids": [
+        "16",
+        "17",
+        "18",
+        "19",
+        "20"
+      ]
+    }
+  ],
+  "candidate_language_items": 160,
+  "conditions": [
+    "base_nf4",
+    "adapter_nf4"
+  ],
+  "generation_requests_authorized": 0,
+  "items": [
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:1:ar:correct",
+      "language": "ar",
+      "problem_id": "1",
+      "problem_utf8_sha256": "dab432d77fa572667f80ff93d4b80239b2ac8abd3502eb2c75c20e1f2d09b34c",
+      "response_utf8_sha256": "6e591f0985be66a36472a0e224d2749cd96fc01e0c0d7a1a72218d25aab3c1c2",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:1:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "1",
+      "problem_utf8_sha256": "dab432d77fa572667f80ff93d4b80239b2ac8abd3502eb2c75c20e1f2d09b34c",
+      "response_utf8_sha256": "1bc53ca08e4e70605238b4bce1e530dcaeed06dba3e660d110966930575c7004",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:1:ar:logic_error",
+      "language": "ar",
+      "problem_id": "1",
+      "problem_utf8_sha256": "dab432d77fa572667f80ff93d4b80239b2ac8abd3502eb2c75c20e1f2d09b34c",
+      "response_utf8_sha256": "8ab40ab953bca6ddf9587e3aec35f11d418062d2764298e6c50215f3971ae0e1",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:1:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "1",
+      "problem_utf8_sha256": "dab432d77fa572667f80ff93d4b80239b2ac8abd3502eb2c75c20e1f2d09b34c",
+      "response_utf8_sha256": "a8de2e0d010c3eb3681c83199bb65b4b7c00effc9d1162872c45e84c086d8ccd",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:2:ar:correct",
+      "language": "ar",
+      "problem_id": "2",
+      "problem_utf8_sha256": "3b4adb081d1166923316889482fc262fba6f3923eb240453f187a36dc50bb236",
+      "response_utf8_sha256": "9e984ae8b0b8252a6aa674ec8e48ec8a03b48e52a691f0ac7d7872321e4a64d0",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:2:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "2",
+      "problem_utf8_sha256": "3b4adb081d1166923316889482fc262fba6f3923eb240453f187a36dc50bb236",
+      "response_utf8_sha256": "cfb5241f1adde178daa5d613afa289849f9d877a70b75baa06b5068614d85360",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:2:ar:logic_error",
+      "language": "ar",
+      "problem_id": "2",
+      "problem_utf8_sha256": "3b4adb081d1166923316889482fc262fba6f3923eb240453f187a36dc50bb236",
+      "response_utf8_sha256": "e67de8ba80f741fd4dd3ac6032e4d638f36c9d523b4a22b2afe4a58bff213d0f",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:2:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "2",
+      "problem_utf8_sha256": "3b4adb081d1166923316889482fc262fba6f3923eb240453f187a36dc50bb236",
+      "response_utf8_sha256": "23435359d4865bb1ed912862ea3a445638d84150d55ed08f6e2aafcece107dc8",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:3:ar:correct",
+      "language": "ar",
+      "problem_id": "3",
+      "problem_utf8_sha256": "34bf263b875082ad9631f182a8a66238df082f73396d21c2a9a668f769a3f050",
+      "response_utf8_sha256": "67586e2772583aa3c001670e5f32b8d4ee69ebd2c99b7a2de75f7cdab882ec00",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:3:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "3",
+      "problem_utf8_sha256": "34bf263b875082ad9631f182a8a66238df082f73396d21c2a9a668f769a3f050",
+      "response_utf8_sha256": "e0804c57777af8989f079346949617ded8e989086e91b1b7fc40069d69c61084",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:3:ar:logic_error",
+      "language": "ar",
+      "problem_id": "3",
+      "problem_utf8_sha256": "34bf263b875082ad9631f182a8a66238df082f73396d21c2a9a668f769a3f050",
+      "response_utf8_sha256": "8a6145fde2c958658a88267f22529fcf96bfc6e8d8bef9099350d752486b45c2",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:3:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "3",
+      "problem_utf8_sha256": "34bf263b875082ad9631f182a8a66238df082f73396d21c2a9a668f769a3f050",
+      "response_utf8_sha256": "6a9b7d67b3a32e12aec21246edb1dead5b94db4a2f3834ec289c4c0a299549ca",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:4:ar:correct",
+      "language": "ar",
+      "problem_id": "4",
+      "problem_utf8_sha256": "e55d6c99c11fb78bedc40f92f839e665044a58b60f8a22077eeb41e46ac09baa",
+      "response_utf8_sha256": "4527255e1ea28bdf8c8c98d45507f10693c461932e32e90a9aad0e3d2f53b682",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:4:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "4",
+      "problem_utf8_sha256": "e55d6c99c11fb78bedc40f92f839e665044a58b60f8a22077eeb41e46ac09baa",
+      "response_utf8_sha256": "0612bb3bdd866f57a33e9db0e95421f8ed673712aa4f5b5200809134408e7254",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:4:ar:logic_error",
+      "language": "ar",
+      "problem_id": "4",
+      "problem_utf8_sha256": "e55d6c99c11fb78bedc40f92f839e665044a58b60f8a22077eeb41e46ac09baa",
+      "response_utf8_sha256": "3fa2aac096bb1c0680f5abb5f5ac25e53ad6c43aa310198e219235da4eefba8c",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:4:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "4",
+      "problem_utf8_sha256": "e55d6c99c11fb78bedc40f92f839e665044a58b60f8a22077eeb41e46ac09baa",
+      "response_utf8_sha256": "a30f46b25f818ce47fad68ae9ad97720d9decb9e5471174a691d06e700f389d1",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:5:ar:correct",
+      "language": "ar",
+      "problem_id": "5",
+      "problem_utf8_sha256": "ce678ff9fe2487d0ae0a7c090eb7a7299bf44588b8d5eee065d245fa809559dc",
+      "response_utf8_sha256": "01a510493bad62de919c051131363814ddfea5e337f196167d96710c542283df",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:5:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "5",
+      "problem_utf8_sha256": "ce678ff9fe2487d0ae0a7c090eb7a7299bf44588b8d5eee065d245fa809559dc",
+      "response_utf8_sha256": "a13063732cf7599b3136ef8e388e1caa57af8071f71cc260c54af8a06d078eee",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:5:ar:logic_error",
+      "language": "ar",
+      "problem_id": "5",
+      "problem_utf8_sha256": "ce678ff9fe2487d0ae0a7c090eb7a7299bf44588b8d5eee065d245fa809559dc",
+      "response_utf8_sha256": "ef170d9be7244d708ca0f36edf81c716af9a1ab06674651831f69b0c44c4095d",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:5:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "5",
+      "problem_utf8_sha256": "ce678ff9fe2487d0ae0a7c090eb7a7299bf44588b8d5eee065d245fa809559dc",
+      "response_utf8_sha256": "4bba91c5811a337663bf2b397a20591eb90c0c0a64a1d22b09d6fdf513702903",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:6:ar:correct",
+      "language": "ar",
+      "problem_id": "6",
+      "problem_utf8_sha256": "b7f3a2ad0baea752c6a56a156e9a889a7091cfd317bfbe27879ce4026458c245",
+      "response_utf8_sha256": "2bfa32fa36a983e5522f4c2dfaa0fcf6b4c08b244c49d5b0cd358d28b164dcec",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:6:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "6",
+      "problem_utf8_sha256": "b7f3a2ad0baea752c6a56a156e9a889a7091cfd317bfbe27879ce4026458c245",
+      "response_utf8_sha256": "b0c0649cc3759afc97cad4ff566202eaf432c70e384ceb1df949dd35071c72d0",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:6:ar:logic_error",
+      "language": "ar",
+      "problem_id": "6",
+      "problem_utf8_sha256": "b7f3a2ad0baea752c6a56a156e9a889a7091cfd317bfbe27879ce4026458c245",
+      "response_utf8_sha256": "5271d0efbbeacf9ab8745b0ea4c170719ede2e1d571f02fb357fcde6b9f74591",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:6:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "6",
+      "problem_utf8_sha256": "b7f3a2ad0baea752c6a56a156e9a889a7091cfd317bfbe27879ce4026458c245",
+      "response_utf8_sha256": "40c2a2fce8c6d14d2e565ca59d50ec0accc863f17ba9a9234e4520804034349d",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:7:ar:correct",
+      "language": "ar",
+      "problem_id": "7",
+      "problem_utf8_sha256": "d5109e7965bf70158feaddbed4a321f8b77b33c19d61def397ed9c2ed20abd85",
+      "response_utf8_sha256": "c1c7a0a3bb82432171d1ffdf4cf75c6c4cd40183869b83b69455b89b9653d3ec",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:7:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "7",
+      "problem_utf8_sha256": "d5109e7965bf70158feaddbed4a321f8b77b33c19d61def397ed9c2ed20abd85",
+      "response_utf8_sha256": "d33a98ce75c1843890f9317311c7d33bb25c8c3fcfe528c7a069076e5d0bcb7c",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:7:ar:logic_error",
+      "language": "ar",
+      "problem_id": "7",
+      "problem_utf8_sha256": "d5109e7965bf70158feaddbed4a321f8b77b33c19d61def397ed9c2ed20abd85",
+      "response_utf8_sha256": "b1682ff10b66a35b6d09ef09c6151d69cea98bf9348c57cb7b7b9658296a46fe",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:7:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "7",
+      "problem_utf8_sha256": "d5109e7965bf70158feaddbed4a321f8b77b33c19d61def397ed9c2ed20abd85",
+      "response_utf8_sha256": "ccc934f5f8c02b8975fd114e1e73299f2551db5aa3817f0a88b4fd8e5a79a915",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:8:ar:correct",
+      "language": "ar",
+      "problem_id": "8",
+      "problem_utf8_sha256": "5f351896ccee14c178bace0124c334bd89afb08f35e0f74fe138b63807262775",
+      "response_utf8_sha256": "cf64e0329912204d424a70062e8ef8c0c25bcc7ae1e1aefabed40f269aca1a2f",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:8:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "8",
+      "problem_utf8_sha256": "5f351896ccee14c178bace0124c334bd89afb08f35e0f74fe138b63807262775",
+      "response_utf8_sha256": "ca07154215a418fd018c0237a8876d047053c57e779acea548d6c29065cf7bcd",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:8:ar:logic_error",
+      "language": "ar",
+      "problem_id": "8",
+      "problem_utf8_sha256": "5f351896ccee14c178bace0124c334bd89afb08f35e0f74fe138b63807262775",
+      "response_utf8_sha256": "bd9e00baffe2043998c472c3bd3c3443a8253c3fcdc11da608c205ccb732df74",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:8:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "8",
+      "problem_utf8_sha256": "5f351896ccee14c178bace0124c334bd89afb08f35e0f74fe138b63807262775",
+      "response_utf8_sha256": "65027aa75bece525e6f4e68cfd6ecf91d81f5257ecc52076f6874977ccf2fd17",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:9:ar:correct",
+      "language": "ar",
+      "problem_id": "9",
+      "problem_utf8_sha256": "c8fd674f75ef3e80015b8c087452d37c543612b89e7b7d82e9483fbb5364de92",
+      "response_utf8_sha256": "9519e5797b312f8bd33796b739b28d308c5a65e9e29029eb63b06a4b86d3145f",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:9:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "9",
+      "problem_utf8_sha256": "c8fd674f75ef3e80015b8c087452d37c543612b89e7b7d82e9483fbb5364de92",
+      "response_utf8_sha256": "fe48ce6772adcebce749d557647d3066c4f56683229156800918aea91d19d281",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:9:ar:logic_error",
+      "language": "ar",
+      "problem_id": "9",
+      "problem_utf8_sha256": "c8fd674f75ef3e80015b8c087452d37c543612b89e7b7d82e9483fbb5364de92",
+      "response_utf8_sha256": "6a7dbe2bbbd1af3788dc97470b6bae2fdfeac82c92857b7dde28ddc037cb7bc5",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:9:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "9",
+      "problem_utf8_sha256": "c8fd674f75ef3e80015b8c087452d37c543612b89e7b7d82e9483fbb5364de92",
+      "response_utf8_sha256": "67c91c3ec2a0b437131a4f5aee3be0bd2ed9c34958264f8eab542d9e36822c8d",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:10:ar:correct",
+      "language": "ar",
+      "problem_id": "10",
+      "problem_utf8_sha256": "0224db5066f157c20eeedd35476e7bd686f08b19d1fb3e6e403db6bf8be575ec",
+      "response_utf8_sha256": "ff49a5197f1df9e9d44b69a7f7f40755f5e008345d47f11edce13fd8e0784b60",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:10:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "10",
+      "problem_utf8_sha256": "0224db5066f157c20eeedd35476e7bd686f08b19d1fb3e6e403db6bf8be575ec",
+      "response_utf8_sha256": "bea0e7adc778f169ee2edb3396bac3666fa7395234f08cdf77c1d23fd5435506",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:10:ar:logic_error",
+      "language": "ar",
+      "problem_id": "10",
+      "problem_utf8_sha256": "0224db5066f157c20eeedd35476e7bd686f08b19d1fb3e6e403db6bf8be575ec",
+      "response_utf8_sha256": "84e958ee606954dbda4289bf7296ff0230f24c31b932acaf8efec45fd402911a",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:10:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "10",
+      "problem_utf8_sha256": "0224db5066f157c20eeedd35476e7bd686f08b19d1fb3e6e403db6bf8be575ec",
+      "response_utf8_sha256": "54f7f048189f192ccf2f91e16cf3635aeefc2ce42dd61840170732b4fa8269a1",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:11:ar:correct",
+      "language": "ar",
+      "problem_id": "11",
+      "problem_utf8_sha256": "6ec2f9330d46608a208e0aaeb5bdb12205cd5059c21c2e390b1b5aadedc0e71d",
+      "response_utf8_sha256": "ce1cd7fc2bf3c98fd1574d22d6fa74c6527550cae576983df9f191f1356d452e",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:11:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "11",
+      "problem_utf8_sha256": "6ec2f9330d46608a208e0aaeb5bdb12205cd5059c21c2e390b1b5aadedc0e71d",
+      "response_utf8_sha256": "1db9eb21feb7be31fa64425e1ee1044dbb727f100688561c73d20e96796d29cf",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:11:ar:logic_error",
+      "language": "ar",
+      "problem_id": "11",
+      "problem_utf8_sha256": "6ec2f9330d46608a208e0aaeb5bdb12205cd5059c21c2e390b1b5aadedc0e71d",
+      "response_utf8_sha256": "2b1d23ec9ea8b306bc869a13ef386a1c24281a2c3dc56917a19bbf83f6306bae",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:11:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "11",
+      "problem_utf8_sha256": "6ec2f9330d46608a208e0aaeb5bdb12205cd5059c21c2e390b1b5aadedc0e71d",
+      "response_utf8_sha256": "2b9f7ffd878a791bdcafa6aeadfedac378ff16029a8f081a26646e2cfc60e1da",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:12:ar:correct",
+      "language": "ar",
+      "problem_id": "12",
+      "problem_utf8_sha256": "64e3c56e0320eafdb29de810cea10c5b911939eb71f4983dc36fd43a81cf9ec2",
+      "response_utf8_sha256": "67a632433361f0f40d623d92866d1f37974430f2ab76c9d642c17362b32bd91a",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:12:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "12",
+      "problem_utf8_sha256": "64e3c56e0320eafdb29de810cea10c5b911939eb71f4983dc36fd43a81cf9ec2",
+      "response_utf8_sha256": "75bb415202ee242142e9f764d0eb47c66053c654d932d92b901ef2874879dc99",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:12:ar:logic_error",
+      "language": "ar",
+      "problem_id": "12",
+      "problem_utf8_sha256": "64e3c56e0320eafdb29de810cea10c5b911939eb71f4983dc36fd43a81cf9ec2",
+      "response_utf8_sha256": "b7a6eb1b7dab82766391e74d9a4be2de115263c22888401fb60ea788c43ffb57",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:12:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "12",
+      "problem_utf8_sha256": "64e3c56e0320eafdb29de810cea10c5b911939eb71f4983dc36fd43a81cf9ec2",
+      "response_utf8_sha256": "1f041dc7f8d3050fdadd240b9eeef98f2a29294b87cdb96aa050dcc7b1ec75c1",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:13:ar:correct",
+      "language": "ar",
+      "problem_id": "13",
+      "problem_utf8_sha256": "99e8f60012ee69747c24fc1cc6d4bf756d4968c352e35734c3756a6a3417a095",
+      "response_utf8_sha256": "61f3712f62adb7eccc87ae47e6275cc01fea96cde8425562123487089b1d1db9",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:13:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "13",
+      "problem_utf8_sha256": "99e8f60012ee69747c24fc1cc6d4bf756d4968c352e35734c3756a6a3417a095",
+      "response_utf8_sha256": "001c94a0b5a4ba57f0774a85ffd101733bbf3886169ac38ea154fc4c2251ce6f",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:13:ar:logic_error",
+      "language": "ar",
+      "problem_id": "13",
+      "problem_utf8_sha256": "99e8f60012ee69747c24fc1cc6d4bf756d4968c352e35734c3756a6a3417a095",
+      "response_utf8_sha256": "c0e3bf477691d0357a96de33ab507602e6cf9dfb37ae60930bc825a752cd934a",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:13:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "13",
+      "problem_utf8_sha256": "99e8f60012ee69747c24fc1cc6d4bf756d4968c352e35734c3756a6a3417a095",
+      "response_utf8_sha256": "8d02586023ecc9a1722c7f28c9e1f9467b996c6059e35167c808ddbdc0ca6534",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:14:ar:correct",
+      "language": "ar",
+      "problem_id": "14",
+      "problem_utf8_sha256": "bc9fa20661416005e071e954e733455be542a3f3db141c792b820fdb150bcc4e",
+      "response_utf8_sha256": "69e0b33fe785f68e9fb1e743e4faf88d454cc9c7d8dd21f956c03501c6bf7fa8",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:14:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "14",
+      "problem_utf8_sha256": "bc9fa20661416005e071e954e733455be542a3f3db141c792b820fdb150bcc4e",
+      "response_utf8_sha256": "03da997182bf02b76b8f655a1e075c9f3ee45390dfa40211457da574f3ed0320",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:14:ar:logic_error",
+      "language": "ar",
+      "problem_id": "14",
+      "problem_utf8_sha256": "bc9fa20661416005e071e954e733455be542a3f3db141c792b820fdb150bcc4e",
+      "response_utf8_sha256": "24baadf935628d00a9ea09345e76b1397ded6ed9cf6acd4aa26616147e6a50e8",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:14:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "14",
+      "problem_utf8_sha256": "bc9fa20661416005e071e954e733455be542a3f3db141c792b820fdb150bcc4e",
+      "response_utf8_sha256": "2139ab5bc727451cfe85899a28948658b3c5452c797cb9c6af25b4effc21b3cf",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:15:ar:correct",
+      "language": "ar",
+      "problem_id": "15",
+      "problem_utf8_sha256": "683079dcbf2c44795086e37ceabd765e2143e10a52cb6fa5ac0b1b731bc9a338",
+      "response_utf8_sha256": "f1c5376072389161fb5c82a89f60e4c81a01ccade895f21d67cd14cb013a3428",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:15:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "15",
+      "problem_utf8_sha256": "683079dcbf2c44795086e37ceabd765e2143e10a52cb6fa5ac0b1b731bc9a338",
+      "response_utf8_sha256": "7a562ab34f52b4f8bb89a260b9f965bac83c6746dea233a7d55c23648ed68fac",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:15:ar:logic_error",
+      "language": "ar",
+      "problem_id": "15",
+      "problem_utf8_sha256": "683079dcbf2c44795086e37ceabd765e2143e10a52cb6fa5ac0b1b731bc9a338",
+      "response_utf8_sha256": "b6a05e9b6e113a2c559d72114d7b3146443ecef8a06255322449df379a627fe8",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:15:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "15",
+      "problem_utf8_sha256": "683079dcbf2c44795086e37ceabd765e2143e10a52cb6fa5ac0b1b731bc9a338",
+      "response_utf8_sha256": "0128bde769f958ff8977653c78969f7c4ca2455b376b7cd37e713572d444d13c",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:16:ar:correct",
+      "language": "ar",
+      "problem_id": "16",
+      "problem_utf8_sha256": "1d511c52de276a5d880c964d082d0fb45cf7bdc0778b9b451229c8f67dfd2ea3",
+      "response_utf8_sha256": "a81f8c3a41a184899a5bd7430b7b22387bc50f1feb19300d41707483b69e1bb5",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:16:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "16",
+      "problem_utf8_sha256": "1d511c52de276a5d880c964d082d0fb45cf7bdc0778b9b451229c8f67dfd2ea3",
+      "response_utf8_sha256": "8b967bb9f3c535b59f201142b392991fc608c5598de653627895fa532dc75d2b",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:16:ar:logic_error",
+      "language": "ar",
+      "problem_id": "16",
+      "problem_utf8_sha256": "1d511c52de276a5d880c964d082d0fb45cf7bdc0778b9b451229c8f67dfd2ea3",
+      "response_utf8_sha256": "949d5bf177cdb55e0bfd33f100a85582ce950d72fdc0d476770db8ec16d3f197",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:16:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "16",
+      "problem_utf8_sha256": "1d511c52de276a5d880c964d082d0fb45cf7bdc0778b9b451229c8f67dfd2ea3",
+      "response_utf8_sha256": "f003c5f785c5e565117452172135e7fe0546604a5b82bc08a1281b273d4d33b2",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:17:ar:correct",
+      "language": "ar",
+      "problem_id": "17",
+      "problem_utf8_sha256": "4f6795936ea7eda9121c12da22ae88987d12565e50f83e57257e0dde83de4795",
+      "response_utf8_sha256": "0d3f0a71c1925deaabe0a34307f5b660c2420e600c7b135b68d5b1bd05797b77",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:17:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "17",
+      "problem_utf8_sha256": "4f6795936ea7eda9121c12da22ae88987d12565e50f83e57257e0dde83de4795",
+      "response_utf8_sha256": "de9e38347e38ebd5cb8fdc10c91532513ab37b6fe5ec742cd785e10fab425840",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:17:ar:logic_error",
+      "language": "ar",
+      "problem_id": "17",
+      "problem_utf8_sha256": "4f6795936ea7eda9121c12da22ae88987d12565e50f83e57257e0dde83de4795",
+      "response_utf8_sha256": "452e00d96c299d232079dfce83b5646cd89845f4cca1f8d849c6c18556721a8b",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:17:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "17",
+      "problem_utf8_sha256": "4f6795936ea7eda9121c12da22ae88987d12565e50f83e57257e0dde83de4795",
+      "response_utf8_sha256": "eef3a55a59498045edf384f0a45376618f082416460e26639b4e4f7c0ec4ea7f",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:18:ar:correct",
+      "language": "ar",
+      "problem_id": "18",
+      "problem_utf8_sha256": "5f550adb9147252fd45d5e99e77cd33255438640003c47a426c62755e737111d",
+      "response_utf8_sha256": "545868bb36c5a738d8930d343728cbd726f75545d5e98b39062e5d803a50b602",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:18:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "18",
+      "problem_utf8_sha256": "5f550adb9147252fd45d5e99e77cd33255438640003c47a426c62755e737111d",
+      "response_utf8_sha256": "b1436cd853bf2309db506c16d55dc8ab9fc37f7d2d56126e1a3eb62f67dd000a",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:18:ar:logic_error",
+      "language": "ar",
+      "problem_id": "18",
+      "problem_utf8_sha256": "5f550adb9147252fd45d5e99e77cd33255438640003c47a426c62755e737111d",
+      "response_utf8_sha256": "d91231173d16142cec18ce569003255b951153d459045179bb66f074aabe6534",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:18:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "18",
+      "problem_utf8_sha256": "5f550adb9147252fd45d5e99e77cd33255438640003c47a426c62755e737111d",
+      "response_utf8_sha256": "b993fe964c298dc7587a21e24b81639b605cb8cb3d0ba8fb16f5c7a341766067",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:19:ar:correct",
+      "language": "ar",
+      "problem_id": "19",
+      "problem_utf8_sha256": "5a0bbeea141ea2dfd90e00dada097b5ac1eaa7896422fb0414abb4af8905aadc",
+      "response_utf8_sha256": "ec7d646fbc493e4aaa474d5412b11add102b1ca74205a586a3865a3f2fb87179",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:19:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "19",
+      "problem_utf8_sha256": "5a0bbeea141ea2dfd90e00dada097b5ac1eaa7896422fb0414abb4af8905aadc",
+      "response_utf8_sha256": "f9684d52bbddd66842903cab1cef3b31839a7670abcf1ea9201ddb7ba103c5a7",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:19:ar:logic_error",
+      "language": "ar",
+      "problem_id": "19",
+      "problem_utf8_sha256": "5a0bbeea141ea2dfd90e00dada097b5ac1eaa7896422fb0414abb4af8905aadc",
+      "response_utf8_sha256": "0c068296d692d5ccff2f0349c54acc486abe1bd5df1943110c1877edda016d77",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:19:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "19",
+      "problem_utf8_sha256": "5a0bbeea141ea2dfd90e00dada097b5ac1eaa7896422fb0414abb4af8905aadc",
+      "response_utf8_sha256": "4eb32cdaec203354a76f7d7d2cafe8cdbbbc44729d92e1ee4c4b828eded1e71d",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:20:ar:correct",
+      "language": "ar",
+      "problem_id": "20",
+      "problem_utf8_sha256": "1c386f43a54fb5dbd5c829081ca710e3b50603dbf0685cbadbb711afe56cb5f3",
+      "response_utf8_sha256": "615d88fea329cf511b0fe229f1eb7786c73a92924753f80d36b46918cc11b01a",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:20:ar:arithmetic_error",
+      "language": "ar",
+      "problem_id": "20",
+      "problem_utf8_sha256": "1c386f43a54fb5dbd5c829081ca710e3b50603dbf0685cbadbb711afe56cb5f3",
+      "response_utf8_sha256": "a31a8b5e50c8b5df6e2edbf42a14097abff8125f83ccd815902b06ef07fe4fa7",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:20:ar:logic_error",
+      "language": "ar",
+      "problem_id": "20",
+      "problem_utf8_sha256": "1c386f43a54fb5dbd5c829081ca710e3b50603dbf0685cbadbb711afe56cb5f3",
+      "response_utf8_sha256": "027939ba5299027dd2b6b24b0795a0f85c93e02f5af034f396c711f09df519d2",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:20:ar:completely_wrong",
+      "language": "ar",
+      "problem_id": "20",
+      "problem_utf8_sha256": "1c386f43a54fb5dbd5c829081ca710e3b50603dbf0685cbadbb711afe56cb5f3",
+      "response_utf8_sha256": "f12054470f48917d47db095468beb97d3ee309af09d59949f792db1edfbbb323",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_arabic_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:1:en:correct",
+      "language": "en",
+      "problem_id": "1",
+      "problem_utf8_sha256": "820d320437c9daaf26de4dc6030e146a66a7359b7a6ecbebdf82b74e9c5560d9",
+      "response_utf8_sha256": "0ca05695702ef7fb4424e45404d9d2a9ecb0ecf89fe2500bb5478311afc26d6e",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:1:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "1",
+      "problem_utf8_sha256": "820d320437c9daaf26de4dc6030e146a66a7359b7a6ecbebdf82b74e9c5560d9",
+      "response_utf8_sha256": "dae9893baf4444cb455de104a56309e4eda4f6083584d06b8b432b75b6a0d394",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:1:en:logic_error",
+      "language": "en",
+      "problem_id": "1",
+      "problem_utf8_sha256": "820d320437c9daaf26de4dc6030e146a66a7359b7a6ecbebdf82b74e9c5560d9",
+      "response_utf8_sha256": "dcf43efd1aeb9b071edb81eba386db1c53dce7e10eee8069f3b9f7e681fad15c",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:1:en:completely_wrong",
+      "language": "en",
+      "problem_id": "1",
+      "problem_utf8_sha256": "820d320437c9daaf26de4dc6030e146a66a7359b7a6ecbebdf82b74e9c5560d9",
+      "response_utf8_sha256": "6d98639636210aea7deb99768ef9e620999df80b7e839e44b37bc8b2e234f90b",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:2:en:correct",
+      "language": "en",
+      "problem_id": "2",
+      "problem_utf8_sha256": "7a05a65525f0e303383af0eaf6202f92e02799f8432088d02fe4959dc10d66bb",
+      "response_utf8_sha256": "8888e4879dba0b432d320ab8f90009987201a8286dc36089aa1c3acbd8ab44b1",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:2:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "2",
+      "problem_utf8_sha256": "7a05a65525f0e303383af0eaf6202f92e02799f8432088d02fe4959dc10d66bb",
+      "response_utf8_sha256": "cce81e420608a94313a091bab41c67c7065b7256d04bdbc9c43e3b3eab6dafcd",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:2:en:logic_error",
+      "language": "en",
+      "problem_id": "2",
+      "problem_utf8_sha256": "7a05a65525f0e303383af0eaf6202f92e02799f8432088d02fe4959dc10d66bb",
+      "response_utf8_sha256": "f23e022ed59288a7f10476a241247e995644a26462110885cb6a05f4eb8d275b",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:2:en:completely_wrong",
+      "language": "en",
+      "problem_id": "2",
+      "problem_utf8_sha256": "7a05a65525f0e303383af0eaf6202f92e02799f8432088d02fe4959dc10d66bb",
+      "response_utf8_sha256": "4b28f31a5ecb2077485a627b48b9c852fe418efbcdb4c613524d8b6a4eee9a84",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:3:en:correct",
+      "language": "en",
+      "problem_id": "3",
+      "problem_utf8_sha256": "216b398432ff4cb2dfedfcf5b66e0d0e86b587759f07c914e6331f49374863c9",
+      "response_utf8_sha256": "7d35725120739eb9a18be87399c11bcca87806a7eefb32d9b1a9346eb9391675",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:3:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "3",
+      "problem_utf8_sha256": "216b398432ff4cb2dfedfcf5b66e0d0e86b587759f07c914e6331f49374863c9",
+      "response_utf8_sha256": "0beb720b06424f188eb6209e0d3d46265aecc1596413b141bc97feb7fcf81e5a",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:3:en:logic_error",
+      "language": "en",
+      "problem_id": "3",
+      "problem_utf8_sha256": "216b398432ff4cb2dfedfcf5b66e0d0e86b587759f07c914e6331f49374863c9",
+      "response_utf8_sha256": "e2c83c449fb593231a175fbfa9459c1d440fcdf76ea45239e70418159bd73163",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:3:en:completely_wrong",
+      "language": "en",
+      "problem_id": "3",
+      "problem_utf8_sha256": "216b398432ff4cb2dfedfcf5b66e0d0e86b587759f07c914e6331f49374863c9",
+      "response_utf8_sha256": "021a478b8fb86295658c11fe68545b3ef95f2c21c574b638de9323d2f87f26f3",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:4:en:correct",
+      "language": "en",
+      "problem_id": "4",
+      "problem_utf8_sha256": "c19e4b35b3e5b5f6d7066e932bdaa93ceeb05aa00e7b3459ec54c1eabc63465d",
+      "response_utf8_sha256": "8c265bf13be82d2987b38cc9b8b76b709cd75f99125ab011064866d459ceeb37",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:4:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "4",
+      "problem_utf8_sha256": "c19e4b35b3e5b5f6d7066e932bdaa93ceeb05aa00e7b3459ec54c1eabc63465d",
+      "response_utf8_sha256": "15c019a5d32a43dc8aeacc2bc4ebf818cee35788045cdc60f7fb5c3b88c44cf0",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:4:en:logic_error",
+      "language": "en",
+      "problem_id": "4",
+      "problem_utf8_sha256": "c19e4b35b3e5b5f6d7066e932bdaa93ceeb05aa00e7b3459ec54c1eabc63465d",
+      "response_utf8_sha256": "4232929a3838369472800bdc0643b4b981819c70ee3fc5064b5cdc6d9d1bd26d",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:4:en:completely_wrong",
+      "language": "en",
+      "problem_id": "4",
+      "problem_utf8_sha256": "c19e4b35b3e5b5f6d7066e932bdaa93ceeb05aa00e7b3459ec54c1eabc63465d",
+      "response_utf8_sha256": "ea83e41ff358a407996f9e33b174dc3f65652be24816bb9c4fc3010d702f00af",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:5:en:correct",
+      "language": "en",
+      "problem_id": "5",
+      "problem_utf8_sha256": "85fa58c3865c6b5966241a1c1764a332fd0c121e99e8e6387377032e0d971ee3",
+      "response_utf8_sha256": "dbd968f60ac095021365dc4567352b2204c19a4ac12a3d5418d3debf893685c0",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:5:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "5",
+      "problem_utf8_sha256": "85fa58c3865c6b5966241a1c1764a332fd0c121e99e8e6387377032e0d971ee3",
+      "response_utf8_sha256": "321219b1c7c51f641decea3782155e354f34c7634372504856c331e864a45ec1",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:5:en:logic_error",
+      "language": "en",
+      "problem_id": "5",
+      "problem_utf8_sha256": "85fa58c3865c6b5966241a1c1764a332fd0c121e99e8e6387377032e0d971ee3",
+      "response_utf8_sha256": "4c67f47431b8a6f9706a5681a00aa5639c495d5260306b435eb64387c07a8e91",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:5:en:completely_wrong",
+      "language": "en",
+      "problem_id": "5",
+      "problem_utf8_sha256": "85fa58c3865c6b5966241a1c1764a332fd0c121e99e8e6387377032e0d971ee3",
+      "response_utf8_sha256": "fe5d2d1376e38f79bf52e2dbf8ba77c59192028052110ca829820879a785cf68",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:6:en:correct",
+      "language": "en",
+      "problem_id": "6",
+      "problem_utf8_sha256": "8feaac7581559c0af1c128d1923e04ea25b9a454f3b405a58612f5dac79fbf2c",
+      "response_utf8_sha256": "5cc059f1e340198019a0ec2d5d89c23bf3e6a3ffcd7cb1e0c5833de0c6344847",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:6:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "6",
+      "problem_utf8_sha256": "8feaac7581559c0af1c128d1923e04ea25b9a454f3b405a58612f5dac79fbf2c",
+      "response_utf8_sha256": "9249f41efc898ea5bff6edc1c6a6bf2a9b65c501cdeb62a9f69cbffbf57460c8",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:6:en:logic_error",
+      "language": "en",
+      "problem_id": "6",
+      "problem_utf8_sha256": "8feaac7581559c0af1c128d1923e04ea25b9a454f3b405a58612f5dac79fbf2c",
+      "response_utf8_sha256": "59dde53e8fb5cdedcc06b3801f6d10729427ea9e74c5fbd50d1352a2a2dbcdce",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:6:en:completely_wrong",
+      "language": "en",
+      "problem_id": "6",
+      "problem_utf8_sha256": "8feaac7581559c0af1c128d1923e04ea25b9a454f3b405a58612f5dac79fbf2c",
+      "response_utf8_sha256": "31b0bc2c7ae9fe45eb4d8c26f3934f7afd02ae7ca6a72456bec93e1c86a4602f",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:7:en:correct",
+      "language": "en",
+      "problem_id": "7",
+      "problem_utf8_sha256": "2020e1842ccaef62a972d8c34bfc4d4642a4db889acc00f013ddcf026c4670ce",
+      "response_utf8_sha256": "114c19fe8d482d6411c6d1ece6d7ade5feb4be19c6cf693e19d2f457f3b22378",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:7:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "7",
+      "problem_utf8_sha256": "2020e1842ccaef62a972d8c34bfc4d4642a4db889acc00f013ddcf026c4670ce",
+      "response_utf8_sha256": "e144bd9407ccf222f08dc827bf1b19a08edcdc2464ba46689c3c16c8289dca76",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:7:en:logic_error",
+      "language": "en",
+      "problem_id": "7",
+      "problem_utf8_sha256": "2020e1842ccaef62a972d8c34bfc4d4642a4db889acc00f013ddcf026c4670ce",
+      "response_utf8_sha256": "69bbcdea92f977eb606a84744aaea7011906196f02d375ce9788004a4ccd53cb",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:7:en:completely_wrong",
+      "language": "en",
+      "problem_id": "7",
+      "problem_utf8_sha256": "2020e1842ccaef62a972d8c34bfc4d4642a4db889acc00f013ddcf026c4670ce",
+      "response_utf8_sha256": "ef46266f108d00af3355175a4517d3faa93c2d9431aefb1a66b0452602102779",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:8:en:correct",
+      "language": "en",
+      "problem_id": "8",
+      "problem_utf8_sha256": "014bc8a741718f01c9dcb62bfe70d37ddef9709d43cbe27cfd9a9f1d386671e2",
+      "response_utf8_sha256": "bfe32024148ce4f92b96f046796175c3747c5464f8896de4ce4a73c574c23834",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:8:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "8",
+      "problem_utf8_sha256": "014bc8a741718f01c9dcb62bfe70d37ddef9709d43cbe27cfd9a9f1d386671e2",
+      "response_utf8_sha256": "d6268260db1ca091a13b5af46178728ca0ceada2459193f637dbb75d0ce96f5a",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:8:en:logic_error",
+      "language": "en",
+      "problem_id": "8",
+      "problem_utf8_sha256": "014bc8a741718f01c9dcb62bfe70d37ddef9709d43cbe27cfd9a9f1d386671e2",
+      "response_utf8_sha256": "92b1b473f6c8a6041cad43ccf3097ded8fbcc738b41fefdeb4415dba902ab931",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:8:en:completely_wrong",
+      "language": "en",
+      "problem_id": "8",
+      "problem_utf8_sha256": "014bc8a741718f01c9dcb62bfe70d37ddef9709d43cbe27cfd9a9f1d386671e2",
+      "response_utf8_sha256": "2ac3f0d6e8293f9641ed0635de9e2c9af645ab0d1af06a1f3529819ca3aa6b78",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:9:en:correct",
+      "language": "en",
+      "problem_id": "9",
+      "problem_utf8_sha256": "3da3896ffb0ba4e5a58f780ce5b96df1047d200333100f3dc034a8431365f4b9",
+      "response_utf8_sha256": "542b79dfb039ee9d81d2b83f448e49173cf0fc75604c17cda14d619fc0d12ff4",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:9:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "9",
+      "problem_utf8_sha256": "3da3896ffb0ba4e5a58f780ce5b96df1047d200333100f3dc034a8431365f4b9",
+      "response_utf8_sha256": "4fbef3fc8045ce8f7be00090ac6f9c7040843edc760e6aaf99f21954adc96f5b",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:9:en:logic_error",
+      "language": "en",
+      "problem_id": "9",
+      "problem_utf8_sha256": "3da3896ffb0ba4e5a58f780ce5b96df1047d200333100f3dc034a8431365f4b9",
+      "response_utf8_sha256": "bfd86e99f37a83841eb7d6960bacfb69d767b847057373b05191d53b9e9f19a1",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:9:en:completely_wrong",
+      "language": "en",
+      "problem_id": "9",
+      "problem_utf8_sha256": "3da3896ffb0ba4e5a58f780ce5b96df1047d200333100f3dc034a8431365f4b9",
+      "response_utf8_sha256": "e75f57d6c4adc787b5759334dac3bc0acc5d1e9c585001c82dbb3b6897deb92a",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:10:en:correct",
+      "language": "en",
+      "problem_id": "10",
+      "problem_utf8_sha256": "b2566cfc574d63f6d34a24c1072bf55304f6b0f1e8d852e2851997f0fae30219",
+      "response_utf8_sha256": "90afeef24782dbed41abd91700e81d0ad8048f905344322975ee6d89843200bd",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:10:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "10",
+      "problem_utf8_sha256": "b2566cfc574d63f6d34a24c1072bf55304f6b0f1e8d852e2851997f0fae30219",
+      "response_utf8_sha256": "306c89ea7b25a5fd1898acb9543a08e389ad16282d075f0c4662fbb981e66259",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:10:en:logic_error",
+      "language": "en",
+      "problem_id": "10",
+      "problem_utf8_sha256": "b2566cfc574d63f6d34a24c1072bf55304f6b0f1e8d852e2851997f0fae30219",
+      "response_utf8_sha256": "476844bec475d1c4bd580485d05c5e921221b9b821ddaca668383d28ad8c99a4",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:10:en:completely_wrong",
+      "language": "en",
+      "problem_id": "10",
+      "problem_utf8_sha256": "b2566cfc574d63f6d34a24c1072bf55304f6b0f1e8d852e2851997f0fae30219",
+      "response_utf8_sha256": "385ffe33a271ad4807e0c71478774def3812bb6c683c1c86325856ec7585646e",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:11:en:correct",
+      "language": "en",
+      "problem_id": "11",
+      "problem_utf8_sha256": "313d57746e363c2adc77691439ef98e0a027729cf94ba4530f638e86c42a5daf",
+      "response_utf8_sha256": "b9deb752208475895124abdbc385d06939c66d50b9cb097a52f9c4877c21c846",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:11:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "11",
+      "problem_utf8_sha256": "313d57746e363c2adc77691439ef98e0a027729cf94ba4530f638e86c42a5daf",
+      "response_utf8_sha256": "7435c81f784d7db2e0b92adf4e0c0eca3d0b7f4660d13e3408144e3b6e35d5df",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:11:en:logic_error",
+      "language": "en",
+      "problem_id": "11",
+      "problem_utf8_sha256": "313d57746e363c2adc77691439ef98e0a027729cf94ba4530f638e86c42a5daf",
+      "response_utf8_sha256": "f0895d53394b6e9a5cfd4c21acdcc594f9b65436123acee252f747b95327cf93",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:11:en:completely_wrong",
+      "language": "en",
+      "problem_id": "11",
+      "problem_utf8_sha256": "313d57746e363c2adc77691439ef98e0a027729cf94ba4530f638e86c42a5daf",
+      "response_utf8_sha256": "53db01446e28f0ca465a7dbf1574a6bcdc54b8bff0b8a8a72d39338aa5e7f148",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:12:en:correct",
+      "language": "en",
+      "problem_id": "12",
+      "problem_utf8_sha256": "ff4b7777dd48a4a19d4252be59b0ad3cf39e45be0f38cd0222ca3453e8093432",
+      "response_utf8_sha256": "3f59b2b392b7eca24b9179e41f112f36156a0e5afed8cb4a3f06bde62a73f072",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:12:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "12",
+      "problem_utf8_sha256": "ff4b7777dd48a4a19d4252be59b0ad3cf39e45be0f38cd0222ca3453e8093432",
+      "response_utf8_sha256": "6d3bc907b70d17078261462f0132c2a06795af053559df050b3c75a7d4ce8748",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:12:en:logic_error",
+      "language": "en",
+      "problem_id": "12",
+      "problem_utf8_sha256": "ff4b7777dd48a4a19d4252be59b0ad3cf39e45be0f38cd0222ca3453e8093432",
+      "response_utf8_sha256": "edadd89e52d762f807e6db380a33217f70a7c5c836f2da1e91d16bbbafd4fc85",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:12:en:completely_wrong",
+      "language": "en",
+      "problem_id": "12",
+      "problem_utf8_sha256": "ff4b7777dd48a4a19d4252be59b0ad3cf39e45be0f38cd0222ca3453e8093432",
+      "response_utf8_sha256": "be64a01e93fb99c7b9d8e506508c8abcec24adec0a7ee3642eb4401a8c31b778",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:13:en:correct",
+      "language": "en",
+      "problem_id": "13",
+      "problem_utf8_sha256": "a4033532def86ac1e97d9015063875608867eed15f5a1b102be7ed246ed1047e",
+      "response_utf8_sha256": "043bf44c75f6ba24e0616630029656f62f1b38fefee09c055e3beef75e886bc7",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:13:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "13",
+      "problem_utf8_sha256": "a4033532def86ac1e97d9015063875608867eed15f5a1b102be7ed246ed1047e",
+      "response_utf8_sha256": "53b16770d4ff20314a7f4b1ddcfce590c91d1c2480979615a975464cc7fdcd4b",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:13:en:logic_error",
+      "language": "en",
+      "problem_id": "13",
+      "problem_utf8_sha256": "a4033532def86ac1e97d9015063875608867eed15f5a1b102be7ed246ed1047e",
+      "response_utf8_sha256": "784748960d0baacbb1aff9c78f6a0eb0b3c7c3eab4869865aa48344591c13cac",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:13:en:completely_wrong",
+      "language": "en",
+      "problem_id": "13",
+      "problem_utf8_sha256": "a4033532def86ac1e97d9015063875608867eed15f5a1b102be7ed246ed1047e",
+      "response_utf8_sha256": "b1b8c9593e02305ef886bd63fc4a94fd833dc3e03e1ba0dc1dc426ece085427e",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:14:en:correct",
+      "language": "en",
+      "problem_id": "14",
+      "problem_utf8_sha256": "229cf5ad04a5b6a77fd6af5180957e749bce8bf27b821edb77c571a9d9ae7760",
+      "response_utf8_sha256": "0361d87f838761d5e9d2b0a39065aaf99cb04988865488c786e650670e1e5be1",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:14:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "14",
+      "problem_utf8_sha256": "229cf5ad04a5b6a77fd6af5180957e749bce8bf27b821edb77c571a9d9ae7760",
+      "response_utf8_sha256": "76d1bd3fcb0100a3ec0fcdb1b6eb36649d6b0e8ec55b26484881e93b7e6ba7cd",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:14:en:logic_error",
+      "language": "en",
+      "problem_id": "14",
+      "problem_utf8_sha256": "229cf5ad04a5b6a77fd6af5180957e749bce8bf27b821edb77c571a9d9ae7760",
+      "response_utf8_sha256": "7ee6ea9a1bc4bfabf9449c633f438fe5b17b82b289d62ac405e8c3937cba8e9b",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:14:en:completely_wrong",
+      "language": "en",
+      "problem_id": "14",
+      "problem_utf8_sha256": "229cf5ad04a5b6a77fd6af5180957e749bce8bf27b821edb77c571a9d9ae7760",
+      "response_utf8_sha256": "7125406ff2926464031ca1311228ecba61c7ea60390f1eb5c4fd090118807331",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:15:en:correct",
+      "language": "en",
+      "problem_id": "15",
+      "problem_utf8_sha256": "acafeb188dea6c0ebf66a746d3e14a47bae421813130b59041c3662f85d42be1",
+      "response_utf8_sha256": "b0e5bce92f7ccbb0f8148b0dbed1e785355a4d4981998efc02ff557a089ff3a6",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:15:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "15",
+      "problem_utf8_sha256": "acafeb188dea6c0ebf66a746d3e14a47bae421813130b59041c3662f85d42be1",
+      "response_utf8_sha256": "fc67ee8a00f618b252b4dab8c122a7230f4dc915b54fc2a7dad492fc1592c0f9",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:15:en:logic_error",
+      "language": "en",
+      "problem_id": "15",
+      "problem_utf8_sha256": "acafeb188dea6c0ebf66a746d3e14a47bae421813130b59041c3662f85d42be1",
+      "response_utf8_sha256": "071a0a16f1a2e6e7536c5d569471dd72b3011c57931f195f76a1f6fb24fdbf73",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:15:en:completely_wrong",
+      "language": "en",
+      "problem_id": "15",
+      "problem_utf8_sha256": "acafeb188dea6c0ebf66a746d3e14a47bae421813130b59041c3662f85d42be1",
+      "response_utf8_sha256": "0366f4616193b09def65c6ac957c8e2d0a4a755e3c9fc27954d4a0cbd74b8663",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:16:en:correct",
+      "language": "en",
+      "problem_id": "16",
+      "problem_utf8_sha256": "2bc6633b9697476f0753701be16bbc81cd81270a24d973f8587a6df0d2fe92f6",
+      "response_utf8_sha256": "e910c09581fe45e250ab3aadb4b9ee859f1f77036d591bfb6b4cc8f6715fb62d",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:16:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "16",
+      "problem_utf8_sha256": "2bc6633b9697476f0753701be16bbc81cd81270a24d973f8587a6df0d2fe92f6",
+      "response_utf8_sha256": "ff3ce6fac4803e54b7d555848ba924e903dee9acf9c430502464bb242a7f94fc",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:16:en:logic_error",
+      "language": "en",
+      "problem_id": "16",
+      "problem_utf8_sha256": "2bc6633b9697476f0753701be16bbc81cd81270a24d973f8587a6df0d2fe92f6",
+      "response_utf8_sha256": "0c873009d9bd739e81d4352aa048f2557d980be44c6d2002a943bb820d59a025",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:16:en:completely_wrong",
+      "language": "en",
+      "problem_id": "16",
+      "problem_utf8_sha256": "2bc6633b9697476f0753701be16bbc81cd81270a24d973f8587a6df0d2fe92f6",
+      "response_utf8_sha256": "db2ec6ce74fd8dbf332fa1b87a2c3d9e96dca25ea07e2c6884035624fba961ae",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:17:en:correct",
+      "language": "en",
+      "problem_id": "17",
+      "problem_utf8_sha256": "99d87210020de31b73f142dea1e9d93f64d0c8fd6a96da7cb2e69d3761780b62",
+      "response_utf8_sha256": "3fa0c8314bbbf99e8fa6673ca622bde9f712560068940b52b577c9a7ed368e3b",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:17:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "17",
+      "problem_utf8_sha256": "99d87210020de31b73f142dea1e9d93f64d0c8fd6a96da7cb2e69d3761780b62",
+      "response_utf8_sha256": "b56828b8542b089485da607c312a428ada9f67b1680a4c6891b9469fa3ab7dc6",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:17:en:logic_error",
+      "language": "en",
+      "problem_id": "17",
+      "problem_utf8_sha256": "99d87210020de31b73f142dea1e9d93f64d0c8fd6a96da7cb2e69d3761780b62",
+      "response_utf8_sha256": "dda8fb36010a2ec112da2ab76ab9dab0b3c98bbab3c3d324a767be956156b2d6",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:17:en:completely_wrong",
+      "language": "en",
+      "problem_id": "17",
+      "problem_utf8_sha256": "99d87210020de31b73f142dea1e9d93f64d0c8fd6a96da7cb2e69d3761780b62",
+      "response_utf8_sha256": "4b708ac506e73d2bdf08202796a1d20bc9229d99e5ba4d5c2aa241a8a52f260a",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:18:en:correct",
+      "language": "en",
+      "problem_id": "18",
+      "problem_utf8_sha256": "9811cdd53c5b5e63d3204e3809d1659508922dab1469002f79ab0b5b60c133a2",
+      "response_utf8_sha256": "1907592e447aa398a1e3de338390dc1049af2d06cd35e271dfd75f7b31e59de0",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:18:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "18",
+      "problem_utf8_sha256": "9811cdd53c5b5e63d3204e3809d1659508922dab1469002f79ab0b5b60c133a2",
+      "response_utf8_sha256": "1f45538790ee14e7bc9e83473ac9738e62ec6e8f06e35a734b08116c1f918782",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:18:en:logic_error",
+      "language": "en",
+      "problem_id": "18",
+      "problem_utf8_sha256": "9811cdd53c5b5e63d3204e3809d1659508922dab1469002f79ab0b5b60c133a2",
+      "response_utf8_sha256": "319b623aeba3b37a19dfc2d736ade6f610ea9f30719655e497b8acc01a7b9a41",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:18:en:completely_wrong",
+      "language": "en",
+      "problem_id": "18",
+      "problem_utf8_sha256": "9811cdd53c5b5e63d3204e3809d1659508922dab1469002f79ab0b5b60c133a2",
+      "response_utf8_sha256": "cea37fa153375d252507591c5ba9f83a5206718bf2d6cf9c79606fd9e639ad88",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:19:en:correct",
+      "language": "en",
+      "problem_id": "19",
+      "problem_utf8_sha256": "e32a22e4719cbfe2da3c0ce257da11fb6a63c4ffbf281ee886a49865f20f58b0",
+      "response_utf8_sha256": "67b5ed8ee956224ff9b900516a5aa3da3d5cabd5ff47763c6dd4eb3500c20e06",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:19:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "19",
+      "problem_utf8_sha256": "e32a22e4719cbfe2da3c0ce257da11fb6a63c4ffbf281ee886a49865f20f58b0",
+      "response_utf8_sha256": "d3403b323e1517adf5060e5676356352a1cc714b51ca67f1bf82ce557ab133a2",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:19:en:logic_error",
+      "language": "en",
+      "problem_id": "19",
+      "problem_utf8_sha256": "e32a22e4719cbfe2da3c0ce257da11fb6a63c4ffbf281ee886a49865f20f58b0",
+      "response_utf8_sha256": "4584c3dc94733016d66ce30d3bc4015ecd8bd4e0af59e2159103a2b6f95e6ef7",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:19:en:completely_wrong",
+      "language": "en",
+      "problem_id": "19",
+      "problem_utf8_sha256": "e32a22e4719cbfe2da3c0ce257da11fb6a63c4ffbf281ee886a49865f20f58b0",
+      "response_utf8_sha256": "9538ca95e305c14786b6bdb0344b4318c5e280a617844d94acd7661848df42ce",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:20:en:correct",
+      "language": "en",
+      "problem_id": "20",
+      "problem_utf8_sha256": "b624cf81a1088e3facacef2ae4a03b8ee4cedbe5beb3742aceec117340450537",
+      "response_utf8_sha256": "60e87e0b2d02f1f4dc730e279ca4b891272237e213b9e3f6eb5086eab2c140c4",
+      "retained_category_tag_not_human_label": "correct",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:20:en:arithmetic_error",
+      "language": "en",
+      "problem_id": "20",
+      "problem_utf8_sha256": "b624cf81a1088e3facacef2ae4a03b8ee4cedbe5beb3742aceec117340450537",
+      "response_utf8_sha256": "a3d4ef2f7e0cbf02f9f0f9d96ecc3b5b7a553584e7bbcd89c2a197e565088a9e",
+      "retained_category_tag_not_human_label": "arithmetic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:20:en:logic_error",
+      "language": "en",
+      "problem_id": "20",
+      "problem_utf8_sha256": "b624cf81a1088e3facacef2ae4a03b8ee4cedbe5beb3742aceec117340450537",
+      "response_utf8_sha256": "282a03a93fe2765e3acad924ece5a7b24476d3a2c09877d23661a7d7df10b17a",
+      "retained_category_tag_not_human_label": "logic_error",
+      "source_script": "test_english_prm.py"
+    },
+    {
+      "family_id": null,
+      "human_step_map_sha256": null,
+      "input_ids_sha256": null,
+      "item_id": "retained:20:en:completely_wrong",
+      "language": "en",
+      "problem_id": "20",
+      "problem_utf8_sha256": "b624cf81a1088e3facacef2ae4a03b8ee4cedbe5beb3742aceec117340450537",
+      "response_utf8_sha256": "b4f55e11cd8dbedd42720960a628ded14e4d5ffe680aabd07673fdf37e47c53a",
+      "retained_category_tag_not_human_label": "completely_wrong",
+      "source_script": "test_english_prm.py"
+    }
+  ],
+  "kind": "prospective_scoring_scope_v3_6_not_execution_or_observations",
+  "limitations": [
+    "Selected legacy authored categories are not independent human labels or a native benchmark.",
+    "ID counterbalancing does not establish family independence; descriptive pairing only until family evidence exists.",
+    "No tokenization, model load, warm-up, forward pass, generation, execution budget or score was performed.",
+    "Matched NF4 feasibility on the laptop is unverified; do not infer that the model fits.",
+    "Prepared hashes and cells are scope, not a runtime-ready recorded-observation file or an execution authorization."
+  ],
+  "model_forward_operations_authorized": 0,
+  "new_observations": 0,
+  "optional_fp16_conditions_included": false,
+  "problem_groups": 20,
+  "proposed_batch_size": 1,
+  "proposed_candidate_condition_score_records": 320,
+  "proposed_dispatch_order": [
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:1:ar:correct",
+      "order": 1,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:1:en:correct",
+      "order": 2,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:1:ar:arithmetic_error",
+      "order": 3,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:1:en:arithmetic_error",
+      "order": 4,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:1:ar:logic_error",
+      "order": 5,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:1:en:logic_error",
+      "order": 6,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:1:ar:completely_wrong",
+      "order": 7,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:1:en:completely_wrong",
+      "order": 8,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:2:en:correct",
+      "order": 9,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:2:ar:correct",
+      "order": 10,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:2:en:arithmetic_error",
+      "order": 11,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:2:ar:arithmetic_error",
+      "order": 12,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:2:en:logic_error",
+      "order": 13,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:2:ar:logic_error",
+      "order": 14,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:2:en:completely_wrong",
+      "order": 15,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:2:ar:completely_wrong",
+      "order": 16,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:3:ar:correct",
+      "order": 17,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:3:en:correct",
+      "order": 18,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:3:ar:arithmetic_error",
+      "order": 19,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:3:en:arithmetic_error",
+      "order": 20,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:3:ar:logic_error",
+      "order": 21,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:3:en:logic_error",
+      "order": 22,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:3:ar:completely_wrong",
+      "order": 23,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:3:en:completely_wrong",
+      "order": 24,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:4:en:correct",
+      "order": 25,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:4:ar:correct",
+      "order": 26,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:4:en:arithmetic_error",
+      "order": 27,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:4:ar:arithmetic_error",
+      "order": 28,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:4:en:logic_error",
+      "order": 29,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:4:ar:logic_error",
+      "order": 30,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:4:en:completely_wrong",
+      "order": 31,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:4:ar:completely_wrong",
+      "order": 32,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:5:ar:correct",
+      "order": 33,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:5:en:correct",
+      "order": 34,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:5:ar:arithmetic_error",
+      "order": 35,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:5:en:arithmetic_error",
+      "order": 36,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:5:ar:logic_error",
+      "order": 37,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:5:en:logic_error",
+      "order": 38,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:5:ar:completely_wrong",
+      "order": 39,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "base_nf4",
+      "item_id": "retained:5:en:completely_wrong",
+      "order": 40,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:1:ar:correct",
+      "order": 41,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:1:en:correct",
+      "order": 42,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:1:ar:arithmetic_error",
+      "order": 43,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:1:en:arithmetic_error",
+      "order": 44,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:1:ar:logic_error",
+      "order": 45,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:1:en:logic_error",
+      "order": 46,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:1:ar:completely_wrong",
+      "order": 47,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:1:en:completely_wrong",
+      "order": 48,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:2:en:correct",
+      "order": 49,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:2:ar:correct",
+      "order": 50,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:2:en:arithmetic_error",
+      "order": 51,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:2:ar:arithmetic_error",
+      "order": 52,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:2:en:logic_error",
+      "order": 53,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:2:ar:logic_error",
+      "order": 54,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:2:en:completely_wrong",
+      "order": 55,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:2:ar:completely_wrong",
+      "order": 56,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:3:ar:correct",
+      "order": 57,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:3:en:correct",
+      "order": 58,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:3:ar:arithmetic_error",
+      "order": 59,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:3:en:arithmetic_error",
+      "order": 60,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:3:ar:logic_error",
+      "order": 61,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:3:en:logic_error",
+      "order": 62,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:3:ar:completely_wrong",
+      "order": 63,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:3:en:completely_wrong",
+      "order": 64,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:4:en:correct",
+      "order": 65,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:4:ar:correct",
+      "order": 66,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:4:en:arithmetic_error",
+      "order": 67,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:4:ar:arithmetic_error",
+      "order": 68,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:4:en:logic_error",
+      "order": 69,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:4:ar:logic_error",
+      "order": 70,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:4:en:completely_wrong",
+      "order": 71,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:4:ar:completely_wrong",
+      "order": 72,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:5:ar:correct",
+      "order": 73,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:5:en:correct",
+      "order": 74,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:5:ar:arithmetic_error",
+      "order": 75,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:5:en:arithmetic_error",
+      "order": 76,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:5:ar:logic_error",
+      "order": 77,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:5:en:logic_error",
+      "order": 78,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:5:ar:completely_wrong",
+      "order": 79,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 1,
+      "condition": "adapter_nf4",
+      "item_id": "retained:5:en:completely_wrong",
+      "order": 80,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:6:en:correct",
+      "order": 81,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:6:ar:correct",
+      "order": 82,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:6:en:arithmetic_error",
+      "order": 83,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:6:ar:arithmetic_error",
+      "order": 84,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:6:en:logic_error",
+      "order": 85,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:6:ar:logic_error",
+      "order": 86,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:6:en:completely_wrong",
+      "order": 87,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:6:ar:completely_wrong",
+      "order": 88,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:7:ar:correct",
+      "order": 89,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:7:en:correct",
+      "order": 90,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:7:ar:arithmetic_error",
+      "order": 91,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:7:en:arithmetic_error",
+      "order": 92,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:7:ar:logic_error",
+      "order": 93,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:7:en:logic_error",
+      "order": 94,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:7:ar:completely_wrong",
+      "order": 95,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:7:en:completely_wrong",
+      "order": 96,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:8:en:correct",
+      "order": 97,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:8:ar:correct",
+      "order": 98,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:8:en:arithmetic_error",
+      "order": 99,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:8:ar:arithmetic_error",
+      "order": 100,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:8:en:logic_error",
+      "order": 101,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:8:ar:logic_error",
+      "order": 102,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:8:en:completely_wrong",
+      "order": 103,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:8:ar:completely_wrong",
+      "order": 104,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:9:ar:correct",
+      "order": 105,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:9:en:correct",
+      "order": 106,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:9:ar:arithmetic_error",
+      "order": 107,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:9:en:arithmetic_error",
+      "order": 108,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:9:ar:logic_error",
+      "order": 109,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:9:en:logic_error",
+      "order": 110,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:9:ar:completely_wrong",
+      "order": 111,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:9:en:completely_wrong",
+      "order": 112,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:10:en:correct",
+      "order": 113,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:10:ar:correct",
+      "order": 114,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:10:en:arithmetic_error",
+      "order": 115,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:10:ar:arithmetic_error",
+      "order": 116,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:10:en:logic_error",
+      "order": 117,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:10:ar:logic_error",
+      "order": 118,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:10:en:completely_wrong",
+      "order": 119,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "adapter_nf4",
+      "item_id": "retained:10:ar:completely_wrong",
+      "order": 120,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:6:en:correct",
+      "order": 121,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:6:ar:correct",
+      "order": 122,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:6:en:arithmetic_error",
+      "order": 123,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:6:ar:arithmetic_error",
+      "order": 124,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:6:en:logic_error",
+      "order": 125,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:6:ar:logic_error",
+      "order": 126,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:6:en:completely_wrong",
+      "order": 127,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:6:ar:completely_wrong",
+      "order": 128,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:7:ar:correct",
+      "order": 129,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:7:en:correct",
+      "order": 130,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:7:ar:arithmetic_error",
+      "order": 131,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:7:en:arithmetic_error",
+      "order": 132,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:7:ar:logic_error",
+      "order": 133,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:7:en:logic_error",
+      "order": 134,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:7:ar:completely_wrong",
+      "order": 135,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:7:en:completely_wrong",
+      "order": 136,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:8:en:correct",
+      "order": 137,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:8:ar:correct",
+      "order": 138,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:8:en:arithmetic_error",
+      "order": 139,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:8:ar:arithmetic_error",
+      "order": 140,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:8:en:logic_error",
+      "order": 141,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:8:ar:logic_error",
+      "order": 142,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:8:en:completely_wrong",
+      "order": 143,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:8:ar:completely_wrong",
+      "order": 144,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:9:ar:correct",
+      "order": 145,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:9:en:correct",
+      "order": 146,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:9:ar:arithmetic_error",
+      "order": 147,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:9:en:arithmetic_error",
+      "order": 148,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:9:ar:logic_error",
+      "order": 149,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:9:en:logic_error",
+      "order": 150,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:9:ar:completely_wrong",
+      "order": 151,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:9:en:completely_wrong",
+      "order": 152,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:10:en:correct",
+      "order": 153,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:10:ar:correct",
+      "order": 154,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:10:en:arithmetic_error",
+      "order": 155,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:10:ar:arithmetic_error",
+      "order": 156,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:10:en:logic_error",
+      "order": 157,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:10:ar:logic_error",
+      "order": 158,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:10:en:completely_wrong",
+      "order": 159,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 2,
+      "condition": "base_nf4",
+      "item_id": "retained:10:ar:completely_wrong",
+      "order": 160,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:11:ar:correct",
+      "order": 161,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:11:en:correct",
+      "order": 162,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:11:ar:arithmetic_error",
+      "order": 163,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:11:en:arithmetic_error",
+      "order": 164,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:11:ar:logic_error",
+      "order": 165,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:11:en:logic_error",
+      "order": 166,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:11:ar:completely_wrong",
+      "order": 167,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:11:en:completely_wrong",
+      "order": 168,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:12:en:correct",
+      "order": 169,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:12:ar:correct",
+      "order": 170,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:12:en:arithmetic_error",
+      "order": 171,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:12:ar:arithmetic_error",
+      "order": 172,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:12:en:logic_error",
+      "order": 173,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:12:ar:logic_error",
+      "order": 174,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:12:en:completely_wrong",
+      "order": 175,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:12:ar:completely_wrong",
+      "order": 176,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:13:ar:correct",
+      "order": 177,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:13:en:correct",
+      "order": 178,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:13:ar:arithmetic_error",
+      "order": 179,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:13:en:arithmetic_error",
+      "order": 180,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:13:ar:logic_error",
+      "order": 181,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:13:en:logic_error",
+      "order": 182,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:13:ar:completely_wrong",
+      "order": 183,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:13:en:completely_wrong",
+      "order": 184,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:14:en:correct",
+      "order": 185,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:14:ar:correct",
+      "order": 186,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:14:en:arithmetic_error",
+      "order": 187,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:14:ar:arithmetic_error",
+      "order": 188,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:14:en:logic_error",
+      "order": 189,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:14:ar:logic_error",
+      "order": 190,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:14:en:completely_wrong",
+      "order": 191,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:14:ar:completely_wrong",
+      "order": 192,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:15:ar:correct",
+      "order": 193,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:15:en:correct",
+      "order": 194,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:15:ar:arithmetic_error",
+      "order": 195,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:15:en:arithmetic_error",
+      "order": 196,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:15:ar:logic_error",
+      "order": 197,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:15:en:logic_error",
+      "order": 198,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:15:ar:completely_wrong",
+      "order": 199,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "adapter_nf4",
+      "item_id": "retained:15:en:completely_wrong",
+      "order": 200,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:11:ar:correct",
+      "order": 201,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:11:en:correct",
+      "order": 202,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:11:ar:arithmetic_error",
+      "order": 203,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:11:en:arithmetic_error",
+      "order": 204,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:11:ar:logic_error",
+      "order": 205,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:11:en:logic_error",
+      "order": 206,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:11:ar:completely_wrong",
+      "order": 207,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:11:en:completely_wrong",
+      "order": 208,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:12:en:correct",
+      "order": 209,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:12:ar:correct",
+      "order": 210,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:12:en:arithmetic_error",
+      "order": 211,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:12:ar:arithmetic_error",
+      "order": 212,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:12:en:logic_error",
+      "order": 213,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:12:ar:logic_error",
+      "order": 214,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:12:en:completely_wrong",
+      "order": 215,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:12:ar:completely_wrong",
+      "order": 216,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:13:ar:correct",
+      "order": 217,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:13:en:correct",
+      "order": 218,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:13:ar:arithmetic_error",
+      "order": 219,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:13:en:arithmetic_error",
+      "order": 220,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:13:ar:logic_error",
+      "order": 221,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:13:en:logic_error",
+      "order": 222,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:13:ar:completely_wrong",
+      "order": 223,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:13:en:completely_wrong",
+      "order": 224,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:14:en:correct",
+      "order": 225,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:14:ar:correct",
+      "order": 226,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:14:en:arithmetic_error",
+      "order": 227,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:14:ar:arithmetic_error",
+      "order": 228,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:14:en:logic_error",
+      "order": 229,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:14:ar:logic_error",
+      "order": 230,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:14:en:completely_wrong",
+      "order": 231,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:14:ar:completely_wrong",
+      "order": 232,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:15:ar:correct",
+      "order": 233,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:15:en:correct",
+      "order": 234,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:15:ar:arithmetic_error",
+      "order": 235,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:15:en:arithmetic_error",
+      "order": 236,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:15:ar:logic_error",
+      "order": 237,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:15:en:logic_error",
+      "order": 238,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:15:ar:completely_wrong",
+      "order": 239,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 3,
+      "condition": "base_nf4",
+      "item_id": "retained:15:en:completely_wrong",
+      "order": 240,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:16:en:correct",
+      "order": 241,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:16:ar:correct",
+      "order": 242,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:16:en:arithmetic_error",
+      "order": 243,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:16:ar:arithmetic_error",
+      "order": 244,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:16:en:logic_error",
+      "order": 245,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:16:ar:logic_error",
+      "order": 246,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:16:en:completely_wrong",
+      "order": 247,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:16:ar:completely_wrong",
+      "order": 248,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:17:ar:correct",
+      "order": 249,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:17:en:correct",
+      "order": 250,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:17:ar:arithmetic_error",
+      "order": 251,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:17:en:arithmetic_error",
+      "order": 252,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:17:ar:logic_error",
+      "order": 253,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:17:en:logic_error",
+      "order": 254,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:17:ar:completely_wrong",
+      "order": 255,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:17:en:completely_wrong",
+      "order": 256,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:18:en:correct",
+      "order": 257,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:18:ar:correct",
+      "order": 258,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:18:en:arithmetic_error",
+      "order": 259,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:18:ar:arithmetic_error",
+      "order": 260,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:18:en:logic_error",
+      "order": 261,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:18:ar:logic_error",
+      "order": 262,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:18:en:completely_wrong",
+      "order": 263,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:18:ar:completely_wrong",
+      "order": 264,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:19:ar:correct",
+      "order": 265,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:19:en:correct",
+      "order": 266,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:19:ar:arithmetic_error",
+      "order": 267,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:19:en:arithmetic_error",
+      "order": 268,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:19:ar:logic_error",
+      "order": 269,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:19:en:logic_error",
+      "order": 270,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:19:ar:completely_wrong",
+      "order": 271,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:19:en:completely_wrong",
+      "order": 272,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:20:en:correct",
+      "order": 273,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:20:ar:correct",
+      "order": 274,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:20:en:arithmetic_error",
+      "order": 275,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:20:ar:arithmetic_error",
+      "order": 276,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:20:en:logic_error",
+      "order": 277,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:20:ar:logic_error",
+      "order": 278,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:20:en:completely_wrong",
+      "order": 279,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "base_nf4",
+      "item_id": "retained:20:ar:completely_wrong",
+      "order": 280,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:16:en:correct",
+      "order": 281,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:16:ar:correct",
+      "order": 282,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:16:en:arithmetic_error",
+      "order": 283,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:16:ar:arithmetic_error",
+      "order": 284,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:16:en:logic_error",
+      "order": 285,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:16:ar:logic_error",
+      "order": 286,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:16:en:completely_wrong",
+      "order": 287,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:16:ar:completely_wrong",
+      "order": 288,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:17:ar:correct",
+      "order": 289,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:17:en:correct",
+      "order": 290,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:17:ar:arithmetic_error",
+      "order": 291,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:17:en:arithmetic_error",
+      "order": 292,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:17:ar:logic_error",
+      "order": 293,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:17:en:logic_error",
+      "order": 294,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:17:ar:completely_wrong",
+      "order": 295,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:17:en:completely_wrong",
+      "order": 296,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:18:en:correct",
+      "order": 297,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:18:ar:correct",
+      "order": 298,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:18:en:arithmetic_error",
+      "order": 299,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:18:ar:arithmetic_error",
+      "order": 300,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:18:en:logic_error",
+      "order": 301,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:18:ar:logic_error",
+      "order": 302,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:18:en:completely_wrong",
+      "order": 303,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:18:ar:completely_wrong",
+      "order": 304,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:19:ar:correct",
+      "order": 305,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:19:en:correct",
+      "order": 306,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:19:ar:arithmetic_error",
+      "order": 307,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:19:en:arithmetic_error",
+      "order": 308,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:19:ar:logic_error",
+      "order": 309,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:19:en:logic_error",
+      "order": 310,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:19:ar:completely_wrong",
+      "order": 311,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:19:en:completely_wrong",
+      "order": 312,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:20:en:correct",
+      "order": 313,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:20:ar:correct",
+      "order": 314,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:20:en:arithmetic_error",
+      "order": 315,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:20:ar:arithmetic_error",
+      "order": 316,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:20:en:logic_error",
+      "order": 317,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:20:ar:logic_error",
+      "order": 318,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:20:en:completely_wrong",
+      "order": 319,
+      "scores": null,
+      "status": "not_attempted"
+    },
+    {
+      "block": 4,
+      "condition": "adapter_nf4",
+      "item_id": "retained:20:ar:completely_wrong",
+      "order": 320,
+      "scores": null,
+      "status": "not_attempted"
+    }
+  ],
+  "purpose": "development_only_instrument_diagnosis",
+  "required_pending_identities": [
+    "base_weights",
+    "tokenizer",
+    "base_reward_head",
+    "existing_adapter_bundle_and_reward_head",
+    "input_policy_and_extraction",
+    "software_and_determinism",
+    "hardware_device_compute_dtype",
+    "actual_input_ids_offsets_reward_positions",
+    "source_family_map"
+  ],
+  "runtime_identity_status": "pending_actual_local_evidence_no_digests_invented",
+  "source_script_sha256": {
+    "test_arabic_prm.py": "7624910473535adec1866115786e7eb355eb0974ba038235d61ca53d9256265f",
+    "test_english_prm.py": "4203f210cf3bf919f47207f47f065fa1a3425a1e97c15fae198e578bc9ac6b96"
+  },
+  "student_submission_exclusion_reason": "An exposed single Arabic human submission without independent labels is neither a held-out model candidate nor a matched bilingual observation.",
+  "student_submission_included": false
+}

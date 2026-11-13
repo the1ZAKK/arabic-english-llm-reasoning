@@ -1,6 +1,17 @@
 # Arabic-native pilot intake materials
 
-**Current v3.4:** [one private source-backed capture](../ARABIC_NATIVE_CAPTURE_V3_4.md)
+**Current v3.6:** [one submitted Arabic attempt is registered privately](../ARABIC_NATIVE_STUDENT_PROGRESS_V3_6.md),
+with student-stated authorship, prior answer exposure and reported AI feedback.
+The private copy preserves the original v3.4 archive and uploaded bytes, stores
+student self-checks as developer QC, and keeps independent labels/eligibility
+pending. Public trace/reviewer/assessment/timing templates remain header-only.
+The [sanitized private status](student_integration_status_v3_6.json) is a separate
+view, not a public trace record or human endorsement. Four [modern source screens](modern_source_screening_v3_6.csv)
+append to the original eight registry entries; no new modern problem is enrolled.
+The prepared [scoring scope](../SCORING_DEVELOPMENT_SCOPE_V3_6.md) executes nothing.
+Earlier collection snapshots follow.
+
+**Prior v3.4:** [one private source-backed capture](../ARABIC_NATIVE_CAPTURE_V3_4.md)
 and [technical evidence](source_capture_status_v3_4.json). The private algebra
 statement/reference are complete; the public worksheet withholds the answer, so
 public metadata-complete count remains zero. Source-ready/eligible problems,

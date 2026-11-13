@@ -1,5 +1,28 @@
 # Research decisions
 
+v3.6 — Accept the user's supplied Arabic solution as **student-stated authorship**,
+not independently authenticated work. Preserve its exact bytes, reported prior
+answer exposure, subsequent AI feedback and unknown original writing time. Register
+one private trace through existing tools; keep the student's substitution checks
+as developer QC and the assistant's arithmetic/advisory record separate. Twelve
+source-formatting blocks preserve seven numbered steps plus surrounding claims;
+no automatic human semantic boundary, correctness, neutrality or eligibility label.
+Private processing consent is purpose-limited and does not clear source-book rights.
+
+v3.6 provenance — Verify the actual primary document, not host-page language. The
+Arabic Oum el Bouaghi announcement links English texts; these cannot be counted
+as originally Arabic. An explicitly translated SUST text stays excluded. An Arabic
+course's local preparer/preface and a publisher's Arabic catalogue are leads, not
+proof that every exercise is original Arabic or permission-cleared. Preserve all
+prior source records and trace concrete item lineages before enrollment.
+
+v3.6 scoring — Bind prospective retained inputs without publishing copied text or
+inventing model/token/family identities. AB/BA/BA/AB retained-ID counterbalancing
+is an instrument-development design, not independent family evidence. Keep the
+exposed single Arabic student attempt outside the matched model roster. All 320
+proposed cells remain unattempted and unauthorized; no translation allowance is
+reused. Actual runtime/family binding and separate consent precede any forward pass.
+
 v3.5 — Milestone titles do not confer human validation. Reuse the actual preserved
 v3.4 packet and v3.2 worksheets; a blank exercise, assistant arithmetic or a
 consistent hash cannot stand in for student authorship or independent human review.

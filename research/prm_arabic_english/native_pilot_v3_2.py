@@ -56,6 +56,8 @@ def source_index(register):
         require(type(row.get("explicit_translation")) is bool, "Explicit translation evidence flag required")
         require(not row["explicit_translation"] or row["origin_screen"] == "translated_excluded",
                 "Confirmed translation must remain excluded from native origin")
+        require(row.get("documented_primary_text_language") in (None, "ar", "en", "fr"),
+                "Unknown documented primary-text language")
         require(row.get("item_permission_status") == "not_cleared", "Book-level evidence cannot clear an unspecified item")
         require(row.get("evidence") and all(identifier(e.get("url")) and identifier(e.get("locator")) and
                 identifier(e.get("observation")) for e in row["evidence"]), "Citable source/rights evidence required")
@@ -98,6 +100,9 @@ def collection_report(rows, register):
         lead = sources[row["source_id"]]
         require(not (lead["explicit_translation"] and row["origin"] == "arabic_native"),
                 "Translated Arabic material cannot be counted as native")
+        require(not (lead.get("documented_primary_text_language") in ("en", "fr") and
+                     row["origin"] == "arabic_native"),
+                "Known non-Arabic primary text cannot be counted as originally Arabic")
         if row["eligibility"] == "excluded":
             excluded += 1
             records.append({"slot_id": row["slot_id"], "stage": "excluded", "blockers": ["collector_excluded"]})

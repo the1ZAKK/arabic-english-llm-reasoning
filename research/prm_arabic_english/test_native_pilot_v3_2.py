@@ -40,11 +40,11 @@ class PilotIntakeTests(unittest.TestCase):
         rows = pilot.read_csv(pilot.KIT / "collection_manifest.csv", pilot.COLLECTION_FIELDS)
         report = pilot.collection_report(rows, register)
         self.assertEqual(report, json.loads((pilot.KIT / "collection_status.json").read_bytes()))
-        self.assertEqual((report["target_problems"], report["source_leads_screened"]), (20, 8))
+        self.assertEqual((report["target_problems"], report["source_leads_screened"]), (20, 12))
         self.assertEqual(report["entered_candidate_records"], 1)
         self.assertEqual(report["candidate_metadata_complete_records"], 0)
         self.assertEqual(report["source_ready_for_human_review"], 0)
-        self.assertEqual(report["source_leads_confirmed_translated"], 1)
+        self.assertEqual(report["source_leads_confirmed_translated"], 2)
         self.assertFalse(report["human_validation_complete"])
         self.assertFalse(report["training_or_export_eligibility_granted"])
 
@@ -97,6 +97,21 @@ class PilotIntakeTests(unittest.TestCase):
             self.assertEqual(sum(r["target_difficulty"] == "introductory" for r in selected), 2)
         self.assertEqual({r["split"] for r in rows}, {"dev"})
         self.assertEqual({r["origin"] for r in rows}, {"unknown"})
+
+    def test_arabic_hosting_cannot_override_documented_non_arabic_primary_text(self):
+        register = source_register()
+        register["sources"][0]["documented_primary_text_language"] = "en"
+        with self.assertRaisesRegex(ValueError, "non-Arabic primary text"):
+            pilot.collection_report(filled_rows(), register)
+        register["sources"][0]["documented_primary_text_language"] = "ar"
+        self.assertEqual(pilot.collection_report(filled_rows(), register)["source_ready_for_human_review"], 20)
+        real = json.loads((pilot.KIT / "source_register.json").read_bytes())
+        self.assertEqual(core.digest(real["sources"][:8]), real["v3_6_continuation"]["prior_eight_entries_sha256"])
+        leads = pilot.source_index(real)
+        self.assertEqual(leads["OEB-SOULA-ALG-EN"]["documented_primary_text_language"], "en")
+        self.assertEqual(leads["TLEMCEN-JOUMAA-PROB-2021"]["documented_primary_text_language"], "ar")
+        self.assertTrue(leads["SUST-CAMBRIDGE-TRANSLATION-2015"]["explicit_translation"])
+        self.assertTrue(all(s["item_permission_status"] == "not_cleared" for s in real["sources"]))
 
     def test_complete_declarations_do_not_authenticate_origin_or_approve_humans(self):
         result = pilot.collection_report(filled_rows(), source_register())
