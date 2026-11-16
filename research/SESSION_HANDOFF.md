@@ -1,6 +1,54 @@
 # Session handoff
 
-## Current v3.7 handoff — three modern captures, origin/use/humans pending
+## Current ArMATH v1 handoff — audited source pool, human/rights gates remain
+
+Start with [ARMATH_AUDIT_V1.md](ARMATH_AUDIT_V1.md) and
+[armath_audit_v1/README.md](armath_audit_v1/README.md). Acquisition milestone
+`4ff4e13f3837c059b74e61c48fd089ff3550098f` pins actual source revision
+`260850e0510e95f709d0806b5fbdd9dc553e4458`. The five JSON folds contain 1,200
+records each: 3,533 `novel`, 2,467 `translated`. No separate answer, original Arabic
+solution trace, step-label or per-item author/book field exists. Licence is undeclared;
+raw sources stay outside public Git. No human/permission evidence is invented.
+
+The new standard-library `armath_audit_v1.py` reuses existing digest, normalization,
+AST literal readers and guards. It never imports source model code. Acquisition is
+explicit/pinned; audit is offline. New private destinations must be outside every
+Git checkout and not exist. Source data remain unchanged. Output is metadata,
+calculated values, missingness, grouping and unlocked proposals, not training data.
+Published SUMMARY/source manifest/expected-artifact hashes bind actual outputs.
+CI reacquires Arabic JSON only, recomputes all 6,000 rows and verifies every output
+fingerprint on Windows/Linux; private outputs/raw data are not uploaded as artifacts.
+
+Native equation results: 3,512 exact rational, 21 precision-stable irrational
+approximations requiring interpretation. Source-answer comparisons: zero/undefined.
+Separate complete-question parser: 898 covered, 897 agree, one technical source
+discrepancy. Native QC: 897 automatic, 2,635 needs-review, one rejection; 882 retained
+automatic candidates after 15 duplicate selections are omitted. These have only
+11 broad linked components. All native candidates occupy 213 canonical templates
+and 52 conservative connected components; 117 template groups cross old folds.
+Heuristic semantic flags affect 437 records, not a measured error rate. The limited
+59-hash existing-project comparison has zero exact matches but does not rule out
+paraphrased/template/pretraining overlap. Four old manual source captures and the
+student-stated private trace are preserved, never silently merged into this source.
+
+The private metadata packet has per-record results, duplicate/family maps, unlocked
+split, automatic IDs, seven separate AI case notes, and a 32-record source-link
+review page with blank A/B/adjudicator CSVs. It contains no original dataset text.
+Actual reviewer/person/decision/date fields remain empty. Review sample/inspection
+components stay development-only: 3,470 native dev-proposed / 63 test-candidates,
+only four automatic candidates in the latter. No locked benchmark is created.
+Keep the full private calculated-reference ledger outside tuning/model inputs.
+
+Next obtain actual rights/item lineage and qualified Arabic problem/trace/step/final
+work, observed human effort and defensible topic/family diversity. ArMATH is a
+source pool, not a PRM benchmark; 100 is a feasibility-review target, while 250/500
+validated evaluation commitments are unsupported. The existing 320-cell scoring
+scope remains unattempted; actual matched runtime/input identities and separate
+authorization are still required. No inference, scoring, model download, training,
+active budget, scheduled tasks, data release, Global-MGSM, main or frozen42 change.
+All 2,005 historical nine-attempt counters and original human QC remain preserved.
+
+## Prior v3.7 handoff — three modern captures, origin/use/humans pending
 
 Read [ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md](ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md)
 and `native_pilot_v3_2/modern_capture_status_v3_7.json`. Three source-backed private

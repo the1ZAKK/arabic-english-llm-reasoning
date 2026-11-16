@@ -1,5 +1,21 @@
 # Experiment and evidence registry
 
+ArMATH source audit v1 (16 November 2026, Asia/Shanghai) —
+[acquisition](ARMATH_ACQUISITION_V1.md), [findings](ARMATH_AUDIT_V1.md),
+[aggregate evidence](armath_audit_v1/SUMMARY.json). Upstream pinned at
+`260850e0510e95f709d0806b5fbdd9dc553e4458`: 6,000 actual records; 3,533 novel,
+2,467 translated/excluded. No answer/step-label field or declared redistribution
+licence. Full offline audit: 3,512 rational and 21 high-precision irrational results;
+898 complete-question checks yield 897 agreements/one discrepancy. Native QC:
+897 automatic, 2,635 pending, one technical rejection; 882 after conservative
+question deduplication, 11 linked components. Fifty-two native-containing
+components are not verified source-author families. Thirty-two development QA
+records have source permalinks and blank human worksheets. Human reviews/labels,
+rights clearance, benchmark eligibility and model observations remain zero.
+Two full-data outputs agree byte-for-byte; cross-platform CI verifies their hashes.
+No raw dataset, human decision, original student text, model generation/scoring,
+training, budget renewal, frozen artifact or main modification is published/done.
+
 v3.7 modern source capture (13 November 2026, Asia/Shanghai) —
 [collection report](ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md),
 [source identities/counts](native_pilot_v3_2/modern_capture_status_v3_7.json).

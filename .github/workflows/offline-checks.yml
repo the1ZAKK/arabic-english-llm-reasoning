@@ -8,6 +8,7 @@ on:
       - ".gitattributes"
       - "research/diagnostic24_design_review_v2_1/**"
       - "research/native_pilot_v3_2/**"
+      - "research/armath_audit_v1/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
       - "scripts/check_reproducibility.py"
@@ -20,6 +21,7 @@ on:
       - ".gitattributes"
       - "research/diagnostic24_design_review_v2_1/**"
       - "research/native_pilot_v3_2/**"
+      - "research/armath_audit_v1/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
       - "scripts/check_reproducibility.py"
@@ -53,6 +55,7 @@ jobs:
             research/prm_arabic_english
             research/diagnostic24_design_review_v2_1
             research/native_pilot_v3_2
+            research/armath_audit_v1
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.11"
@@ -212,6 +215,10 @@ jobs:
           }
           exit 0
       - run: python scripts/check_reproducibility.py
+      - name: Acquire only pinned Arabic ArMATH source JSON for reproducibility (no models)
+        run: python -B research/prm_arabic_english/armath_audit_v1.py acquire --destination "${{ runner.temp }}/armath-source"
+      - name: Recompute all ArMATH audits offline and verify every output fingerprint
+        run: python -B research/prm_arabic_english/armath_audit_v1.py audit --source-dir "${{ runner.temp }}/armath-source" --output-dir "${{ runner.temp }}/armath-audit" --overlap-repository . --expected-output-sha256 research/armath_audit_v1/expected_artifacts.json --quiet
       - name: Parse the Windows launcher without starting inference
         if: runner.os == 'Windows'
         shell: pwsh

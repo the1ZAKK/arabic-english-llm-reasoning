@@ -1,5 +1,19 @@
 # Research decisions
 
+ArMATH v1 — Treat `novel` as source-declared Arabic origin; the actual derived tag
+is `translated`, even though the paper says inspired. Neither source availability,
+reported historical teacher checking nor equation evaluation supplies a licence,
+item-level native authentication or this project's independent Arabic step labels.
+The source has no separate answer column: do not report equation agreement as
+answer accuracy. Narrow complete-question arithmetic checks produce automatic
+candidates only; preserve unparsed wording and all flags/failures. Remove duplicate
+selection entries without deleting source rows. Known inspection/QA components are
+development-only; no seed/group change to force 500 held-out items. Coarse template
+links can overmerge and unknown lineage can still leak. Source-error proposals and
+AI triage remain separate from immutable originals and genuine human records.
+Publish metadata/code/aggregate facts only pending source rights; no raw corpus,
+locked references, training eligibility or model operation is authorized.
+
 v3.7 — Count actual source-backed captures separately from verified Arabic-native
 and benchmark-eligible problems: three new captures, four total, zero eligible.
 Local Arabic preparer credit/preface and mixed bibliographies do not settle each

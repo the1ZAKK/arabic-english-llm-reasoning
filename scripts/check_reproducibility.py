@@ -56,6 +56,7 @@ MODULES = (
     "test_scoring_diagnosis_v3_1",
     "test_native_pilot_v3_2",
     "test_native_pilot_review_v3_2",
+    "test_armath_audit_v1",
 )
 
 if __name__ == "__main__":

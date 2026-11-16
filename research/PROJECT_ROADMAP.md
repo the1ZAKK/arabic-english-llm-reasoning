@@ -1,5 +1,19 @@
 # Evidence-gated roadmap
 
+## ArMATH immediate scientific work
+
+[Pinned audit](ARMATH_AUDIT_V1.md) replaces catalogue-only expansion with 3,533
+source-declared native candidates and 882 strict automatic arithmetic candidates.
+Resolve actual dataset/source-book use and item lineage; conduct qualified Arabic
+problem/reference review and measure real annotation effort on the private 32-item
+development sample. Original Arabic reasoning and independent step/final labels
+are still absent. Do not mistake 11 automatic template components for 882
+independent problems. Current conservative proposal reserves inspection/QA-linked
+components for development and leaves only 63 native future-test candidates,
+unlocked. Expert family/topic review and supplementary native sources precede
+100/250/500 benchmark commitments. Preserve frozen proposal/runtime identities and
+the existing scoring/reranking protocols; no model operation or new allowance now.
+
 ## v3.7 next scientific dependency
 
 [Three actual modern captures](ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md) replace

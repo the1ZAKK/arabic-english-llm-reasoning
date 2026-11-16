@@ -1,6 +1,20 @@
 # ArabicPRM-T v2 project evidence
 
-## v3.7 modern collection — current
+## ArMATH v1 source audit — current
+
+[Findings](ARMATH_AUDIT_V1.md): actual pinned release has **3,533 `novel` and
+2,467 `translated`** problems, no separate answer or PRM-step fields. All native
+equations parse; 3,512 rational values and 21 reviewed-precision approximations
+are computed. Separate question parsing covers 898: 897 agreements, one technical
+exclusion. After deduplication, **882 automatic development candidates**, spanning
+only 11 conservative components, remain; **2,635 need review**. There are zero new
+developer/independent human judgments, cleared rights or eligible benchmark items.
+The existing student packet and frozen artifacts are preserved. No dataset text
+is published: upstream has no declared licence. The private source-link sample has
+32 records and blank A/B/adjudication forms. Full-data outputs are fingerprinted
+for Windows/Linux reproduction. No model/scoring/training/budget operation occurs.
+
+## v3.7 modern collection — prior snapshot
 
 [Actual source captures](ARABIC_NATIVE_MODERN_COLLECTION_V3_7.md): **three new
 modern problems across three domains**, four total with the historical capture.

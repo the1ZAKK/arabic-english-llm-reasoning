@@ -1,0 +1,11 @@
+{
+  "adjudicator.csv": "77977c16fe1890d8d78072daa1ee1a25011237da33efdc7c1bbc9e69b956d411",
+  "duplicate_report.json": "9f18a15abd830092fd5f74ebdb1e3c2ec8a36d087c2f850695b5a3c33303f3bd",
+  "family_split_proposal_not_locked.json": "90439ebb75d1a18cc0cfa8724437a95bd8a77f9efd659ddc97f53ca8b8da6832",
+  "per_record_audit.jsonl": "393f70867ac31d8e081baedee7384b15e913ad5a5210031b7f56b6e676f379f9",
+  "review_sources.html": "9b17bb6004df94931d87ae8ffad7ffd9deacf4f611fb8521877f3ba469946f2c",
+  "reviewer_a.csv": "5854eb1e8215e17b621de12237b6d4d0d0410c8656d3214765898c30dc3f14f8",
+  "reviewer_b.csv": "5854eb1e8215e17b621de12237b6d4d0d0410c8656d3214765898c30dc3f14f8",
+  "strict_automatic_candidate_ids.json": "545710462cc10abb799411619d395418ca38bee178be35d9e32003c8038327f9",
+  "summary.json": "67c8c448be5cca626fdd23b4d966efbe5ad9b3957a8609007a93beb63e71d217"
+}
