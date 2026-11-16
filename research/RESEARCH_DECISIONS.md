@@ -1,5 +1,16 @@
 # Research decisions
 
+16 November 2026 — Publish only the five unchanged original ArMATH Arabic folds
+following the user's replacement directive and reported direct written permission
+from co-author Reem Alghamdi for this repository with citation. Record the owner
+report: no private email was independently inspected; no standard licence,
+third-party blanket clearance or broader grant is inferred. Preserve the
+historical no-licence finding, source manifest, computed results and source errors.
+Publication is separate from cleaned data, native-origin authentication, human PRM
+labels or benchmark approval. Keep translated items out of native selection.
+Suspend/preserve unfinished 100-problem preparation without publishing it.
+Private correspondence and research records remain private.
+
 ArMATH v1 — Treat `novel` as source-declared Arabic origin; the actual derived tag
 is `translated`, even though the paper says inspired. Neither source availability,
 reported historical teacher checking nor equation evaluation supplies a licence,

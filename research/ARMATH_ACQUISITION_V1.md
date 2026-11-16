@@ -1,5 +1,12 @@
 # ArMATH — pinned acquisition inventory
 
+**Publication addendum, 16 November 2026:** The owner subsequently reported direct
+written author permission for complete redistribution in this research repository
+with citation. See [current dataset attribution](../data/armath/ATTRIBUTION.md)
+and the [byte-exact original mirror](../data/armath/original/). The email remains
+private/uninspected here; no standard licence is assigned. The inventory and
+upstream no-licence observation below are historical, unchanged findings.
+
 **16 November 2026, Asia/Shanghai.** Research branch continuation from `b002beb`.
 Official source: [reem-codes/ArMATH](https://github.com/reem-codes/ArMATH), revision
 `260850e0510e95f709d0806b5fbdd9dc553e4458`.

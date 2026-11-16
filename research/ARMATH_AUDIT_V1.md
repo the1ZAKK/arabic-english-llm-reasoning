@@ -1,5 +1,13 @@
 # ArMATH v1 — source and mathematical screening decision
 
+**Publication addendum, 16 November 2026:** Five unchanged upstream folds are now
+[mirrored with attribution](../data/armath/README.md) following the owner's report
+of direct author permission for this repository with citation. The historical
+audit measurements, source identities, human-review and eligibility counts below
+remain unchanged. Earlier metadata-only/rights-pending statements describe the
+audit snapshot; the reported publication permission does not complete PRM labels,
+item provenance, family separation or semantic review.
+
 **16 November 2026, Asia/Shanghai.** Acquisition milestone:
 [`4ff4e13`](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/4ff4e13f3837c059b74e61c48fd089ff3550098f).
 Source revision: `260850e0510e95f709d0806b5fbdd9dc553e4458`.

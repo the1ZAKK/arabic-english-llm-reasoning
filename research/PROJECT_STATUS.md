@@ -1,5 +1,21 @@
 # ArabicPRM-T v2 project evidence
 
+## Original ArMATH publication — current, 16 November 2026
+
+The complete [unchanged upstream data](../data/armath/README.md) are mirrored as
+five original JSON folds: **6,000 records, 3,533 `novel`, 2,467 `translated`**.
+The owner reports direct written permission from co-author Reem Alghamdi for
+redistribution in this research repository with citation. Private correspondence
+was not inspected/published; no standard licence or broader grant is inferred.
+[Attribution](../data/armath/ATTRIBUTION.md) records the scope and evidence status.
+All five SHA256/Git blobs match the unchanged acquisition manifest. Historical
+audit outputs, **882 automatic candidates**, **zero independently validated PRM
+benchmark problems**, frozen42 and historical counters remain unchanged.
+Read-only checks and Windows/Linux CI now include the published originals.
+The replacement directive suspends unfinished 100-problem review preparation;
+its private development work is preserved and excluded from publication.
+No inference, scoring, training, budget activation, private-data upload or main change.
+
 ## ArMATH v1 source audit — current
 
 [Findings](ARMATH_AUDIT_V1.md): actual pinned release has **3,533 `novel` and

@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.0",
-  "kind": "arabicprmt_public_armath_metadata_manifest",
+  "schema_version": "1.1",
+  "kind": "arabicprmt_public_armath_original_mirror_manifest",
   "release_date": "2026-11-16",
   "project": "ArabicPRM-T",
   "dataset": "ArMATH",
-  "distribution": "metadata_only_no_original_problem_text",
+  "distribution": "byte_exact_upstream_originals_with_attribution",
   "source": {
     "repository": "https://github.com/reem-codes/ArMATH",
     "revision": "260850e0510e95f709d0806b5fbdd9dc553e4458",
@@ -34,13 +34,94 @@
   "origin_policy": "novel is an upstream origin label, not independently authenticated item-level Arabic authorship",
   "verification_policy": "Equation evaluation and narrow question/equation checks do not establish semantic correctness or independent verified answers.",
   "rights": {
-    "status": "no_explicit_dataset_license_located",
-    "original_dataset_text_republished": false,
-    "rights_cleared_items": 0
+    "status": "owner_reported_written_author_permission_for_this_repository_with_citation",
+    "permission_reported_by": "repository owner",
+    "owner_report_recorded_on": "2026-11-16",
+    "author_named_in_owner_report": "Reem Alghamdi",
+    "scope": "Redistribution of the complete unchanged 6000-record ArMATH dataset in the1ZAKK/arabic-english-llm-reasoning with citation",
+    "permission_email_date": null,
+    "email_independently_inspected": false,
+    "private_email_published": false,
+    "standard_license_identifier": null,
+    "upstream_explicit_dataset_license_located": false,
+    "original_dataset_text_republished": true,
+    "other_rights_inferred": false,
+    "documentation": "data/armath/ATTRIBUTION.md"
   },
   "evaluation": {
     "locked_test_split_created": false,
     "PRM_downstream_improvement_measured": false
   },
-  "safety": "No per-record problems, answers, private annotator records, locked test list, or protected experiment outputs are included."
+  "safety": "Only authorized unchanged upstream folds and public attribution are included; no private correspondence, human reviewer records, student work, locked test list or protected experiment outputs are published.",
+  "original_data_directory": "data/armath/original/",
+  "files": [
+    {
+      "path": "original/fold_0.json",
+      "source_path": "datasets/armath/fold_0.json",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_0.json",
+      "bytes": 379496,
+      "sha256": "9304039003d5343ae337394c994261a8b0564581cd9aa4b1deb7d8773cf3e252",
+      "git_blob_sha1": "fff6e2334bc1a5e5c6715f17598feb12039eb017",
+      "records": 1200,
+      "origin_counts": {
+        "novel": 698,
+        "translated": 502
+      }
+    },
+    {
+      "path": "original/fold_1.json",
+      "source_path": "datasets/armath/fold_1.json",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_1.json",
+      "bytes": 382779,
+      "sha256": "1cca8eba255273f9b839819f171a81697b7d06e084f64005cba4608424bcdb5c",
+      "git_blob_sha1": "d0ae3f094cb24906cb8b1257374f42acbf181a38",
+      "records": 1200,
+      "origin_counts": {
+        "novel": 697,
+        "translated": 503
+      }
+    },
+    {
+      "path": "original/fold_2.json",
+      "source_path": "datasets/armath/fold_2.json",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_2.json",
+      "bytes": 383542,
+      "sha256": "95610f9746155bad0b57189e7fdb5c744941c40ca91a841969f9f0bf27bfb79e",
+      "git_blob_sha1": "65cff067ee11c1be638845436bf9565d80270293",
+      "records": 1200,
+      "origin_counts": {
+        "translated": 505,
+        "novel": 695
+      }
+    },
+    {
+      "path": "original/fold_3.json",
+      "source_path": "datasets/armath/fold_3.json",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_3.json",
+      "bytes": 373176,
+      "sha256": "d033ec7c2ba07313f8274ac07453b709bc85897deca22f7d38123b4ae9a80fb9",
+      "git_blob_sha1": "d538448f7730aef596d457ae78c4c66dd079e5fc",
+      "records": 1200,
+      "origin_counts": {
+        "translated": 467,
+        "novel": 733
+      }
+    },
+    {
+      "path": "original/fold_4.json",
+      "source_path": "datasets/armath/fold_4.json",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_4.json",
+      "bytes": 382271,
+      "sha256": "f36f126fa86252c3d6e1ca3cb6758f0d0b18257f30e05fa396e3ad93e20652dd",
+      "git_blob_sha1": "83f470d07cf7cd1ed7cf9a08c73bca2173259910",
+      "records": 1200,
+      "origin_counts": {
+        "translated": 490,
+        "novel": 710
+      }
+    }
+  ],
+  "attribution": "data/armath/ATTRIBUTION.md",
+  "checksums": "data/armath/SHA256SUMS.json",
+  "curated_eligibility_definition": "The zero development_release_eligible and locked_benchmark_eligible counts describe independently validated ArabicPRM-T data, not permission for this original upstream mirror."
 }

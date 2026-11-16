@@ -1,5 +1,38 @@
 # Session handoff
 
+## Current priority — original ArMATH publication
+
+The user's replacement directive supersedes 100-problem feasibility preparation.
+Starting research HEAD `64803f098221c8491e2d7ef5ce517d0a470f1548` includes both
+newer metadata-entry commits; neither was discarded. Unfinished 100-problem
+code/metadata is preserved separately and excluded from this change.
+
+Read [data/armath/README.md](../data/armath/README.md) and
+[ATTRIBUTION.md](../data/armath/ATTRIBUTION.md). Five freshly acquired upstream
+folds, 1,200 records each, are mirrored byte-for-byte under `data/armath/original/`.
+The source revision, old SHA256 values and Git blobs all match. Total: 3,533 novel,
+2,467 translated, 6,000 records. No independent origin/step-label or error-free
+assertion is made. The future curated ArabicPRM-T benchmark remains separate.
+
+The owner reports Reem Alghamdi's affirmative written response to their specific
+request to redistribute all records here with citation. Document that report:
+no private email content/address/headers, invented email date/signature/evidence
+hash, standard licence or broader grant. The actual email was not inspected here.
+The old upstream no-licence finding and all historical audit artifacts remain.
+
+`verify_armath_originals.py` is read-only: checks exactly five files, byte lengths,
+SHA256/Git blobs, original schema/counts and scoped metadata, without network or
+model imports. Windows checkout uses `-text` for original JSON; CI checks the
+published files, rejection controls, full source audit and existing native guards.
+Inspect this revision's Actions for final Windows/Linux results. Historical
+baseline `e6d5d731` passed 650 tests/OS in CI43815065473; that is not a claim
+about this revision's pending CI.
+
+Prior results remain 882 automatic candidates and zero independently validated
+PRM benchmark problems. Preserve student files, ledgers, human QC, 42 frozen
+fingerprints and 2,005 nine-attempt counters. No inference, scoring, training,
+budget activation, scheduling, Global-MGSM or main change.
+
 ## Current ArMATH v1 handoff — audited source pool, human/rights gates remain
 
 Start with [ARMATH_AUDIT_V1.md](ARMATH_AUDIT_V1.md) and

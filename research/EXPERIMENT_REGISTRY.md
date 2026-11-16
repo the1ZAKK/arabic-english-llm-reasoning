@@ -1,5 +1,18 @@
 # Experiment and evidence registry
 
+Original ArMATH mirror (16 November 2026, Asia/Shanghai) —
+[dataset](../data/armath/README.md), [attribution](../data/armath/ATTRIBUTION.md),
+[manifest](../data/armath/PUBLIC_DATASET_MANIFEST.json). Five fresh-acquired
+originals at upstream `260850e0510e95f709d0806b5fbdd9dc553e4458` match every old
+SHA256/Git blob: 6,000 records, 3,533 novel, 2,467 translated. The owner's reported
+author permission covers redistribution here with citation; the private email
+was not inspected/published and no standard licence is added. Mathematical audit:
+882 automatic development candidates, zero independently validated PRM benchmark
+items. Original source errors remain. This is source publication, not a model
+experiment or human annotation result. The superseded 100-problem preparation is
+preserved privately and excluded. No generation, scoring, training, budget,
+frozen42/history/QC or main change.
+
 ArMATH source audit v1 (16 November 2026, Asia/Shanghai) —
 [acquisition](ARMATH_ACQUISITION_V1.md), [findings](ARMATH_AUDIT_V1.md),
 [aggregate evidence](armath_audit_v1/SUMMARY.json). Upstream pinned at

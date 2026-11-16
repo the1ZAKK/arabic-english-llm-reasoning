@@ -1,5 +1,17 @@
 # Evidence-gated roadmap
 
+## Current priority — original-source publication
+
+Publish the five byte-exact ArMATH folds under [data/armath/original](../data/armath/original/)
+with citation and the owner's reported written permission scoped to this repository.
+Verify original hashes, origin counts and historical audit fingerprints on Windows
+and Linux. Source availability is separate from curated ArabicPRM-T eligibility:
+per-item provenance/family diversity, independent qualified Arabic problem/trace/
+step/final judgments and separately authorized model observations remain unresolved.
+The superseded 100-problem feasibility preparation is suspended; preserve its
+unfinished private work without including it in this publication. No experiment,
+model allowance or training starts here.
+
 ## ArMATH immediate scientific work
 
 [Pinned audit](ARMATH_AUDIT_V1.md) replaces catalogue-only expansion with 3,533
