@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "kind": "arabicprmt_public_armath_metadata_manifest",
+  "release_date": "2026-11-16",
+  "project": "ArabicPRM-T",
+  "dataset": "ArMATH",
+  "distribution": "metadata_only_no_original_problem_text",
+  "source": {
+    "repository": "https://github.com/reem-codes/ArMATH",
+    "revision": "260850e0510e95f709d0806b5fbdd9dc553e4458",
+    "paper": "https://aclanthology.org/2022.lrec-1.37/",
+    "source_file_checksums": "research/armath_audit_v1/source_manifest.json"
+  },
+  "audit": {
+    "audit_revision": "e6d5d731e3e0d99fad236b03572438ef7ca26f48",
+    "scientific_report": "research/ARMATH_AUDIT_V1.md",
+    "aggregate_metrics": "research/armath_audit_v1/SUMMARY.json",
+    "reproduction_instructions": "research/armath_audit_v1/README.md"
+  },
+  "counts": {
+    "source_records": 6000,
+    "source_declared_novel": 3533,
+    "source_declared_translated_excluded": 2467,
+    "independent_question_equation_agreement": 897,
+    "clear_disagreement": 1,
+    "needs_review": 2635,
+    "strict_automatic_deduplicated_development_candidates": 882,
+    "developer_reviewed": 0,
+    "independently_human_reviewed": 0,
+    "human_step_labels": 0,
+    "development_release_eligible": 0,
+    "locked_benchmark_eligible": 0
+  },
+  "origin_policy": "novel is an upstream origin label, not independently authenticated item-level Arabic authorship",
+  "verification_policy": "Equation evaluation and narrow question/equation checks do not establish semantic correctness or independent verified answers.",
+  "rights": {
+    "status": "no_explicit_dataset_license_located",
+    "original_dataset_text_republished": false,
+    "rights_cleared_items": 0
+  },
+  "evaluation": {
+    "locked_test_split_created": false,
+    "PRM_downstream_improvement_measured": false
+  },
+  "safety": "No per-record problems, answers, private annotator records, locked test list, or protected experiment outputs are included."
+}
