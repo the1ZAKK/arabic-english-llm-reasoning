@@ -1,0 +1,104 @@
+{
+  "acquired_at_utc": "2026-11-16T05:14:34.649711+00:00",
+  "dataset_fields": [
+    "equation",
+    "question",
+    "segmented",
+    "tag"
+  ],
+  "expected_folds": 5,
+  "expected_origin_counts": {
+    "novel": 3533,
+    "translated": 2467
+  },
+  "expected_records_per_fold": 1200,
+  "files": [
+    {
+      "bytes": 379496,
+      "git_blob_sha1": "fff6e2334bc1a5e5c6715f17598feb12039eb017",
+      "path": "datasets/armath/fold_0.json",
+      "sha256": "9304039003d5343ae337394c994261a8b0564581cd9aa4b1deb7d8773cf3e252",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_0.json"
+    },
+    {
+      "bytes": 382779,
+      "git_blob_sha1": "d0ae3f094cb24906cb8b1257374f42acbf181a38",
+      "path": "datasets/armath/fold_1.json",
+      "sha256": "1cca8eba255273f9b839819f171a81697b7d06e084f64005cba4608424bcdb5c",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_1.json"
+    },
+    {
+      "bytes": 383542,
+      "git_blob_sha1": "65cff067ee11c1be638845436bf9565d80270293",
+      "path": "datasets/armath/fold_2.json",
+      "sha256": "95610f9746155bad0b57189e7fdb5c744941c40ca91a841969f9f0bf27bfb79e",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_2.json"
+    },
+    {
+      "bytes": 373176,
+      "git_blob_sha1": "d538448f7730aef596d457ae78c4c66dd079e5fc",
+      "path": "datasets/armath/fold_3.json",
+      "sha256": "d033ec7c2ba07313f8274ac07453b709bc85897deca22f7d38123b4ae9a80fb9",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_3.json"
+    },
+    {
+      "bytes": 382271,
+      "git_blob_sha1": "83f470d07cf7cd1ed7cf9a08c73bca2173259910",
+      "path": "datasets/armath/fold_4.json",
+      "sha256": "f36f126fa86252c3d6e1ca3cb6758f0d0b18257f30e05fa396e3ad93e20652dd",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_4.json"
+    },
+    {
+      "bytes": 4979,
+      "git_blob_sha1": "e415dbc6f592acfcea1d811cc8a8bf6626962687",
+      "path": "README.md",
+      "sha256": "1522143da334ea592763b3927ddda09fa8cad67ce4476528a216ccad2bf49303",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/README.md"
+    },
+    {
+      "bytes": 23536,
+      "git_blob_sha1": "d5fb83e15a66085d931cbce373d42105ae1f37e1",
+      "path": "code/pre_data.py",
+      "sha256": "1e2e3b91e453ae1ffac0f300b5047ad1cd54659f7b31834628d730ff7a1895a2",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/code/pre_data.py"
+    },
+    {
+      "bytes": 3666,
+      "git_blob_sha1": "3010c70fef46fa87dce0eb8001fe0d14bde4120a",
+      "path": "code/expressions_transfer.py",
+      "sha256": "96ca02fe66272152a63b017b59d8a7d7aef9995265e8cf56ec71539b32f2f932",
+      "url": "https://raw.githubusercontent.com/reem-codes/ArMATH/260850e0510e95f709d0806b5fbdd9dc553e4458/code/expressions_transfer.py"
+    },
+    {
+      "bytes": 417719,
+      "path": "paper.pdf",
+      "sha256": "818b7d19dfb726cdd1f5511dc6a573d471410bc59cd0a30193c338165dfdb283",
+      "url": "https://aclanthology.org/2022.lrec-1.37.pdf"
+    }
+  ],
+  "inference_or_model_operations_authorized": 0,
+  "kind": "armath_source_manifest_v1",
+  "origin_evidence": {
+    "authorship_interpretation": "Source-declared creatively authored pool, not independently authenticated per-record authorship. Paper also mentions some source-book questions and supplies no item author/book lineage.",
+    "paper_label_for_derived_group": "inspired",
+    "paper_locator": "PDF p.3, section 3; PDF p.4, section 4",
+    "reported_prior_qc": "Authors report a native speaker and a Saudi primary-school mathematics teacher checked question/equation pairs; this is not our independent step annotation.",
+    "source_tag_derived_excluded": "translated",
+    "source_tag_native_candidate": "novel"
+  },
+  "paper_url": "https://aclanthology.org/2022.lrec-1.37/",
+  "reasoning_traces_or_step_labels_provided": false,
+  "redistribution": {
+    "github_license_metadata": null,
+    "license_file_in_revision_tree": false,
+    "public_original_files_copied": false,
+    "public_problem_text_release_permitted_by_this_audit": false,
+    "repository_tree_entries": 22,
+    "scope": "Metadata, original analysis code and aggregate facts only; source text stays out of public repository. Paper access/public repository do not supply an observed dataset redistribution grant.",
+    "status": "no_explicit_dataset_license_located"
+  },
+  "repository": "https://github.com/reem-codes/ArMATH",
+  "revision": "260850e0510e95f709d0806b5fbdd9dc553e4458",
+  "separate_answer_field": false,
+  "source_record_identifier_policy": "revision plus fold JSON pointer; canonical-source-record SHA256 from native_study_v1.digest"
+}
