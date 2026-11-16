@@ -557,7 +557,7 @@ def existing_overlap(records, repository):
         from native_pilot_v3_2 import read_csv, COLLECTION_FIELDS
         for row in read_csv(p, COLLECTION_FIELDS):
             if row['normalized_problem_sha256']: known.add(row['normalized_problem_sha256'])
-        inputs.append({'path': str(p.relative_to(repo)), 'sha256': byte_sha(p.read_bytes())})
+        inputs.append({'path': p.relative_to(repo).as_posix(), 'sha256': byte_sha(p.read_bytes())})
     missing = []
     for name in ('research/prm_arabic_english/translation_batches/prm800k_qc12/translations.json',
                  'research/prm_arabic_english/translation_batches/prm800k_qc24_r1/translations.json'):

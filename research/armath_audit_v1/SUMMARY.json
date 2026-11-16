@@ -1,6 +1,6 @@
 {
   "all_records": 6000,
-  "audit_code_sha256": "312017d7b99c8dbff5cc02e99a4b287887ef38eca2e75806040befe852efad84",
+  "audit_code_sha256": "26d86dbe80518759c606af22dc449c8eec3129328d9e88156ffed11555cd08a9",
   "automatic_candidates_deduplicated_by": "punctuation/Arabic-folded question identity; all ledger rows retained",
   "comparisons_against_separate_source_answers": 0,
   "developer_reviewed": 0,

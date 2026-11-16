@@ -4,6 +4,7 @@ from fractions import Fraction
 import json
 from pathlib import Path
 import tempfile
+import csv
 import unittest
 from unittest.mock import patch
 
@@ -211,6 +212,17 @@ class ArmathAuditTests(unittest.TestCase):
                 audit.acquire(base/'source',json.loads(audit.MANIFEST.read_bytes()))
             self.assertFalse((base/'audit').exists())
             self.assertFalse((base/'source').exists())
+
+    def test_overlap_provenance_uses_portable_forward_slashes_on_native_windows(self):
+        from native_pilot_v3_2 import COLLECTION_FIELDS
+        with tempfile.TemporaryDirectory() as temp:
+            base=Path(temp);manifest=base/'research/native_pilot_v3_2/collection_manifest.csv'
+            manifest.parent.mkdir(parents=True)
+            with manifest.open('w',encoding='utf-8-sig',newline='') as stream:
+                csv.DictWriter(stream,fieldnames=COLLECTION_FIELDS).writeheader()
+            result=audit.existing_overlap([],base)
+            self.assertEqual(result['inputs'][0]['path'],'research/native_pilot_v3_2/collection_manifest.csv')
+            self.assertNotIn('\\',result['inputs'][0]['path'])
 
 
 if __name__ == '__main__':
