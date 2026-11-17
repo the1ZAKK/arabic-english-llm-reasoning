@@ -1,5 +1,24 @@
 # Research decisions
 
+v4.1, 17 November 2026 — Adopt the owner's development-first workflow: no
+full-6,000-record manual certification is needed to prepare limited experiments.
+Retain the original publication, v4 panel, legacy partitions and historical records.
+Separate a small purposive development instrument from the strict future held-out
+human benchmark gate; never counterfeit test labels to reuse that analyzer.
+
+Exclude unresolved/discrepant references from automatic accuracy. An equation's
+value is not a checked answer to its question. Five narrow complete-question
+agreements are numerical proxies, seven selected word references remain pending.
+Report numerical-only success beside Arabic protocol success; lexical formatting
+failures are not mathematical errors. Share the fixed pool across selectors and
+freeze choices before reference joins. Expose missingness and source clustering;
+no population CI or efficacy claim from the twelve development cases.
+
+Use the actual 1.5B Skywork PRM at matched NF4, comparing the existing adapter AND
+head bundle. Defer quantization causality and wider generation-language claims.
+No new observations, approval identities, active allowance or execution code are
+created by [this preparation](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md).
+
 v4.0, 17 November 2026 — Resume the preserved 100-item development selection
 without changing the old 32 or the draft 68/order to remove errors. Keep original
 questions/equations and old audit statuses; add question-derived mathematics,

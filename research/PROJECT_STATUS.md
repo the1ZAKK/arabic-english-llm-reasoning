@@ -1,5 +1,28 @@
 # ArabicPRM-T v2 project evidence
 
+## v4.1 — controlled ArMATH development, current
+
+The owner no longer requires reviewing all 6,000 sources before development.
+[The measured preparation](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md) selects twelve
+already-exposed source-tagged novel cases: eight word problems, four controls,
+twelve equation templates and eight legacy similarity components (not verified
+families). Five question-derived agreement proxies can support a narrow automatic
+endpoint; seven unresolved references are excluded, with known discrepancies
+outside the scope. Zero independent human labels/eligible benchmark problems.
+
+The [inactive source-bound proposal](armath_development_v4_1/proposal.json) fixes
+96 Arabic candidate slots, 512 output tokens each, and 240 unique matched PRM
+scoring cells, 1,024 input tokens each. Reused v3 selectors and token/runtime checks
+support an offline recorded replay; no model/executor/active budget exists for
+this scope. Actual PRM fingerprints, local capability/memory checks, selected
+reference work and separately authorized guarded execution remain necessary.
+Arabic protocol success and numerical correctness are reported separately.
+
+All 706 local offline tests pass, including 29 new targeted regressions. Check the commit-specific
+Windows/Linux Actions results for full validation; software tests do not certify
+translation, mathematics or human annotation. Previous stages below are retained
+history; publication is complete and the optional 100-case packet is preserved.
+
 ## v4.0 — 100-problem feasibility review, current
 
 [Measured findings](ARMATH_FEASIBILITY_V4_0.md) and

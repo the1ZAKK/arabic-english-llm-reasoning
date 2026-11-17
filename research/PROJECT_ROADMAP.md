@@ -1,6 +1,28 @@
 # Evidence-gated roadmap
 
-## v4.0 next — genuine human feasibility observations
+## Current v4.1 critical path — actual controlled evidence
+
+Use [the bounded development scope](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md), not a
+full-6,000-review gate. Resolve the seven selected word-problem reference cases
+and sample-check the five automatic proxies. Inventory actual generator/PRM
+artifacts and input/memory feasibility read-only. Bind the guarded executor and
+runtime before any separate generation/scoring decision; do not activate budgets.
+
+Then, only after authorization, retain one shared 12×8 Arabic pool and matched
+base/adapter NF4 observations; use real English mirrors and independent step maps
+on the fixed eight-trace diagnostic subset. Seal choices before human outcomes.
+Prioritize first-versus-base final-answer success, then adapter/majority/random/
+oracle and explanatory diagnostics. Failures and unresolved references remain
+visible. This exposed development scope cannot establish population efficacy.
+
+Larger held-out claims still require source-family evidence, majority native
+coverage, original Arabic traces and independent Arabic step/final judgments.
+Existing 100/250/500 feasibility plans remain options, not prerequisites for these
+small development experiments. Translation recovery stays supporting work; do not
+fine-tune before diagnosis. Prior stages below are historical unless explicitly
+superseded here.
+
+## Retained v4.0 option — human feasibility observations
 
 Use the completed [100-problem packet](armath_v4_0/README.md), beginning with its
 fixed first ten. Obtain actual developer work separately from independent qualified
@@ -17,7 +39,7 @@ problem/trace/step/final labels, diversity and reviewed family evidence. Continu
 source publication identities and permission attribution; scoring/model protocols
 remain unattempted and require separate authorization.
 
-## Current priority — original-source publication
+## Completed source-publication stage — historical plan
 
 Publish the five byte-exact ArMATH folds under [data/armath/original](../data/armath/original/)
 with citation and the owner's reported written permission scoped to this repository.

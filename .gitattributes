@@ -96,5 +96,9 @@ data/armath/original/*.json -text
 research/prm_arabic_english/armath_feasibility_v4.py -text
 research/prm_arabic_english/armath_quality_v4.py -text
 research/armath_v4_0/*.json -text
+research/prm_arabic_english/armath_development_v4_1.py -text
+research/prm_arabic_english/native_study_v1.py -text
+research/prm_arabic_english/scoring_diagnosis_v3_1.py -text
+research/armath_development_v4_1/*.json -text
 # Retain the pre-existing Windows CSV line endings; only the located slot changes.
 research/native_pilot_v3_2/collection_manifest.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

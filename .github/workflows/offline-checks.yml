@@ -10,6 +10,7 @@ on:
       - "research/native_pilot_v3_2/**"
       - "research/armath_audit_v1/**"
       - "research/armath_v4_0/**"
+      - "research/armath_development_v4_1/**"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -25,6 +26,7 @@ on:
       - "research/native_pilot_v3_2/**"
       - "research/armath_audit_v1/**"
       - "research/armath_v4_0/**"
+      - "research/armath_development_v4_1/**"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -61,6 +63,7 @@ jobs:
             research/native_pilot_v3_2
             research/armath_audit_v1
             research/armath_v4_0
+            research/armath_development_v4_1
             data/armath
       - uses: actions/setup-python@v7.0.0
         with:
@@ -229,6 +232,8 @@ jobs:
         run: python -B research/prm_arabic_english/armath_audit_v1.py audit --source-dir "${{ runner.temp }}/armath-source" --output-dir "${{ runner.temp }}/armath-audit" --overlap-repository . --expected-output-sha256 research/armath_audit_v1/expected_artifacts.json --quiet
       - name: Reproduce private v4 review packet and verify every output fingerprint (no model or human labels)
         run: python -B research/prm_arabic_english/armath_feasibility_v4.py --audit-dir "${{ runner.temp }}/armath-audit" --output-dir "${{ runner.temp }}/armath-v4-review" --expected-output-sha256 research/armath_v4_0/expected_artifacts.json --quiet
+      - name: Reproduce inactive ArMATH development proposal and zero-observation replay without models
+        run: python -B research/prm_arabic_english/armath_development_v4_1.py prepare --audit-dir "${{ runner.temp }}/armath-audit" --output-dir "${{ runner.temp }}/armath-development-v4-1"
       - name: Parse the Windows launcher without starting inference
         # The v4 feasibility packet has no model or eligibility-promotion path.
         if: runner.os == 'Windows'

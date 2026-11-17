@@ -1,5 +1,31 @@
 # Session handoff
 
+## Current v4.1 handoff — controlled development preparation
+
+Continue from [the twelve-case scope](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md) and
+[offline operations](armath_development_v4_1/README.md). User removed the
+full-dataset-review prerequisite, not mathematical/human evidence requirements.
+All cases come from the unchanged exposed v4 panel. Five automatic proxies and
+seven excluded unresolved references; no new human labels or benchmark eligibility.
+The optional 100-case review packet and all prior private/student artifacts stay
+intact. Do not resume broad dataset-review infrastructure as the critical path.
+
+New code only prepares 96 inactive source-question requests and replays supplied
+recorded pools; it imports no model/HTTP client and writes no execution approval.
+Proposed resources are 96×512 generation and 240×1024 matched scoring cells, with
+shared canonical cells counted once. Real runtime/weights/head/adapter identities,
+local JSON/thinking capabilities, context capacity, GPU fit, durable execution
+ledger integration and separate authorization are unresolved. Prior pilot20 stays
+exhausted; diagnostic24 and v3.6 scoring remain inactive. No laptop state was read
+in this cloud session and no model request, download, scoring or training occurred.
+
+All 706 offline tests pass locally, including 29 new targeted regressions.
+Windows/Linux remote evidence must be recorded after completion; do not assume queued CI passed. Existing public
+ArMATH hashes/audit artifacts and frozen42/historical counters remain protected.
+Next safe work is actual selected-reference/human work and a read-only runtime
+inventory, then guarded-executor binding before any execution decision. Human
+identities and populated worksheets remain private. Earlier handoffs follow.
+
 ## Current v4.0 handoff — 100 actual source cases, humans pending
 
 Usability follow-up: all developer/A/B/C CSV rows now follow the preserved HTML

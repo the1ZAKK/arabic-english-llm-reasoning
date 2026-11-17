@@ -1,5 +1,18 @@
 # Experiment and evidence registry
 
+v4.1 — prospective controlled ArMATH development only, 17 November 2026.
+[Scope and endpoint](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md),
+[reproducible instrument](armath_development_v4_1/proposal.json).
+Twelve exposed novel-tagged development IDs: 8 word + 4 arithmetic, 12 canonical
+templates/8 legacy components, 5 narrow automatic references/7 excluded unresolved.
+Proposed 96 generation reservations (K8, 512 tokens), 192 Arabic matched NF4 cells
+plus 48 additional diagnostic cells (240 total, 1024 tokens/input). Actual requests,
+scores, runtime hashes, approvals, human labels, new training and benchmark-ready
+problems: zero. Existing v3.6 320-cell and v2 diagnostic scopes are not activated
+or combined with this proposal. Reuses v3 selectors/recorded-offset validators;
+706 local tests pass (29 new regressions) and the zero-observation replay is reproduced. Remote per-commit CI is
+a software result only. Historical entries remain unchanged below.
+
 v4.0 CI fixture repair — bounded retries for transient Windows PermissionError
 while removing only the owned disposable browser fixture after quit. Persistent
 cleanup errors and all browser/data assertions still fail. No shared profile,

@@ -1,0 +1,2536 @@
+{
+  "active_budget_created": false,
+  "approved": false,
+  "approved_at_utc": null,
+  "approved_by": null,
+  "benchmark_eligible_problems": 0,
+  "blocks_not_verified_source_families": [
+    {
+      "block": 1,
+      "condition_order": [
+        "base_nf4",
+        "adapter_nf4"
+      ],
+      "language_order": [
+        "ar",
+        "en"
+      ],
+      "problem_ids": [
+        "ARMATH:260850e0510e:fold0:0078",
+        "ARMATH:260850e0510e:fold0:0832",
+        "ARMATH:260850e0510e:fold0:0675"
+      ]
+    },
+    {
+      "block": 2,
+      "condition_order": [
+        "adapter_nf4",
+        "base_nf4"
+      ],
+      "language_order": [
+        "en",
+        "ar"
+      ],
+      "problem_ids": [
+        "ARMATH:260850e0510e:fold1:0152",
+        "ARMATH:260850e0510e:fold1:0528",
+        "ARMATH:260850e0510e:fold2:0253"
+      ]
+    },
+    {
+      "block": 3,
+      "condition_order": [
+        "adapter_nf4",
+        "base_nf4"
+      ],
+      "language_order": [
+        "ar",
+        "en"
+      ],
+      "problem_ids": [
+        "ARMATH:260850e0510e:fold2:0622",
+        "ARMATH:260850e0510e:fold2:0798",
+        "ARMATH:260850e0510e:fold2:0307"
+      ]
+    },
+    {
+      "block": 4,
+      "condition_order": [
+        "base_nf4",
+        "adapter_nf4"
+      ],
+      "language_order": [
+        "en",
+        "ar"
+      ],
+      "problem_ids": [
+        "ARMATH:260850e0510e:fold2:0836",
+        "ARMATH:260850e0510e:fold4:0735",
+        "ARMATH:260850e0510e:fold4:0662"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "canonical_equation_template": "AT:df3962f749069a65b9651ac5",
+      "diagnostic_positions": [
+        0,
+        1
+      ],
+      "equation_sha256": "29e918f89bda46aed68e5633d5178785bb03c1ab8ad6b54f7f74fac154aba07a",
+      "json_pointer": "/78",
+      "legacy_component_not_verified_family": "AF:7a44252daa38535400d2ed70",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold0:0078",
+      "quality_flags": [],
+      "question_sha256": "be8fec61d166cf11b926fd4380f1bc21d578aae34ecba7cf10768777565de712",
+      "reference_gate": "unresolved_excluded_from_accuracy",
+      "reference_record_sha256": "d3a1b932310df41c785693860232ce8902fe4228c29fa3844ff65fc74247494f",
+      "screening_role_not_domain": "word_problem",
+      "source_record_sha256": "52349a8b6813d834b7de800cf56ad4881103d637afe61b793157b9bddc11584a",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_0.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:98c88490613ec52ca0f3b04b",
+      "diagnostic_positions": [],
+      "equation_sha256": "93a9211afc130c92793268bd1b4b31a37115d9fa576c237013d33d47b5b3f6f0",
+      "json_pointer": "/832",
+      "legacy_component_not_verified_family": "AF:f9d2de7c0570e72116ca8a61",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold0:0832",
+      "quality_flags": [],
+      "question_sha256": "4dc6129bf7dc2ba6c434cb511b84e50fd29618c43a7c959fe160a0a7ec0e6988",
+      "reference_gate": "unresolved_excluded_from_accuracy",
+      "reference_record_sha256": "14b8c47d89dab860619c7e7b8ac6937bd3e15b848fe032f95d0b04757e335439",
+      "screening_role_not_domain": "word_problem",
+      "source_record_sha256": "e663c9ba0e72e4672ff3ff10acc260d178b41e8c916cc3fcf49cd77c6c88fdda",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_0.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:4294b0e2938f27290f19afa2",
+      "diagnostic_positions": [],
+      "equation_sha256": "bb8aab6316fbecb88dba2dcf694295b3a99505b71f47b6f799bb2cbb2b58b406",
+      "json_pointer": "/675",
+      "legacy_component_not_verified_family": "AF:fc47e25d39364bccf80294db",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold0:0675",
+      "quality_flags": [],
+      "question_sha256": "804c06bcc78f0d6b8559497531a2c46e7f497600c46c4a872dcdff04720a987c",
+      "reference_gate": "automatic_question_agreement_proxy",
+      "reference_record_sha256": "36fdc4ab68a71a106fde88b21616471967767bf6209148a28f90c18877311a36",
+      "screening_role_not_domain": "arithmetic_control",
+      "source_record_sha256": "b157fce393dcbd3133c55135edd7a484dfacd7c48064ce98ca1def3176d3a929",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_0.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:6b911280ab88b9edaa5b9277",
+      "diagnostic_positions": [
+        0,
+        1
+      ],
+      "equation_sha256": "e2f3d4baf0b1f28ecc3756bf961b2a24c7aaff47dd94791889b23abc4ccf9ac1",
+      "json_pointer": "/152",
+      "legacy_component_not_verified_family": "AF:7a44252daa38535400d2ed70",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold1:0152",
+      "quality_flags": [
+        "mixed_time_units_need_relation_check"
+      ],
+      "question_sha256": "8a2fef38d8fd553d585f8b09c76ad670f1d4c9c27550f279a2f9d68dd0fc9a28",
+      "reference_gate": "unresolved_excluded_from_accuracy",
+      "reference_record_sha256": "ad5d773e9bc35beb7c17ed13d0fbd76d21761016ee880cf700784baf33eaa6fa",
+      "screening_role_not_domain": "word_problem",
+      "source_record_sha256": "9bf153d734c7ba599e0568f0b3510ddf93ec728e6c95c873ebcdc4c013b3f196",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_1.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:9731ee65945ce8bc3aed78ee",
+      "diagnostic_positions": [],
+      "equation_sha256": "5d7170a84ac951ae2701c5070ae02555a6a9e7934ce156c5fcae047fe235c40a",
+      "json_pointer": "/528",
+      "legacy_component_not_verified_family": "AF:9506fd88d2691476b627b87c",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold1:0528",
+      "quality_flags": [],
+      "question_sha256": "89713c608f1ae377ece191887b759006bb204fe38fe748bb9d6f5be7a3518611",
+      "reference_gate": "automatic_question_agreement_proxy",
+      "reference_record_sha256": "cf3ffc5d35ee7599f0b8f71d060f1f8235b3e36fb4013269f24a337e5ca6e513",
+      "screening_role_not_domain": "word_problem",
+      "source_record_sha256": "5495b506016e17b05a037681197e86259ef9cd05c5f6e44bf764c4fb1731639d",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_1.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:e36c3a517bc99f91eb7765d9",
+      "diagnostic_positions": [],
+      "equation_sha256": "d16bc9400b225ccd01260c847f4bdf98ebc54475e57771bc5a8aa09f9b5368c7",
+      "json_pointer": "/253",
+      "legacy_component_not_verified_family": "AF:7a44252daa38535400d2ed70",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold2:0253",
+      "quality_flags": [],
+      "question_sha256": "796efad648a8e2288a0cba472fc2b7392f98e08f5fd44904712b81dc4ca97c5c",
+      "reference_gate": "automatic_question_agreement_proxy",
+      "reference_record_sha256": "e1a572d6bf5916f948333e3060b9d762646c54c32cc5902c3fe381e6cefe2c3a",
+      "screening_role_not_domain": "arithmetic_control",
+      "source_record_sha256": "02cbb802497dc27ae9b9b0ddb060986d08713dcac962bac38cc6160db49c94e3",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_2.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:7a2c419350f5942d75549572",
+      "diagnostic_positions": [
+        0,
+        1
+      ],
+      "equation_sha256": "0f4a032d54fcae04ee896b207049aa6a4be404d422ed576450f74dfa4a6c420d",
+      "json_pointer": "/622",
+      "legacy_component_not_verified_family": "AF:9506fd88d2691476b627b87c",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold2:0622",
+      "quality_flags": [
+        "geometry_entities_units_or_pi_convention_unverified",
+        "geometry_entity_unit_or_constant_review"
+      ],
+      "question_sha256": "3c2e52fd61bb76b9eee81d9230c3047dba2fd7725bfb6b3ba20e7ca5ba991cd9",
+      "reference_gate": "unresolved_excluded_from_accuracy",
+      "reference_record_sha256": "eb97bf1e0802087da74bbd0b13c93dfdd216e6299eadf3c059385f631ba9c159",
+      "screening_role_not_domain": "word_problem",
+      "source_record_sha256": "0fb0c5612400c2e2b85d19e9d889461093affaa30e75f82e28b310694ca9defc",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_2.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:772b66d2c2882270d8e58c99",
+      "diagnostic_positions": [],
+      "equation_sha256": "270183a0fdbfa1bab3f28b23aca7de02335aa8d17030e58bc6ed3f452bbb0175",
+      "json_pointer": "/798",
+      "legacy_component_not_verified_family": "AF:ce8c4e13f3609e25747dbd98",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold2:0798",
+      "quality_flags": [],
+      "question_sha256": "1d21e6eaa6d49aaf5d6fede804e343c541fc177a7e8aa8ead86c2a03b9ee10e6",
+      "reference_gate": "unresolved_excluded_from_accuracy",
+      "reference_record_sha256": "813f5a2a62d7b9b96f227a29f8128188923bb7828f6d55ed98ec4cd1b76ce3b7",
+      "screening_role_not_domain": "word_problem",
+      "source_record_sha256": "1a434e880888837a3f0958374a49c06b9c52d5aa0de3358ef32dff1b676213be",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_2.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:1f639694fb122139513b77bc",
+      "diagnostic_positions": [],
+      "equation_sha256": "5323134aaeff16a61cfb6ebf1f98e722699b339680541dbee021e00b15242af6",
+      "json_pointer": "/307",
+      "legacy_component_not_verified_family": "AF:df37fc65972d08f3326729f7",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold2:0307",
+      "quality_flags": [],
+      "question_sha256": "cb669eafd947428d9f519190a380c50ee534c5f933ecdb1a0972ad7673043ac0",
+      "reference_gate": "automatic_question_agreement_proxy",
+      "reference_record_sha256": "9e972a6098874e9135d8109d0213807d317257b7c31f8311f1e1554c09310298",
+      "screening_role_not_domain": "arithmetic_control",
+      "source_record_sha256": "9def7504b4be6e8f27ef8b7172d329832909e2b58ecf751ee575daecd2580df0",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_2.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:347a9bd115c6616a754a99e4",
+      "diagnostic_positions": [
+        0,
+        1
+      ],
+      "equation_sha256": "8968be1be2c653bb05464ca13d0e889dddea7851dda680e42b33d7d7d6858c00",
+      "json_pointer": "/836",
+      "legacy_component_not_verified_family": "AF:8193de13239d0bcd42a2bd47",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold2:0836",
+      "quality_flags": [],
+      "question_sha256": "54bfd767d5a0190b594204c276f87b64972b90d0b824b0912720198936211c92",
+      "reference_gate": "unresolved_excluded_from_accuracy",
+      "reference_record_sha256": "3d0055e1f02132b311ab94035b325d8c630fb271de38b9bec8ebd66ad4b8135e",
+      "screening_role_not_domain": "word_problem",
+      "source_record_sha256": "0e759745b852cfd2bf7739caead82556e6c7fa52b8d8b6249b885297eacc0599",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_2.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:ca3bf3219e767f3d39fc2b80",
+      "diagnostic_positions": [],
+      "equation_sha256": "738e6c355dc3ee2ad1f02068cb4406525403a04b2115fd9d233e75b9ad4455d4",
+      "json_pointer": "/735",
+      "legacy_component_not_verified_family": "AF:e16f443ac2e87532bc974465",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold4:0735",
+      "quality_flags": [
+        "geometry_entities_units_or_pi_convention_unverified",
+        "geometry_entity_unit_or_constant_review"
+      ],
+      "question_sha256": "08184cd8aca41828a26be78d41064e77b1308fd3b610fe57b554a068a56f5f7a",
+      "reference_gate": "unresolved_excluded_from_accuracy",
+      "reference_record_sha256": "8e2781ad0ad5d30cd841cde0287e3f9f3d66f0a1761c27d5765b2947eccd1ce3",
+      "screening_role_not_domain": "word_problem",
+      "source_record_sha256": "3dabb48ef4137e06f52e0b25877dd5928be3567fa6a5581f269480e686c428f0",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_4.json#L1-L1"
+    },
+    {
+      "canonical_equation_template": "AT:dfe9993fe4333fe3f70cf2cc",
+      "diagnostic_positions": [],
+      "equation_sha256": "48a5918c4eaf6d5d7001ce6258208527c4dbfd735efbdb552b3b79b78a0cb2d5",
+      "json_pointer": "/662",
+      "legacy_component_not_verified_family": "AF:7a44252daa38535400d2ed70",
+      "partition": "development_proposal",
+      "problem_id": "ARMATH:260850e0510e:fold4:0662",
+      "quality_flags": [],
+      "question_sha256": "dd5c6e747c3934509b625af26320af7f56b0d0f27a1b884072c9988bd2638db5",
+      "reference_gate": "automatic_question_agreement_proxy",
+      "reference_record_sha256": "6a5ca3a1a53f16401c67885d27d2a01edcc59df17f8469cb418d0904961b71c2",
+      "screening_role_not_domain": "arithmetic_control",
+      "source_record_sha256": "db6080768cdb8ed00451b0c56d97b5c8bd5c0d94523edfb094f49cc277048e9b",
+      "source_tag": "novel",
+      "source_url": "https://github.com/reem-codes/ArMATH/blob/260850e0510e95f709d0806b5fbdd9dc553e4458/datasets/armath/fold_4.json#L1-L1"
+    }
+  ],
+  "development_only": true,
+  "endpoint": {
+    "automatic_reference_cases": 5,
+    "population_accuracy_claim_allowed": false,
+    "primary": "Arabic-protocol-compliant final-answer success: base_nf4 vs first, K=8",
+    "secondary": [
+      "numeric-only success at same positions",
+      "adapter_nf4",
+      "answer_majority",
+      "uniform_random_expectation",
+      "oracle_available",
+      "selection_loss",
+      "K=1,2,4,8"
+    ],
+    "unresolved_reference_cases_excluded": 7
+  },
+  "generation": {
+    "candidate_slots": 96,
+    "dispatch": [
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0078:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold0:0078",
+        "request_sha256": "cd5c95a01b7c4940149462a0b5c7a54294e504a6b19ff180d1a299089b27d22f",
+        "seed": 1602452768
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0832:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold0:0832",
+        "request_sha256": "4ceabd0a12a39f59a9fa6c978cbbe4e371cde5cfdf6742cb37c3c7fb883421bc",
+        "seed": 1458001393
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0675:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold0:0675",
+        "request_sha256": "c12065baafba56e4e82dde16f8c2ca1b0316c7f835b8c81fd818e5e6a53b4b0f",
+        "seed": 1169968396
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0152:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold1:0152",
+        "request_sha256": "fed48a9ce01d45ccf5362d6c1cf4f94e4e709870aed0d2b94dc0a8f52cbdcdfa",
+        "seed": 1845695906
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0528:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold1:0528",
+        "request_sha256": "89036d72e982f574bfe3ce4fd8b3ef8aae2ff2a7e1a8d4a170d532b5204f52cb",
+        "seed": 666324841
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0253:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold2:0253",
+        "request_sha256": "be273f98357d8e96dcdfbbf06b1b87e65533f575c80e07e113683092f43f6c8d",
+        "seed": 1612127709
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0622:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold2:0622",
+        "request_sha256": "c43d1ebcb9fac9c29691b469a260fc874ef2622dedc5f485f4acfa5514339db6",
+        "seed": 408162381
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0798:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold2:0798",
+        "request_sha256": "81f1095577490a7d535ef0629c54a34f67d7940c44441c6f77c6a57c179cb2cf",
+        "seed": 82100036
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0307:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold2:0307",
+        "request_sha256": "d05ab0db253fa899cf197d148e32bf003a785f2ccb8c7f9f10c1f4bec403f538",
+        "seed": 2129348002
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0836:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold2:0836",
+        "request_sha256": "83362cf3af4fbfed9b15f70bb3c3bcdc4f2bca93f1ab1889b310953d8fde252a",
+        "seed": 1618607707
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0735:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold4:0735",
+        "request_sha256": "71e08687ac73dfebd0448f489655bd886130901453664e9f11f057fbc5af7374",
+        "seed": 1466467631
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0662:c0",
+        "position": 0,
+        "problem_id": "ARMATH:260850e0510e:fold4:0662",
+        "request_sha256": "835b09d83e257061efc64d59f4169b83a89cf4d64f23180482d263b8e8d444b4",
+        "seed": 422641734
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0078:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold0:0078",
+        "request_sha256": "04848ccd09934d22729a7420e6816a4572f9f51c05e87c36e3ecb5d7cb96ab2d",
+        "seed": 1950294578
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0832:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold0:0832",
+        "request_sha256": "49b46d44dd9edd75b29ae7cd93ea24fd2f9f111fee4f87c1873338908a14b2b6",
+        "seed": 1807906723
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0675:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold0:0675",
+        "request_sha256": "a906898a4ae271e7dab28b00f06baac2f63caff0e88689f6134faf52cf11f1f4",
+        "seed": 1987647287
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0152:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold1:0152",
+        "request_sha256": "298baca20c48e89f7fcc1dd2895316b6880c6b60ecc8de70f369d1a32f02f8c0",
+        "seed": 1830174453
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0528:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold1:0528",
+        "request_sha256": "90e4ec09806000fcce4f1c5d8857908c6ac4e7c860cc70e2f67a8322973c866d",
+        "seed": 538893764
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0253:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold2:0253",
+        "request_sha256": "ae5900f758473c79a669cac0cfd736c7a47e70f0fa717b9b593a876bd41631e9",
+        "seed": 932876693
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0622:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold2:0622",
+        "request_sha256": "a55b58203947f2d157e7cc95300041afca7b84b2251a8c0c21dd591394bf1b1f",
+        "seed": 3451705
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0798:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold2:0798",
+        "request_sha256": "3662e85c9488adfcb7f7e48c721dfeead0e9f2b113869f1c72e2f71cef3e0334",
+        "seed": 1908285506
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0307:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold2:0307",
+        "request_sha256": "ad75e82d91abfd6d9a2f1157dfd12d33027f555407b975f69e6bbb442abd426a",
+        "seed": 996613311
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0836:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold2:0836",
+        "request_sha256": "447ad8833b23983684fbc94194285f7d6a2a90f06464d281feeac677e22dddfb",
+        "seed": 506508800
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0735:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold4:0735",
+        "request_sha256": "1f5b6a1f912081fe1fd5eb75e684ad6495cfe70a98844ed7ac7148abdf83e144",
+        "seed": 1036711559
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0662:c1",
+        "position": 1,
+        "problem_id": "ARMATH:260850e0510e:fold4:0662",
+        "request_sha256": "78ca717ab418b67adaa7b98eb2d98364307a402efa3de2f543365b4a20e730e9",
+        "seed": 948168492
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0078:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold0:0078",
+        "request_sha256": "5d59de6a6d83316d2dd6a915c7ffc6feae035cc1232e61dc2e78a96467f629eb",
+        "seed": 984970965
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0832:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold0:0832",
+        "request_sha256": "a65790744824b80d233d7995a5d2e5bb97245d5bbb0290d8a6cc753a2808670f",
+        "seed": 286491895
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0675:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold0:0675",
+        "request_sha256": "8d38cb6c78873524f12f7674b9a3f6af9063e1e6fb496f7fde8e5b72e1588c73",
+        "seed": 530877496
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0152:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold1:0152",
+        "request_sha256": "518e470b30450112333a5bd7cd91f1cb7f9587d5f4722a69ea0c84726b90d5c2",
+        "seed": 1258599919
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0528:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold1:0528",
+        "request_sha256": "657b8ed082ec5ef7fdd88b238f5e1de0e1e53dd9932f9d7d178112e2afe0e569",
+        "seed": 1464521955
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0253:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold2:0253",
+        "request_sha256": "e58bcf3e8a06ae17672a5fb78edec04b8008b89ef765c7245a1cc34bc5cec3fc",
+        "seed": 438377928
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0622:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold2:0622",
+        "request_sha256": "93fcc0a85f14048c3dc0405ee7fc13060cf4429df37fe749ba7134e514271916",
+        "seed": 1781492124
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0798:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold2:0798",
+        "request_sha256": "8638102a699426c3915b7385d7544b5bbb5752b0ef01b8c2cf62107eb578e1eb",
+        "seed": 194321431
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0307:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold2:0307",
+        "request_sha256": "f2f6bf956ca30228797e4da4a6d75db338352bd030afa095d42bbb06a2e46a6f",
+        "seed": 1022796525
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0836:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold2:0836",
+        "request_sha256": "fbaee99dbf2d8d866741661d7cc12d78496b71509b26cdffb3312efcc0d39271",
+        "seed": 1173279881
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0735:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold4:0735",
+        "request_sha256": "80196a3b7ecffcb9385ba66cad3fc2a9fae88bbc689ddb0e15fe2babcdb47179",
+        "seed": 1755192291
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0662:c2",
+        "position": 2,
+        "problem_id": "ARMATH:260850e0510e:fold4:0662",
+        "request_sha256": "e789016457a9efca86727adef2447fd081062da1b5a67309b1e289723a100d0f",
+        "seed": 1846404961
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0078:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold0:0078",
+        "request_sha256": "83b7daaaa6e9a8531fa107b474de5a5823300575918d4e22be96acc6ee6a27be",
+        "seed": 1053791699
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0832:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold0:0832",
+        "request_sha256": "9d52dd7aec2b86c256746d5bbcdfd83ee04c2914b6dbf3f8201672772ae8b483",
+        "seed": 658968065
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0675:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold0:0675",
+        "request_sha256": "d06bf886ff7def24424cbb18caba3ffd1107168d22eb3ad66ad1d85f5eed9302",
+        "seed": 1340574674
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0152:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold1:0152",
+        "request_sha256": "0cbee27058f717f7a30bf3e3128dd4c584a5decb2d012868c39d80133a80cda7",
+        "seed": 1653471352
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0528:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold1:0528",
+        "request_sha256": "0a36bede7661f175ac355ecf6419863c516db0b2bb615941f0ba4fe886ada5a9",
+        "seed": 763675193
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0253:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold2:0253",
+        "request_sha256": "0b748d807cefae4ecdc345de64ff02296e2a177471d4cd02f3dedad197be398a",
+        "seed": 499198886
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0622:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold2:0622",
+        "request_sha256": "bb87de6161266cb7e1f79a38550494431eee87c5f65da8bd4bb49861ddfc7f9b",
+        "seed": 1335401003
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0798:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold2:0798",
+        "request_sha256": "527a2bdd0cb2090686b91d40849fd43514a9f5938bf1f1d76e3e58f0b3fd21b9",
+        "seed": 2060341021
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0307:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold2:0307",
+        "request_sha256": "4282000cc8d3da42155be7e9d26ada08312eec78b01e0b6c2f94764e228ca55a",
+        "seed": 1411340439
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0836:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold2:0836",
+        "request_sha256": "ad460469001ff58a7cc07c1f45f6f877f904ecfe36b3b7b305a4d6eaeb517602",
+        "seed": 404041552
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0735:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold4:0735",
+        "request_sha256": "b9619e2cd193a27ee10105426f3cde140ce025996ef0d9eb273bff489c8213d4",
+        "seed": 1197796789
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0662:c3",
+        "position": 3,
+        "problem_id": "ARMATH:260850e0510e:fold4:0662",
+        "request_sha256": "50d50f520d4c4dafe1df6d418fdbf918df597a31b323c4e4c430bd237f126997",
+        "seed": 592086901
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0078:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold0:0078",
+        "request_sha256": "72f1c1ab96d686817d3851d5cd87ea92dd439406f4c298f120059147ec83df88",
+        "seed": 341225968
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0832:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold0:0832",
+        "request_sha256": "e963453c964cfe548454fe112766149069d8c768f3d53edfd0953291b1052791",
+        "seed": 1236227348
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0675:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold0:0675",
+        "request_sha256": "ffd2372d7095a5e8fb08eef34b19465daadad45bb446a38a05337193068dff6f",
+        "seed": 150681938
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0152:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold1:0152",
+        "request_sha256": "c2aaad578d3419627c969b04bb3b7d23809d04535eff1d8d99eca64df205961e",
+        "seed": 301301562
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0528:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold1:0528",
+        "request_sha256": "fcd25f49456f0f66daed4f30a74179f031044b0eb92685362bed8174095aec5d",
+        "seed": 2105301819
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0253:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold2:0253",
+        "request_sha256": "ffa0792319eae19b1f4b72b0b2ac7164454fc73dd1c5e0568e34e7fa6035cd01",
+        "seed": 532455067
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0622:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold2:0622",
+        "request_sha256": "a506e483609f0ad6808236909704d08e6e1a68722027f51e0b301d8e2d54c9a5",
+        "seed": 1297591372
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0798:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold2:0798",
+        "request_sha256": "f729f3c50f69b18a4836e1ca9c600c185cc7237de9492ed7c9bb93d6a1123504",
+        "seed": 685642961
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0307:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold2:0307",
+        "request_sha256": "375bf67fad80d824de52591431a68763897a276ed8c3c08ebdddc5606db23d61",
+        "seed": 1306789442
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0836:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold2:0836",
+        "request_sha256": "a4f215ec3d0a7fe6b83936915d5efe0c9c9a57c429d9e9ccc1644e39346003aa",
+        "seed": 1312036827
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0735:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold4:0735",
+        "request_sha256": "33842ba82544d43b3f9ec1b193596eb406fd8e1639556e721d5754e752fabba7",
+        "seed": 727677558
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0662:c4",
+        "position": 4,
+        "problem_id": "ARMATH:260850e0510e:fold4:0662",
+        "request_sha256": "711eef66ebf00e0418487afa119906d0944f83dced3e17afcce4ef097b8ae1d4",
+        "seed": 751439097
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0078:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold0:0078",
+        "request_sha256": "f47bd7d36a53f6b5742abae720024b5fb08a7fe43db665ca42c6b7382382c86b",
+        "seed": 1632232824
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0832:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold0:0832",
+        "request_sha256": "af4a76339b9df3970f5e88d71cf8b513e895b42c0148e5f5700e00326efcef63",
+        "seed": 978631525
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0675:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold0:0675",
+        "request_sha256": "53fdcdc421bfc9c8e6ee419c39c44d525f494101be0547711fea649f8d8794c9",
+        "seed": 1868050238
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0152:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold1:0152",
+        "request_sha256": "4e7e5f572d7767486d1c4797c05d1d07cf01e55feda85048bceca725d4e4a27b",
+        "seed": 970966404
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0528:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold1:0528",
+        "request_sha256": "6b30a3f1c1a064319958425063a411e5dd36032586beccce91d0c0146419a034",
+        "seed": 736259636
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0253:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold2:0253",
+        "request_sha256": "a4f91c00df49978b268ae1fb3d4e8a122c673159fbf8e6327936be0e08473c3e",
+        "seed": 2041847966
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0622:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold2:0622",
+        "request_sha256": "642b431e40c4c1ca5fb6e685b24166274ce2e91379aae78dab4cf3790a8264ec",
+        "seed": 1543759421
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0798:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold2:0798",
+        "request_sha256": "f33d2bbc913fe0eaef8bb35fe575ff6754bbadfc2b0689fd35f0ba74f601444d",
+        "seed": 1548237355
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0307:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold2:0307",
+        "request_sha256": "d47327b492a7ede1b7dd7a19303c3ee3d42ac344844c2e69ca4f5f2276c8752a",
+        "seed": 1533744854
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0836:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold2:0836",
+        "request_sha256": "b2d9d27bdb7fa7e50701dc2770f94881a6795e6387fef1e6d48247101ee22b26",
+        "seed": 734804015
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0735:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold4:0735",
+        "request_sha256": "bcb38c66ba47357a9fe15e15af1217f6d41d75373ae30b70606d86ec9272aefc",
+        "seed": 1569327789
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0662:c5",
+        "position": 5,
+        "problem_id": "ARMATH:260850e0510e:fold4:0662",
+        "request_sha256": "2b481337475ce98ee35b6685f07fee3d0b1a0cae6db120f7c1e21e5a19e2fff2",
+        "seed": 654934166
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0078:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold0:0078",
+        "request_sha256": "a781569d48fd6cfff18b215cebfde5d6cb2aff50af5d7ccd0e96bf084e8a5d9f",
+        "seed": 2132590871
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0832:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold0:0832",
+        "request_sha256": "43c17b7c217f3c54406afd444e973d8c5f92db93fb23d433292ef13ba9d2ea54",
+        "seed": 680647687
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0675:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold0:0675",
+        "request_sha256": "842bb555c5458edb808a20c2dcad697c618796c910baf71043eec6d68e5be7c6",
+        "seed": 1165422542
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0152:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold1:0152",
+        "request_sha256": "d8297fe124c27224ec1c6fbeab1c38429d99c18ed9afca7b1c654cfc038215c0",
+        "seed": 2044856260
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0528:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold1:0528",
+        "request_sha256": "16e816b090c88e9be601d130775fb1867a435059215cc9a86bfc3520cc58743c",
+        "seed": 1959473063
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0253:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold2:0253",
+        "request_sha256": "8aa6da2772d8b064174eb75c28c64e9b18389cea2e823dc527f762a5ba14ded2",
+        "seed": 736342400
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0622:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold2:0622",
+        "request_sha256": "302294837aacdee777af69844cb5b8b6752316ebaeea954f4fe165ddce12e677",
+        "seed": 257264630
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0798:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold2:0798",
+        "request_sha256": "99b32cc90d80bef4e7b1cf2ffe0f6f16dfa78bfa65759392d061baa77b28d983",
+        "seed": 1182742628
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0307:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold2:0307",
+        "request_sha256": "cf6dc25cd7fd95cfb971b868e39547150d9909150ae1c1accbf35150fb731141",
+        "seed": 696642086
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0836:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold2:0836",
+        "request_sha256": "56774ab0149ab94cdeb65f410d697126ab8f5c2bb10f483f1eb202a04bb81304",
+        "seed": 1994165860
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0735:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold4:0735",
+        "request_sha256": "cea2f8e4272214eab71dfb477127ab1c1b0761bfccaa6f3afb649bd108d2e95b",
+        "seed": 1294812870
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0662:c6",
+        "position": 6,
+        "problem_id": "ARMATH:260850e0510e:fold4:0662",
+        "request_sha256": "ea17096df54500ea4eb328739add5580d7dfb049257bc445af969ca20867afb2",
+        "seed": 803934885
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0078:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold0:0078",
+        "request_sha256": "7c6fa095177ba5ff37a5c1176f3b17ba05f32e8c423ca5c67846df48b3882d01",
+        "seed": 1171016526
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0832:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold0:0832",
+        "request_sha256": "c89dad5ae1857dd854b816f9c656bf6dcd07575cc2427bdda358cb460d6834b4",
+        "seed": 685176407
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold0:0675:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold0:0675",
+        "request_sha256": "17fe90bcec1a7d43ae250e547df91af51902a9530eba492aebf9e2c0c1969389",
+        "seed": 1098757977
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0152:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold1:0152",
+        "request_sha256": "3cb12a70ac8cbb6b2aeb9ee9e5e421004b6d4e035ec41cb3009c557ecb1ec5d4",
+        "seed": 316264918
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold1:0528:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold1:0528",
+        "request_sha256": "c9e48f59f72828d2ed7f15ad0d8e483eff0b67566148d7fa2e56adc3aea09264",
+        "seed": 673785203
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0253:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold2:0253",
+        "request_sha256": "32fdcaeb0e956090e92167bf510d913062c513815f73f455d4330ea2f4f00f28",
+        "seed": 326895306
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0622:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold2:0622",
+        "request_sha256": "53d909b14ba036c4293dd72da521efa7021a63bff6b86298fce50d84c4fd6fc6",
+        "seed": 1227938152
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0798:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold2:0798",
+        "request_sha256": "824e7295d3b35138a6cb4a71b544acde9db3c39666ab41d9a91cabbb53d557ff",
+        "seed": 1918534924
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0307:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold2:0307",
+        "request_sha256": "277b5bc213dcc511c862b02ea52a62e8b3ace157a1d0cd93155a93ab94f2766b",
+        "seed": 370254748
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold2:0836:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold2:0836",
+        "request_sha256": "4365ca563fe751c171b5b17de3a88cc4107708b74498ecbbb6fce74fd980d9da",
+        "seed": 34752440
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0735:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold4:0735",
+        "request_sha256": "796022863b8d0456070053b2f24f3b0d8098490f8f6ba6cbe5794b1b5c93ea23",
+        "seed": 749525746
+      },
+      {
+        "candidate_id": "ARMATH:260850e0510e:fold4:0662:c7",
+        "position": 7,
+        "problem_id": "ARMATH:260850e0510e:fold4:0662",
+        "request_sha256": "b5c816852a4ce947a02453f8c23d57c9c508c765c164e9be3f5dd1a350840d63",
+        "seed": 2024880826
+      }
+    ],
+    "generated_token_ceiling": 49152,
+    "k": 8,
+    "local_capability_and_context_checks_pending": true,
+    "maximum_generated_tokens_per_request": 512,
+    "maximum_new_attempts_per_candidate": 1,
+    "maximum_requests_proposed": 96,
+    "model": "qwen3:4b",
+    "no_refunds_no_retries_no_replacements": true,
+    "observed_local_model_digest": null,
+    "options": {
+      "min_p": 0.0,
+      "num_ctx": 2048,
+      "num_predict": 512,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0,
+      "temperature": 0.8,
+      "top_k": 40,
+      "top_p": 0.9
+    },
+    "required_model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "stream": false,
+    "think": false
+  },
+  "generation_requests_authorized": 0,
+  "human_step_labels": 0,
+  "kind": "prospective_armath_development_v4_1",
+  "known_excluded_problem_ids": [
+    "ARMATH:260850e0510e:fold3:0280",
+    "ARMATH:260850e0510e:fold2:0366",
+    "ARMATH:260850e0510e:fold4:0141",
+    "ARMATH:260850e0510e:fold2:1019"
+  ],
+  "new_observations": 0,
+  "policy_files_sha256": {
+    "research/armath_audit_v1/expected_artifacts.json": "ffacbdc5fde3c23edbb3e24598bd47a1786f6a4f44d8d29bf57ea7eb2139f5d2",
+    "research/armath_v4_0/expected_artifacts.json": "0436e6858ddc2e6c092220df7d22e4abe4c773b1f502139ef483b647d933962f",
+    "research/prm_arabic_english/armath_development_v4_1.py": "20179fb0c25463bbf98c785c7f928acfbb02432e88e3334fb5d6edaeabe1ce77",
+    "research/prm_arabic_english/armath_quality_v4.py": "358ef40dd40c315e6f2ca6a911c8d6d01235747994c96f52f625690e4e967ed2",
+    "research/prm_arabic_english/native_study_v1.py": "46f151f1d3b2409079c1ef5623313fc916f24cf89a373af83570d7e59a7f85c9",
+    "research/prm_arabic_english/scoring_diagnosis_v3_1.py": "604757d3427d14b81f1ed98b220e49f7c35944f3025dbf5eedb969c643cd25b9"
+  },
+  "reference_bundle_sha256": "9f4e36266b48b7e1f805ec1fb91c86ed25b2b716454a68a5c2ac73bab0a22c65",
+  "scoring": {
+    "additional_diagnostic_cells": 48,
+    "aggregation": "nonempty raw newline positions; all-position diagnostic from same vector",
+    "arabic_canonical_cells": 192,
+    "batch_size": 1,
+    "conditions_unbound": {
+      "adapter_nf4": {
+        "adapter_bundle_sha256": null,
+        "base_weights_sha256": null,
+        "compute_dtype": "float16",
+        "determinism_sha256": null,
+        "device": null,
+        "extraction_sha256": null,
+        "hardware_sha256": null,
+        "input_policy_sha256": null,
+        "precision": "nf4",
+        "quantization": {
+          "bits": 4,
+          "double_quant": true,
+          "type": "nf4"
+        },
+        "reward_head_sha256": null,
+        "software_sha256": null,
+        "tokenizer_sha256": null
+      },
+      "base_nf4": {
+        "adapter_bundle_sha256": null,
+        "base_weights_sha256": null,
+        "compute_dtype": "float16",
+        "determinism_sha256": null,
+        "device": null,
+        "extraction_sha256": null,
+        "hardware_sha256": null,
+        "input_policy_sha256": null,
+        "precision": "nf4",
+        "quantization": {
+          "bits": 4,
+          "double_quant": true,
+          "type": "nf4"
+        },
+        "reward_head_sha256": null,
+        "software_sha256": null,
+        "tokenizer_sha256": null
+      }
+    },
+    "diagnostic_cells_including_shared": 64,
+    "effect": "base versus existing adapter AND reward-head bundle at matched NF4; no quantization claim",
+    "maximum_attempts_per_cell": 1,
+    "maximum_input_token_positions": 245760,
+    "maximum_input_tokens_per_cell": 1024,
+    "model_id": "Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B",
+    "no_automatic_oom_retry_or_precision_change": true,
+    "proposed_dispatch": [
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ]
+    ],
+    "shared_cells": 16,
+    "truncation_allowed": false,
+    "unique_cells": 240
+  },
+  "scoring_cells_authorized": 0,
+  "seed": "armath-development-fixed-pool-v4.1-20261117",
+  "seed_reproducibility": "Seeds define dispatch; bitwise output equality across runtime/hardware is not established",
+  "selection": "purposive 8 word + 4 arithmetic from exposed v4 development panel; no held-out claim",
+  "source_revision": "260850e0510e95f709d0806b5fbdd9dc553e4458"
+}
