@@ -183,8 +183,15 @@ class DevelopmentTests(unittest.TestCase):
         self.assertTrue(r['protocol_ok'])
         self.assertEqual(r['numeric_key'], '3/5')
 
+    def test_common_units_in_arabic_steps_do_not_become_english_false_positives(self):
+        for step in ('المساحة 380.25 mm^2.', 'نحوّل 3L إلى 3000mL.', 'الطول x cm والمسافة 2km.', 'الكتلة 2 kg.'):
+            self.assertTrue(s.candidate(synthetic_raw(steps=[step]))['protocol_ok'])
+        for step in ('نحسب total = 3000mL.', 'The volume is 3000mL.', 'الناتج millimeters = 2.'):
+            self.assertIn('latin_prose', s.candidate(synthetic_raw(steps=[step]))['issues'])
+
     def test_reasoning_boundaries_and_schema(self):
         for steps in (['نحسب\nالنتيجة.'], ['نحسب\rالنتيجة.'], ['نحسب\u2028النتيجة.'],
+                      ['نحسب\vالنتيجة.'], ['نحسب\x85النتيجة.'],
                       ['<think>نحسب</think>'], ['[INST]نحسب'], ['<|assistant|>نحسب']):
             self.assertIn('reasoning_boundary', s.candidate(synthetic_raw(steps=steps))['issues'])
         for raw in ('{"steps":[],"final_answer":"1"}', '{"steps":1,"final_answer":"1"}',

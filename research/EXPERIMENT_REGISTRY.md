@@ -1,5 +1,11 @@
 # Experiment and evidence registry
 
+v4.1 protocol follow-up — SI-unit false-positive regression and full Unicode
+line-boundary guard; 30 targeted offline tests, no new observations. New proposal
+policy version arabic_solving_contract_v1_1 supersedes the initial 5e04f48 draft,
+which remains preserved in Git history. Cases, seeds, references and proposed
+96-generation/240-scoring limits are unchanged.
+
 v4.1 — prospective controlled ArMATH development only, 17 November 2026.
 [Scope and endpoint](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md),
 [reproducible instrument](armath_development_v4_1/proposal.json).
@@ -10,7 +16,7 @@ plus 48 additional diagnostic cells (240 total, 1024 tokens/input). Actual reque
 scores, runtime hashes, approvals, human labels, new training and benchmark-ready
 problems: zero. Existing v3.6 320-cell and v2 diagnostic scopes are not activated
 or combined with this proposal. Reuses v3 selectors/recorded-offset validators;
-706 local tests pass (29 new regressions) and the zero-observation replay is reproduced. Remote per-commit CI is
+707 local tests pass (30 new regressions) and the zero-observation replay is reproduced. Remote per-commit CI is
 a software result only. Historical entries remain unchanged below.
 
 v4.0 CI fixture repair — bounded retries for transient Windows PermissionError

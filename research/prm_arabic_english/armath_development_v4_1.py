@@ -132,6 +132,7 @@ def build(audit_directory):
     condition.update(device=None, compute_dtype='float16', precision='nf4',
                      quantization={'bits': 4, 'type': 'nf4', 'double_quant': True}, adapter_bundle_sha256=None)
     scope = {'kind': VERSION, 'seed': SEED, 'source_revision': SOURCE_REVISION,
+        'protocol_policy_version': 'arabic_solving_contract_v1_1',
         'development_only': True, 'approved': False, 'approved_by': None, 'approved_at_utc': None,
         'active_budget_created': False, 'generation_requests_authorized': 0, 'scoring_cells_authorized': 0,
         'new_observations': 0, 'human_step_labels': 0, 'benchmark_eligible_problems': 0,
@@ -213,12 +214,15 @@ def candidate(raw):
             not isinstance(s, str) or not s.strip() or len(s) > 500 for s in steps):
         result['issues'].append('step_schema'); return result
     prose = '\n'.join(steps)
-    if any(any(c in s for c in '\r\n\x00\u2028\u2029') for s in steps) or re.search(
+    if any(any(c in s for c in '\r\n\x00\v\f\x1c\x1d\x1e\x85\u2028\u2029') for s in steps) or re.search(
             r'</?(?:think|analysis|final|system|assistant|user|reasoning)(?:\s[^>]*)?>|\[/?(?:INST|THINK)\]|<\|', prose, flags=re.I):
         result['issues'].append('reasoning_boundary')
     # Math-only steps are allowed. Multi-letter Latin prose is flagged after a
     # small TeX operator allowlist; variables do not become forbidden numerals.
     language_text = re.sub(r'\\(?:frac|sqrt|times|cdot|div|left|right|pi|text)\b', '', prose)
+    # Source-relevant SI units are mathematical tokens, not English prose. Keep
+    # the allowlist narrow; it must not erase adjacent English explanations.
+    language_text = re.sub(r'(?<![A-Za-z])(?:mm|cm|km|mL|ml|kg)(?![A-Za-z])', '', language_text)
     if not any('ARABIC' in unicodedata.name(c, '') and unicodedata.category(c).startswith('L') for c in prose):
         result['issues'].append('no_arabic_prose')
     if re.search(r'[A-Za-z]{2,}', language_text): result['issues'].append('latin_prose')

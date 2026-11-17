@@ -1024,11 +1024,12 @@
   "policy_files_sha256": {
     "research/armath_audit_v1/expected_artifacts.json": "ffacbdc5fde3c23edbb3e24598bd47a1786f6a4f44d8d29bf57ea7eb2139f5d2",
     "research/armath_v4_0/expected_artifacts.json": "0436e6858ddc2e6c092220df7d22e4abe4c773b1f502139ef483b647d933962f",
-    "research/prm_arabic_english/armath_development_v4_1.py": "20179fb0c25463bbf98c785c7f928acfbb02432e88e3334fb5d6edaeabe1ce77",
+    "research/prm_arabic_english/armath_development_v4_1.py": "f614b520f72d2c0c91a335b179320308deae02b7e76959829fe9352322e34310",
     "research/prm_arabic_english/armath_quality_v4.py": "358ef40dd40c315e6f2ca6a911c8d6d01235747994c96f52f625690e4e967ed2",
     "research/prm_arabic_english/native_study_v1.py": "46f151f1d3b2409079c1ef5623313fc916f24cf89a373af83570d7e59a7f85c9",
     "research/prm_arabic_english/scoring_diagnosis_v3_1.py": "604757d3427d14b81f1ed98b220e49f7c35944f3025dbf5eedb969c643cd25b9"
   },
+  "protocol_policy_version": "arabic_solving_contract_v1_1",
   "reference_bundle_sha256": "9f4e36266b48b7e1f805ec1fb91c86ed25b2b716454a68a5c2ac73bab0a22c65",
   "scoring": {
     "additional_diagnostic_cells": 48,

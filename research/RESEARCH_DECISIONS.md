@@ -1,5 +1,12 @@
 # Research decisions
 
+v4.1 contract v1.1 — A source-relevant SI unit such as mm/mL in an Arabic
+mathematical step must not be treated as English prose. Add a narrow unit-token
+allowlist while retaining mixed-language and reasoning-boundary flags. Embedded
+Unicode line separators cannot bypass single-line step validation. Preserve the
+initial unexecuted draft in Git history; rebind the inactive proposal to the tested
+policy before any final execution decision. No source/reference/budget cap changes.
+
 v4.1, 17 November 2026 — Adopt the owner's development-first workflow: no
 full-6,000-record manual certification is needed to prepare limited experiments.
 Retain the original publication, v4 panel, legacy partitions and historical records.

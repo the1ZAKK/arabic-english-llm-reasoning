@@ -13,9 +13,9 @@ separately bound reference policy. Do not rewrite the current proposal to add
 human approval or numerical keys.
 
 Pinned canonical proposal identity (`native_study_v1.digest`):
-`6a9bfa0c3f323327385b625196b5843014e7dbfb77b6065f51d9f640f7e0924b`.
+`e69b3604ec1e6da9ba34d17059f2d18cc43c4e448f20340dd27b5e3d6dbd6e50`.
 Exact `proposal.json` file SHA256:
-`b55842079bea5103609609ddf24ec875186c09cc0d724f23c12a1cb662d6afbd`.
+`49afe4a98f4466f1be461be6c01880bc26e706c9dc2be136708351c8d52c3ce7`.
 
 ## Offline preparation
 

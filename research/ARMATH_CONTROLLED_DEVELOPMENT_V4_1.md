@@ -37,7 +37,10 @@ Every suffix expands to `ARMATH:260850e0510e:<suffix>`. Proposal rows contain ex
 upstream revision, source URL/JSON pointer, record/question/equation hashes,
 grouping identities and quality flags. Private preparation reads the five published
 folds, verifies their bytes and all nine old audit fingerprints, and checks membership
-in the unchanged 32+68 panel. It does not copy private student or human records.
+in the unchanged 32+68 panel. The frozen limited exact-project overlap check has
+zero hits for these twelve against its explicitly documented inputs; paraphrase,
+template and pretraining overlap are not ruled out. It does not copy private
+student or human records.
 
 **Five automatic reference proxies, seven excluded unresolved references, zero
 human-approved problems** is the current endpoint frame. An evaluable source
@@ -200,7 +203,13 @@ token anchors and overlength inputs. A missing/malformed/English/mixed candidate
 is retained, never auto-translated. Existing source-number preservation validators
 remain untouched: a solver may produce an erroneous/new number without that being
 a translation-preservation violation. Lexical Arabic/protocol checks do not certify
-grammar, mathematical reasoning or human QC. Empty preparation reports 96
+grammar, mathematical reasoning or human QC. Contract v1.1 explicitly permits
+source-relevant SI unit tokens (`mm`, `cm`, `km`, `mL`, `ml`, `kg`) within Arabic
+steps while continuing to flag English explanations; it rejects embedded Unicode
+line separators as well as literal newlines. This offline false-positive repair
+supersedes the initial v4.1 draft at `5e04f48` before any execution; source choices,
+reference gates, seeds and resource caps are unchanged. The earlier draft remains
+in Git history, with no allowance or observations attached. Empty preparation reports 96
 `not_attempted`, null accuracy, no observations and zero authorization.
 
 Official implementation references (checked 17 November 2026):

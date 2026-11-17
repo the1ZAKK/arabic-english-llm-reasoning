@@ -1,5 +1,11 @@
 # Session handoff
 
+v4.1 contract v1.1 follow-up: source-relevant SI units are valid mathematical
+tokens within Arabic steps; English explanations still fail the protocol. All
+Unicode line separators are rejected inside a single step. The initial proposal
+at 5e04f48 is superseded before execution and retained in history. Use the updated
+proposal identity in armath_development_v4_1/README.md; no authorization exists.
+
 ## Current v4.1 handoff — controlled development preparation
 
 Continue from [the twelve-case scope](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md) and
@@ -19,8 +25,8 @@ ledger integration and separate authorization are unresolved. Prior pilot20 stay
 exhausted; diagnostic24 and v3.6 scoring remain inactive. No laptop state was read
 in this cloud session and no model request, download, scoring or training occurred.
 
-All 706 offline tests pass locally, including 29 new targeted regressions.
-Windows/Linux remote evidence must be recorded after completion; do not assume queued CI passed. Existing public
+All 707 offline tests pass locally, including 30 new targeted regressions.
+Remote per-commit Actions is authoritative; do not assume queued CI passed. Existing public
 ArMATH hashes/audit artifacts and frozen42/historical counters remain protected.
 Next safe work is actual selected-reference/human work and a read-only runtime
 inventory, then guarded-executor binding before any execution decision. Human
