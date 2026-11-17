@@ -6,11 +6,14 @@ model endpoint, download, training or scheduling mode exists.
 import argparse
 import base64
 import copy
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import struct
 import tempfile
+import time
 import review_browser_driver_v2_2 as controller
 
 import diagnostic_assessment_ui_v2_2 as ui
@@ -30,6 +33,32 @@ ZIP_SHA = '1ae9f61d0c9d9179f6dca3b4143f92e3b4eaef8090dbd36881fb4ce44414dd89'
 
 def require(value, message):
     if not value: raise BrowserCheckError(message)
+
+
+def cleanup_browser_fixture(directory, *, windows=None):
+    """Retry only transient Windows locks in this owned disposable directory.
+
+    Edge can release chrome_debug.log shortly after WebDriver quit returns.
+    Persistent locks still fail; no shared browser/process or source is touched.
+    """
+    windows = os.name == 'nt' if windows is None else windows
+    for attempt in range(40):
+        try:
+            directory.cleanup()
+            return
+        except PermissionError:
+            if not windows or attempt == 39:
+                raise
+            time.sleep(.25)
+
+
+@contextmanager
+def browser_fixture_directory():
+    directory = tempfile.TemporaryDirectory(prefix='arabicprm-browser-fixture-')
+    try:
+        yield directory.name
+    finally:
+        cleanup_browser_fixture(directory)
 
 
 def snapshot():
@@ -209,7 +238,7 @@ def run(output, kind='auto'):
               'checked_at_utc': datetime.now(timezone.utc).isoformat().replace('+00:00','Z'),
               'source_snapshot_sha256': core.digest(before), 'screenshots_are_reviewer_approval': False}
     try:
-        with tempfile.TemporaryDirectory(prefix='arabicprm-browser-fixture-') as name:
+        with browser_fixture_directory() as name:
             temporary = Path(name)
             with Browser(kind, executable, driver, temporary) as browser:
                 report['browser'] = {'name': browser.capabilities['browserName'], 'version': browser.capabilities['browserVersion'],

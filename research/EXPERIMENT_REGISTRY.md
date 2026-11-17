@@ -1,5 +1,11 @@
 # Experiment and evidence registry
 
+v4.0 CI fixture repair — bounded retries for transient Windows PermissionError
+while removing only the owned disposable browser fixture after quit. Persistent
+cleanup errors and all browser/data assertions still fail. No shared profile,
+browser process, frozen execution code, source or core review artifact is changed.
+Three regressions extend the offline suite to 677 tests.
+
 v4.0 Windows test follow-up — explicitly decode the generated Arabic JSON/HTML as
 UTF-8 in the regression reader. Preserve exact Arabic source equality and all core
 output fingerprints; no source, semantic rule, selection or human record changes.

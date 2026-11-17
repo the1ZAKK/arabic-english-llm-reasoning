@@ -8,13 +8,34 @@ import sys
 import tempfile
 from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import check_review_browsers_v2_2 as checks
 import review_browser_driver_v2_2 as driver
 
 
 class BrowserBoundaryTests(unittest.TestCase):
+    def test_owned_windows_fixture_cleanup_retries_transient_browser_log_lock(self):
+        directory=SimpleNamespace(cleanup=Mock(side_effect=[PermissionError('owned log locked'),None]))
+        with patch.object(checks.time,'sleep') as sleep:
+            checks.cleanup_browser_fixture(directory,windows=True)
+        self.assertEqual(directory.cleanup.call_count,2)
+        sleep.assert_called_once_with(.25)
+
+    def test_persistent_cleanup_lock_still_fails_without_touching_browser_processes(self):
+        directory=SimpleNamespace(cleanup=Mock(side_effect=PermissionError('still locked')))
+        with patch.object(checks.time,'sleep') as sleep,patch.object(driver.subprocess,'run',side_effect=AssertionError('No process-wide termination')):
+            with self.assertRaises(PermissionError):checks.cleanup_browser_fixture(directory,windows=True)
+        self.assertEqual(directory.cleanup.call_count,40)
+        self.assertEqual(sleep.call_count,39)
+
+    def test_nonwindows_or_unrelated_cleanup_errors_are_not_suppressed(self):
+        for error,windows in [(PermissionError('permissions'),False),(OSError('unrelated I/O'),True)]:
+            directory=SimpleNamespace(cleanup=Mock(side_effect=error))
+            with patch.object(checks.time,'sleep') as sleep:
+                with self.assertRaises(type(error)):checks.cleanup_browser_fixture(directory,windows=windows)
+            directory.cleanup.assert_called_once();sleep.assert_not_called()
+
     def test_missing_installed_browser_and_driver_fail_without_downloader(self):
         with patch.object(driver.subprocess, 'Popen', side_effect=AssertionError('No installer')):
             for kind in ('auto','chrome','edge'):

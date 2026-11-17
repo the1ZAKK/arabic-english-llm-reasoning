@@ -12,6 +12,14 @@ is retained; production packet/source bytes and all sixteen output hashes are
 unchanged. The first v4 Windows run failed this reader assertion after 674 tests;
 check the latest follow-up CI for the resolved cross-platform outcome.
 
+CI fixture follow-up: Edge briefly held chrome_debug.log after WebDriver quit.
+The browser checker retries PermissionError only for cleanup of its owned
+temporary directory on Windows, with at most 39 quarter-second retry delays. Persistent or unrelated
+failures still fail, and no browser process is killed or user profile accessed.
+DOM/source/runtime checks remain unchanged; the helper is outside frozen release
+code fingerprints. Three regressions cover transient, persistent and unrelated
+cleanup failures. The full offline suite now contains 677 tests.
+
 Start with [ARMATH_FEASIBILITY_V4_0.md](ARMATH_FEASIBILITY_V4_0.md) and
 [armath_v4_0/README.md](armath_v4_0/README.md). Research/software baseline
 `1f395de18654302b4bece482978dd2ad09d6ea5c` was verified current; its CI43862194298
@@ -48,7 +56,7 @@ is procedural: other files/source links can reveal equations, so do not claim
 enforced blinding. AI notes are not human judgments. The existing fixed-20-slot
 v3.2 validator is not a validator of this 100-item source-quality worksheet.
 
-Local suite passed 674 tests; inspect this revision's Windows/Linux Actions for
+Local suite passed 677 tests; inspect this revision's Windows/Linux Actions for
 its final result, including original source hashes, frozen old audit outputs and
 all 16 new packet fingerprints. CI uploads no actual review questions/references.
 Full-corpus/source/ledger/QC trees, original private student packets, 42 frozen

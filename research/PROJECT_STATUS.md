@@ -18,7 +18,8 @@ and Arabic grammar advisories now have separate technical evidence. The legacy
 Developer/independent judgments, new original traces, step labels and eligible
 PRM benchmark items remain zero. The private packet supplies full questions,
 references/uncertainties, a first-pass HTML page and separate blank review sheets.
-All 674 tests pass locally; inspect this revision's Windows/Linux CI.
+All 677 tests pass locally, including UTF-8 readers and bounded cleanup of owned
+Windows browser fixtures; inspect the latest revision's Windows/Linux CI.
 No inference, scoring, training, budget, frozen-data or main change.
 
 ## Original ArMATH publication — current, 16 November 2026
