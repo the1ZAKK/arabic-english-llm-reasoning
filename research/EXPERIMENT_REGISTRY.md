@@ -1,5 +1,12 @@
 # Experiment and evidence registry
 
+v4.2 Windows source-guard follow-up — Preserve the frozen recovery Git helper.
+Use a read-only status call respecting the checkout's EOL policy, with optional
+index locks and filesystem-monitor hooks disabled, followed by unchanged exact
+runtime blob comparisons. Four disposable-Git tests cover clean CRLF/index bytes,
+real edits, false-clean runtime tampering and Git errors. Initial run44174397443
+passed761 tests per OS but failed this later Windows preflight; fresh CI pending.
+
 v4.2 guarded-executor milestone — Implement the frozen96-request/240-cell roster
 with mirrored immutable charges/dispatch/input/outcomes, atomic nonces, OS locks,
 separate typed consent and phase confirmations, exact runtime/source binding,

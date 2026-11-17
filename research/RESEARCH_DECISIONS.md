@@ -1,5 +1,11 @@
 # Research decisions
 
+v4.2 source-integrity decision — Canonical Git-blob packaging and worktree
+cleanliness require different EOL handling. Preserve the historical helper and all
+frozen fingerprints; respect local EOL policy only for read-only status, while
+comparing every executor dependency byte-for-byte with its committed blob. Do not
+normalize the checkout or ignore real tracked, staged or untracked changes.
+
 v4.2 execution decision — Software is prepared and tested offline; real execution
 remains conditional on actual local evidence and separate owner consent. Keep the
 v4.1 proposal and original five-reference policy byte-identical; bind eleven AI

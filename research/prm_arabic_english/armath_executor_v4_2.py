@@ -15,6 +15,7 @@ import os
 from pathlib import Path
 import re
 import secrets
+import subprocess
 import sys
 import time
 
@@ -87,9 +88,20 @@ def release():
     return value
 
 
+def checkout_status(repo):
+    """Read-only status using the checkout's own EOL policy; no index refresh."""
+    # The frozen recovery Git helper forces core.autocrlf=false for canonical
+    # blob packaging. That is inappropriate for status in a normal CRLF checkout.
+    result=subprocess.run(['git','--no-optional-locks','-c','core.fsmonitor=false',
+        '-c','core.longpaths=true','status','--porcelain=v1','--untracked-files=all'],
+        cwd=repo,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=120)
+    require(result.returncode==0,'Read-only checkout status failed; preserve checkout')
+    return result.stdout
+
+
 def committed_release(repo):
     """Approval/stage preflight: only exact committed, clean research code."""
-    require(not repository.git(repo,'status','--porcelain=v1','--untracked-files=all').strip(),
+    require(not checkout_status(repo).strip(),
             'Use the clean development checkout; preserve local changes elsewhere')
     for path in (*release_files(),'research/armath_readiness_v4_2/execution_release.json'):
         require(repository.git(repo,'cat-file','blob','HEAD:'+path)==(Path(repo)/path).read_bytes(),

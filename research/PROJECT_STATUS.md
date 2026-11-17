@@ -1,5 +1,11 @@
 # ArabicPRM-T v2 project evidence
 
+v4.2 CI follow-up — Initial executor run44174397443 passed761 tests on each OS;
+Linux completed, but Windows then rejected its ordinary CRLF checkout at the
+source-cleanliness guard. A separate status helper now respects checkout EOL
+settings and keeps exact runtime-byte checks. Four synthetic Git regressions were
+added. The corrected commit requires fresh Windows/Linux CI; no model operation.
+
 v4.2 current — [versioned mathematical/runtime readiness](ARMATH_READINESS_V4_2.md):
 11 AI/automatic technical reference keys, one equal-sharing conditional exclusion,
 zero human validations. New hash-verified read-only laptop inspector; actual local

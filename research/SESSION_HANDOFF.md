@@ -1,5 +1,13 @@
 # Session handoff
 
+v4.2 Windows fix pending verification — Initial executor CI44174397443 passed
+761 unit tests on both systems; Linux completed, Windows then failed the exact
+source preflight because the reused Git wrapper forces core.autocrlf=false. The
+new status helper respects checkout EOL policy without optional index writes;
+canonical runtime bytes remain checked separately. Four Git regressions added.
+Cloud execution became unavailable during investigation; continue through GitHub
+CI and do not present earlier unit success as final release verification.
+
 v4.2 active handoff — Read ARMATH_READINESS_V4_2.md and the new versioned
 reference_decisions.json. Technical endpoint count11, conditional boat exclusion1;
 no human validations. New standalone inspector hashes actual local artifacts and

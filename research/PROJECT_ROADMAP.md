@@ -1,5 +1,10 @@
 # Evidence-gated roadmap
 
+v4.2 immediate verification — Re-run Windows/Linux CI for the EOL-aware source
+cleanliness correction. Retain byte-exact executor/import closure checks and the
+read-only inspector. A passing release still needs actual laptop inventory and
+independent scientific evidence before any later separate execution consent.
+
 v4.2 next — Review the implemented/tested guarded executor against the unchanged
 v4.1 proposal and new reference policy. Obtain actual read-only laptop inventory
 and adapter/base lineage; retain the conditional boat reference outside

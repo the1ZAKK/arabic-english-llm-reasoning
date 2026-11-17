@@ -12,7 +12,7 @@ weights, library compatibility and GPU forward fit remain unverified.
 - New reference policy (canonical SHA256):
   `3999913efbd839a5ed9e5723154a652d44293fc4298f14d723c65d8d2b1cb86d`.
 - Tested executor release manifest (canonical SHA256):
-  `6d296ceda21e795f815db99aaf958509309c25fbe1ce555c917b4513ee7d2847`.
+  `0a3cb623a1bdebe54b5c514480bf182d22238ce9ab4a4292ddd9a03aa1bc4924`.
 - Read-only Windows CMD file SHA256:
   `fc485cd5b323155d58b1737098e3a72e69debedcaa10e3555351f34eab3e6110`.
 

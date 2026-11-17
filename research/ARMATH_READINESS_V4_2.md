@@ -200,3 +200,17 @@ qualified human validation or model-performance result has been produced.
    separately. Any scientific human approval and broader benchmark release remain
    separate from this computational consent. No execution authorization is requested
    or inferred by this readiness directive.
+
+## Windows source-guard correction
+
+The first executor CI run44174397443 passed761 unit tests on both operating
+systems and completed Linux, but Windows then failed the clean-source guard.
+The reused frozen packaging helper forces core.autocrlf=false; a normal Windows
+checkout can therefore report unchanged CRLF documentation as modified. The new
+read-only status helper respects the checkout's EOL policy, disables optional
+index locks and filesystem-monitor hooks, and retains every exact runtime-byte
+comparison against HEAD. No checkout normalization, reset or protected-file edit
+is used. Four disposable-Git regressions cover clean CRLF/index preservation,
+tracked/staged/untracked edits, a false-clean status with altered runtime bytes,
+and fail-closed Git errors. The corrected source needs its own Windows/Linux CI;
+prior unit success does not establish this fix has passed.

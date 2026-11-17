@@ -452,4 +452,75 @@ class ExecutorTests(unittest.TestCase):
         for word in ('optimizer.step','loss.backward','save_pretrained('):self.assertNotIn(word,text)
 
 
+
+class CommittedCheckoutTests(unittest.TestCase):
+    """Disposable Git fixtures: CRLF docs are clean; runtime bytes stay exact."""
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
+        self.directory=Path(self.temp.name)
+        self.root=self.fixture('checkout')
+
+    def git(self,root,*args):
+        return subprocess.run(['git',*args],cwd=root,check=True,
+            stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=120).stdout
+
+    def fixture(self,name):
+        root=self.directory/name;root.mkdir()
+        self.git(root,'init','-q','--initial-branch','research/arabicprm-v2-production')
+        self.git(root,'config','core.autocrlf','true')
+        self.git(root,'config','core.safecrlf','false')
+        (root/'.gitattributes').write_bytes(
+            b'*.txt text\nruntime.py -text\nresearch/armath_readiness_v4_2/*.json -text\n')
+        (root/'README.txt').write_bytes(b'SYNTHETIC documentation\r\n')
+        (root/'runtime.py').write_bytes(b'VALUE = "SYNTHETIC"\n')
+        release=root/'research/armath_readiness_v4_2/execution_release.json'
+        release.parent.mkdir(parents=True);release.write_bytes(b'{}\n')
+        self.git(root,'add','.')
+        self.git(root,'-c','user.name=Synthetic Fixture','-c',
+            'user.email=fixture@example.invalid','commit','-qm','SYNTHETIC EOL fixture')
+        return root
+
+    def check(self,root):
+        with patch.object(e,'release_files',return_value=['runtime.py']):
+            e.committed_release(root)
+
+    def test_clean_crlf_docs_and_canonical_runtime_preserve_worktree_and_index(self):
+        before={p.relative_to(self.root).as_posix():p.read_bytes()
+                for p in self.root.rglob('*') if p.is_file()}
+        self.assertIn(b'\r\n',(self.root/'README.txt').read_bytes())
+        self.assertEqual(self.git(self.root,'config','core.autocrlf').strip(),b'true')
+        self.assertEqual(e.checkout_status(self.root),b'')
+        self.check(self.root)
+        after={p.relative_to(self.root).as_posix():p.read_bytes()
+               for p in self.root.rglob('*') if p.is_file()}
+        self.assertEqual(before,after)
+
+    def test_real_tracked_staged_and_untracked_edits_are_all_blocked(self):
+        for kind in ('tracked','staged','untracked'):
+            with self.subTest(kind=kind):
+                root=self.fixture(kind)
+                target=root/('PRIVATE.txt' if kind=='untracked' else 'README.txt')
+                target.write_bytes(b'SYNTHETIC private changes\r\n')
+                if kind=='staged':self.git(root,'add','README.txt')
+                before=target.read_bytes()
+                with self.assertRaisesRegex(ValueError,'clean development checkout'):self.check(root)
+                self.assertEqual(target.read_bytes(),before)
+
+    def test_exact_runtime_bytes_are_checked_even_if_status_claims_clean(self):
+        target=self.root/'runtime.py';target.write_bytes(b'VALUE = "SYNTHETIC"\r\n')
+        with patch.object(e,'checkout_status',return_value=b''):
+            with self.assertRaisesRegex(ValueError,'Runtime bytes'):self.check(self.root)
+        self.assertEqual(target.read_bytes(),b'VALUE = "SYNTHETIC"\r\n')
+
+    def test_status_failure_is_closed_and_does_not_override_checkout_eol_policy(self):
+        failure=subprocess.CompletedProcess(['git'],1,b'',b'SYNTHETIC private stderr')
+        with patch.object(e.subprocess,'run',return_value=failure) as command:
+            with self.assertRaisesRegex(ValueError,'Read-only checkout status failed'):
+                e.checkout_status(self.root)
+        args=command.call_args.args[0]
+        self.assertIn('--no-optional-locks',args)
+        self.assertIn('core.fsmonitor=false',args)
+        self.assertFalse(any('autocrlf' in arg for arg in args))
+
+
 if __name__=='__main__':unittest.main()
