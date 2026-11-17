@@ -58,6 +58,8 @@ MODULES = (
     "test_native_pilot_review_v3_2",
     "test_armath_audit_v1",
     "test_verify_armath_originals",
+    "test_armath_feasibility_v4",
+    "test_armath_quality_v4",
 )
 
 if __name__ == "__main__":

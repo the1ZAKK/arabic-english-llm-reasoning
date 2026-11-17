@@ -1,5 +1,22 @@
 # Evidence-gated roadmap
 
+## v4.0 next — genuine human feasibility observations
+
+Use the completed [100-problem packet](armath_v4_0/README.md), beginning with its
+fixed first ten. Obtain actual developer work separately from independent qualified
+Arabic mathematics A/B judgments and distinct adjudication; record real effort,
+uncertainty and rejected items. No people are assigned or simulated by software.
+Preserve original text and initial assessments before consulting AI references.
+
+The [measured review](ARMATH_FEASIBILITY_V4_0.md) found two additional clear
+equation issues and an oversized mathematical-similarity family proxy. Keep the
+legacy split safeguards while investigating actual source lineage and topic/skill
+coverage. Do not turn the smaller ablation graphs into a new held-out split.
+A larger 250/500 benchmark needs actual suitable yield, independent Arabic
+problem/trace/step/final labels, diversity and reviewed family evidence. Continue
+source publication identities and permission attribution; scoring/model protocols
+remain unattempted and require separate authorization.
+
 ## Current priority — original-source publication
 
 Publish the five byte-exact ArMATH folds under [data/armath/original](../data/armath/original/)

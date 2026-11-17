@@ -1,5 +1,20 @@
 # Research decisions
 
+v4.0, 17 November 2026 — Resume the preserved 100-item development selection
+without changing the old 32 or the draft 68/order to remove errors. Keep original
+questions/equations and old audit statuses; add question-derived mathematics,
+uncertainty and source-language advisories separately. Automated agreement means
+numerical agreement in a narrow recognized relation, not full semantic approval.
+
+Broad canonical-equation/operator links are similarity safeguards, not known
+author/book families. Ablation diagnoses their coarseness without releasing any
+reserved future test or weakening the frozen split. Topic buckets (including two
+watch/time misclassifications) are not the thesis's five mathematical domains.
+Human developer work, independent A/B and distinct C remain separate blank records.
+First-pass separation is procedural, not enforced blinding. Original-source
+permission is documented; no new curated benchmark, model operation or allowance
+follows from this private feasibility packet.
+
 16 November 2026 — Publish only the five unchanged original ArMATH Arabic folds
 following the user's replacement directive and reported direct written permission
 from co-author Reem Alghamdi for this repository with citation. Record the owner

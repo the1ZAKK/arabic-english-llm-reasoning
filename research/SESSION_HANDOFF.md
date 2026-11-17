@@ -1,5 +1,56 @@
 # Session handoff
 
+## Current v4.0 handoff — 100 actual source cases, humans pending
+
+Start with [ARMATH_FEASIBILITY_V4_0.md](ARMATH_FEASIBILITY_V4_0.md) and
+[armath_v4_0/README.md](armath_v4_0/README.md). Research/software baseline
+`1f395de18654302b4bece482978dd2ad09d6ea5c` was verified current; its CI43862194298
+passed 654 tests on both OSes. Main stayed at `4e45e6122cbdacd22a82633ca29df7991b321ebf`.
+The original five data files and permission attribution are retained unchanged.
+
+Actual prior 32-item and suspended-draft ZIPs were restored; all their checksums
+passed. The new version reuses the same seed, all 32 old IDs, all 68 draft extension
+IDs and the dispatch order. Exactly 100 unique folded-question identities, 84
+canonical equations, all 25 development components; zero translated/future-test
+items. Twenty per heuristic bucket is not five-domain coverage; two time-bucket
+items are watch purchases. The old 3,470/63 proposal is unchanged.
+
+Complete-question references: 23 numerical agreements, three numerical
+discrepancies (known omitted addend, new savings division/multiplication and new
+banknote addition/multiplication), one whole-pen integer-domain discrepancy;
+73 remain outside grammar. Source calculations: 95 exact rational/5 irrational.
+Three previously unflagged geometry cases and specific Arabic/operation/unit
+advisories are retained separately. Full source and references stay in the private
+review packet, not a public cleaned/annotated export. Old audit status fields
+remain 19 automatic/80 pending/one rejected within the selection.
+
+Grouping ablation over all old source metadata yields 3,441 exact-text, 1,922
+numeric/near-text, 187 plus-equation and 52 legacy-plus-operator native-containing
+components; largest sizes 3/111/1,306/2,757. The legacy membership is exactly
+reproduced. No source-family truth, alternative split or released test is inferred.
+
+The packet opens with START_HERE.html; separate questions and coordinator references
+provide the original Arabic, source pointers, equations, calculations, uncertainties
+and flags. Developer, qualified independent A/B and distinct C use separate sheets;
+all identity/judgment/date fields are blank. Human review/step labels/traces,
+measured effort and benchmark eligibility remain zero. First-pass answer separation
+is procedural: other files/source links can reveal equations, so do not claim
+enforced blinding. AI notes are not human judgments. The existing fixed-20-slot
+v3.2 validator is not a validator of this 100-item source-quality worksheet.
+
+Local suite passed 674 tests; inspect this revision's Windows/Linux Actions for
+its final result, including original source hashes, frozen old audit outputs and
+all 16 new packet fingerprints. CI uploads no actual review questions/references.
+Full-corpus/source/ledger/QC trees, original private student packets, 42 frozen
+fingerprints and 2,005 historical nine-attempt counters remain unchanged. No
+inference, PRM scoring, training, budget, scheduling, Global-MGSM or main change.
+
+Next obtain real first-ten human problem/linguistic/reference judgments and times;
+independently review topic/lineage and then original Arabic traces/step/final
+labels. A 250/500 validated benchmark remains unjustified by raw headcount alone.
+Current public source permission/attribution remains distinct from curated-release
+eligibility. Do not execute the diagnostic or model-scoring proposals.
+
 ## Current priority — original ArMATH publication
 
 The user's replacement directive supersedes 100-problem feasibility preparation.

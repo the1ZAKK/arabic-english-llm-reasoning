@@ -1,5 +1,26 @@
 # ArabicPRM-T v2 project evidence
 
+## v4.0 — 100-problem feasibility review, current
+
+[Measured findings](ARMATH_FEASIBILITY_V4_0.md) and
+[reproduction](armath_v4_0/README.md): the actual original 32-case packet and
+suspended draft were recovered/hash-verified. All 32 cases, the same 68 extension
+IDs and review order are preserved: 100 development-only novel-tagged items,
+84 canonical templates, 25 legacy components, five heuristic buckets of 20.
+These are not five independently verified mathematical domains or source families.
+
+Question-derived checks give 23 numerical agreements, three numerical
+disagreements (one old, two newly found) and one whole-item domain issue; 73 remain
+unrecognized. Source equations give 95 exact rational/5 irrational results.
+Three unflagged geometry cases, two watch/time topic confusions, wording/unit
+and Arabic grammar advisories now have separate technical evidence. The legacy
+52-component graph is reproduced; no old partition or future test is changed.
+Developer/independent judgments, new original traces, step labels and eligible
+PRM benchmark items remain zero. The private packet supplies full questions,
+references/uncertainties, a first-pass HTML page and separate blank review sheets.
+All 674 tests pass locally; inspect this revision's Windows/Linux CI.
+No inference, scoring, training, budget, frozen-data or main change.
+
 ## Original ArMATH publication — current, 16 November 2026
 
 The complete [unchanged upstream data](../data/armath/README.md) are mirrored as

@@ -1,5 +1,21 @@
 # Experiment and evidence registry
 
+v4.0 feasibility preparation (17 November 2026, Asia/Shanghai) —
+[report](ARMATH_FEASIBILITY_V4_0.md), [aggregate results](armath_v4_0/SUMMARY.json).
+Preserved 32+68 actual source IDs/order, 100 development novel-tagged cases,
+84 equation templates, 25 conservative components; no future-test borrowing.
+Source equation arithmetic: 95 rational/5 irrational. Complete-question checks:
+23 agree, three disagree, one integer-domain disagreement, 73 not available.
+Two numerical discrepancies extend the prior one, without source/status edits.
+Three missed geometry flags, watch/time category confusion and linguistic/unit
+advisories are separate AI/software evidence. Link ablation gives 3,441/1,922/187/52
+native-containing components; none is authenticated author/book lineage, and all
+old partitions/reservations remain unchanged. Full HTML/JSON references and blank
+developer/A/B/C/timing sheets are private, with hashes reproducible on both OSes.
+Local suite: 674 passed. Human reviews, observed work rates, Arabic traces/step
+labels, model observations and benchmark approvals remain zero. No model/budget,
+historical-source/QC/counter or main modification.
+
 Original ArMATH mirror (16 November 2026, Asia/Shanghai) —
 [dataset](../data/armath/README.md), [attribution](../data/armath/ATTRIBUTION.md),
 [manifest](../data/armath/PUBLIC_DATASET_MANIFEST.json). Five fresh-acquired

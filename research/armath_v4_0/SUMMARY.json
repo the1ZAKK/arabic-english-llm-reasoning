@@ -1,0 +1,183 @@
+{
+  "actual_reviewers": 0,
+  "all_development_only": true,
+  "available_development_components": 25,
+  "benchmark_eligible": 0,
+  "canonical_templates": 84,
+  "conservative_components": 25,
+  "coverage_extension": 68,
+  "first_ten": {
+    "adjudicator_hours": [
+      0.016666666666666666,
+      0.15
+    ],
+    "assessor_hours_combined": [
+      1.6666666666666667,
+      4.0
+    ],
+    "contingency_fraction": 0.15,
+    "coordinator_screen_hours": [
+      0.5,
+      1.3333333333333333
+    ],
+    "excluded_unmeasured_work": [
+      "permission/lineage investigation",
+      "source transcription",
+      "original Arabic trace creation",
+      "step/final annotation",
+      "reviewer recruitment"
+    ],
+    "independent_problem_reference_assessments": 20,
+    "observed_person_hours": null,
+    "problems": 10,
+    "total_person_hours_with_contingency": [
+      2.510833333333333,
+      6.305833333333333
+    ]
+  },
+  "folded_question_duplicates": 0,
+  "frozen_audit_fingerprints_sha256": "ffacbdc5fde3c23edbb3e24598bd47a1786f6a4f44d8d29bf57ea7eb2139f5d2",
+  "frozen_grouping_or_partitions_modified": 0,
+  "full_hundred": {
+    "adjudicator_hours": [
+      0.16666666666666666,
+      1.25
+    ],
+    "assessor_hours_combined": [
+      16.666666666666668,
+      40.0
+    ],
+    "contingency_fraction": 0.15,
+    "coordinator_screen_hours": [
+      5.0,
+      13.333333333333334
+    ],
+    "excluded_unmeasured_work": [
+      "permission/lineage investigation",
+      "source transcription",
+      "original Arabic trace creation",
+      "step/final annotation",
+      "reviewer recruitment"
+    ],
+    "independent_problem_reference_assessments": 200,
+    "observed_person_hours": null,
+    "problems": 100,
+    "total_person_hours_with_contingency": [
+      25.10833333333333,
+      62.77083333333333
+    ]
+  },
+  "future_test_candidates_selected": 0,
+  "grouping_sensitivity": {
+    "frozen_partitions_changed": 0,
+    "future_test_candidates_released": 0,
+    "interpretation": "Alternative link graphs measure coarseness, not verified source families or leakage-free splits.",
+    "kind": "armath_grouping_sensitivity_v4_0",
+    "modes": [
+      {
+        "authenticated_source_families": null,
+        "components_all": 5908,
+        "largest_native_component": 3,
+        "link_set": "exact_text",
+        "native_containing_components": 3441,
+        "native_in_cross_origin_components": 0,
+        "split_change_applied": false
+      },
+      {
+        "authenticated_source_families": null,
+        "components_all": 4263,
+        "largest_native_component": 111,
+        "link_set": "numeric_text_and_near",
+        "native_containing_components": 1922,
+        "native_in_cross_origin_components": 0,
+        "split_change_applied": false
+      },
+      {
+        "authenticated_source_families": null,
+        "components_all": 913,
+        "largest_native_component": 1306,
+        "link_set": "plus_canonical_equation",
+        "native_containing_components": 187,
+        "native_in_cross_origin_components": 3180,
+        "split_change_applied": false
+      },
+      {
+        "authenticated_source_families": null,
+        "components_all": 349,
+        "largest_native_component": 2757,
+        "link_set": "legacy_plus_operator_skeleton",
+        "native_containing_components": 52,
+        "native_in_cross_origin_components": 3477,
+        "split_change_applied": false
+      }
+    ]
+  },
+  "human_judgments": 0,
+  "human_step_labels": 0,
+  "independent_question_comparisons": {
+    "agrees": 23,
+    "disagrees": 3,
+    "discrete_domain_disagreement": 1,
+    "not_available": 73
+  },
+  "independent_question_rule_counts": {
+    "complete_question_not_recognized": 73,
+    "complete_symbolic_question": 3,
+    "frozen_complete_question_grammar": 20,
+    "one_two_one_banknotes": 1,
+    "weekly_savings_deficit": 2,
+    "whole_pens_affordability": 1
+  },
+  "kind": "armath_human_feasibility_v4_0",
+  "known_source_author_families": null,
+  "limitations": [
+    "Purposive coverage and retained risk cases preclude population error-rate or confidence claims.",
+    "Five heuristic buckets are not five mathematical domains; difficulty and source families are unverified.",
+    "Common templates and original-source lineage can still confound independence.",
+    "Problem-quality sheets do not supply original Arabic traces or independent step/final labels.",
+    "Existing 20-slot v3.2 intake/review validators are not a validator of this 100-slot source-quality sample.",
+    "Original-source publication permission is documented; curated-release scope, actual human evidence, effort and model observations remain separate.",
+    "Reviewer first-pass separation is procedural; the source links and coordinator files can reveal equations/calculations."
+  ],
+  "model_operations": 0,
+  "original_arabic_traces_created": 0,
+  "previously_unflagged_geometry_cases": 3,
+  "qc_status_for_coordinator_not_reviewers": {
+    "needs_review": 80,
+    "rejected": 1,
+    "verified_automatic": 19
+  },
+  "quality_code_sha256": "358ef40dd40c315e6f2ca6a911c8d6d01235747994c96f52f625690e4e967ed2",
+  "retained_risk_panel": 32,
+  "screening_buckets_not_domains": {
+    "explicit_arithmetic": 20,
+    "geometry": 20,
+    "money_trade": 20,
+    "time_rate": 20,
+    "unclassified_word_problem": 20
+  },
+  "seed": "armath-development-feasibility100-v1-20261116",
+  "selected_problems": 100,
+  "selection_code_sha256": "515b2f17e92f599de1e1f5a03ad180dc17668b967286682a4b2a3fe408f623a5",
+  "source_equation_calculations": {
+    "exact_rational_crosschecked": 95,
+    "irrational_result_requires_symbolic_or_rounding_review": 5
+  },
+  "source_folds": {
+    "datasets/armath/fold_0.json": 19,
+    "datasets/armath/fold_1.json": 15,
+    "datasets/armath/fold_2.json": 22,
+    "datasets/armath/fold_3.json": 25,
+    "datasets/armath/fold_4.json": 19
+  },
+  "source_redistribution_permission": "owner-reported written author permission with citation documented in data/armath/ATTRIBUTION.md",
+  "source_revision": "260850e0510e95f709d0806b5fbdd9dc553e4458",
+  "supplemental_flag_counts": {
+    "arabic_price_copula_agreement_review": 1,
+    "arabic_study_verb_spelling_review": 1,
+    "daily_sleep_quantity_unit_omitted": 1,
+    "geometry_entity_unit_or_constant_review": 20,
+    "natural_language_operation_scope_review": 6,
+    "watch_merchandise_not_duration_topic_review": 2
+  }
+}
