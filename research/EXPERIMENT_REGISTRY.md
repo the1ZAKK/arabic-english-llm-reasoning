@@ -1,5 +1,11 @@
 # Experiment and evidence registry
 
+v4.1 replay follow-up — Synthetic partial-pool regressions demonstrate why
+provisional selection cannot count as a final PRM/majority outcome. Add explicit
+completion/status reporting and pool/reward-bound choice seals. Group scoring
+into eight fresh condition loads with one resident PRM at a time; all 240 cells
+are preserved. No observations, source changes, model loads or active allowance.
+
 v4.1 protocol follow-up — SI-unit false-positive regression and full Unicode
 line-boundary guard; 30 targeted offline tests, no new observations. New proposal
 policy version arabic_solving_contract_v1_1 supersedes the initial 5e04f48 draft,
@@ -16,7 +22,7 @@ plus 48 additional diagnostic cells (240 total, 1024 tokens/input). Actual reque
 scores, runtime hashes, approvals, human labels, new training and benchmark-ready
 problems: zero. Existing v3.6 320-cell and v2 diagnostic scopes are not activated
 or combined with this proposal. Reuses v3 selectors/recorded-offset validators;
-707 local tests pass (30 new regressions) and the zero-observation replay is reproduced. Remote per-commit CI is
+711 local tests pass (34 new regressions) and the zero-observation replay is reproduced. Remote per-commit CI is
 a software result only. Historical entries remain unchanged below.
 
 v4.0 CI fixture repair — bounded retries for transient Windows PermissionError

@@ -16,7 +16,7 @@ import unicodedata
 from armath_audit_v1 import ROOT, byte_sha, private_destination, write_json
 from armath_feasibility_v4 import read_verified_audit, select, source_originals, SOURCE_REVISION
 from armath_quality_v4 import check_record
-from native_study_v1 import digest, outcome_summary, require
+from native_study_v1 import digest, outcome_summary, pool_identity, require
 from native_study_v1 import selector_positions, selection_loss
 from scoring_diagnosis_v3_1 import (COMMON, STATUSES, comparison_reasons,
                                     validate_condition, validate_item)
@@ -110,22 +110,23 @@ def build(audit_directory):
                             'options': OPTIONS | {'seed': seed(key, position)}}})
     blocks = [{'block': i + 1, 'problem_ids': [c['problem_id'] for c in cases[i*3:i*3+3]],
                'condition_order': list(ROLES if i in (0, 3) else reversed(ROLES)),
-               'language_order': ['ar', 'en'] if i % 2 == 0 else ['en', 'ar']}
+               'language_order': ['ar', 'en'] if i % 2 == 0 else ['en', 'ar'],
+               'rendering_order': ['canonical', 'blank_line'] if i < 2 else ['blank_line', 'canonical']}
               for i in range(4)]
     cells = []
     for block in blocks:
-        for position in range(8):
-            for key in block['problem_ids']:
-                for role in block['condition_order']:
-                    cells.append([key + f':c{position}', 'ar', 'canonical', role])
-        key = block['problem_ids'][0]
-        for position in (0, 1):
-            for language in block['language_order']:
-                for rendering in ('canonical', 'blank_line'):
-                    for role in block['condition_order']:
-                        cell = [key + f':c{position}', language, rendering, role]
-                        if cell not in cells:
-                            cells.append(cell)
+        diagnostic_key = block['problem_ids'][0]
+        # One resident condition at a time: eight fresh condition loads, not a
+        # base/adapter reload for each of the 240 candidate-condition cells.
+        for role in block['condition_order']:
+            for position in (0, 1):
+                for language in block['language_order']:
+                    for rendering in block['rendering_order']:
+                        cells.append([diagnostic_key + f':c{position}', language, rendering, role])
+            for position in range(8):
+                for key in block['problem_ids']:
+                    if key != diagnostic_key or position not in (0, 1):
+                        cells.append([key + f':c{position}', 'ar', 'canonical', role])
     require(len(cells) == len({tuple(c) for c in cells}) == 240, 'Scoring cells must be shared, not recounted')
     require(len({r['request']['options']['seed'] for r in requests}) == 96, 'Seeds must be distinct')
     condition = {k: None for k in (*[k for k in COMMON if k.endswith('sha256')], 'reward_head_sha256')}
@@ -133,6 +134,7 @@ def build(audit_directory):
                      quantization={'bits': 4, 'type': 'nf4', 'double_quant': True}, adapter_bundle_sha256=None)
     scope = {'kind': VERSION, 'seed': SEED, 'source_revision': SOURCE_REVISION,
         'protocol_policy_version': 'arabic_solving_contract_v1_1',
+        'replay_policy_version': 'fixed_pool_missingness_v1_1',
         'development_only': True, 'approved': False, 'approved_by': None, 'approved_at_utc': None,
         'active_budget_created': False, 'generation_requests_authorized': 0, 'scoring_cells_authorized': 0,
         'new_observations': 0, 'human_step_labels': 0, 'benchmark_eligible_problems': 0,
@@ -156,6 +158,7 @@ def build(audit_directory):
                     'arabic_canonical_cells': 192, 'diagnostic_cells_including_shared': 64,
                     'shared_cells': 16, 'additional_diagnostic_cells': 48, 'unique_cells': 240,
                     'maximum_input_token_positions': 245760, 'batch_size': 1,
+                    'proposed_fresh_condition_loads': 8, 'simultaneously_resident_prm_conditions': 1,
                     'proposed_dispatch': cells, 'maximum_attempts_per_cell': 1,
                     'no_automatic_oom_retry_or_precision_change': True,
                     'aggregation': 'nonempty raw newline positions; all-position diagnostic from same vector',
@@ -267,7 +270,7 @@ def replay(scope, references, observations):
         for role in ROLES: validate_condition(role, conditions[role])
         require(not comparison_reasons(conditions[ROLES[0]], conditions[ROLES[1]], 'adaptation'), 'Unmatched scoring runtime')
         require(all(c['compute_dtype'] == 'float16' for c in conditions.values()), 'Proposed compute dtype changed')
-    parsed, normalized, statuses, issues = {}, {}, Counter(), Counter()
+    parsed, normalized, statuses, issues, reward_statuses = {}, {}, Counter(), Counter(), Counter()
     for d in dispatch:
         row = by_id[d['candidate_id']]
         status = row['status']
@@ -288,6 +291,7 @@ def replay(scope, references, observations):
         for role in ROLES:
             cell = row['rewards'][role]
             require(cell['status'] in STATUSES, 'Explicit score availability status required')
+            reward_statuses[role + ':' + cell['status']] += 1
             values = cell['scores']
             if cell['status'] == 'scored':
                 require(status == 'generated' and checked['protocol_ok'], 'No scores for unavailable/invalid Arabic candidates')
@@ -308,14 +312,25 @@ def replay(scope, references, observations):
                 scores[role] = None
         normalized[d['candidate_id']] = {'generation_status': 'generated' if checked['protocol_ok'] else 'failed',
             'answer_key': checked['numeric_key'] if checked['protocol_ok'] else None, 'scores': scores}
-    decisions, fallbacks = {}, {}
+    decisions, fallbacks, decision_status = {}, {}, {}
     for case in scope['cases']:
         key = case['problem_id']
         pool = [normalized[key + f':c{i}'] for i in range(8)]
         for k in (1, 2, 4, 8):
             decisions[key + f':K{k}'], failed = selector_positions(pool[:k], ROLES)
             fallbacks[key + f':K{k}'] = sorted(failed)
-    seal = digest(decisions)
+            decision_status[key + f':K{k}'] = ('provisional_unattempted_slots' if any(
+                by_id[key + f':c{i}']['status'] == 'not_attempted' for i in range(k)) else 'fixed_terminal_slots')
+    pool_sha = pool_identity([{'problem_id': c['problem_id'],
+        'family_id': c['legacy_component_not_verified_family'], 'origin': 'source_declared_novel', 'language': 'ar',
+        'candidates': [{'candidate_id': c['problem_id'] + f':c{i}',
+                        'text_sha256': by_id[c['problem_id'] + f':c{i}']['response_sha256'],
+                        'generation_status': by_id[c['problem_id'] + f':c{i}']['status']} for i in range(8)]}
+        for c in scope['cases']])
+    score_sha = digest({'conditions': observations.get('conditions'), 'cells': [
+        [d['candidate_id'], (by_id[d['candidate_id']]['input_item'] or {}).get('input_sha256'),
+         by_id[d['candidate_id']]['rewards']] for d in dispatch]})
+    seal = digest([digest(scope), pool_sha, score_sha, decisions, decision_status])
     # Reference values are intentionally first read here, after the selection seal.
     refs = {r['problem_id']: r for r in references}
     eligible = [c['problem_id'] for c in scope['cases'] if
@@ -334,7 +349,11 @@ def replay(scope, references, observations):
                         checked['numeric_key'] == refs[key]['answer_key'] and
                         (checked['protocol_ok'] or mode == 'numeric_only_success'))
                     correct.append(value)
-                for name, position in decisions[key + f':K{k}'].items(): outcomes[name][key] = correct[position]
+                for name, position in decisions[key + f':K{k}'].items():
+                    # First-sample correctness can be known, but a pending pool
+                    # can still change majority/PRM selection after a restart.
+                    pending = decision_status[key + f':K{k}'] == 'provisional_unattempted_slots'
+                    outcomes[name][key] = None if pending and name != 'first' else correct[position]
                 oracle[key] = True if any(v is True for v in correct) else None if None in correct else False
                 random.append(None if None in correct else sum(correct) / k)
             first, base = outcomes['first'], outcomes['base_nf4']
@@ -354,6 +373,9 @@ def replay(scope, references, observations):
         summaries[str(k)] = modes
     return {'kind': 'armath_development_replay_v4_1', 'proposal_sha256': digest(scope),
         'selection_sha256': seal, 'decisions': decisions, 'fallbacks': fallbacks,
+        'generation_pool_sha256': pool_sha, 'score_records_sha256': score_sha,
+        'decision_status': decision_status, 'reward_statuses': dict(reward_statuses),
+        'all_planned_generation_slots_terminal': not statuses['not_attempted'],
         'slot_statuses': dict(statuses), 'candidate_issue_counts': dict(issues), 'fixed_slots': 96,
         'automatic_reference_denominator': len(eligible), 'excluded_unresolved_references': excluded,
         'all_12_problem_accuracy': None, 'k_summaries': summaries,

@@ -13,9 +13,9 @@ separately bound reference policy. Do not rewrite the current proposal to add
 human approval or numerical keys.
 
 Pinned canonical proposal identity (`native_study_v1.digest`):
-`e69b3604ec1e6da9ba34d17059f2d18cc43c4e448f20340dd27b5e3d6dbd6e50`.
+`a0ad70c988f95308a1fe41b616e607a3da9118f0c9c46ccd62c86b8bb45ea961`.
 Exact `proposal.json` file SHA256:
-`49afe4a98f4466f1be461be6c01880bc26e706c9dc2be136708351c8d52c3ce7`.
+`36d771c8ccf368e0d908f0ee402ff904b7a21ba3836de00b25cf9fd8ec52123e`.
 
 ## Offline preparation
 
@@ -65,6 +65,12 @@ observations. It must not trigger 16 duplicate scores.
 ```text
 python -B research/prm_arabic_english/armath_development_v4_1.py replay --audit-dir PRIVATE_AUDIT --observations PRIVATE_RECORDED.json --output-dir NEW_PRIVATE_REPORT
 ```
+
+A pending pool cannot produce final PRM/majority accuracy. `decision_status`
+marks provisional choices, `reward_statuses` retains all 192 canonical cells,
+and separate pool/reward hashes bind the choice seal. The first-sample result may
+be known while a K8 selector endpoint remains unknown. Missing-score fallback
+outcomes are not evidence of an actual PRM score.
 
 A report checks internal consistency of supplied records; it does not independently
 authenticate the hardware run, native authorship, reference correctness or humans.

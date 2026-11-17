@@ -1,5 +1,18 @@
 # Session handoff
 
+v4.1 final replay preparation: use the current inactive proposal and README
+identities, superseding earlier unexecuted v4.1 drafts retained in history.
+Unattempted prefixes have provisional PRM/majority choices and null accuracy;
+selection seals bind generation and reward manifests. All score-cell statuses
+and terminal-slot flags stay visible. The 240-cell schedule now needs eight fresh
+condition loads, one resident at a time. Generation seeds/source/reference gates
+and all resource ceilings remain unchanged; no executable allowance exists.
+Local full suite: 711 passed (34 current development regressions). Prior SI-policy
+commit f2d9b568 passed 707 on each of Windows/Linux in
+[CI44084659229](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44084659229).
+Inspect this follow-up commit’s exact checks for its own remote result; never
+promote prior CI into a claim of untested code or semantic quality.
+
 v4.1 contract v1.1 follow-up: source-relevant SI units are valid mathematical
 tokens within Arabic steps; English explanations still fail the protocol. All
 Unicode line separators are rejected inside a single step. The initial proposal
@@ -25,7 +38,7 @@ ledger integration and separate authorization are unresolved. Prior pilot20 stay
 exhausted; diagnostic24 and v3.6 scoring remain inactive. No laptop state was read
 in this cloud session and no model request, download, scoring or training occurred.
 
-All 707 offline tests pass locally, including 30 new targeted regressions.
+All 711 offline tests pass locally, including 34 new targeted regressions.
 Remote per-commit Actions is authoritative; do not assume queued CI passed. Existing public
 ArMATH hashes/audit artifacts and frozen42/historical counters remain protected.
 Next safe work is actual selected-reference/human work and a read-only runtime

@@ -18,7 +18,7 @@ this scope. Actual PRM fingerprints, local capability/memory checks, selected
 reference work and separately authorized guarded execution remain necessary.
 Arabic protocol success and numerical correctness are reported separately.
 
-All 707 local offline tests pass, including 30 new targeted regressions. Check the commit-specific
+All 711 local offline tests pass, including 34 new targeted regressions. Check the commit-specific
 Windows/Linux Actions results for full validation; software tests do not certify
 translation, mathematics or human annotation. Previous stages below are retained
 history; publication is complete and the optional 100-case packet is preserved.

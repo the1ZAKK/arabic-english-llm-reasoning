@@ -103,7 +103,13 @@ Unattempted slots have unknown outcomes; reserved/crashed and failed slots consu
 their positions and are unsuccessful protocol completions. Never replace missing
 records with invented outputs or silently restrict to successful generations.
 
-The offline replay freezes/hashes choices **before joining reference values**. It
+The offline replay binds the generation pool, reward-record manifest, decision
+status and choices in a selection seal **before joining reference values**.
+Choices in a prefix containing unattempted slots are explicitly provisional; PRM
+and majority endpoint accuracy is withheld until that prefix is terminal. The
+first-sample outcome can still be known. Both reward-cell status counts and pool
+completion remain visible, so a missing-score fallback cannot be mistaken for an
+observed PRM scoring result. It
 reuses `selector_positions`, `outcome_summary` and `selection_loss` from v3. The old
 held-out/human benchmark validator is unchanged; this separate development analysis
 does not counterfeit test membership or human labels to satisfy that gate. It cannot
@@ -128,13 +134,21 @@ The Qwen generator digest does not identify this PRM. Reuse v3.1's actual-condit
 and token/offset validation, including one newline reward anchor per source segment.
 Capture Unicode-code-point offsets, exact token IDs, problem/candidate hashes and
 all raw rewards. No truncation, OOM retry, silent CPU offload or precision substitution.
-Counterbalance base/adapter order AB, BA, BA, AB across four dispatch blocks. These
-blocks are scheduling devices, not statistically independent source families.
+Counterbalance base/adapter order AB, BA, BA, AB across four dispatch blocks.
+Run 30 cells with one resident condition, unload it, then 30 with the other: eight
+fresh condition loads total, not one reload per candidate-condition cell. Within
+each condition, run the eight diagnostic cells, then the other 22 Arabic canonical
+cells. Language order is AR/EN, EN/AR, AR/EN, EN/AR; rendering order is
+canonical/blank, canonical/blank, blank/canonical, blank/canonical across blocks.
+These scheduling factors are pairwise counterbalanced, not independent source
+families or a basis for population inference.
 
 Canonical scoring has **96 × 2 = 192 cells**. A fixed subset—the first word problem
 in each block, positions 0 and 1—provides up to eight Arabic traces. Prepare genuine
 faithful English mirrors of those eight traces and four questions only after outputs
-exist; preserve errors, quantities and boundaries. Two languages × two renderings
+exist; preserve errors, quantities, formula/digit strings and boundaries. Translate
+prose only: do not convert units or normalize digits in just one language. Keep the
+final numeric string identical. Digit-normalization contrasts are outside this scope. Two languages × two renderings
 × two PRMs × eight traces = 64 diagnostic cells, including 16 already counted Arabic
 canonical cells: **48 additional, 240 unique cells total**. If a selected trace fails,
 retain its missing cells; do not replace it with a later successful candidate.
@@ -172,7 +186,9 @@ step/final rubrics and separate developer/A/B/adjudicator sheets; do not invent 
 
 Before any separately authorized execution, inventory local artifacts read-only,
 bind real manifests, verify local Ollama version/capabilities (`think:false` and
-structured JSON) and digest, and check prompt + output context capacity. Do not
+structured JSON) and digest, and check prompt + output context capacity. Future
+execution must retain actual options/seed/model identity, reservation IDs,
+`eval_count`, `done_reason`, input counts, timings and transport/crash outcomes. Do not
 download/replace models. The proposal caps PRM inputs at 1,024 tokens/cell:
 **240 × 1,024 = 245,760 input token positions**, not measured elapsed time or GPU fit.
 The retained wrapper requests all hidden states and upcasts full-vocabulary logits
@@ -208,9 +224,17 @@ source-relevant SI unit tokens (`mm`, `cm`, `km`, `mL`, `ml`, `kg`) within Arabi
 steps while continuing to flag English explanations; it rejects embedded Unicode
 line separators as well as literal newlines. This offline false-positive repair
 supersedes the initial v4.1 draft at `5e04f48` before any execution; source choices,
-reference gates, seeds and resource caps are unchanged. The earlier draft remains
-in Git history, with no allowance or observations attached. Empty preparation reports 96
+reference gates, seeds and resource caps are unchanged. The earlier drafts remain
+in Git history, with no allowance or observations attached. The replay follow-up
+also binds pool/reward identities and withholds unfinished-pool selector endpoints;
+its grouped scoring schedule preserves the same cells and resource ceilings. Empty preparation reports 96
 `not_attempted`, null accuracy, no observations and zero authorization.
+
+Offline verification: the local complete suite passes 711 tests, including 34
+development regressions. The earlier SI-policy implementation f2d9b568 passed 707
+on Windows and Linux in [CI44084659229](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44084659229);
+this follow-up has its own commit-specific Actions checks. CI validates software
+and reproducibility, not semantic translation quality, human judgments or model efficacy.
 
 Official implementation references (checked 17 November 2026):
 [Ollama generation API](https://docs.ollama.com/api/generate),

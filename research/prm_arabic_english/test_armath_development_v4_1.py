@@ -152,6 +152,17 @@ class DevelopmentTests(unittest.TestCase):
         self.assertEqual(sum(c[1:] == ['ar', 'canonical', c[3]] for c in cells), 192)
         self.assertEqual(p['maximum_input_token_positions'], 240*1024)
 
+    def test_scoring_order_needs_one_resident_condition_and_eight_fresh_loads(self):
+        cells = self.scope['scoring']['proposed_dispatch']
+        for index, block in enumerate(self.scope['blocks_not_verified_source_families']):
+            chunk = cells[index*60:(index+1)*60]
+            self.assertEqual([c[3] for c in chunk[:30]], [block['condition_order'][0]]*30)
+            self.assertEqual([c[3] for c in chunk[30:]], [block['condition_order'][1]]*30)
+            self.assertEqual({c[0].rsplit(':c', 1)[0] for c in chunk}, set(block['problem_ids']))
+            self.assertEqual(chunk[0][1:3], [block['language_order'][0], block['rendering_order'][0]])
+        self.assertEqual(self.scope['scoring']['proposed_fresh_condition_loads'], 8)
+        self.assertEqual(self.scope['scoring']['simultaneously_resident_prm_conditions'], 1)
+
     def test_known_bad_and_unresolved_references_do_not_enter_accuracy(self):
         self.assertEqual(self.scope['endpoint']['automatic_reference_cases'], 5)
         self.assertEqual(self.scope['endpoint']['unresolved_reference_cases_excluded'], 7)
@@ -225,6 +236,35 @@ class DevelopmentTests(unittest.TestCase):
         self.assertEqual(report['fixed_slots'], 96)
         for v in report['k_summaries']['8']['arabic_protocol_success']['selectors'].values():
             self.assertEqual(v['accuracy'], 0); self.assertEqual(v['failures'], 5)
+
+    def test_unfinished_pool_cannot_produce_a_final_prm_or_majority_accuracy(self):
+        doc = self.observations()
+        for index, ref in enumerate(self.refs):
+            if ref['answer_key'] is not None: self.generated(doc, case_index=index, answer=ref['answer_key'])
+        report = self.replay(doc); mode = report['k_summaries']['8']['arabic_protocol_success']
+        self.assertEqual(mode['selectors']['first']['accuracy'], 1)
+        for name in ('base_nf4', 'adapter_nf4', 'answer_majority'):
+            self.assertIsNone(mode['selectors'][name]['accuracy'])
+        self.assertIsNone(mode['primary_paired_contrast']['base_minus_first_accuracy'])
+        self.assertFalse(report['all_planned_generation_slots_terminal'])
+        self.assertEqual(report['reward_statuses'], {'base_nf4:not_attempted': 96, 'adapter_nf4:not_attempted': 96})
+
+    def test_terminal_failures_close_a_prefix_without_replacing_pending_other_problems(self):
+        doc = self.observations()
+        for index, ref in enumerate(self.refs):
+            if ref['answer_key'] is not None:
+                self.generated(doc, case_index=index, answer=ref['answer_key'])
+                key = ref['problem_id']
+                for row in doc['rows']:
+                    if row['candidate_id'].startswith(key + ':c') and row['status'] == 'not_attempted': row['status'] = 'failed'
+        report = self.replay(doc); mode = report['k_summaries']['8']['arabic_protocol_success']
+        self.assertEqual(mode['selectors']['base_nf4']['accuracy'], 1)  # declared missing-score fallback
+        self.assertEqual(mode['primary_paired_contrast']['complete_pairs'], 5)
+        self.assertEqual(mode['primary_paired_contrast']['base_minus_first_accuracy'], 0)
+        self.assertFalse(report['all_planned_generation_slots_terminal'])  # excluded reference cases stay visible
+        key = self.refs[2]['problem_id'] + ':K8'
+        self.assertEqual(report['decision_status'][key], 'fixed_terminal_slots')
+        self.assertEqual(report['fallbacks'][key], list(s.ROLES)[::-1])  # sorted role names
 
     def test_interrupted_reservations_consume_slots_and_restart_is_same_pool(self):
         doc = self.observations()
@@ -312,6 +352,19 @@ class DevelopmentTests(unittest.TestCase):
         first = s.selector_positions(pool, ['base_nf4'])
         for row in pool: row['outcome_not_selector_input'] = row['answer_key'] == '999'
         self.assertEqual(first, s.selector_positions(pool, ['base_nf4']))
+
+    def test_selection_seal_binds_pool_and_rewards_when_positions_do_not_change(self):
+        doc = self.observations(); empty = self.replay(doc)
+        row = self.generated(doc, score=.1); first = self.replay(doc)
+        self.assertEqual(empty['decisions'], first['decisions'])
+        self.assertNotEqual(empty['generation_pool_sha256'], first['generation_pool_sha256'])
+        self.assertNotEqual(empty['selection_sha256'], first['selection_sha256'])
+        for role in s.ROLES: row['rewards'][role]['scores'] = [.9] * len(row['input_item']['reward_positions'])
+        changed = self.replay(doc)
+        self.assertEqual(first['generation_pool_sha256'], changed['generation_pool_sha256'])
+        self.assertEqual(first['decisions'], changed['decisions'])
+        self.assertNotEqual(first['score_records_sha256'], changed['score_records_sha256'])
+        self.assertNotEqual(first['selection_sha256'], changed['selection_sha256'])
 
     def test_no_network_model_or_execution_imports_and_private_destination_guard(self):
         tree = ast.parse(Path(s.__file__).read_text(encoding='utf-8'))

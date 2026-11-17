@@ -19,6 +19,10 @@
         "ARMATH:260850e0510e:fold0:0078",
         "ARMATH:260850e0510e:fold0:0832",
         "ARMATH:260850e0510e:fold0:0675"
+      ],
+      "rendering_order": [
+        "canonical",
+        "blank_line"
       ]
     },
     {
@@ -35,6 +39,10 @@
         "ARMATH:260850e0510e:fold1:0152",
         "ARMATH:260850e0510e:fold1:0528",
         "ARMATH:260850e0510e:fold2:0253"
+      ],
+      "rendering_order": [
+        "canonical",
+        "blank_line"
       ]
     },
     {
@@ -51,6 +59,10 @@
         "ARMATH:260850e0510e:fold2:0622",
         "ARMATH:260850e0510e:fold2:0798",
         "ARMATH:260850e0510e:fold2:0307"
+      ],
+      "rendering_order": [
+        "blank_line",
+        "canonical"
       ]
     },
     {
@@ -67,6 +79,10 @@
         "ARMATH:260850e0510e:fold2:0836",
         "ARMATH:260850e0510e:fold4:0735",
         "ARMATH:260850e0510e:fold4:0662"
+      ],
+      "rendering_order": [
+        "blank_line",
+        "canonical"
       ]
     }
   ],
@@ -1024,13 +1040,14 @@
   "policy_files_sha256": {
     "research/armath_audit_v1/expected_artifacts.json": "ffacbdc5fde3c23edbb3e24598bd47a1786f6a4f44d8d29bf57ea7eb2139f5d2",
     "research/armath_v4_0/expected_artifacts.json": "0436e6858ddc2e6c092220df7d22e4abe4c773b1f502139ef483b647d933962f",
-    "research/prm_arabic_english/armath_development_v4_1.py": "f614b520f72d2c0c91a335b179320308deae02b7e76959829fe9352322e34310",
+    "research/prm_arabic_english/armath_development_v4_1.py": "1fb5fc1fbfab89b850509fff6281f7cd681b84262879cafbd0cbd0e127f316ad",
     "research/prm_arabic_english/armath_quality_v4.py": "358ef40dd40c315e6f2ca6a911c8d6d01235747994c96f52f625690e4e967ed2",
     "research/prm_arabic_english/native_study_v1.py": "46f151f1d3b2409079c1ef5623313fc916f24cf89a373af83570d7e59a7f85c9",
     "research/prm_arabic_english/scoring_diagnosis_v3_1.py": "604757d3427d14b81f1ed98b220e49f7c35944f3025dbf5eedb969c643cd25b9"
   },
   "protocol_policy_version": "arabic_solving_contract_v1_1",
   "reference_bundle_sha256": "9f4e36266b48b7e1f805ec1fb91c86ed25b2b716454a68a5c2ac73bab0a22c65",
+  "replay_policy_version": "fixed_pool_missingness_v1_1",
   "scoring": {
     "additional_diagnostic_cells": 48,
     "aggregation": "nonempty raw newline positions; all-position diagnostic from same vector",
@@ -1093,14 +1110,224 @@
       [
         "ARMATH:260850e0510e:fold0:0078:c0",
         "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "en",
         "canonical",
-        "adapter_nf4"
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "en",
+        "blank_line",
+        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0832:c0",
         "ar",
         "canonical",
         "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0832:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0675:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c0",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold0:0078:c1",
+        "en",
+        "blank_line",
+        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0832:c0",
@@ -1112,31 +1339,7 @@
         "ARMATH:260850e0510e:fold0:0675:c0",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0675:c0",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c1",
-        "ar",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c1",
-        "ar",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0832:c1",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0832:c1",
@@ -1148,19 +1351,7 @@
         "ARMATH:260850e0510e:fold0:0675:c1",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0675:c1",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c2",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0078:c2",
@@ -1172,19 +1363,7 @@
         "ARMATH:260850e0510e:fold0:0832:c2",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0832:c2",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0675:c2",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0675:c2",
@@ -1196,19 +1375,7 @@
         "ARMATH:260850e0510e:fold0:0078:c3",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c3",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0832:c3",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0832:c3",
@@ -1220,19 +1387,7 @@
         "ARMATH:260850e0510e:fold0:0675:c3",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0675:c3",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c4",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0078:c4",
@@ -1244,19 +1399,7 @@
         "ARMATH:260850e0510e:fold0:0832:c4",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0832:c4",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0675:c4",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0675:c4",
@@ -1268,19 +1411,7 @@
         "ARMATH:260850e0510e:fold0:0078:c5",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c5",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0832:c5",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0832:c5",
@@ -1292,19 +1423,7 @@
         "ARMATH:260850e0510e:fold0:0675:c5",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0675:c5",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c6",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0078:c6",
@@ -1316,19 +1435,7 @@
         "ARMATH:260850e0510e:fold0:0832:c6",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0832:c6",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0675:c6",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0675:c6",
@@ -1340,19 +1447,7 @@
         "ARMATH:260850e0510e:fold0:0078:c7",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c7",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0832:c7",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold0:0832:c7",
@@ -1364,82 +1459,16 @@
         "ARMATH:260850e0510e:fold0:0675:c7",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0675:c7",
-        "ar",
-        "canonical",
         "adapter_nf4"
       ],
       [
-        "ARMATH:260850e0510e:fold0:0078:c0",
-        "ar",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c0",
-        "ar",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c0",
-        "en",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c0",
+        "ARMATH:260850e0510e:fold1:0152:c0",
         "en",
         "canonical",
         "adapter_nf4"
       ],
       [
-        "ARMATH:260850e0510e:fold0:0078:c0",
-        "en",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c0",
-        "en",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c1",
-        "ar",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c1",
-        "ar",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c1",
-        "en",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c1",
-        "en",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c1",
-        "en",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold0:0078:c1",
+        "ARMATH:260850e0510e:fold1:0152:c0",
         "en",
         "blank_line",
         "adapter_nf4"
@@ -1453,14 +1482,212 @@
       [
         "ARMATH:260850e0510e:fold1:0152:c0",
         "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "en",
         "canonical",
-        "base_nf4"
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0528:c0",
         "ar",
         "canonical",
         "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0528:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0253:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c0",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold1:0152:c1",
+        "ar",
+        "blank_line",
+        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0528:c0",
@@ -1472,31 +1699,7 @@
         "ARMATH:260850e0510e:fold2:0253:c0",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0253:c0",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c1",
-        "ar",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c1",
-        "ar",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0528:c1",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0528:c1",
@@ -1508,19 +1711,7 @@
         "ARMATH:260850e0510e:fold2:0253:c1",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0253:c1",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c2",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0152:c2",
@@ -1532,19 +1723,7 @@
         "ARMATH:260850e0510e:fold1:0528:c2",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0528:c2",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0253:c2",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0253:c2",
@@ -1556,19 +1735,7 @@
         "ARMATH:260850e0510e:fold1:0152:c3",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c3",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0528:c3",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0528:c3",
@@ -1580,19 +1747,7 @@
         "ARMATH:260850e0510e:fold2:0253:c3",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0253:c3",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c4",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0152:c4",
@@ -1604,19 +1759,7 @@
         "ARMATH:260850e0510e:fold1:0528:c4",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0528:c4",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0253:c4",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0253:c4",
@@ -1628,19 +1771,7 @@
         "ARMATH:260850e0510e:fold1:0152:c5",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c5",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0528:c5",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0528:c5",
@@ -1652,19 +1783,7 @@
         "ARMATH:260850e0510e:fold2:0253:c5",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0253:c5",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c6",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0152:c6",
@@ -1676,19 +1795,7 @@
         "ARMATH:260850e0510e:fold1:0528:c6",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0528:c6",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0253:c6",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0253:c6",
@@ -1700,19 +1807,7 @@
         "ARMATH:260850e0510e:fold1:0152:c7",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c7",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0528:c7",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold1:0528:c7",
@@ -1724,85 +1819,13 @@
         "ARMATH:260850e0510e:fold2:0253:c7",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0253:c7",
-        "ar",
-        "canonical",
         "base_nf4"
       ],
       [
-        "ARMATH:260850e0510e:fold1:0152:c0",
-        "en",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c0",
-        "en",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c0",
-        "en",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c0",
-        "en",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c0",
+        "ARMATH:260850e0510e:fold2:0622:c0",
         "ar",
         "blank_line",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c0",
-        "ar",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c1",
-        "en",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c1",
-        "en",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c1",
-        "en",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c1",
-        "en",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c1",
-        "ar",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold1:0152:c1",
-        "ar",
-        "blank_line",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0622:c0",
@@ -1812,15 +1835,219 @@
       ],
       [
         "ARMATH:260850e0510e:fold2:0622:c0",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
         "ar",
         "canonical",
-        "base_nf4"
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "en",
+        "canonical",
+        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0798:c0",
         "ar",
         "canonical",
         "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c2",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c3",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c4",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c5",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c6",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0798:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0307:c7",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c0",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0622:c1",
+        "en",
+        "canonical",
+        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0798:c0",
@@ -1832,31 +2059,7 @@
         "ARMATH:260850e0510e:fold2:0307:c0",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0307:c0",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c1",
-        "ar",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c1",
-        "ar",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0798:c1",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0798:c1",
@@ -1868,19 +2071,7 @@
         "ARMATH:260850e0510e:fold2:0307:c1",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0307:c1",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c2",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0622:c2",
@@ -1892,19 +2083,7 @@
         "ARMATH:260850e0510e:fold2:0798:c2",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0798:c2",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0307:c2",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0307:c2",
@@ -1916,19 +2095,7 @@
         "ARMATH:260850e0510e:fold2:0622:c3",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c3",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0798:c3",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0798:c3",
@@ -1940,19 +2107,7 @@
         "ARMATH:260850e0510e:fold2:0307:c3",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0307:c3",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c4",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0622:c4",
@@ -1964,19 +2119,7 @@
         "ARMATH:260850e0510e:fold2:0798:c4",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0798:c4",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0307:c4",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0307:c4",
@@ -1988,19 +2131,7 @@
         "ARMATH:260850e0510e:fold2:0622:c5",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c5",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0798:c5",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0798:c5",
@@ -2012,19 +2143,7 @@
         "ARMATH:260850e0510e:fold2:0307:c5",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0307:c5",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c6",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0622:c6",
@@ -2036,19 +2155,7 @@
         "ARMATH:260850e0510e:fold2:0798:c6",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0798:c6",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0307:c6",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0307:c6",
@@ -2060,19 +2167,7 @@
         "ARMATH:260850e0510e:fold2:0622:c7",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c7",
-        "ar",
-        "canonical",
         "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0798:c7",
-        "ar",
-        "canonical",
-        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0798:c7",
@@ -2084,83 +2179,23 @@
         "ARMATH:260850e0510e:fold2:0307:c7",
         "ar",
         "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0307:c7",
-        "ar",
-        "canonical",
         "base_nf4"
       ],
       [
-        "ARMATH:260850e0510e:fold2:0622:c0",
-        "ar",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c0",
-        "ar",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c0",
+        "ARMATH:260850e0510e:fold2:0836:c0",
         "en",
-        "canonical",
-        "adapter_nf4"
+        "blank_line",
+        "base_nf4"
       ],
       [
-        "ARMATH:260850e0510e:fold2:0622:c0",
+        "ARMATH:260850e0510e:fold2:0836:c0",
         "en",
         "canonical",
         "base_nf4"
       ],
       [
-        "ARMATH:260850e0510e:fold2:0622:c0",
-        "en",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c0",
-        "en",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c1",
+        "ARMATH:260850e0510e:fold2:0836:c0",
         "ar",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c1",
-        "ar",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c1",
-        "en",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c1",
-        "en",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c1",
-        "en",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0622:c1",
-        "en",
         "blank_line",
         "base_nf4"
       ],
@@ -2171,16 +2206,208 @@
         "base_nf4"
       ],
       [
-        "ARMATH:260850e0510e:fold2:0836:c0",
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "en",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "en",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "ar",
+        "blank_line",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
         "ar",
         "canonical",
-        "adapter_nf4"
+        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0735:c0",
         "ar",
         "canonical",
         "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c0",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c1",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c2",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c3",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c4",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c5",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c6",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0735:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold4:0662:c7",
+        "ar",
+        "canonical",
+        "base_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c0",
+        "ar",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "en",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "en",
+        "canonical",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "ar",
+        "blank_line",
+        "adapter_nf4"
+      ],
+      [
+        "ARMATH:260850e0510e:fold2:0836:c1",
+        "ar",
+        "canonical",
+        "adapter_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0735:c0",
@@ -2192,31 +2419,7 @@
         "ARMATH:260850e0510e:fold4:0662:c0",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0662:c0",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c1",
-        "ar",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c1",
-        "ar",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0735:c1",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0735:c1",
@@ -2228,19 +2431,7 @@
         "ARMATH:260850e0510e:fold4:0662:c1",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0662:c1",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c2",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0836:c2",
@@ -2252,19 +2443,7 @@
         "ARMATH:260850e0510e:fold4:0735:c2",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0735:c2",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0662:c2",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0662:c2",
@@ -2276,19 +2455,7 @@
         "ARMATH:260850e0510e:fold2:0836:c3",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c3",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0735:c3",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0735:c3",
@@ -2300,19 +2467,7 @@
         "ARMATH:260850e0510e:fold4:0662:c3",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0662:c3",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c4",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0836:c4",
@@ -2324,19 +2479,7 @@
         "ARMATH:260850e0510e:fold4:0735:c4",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0735:c4",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0662:c4",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0662:c4",
@@ -2348,19 +2491,7 @@
         "ARMATH:260850e0510e:fold2:0836:c5",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c5",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0735:c5",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0735:c5",
@@ -2372,19 +2503,7 @@
         "ARMATH:260850e0510e:fold4:0662:c5",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0662:c5",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c6",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold2:0836:c6",
@@ -2396,19 +2515,7 @@
         "ARMATH:260850e0510e:fold4:0735:c6",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0735:c6",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0662:c6",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0662:c6",
@@ -2420,19 +2527,7 @@
         "ARMATH:260850e0510e:fold2:0836:c7",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c7",
-        "ar",
-        "canonical",
         "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0735:c7",
-        "ar",
-        "canonical",
-        "base_nf4"
       ],
       [
         "ARMATH:260850e0510e:fold4:0735:c7",
@@ -2444,88 +2539,12 @@
         "ARMATH:260850e0510e:fold4:0662:c7",
         "ar",
         "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold4:0662:c7",
-        "ar",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c0",
-        "en",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c0",
-        "en",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c0",
-        "en",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c0",
-        "en",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c0",
-        "ar",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c0",
-        "ar",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c1",
-        "en",
-        "canonical",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c1",
-        "en",
-        "canonical",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c1",
-        "en",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c1",
-        "en",
-        "blank_line",
-        "adapter_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c1",
-        "ar",
-        "blank_line",
-        "base_nf4"
-      ],
-      [
-        "ARMATH:260850e0510e:fold2:0836:c1",
-        "ar",
-        "blank_line",
         "adapter_nf4"
       ]
     ],
+    "proposed_fresh_condition_loads": 8,
     "shared_cells": 16,
+    "simultaneously_resident_prm_conditions": 1,
     "truncation_allowed": false,
     "unique_cells": 240
   },

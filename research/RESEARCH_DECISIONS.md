@@ -1,5 +1,12 @@
 # Research decisions
 
+v4.1 missingness follow-up — An unattempted candidate can change later PRM or
+majority selection. Withhold those endpoints for an incomplete prefix; preserve
+first-sample outcomes, fixed failure slots and all reward statuses. Bind choices
+to both candidate-pool and reward manifests. Schedule each condition contiguously
+within a block to avoid 240 model reloads on a small GPU; eight fresh loads retain
+the same 240 cells and counterbalanced orders. No extra model operation authorized.
+
 v4.1 contract v1.1 — A source-relevant SI unit such as mm/mL in an Arabic
 mathematical step must not be treated as English prose. Add a narrow unit-token
 allowlist while retaining mixed-language and reasoning-boundary flags. Embedded
