@@ -131,15 +131,15 @@ class ArmathFeasibilityTests(unittest.TestCase):
             self.assertEqual(result['model_operations'], 0)
             private = json.loads((dest/'selection_private.json').read_text())
             self.assertTrue(all(not {'question','equation','answer'} & r.keys() for r in private['rows']))
-            records=[json.loads(line) for line in (dest/'review_records.jsonl').read_text().splitlines()]
+            records=[json.loads(line) for line in (dest/'review_records.jsonl').read_text(encoding='utf-8').splitlines()]
             self.assertEqual(len(records),100)
             for row in records:
                 self.assertEqual(row['original'],originals[row['problem_id']])
                 self.assertIsNone(row['developer_judgment'])
                 self.assertEqual(row['independent_judgments'],[])
-            self.assertNotIn('value_exact',(dest/'questions.html').read_text())
-            self.assertNotIn('x=',(dest/'questions.html').read_text())
-            self.assertIn('value_exact',(dest/'coordinator_references.html').read_text())
+            self.assertNotIn('value_exact',(dest/'questions.html').read_text(encoding='utf-8'))
+            self.assertNotIn('x=',(dest/'questions.html').read_text(encoding='utf-8'))
+            self.assertIn('value_exact',(dest/'coordinator_references.html').read_text(encoding='utf-8'))
             self.assertEqual(len(json.loads((dest/'SHA256SUMS.json').read_text())), 16)
             before = {p.name: p.read_bytes() for p in dest.iterdir()}
             with self.assertRaises(FileExistsError): study.prepare(Path(tmp), dest)

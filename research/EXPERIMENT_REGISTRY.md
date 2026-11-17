@@ -1,5 +1,9 @@
 # Experiment and evidence registry
 
+v4.0 Windows test follow-up — explicitly decode the generated Arabic JSON/HTML as
+UTF-8 in the regression reader. Preserve exact Arabic source equality and all core
+output fingerprints; no source, semantic rule, selection or human record changes.
+
 v4.0 usability follow-up — align blank developer/A/B/C worksheet rows with the
 preserved question-page dispatch order. The first-ten subset is identical across
 views; regression and packet fingerprints cover alignment. No case, source,

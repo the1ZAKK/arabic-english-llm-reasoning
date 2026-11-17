@@ -6,6 +6,12 @@ Usability follow-up: all developer/A/B/C CSV rows now follow the preserved HTML
 review order; a regression checks that the same first ten appear in every view.
 This changes no selected ID, source, mathematical finding, judgment or partition.
 
+Windows follow-up: the new regression's JSON/HTML readers now explicitly decode
+UTF-8 instead of the Windows ANSI default. The byte-exact Arabic equality check
+is retained; production packet/source bytes and all sixteen output hashes are
+unchanged. The first v4 Windows run failed this reader assertion after 674 tests;
+check the latest follow-up CI for the resolved cross-platform outcome.
+
 Start with [ARMATH_FEASIBILITY_V4_0.md](ARMATH_FEASIBILITY_V4_0.md) and
 [armath_v4_0/README.md](armath_v4_0/README.md). Research/software baseline
 `1f395de18654302b4bece482978dd2ad09d6ea5c` was verified current; its CI43862194298
