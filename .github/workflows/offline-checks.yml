@@ -11,6 +11,8 @@ on:
       - "research/armath_audit_v1/**"
       - "research/armath_v4_0/**"
       - "research/armath_development_v4_1/**"
+      - "research/armath_readiness_v4_2/**"
+      - "scripts/build_armath_inspector_windows.py"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -27,6 +29,8 @@ on:
       - "research/armath_audit_v1/**"
       - "research/armath_v4_0/**"
       - "research/armath_development_v4_1/**"
+      - "research/armath_readiness_v4_2/**"
+      - "scripts/build_armath_inspector_windows.py"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -64,6 +68,7 @@ jobs:
             research/armath_audit_v1
             research/armath_v4_0
             research/armath_development_v4_1
+            research/armath_readiness_v4_2
             data/armath
       - uses: actions/setup-python@v7.0.0
         with:
@@ -224,6 +229,28 @@ jobs:
           }
           exit 0
       - run: python scripts/check_reproducibility.py
+      - name: Verify versioned mathematical references without human approval
+        run: python -B research/prm_arabic_english/armath_references_v4_2.py
+      - name: Verify read-only inspector CMD and reject tampered payload before execution
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          ARABICPRM_ARMATH_INSPECT_VERIFY_ONLY: "1"
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = (Resolve-Path research/prm_arabic_english/inspect_armath_runtime_windows_v4_2.cmd).Path
+          $good = @(& cmd.exe /d /c $launcher 2>&1)
+          if ($LASTEXITCODE -ne 0 -or -not ($good -match 'READONLY INSPECTOR VERIFIED:')) { throw 'Inspector did not verify' }
+          $bad = Join-Path $env:RUNNER_TEMP ('bad-inspector-'+[guid]::NewGuid().ToString('N')+'.cmd')
+          try {
+            $raw = [IO.File]::ReadAllText($launcher)
+            $changed = [regex]::new('(?m)^rem ARABICPRM-ARMATH-INSPECT-PAYLOAD [A-Za-z0-9+/]').Replace($raw,'rem ARABICPRM-ARMATH-INSPECT-PAYLOAD !',1)
+            [IO.File]::WriteAllText($bad,$changed,[Text.Encoding]::ASCII)
+            $result = @(& cmd.exe /d /c ('"'+$bad+'"') 2>&1)
+            if ($LASTEXITCODE -ne 1 -or -not ($result -match 'Read-only inspector SHA256 mismatch')) { throw 'Tampered inspector not blocked' }
+          } finally { Remove-Item -LiteralPath $bad -Force -ErrorAction SilentlyContinue }
+          Write-Host 'READONLY INSPECTOR NATIVE HASH GUARDS PASSED; inspector not executed.'
+          exit 0
       - name: Verify published original ArMATH bytes, counts and scoped attribution
         run: python -B research/prm_arabic_english/verify_armath_originals.py
       - name: Acquire only pinned Arabic ArMATH source JSON for reproducibility (no models)

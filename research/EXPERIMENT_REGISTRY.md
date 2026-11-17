@@ -1,5 +1,12 @@
 # Experiment and evidence registry
 
+v4.2 reference/runtime milestone — Six formerly pending keys are independently
+derived by AI from original questions and cross-checked against equations. The
+boat answer60 assumes equal sharing and stays excluded. Eleven technical keys,
+one exclusion, zero human judgments/eligible problems. Standalone read-only model
+and CUDA/library inventory prepared; no actual laptop report supplied or invented.
+Eleven synthetic/source-bound regressions pass locally. No active budget or models.
+
 v4.1 replay follow-up — Synthetic partial-pool regressions demonstrate why
 provisional selection cannot count as a final PRM/majority outcome. Add explicit
 completion/status reporting and pool/reward-bound choice seals. Group scoring

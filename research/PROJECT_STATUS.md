@@ -1,5 +1,11 @@
 # ArabicPRM-T v2 project evidence
 
+v4.2 current — [versioned mathematical/runtime readiness](ARMATH_READINESS_V4_2.md):
+11 AI/automatic technical reference keys, one equal-sharing conditional exclusion,
+zero human validations. New hash-verified read-only laptop inspector; actual local
+model/library/hardware evidence is still unavailable here. Executor engineering
+is in progress; no inference, scoring, model download, active allowance or training.
+
 ## v4.1 — controlled ArMATH development, current
 
 The owner no longer requires reviewing all 6,000 sources before development.

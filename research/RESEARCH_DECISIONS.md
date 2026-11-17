@@ -1,5 +1,11 @@
 # Research decisions
 
+v4.2 — Version the reference policy separately from the frozen proposal.
+Distinguish AI question derivation from human mathematical review; keep the boat
+payment conditional rather than silently imposing equal allocation. Native/source
+labels and old human records remain unchanged. Runtime inspection is read-only
+and cannot certify an untested NF4 forward or activate any experiment allowance.
+
 v4.1 missingness follow-up — An unattempted candidate can change later PRM or
 majority selection. Withhold those endpoints for an incomplete prefix; preserve
 first-sample outcomes, fixed failure slots and all reward statuses. Bind choices

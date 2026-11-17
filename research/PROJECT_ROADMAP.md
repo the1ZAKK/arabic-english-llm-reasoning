@@ -1,5 +1,11 @@
 # Evidence-gated roadmap
 
+v4.2 next — Complete the guarded executor against the unchanged v4.1 proposal;
+test reservations/resume/token alignment and no legacy allowance reuse. Obtain
+actual read-only laptop inventory; retain the conditional boat reference outside
+automatic accuracy. Independent Arabic step/final and bilingual fidelity evidence
+remain necessary. No model operation is authorized by this engineering work.
+
 ## Current v4.1 critical path — actual controlled evidence
 
 Use [the bounded development scope](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md), not a
