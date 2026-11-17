@@ -1,22 +1,29 @@
 # Session handoff
 
-v4.2 Windows fix pending verification — Initial executor CI44174397443 passed
-761 unit tests on both systems; Linux completed, Windows then failed the exact
-source preflight because the reused Git wrapper forces core.autocrlf=false. The
-new status helper respects checkout EOL policy without optional index writes;
-canonical runtime bytes remain checked separately. Four Git regressions added.
-Cloud execution became unavailable during investigation; continue through GitHub
-CI and do not present earlier unit success as final release verification.
+v4.2 final handoff — Verified source [7eec2b5](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/7eec2b5f2c527e653b583b967f6fa01773778a17):
+[CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624) completed successfully on both Windows and Linux.
+Each ran 765 offline tests (54 v4.2 checks); Windows 587.580 s, Linux 100.367 s.
+Native CMD payload/hash rejection, committed import-closure checks, zero-operation
+preparation, original ArMATH reproduction and historical package guards passed.
+Scheduled-task integration remained skipped. These are software checks, not laptop
+model-fit evidence, translation accuracy or completed human QC. No active budget,
+model generation/scoring, training or model download occurred.
 
-v4.2 active handoff — Read ARMATH_READINESS_V4_2.md and the new versioned
-reference_decisions.json. Technical endpoint count11, conditional boat exclusion1;
-no human validations. New standalone inspector hashes actual local artifacts and
-reports prerequisites only, not inference fit. Cloud has no Windows access.
-Guarded executor and local-only backend are implemented. All 761 local tests pass
-(50 v4.2 checks); inspect this source commit’s Windows/Linux CI. Obtain real local
-inventory next; do not approve or run model phases under this directive. Read
-armath_readiness_v4_2/README.md for exact identities, modes and private report paths.
-The original v4.1 proposal and all protected source/history identities are exact.
+Read ARMATH_READINESS_V4_2.md and armath_readiness_v4_2/README.md for the
+unchanged proposal and current source/reference/launcher identities. Eleven
+technical development keys, one conditional exclusion; zero human approvals.
+Run only the standalone read-only inspector on the actual Windows laptop, then
+review/share share_status.json; retain report_private.json locally. Cloud never
+accessed the laptop; cloud execution became unavailable during the EOL fix, which
+was tested through GitHub Actions. Keep the original checkout/backup/history and
+private overlap worksheet untouched. No artifact migration or setup installation.
+
+The new EOL-aware status helper passed the four Git regressions and actual Windows
+source preflight. Exact runtime bytes, all 42 historical release fingerprints,
+published ArMATH originals and old proposal remain checked. This does not newly
+attest the laptop's private counters or checkpoint bytes; obtain actual inventory
+and protected-state evidence locally before later consent. Never reuse pilot20 or
+diagnostic24 allowances. No approval, scoring, generation or training is authorized.
 
 v4.1 final replay preparation: use the current inactive proposal and README
 identities, superseding earlier unexecuted v4.1 drafts retained in history.

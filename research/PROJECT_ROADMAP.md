@@ -1,9 +1,11 @@
 # Evidence-gated roadmap
 
-v4.2 immediate verification — Re-run Windows/Linux CI for the EOL-aware source
-cleanliness correction. Retain byte-exact executor/import closure checks and the
-read-only inspector. A passing release still needs actual laptop inventory and
-independent scientific evidence before any later separate execution consent.
+v4.2 release verification — Source 7eec2b5 passed 765 offline tests per OS in
+[CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624), including native Windows integrity guards.
+No further model operation is authorized. Next obtain the actual read-only laptop
+inventory, inspect lineage/runtime feasibility, and obtain genuine reference,
+Arabic step/final and bilingual fidelity judgments. Keep the boat allocation
+conditional. Only a later separate owner decision can authorize a bound allowance.
 
 v4.2 next — Review the implemented/tested guarded executor against the unchanged
 v4.1 proposal and new reference policy. Obtain actual read-only laptop inventory
@@ -14,10 +16,11 @@ remain necessary. No model operation is authorized by this engineering work.
 ## Current v4.1 critical path — actual controlled evidence
 
 Use [the bounded development scope](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md), not a
-full-6,000-review gate. Resolve the seven selected word-problem reference cases
-and sample-check the five automatic proxies. Inventory actual generator/PRM
-artifacts and input/memory feasibility read-only. Bind the guarded executor and
-runtime before any separate generation/scoring decision; do not activate budgets.
+full-6,000-review gate. Obtain genuine independent review of the eleven technical
+keys and the conditional boat allocation; do not rewrite the original five-key
+policy. Inventory actual generator/PRM artifacts and base/adapter lineage read-only.
+Bind the tested guarded executor and runtime before any separate generation/scoring
+decision; NF4 prerequisites alone do not establish forward fit or activate budgets.
 
 Then, only after authorization, retain one shared 12×8 Arabic pool and matched
 base/adapter NF4 observations; use real English mirrors and independent step maps

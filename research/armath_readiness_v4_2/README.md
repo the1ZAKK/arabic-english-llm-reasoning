@@ -5,6 +5,17 @@ Read [the scientific readiness decision](../ARMATH_READINESS_V4_2.md).
 The executor is implemented and tested with synthetic clients; real model APIs,
 weights, library compatibility and GPU forward fit remain unverified.
 
+## Verified source and CI
+
+Verified source [7eec2b5](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/7eec2b5f2c527e653b583b967f6fa01773778a17):
+[CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624) completed successfully on both Windows and Linux.
+Each ran 765 offline tests (54 v4.2 checks); Windows 587.580 s, Linux 100.367 s.
+Native CMD payload/hash rejection, committed import-closure checks, zero-operation
+preparation, original ArMATH reproduction and historical package guards passed.
+Scheduled-task integration remained skipped. These are software checks, not laptop
+model-fit evidence, translation accuracy or completed human QC. No active budget,
+model generation/scoring, training or model download occurred.
+
 ## Pinned identities
 
 - Frozen v4.1 proposal (canonical SHA256):

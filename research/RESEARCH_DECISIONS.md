@@ -1,5 +1,13 @@
 # Research decisions
 
+v4.2 readiness decision — The tested software release is ready for local
+read-only qualification, not model execution. Both OS jobs passed 765 tests in
+[CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624). The frozen v4.1 proposal, new eleven-key technical
+reference policy and 45-file executor closure remain separately identifiable.
+Actual runtime/model lineage, GPU forward fit, qualified human judgments and
+future separate consent remain unresolved. Do not turn CI success into any of
+those approvals or into a native benchmark efficacy claim.
+
 v4.2 source-integrity decision — Canonical Git-blob packaging and worktree
 cleanliness require different EOL handling. Preserve the historical helper and all
 frozen fingerprints; respect local EOL policy only for read-only status, while

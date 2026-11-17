@@ -1,35 +1,38 @@
 # ArabicPRM-T v2 project evidence
 
-v4.2 CI follow-up — Initial executor run44174397443 passed761 tests on each OS;
-Linux completed, but Windows then rejected its ordinary CRLF checkout at the
-source-cleanliness guard. A separate status helper now respects checkout EOL
-settings and keeps exact runtime-byte checks. Four synthetic Git regressions were
-added. The corrected commit requires fresh Windows/Linux CI; no model operation.
+v4.2 current — [scientific readiness report](ARMATH_READINESS_V4_2.md).
+Verified source [7eec2b5](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/7eec2b5f2c527e653b583b967f6fa01773778a17):
+[CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624) completed successfully on both Windows and Linux.
+Each ran 765 offline tests (54 v4.2 checks); Windows 587.580 s, Linux 100.367 s.
+Native CMD payload/hash rejection, committed import-closure checks, zero-operation
+preparation, original ArMATH reproduction and historical package guards passed.
+Scheduled-task integration remained skipped. These are software checks, not laptop
+model-fit evidence, translation accuracy or completed human QC. No active budget,
+model generation/scoring, training or model download occurred.
 
-v4.2 current — [versioned mathematical/runtime readiness](ARMATH_READINESS_V4_2.md):
-11 AI/automatic technical reference keys, one equal-sharing conditional exclusion,
-zero human validations. New hash-verified read-only laptop inspector; actual local
-model/library/hardware evidence is still unavailable here. Guarded generation/scoring, durable no-refund accounting and report analysis are
-implemented; 761 local offline tests pass. Actual laptop models/runtime/GPU fit
-and independent human evidence remain unverified. No inference, scoring, model
-download, active allowance or training.
+Eleven AI/automatic technical keys, one conditional boat exclusion and zero human
+validations. The guarded executor is implemented; actual laptop model/library/
+hardware evidence, base/adapter lineage and NF4 forward fit remain unverified.
+The read-only Windows inspector is the next local action; it cannot authorize work.
 
-## v4.1 — controlled ArMATH development, current
+## Retained v4.1 scope and current v4.2 status
 
 The owner no longer requires reviewing all 6,000 sources before development.
-[The measured preparation](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md) selects twelve
+[The v4.1 preparation](ARMATH_CONTROLLED_DEVELOPMENT_V4_1.md) selected twelve
 already-exposed source-tagged novel cases: eight word problems, four controls,
 twelve equation templates and eight legacy similarity components (not verified
-families). Five question-derived agreement proxies can support a narrow automatic
-endpoint; seven unresolved references are excluded, with known discrepancies
-outside the scope. Zero independent human labels/eligible benchmark problems.
+families). Its original five-key policy and frozen proposal remain unchanged.
+A separate v4.2 decision now supports eleven technical development keys; the
+boat allocation remains conditional and excluded. Known discrepancies stay
+outside the accuracy endpoint. Zero independent human labels/eligible problems.
 
 The [inactive source-bound proposal](armath_development_v4_1/proposal.json) fixes
 96 Arabic candidate slots, 512 output tokens each, and 240 unique matched PRM
-scoring cells, 1,024 input tokens each. Reused v3 selectors and token/runtime checks
-support an offline recorded replay; no model/executor/active budget exists for
-this scope. Actual PRM fingerprints, local capability/memory checks, selected
-reference work and separately authorized guarded execution remain necessary.
+scoring cells, 1,024 input tokens each. The v4.2 guarded executor and offline
+analysis now implement this scope; no active budget or real model observations
+exist. Actual laptop artifacts, base/adapter lineage, runtime compatibility and
+forward fit still require evidence. Separate future execution consent and genuine
+scientific human judgments remain distinct requirements.
 Arabic protocol success and numerical correctness are reported separately.
 
 All 711 local offline tests pass, including 34 new targeted regressions. Check the commit-specific

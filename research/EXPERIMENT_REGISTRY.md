@@ -1,11 +1,13 @@
 # Experiment and evidence registry
 
-v4.2 Windows source-guard follow-up — Preserve the frozen recovery Git helper.
-Use a read-only status call respecting the checkout's EOL policy, with optional
-index locks and filesystem-monitor hooks disabled, followed by unchanged exact
-runtime blob comparisons. Four disposable-Git tests cover clean CRLF/index bytes,
-real edits, false-clean runtime tampering and Git errors. Initial run44174397443
-passed761 tests per OS but failed this later Windows preflight; fresh CI pending.
+v4.2 verified release — Verified source [7eec2b5](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/7eec2b5f2c527e653b583b967f6fa01773778a17):
+[CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624) completed successfully on both Windows and Linux.
+Each ran 765 offline tests (54 v4.2 checks); Windows 587.580 s, Linux 100.367 s.
+Native CMD payload/hash rejection, committed import-closure checks, zero-operation
+preparation, original ArMATH reproduction and historical package guards passed.
+Scheduled-task integration remained skipped. These are software checks, not laptop
+model-fit evidence, translation accuracy or completed human QC. No active budget,
+model generation/scoring, training or model download occurred.
 
 v4.2 guarded-executor milestone — Implement the frozen96-request/240-cell roster
 with mirrored immutable charges/dispatch/input/outcomes, atomic nonces, OS locks,
@@ -14,7 +16,8 @@ no-refund/no-retry resume and no old-allowance reuse. Local-only matched NF4 loa
 reject missing/random weights, offload and changed paired tokens. Reuse v4.1/v3
 parsing, selectors, numerical keys, token anchors and source snapshots. Preserve
 all96/240/64 observations and disclose missingness in technical endpoints/paired
-contrasts. All761 local tests pass (50 v4.2). Runtime/real forward fit/human review
+contrasts. The earlier local suite passed761 tests; the corrected release passed 765 per OS
+(54 v4.2) in the linked CI. Runtime/real forward fit/human review
 and explicit future owner authorization remain pending. No actual model operation,
 active approval, training or export occurred. Earlier reference milestone follows.
 

@@ -5,6 +5,24 @@ model downloads, active approval or budget. The frozen v4.1 proposal remains
 `da757e5b75c1c0ee9d7b1687ed26b8c50192cfc5cb56c89fe532e484316952cf`.
 All original data, prior source/attempt/checkpoint/human records and main are unchanged.
 
+## Verified software evidence
+
+Verified source [7eec2b5](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/7eec2b5f2c527e653b583b967f6fa01773778a17):
+[CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624) completed successfully on both Windows and Linux.
+Each ran 765 offline tests (54 v4.2 checks); Windows 587.580 s, Linux 100.367 s.
+Native CMD payload/hash rejection, committed import-closure checks, zero-operation
+preparation, original ArMATH reproduction and historical package guards passed.
+Scheduled-task integration remained skipped. These are software checks, not laptop
+model-fit evidence, translation accuracy or completed human QC. No active budget,
+model generation/scoring, training or model download occurred.
+
+The executor release manifest canonical SHA256 is
+`0a3cb623a1bdebe54b5c514480bf182d22238ce9ab4a4292ddd9a03aa1bc4924`.
+The proposal, reference decision and read-only launcher identities are listed in
+[the operating handoff](armath_readiness_v4_2/README.md). Later documentation-only
+commits do not change this manifest or its 45 source dependencies. Always inspect
+the final branch commit's own checks as well as the tested source run.
+
 ## Versioned mathematical decision
 
 [Reference evidence](armath_readiness_v4_2/reference_decisions.json) and
@@ -212,5 +230,6 @@ index locks and filesystem-monitor hooks, and retains every exact runtime-byte
 comparison against HEAD. No checkout normalization, reset or protected-file edit
 is used. Four disposable-Git regressions cover clean CRLF/index preservation,
 tracked/staged/untracked edits, a false-clean status with altered runtime bytes,
-and fail-closed Git errors. The corrected source needs its own Windows/Linux CI;
-prior unit success does not establish this fix has passed.
+and fail-closed Git errors. The correction passed both
+operating systems, including the actual Windows committed-source check, in
+[CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624). No frozen helper or prior identity was changed.
