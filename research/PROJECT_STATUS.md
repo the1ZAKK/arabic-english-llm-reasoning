@@ -3,8 +3,10 @@
 v4.2 current — [versioned mathematical/runtime readiness](ARMATH_READINESS_V4_2.md):
 11 AI/automatic technical reference keys, one equal-sharing conditional exclusion,
 zero human validations. New hash-verified read-only laptop inspector; actual local
-model/library/hardware evidence is still unavailable here. Executor engineering
-is in progress; no inference, scoring, model download, active allowance or training.
+model/library/hardware evidence is still unavailable here. Guarded generation/scoring, durable no-refund accounting and report analysis are
+implemented; 761 local offline tests pass. Actual laptop models/runtime/GPU fit
+and independent human evidence remain unverified. No inference, scoring, model
+download, active allowance or training.
 
 ## v4.1 — controlled ArMATH development, current
 

@@ -62,6 +62,7 @@ MODULES = (
     "test_armath_quality_v4",
     "test_armath_development_v4_1",
     "test_armath_readiness_v4_2",
+    "test_armath_executor_v4_2",
 )
 
 if __name__ == "__main__":

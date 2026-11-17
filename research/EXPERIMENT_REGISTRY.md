@@ -1,5 +1,16 @@
 # Experiment and evidence registry
 
+v4.2 guarded-executor milestone — Implement the frozen96-request/240-cell roster
+with mirrored immutable charges/dispatch/input/outcomes, atomic nonces, OS locks,
+separate typed consent and phase confirmations, exact runtime/source binding,
+no-refund/no-retry resume and no old-allowance reuse. Local-only matched NF4 loaders
+reject missing/random weights, offload and changed paired tokens. Reuse v4.1/v3
+parsing, selectors, numerical keys, token anchors and source snapshots. Preserve
+all96/240/64 observations and disclose missingness in technical endpoints/paired
+contrasts. All761 local tests pass (50 v4.2). Runtime/real forward fit/human review
+and explicit future owner authorization remain pending. No actual model operation,
+active approval, training or export occurred. Earlier reference milestone follows.
+
 v4.2 reference/runtime milestone — Six formerly pending keys are independently
 derived by AI from original questions and cross-checked against equations. The
 boat answer60 assumes equal sharing and stays excluded. Eleven technical keys,

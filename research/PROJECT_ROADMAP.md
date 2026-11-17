@@ -1,8 +1,8 @@
 # Evidence-gated roadmap
 
-v4.2 next — Complete the guarded executor against the unchanged v4.1 proposal;
-test reservations/resume/token alignment and no legacy allowance reuse. Obtain
-actual read-only laptop inventory; retain the conditional boat reference outside
+v4.2 next — Review the implemented/tested guarded executor against the unchanged
+v4.1 proposal and new reference policy. Obtain actual read-only laptop inventory
+and adapter/base lineage; retain the conditional boat reference outside
 automatic accuracy. Independent Arabic step/final and bilingual fidelity evidence
 remain necessary. No model operation is authorized by this engineering work.
 

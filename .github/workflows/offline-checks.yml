@@ -231,6 +231,12 @@ jobs:
       - run: python scripts/check_reproducibility.py
       - name: Verify versioned mathematical references without human approval
         run: python -B research/prm_arabic_english/armath_references_v4_2.py
+      - name: Verify the separate executor release and prepare a zero-operation draft without runtime assumptions
+        if: github.ref == 'refs/heads/research/arabicprm-v2-production'
+        run: python -B research/prm_arabic_english/armath_executor_v4_2.py --repo-root . --state-dir "${{ runner.temp }}/armath-execution-v4-2"
+      - name: Verify exact committed executor/import-closure bytes without approval or model access
+        if: github.ref == 'refs/heads/research/arabicprm-v2-production'
+        run: python -B -c "import sys; sys.path.insert(0, 'research/prm_arabic_english'); import armath_executor_v4_2 as e; e.release(); e.committed_release(e.policy.ROOT); print('ARMATH COMMITTED RELEASE VERIFIED; zero model operations')"
       - name: Verify read-only inspector CMD and reject tampered payload before execution
         if: runner.os == 'Windows'
         shell: pwsh

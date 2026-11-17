@@ -175,6 +175,16 @@ def default_base():
     return None
 
 
+def project_artifact(repo,relative,explicit=None):
+    if explicit:return artifact(explicit)
+    original=repo.parent/'arabic-english-llm-reasoning'
+    candidates=list(dict.fromkeys(p.resolve() for p in (repo/relative,original/relative) if p.exists()))
+    if len(candidates)>1:
+        return {'status':'ambiguous_multiple_paths','path':None,'files':[],'sha256':None,
+                'candidate_paths_private':[str(p) for p in candidates]}
+    return artifact(candidates[0] if candidates else repo/relative)
+
+
 def inspect(repo,base=None,adapter=None,head=None,probe=True,ollama_models=None):
     repo=Path(repo).expanduser().resolve()
     base=Path(base) if base else default_base()
@@ -185,8 +195,8 @@ def inspect(repo,base=None,adapter=None,head=None,probe=True,ollama_models=None)
         names={'tokenizer.json','tokenizer_config.json','special_tokens_map.json','vocab.json','merges.txt','added_tokens.json'}
         files=[x for x in model['files'] if x['name'] in names]
         if files:tokenizer={'status':'present','path':str(Path(base).resolve()),'files':files,'sha256':hashlib.sha256(canonical(files)).hexdigest()}
-    adapted=artifact(adapter or repo/'research/prm_arabic_english/checkpoints/arabicprm_pilot/best_adapter')
-    reward=artifact(head or repo/'research/prm_arabic_english/checkpoints/arabicprm_pilot/best_v_head.pt')
+    adapted=project_artifact(repo,'research/prm_arabic_english/checkpoints/arabicprm_pilot/best_adapter',adapter)
+    reward=project_artifact(repo,'research/prm_arabic_english/checkpoints/arabicprm_pilot/best_v_head.pt',head)
     gpu=capabilities() if probe else {'status':'not_probed'}
     local=ollama()
     storage=ollama_storage(ollama_models)
@@ -198,10 +208,12 @@ def inspect(repo,base=None,adapter=None,head=None,probe=True,ollama_models=None)
     prerequisites=bool(local['exact_digest_match'] and storage['integrity_verified'] and required_files
         and model['status']==tokenizer['status']==adapted['status']==reward['status']=='present'
         and all(versions.values()) and gpu.get('cuda_available') and gpu.get('bnb_compiled_with_cuda')
-        and any(d['capability']>=[6,0] for d in gpu.get('devices',[])))
+        and any(d['index']==0 and d['capability']>=[6,0] for d in gpu.get('devices',[])))
     return {'kind':'armath_readonly_inventory_v4_2','platform':platform.platform(),'python':sys.version,
         'python_executable':sys.executable,'repo':str(repo),'ram_bytes':ram_bytes(),'packages':versions,
-        'ollama':local,'ollama_storage':storage,'artifacts':{'base':model,'tokenizer':tokenizer,'adapter':adapted,'reward_head':reward},
+        'ollama':local,'ollama_storage':storage,
+        'ollama_models_dir':str(Path(ollama_models or os.environ.get('OLLAMA_MODELS',str(Path.home()/'.ollama/models'))).expanduser().resolve()),
+        'artifacts':{'base':model,'tokenizer':tokenizer,'adapter':adapted,'reward_head':reward},
         'capabilities':gpu,'driver':driver_info(),'required_files_present':required_files,
         'nf4_prerequisites_observed':prerequisites,'actual_nf4_model_load_verified':False,
         'prm_forward_fit_verified':False,'status':'prerequisites_observed_fit_unverified' if prerequisites else 'runtime_attention_required',

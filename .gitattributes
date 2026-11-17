@@ -101,6 +101,8 @@ research/prm_arabic_english/native_study_v1.py -text
 research/prm_arabic_english/scoring_diagnosis_v3_1.py -text
 research/armath_development_v4_1/*.json -text
 research/prm_arabic_english/armath_*v4_2.py -text
+research/prm_arabic_english/*.py -text
+model_utils/*.py -text
 research/armath_readiness_v4_2/*.json -text
 research/prm_arabic_english/inspect_armath_runtime_windows_v4_2.cmd -text whitespace=cr-at-eol
 # Retain the pre-existing Windows CSV line endings; only the located slot changes.

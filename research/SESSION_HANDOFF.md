@@ -4,7 +4,10 @@ v4.2 active handoff — Read ARMATH_READINESS_V4_2.md and the new versioned
 reference_decisions.json. Technical endpoint count11, conditional boat exclusion1;
 no human validations. New standalone inspector hashes actual local artifacts and
 reports prerequisites only, not inference fit. Cloud has no Windows access.
-Continue guarded executor implementation; no approvals or model operations now.
+Guarded executor and local-only backend are implemented. All 761 local tests pass
+(50 v4.2 checks); inspect this source commit’s Windows/Linux CI. Obtain real local
+inventory next; do not approve or run model phases under this directive. Read
+armath_readiness_v4_2/README.md for exact identities, modes and private report paths.
 The original v4.1 proposal and all protected source/history identities are exact.
 
 v4.1 final replay preparation: use the current inactive proposal and README

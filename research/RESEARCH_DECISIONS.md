@@ -1,5 +1,16 @@
 # Research decisions
 
+v4.2 execution decision — Software is prepared and tested offline; real execution
+remains conditional on actual local evidence and separate owner consent. Keep the
+v4.1 proposal and original five-reference policy byte-identical; bind eleven AI
+technical keys and the conditional boat exclusion as a separate versioned decision.
+Candidate/reward/choice seals precede reference joins. Preserve all missing slots,
+compare same-K majority/random/oracle costs, and withhold human semantic metrics.
+A faithful-mirror evidence hash is not authenticated human QC. Actual runtime/weight
+fingerprints are read from files; no model or hardware identity is invented. A fixed
+proposal-scoped guard prevents another checkout from creating a new allowance.
+No model downloads, inference probes, automatic OOM retries, scheduling or training.
+
 v4.2 — Version the reference policy separately from the frozen proposal.
 Distinguish AI question derivation from human mathematical review; keep the boat
 payment conditional rather than silently imposing equal allocation. Native/source

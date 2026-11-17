@@ -62,6 +62,17 @@ class InventoryTests(unittest.TestCase):
         self.assertEqual(inventory.artifact(None)['status'],'missing')
         self.assertIsNone(inventory.artifact(None)['sha256'])
 
+    def test_existing_original_checkpoint_is_hashed_readonly_without_migration(self):
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td);clean=p/'arabic-english-llm-reasoning-development';original=p/'arabic-english-llm-reasoning'
+            clean.mkdir();original.mkdir();path=original/'checkpoints/head.pt';path.parent.mkdir();path.write_bytes(b'SYNTHETIC old checkpoint')
+            value=inventory.project_artifact(clean,'checkpoints/head.pt')
+            self.assertEqual(value['path'],str(path.resolve()))
+            self.assertEqual(path.read_bytes(),b'SYNTHETIC old checkpoint');self.assertFalse((clean/'checkpoints').exists())
+            q=clean/'checkpoints/head.pt';q.parent.mkdir();q.write_bytes(b'SYNTHETIC other checkpoint')
+            self.assertEqual(inventory.project_artifact(clean,'checkpoints/head.pt')['status'],'ambiguous_multiple_paths')
+            self.assertEqual(inventory.project_artifact(clean,'checkpoints/head.pt',path)['path'],str(path.resolve()))
+
     def test_only_allowlisted_metadata_routes(self):
         with patch.object(inventory.http.client,'HTTPConnection') as c:
             for route in ('/api/generate','/api/chat','/api/pull','/api/create'):
