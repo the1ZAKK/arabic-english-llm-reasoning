@@ -185,7 +185,9 @@ def prepare(audit_directory, destination):
         with (destination/name).open(encoding='utf-8-sig',newline='') as stream:
             reader=csv.DictReader(stream); fields=reader.fieldnames+['independent_answer','independent_derivation']; blank=list(reader)
         with (destination/name).open('w',encoding='utf-8-sig',newline='') as stream:
-            writer=csv.DictWriter(stream,fieldnames=fields);writer.writeheader();writer.writerows(blank)
+            writer=csv.DictWriter(stream,fieldnames=fields);writer.writeheader()
+            by_id={row['problem_id']:row for row in blank}
+            writer.writerows(by_id[key] for key in dispatch)
     (destination/'developer.csv').write_bytes((destination/'reviewer_a.csv').read_bytes())
     for name, fields in [('reviewers.csv', REVIEWER_FIELDS), ('timing.csv', TIMING_FIELDS),
                          ('coordinator_screening.csv', SCREENING_FIELDS)]:

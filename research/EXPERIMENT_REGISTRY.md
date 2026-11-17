@@ -1,5 +1,10 @@
 # Experiment and evidence registry
 
+v4.0 usability follow-up — align blank developer/A/B/C worksheet rows with the
+preserved question-page dispatch order. The first-ten subset is identical across
+views; regression and packet fingerprints cover alignment. No case, source,
+mathematical result, human judgment or old partition is changed.
+
 v4.0 feasibility preparation (17 November 2026, Asia/Shanghai) —
 [report](ARMATH_FEASIBILITY_V4_0.md), [aggregate results](armath_v4_0/SUMMARY.json).
 Preserved 32+68 actual source IDs/order, 100 development novel-tagged cases,

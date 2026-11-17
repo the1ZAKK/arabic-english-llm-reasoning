@@ -118,6 +118,8 @@ class ArmathFeasibilityTests(unittest.TestCase):
                 with (dest/name).open(encoding='utf-8-sig', newline='') as stream:
                     sheet = list(csv.DictReader(stream))
                 self.assertEqual(len(sheet), 100)
+                self.assertEqual([row['problem_id'] for row in sheet],
+                    json.loads((dest/'selection_private.json').read_text())['review_order'])
                 for row in sheet:
                     self.assertTrue(all(not value for key, value in row.items()
                         if key not in {'problem_id','source_url','question_sha256','equation_sha256'}))

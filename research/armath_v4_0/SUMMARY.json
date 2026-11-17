@@ -158,7 +158,7 @@
   },
   "seed": "armath-development-feasibility100-v1-20261116",
   "selected_problems": 100,
-  "selection_code_sha256": "515b2f17e92f599de1e1f5a03ad180dc17668b967286682a4b2a3fe408f623a5",
+  "selection_code_sha256": "6169ec3a97d010ca110fb01991cb9919b5afd6aff3bc7df5b6a369629ca21c88",
   "source_equation_calculations": {
     "exact_rational_crosschecked": 95,
     "irrational_result_requires_symbolic_or_rounding_review": 5
