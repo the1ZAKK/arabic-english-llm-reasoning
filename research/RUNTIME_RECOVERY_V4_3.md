@@ -2,8 +2,11 @@
 
 18 November 2026, Asia/Shanghai. Diagnosis and preparation only. No installation,
 package/weight download, third-party import probe, model load, forward, generation,
-scoring, training or active allowance. The final local suite passed 795 tests, including 30 recovery checks. Inspect this
-source commit's own Windows/Linux CI and native CMD hash guards. Code/CI on the research branch does not
+scoring, training or active allowance. Kit 4c05fe9 passed 795 tests locally and on each OS in
+[CI 44294226370](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44294226370), including native CMD guards.
+A subsequent hash-retention fix preserves rejected/ambiguous candidate hashes;
+its expanded existing regression requires this source commit's own CI. The cloud
+workspace became unavailable, so no further local run is claimed. Code/CI on the research branch does not
 qualify the owner's laptop. [Run the one-file inspector](runtime_recovery_v4_3/README.md).
 
 ## Actual evidence and historical requirements
@@ -115,3 +118,7 @@ equivalence, changed weights, opaque heads, invalid metadata, private-path remov
 preservation, memory arithmetic, no execution modes and launcher hashes. Native
 Windows CI must verify the exact CMD and reject tampering. Passing these checks
 does not establish package imports, checkpoint lineage, a human label or GPU fit.
+
+Rejected adapter configs or multiple weight formats retain their full bundle and
+individual file fingerprints in checkpoint_failure_artifacts; X/F identifiers map
+to private paths only in the private report. No rejected format is auto-selected.

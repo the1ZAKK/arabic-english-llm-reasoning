@@ -1,12 +1,21 @@
 # Experiment and evidence registry
 
+v4.3 hash-retention follow-up — Kit 4c05fe9 passed 795 tests on each OS in
+[CI 44294226370](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44294226370), including native CMD hash guards.
+The follow-up preserves candidate byte fingerprints even when adapter metadata is
+malformed or both weight formats coexist. The existing regression now checks both
+rejections and confirms no format/path selection or private-path disclosure.
+The cloud workspace disconnected after the initial push; this source correction
+requires its own Windows/Linux CI rather than a claim of another local test run.
+No package or model operation, approval, installation or protected-file edit.
+
 v4.3 runtime-recovery preparation — Recheck baseline 2e52e8b and its passing
 CI 44180031229. Audit the original saver, reload conventions and actual imports.
 Deliver stdlib-only environment metadata discovery, checkpoint/hash/header and
 historical-record comparison, sanitized reports and native CMD hash guards.
 The owner supplied a 6 GiB RTX 2060 Max-Q summary; no new laptop measurement is
 claimed. The installation profile has declared-bound justification, not empirical
-ABI/loader qualification or a complete wheel lock. All 795 local tests pass,
+ABI/loader qualification or a complete wheel lock. At kit 4c05fe9, 795 local tests passed,
 including 30 synthetic recovery checks; inspect this commit's CI. No packages,
 models, tensors, new labels, approvals or budgets are loaded/created by this kit.
 

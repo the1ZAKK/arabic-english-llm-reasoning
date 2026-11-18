@@ -1,5 +1,14 @@
 # Research decisions
 
+v4.3 hash-retention follow-up — Kit 4c05fe9 passed 795 tests on each OS in
+[CI 44294226370](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44294226370), including native CMD hash guards.
+The follow-up preserves candidate byte fingerprints even when adapter metadata is
+malformed or both weight formats coexist. The existing regression now checks both
+rejections and confirms no format/path selection or private-path disclosure.
+The cloud workspace disconnected after the initial push; this source correction
+requires its own Windows/Linux CI rather than a claim of another local test run.
+No package or model operation, approval, installation or protected-file edit.
+
 v4.3 recovery decisions — Diagnose existing environments before installing.
 Use isolated -I -S -B metadata queries; do not import packages, run activation or
 execute top-level historical training/evaluation scripts. Compare full adapter

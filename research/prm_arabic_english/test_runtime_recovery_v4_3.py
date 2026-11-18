@@ -109,6 +109,19 @@ class RecoveryTests(unittest.TestCase):
     def test_invalid_adapter_metadata_is_retained_as_failure_not_selected(self):
         (self.adapter / 'adapter_config.json').write_text('{')
         c = self.inspect(); self.assertEqual(len(c['errors']), 1); self.assertEqual(c['adapters'], [])
+        failed = r.share_report(self.private(c))['checkpoint_failure_artifacts'][0]
+        weight_sha = r.file_sha(self.adapter / 'adapter_model.safetensors')
+        self.assertIn(weight_sha, [f['sha256'] for f in failed['files']])
+        self.assertIsNotNone(failed['bundle_sha256'])
+        # Two candidate formats are ambiguous; preserve BOTH hashes, choose neither.
+        (self.adapter / 'adapter_config.json').write_text(json.dumps(self.config))
+        other = self.adapter / 'adapter_model.bin'; other.write_bytes(b'SYNTHETIC opaque legacy format')
+        c = self.inspect(); self.assertEqual(c['adapters'], []); self.assertEqual(len(c['errors']), 1)
+        share = r.share_report(self.private(c)); self.assertIsNone(share['automatic_checkpoint_selection'])
+        failed = share['checkpoint_failure_artifacts'][0]
+        self.assertIn(weight_sha, [f['sha256'] for f in failed['files']])
+        self.assertIn(r.file_sha(other), [f['sha256'] for f in failed['files']])
+        self.assertNotIn(str(self.repo), json.dumps(share))
 
     def test_corrupt_and_oversized_safetensors_headers_fail(self):
         p = self.root / 'bad.safetensors'

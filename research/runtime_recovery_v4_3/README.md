@@ -36,7 +36,9 @@ Full adapter bundle equality, identical config/weight material and head-file
 equality are separate. Identical copies can resolve byte ambiguity while leaving
 location choice and training lineage unresolved. Co-location, names, timestamps,
 matching metrics and a previous inventory are not proof of a jointly saved epoch.
-The historical saver writes adapter/head/history separately. Existing manifest
+The historical saver writes adapter/head/history separately. Rejected or ambiguous
+formats retain bundle/file hashes in checkpoint_failure_artifacts (X/F identifiers),
+without exposing their private paths or selecting a format. Existing manifest
 hash mentions are reported for scope/authenticity review, never accepted as an
 automatic training-lineage or human approval. Opaque `.pt` heads are hashed and
 their ZIP directory may be listed; no member or pickle is opened. Their tensor

@@ -1,5 +1,14 @@
 # Evidence-gated roadmap
 
+v4.3 hash-retention follow-up — Kit 4c05fe9 passed 795 tests on each OS in
+[CI 44294226370](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44294226370), including native CMD hash guards.
+The follow-up preserves candidate byte fingerprints even when adapter metadata is
+malformed or both weight formats coexist. The existing regression now checks both
+rejections and confirms no format/path selection or private-path disclosure.
+The cloud workspace disconnected after the initial push; this source correction
+requires its own Windows/Linux CI rather than a claim of another local test run.
+No package or model operation, approval, installation or protected-file edit.
+
 v4.3 immediate path — Run the new read-only recovery inspector, upload only
 share_status.json and preserve report_private.json. Resolve byte equivalence and
 explicit adapter/head locations, examine authentic same-save evidence and existing

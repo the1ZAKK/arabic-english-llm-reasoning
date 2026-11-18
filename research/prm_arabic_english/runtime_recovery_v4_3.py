@@ -149,11 +149,13 @@ def checkpoint_candidates(repos, extra=()):
     files = sorted(set(p for root in roots for p in files_under(root) if root.exists()))
     adapters, heads, records, errors = [], [], [], []
     for p in files:
+        inspected_artifact = None
         try:
             if p.name == 'adapter_config.json':
+                inspected_artifact = artifact(p.parent)
                 cfg = load_json(p)
                 require(isinstance(cfg, dict), 'Adapter config must be an object')
-                full = artifact(p.parent)
+                full = inspected_artifact
                 weights = [r for r in full['files'] if r['name'] in ('adapter_model.safetensors', 'adapter_model.bin')]
                 require(len(weights) == 1, 'Adapter weights missing or ambiguous')
                 header = safe_header(p.parent / weights[0]['name']) if weights[0]['name'].endswith('.safetensors') else None
@@ -161,7 +163,8 @@ def checkpoint_candidates(repos, extra=()):
                     'header': header, 'run_directory_private': str(p.parent.parent),
                     'material_sha256': digest([file_sha(p), weights[0]['sha256']])})
             elif any(x in p.stem.lower() for x in ('v_head', 'vhead', 'reward_head', 'value_head')) and p.suffix.lower() in ('.pt', '.bin', '.safetensors'):
-                row = artifact(p) | {'file_sha256': file_sha(p), 'run_directory_private': str(p.parent),
+                inspected_artifact = artifact(p)
+                row = inspected_artifact | {'file_sha256': file_sha(p), 'run_directory_private': str(p.parent),
                     'tensor_values_loaded': False, 'shape_verified': False}
                 if p.suffix == '.safetensors':
                     row['header'] = safe_header(p)
@@ -185,7 +188,8 @@ def checkpoint_candidates(repos, extra=()):
                 records.append({'path_private': str(p), 'sha256': file_sha(p), 'kind': p.name,
                                 'best_record': summary, 'value_private': value})
         except (OSError, ValueError, KeyError, TypeError, zipfile.BadZipFile) as exc:
-            errors.append({'path_private': str(p), 'error': type(exc).__name__})
+            errors.append({'path_private': str(p), 'error': type(exc).__name__,
+                           'artifact_private': inspected_artifact})
     for prefix, rows in (('A', adapters), ('H', heads), ('R', records)):
         for i, row in enumerate(rows, 1):
             row['id'] = prefix + f'{i:03d}'
@@ -539,7 +543,13 @@ def share_report(private):
             'shape_verified': False, 'tensor_values_loaded': False} for h in c['heads']],
         'adapter_full_byte_groups': groups(c['adapters'], 'sha256'), 'adapter_model_material_groups': groups(c['adapters'], 'material_sha256'),
         'head_byte_groups': groups(c['heads'], 'file_sha256'), 'candidate_pairs': c['pairs'],
-        'checkpoint_failures': len(c['errors']), 'previous_inventory_co_references': private['co_references'],
+        'checkpoint_failures': len(c['errors']),
+        'checkpoint_failure_artifacts': [{'id': 'X' + f'{i:03d}', 'error_type': row['error'],
+            'bundle_sha256': (row.get('artifact_private') or {}).get('sha256'),
+            'files': [{'file_id': 'F' + f'{j:03d}', 'sha256': f['sha256'], 'bytes': f['bytes']}
+                      for j, f in enumerate((row.get('artifact_private') or {}).get('files', []), 1)]}
+            for i, row in enumerate(c['errors'], 1)],
+        'previous_inventory_co_references': private['co_references'],
         'training_records': [{'id': r['id'], 'sha256': r['sha256'], 'best_record': r['best_record']} for r in c['records']],
         'base_candidates': bases, 'automatic_checkpoint_selection': None, 'training_lineage_verified': False,
         'historical_source_comparisons': private.get('historical_sources', []),

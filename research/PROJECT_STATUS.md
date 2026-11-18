@@ -1,5 +1,14 @@
 # ArabicPRM-T v2 project evidence
 
+v4.3 hash-retention follow-up — Kit 4c05fe9 passed 795 tests on each OS in
+[CI 44294226370](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44294226370), including native CMD hash guards.
+The follow-up preserves candidate byte fingerprints even when adapter metadata is
+malformed or both weight formats coexist. The existing regression now checks both
+rejections and confirms no format/path selection or private-path disclosure.
+The cloud workspace disconnected after the initial push; this source correction
+requires its own Windows/Linux CI rather than a claim of another local test run.
+No package or model operation, approval, installation or protected-file edit.
+
 v4.3 current — [Windows runtime recovery](RUNTIME_RECOVERY_V4_3.md).
 The owner-reported laptop has 6144 MiB VRAM, not the earlier 4 GB assumption.
 Only the selected interpreter lacked dependencies; other environments are unknown.
@@ -8,7 +17,7 @@ checkpoint byte groups without imports, activation, installation or model loads.
 Historical saves did not bind adapter/head hashes atomically. No pair or path is
 automatically chosen. The proposed new-env profile is conditional, not a recovered
 historical lock or installation approval. Actual imports/NF4/forward fit and
-training lineage remain unverified. All 795 offline tests pass locally (30 new);
+training lineage remain unverified. At kit 4c05fe9, 795 offline tests passed locally (30 new);
 inspect this commit's Windows/Linux checks. Frozen v4.1/v4.2 identities, published
 originals and historical records are unchanged. No model operation or active budget.
 

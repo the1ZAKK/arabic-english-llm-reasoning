@@ -1,5 +1,14 @@
 # Session handoff
 
+v4.3 hash-retention follow-up — Kit 4c05fe9 passed 795 tests on each OS in
+[CI 44294226370](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44294226370), including native CMD hash guards.
+The follow-up preserves candidate byte fingerprints even when adapter metadata is
+malformed or both weight formats coexist. The existing regression now checks both
+rejections and confirms no format/path selection or private-path disclosure.
+The cloud workspace disconnected after the initial push; this source correction
+requires its own Windows/Linux CI rather than a claim of another local test run.
+No package or model operation, approval, installation or protected-file edit.
+
 v4.3 active handoff — Baseline 2e52e8b and CI 44180031229 verified. Read
 RUNTIME_RECOVERY_V4_3.md and runtime_recovery_v4_3/README.md. The new CMD is
 inspect_arabicprm_recovery_windows_v4_3.cmd; upload only its share_status.json,
@@ -8,7 +17,7 @@ stdlib subprocesses and checkpoint hashes/headers without package or tensor load
 Use candidate IDs to review location equivalence and existing run evidence; do not
 pick newest, migrate copies or invent a hash-bound historical pair. Source-byte
 comparisons flag local differences without normalizing or overwriting them.
-All 795 tests pass locally (30 new); verify this source commit's own Windows/Linux
+At kit 4c05fe9, 795 tests passed locally (30 new); verify this source commit's own Windows/Linux
 CI and native CMD guards before delivery. No actual v4.3 laptop report exists yet.
 The selected Python's missing packages do not prove global absence. The conditional
 new-environment plan has no installation authorization or complete binary lock.
