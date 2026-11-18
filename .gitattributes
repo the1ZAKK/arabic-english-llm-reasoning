@@ -105,5 +105,7 @@ research/prm_arabic_english/*.py -text
 model_utils/*.py -text
 research/armath_readiness_v4_2/*.json -text
 research/prm_arabic_english/inspect_armath_runtime_windows_v4_2.cmd -text whitespace=cr-at-eol
+research/prm_arabic_english/inspect_arabicprm_recovery_windows_v4_3.cmd -text whitespace=cr-at-eol
+research/runtime_recovery_v4_3/*.json -text
 # Retain the pre-existing Windows CSV line endings; only the located slot changes.
 research/native_pilot_v3_2/collection_manifest.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -1,5 +1,23 @@
 # Session handoff
 
+v4.3 active handoff — Baseline 2e52e8b and CI 44180031229 verified. Read
+RUNTIME_RECOVERY_V4_3.md and runtime_recovery_v4_3/README.md. The new CMD is
+inspect_arabicprm_recovery_windows_v4_3.cmd; upload only its share_status.json,
+retain report_private.json. It collects actual Python metadata via isolated
+stdlib subprocesses and checkpoint hashes/headers without package or tensor loads.
+Use candidate IDs to review location equivalence and existing run evidence; do not
+pick newest, migrate copies or invent a hash-bound historical pair. Source-byte
+comparisons flag local differences without normalizing or overwriting them.
+All 795 tests pass locally (30 new); verify this source commit's own Windows/Linux
+CI and native CMD guards before delivery. No actual v4.3 laptop report exists yet.
+The selected Python's missing packages do not prove global absence. The conditional
+new-environment plan has no installation authorization or complete binary lock.
+The owner's latest evidence is RTX 2060 Max-Q 6144 MiB, Python 3.11.9 and driver 592.82;
+actual imports/CUDA/NF4, forward fit and adapter/base/head lineage remain unverified.
+Keep all original/development checkouts, backups, overlap/history/human records,
+frozen proposal and v4.2 executor/release unchanged. No real model operation,
+training, installation, new dataset export or active budget in this milestone.
+
 v4.2 final handoff — Verified source [7eec2b5](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/7eec2b5f2c527e653b583b967f6fa01773778a17):
 [CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624) completed successfully on both Windows and Linux.
 Each ran 765 offline tests (54 v4.2 checks); Windows 587.580 s, Linux 100.367 s.

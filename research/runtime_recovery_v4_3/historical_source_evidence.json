@@ -1,0 +1,50 @@
+{
+  "active_budget_created": false,
+  "baseline_commit": "2e52e8b3ac4716711133feb1c6f32f6a21d880e2",
+  "historical_checkpoint_pair_hashes_available": false,
+  "historical_dependency_lock_available": false,
+  "kind": "runtime_recovery_historical_source_review_v4_3",
+  "model_operations": 0,
+  "owner_reported_laptop": {
+    "base_bundle_sha256": "4ed8712eb1589725bc27a74a0161ef48404bdb131ef752b567fe555dde028870",
+    "driver": "592.82",
+    "evidence_type": "owner_supplied_v4_2_inspector_summary_not_new_measurement",
+    "gpu": "RTX 2060 Max-Q",
+    "python": "3.11.9",
+    "ram_approx_gb": 16,
+    "tokenizer_bundle_sha256": "4d8b882abf317ca7e76e204f4068577cd7a2b57ee4bb33bd029e304b994f13d7",
+    "vram_mib": 6144
+  },
+  "save_convention": {
+    "adapter": "research/prm_arabic_english/checkpoints/arabicprm_pilot/best_adapter",
+    "head": "research/prm_arabic_english/checkpoints/arabicprm_pilot/best_v_head.pt",
+    "history": "research/prm_arabic_english/checkpoints/arabicprm_pilot/training_history.json",
+    "save_is_atomic_pair": false
+  },
+  "source_sha256": {
+    "model_utils/io_utils.py": "5332b7a9b0feeb0d707c249c38e7f551e9157175c3401feedd402512828a50cf",
+    "model_utils/modeling_base.py": "b36901cfd546318bc3d7797348e2e8ea0fb99bc0f78596ee3e2820706b054001",
+    "model_utils/prm_model.py": "308901e62bc6ef7fb23148b82933ce9c723da0cba2c9a88300a02f543839821f",
+    "research/prm_arabic_english/eval_reloaded_pilot.py": "3d2d78eb52cf9edfcf0e2d95ca0aa8585d1e603a3895f82f8f2deff272d35a49",
+    "research/prm_arabic_english/pilot_reloaded_results.json": "fd7356f44a226054ea76390aebddc2447239992203fbc12f77aea9d5a8bbe357",
+    "research/prm_arabic_english/train_arabicprm_pilot.py": "35cd07da922675516ec8947619ba78283a43f224ad329d0c0b8be179756b5a0f"
+  },
+  "training_configuration_from_code": {
+    "compute_dtype": "float16",
+    "epochs": 3,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "quantization": "NF4 double quantization",
+    "r": 8,
+    "seed": 42,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "upstream_readme_example": {
+    "historical_laptop_environment_lock": false,
+    "purpose": "multi-GPU vLLM server recipe, not the laptop NF4 scoring path",
+    "vllm": "0.6.4.post1"
+  }
+}

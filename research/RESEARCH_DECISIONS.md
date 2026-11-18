@@ -1,5 +1,16 @@
 # Research decisions
 
+v4.3 recovery decisions — Diagnose existing environments before installing.
+Use isolated -I -S -B metadata queries; do not import packages, run activation or
+execute top-level historical training/evaluation scripts. Compare full adapter
+bundles, actual model material and opaque head bytes separately. Co-location,
+matching metrics, identical copies and prior inventories cannot authenticate a
+jointly saved epoch. Retain uncertain lineage and choose no path automatically.
+Keep proposed direct pins distinct from the missing historical environment lock
+and the not-yet-produced complete binary wheel lock. Update current feasibility
+for owner-reported 6 GiB without rewriting the frozen v4.2 release. No inference,
+installation, tensor load, fit probe or budget is authorized by recovery preparation.
+
 v4.2 readiness decision — The tested software release is ready for local
 read-only qualification, not model execution. Both OS jobs passed 765 tests in
 [CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624). The frozen v4.1 proposal, new eleven-key technical

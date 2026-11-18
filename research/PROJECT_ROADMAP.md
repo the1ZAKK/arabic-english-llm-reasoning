@@ -1,5 +1,13 @@
 # Evidence-gated roadmap
 
+v4.3 immediate path — Run the new read-only recovery inspector, upload only
+share_status.json and preserve report_private.json. Resolve byte equivalence and
+explicit adapter/head locations, examine authentic same-save evidence and existing
+Python metadata before proposing installation. No default-env replacement or
+artifact migration. Any new isolated install, import/capability qualification,
+model-fit probe or experiment needs its separately documented authorization.
+The 6 GiB GPU is a theoretical planning improvement, not a demonstrated forward.
+
 v4.2 release verification — Source 7eec2b5 passed 765 offline tests per OS in
 [CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624), including native Windows integrity guards.
 No further model operation is authorized. Next obtain the actual read-only laptop

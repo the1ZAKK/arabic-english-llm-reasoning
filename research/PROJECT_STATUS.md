@@ -1,5 +1,17 @@
 # ArabicPRM-T v2 project evidence
 
+v4.3 current — [Windows runtime recovery](RUNTIME_RECOVERY_V4_3.md).
+The owner-reported laptop has 6144 MiB VRAM, not the earlier 4 GB assumption.
+Only the selected interpreter lacked dependencies; other environments are unknown.
+A new standalone read-only CMD inventories existing Python environments and
+checkpoint byte groups without imports, activation, installation or model loads.
+Historical saves did not bind adapter/head hashes atomically. No pair or path is
+automatically chosen. The proposed new-env profile is conditional, not a recovered
+historical lock or installation approval. Actual imports/NF4/forward fit and
+training lineage remain unverified. All 795 offline tests pass locally (30 new);
+inspect this commit's Windows/Linux checks. Frozen v4.1/v4.2 identities, published
+originals and historical records are unchanged. No model operation or active budget.
+
 v4.2 current — [scientific readiness report](ARMATH_READINESS_V4_2.md).
 Verified source [7eec2b5](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/7eec2b5f2c527e653b583b967f6fa01773778a17):
 [CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624) completed successfully on both Windows and Linux.

@@ -1,5 +1,15 @@
 # Experiment and evidence registry
 
+v4.3 runtime-recovery preparation — Recheck baseline 2e52e8b and its passing
+CI 44180031229. Audit the original saver, reload conventions and actual imports.
+Deliver stdlib-only environment metadata discovery, checkpoint/hash/header and
+historical-record comparison, sanitized reports and native CMD hash guards.
+The owner supplied a 6 GiB RTX 2060 Max-Q summary; no new laptop measurement is
+claimed. The installation profile has declared-bound justification, not empirical
+ABI/loader qualification or a complete wheel lock. All 795 local tests pass,
+including 30 synthetic recovery checks; inspect this commit's CI. No packages,
+models, tensors, new labels, approvals or budgets are loaded/created by this kit.
+
 v4.2 verified release — Verified source [7eec2b5](https://github.com/the1ZAKK/arabic-english-llm-reasoning/commit/7eec2b5f2c527e653b583b967f6fa01773778a17):
 [CI 44177682624](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44177682624) completed successfully on both Windows and Linux.
 Each ran 765 offline tests (54 v4.2 checks); Windows 587.580 s, Linux 100.367 s.

@@ -13,6 +13,8 @@ on:
       - "research/armath_development_v4_1/**"
       - "research/armath_readiness_v4_2/**"
       - "scripts/build_armath_inspector_windows.py"
+      - "scripts/build_runtime_recovery_windows_v4_3.py"
+      - "research/runtime_recovery_v4_3/**"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -31,6 +33,8 @@ on:
       - "research/armath_development_v4_1/**"
       - "research/armath_readiness_v4_2/**"
       - "scripts/build_armath_inspector_windows.py"
+      - "scripts/build_runtime_recovery_windows_v4_3.py"
+      - "research/runtime_recovery_v4_3/**"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -69,6 +73,7 @@ jobs:
             research/armath_v4_0
             research/armath_development_v4_1
             research/armath_readiness_v4_2
+            research/runtime_recovery_v4_3
             data/armath
       - uses: actions/setup-python@v7.0.0
         with:
@@ -256,6 +261,30 @@ jobs:
             if ($LASTEXITCODE -ne 1 -or -not ($result -match 'Read-only inspector SHA256 mismatch')) { throw 'Tampered inspector not blocked' }
           } finally { Remove-Item -LiteralPath $bad -Force -ErrorAction SilentlyContinue }
           Write-Host 'READONLY INSPECTOR NATIVE HASH GUARDS PASSED; inspector not executed.'
+          exit 0
+      - name: Verify v4.3 recovery CMD exact hash and reject tampering without running investigation
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          ARABICPRM_RUNTIME_RECOVERY_VERIFY_ONLY: "1"
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = (Resolve-Path research/prm_arabic_english/inspect_arabicprm_recovery_windows_v4_3.cmd).Path
+          $expected = ((Get-Content -Raw -LiteralPath ($launcher+'.sha256')) -split '\s+')[0]
+          if ((Get-FileHash -Algorithm SHA256 -LiteralPath $launcher).Hash.ToLowerInvariant() -ne $expected) { throw 'Recovery CMD file hash differs' }
+          $good = @(& cmd.exe /d /c $launcher 2>&1)
+          $good | Write-Host
+          if ($LASTEXITCODE -ne 0 -or -not ($good -match 'RUNTIME RECOVERY HELPER VERIFIED:')) { throw 'Recovery helper did not verify' }
+          $bad = Join-Path $env:RUNNER_TEMP ('bad-recovery-'+[guid]::NewGuid().ToString('N')+'.cmd')
+          try {
+            $raw = [IO.File]::ReadAllText($launcher)
+            $changed = [regex]::new('(?m)^rem ARABICPRM-RUNTIME-RECOVERY-PAYLOAD [A-Za-z0-9+/]').Replace($raw,'rem ARABICPRM-RUNTIME-RECOVERY-PAYLOAD !',1)
+            [IO.File]::WriteAllText($bad,$changed,[Text.Encoding]::ASCII)
+            $result = @(& cmd.exe /d /c ('"'+$bad+'"') 2>&1)
+            $result | Write-Host
+            if ($LASTEXITCODE -ne 1 -or -not ($result -match 'Runtime recovery helper SHA256 mismatch')) { throw 'Tampered recovery helper was not blocked' }
+          } finally { Remove-Item -LiteralPath $bad -Force -ErrorAction SilentlyContinue }
+          Write-Host 'V4.3 NATIVE RECOVERY HASH GUARDS PASSED; zero imports, installs or model operations.'
           exit 0
       - name: Verify published original ArMATH bytes, counts and scoped attribution
         run: python -B research/prm_arabic_english/verify_armath_originals.py
