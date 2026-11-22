@@ -4,6 +4,7 @@ Run only on native Windows CPython 3.11.9 x64. Downloads binary library artifact
 into a NEW CI working directory. The laptop readiness tool never invokes this.
 """
 import argparse
+import ast
 import base64
 from email.parser import BytesParser
 import hashlib
@@ -79,6 +80,19 @@ class Links(HTMLParser):
             self.links.extend(v for k, v in attrs if k == 'href')
 
 
+def literal_assignments(source):
+    values = {}
+    for node in ast.parse(source).body:
+        targets = node.targets if isinstance(node, ast.Assign) else ([node.target] if isinstance(node, ast.AnnAssign) else [])
+        for target in targets:
+            if isinstance(target, ast.Name):
+                try:
+                    values[target.id] = ast.literal_eval(node.value)
+                except (ValueError, TypeError):
+                    pass
+    return values
+
+
 def wheel_record(path, url, expected_sha, hosts):
     official(url, hosts)
     name, version, _, tags = parse_wheel_filename(path.name)
@@ -105,7 +119,8 @@ def wheel_record(path, url, expected_sha, hosts):
             data = z.read(member).decode('utf-8')
             return all(x in data for x in needles)
         if name == 'torch':
-            api['cu126_build_source'] = has('torch/version.py', "cuda = '12.6'", "2.8.0+cu126")
+            version_source = literal_assignments(z.read('torch/version.py').decode('utf-8'))
+            api['cu126_build_source'] = version_source.get('cuda') == '12.6' and version_source.get('__version__') == '2.8.0+cu126'
         if name == 'bitsandbytes':
             api['windows_cuda126_dll'] = 'bitsandbytes/libbitsandbytes_cuda126.dll' in files
         if name == 'transformers':

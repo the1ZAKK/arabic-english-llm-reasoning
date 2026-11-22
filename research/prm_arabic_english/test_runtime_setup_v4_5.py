@@ -16,6 +16,12 @@ SPEC.loader.exec_module(r)
 
 
 class ResolutionTests(unittest.TestCase):
+    def test_torch_build_metadata_uses_ast_not_quote_formatting_or_imports(self):
+        for source in ("cuda = '12.6'\n__version__ = '2.8.0+cu126'",
+                       'cuda: str = "12.6"\n__version__: str = "2.8.0+cu126"'):
+            self.assertEqual(r.literal_assignments(source)['cuda'], '12.6')
+        self.assertEqual(r.literal_assignments('cuda = dangerous()'), {})
+
     def test_official_sources_reject_substitutes(self):
         for url in ('http://files.pythonhosted.org/a.whl', 'https://evil.invalid/a.whl',
                     'https://files.pythonhosted.org.evil.invalid/a.whl',
