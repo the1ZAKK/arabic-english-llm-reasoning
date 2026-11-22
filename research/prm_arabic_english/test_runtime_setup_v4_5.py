@@ -320,7 +320,7 @@ class QualificationTests(unittest.TestCase):
         self.prepare_receipt()
         calls = []
         self.assertEqual(s.qualify(self.bundle, self.lock, self.report, self.qapproval, self.qreport,
-                                  confirm=lambda _: 'NO', runner=lambda *a, **kw: calls.append(a), guard=lambda: None), 2)
+                                  confirm=lambda _: 'NO', runner=lambda *a, **kw: calls.append(a), guard=lambda: None, inspector=lambda _: self.base), 2)
         self.assertEqual(calls, [])
         self.assertFalse((self.qreport/'runtime_qualify_v4_5.py').exists())
 
@@ -328,14 +328,14 @@ class QualificationTests(unittest.TestCase):
         self.prepare_receipt()
         with self.assertRaisesRegex(ValueError, 'scope mismatch'):
             s.qualify(self.bundle, self.lock, self.report, self.approved_fixture(), self.qreport,
-                      runner=lambda *a, **kw: self.fail('probe must not start'), guard=lambda: None)
+                      runner=lambda *a, **kw: self.fail('probe must not start'), guard=lambda: None, inspector=lambda _: self.base)
 
     def test_environment_tamper_blocks_qualification_before_confirmation(self):
         self.prepare_receipt()
         (Path(self.plan['destination'])/'Scripts/python.exe').write_bytes(b'changed')
         with self.assertRaisesRegex(ValueError, 'environment changed'):
             s.qualify(self.bundle, self.lock, self.report, self.qapproval, self.qreport,
-                      confirm=lambda _: self.fail('must reject before prompt'), guard=lambda: None)
+                      confirm=lambda _: self.fail('must reject before prompt'), guard=lambda: None, inspector=lambda _: self.base)
 
     def test_failed_imports_do_not_qualify_model_or_modify_environment(self):
         self.prepare_receipt()
@@ -343,12 +343,21 @@ class QualificationTests(unittest.TestCase):
         def fail(*args, **kwargs):
             raise RuntimeError('synthetic DLL error')
         result = s.qualify(self.bundle, self.lock, self.report, self.qapproval, self.qreport,
-                           confirm=lambda _: 'QUALIFY '+'1'*12, runner=fail, guard=lambda: None)
+                           confirm=lambda _: 'QUALIFY '+'1'*12, runner=fail, guard=lambda: None, inspector=lambda _: self.base)
         self.assertEqual(result, 1)
         self.assertEqual(before, s.environment_files(Path(self.plan['destination'])))
         share = json.loads((self.qreport/'share_status.json').read_bytes())
         self.assertFalse(share['model_fit_demonstrated'])
         self.assertEqual(share['model_operations'], 0)
+
+
+    def test_base_python_change_blocks_imports_even_when_venv_bytes_match(self):
+        self.prepare_receipt()
+        with self.assertRaisesRegex(ValueError, 'Base interpreter/bootstrap changed'):
+            s.qualify(self.bundle, self.lock, self.report, self.qapproval, self.qreport,
+                      confirm=lambda _: self.fail('must stop before confirmation'),
+                      runner=lambda *a, **kw: self.fail('no import process allowed'),
+                      guard=lambda: None, inspector=lambda _: self.base | {'version':'3.11.10'})
 
 
 class PackageTests(unittest.TestCase):

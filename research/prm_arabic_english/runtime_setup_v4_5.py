@@ -407,7 +407,7 @@ def install(plan, lock, approval, report, *, confirm=input, runner=run, fetch=fe
         raise
 
 
-def qualify(bundle, lock, installation_report, approval, report, *, confirm=input, runner=run, guard=ci_guard):
+def qualify(bundle, lock, installation_report, approval, report, *, confirm=input, runner=run, guard=ci_guard, inspector=inspect_base):
     guard()
     old = no_links(installation_report)
     receipt_path = no_links(old / 'installation_receipt_private.json')
@@ -427,6 +427,8 @@ def qualify(bundle, lock, installation_report, approval, report, *, confirm=inpu
     if environment_files(dest) != files:
         raise ValueError('Installed environment changed since receipt')
     check_approval(approval, plan, 'non_model_imports_cuda_metadata', sha(receipt_path))
+    if inspector(plan['base']['executable']) != plan['base']:
+        raise ValueError('Base interpreter/bootstrap changed since installation')
     token = 'QUALIFY ' + plan['lock_sha256'][:12]
     if confirm('Type '+token+' for library imports/CUDA metadata ONLY, without models: ').strip() != token:
         write_new(report / 'cancelled.json', {'status': 'cancelled_zero_import_probes', 'model_operations': 0})
@@ -454,6 +456,8 @@ def qualify(bundle, lock, installation_report, approval, report, *, confirm=inpu
         if len(lines) != 1:
             raise ValueError('Missing unique qualification result')
         result = json.loads(lines[0].split(' ', 1)[1])
+        if result.get('python') is None or (result['python'].get('version'), result['python'].get('implementation'), result['python'].get('bits'), result['python'].get('platform')) != ('3.11.9', 'cpython', 64, 'win32'):
+            raise ValueError('Qualified child interpreter differs from Windows CPython 3.11.9 x64')
         if any(result['versions'].get(n) != v for n, v in lock['profile']['runtime'].items()):
             raise ValueError('Imported versions differ from exact lock')
     except (ValueError, OSError, RuntimeError) as exc:
@@ -461,8 +465,13 @@ def qualify(bundle, lock, installation_report, approval, report, *, confirm=inpu
         result = {'status': 'qualification_failed', 'model_operations': 0, 'model_fit_demonstrated': False}
     if environment_files(dest) != files:
         result.update(status='qualification_failed_environment_changed', error='Environment byte identity changed')
+    try:
+        if inspector(plan['base']['executable']) != plan['base']:
+            raise ValueError('Base interpreter/bootstrap changed during qualification')
+    except (ValueError, OSError, RuntimeError) as exc:
+        result.update(status='qualification_failed_base_changed', error=str(exc))
     if error:
-        result['error'] = error
+        result.setdefault('error', error)
     write_new(report / 'qualification_private.json', result)
     write_new(report / 'share_status.json',
               {k: result[k] for k in ('status', 'model_operations', 'model_fit_demonstrated')})

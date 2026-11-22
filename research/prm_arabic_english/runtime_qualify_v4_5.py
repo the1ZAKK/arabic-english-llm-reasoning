@@ -8,6 +8,8 @@ import importlib.metadata
 import inspect
 import json
 import os
+import platform
+import struct
 from pathlib import Path
 import sys
 
@@ -32,7 +34,9 @@ def main():
     # Only the verified legacy source capsule, not a project checkout or weights.
     sys.path.insert(0, str(here))
     report = {'schema': 'arabicprm-library-qualification-v4.5', 'status': 'not_qualified',
-              'model_operations': 0, 'model_fit_demonstrated': False, 'experiment_authorized': False}
+              'model_operations': 0, 'model_fit_demonstrated': False, 'experiment_authorized': False,
+              'python': {'version': platform.python_version(), 'implementation': sys.implementation.name,
+                         'bits': struct.calcsize('P')*8, 'platform': sys.platform}}
     try:
         import torch
         import bitsandbytes
