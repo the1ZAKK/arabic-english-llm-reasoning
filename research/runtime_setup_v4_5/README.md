@@ -33,6 +33,20 @@ Repeated dry-runs create independent reports; they never update either checkout,
 old environments, caches, model state, requests, ledgers or checkpoint contents.
 No local runtime/hardware inspection is claimed by cloud testing.
 
+## Pinned delivery identity
+
+[Download the exact readiness CMD](https://raw.githubusercontent.com/the1ZAKK/arabic-english-llm-reasoning/dbd9566e0528eb31d60789782917e4ca5ebced40/research/prm_arabic_english/prepare_arabicprm_cuda_windows_v4_5.cmd)
+(420,606 bytes). Save with the `.cmd` extension. Its complete-file SHA256 is:
+
+`89373c050cee27ee15e710c7c7027fdb9bdcde66bba20edf12962a8dfa5ef22e`
+
+The [source CI](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45000468124)
+covers 824 offline tests on each OS, native Windows CMD/hash/tamper/CI guards,
+legacy protected-release checks and original ArMATH byte verification. Both jobs
+must pass before final delivery. Source checks do not qualify laptop libraries.
+Later documentation commits do not change this pinned command or its wheel lock.
+The CMD exposes **dry-run only**; no arguments are forwarded into installation.
+
 ## Actual resolved package lock
 
 Native Windows CPython 3.11.9 resolution/download/hash job:
@@ -52,6 +66,19 @@ Space policy is compressed downloads + uncompressed archive payloads + the large
 of 2 GiB or 25% payload + 512 MiB bootstrap/log reserve. This is a conservative
 installation plan, **not a measured installed footprint** or model-memory budget.
 No model weights are included. Free space is rechecked before and after consent.
+
+| Runtime package | Locked version | Actual wheel tag |
+|---|---|---|
+| accelerate | 1.11.0 | py3-none-any |
+| bitsandbytes | 0.48.2 | py3-none-win_amd64 |
+| huggingface-hub | 0.36.0 | py3-none-any |
+| numpy | 2.2.6 | cp311-cp311-win_amd64 |
+| packaging | 25.0 | py3-none-any |
+| peft | 0.18.0 | py3-none-any |
+| safetensors | 0.6.2 | cp38-abi3-win_amd64 |
+| tokenizers | 0.22.1 | cp39-abi3-win_amd64 |
+| torch | 2.8.0+cu126 | cp311-cp311-win_amd64 |
+| transformers | 4.57.3 | py3-none-any |
 
 The ten runtime pins are unchanged from v4.3. Pip 25.3 and setuptools 80.9.0 are
 explicit installation-tool additions to replace ensurepip's bootstrap packages

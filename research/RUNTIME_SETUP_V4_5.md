@@ -78,5 +78,16 @@ Terminal install reporting retains attempted/completed package-download counts,
 per-wheel private events, failures and cancellation. It does not present an old
 dry-run summary after later authorized installation. The 824-test full offline
 suite passed locally; 29 v4.5 synthetic/package checks also passed after the
-reporting/logging fix. Native Windows/Linux verification of the final source is
-still pending until its linked CI completes.
+reporting/logging fix. [Windows/Linux source CI](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45000468124) checks the exact
+implementation commit dbd9566e0528eb31d60789782917e4ca5ebced40. Both OS jobs
+must succeed before delivery; their actual results are visible in that run, and
+the documentation delivery commit has its own associated CI.
+
+The exact v4.5 setup-bundle canonical SHA256 used in private installation plans
+is `426920ebad47755128b5fe65e594c601b18a418191fa2913a9d55994e76a5464`. The prepared readiness CMD SHA256 is
+`89373c050cee27ee15e710c7c7027fdb9bdcde66bba20edf12962a8dfa5ef22e`.
+The original v4.2 release remains
+`0a3cb623a1bdebe54b5c514480bf182d22238ce9ab4a4292ddd9a03aa1bc4924`
+(45 dependencies); the historical 42-fingerprint release remains
+`4ab6aca826555d7e0583840a0edcefd3606d796adc9727870ab0340f6facbb85`.
+All three identities were recomputed offline, with no model-library imports.
