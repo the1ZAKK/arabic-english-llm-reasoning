@@ -24,6 +24,8 @@ Readiness creates only a new report directory under
 `%LOCALAPPDATA%\ArabicPRM\runtime-setup-v4-5\reports\<unique-id>`:
 
 - `share_status.json`: review then upload **only this sanitized file** to ChatGPT.
+  It contains the exact plan hash when ready, available disk bytes and a safe
+  blocker code when attention is required; it contains no private paths.
 - `report_private.json`: exact local interpreter/bootstrap hashes, destination,
   complete package plan and any blockers. Keep this local.
 - `installation_request_PENDING.json`, only when ready: **approved=false**, no
@@ -35,12 +37,12 @@ No local runtime/hardware inspection is claimed by cloud testing.
 
 ## Pinned delivery identity
 
-[Download the exact readiness CMD](https://raw.githubusercontent.com/the1ZAKK/arabic-english-llm-reasoning/081e4c2a66691ec9b823a5a9ce5e7fc0b28bbcd2/research/prm_arabic_english/prepare_arabicprm_cuda_windows_v4_5.cmd)
-(422,754 bytes). Save with the `.cmd` extension. Its complete-file SHA256 is:
+[Download the exact readiness CMD](https://raw.githubusercontent.com/the1ZAKK/arabic-english-llm-reasoning/5ee303a23cf264155f042a0e8f39c3eb9b953a22/research/prm_arabic_english/prepare_arabicprm_cuda_windows_v4_5.cmd)
+(425,048 bytes). Save with the `.cmd` extension. Its complete-file SHA256 is:
 
-`dc8b0e44c60e5794e44479826a9ed630bfc6c4f67e87d9598eed39a92d0dc91d`
+`82e3f3669d83f01c958f7d85464f2d19875f12c362c482e98c406a8932be1af8`
 
-The [source CI](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45001430376)
+The [source CI](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45002207525)
 covers 825 offline tests on each OS, native Windows CMD/hash/tamper/CI guards,
 legacy protected-release checks and original ArMATH byte verification. Both jobs
 must pass before final delivery. Source checks do not qualify laptop libraries.
