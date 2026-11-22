@@ -237,6 +237,24 @@ def make_plan(bundle, lock, base, dest, cache, *, free=None):
             'model_operations_authorized': 0}
 
 
+def blocker_code(error):
+    # Public enum only; raw OS errors and private paths never enter share_status.
+    text = str(error)
+    for phrase, code in (
+        ('No verified existing Windows CPython', 'no_verified_base_python_3119_x64'),
+        ('Multiple base', 'multiple_base_installations_require_selection'),
+        ('Insufficient disk space', 'insufficient_install_volume_space'),
+        ('Existing destination/cache', 'existing_destination_or_cache'),
+        ('Git checkout', 'destination_inside_git_checkout'),
+        ('Symlink/reparse', 'symlink_or_reparse_location'),
+        ('UNC/network', 'network_location_rejected'),
+        ('overlap', 'cache_and_destination_overlap'),
+        ('share the installation volume', 'different_cache_and_environment_volumes')):
+        if phrase in text:
+            return code
+    return 'inspection_or_plan_check_failed'
+
+
 def fingerprint(plan):
     return hashlib.sha256(canonical(plan)).hexdigest()
 
@@ -523,8 +541,9 @@ def main(argv=None):
                'installation_approved': False, 'package_downloads': 0, 'model_operations': 0,
                'candidate_bases': statuses, 'proposed_destination': str(dest),
                'lock_sha256': bundle['lock_sha256'], 'download_bytes': lock['download_bytes'],
-               'required_free_bytes': lock['required_free_bytes']}
+               'required_free_bytes': lock['required_free_bytes'], 'available_free_bytes': None}
     try:
+        private['available_free_bytes'] = shutil.disk_usage(nearest_existing(dest)).free
         if base is None:
             raise ValueError('No verified existing Windows CPython 3.11.9 x64 base found')
         if len({x['executable'] for x in statuses if x['status'] == 'verified_base_3119_x64'}) != 1:
@@ -540,6 +559,9 @@ def main(argv=None):
     write_new(report / 'report_private.json', private)
     share = {k: private[k] for k in ('schema', 'status', 'installation_approved', 'package_downloads', 'model_operations', 'lock_sha256', 'download_bytes', 'required_free_bytes')}
     share['base_3119_x64_verified'] = base is not None
+    share['available_free_bytes'] = private['available_free_bytes']
+    share['plan_sha256'] = fingerprint(private['plan']) if 'plan' in private else None
+    share['blocker_code'] = blocker_code(private['blocker']) if 'blocker' in private else None
     share['runtime_qualified'] = False
     share['checkpoint_lineage_verified'] = False
     if args.mode == 'dry-run':

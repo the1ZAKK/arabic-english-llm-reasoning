@@ -293,6 +293,11 @@ class SetupTests(unittest.TestCase):
         self.assertFalse(share['installation_approved'])
         self.assertFalse(share['runtime_qualified'])
         self.assertNotIn(str(self.root), json.dumps(share))
+        self.assertEqual(share['blocker_code'], 'no_verified_base_python_3119_x64')
+        self.assertIsNone(share['plan_sha256'])
+        self.assertIsInstance(share['available_free_bytes'], int)
+        self.assertEqual(s.blocker_code(OSError('private C:/Users/example/secret')), 'inspection_or_plan_check_failed')
+        self.assertEqual(s.blocker_code(ValueError('Insufficient disk space for cache')), 'insufficient_install_volume_space')
         for name in ('torch', 'transformers', 'peft', 'bitsandbytes'):
             self.assertNotIn(name, sys.modules)
 
@@ -459,6 +464,8 @@ class InstallationReportingTests(unittest.TestCase):
         share = self.invoke_cli_fixture('success')
         self.assertEqual(share['status'],'installed_not_qualified')
         self.assertTrue(share['installation_completed'])
+        self.assertRegex(share['plan_sha256'], '^[0-9a-f]{64}$')
+        self.assertIsNone(share['blocker_code'])
         self.assertEqual(share['package_downloads'],30)
         self.assertFalse(share['runtime_qualified'])
         self.assertEqual(share['model_operations'],0)

@@ -1,5 +1,5 @@
 {
-  "helper_template_sha256": "652d194d935393bc954c111b7adfe84bfa808fb6127bf93901caeee066f8ebbe",
+  "helper_template_sha256": "0ce50acb81ff7ffb29b41d174c90919469517012d1370572e165e0ceda17b36a",
   "laptop_installation_approved": false,
   "legacy_sources": {
     "model_utils/io_utils.py": {
