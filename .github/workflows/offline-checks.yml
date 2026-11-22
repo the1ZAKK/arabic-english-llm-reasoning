@@ -240,6 +240,52 @@ jobs:
             Remove-Item -LiteralPath $fixture -Recurse -Force
           }
           exit 0
+      - name: Verify v4.5 CUDA readiness CMD and fail-closed install guards with no downloads
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = (Resolve-Path research/prm_arabic_english/prepare_arabicprm_cuda_windows_v4_5.cmd).Path
+          $sandbox = Join-Path $env:RUNNER_TEMP ('arabicprm cuda readiness '+[guid]::NewGuid().ToString('N'))
+          New-Item -ItemType Directory -Path $sandbox | Out-Null
+          $originalProfile, $originalLocal = $env:USERPROFILE, $env:LOCALAPPDATA
+          try {
+            $expected = ((Get-Content -Raw ($launcher+'.sha256')) -split '\s+')[0]
+            if ((Get-FileHash -Algorithm SHA256 $launcher).Hash.ToLowerInvariant() -ne $expected) { throw 'CMD file SHA mismatch' }
+            $env:ARABICPRM_CUDA_SETUP_VERIFY_ONLY = '1'
+            $good = @(& cmd.exe /d /c $launcher 2>&1)
+            $good | Write-Host
+            if ($LASTEXITCODE -ne 0 -or -not ($good -match 'CUDA SETUP HELPER VERIFIED:')) { throw 'CUDA setup payload not verified' }
+            $bad = Join-Path $sandbox 'tampered.cmd'
+            $raw = [IO.File]::ReadAllText($launcher)
+            $changed = [regex]::new('(?m)^rem ARABICPRM-CUDA-SETUP-PAYLOAD [A-Za-z0-9+/]').Replace($raw,'rem ARABICPRM-CUDA-SETUP-PAYLOAD !',1)
+            [IO.File]::WriteAllText($bad,$changed,[Text.Encoding]::ASCII)
+            $rejected = @(& cmd.exe /d /c ('"'+$bad+'"') 2>&1)
+            if ($LASTEXITCODE -ne 1 -or -not ($rejected -match 'CUDA setup helper SHA256 mismatch')) { throw 'Tampered CUDA helper not rejected' }
+            Remove-Item Env:ARABICPRM_CUDA_SETUP_VERIFY_ONLY
+            $env:USERPROFILE = $sandbox
+            $env:LOCALAPPDATA = $sandbox
+            $observed = @(& cmd.exe /d /c $launcher 2>&1)
+            $observed | Write-Host
+            if ($LASTEXITCODE -notin @(0,1) -or -not ($observed -match 'STATUS: dry_run_')) { throw 'CMD dry-run did not produce readiness report' }
+            $reports = @(Get-ChildItem (Join-Path $sandbox 'ArabicPRM/runtime-setup-v4-5/reports') -Filter share_status.json -Recurse)
+            if ($reports.Count -ne 1) { throw 'Expected one sanitized readiness report' }
+            $report = Get-Content -Raw $reports[0].FullName | ConvertFrom-Json
+            if ($report.installation_approved -ne $false -or $report.package_downloads -ne 0 -or $report.model_operations -ne 0 -or $report.runtime_qualified -ne $false) { throw 'Dry-run crossed authorization boundary' }
+            if (Test-Path (Join-Path $sandbox 'ArabicPRM/venvs')) { throw 'Dry-run created an environment' }
+            if (Test-Path (Join-Path $sandbox 'ArabicPRM/wheel-cache')) { throw 'Dry-run created a package cache' }
+            foreach ($mode in @('install','qualify')) {
+              $blocked = @(& python -I -S -B research/prm_arabic_english/runtime_setup_v4_5.py --mode $mode --approval 'NONEXISTENT-NOT-APPROVED.json' 2>&1)
+              if ($LASTEXITCODE -ne 1 -or -not ($blocked -match 'blocked in CI')) { throw 'CI execution guard failed' }
+            }
+            Write-Host 'CUDA SETUP CMD VERIFIED: exact hash, tamper rejection, zero downloads/installs, CI guards.'
+          } finally {
+            $env:USERPROFILE = $originalProfile
+            $env:LOCALAPPDATA = $originalLocal
+            Remove-Item Env:ARABICPRM_CUDA_SETUP_VERIFY_ONLY -ErrorAction SilentlyContinue
+            Remove-Item -LiteralPath $sandbox -Recurse -Force
+          }
+          exit 0
       - run: python scripts/check_reproducibility.py
       - name: Verify versioned mathematical references without human approval
         run: python -B research/prm_arabic_english/armath_references_v4_2.py

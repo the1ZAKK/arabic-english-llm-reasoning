@@ -1,8 +1,11 @@
-> 22 November 2026: v4.5 isolated CUDA preparation is in progress. Native Windows
-> CPython 3.11.9 wheel resolution will download/hash binary package artifacts only;
-> no runtime packages are installed, and no laptop installation or model operation
-> is authorized. The v4.4 experiment NO-GO remains in force. See
-> [v4.5 preparation](RUNTIME_SETUP_V4_5.md).
+> v4.5 — 22 November 2026: complete 30-wheel Windows CPython 3.11.9 x64
+> CUDA candidate lock resolved/downloaded/hashed in [CI 44999245610](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44999245610).
+> 2.81 GiB downloads; 11.79 GiB minimum same-volume free space. New isolated
+> installer defaults to a zero-download dry-run; separate installation approval
+> and local confirmation are mandatory. 821 offline tests passed locally; the
+> implementation milestone's Windows/Linux CI is pending. No installation or
+> model operation occurred; experiment NO-GO remains. See
+> [v4.5 readiness and limitations](RUNTIME_SETUP_V4_5.md).
 
 # ArabicPRM-T v2 project evidence
 
