@@ -2,8 +2,8 @@
 > CUDA candidate lock resolved/downloaded/hashed in [CI 44999245610](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44999245610).
 > 2.81 GiB downloads; 11.79 GiB minimum same-volume free space. New isolated
 > installer defaults to a zero-download dry-run; separate installation approval
-> and local confirmation are mandatory. 824 offline tests passed locally.
-> [Windows/Linux source verification](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45000468124) and native CMD guards
+> and local confirmation are mandatory. 825 offline tests passed locally.
+> [Windows/Linux source verification](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45001430376) and native CMD guards
 > are the delivery gate. No installation or
 > model operation occurred; experiment NO-GO remains. See
 > [v4.5 readiness and limitations](RUNTIME_SETUP_V4_5.md).

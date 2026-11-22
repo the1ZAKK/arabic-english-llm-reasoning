@@ -35,13 +35,13 @@ No local runtime/hardware inspection is claimed by cloud testing.
 
 ## Pinned delivery identity
 
-[Download the exact readiness CMD](https://raw.githubusercontent.com/the1ZAKK/arabic-english-llm-reasoning/dbd9566e0528eb31d60789782917e4ca5ebced40/research/prm_arabic_english/prepare_arabicprm_cuda_windows_v4_5.cmd)
-(420,606 bytes). Save with the `.cmd` extension. Its complete-file SHA256 is:
+[Download the exact readiness CMD](https://raw.githubusercontent.com/the1ZAKK/arabic-english-llm-reasoning/081e4c2a66691ec9b823a5a9ce5e7fc0b28bbcd2/research/prm_arabic_english/prepare_arabicprm_cuda_windows_v4_5.cmd)
+(422,754 bytes). Save with the `.cmd` extension. Its complete-file SHA256 is:
 
-`89373c050cee27ee15e710c7c7027fdb9bdcde66bba20edf12962a8dfa5ef22e`
+`dc8b0e44c60e5794e44479826a9ed630bfc6c4f67e87d9598eed39a92d0dc91d`
 
-The [source CI](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45000468124)
-covers 824 offline tests on each OS, native Windows CMD/hash/tamper/CI guards,
+The [source CI](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45001430376)
+covers 825 offline tests on each OS, native Windows CMD/hash/tamper/CI guards,
 legacy protected-release checks and original ArMATH byte verification. Both jobs
 must pass before final delivery. Source checks do not qualify laptop libraries.
 Later documentation commits do not change this pinned command or its wheel lock.
@@ -132,8 +132,10 @@ unchanged installed-file manifest, separate scope `non_model_imports_cuda_metada
 and another local confirmation. It imports only the locked libraries and exact
 frozen legacy wrapper source capsule, checks actual versions, Torch CUDA build,
 device properties/compute capability, Torch architectures, bnb CUDA DLL identity
-and required Transformers/PEFT/hub/legacy signatures. It checks environment bytes
-again afterward. Network/model-file access is blocked in the probe. No wrapper,
+and required Transformers/PEFT/hub/legacy signatures. It rechecks the hashed base
+CPython bootstrap before and after probing, confirms the actual child Python
+identity, and checks environment bytes again afterward. A base Python update
+invalidates qualification even if all files inside the venv still match. Network/model-file access is blocked in the probe. No wrapper,
 head, tokenizer or model is instantiated, and no tensor/kernel/forward/trace
 scoring is requested. Native CUDA DLL imports are **not** a tested NF4 operation.
 The result remains `model_fit_demonstrated=false`, with no experiment approval.
