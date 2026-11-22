@@ -88,7 +88,9 @@ all bytes, create a new venv using the hashed existing CPython bootstrap, instal
 from that cache with `--no-index --no-deps --require-hashes --only-binary=:all:`,
 then check dependencies and exact package set. No dependency re-resolution occurs
 on the laptop. Pip logs, install report, actual approval, an installed-file hash
-manifest and installation receipt remain private. The full environment identity
+manifest and installation receipt remain private. The sanitized terminal summary
+records successful/cancelled/failed status and actual package-download attempts
+and completions; it never retains a stale zero-download dry-run status. The full environment identity
 includes installed file bytes; it is distinct from upstream wheel hashes.
 Cancellation creates neither cache nor venv and makes zero downloads. Failed
 installation preserves any partial **new** cache/env and a failure report; there

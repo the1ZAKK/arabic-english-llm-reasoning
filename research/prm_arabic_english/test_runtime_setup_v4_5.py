@@ -222,6 +222,9 @@ class SetupTests(unittest.TestCase):
         self.assertEqual(self.calls, [])
         self.assertFalse(Path(self.plan['destination']).exists())
         self.assertTrue((self.report/'installation_failure_private.json').is_file())
+        first = json.loads((self.report/'installation_private.log').read_bytes().splitlines()[0])
+        self.assertEqual(first['operation'], 'locked_library_wheel_download')
+        self.assertEqual(first['sha256'], self.lock['wheels'][0]['sha256'])
 
     def test_synthetic_install_uses_offline_hashes_and_exact_environment(self):
         self.assertTrue(self.invoke())
@@ -403,6 +406,66 @@ class PackageTests(unittest.TestCase):
                 f=node.func
                 called=f.attr if isinstance(f,ast.Attribute) else (f.id if isinstance(f,ast.Name) else '')
                 self.assertNotIn(called,forbidden)
+
+
+
+
+class InstallationReportingTests(unittest.TestCase):
+    setUp = SetupTests.setUp
+    approved_fixture = SetupTests.approved_fixture
+
+    def invoke_cli_fixture(self, outcome):
+        home = self.root/'ArabicPRM'
+        plan = s.make_plan(self.bundle, self.lock, self.base, home/'venvs/armath-cuda-v4-5',
+                           home/'wheel-cache/v4-5'/('1'*16+'-armath-cuda-v4-5'), free=20*1024**3)
+        approval_path = self.root/'synthetic-approval.json'
+        s.write_new(approval_path, self.approved_fixture(plan))
+        report = self.root/'cli-report'
+        def fake_install(plan, lock, approval, report):
+            if outcome == 'failed':
+                s.write_new(report/'installation_failure_private.json',
+                            {'status':'failed_partial_new_environment_preserved',
+                             'package_downloads_attempted':2,'package_downloads_completed':1})
+                raise RuntimeError('synthetic transport error; no actual request')
+            if outcome == 'cancelled':
+                return False
+            s.write_new(report/'installation_receipt_private.json',
+                        {'status':'installed_not_qualified', 'package_downloads_attempted':30,
+                         'package_downloads_completed':30})
+            return True
+        with patch.dict('os.environ', {'LOCALAPPDATA':str(self.root)}), \
+             patch.object(s,'ci_guard',return_value=None), \
+             patch.object(s,'load_bundle',return_value=(self.bundle,self.lock)), \
+             patch.object(s,'find_bases',return_value=[Path(self.base['executable'])]), \
+             patch.object(s,'inspect_base',return_value=self.base), \
+             patch.object(s,'install',side_effect=fake_install):
+            if outcome == 'failed':
+                with self.assertRaises(RuntimeError):
+                    s.main(['--mode','install','--approval',str(approval_path),'--report-dir',str(report)])
+            else:
+                s.main(['--mode','install','--approval',str(approval_path),'--report-dir',str(report)])
+        return json.loads((report/'share_status.json').read_bytes())
+
+    def test_terminal_summary_does_not_misreport_success_as_zero_downloads(self):
+        share = self.invoke_cli_fixture('success')
+        self.assertEqual(share['status'],'installed_not_qualified')
+        self.assertTrue(share['installation_completed'])
+        self.assertEqual(share['package_downloads'],30)
+        self.assertFalse(share['runtime_qualified'])
+        self.assertEqual(share['model_operations'],0)
+
+    def test_failed_transport_counts_are_visible_and_no_qualified_claim(self):
+        share = self.invoke_cli_fixture('failed')
+        self.assertEqual(share['package_downloads_attempted'],2)
+        self.assertEqual(share['package_downloads_completed'],1)
+        self.assertFalse(share['installation_completed'])
+        self.assertEqual(share['status'],'failed_partial_new_environment_preserved')
+
+    def test_cancelled_summary_keeps_zero_downloads_and_no_installation(self):
+        share = self.invoke_cli_fixture('cancelled')
+        self.assertEqual(share['package_downloads'],0)
+        self.assertFalse(share['installation_completed'])
+        self.assertEqual(share['status'],'cancelled_zero_downloads_zero_installs')
 
 
 if __name__ == '__main__':

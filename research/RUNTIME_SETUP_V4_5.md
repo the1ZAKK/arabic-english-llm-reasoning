@@ -73,3 +73,10 @@ qualification needs separate approval. Model loading/forward fit and the frozen
 runtime binding; neither old pilot20 nor diagnostic24 is reusable. No model
 weights, original ArMATH data, frozen proposals/releases, retries, human QC, prior
 approvals, checkpoints or main were changed. CI verifies software behavior only.
+
+Terminal install reporting retains attempted/completed package-download counts,
+per-wheel private events, failures and cancellation. It does not present an old
+dry-run summary after later authorized installation. The 824-test full offline
+suite passed locally; 29 v4.5 synthetic/package checks also passed after the
+reporting/logging fix. Native Windows/Linux verification of the final source is
+still pending until its linked CI completes.

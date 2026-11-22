@@ -351,9 +351,19 @@ def install(plan, lock, approval, report, *, confirm=input, runner=run, fetch=fe
     log = report / 'installation_private.log'
     started = {'status': 'installation_started', 'plan_sha256': fingerprint(plan), 'model_operations': 0}
     write_new(report / 'installation_started.json', started)
+    downloads_attempted = downloads_completed = 0
     try:
         for w in lock['wheels']:
+            downloads_attempted += 1
+            with log.open('ab') as f:
+                f.write(canonical({'operation': 'locked_library_wheel_download', 'attempt': downloads_attempted,
+                                   'filename': w['filename'], 'url': w['url'], 'sha256': w['sha256'],
+                                   'bytes': w['download_bytes']}) + b'\n')
+                f.flush()
+                os.fsync(f.fileno())
+            print('Downloading locked library wheel', downloads_attempted, 'of', len(lock['wheels']), w['filename'])
             fetch(w, cache)
+            downloads_completed += 1
         # Every wheel is checked again before offline pip consumes it.
         for w in lock['wheels']:
             if sha(cache / w['filename']) != w['sha256']:
@@ -384,14 +394,16 @@ def install(plan, lock, approval, report, *, confirm=input, runner=run, fetch=fe
                    'plan': plan, 'plan_sha256': fingerprint(plan),
                    'approval_sha256': hashlib.sha256(canonical(approval)).hexdigest(),
                    'installed_files_sha256': sha(report / 'installed_files_private.json'),
-                   'package_versions': actual, 'runtime_qualified': False, 'model_operations': 0}
+                   'package_versions': actual, 'runtime_qualified': False, 'model_operations': 0,
+                   'package_downloads_attempted': downloads_attempted, 'package_downloads_completed': downloads_completed}
         write_new(report / 'installation_receipt_private.json', receipt)
         write_new(report / 'qualification_request_PENDING.json', approval_request(plan, 'non_model_imports_cuda_metadata', sha(report / 'installation_receipt_private.json')))
         return True
     except BaseException as e:
         write_new(report / 'installation_failure_private.json',
                   {'status': 'failed_partial_new_environment_preserved', 'error_type': type(e).__name__,
-                   'error': str(e), 'model_operations': 0, 'automatic_retry': False})
+                   'error': str(e), 'model_operations': 0, 'automatic_retry': False,
+                   'package_downloads_attempted': downloads_attempted, 'package_downloads_completed': downloads_completed})
         raise
 
 
@@ -521,18 +533,41 @@ def main(argv=None):
     share['base_3119_x64_verified'] = base is not None
     share['runtime_qualified'] = False
     share['checkpoint_lineage_verified'] = False
-    write_new(report / 'share_status.json', share)
+    if args.mode == 'dry-run':
+        write_new(report / 'share_status.json', share)
     print('STATUS:', private['status'])
     print('Private report folder:', report)
     print('Share only share_status.json after reviewing it.')
     if args.mode == 'dry-run':
         return 0 if 'plan' in private else 1
-    if 'plan' not in private:
-        raise ValueError('Blocked by dry-run findings; no installation started')
-    approval = json.loads(no_links(args.approval).read_bytes())
-    if args.mode == 'install':
-        return 0 if install(plan, lock, approval, report) else 2
-    raise ValueError('Unsupported execution mode')
+    share.update(status='installation_blocked', installation_approved=False,
+                 installation_completed=False, package_downloads_attempted=0, package_downloads_completed=0)
+    try:
+        if 'plan' not in private:
+            raise ValueError('Blocked by dry-run findings; no installation started')
+        approval = json.loads(no_links(args.approval).read_bytes())
+        check_approval(approval, plan, 'installation')
+        share['installation_approved'] = True
+        completed = install(plan, lock, approval, report)
+        if completed:
+            result = json.loads((report / 'installation_receipt_private.json').read_bytes())
+            share.update(status=result['status'], installation_completed=True,
+                         package_downloads_attempted=result['package_downloads_attempted'],
+                         package_downloads_completed=result['package_downloads_completed'])
+        else:
+            share['status'] = 'cancelled_zero_downloads_zero_installs'
+        return 0 if completed else 2
+    finally:
+        failure = report / 'installation_failure_private.json'
+        if failure.is_file():
+            result = json.loads(failure.read_bytes())
+            share.update(status=result['status'],
+                         package_downloads_attempted=result['package_downloads_attempted'],
+                         package_downloads_completed=result['package_downloads_completed'])
+        # No stale zero-download dry-run summary after a real installation path.
+        share['package_downloads'] = share['package_downloads_attempted']
+        write_new(report / 'share_status.json', share)
+        print('STATUS:', share['status'])
 
 
 if __name__ == '__main__':
