@@ -1,0 +1,37 @@
+name: Resolve Windows CUDA wheels v4.5 (download only)
+on:
+  push:
+    branches: [research/arabicprm-v2-production]
+    paths:
+      - 'research/runtime_setup_v4_5/profile.json'
+      - 'scripts/resolve_windows_cuda_v4_5.py'
+      - '.github/workflows/windows-cuda-lock-v4-5.yml'
+permissions:
+  contents: read
+jobs:
+  resolve:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          sparse-checkout: |
+            scripts
+            research/runtime_setup_v4_5
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.11.9'
+          architecture: x64
+      - name: Resolve, download and hash official binary wheels; never install target packages
+        run: python -I -B scripts/resolve_windows_cuda_v4_5.py --output-dir "${{ runner.temp }}/cuda-wheels-v4-5"
+      - name: Retain small resolution evidence (no weights or wheel binaries)
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: windows-cuda-resolution-v4-5
+          path: |
+            ${{ runner.temp }}/cuda-wheels-v4-5/*.json
+            ${{ runner.temp }}/cuda-wheels-v4-5/*.log
+            ${{ runner.temp }}/cuda-wheels-v4-5/*.html
+            ${{ runner.temp }}/cuda-wheels-v4-5/requirements.lock
+          retention-days: 30

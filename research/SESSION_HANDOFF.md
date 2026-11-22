@@ -1,3 +1,9 @@
+> 22 November 2026: v4.5 isolated CUDA preparation is in progress. Native Windows
+> CPython 3.11.9 wheel resolution will download/hash binary package artifacts only;
+> no runtime packages are installed, and no laptop installation or model operation
+> is authorized. The v4.4 experiment NO-GO remains in force. See
+> [v4.5 preparation](RUNTIME_SETUP_V4_5.md).
+
 # Session handoff
 
 v4.3 hash-retention follow-up — Kit 4c05fe9 passed 795 tests on each OS in

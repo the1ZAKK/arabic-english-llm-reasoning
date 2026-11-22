@@ -15,6 +15,9 @@ on:
       - "scripts/build_armath_inspector_windows.py"
       - "scripts/build_runtime_recovery_windows_v4_3.py"
       - "research/runtime_recovery_v4_3/**"
+      - "research/runtime_setup_v4_5/**"
+      - "scripts/resolve_windows_cuda_v4_5.py"
+      - "scripts/build_runtime_setup_windows_v4_5.py"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -35,6 +38,9 @@ on:
       - "scripts/build_armath_inspector_windows.py"
       - "scripts/build_runtime_recovery_windows_v4_3.py"
       - "research/runtime_recovery_v4_3/**"
+      - "research/runtime_setup_v4_5/**"
+      - "scripts/resolve_windows_cuda_v4_5.py"
+      - "scripts/build_runtime_setup_windows_v4_5.py"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -74,6 +80,7 @@ jobs:
             research/armath_development_v4_1
             research/armath_readiness_v4_2
             research/runtime_recovery_v4_3
+            research/runtime_setup_v4_5
             data/armath
       - uses: actions/setup-python@v7.0.0
         with:
