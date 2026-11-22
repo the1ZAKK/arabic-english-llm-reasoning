@@ -103,7 +103,7 @@ def wheel_record(path, url, expected_sha, hosts):
         raise ValueError('Wheel hash differs from official resolver/index digest')
     with zipfile.ZipFile(path) as z:
         members = z.infolist()
-        metadata = [x for x in members if x.filename.endswith('.dist-info/METADATA')]
+        metadata = [x for x in members if x.filename.endswith('.dist-info/METADATA') and x.filename.count('/') == 1]
         if len(metadata) != 1 or metadata[0].file_size > 2_000_000:
             raise ValueError('Invalid wheel METADATA')
         m = BytesParser().parsebytes(z.read(metadata[0]))

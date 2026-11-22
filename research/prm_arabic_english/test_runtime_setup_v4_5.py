@@ -61,6 +61,7 @@ class ResolutionTests(unittest.TestCase):
                 z.writestr('example-1.0.dist-info/METADATA',
                            'Metadata-Version: 2.1\nName: example\nVersion: 1.0\nRequires-Python: >=3.11\n\n')
                 z.writestr('example/__init__.py', '# synthetic, never imported\n')
+                z.writestr('example/_vendor/other-2.dist-info/METADATA', 'Name: other\nVersion: 2\n')
             rec = r.wheel_record(path, 'https://files.pythonhosted.org/' + path.name,
                                  r.digest(path), ['files.pythonhosted.org'])
             self.assertEqual(rec['name'], 'example')
