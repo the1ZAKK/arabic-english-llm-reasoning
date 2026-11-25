@@ -1,0 +1,57 @@
+{
+  "classes": {
+    "LoraConfig": [
+      "r",
+      "target_modules",
+      "exclude_modules",
+      "lora_alpha",
+      "lora_dropout",
+      "fan_in_fan_out",
+      "bias",
+      "use_rslora",
+      "modules_to_save",
+      "init_lora_weights",
+      "layers_to_transform",
+      "layers_pattern",
+      "rank_pattern",
+      "alpha_pattern",
+      "megatron_config",
+      "megatron_core",
+      "trainable_token_indices",
+      "loftq_config",
+      "eva_config",
+      "corda_config",
+      "use_dora",
+      "alora_invocation_tokens",
+      "use_qalora",
+      "qalora_group_size",
+      "layer_replication",
+      "runtime_config",
+      "lora_bias",
+      "target_parameters",
+      "arrow_config",
+      "ensure_weight_tying"
+    ],
+    "PeftConfig": [
+      "base_model_name_or_path",
+      "revision",
+      "peft_type",
+      "task_type",
+      "inference_mode"
+    ],
+    "PeftConfigMixin": [
+      "task_type",
+      "peft_type",
+      "auto_mapping",
+      "peft_version"
+    ]
+  },
+  "method": "Static AST of annotated dataclass fields, without importing PEFT or Torch.",
+  "peft_version": "0.18.0",
+  "schema": "arabicprm-peft-config-fields-v4.6",
+  "source_commit": "77daa8d3b7decf2b40238ab47e2c1bd0f26c7749",
+  "source_sha256": {
+    "config.py": "b0506247934fb067e53b805b8f67a43692850809b837711a8e5efb09b806fc85",
+    "tuners/lora/config.py": "a33f9f057d7df7e352e796731c59c755197aa267d0d0f2698a516bb97ddc8997"
+  }
+}

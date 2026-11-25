@@ -18,6 +18,8 @@ on:
       - "research/runtime_setup_v4_5/**"
       - "scripts/resolve_windows_cuda_v4_5.py"
       - "scripts/build_runtime_setup_windows_v4_5.py"
+      - "research/checkpoint_compat_v4_6/**"
+      - "scripts/build_checkpoint_compat_windows_v4_6.py"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -41,6 +43,8 @@ on:
       - "research/runtime_setup_v4_5/**"
       - "scripts/resolve_windows_cuda_v4_5.py"
       - "scripts/build_runtime_setup_windows_v4_5.py"
+      - "research/checkpoint_compat_v4_6/**"
+      - "scripts/build_checkpoint_compat_windows_v4_6.py"
       - "data/armath/**"
       - "research/*.md"
       - "research/RECOVERY_V2_EVIDENCE.json"
@@ -81,6 +85,7 @@ jobs:
             research/armath_readiness_v4_2
             research/runtime_recovery_v4_3
             research/runtime_setup_v4_5
+            research/checkpoint_compat_v4_6
             data/armath
       - uses: actions/setup-python@v7.0.0
         with:
@@ -283,6 +288,53 @@ jobs:
             $env:USERPROFILE = $originalProfile
             $env:LOCALAPPDATA = $originalLocal
             Remove-Item Env:ARABICPRM_CUDA_SETUP_VERIFY_ONLY -ErrorAction SilentlyContinue
+            Remove-Item -LiteralPath $sandbox -Recurse -Force
+          }
+          exit 0
+      - name: Verify native checkpoint metadata CMD hash, tamper rejection and zero-operation fixture
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          $launcher = (Resolve-Path research/prm_arabic_english/inspect_arabicprm_checkpoints_windows_v4_6.cmd).Path
+          $expected = ((Get-Content -Raw ($launcher + '.sha256')) -split '\s+')[0]
+          if ((Get-FileHash -LiteralPath $launcher -Algorithm SHA256).Hash.ToLowerInvariant() -cne $expected) { throw 'Checkpoint CMD full-file hash mismatch' }
+          $sandbox = Join-Path $env:RUNNER_TEMP ('arabicprm checkpoint compat ' + [guid]::NewGuid().ToString('N'))
+          New-Item -ItemType Directory -Path $sandbox | Out-Null
+          $originalLocal = $env:LOCALAPPDATA
+          try {
+            $env:ARABICPRM_CHECKPOINT_COMPAT_VERIFY_ONLY = '1'
+            $good = @(& cmd.exe /d /c ('"' + $launcher + '"') 2>&1)
+            $good | Write-Host
+            if ($LASTEXITCODE -ne 0 -or -not ($good -match 'CHECKPOINT COMPAT HELPER VERIFIED:')) { throw 'Exact metadata CMD did not verify' }
+            $bad = Join-Path $sandbox 'tampered.cmd'
+            $raw = [IO.File]::ReadAllText($launcher)
+            $changed = [regex]::new('(?m)^rem ARABICPRM-CHECKPOINT-COMPAT-PAYLOAD [A-Za-z0-9+/]').Replace($raw, 'rem ARABICPRM-CHECKPOINT-COMPAT-PAYLOAD !', 1)
+            [IO.File]::WriteAllText($bad, $changed, [Text.Encoding]::ASCII)
+            $blocked = @(& cmd.exe /d /c ('"' + $bad + '"') 2>&1)
+            $blocked | Write-Host
+            if ($LASTEXITCODE -ne 1 -or -not ($blocked -match 'Checkpoint compatibility payload SHA256 mismatch')) { throw 'Tampered checkpoint payload was not blocked' }
+            Remove-Item Env:ARABICPRM_CHECKPOINT_COMPAT_VERIFY_ONLY
+            $fixture = Join-Path $sandbox 'fixture'
+            & python research/prm_arabic_english/test_checkpoint_compat_v4_6.py --make-launcher-fixture $fixture
+            if ($LASTEXITCODE -ne 0) { throw 'Synthetic checkpoint fixture failed' }
+            $env:ARABICPRM_CHECKPOINT_INVENTORY = Join-Path $fixture 'old-private-report/report_private.json'
+            $env:LOCALAPPDATA = Join-Path $sandbox 'local'
+            $observed = @(& cmd.exe /d /c ('"' + $launcher + '"') 2>&1)
+            $observed | Write-Host
+            if ($LASTEXITCODE -ne 0 -or -not ($observed -match 'checkpoint_metadata_checked_no_model_fit')) { throw 'Metadata CMD fixture failed' }
+            $reports = @(Get-ChildItem (Join-Path $env:LOCALAPPDATA 'ArabicPRM/checkpoint-compat-v4-6/reports') -Filter share_status.json -Recurse)
+            if ($reports.Count -ne 1) { throw 'Expected one new sanitized metadata report' }
+            $s = Get-Content -Raw -LiteralPath $reports[0].FullName | ConvertFrom-Json
+            if ($s.model_operations -ne 0 -or $s.active_budget_created -ne $false -or $s.tensor_values_loaded -ne $false -or $s.installation_performed -ne $false -or $null -ne $s.automatic_checkpoint_selection -or $s.experiment_decision -cne 'NO-GO') { throw 'Metadata CMD crossed its operation boundary' }
+            Remove-Item Env:ARABICPRM_CHECKPOINT_INVENTORY
+            $missing = @(& cmd.exe /d /c ('"' + $launcher + '"') 2>&1)
+            if ($LASTEXITCODE -ne 1 -or -not ($missing -match 'Existing private inventory path required')) { throw 'CI opened an interactive picker or scanned without an inventory' }
+            Write-Host 'CHECKPOINT METADATA CMD VERIFIED: synthetic only; zero models, installs, selection or allowances.'
+          } finally {
+            $env:LOCALAPPDATA = $originalLocal
+            Remove-Item Env:ARABICPRM_CHECKPOINT_COMPAT_VERIFY_ONLY -ErrorAction SilentlyContinue
+            Remove-Item Env:ARABICPRM_CHECKPOINT_INVENTORY -ErrorAction SilentlyContinue
             Remove-Item -LiteralPath $sandbox -Recurse -Force
           }
           exit 0

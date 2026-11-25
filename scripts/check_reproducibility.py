@@ -65,6 +65,7 @@ MODULES = (
     "test_armath_executor_v4_2",
     "test_runtime_recovery_v4_3",
     "test_runtime_setup_v4_5",
+    "test_checkpoint_compat_v4_6",
 )
 
 if __name__ == "__main__":

@@ -1,3 +1,12 @@
+> v4.6 — 26 November 2026: owner-supplied local installation and model-free
+> library/CUDA qualification reports record success and zero model operations.
+> A separate [checkpoint compatibility extension](CHECKPOINT_COMPATIBILITY_V4_6.md)
+> inspects retained `.bin`/`.pt` metadata without tensors or pickle execution.
+> It keeps all candidates unselected, preserves frozen releases, and provides
+> one read-only Windows checker. Local metadata results, explicit development-only
+> checkpoint selection and a later separately authorized fit probe remain pending.
+> Experiment remains **NO-GO**. Earlier dated entries below are historical.
+
 > v4.5 — 22 November 2026: complete 30-wheel Windows CPython 3.11.9 x64
 > CUDA candidate lock resolved/downloaded/hashed in [CI 44999245610](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/44999245610).
 > 2.81 GiB downloads; 11.79 GiB minimum same-volume free space. New isolated
