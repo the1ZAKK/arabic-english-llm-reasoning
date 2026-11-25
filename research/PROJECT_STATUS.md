@@ -1,3 +1,9 @@
+> Packaging follow-up: the first Windows run found a ZIP host-metadata
+> reproducibility difference. A cross-host regression and explicit canonical ZIP
+> host byte fix it while retaining exact package/hash comparisons; corrected CI
+> is required before delivery. The reader and CMD bytes are unchanged.
+> See the verification history in the v4.6 report.
+>
 > v4.6 — 26 November 2026: owner-supplied local installation and model-free
 > library/CUDA qualification reports record success and zero model operations.
 > A separate [checkpoint compatibility extension](CHECKPOINT_COMPATIBILITY_V4_6.md)

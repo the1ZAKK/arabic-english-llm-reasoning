@@ -86,6 +86,8 @@ The builder reuses the existing Windows launcher shell, and packages the exact
 frozen v4.3 stdlib inspector plus this extension and the pinned PEFT schema. CI
 uses only fabricated checkpoint data, including native Windows CMD hash/tamper,
 isolated ZIP execution, sanitized report and no-selection/no-operation checks.
+The ZIP creator-system field is explicitly fixed, alongside timestamps and file
+attributes, so rebuilding on Windows and Linux produces identical CMD bytes.
 
 ## Primary implementation evidence
 

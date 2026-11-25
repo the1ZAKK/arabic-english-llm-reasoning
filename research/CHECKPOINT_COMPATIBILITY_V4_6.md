@@ -53,10 +53,19 @@ payload/hash rejection and synthetic-only execution; Linux checks execute the
 same isolated ZIP application. Actual checkpoint/GPU compatibility is not a CI
 result. Inspect the exact delivery commit's Actions results before using the CMD.
 
-Local validation: **859 offline tests passed**, including 34 new metadata,
+Local validation after the packaging correction: **860 offline tests passed**, including 35 new metadata,
 immutability, isolated-package and guard regressions. The full local run took
-79.682 seconds. Windows/Linux Actions, including the new native Windows CMD
+78.690 seconds. Windows/Linux Actions, including the new native Windows CMD
 check, remain the delivery gate; these local results do not substitute for them.
+
+The initial [505f01d CI run](https://github.com/the1ZAKK/arabic-english-llm-reasoning/actions/runs/45684722034)
+passed all 859 Linux tests and native Windows CMD guards, but Windows failed one
+of 859 tests: reproducible ZIP packaging. Windows's default ZIP creator-system
+byte differed from Linux's. The builder now sets that field explicitly to 3;
+the delivered CMD's bytes and SHA256 are unchanged. A new cross-host regression
+reproduced the exact failure before the fix and passes after it. No byte-exact
+comparison or payload guard was relaxed. The corrected source requires its own
+Windows/Linux CI before delivery; the failed run remains preserved as evidence.
 
 ## Next bounded model-fit proposal — inactive, not an approval
 

@@ -415,6 +415,15 @@ class PackageTests(unittest.TestCase):
             self.assertEqual(hashlib.sha256(z.read('peft_018_schema.json')).hexdigest(), c.SCHEMA_SHA256)
         self.assertLess(max(map(len, raw.splitlines())), 8000)
 
+    def test_zip_platform_default_does_not_change_the_verified_package(self):
+        b = self.builder(); expected = b.render(); original = zipfile.ZipInfo
+        class WindowsZipInfo(original):
+            def __init__(self, *args, **kwargs):
+                super().__init__(*args, **kwargs)
+                self.create_system = 0  # CPython's Windows default, simulated on every OS.
+        with patch.object(b.zipfile, 'ZipInfo', WindowsZipInfo):
+            self.assertEqual(b.render(), expected)
+
     def test_isolated_zipapp_selfcheck_and_real_cli_with_synthetic_inputs(self):
         b = self.builder()
         with tempfile.TemporaryDirectory() as directory:

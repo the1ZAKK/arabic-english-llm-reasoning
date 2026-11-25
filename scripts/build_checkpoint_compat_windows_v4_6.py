@@ -21,7 +21,9 @@ def payload():
     raw = io.BytesIO()
     with zipfile.ZipFile(raw, 'w', compression=zipfile.ZIP_STORED) as z:
         for name, content in sorted(data.items()):
-            info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0)); info.external_attr = 0o600 << 16
+            info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+            info.create_system = 3  # Canonical ZIP host byte; independent of builder OS.
+            info.external_attr = 0o600 << 16
             z.writestr(info, content)
     return raw.getvalue()
 
